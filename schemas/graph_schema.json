@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GraphSchema",
+  "type": "object",
+  "required": [
+    "source_id",
+    "entities",
+    "relations"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "description": "원본 문서의 고유 ID"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Company",
+              "Person",
+              "Event",
+              "Industry"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "stock_code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "industry": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "affiliated_company": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type",
+          "from",
+          "to",
+          "evidence"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "ACQUIRES",
+              "INVESTS_IN",
+              "APPOINTED_TO",
+              "AFFILIATED_WITH",
+              "BELONGS_TO"
+            ]
+          },
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string",
+            "description": "관계를 뒷받침하는 근거 문장"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

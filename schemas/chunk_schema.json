@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChunkSchema",
+  "type": "object",
+  "required": [
+    "doc_id",
+    "chunk_id",
+    "text",
+    "source",
+    "published_at"
+  ],
+  "properties": {
+    "doc_id": {
+      "type": "string",
+      "description": "원본 문서의 고유 ID"
+    },
+    "chunk_id": {
+      "type": "string",
+      "description": "청크의 고유 ID"
+    },
+    "text": {
+      "type": "string",
+      "description": "청크로 분할된 텍스트 내용"
+    },
+    "title": {
+      "type": "string",
+      "description": "원본 문서 제목"
+    },
+    "source": {
+      "type": "string",
+      "description": "출처 플랫폼 또는 제공자"
+    },
+    "published_at": {
+      "type": "string",
+      "description": "발행일, 형식은 YYYY-MM-DD"
+    },
+    "url": {
+      "type": "string",
+      "description": "원문 링크"
+    },
+    "chunk_index": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "문서 내 청크 순서"
+    },
+    "company_hint": {
+      "type": "array",
+      "description": "검색 보조를 위한 회사명 힌트",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
