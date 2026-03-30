@@ -16,8 +16,8 @@ class GraphState(TypedDict):
     history: Annotated[List[str], add]
 
 
-# 1. RAG 노드
-def rag_node(state: GraphState):
+# 1. Vector 노드
+def vector_node(state: GraphState):
     if state is None:
         return {"docs": []}
 
@@ -31,8 +31,9 @@ def rag_node(state: GraphState):
 
 # 2. Graph 노드
 def graph_node(state: GraphState):
-    result = graph_tool()
-    return {"graph": result}
+    query = state.get("query")
+    graph_data = graph_tool(query)
+    return {"graph": graph_data}
 
 
 # 3. LLM 노드
@@ -56,6 +57,8 @@ def llm_node(state: GraphState):
 
     response = call_llm(context)
 
+    print(f"--- LLM RAW RESPONSE: {response} ---")
+
     # 이번 대화 내용을 history에 추가하여 반환
     current_chat = f"User: {query}\nAI: {response}"
     return {"answer": response, "history": [current_chat]}
@@ -69,7 +72,7 @@ memory = MemorySaver()
 def build_graph():
     workflow = StateGraph(GraphState)
 
-    workflow.add_node("rag", rag_node)
+    workflow.add_node("rag", vector_node)
     workflow.add_node("graph", graph_node)
     workflow.add_node("llm", llm_node)
 
