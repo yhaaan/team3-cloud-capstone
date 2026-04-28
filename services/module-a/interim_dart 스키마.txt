@@ -1,0 +1,176 @@
+공통 바깥 스키마
+모든 공시에 공통으로 붙는 구조
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "corp_code": "",
+  "source": "",
+  "dataset": "",
+  "dataset_label": "",
+  "bsns_year": "",
+  "reprt_code": "",
+  "rcept_no": "",
+  "record_count": 0,
+  "meaningful_record_count": 0,
+  "normalized_records": [],
+  "text_blocks": [],
+  "mentioned_entities": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "raw_file_path": "",
+  "generated_at": ""
+}
+
+
+
+
+
+1. 최대주주 현황
+의미:
+기업의 최대주주 및 특수관계인이 얼마나 많은 주식을 보유하고 있는지 보여주는 공시입니다. 지배구조, 실질적 지배력, 주요 관계 법인/개인 파악에 활용
+{
+  "rcept_no": "",
+  "corp_cls": "",
+  "corp_code": "",
+  "corp_name": "",
+  "stock_knd": "",
+  "nm": "",
+  "relate": "",
+  "bsis_posesn_stock_co": "",
+  "bsis_posesn_stock_qota_rt": "",
+  "trmend_posesn_stock_co": "",
+  "trmend_posesn_stock_qota_rt": "",
+  "rm": "",
+  "stlm_dt": ""
+}
+rcept_no: 공시 접수번호
+corp_cls: 법인 구분
+corp_code: DART 고유 기업코드
+corp_name: 회사명
+stock_knd: 주식 종류
+nm: 최대주주 또는 특수관계자 이름
+relate: 회사와의 관계
+bsis_posesn_stock_co: 기초 보유 주식 수
+bsis_posesn_stock_qota_rt: 기초 보유 지분율
+trmend_posesn_stock_co: 당기말 보유 주식 수
+trmend_posesn_stock_qota_rt: 당기말 보유 지분율
+rm: 비고
+stlm_dt: 결산기준일
+
+
+
+2. 최대주주 변동현황
+의미:
+최대주주 또는 주요 지배 주체의 보유 주식 수, 지분율, 변동 사유가 어떻게 바뀌었는지를 보여주는 공시입니다. 지배구조 변화, 지분 매입/매도, 지배력 이동을 추적하는 데 유용
+{
+  "rcept_no": "",
+  "corp_cls": "",
+  "corp_code": "",
+  "corp_name": "",
+  "change_on": "",
+  "mxmm_shrholdr_nm": "",
+  "posesn_stock_co": "",
+  "qota_rt": "",
+  "change_cause": "",
+  "rm": "",
+  "stlm_dt": ""
+}
+
+rcept_no: 공시 접수번호
+corp_cls: 법인 구분
+corp_code: DART 고유 기업코드
+corp_name: 회사명
+change_on: 변동 일자
+mxmm_shrholdr_nm: 최대주주 이름
+posesn_stock_co: 보유 주식 수
+qota_rt: 지분율
+change_cause: 변동 사유
+rm: 비고
+stlm_dt: 결산기준일
+
+3. 타법인 출자현황
+의미:
+해당 기업이 다른 법인에 얼마나 출자하고 있는지, 출자 목적이 무엇인지, 현재 보유 지분과 장부가액이 얼마인지를 보여주는 공시입니다. 기업 간 투자 관계, 자회사/계열사 네트워크, 경영참여 목적의 연결 구조를 파악하는 데 가장 중요한 공시
+{
+  "rcept_no": "",
+  "corp_cls": "",
+  "corp_code": "",
+  "corp_name": "",
+  "inv_prm": "",
+  "frst_acqs_de": "",
+  "invstmnt_purps": "",
+  "frst_acqs_amount": "",
+  "bsis_blce_qy": "",
+  "bsis_blce_qota_rt": "",
+  "bsis_blce_acntbk_amount": "",
+  "incrs_dcrs_acqs_dsps_qy": "",
+  "incrs_dcrs_acqs_dsps_amount": "",
+  "incrs_dcrs_evl_lstmn": "",
+  "trmend_blce_qy": "",
+  "trmend_blce_qota_rt": "",
+  "trmend_blce_acntbk_amount": "",
+  "recent_bsns_year_fnnr_sttus_tot_assets": "",
+  "recent_bsns_year_fnnr_sttus_thstrm_ntpf": "",
+  "stlm_dt": ""
+}
+
+rcept_no: 공시 접수번호
+corp_cls: 법인 구분
+corp_code: DART 고유 기업코드
+corp_name: 회사명
+inv_prm: 출자 대상 법인명
+frst_acqs_de: 최초 취득일
+invstmnt_purps: 투자 목적
+frst_acqs_amount: 최초 취득 금액
+bsis_blce_qy: 기초 잔액 수량
+bsis_blce_qota_rt: 기초 지분율
+bsis_blce_acntbk_amount: 기초 장부가액
+incrs_dcrs_acqs_dsps_qy: 당기 증감 취득/처분 수량
+incrs_dcrs_acqs_dsps_amount: 당기 증감 취득/처분 금액
+incrs_dcrs_evl_lstmn: 증감 평가 손익
+trmend_blce_qy: 당기말 잔액 수량
+trmend_blce_qota_rt: 당기말 지분율
+trmend_blce_acntbk_amount: 당기말 장부가액
+recent_bsns_year_fnnr_sttus_tot_assets: 최근 사업연도 총자산
+recent_bsns_year_fnnr_sttus_thstrm_ntpf: 최근 사업연도 당기순이익
+stlm_dt: 결산기준일
+
+4. 임원 현황
+의미:
+기업의 임원 이름, 직위, 이사회 내 역할, 담당 업무, 주요 경력, 최대주주와의 관계 등을 보여주는 공시입니다. 기업-인물 관계, 겸직 가능성, 의사결정 구조, 인적 네트워크 분석에 활용
+{
+  "rcept_no": "",
+  "corp_cls": "",
+  "corp_code": "",
+  "corp_name": "",
+  "nm": "",
+  "sexdstn": "",
+  "birth_ym": "",
+  "ofcps": "",
+  "rgist_exctv_at": "",
+  "fte_at": "",
+  "chrg_job": "",
+  "main_career": "",
+  "mxmm_shrholdr_relate": "",
+  "hffc_pd": "",
+  "tenure_end_on": "",
+  "stlm_dt": ""
+}
+rcept_no: 공시 접수번호
+corp_cls: 법인 구분
+corp_code: DART 고유 기업코드
+corp_name: 회사명
+nm: 임원 이름
+sexdstn: 성별
+birth_ym: 출생 연월
+ofcps: 직위
+rgist_exctv_at: 등기임원 여부 또는 이사회상 역할
+fte_at: 상근 여부
+chrg_job: 담당 업무
+main_career: 주요 경력
+mxmm_shrholdr_relate: 최대주주와의 관계
+hffc_pd: 재직 기간
+tenure_end_on: 임기 만료일
+stlm_dt: 결산기준일
