@@ -23,6 +23,28 @@
   "generated_at": ""
 }
 
+속성 의미:
+
+doc_id: 문서 고유 ID
+company_name: 기업명
+stock_code: 종목코드
+corp_code: DART 기업코드
+source: 데이터 출처, 여기선 dart
+dataset: 내부 데이터셋 이름
+dataset_label: 사람이 읽기 쉬운 이름
+bsns_year: 사업연도
+reprt_code: 보고서 코드
+rcept_no: 대표 접수번호
+record_count: 전체 레코드 수
+meaningful_record_count: - 같은 빈값 제외 후 의미 있는 레코드 수
+normalized_records: 정규화된 원본 레코드 배열
+text_blocks: LLM이 읽기 쉽게 문장형으로 바꾼 텍스트 배열
+mentioned_entities: 주요 엔티티 후보
+relation_keywords_detected: 관계 키워드
+relation_relevance_score: 관계 추출 중요도 점수
+is_relation_candidate: LLM 후보 여부
+raw_file_path: 원본 파일 경로
+generated_at: 생성 시각
 
 
 
@@ -174,3 +196,121 @@ mxmm_shrholdr_relate: 최대주주와의 관계
 hffc_pd: 재직 기간
 tenure_end_on: 임기 만료일
 stlm_dt: 결산기준일
+
+
+
+
+
+5. 출처 공시:
+지분공시 > 주식등의 대량보유상황보고서
+
+의미:
+특정 개인이나 법인 등이 어떤 상장사 주식을 5% 이상 보유하게 되거나, 이미 5% 이상 가진 상태에서 보유 비율이 변동됐을 때 제출하는 공시
+
+equity_majorstock.json
+
+{
+  "rcept_no": "",
+  "rcept_dt": "",
+  "corp_code": "",
+  "corp_name": "",
+  "report_tp": "",
+  "repror": "",
+  "stkqy": "",
+  "stkqy_irds": "",
+  "stkrt": "",
+  "stkrt_irds": "",
+  "ctr_stkqy": "",
+  "ctr_stkrt": "",
+  "report_resn": ""
+}
+
+속성 의미:
+
+rcept_no: 접수번호
+rcept_dt: 접수일
+corp_code: 기업코드
+corp_name: 회사명
+report_tp: 보고 유형
+repror: 보고자
+stkqy: 보유주식수
+stkqy_irds: 보유주식수 증감
+stkrt: 지분율
+stkrt_irds: 지분율 증감
+ctr_stkqy: 계약 관련 보유주식수
+ctr_stkrt: 계약 관련 지분율
+report_resn: 보고 사유
+
+6. 출처 공시:
+지분공시 > 임원ㆍ주요주주 특정증권등 소유상황보고서
+
+의미:
+상장사의 임원이나 주요주주가 자기 회사 주식 또는 특정증권을 얼마나 가지고 있는지, 그리고 그 수량이 어떻게 바뀌었는지를 보고하는 공시
+
+
+equity_elestock.json
+
+{
+  "rcept_no": "",
+  "rcept_dt": "",
+  "corp_code": "",
+  "corp_name": "",
+  "repror": "",
+  "isu_exctv_rgist_at": "",
+  "isu_exctv_ofcps": "",
+  "isu_main_shrholdr": "",
+  "sp_stock_lmp_cnt": "",
+  "sp_stock_lmp_irds_cnt": "",
+  "sp_stock_lmp_rate": "",
+  "sp_stock_lmp_irds_rate": ""
+}
+
+속성 의미:
+
+rcept_no: 접수번호
+rcept_dt: 접수일
+corp_code: 기업코드
+corp_name: 회사명
+repror: 보고자 이름
+isu_exctv_rgist_at: 등기임원 여부
+isu_exctv_ofcps: 직위
+isu_main_shrholdr: 주요주주 여부
+sp_stock_lmp_cnt: 보유주식수
+sp_stock_lmp_irds_cnt: 보유주식수 증감
+sp_stock_lmp_rate: 지분율
+sp_stock_lmp_irds_rate: 지분율 증감
+
+
+
+7.출처 공시:
+주요사항보고 > 주요사항보고서(B001) 검색 결과
+
+
+ major_issue_reports_*_*.json
+
+{
+  "corp_code": "",
+  "corp_name": "",
+  "stock_code": "",
+  "corp_cls": "",
+  "report_nm": "",
+  "rcept_no": "",
+  "flr_nm": "",
+  "rcept_dt": "",
+  "rm": ""
+}
+
+속성 의미:
+
+corp_code: 기업코드
+corp_name: 회사명
+stock_code: 종목코드
+corp_cls: 법인구분
+report_nm: 보고서명
+rcept_no: 접수번호
+flr_nm: 제출인
+rcept_dt: 접수일
+rm: 비고
+
+
+
