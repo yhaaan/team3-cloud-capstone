@@ -1,0 +1,68 @@
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "source": "",
+  "title": "",
+  "press": "",
+  "published_at": "",
+  "originallink": "",
+  "naver_link": "",
+  "body_text": "",
+  "sentences": [],
+  "mentioned_companies": [],
+  "mentioned_people": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "cleaned_at": ""
+}
+
+
+doc_id
+문서 고유 ID
+company_name
+기준 기업명
+stock_code
+종목코드
+source
+데이터 출처
+title
+정제된 기사 제목
+press
+언론사명
+published_at
+정규화된 발행 시각
+originallink
+원문 기사 링크
+naver_link
+네이버 검색 결과 링크
+body_text
+1차 정제된 본문
+sentences
+문장 단위 분리 결과
+mentioned_companies
+규칙 기반 회사명 후보
+mentioned_people
+규칙 기반 인물명 후보
+relation_keywords_detected
+관계 힌트 키워드
+relation_relevance_score
+관계 추출 가치 점수
+is_relation_candidate
+LLM 관계 추출 대상 여부
+cleaned_at
+정제 시각
+
+
+
+relation_relevance_score  (0.6정도면 보내도 됨)
+0.7 이상
+거의 바로 LLM에 보낼 우선 후보
+
+0.5 ~ 0.69
+보조 후보
+기사 수가 많지 않으면 같이 보내고, 많으면 보류
+
+0.5 미만
+보통 제외
