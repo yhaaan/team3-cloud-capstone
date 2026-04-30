@@ -120,18 +120,19 @@ Generate Cypher files only:
 
 ## Team Local Neo4j
 
-For Windows teammates who do not have Docker or Neo4j ready, run this from the repository root in PowerShell:
+Install Docker Desktop manually first, then start Docker Desktop.
+After Docker Desktop is running, run this from the repository root in PowerShell:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1
 ```
 
-The script checks/installs Docker Desktop through `winget`, starts Docker Desktop, installs Python dependencies, prepares `.env` from `.env.example`, and starts the Neo4j container with Docker Compose.
+The script checks that Docker is available, installs Python dependencies, prepares `.env` from `.env.example`, and starts the Neo4j container with Docker Compose.
 
-If Docker Desktop is already installed:
+If Python dependencies are already installed:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1 -SkipDockerInstall
+powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1 -SkipPythonInstall
 ```
 
 Run Neo4j locally for Module B:

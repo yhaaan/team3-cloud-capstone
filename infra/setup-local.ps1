@@ -1,5 +1,4 @@
 param(
-    [switch]$SkipDockerInstall,
     [switch]$SkipPythonInstall,
     [switch]$SkipNeo4jStart
 )
@@ -20,34 +19,15 @@ function Test-CommandExists {
 $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $RepoRoot
 
-Write-Step "Checking winget"
-if (-not (Test-CommandExists "winget")) {
-    throw "winget is required to install Docker Desktop. Install App Installer from Microsoft Store first."
+Write-Step "Checking Docker"
+if (-not (Test-CommandExists "docker")) {
+    throw "Docker CLI was not found. Install Docker Desktop manually, start it, then rerun this script."
 }
-Write-Host "winget found"
-
-if (-not $SkipDockerInstall) {
-    Write-Step "Checking Docker"
-    if (-not (Test-CommandExists "docker")) {
-        Write-Host "Docker CLI not found. Installing Docker Desktop with winget..."
-        winget install Docker.DockerDesktop --accept-package-agreements --accept-source-agreements
-        Write-Host "Docker Desktop installed. Restart PowerShell if docker is still not found."
-    } else {
-        Write-Host "Docker CLI found"
-    }
-}
-
-Write-Step "Starting Docker Desktop"
-$DockerDesktopPath = "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-if (Test-Path $DockerDesktopPath) {
-    Start-Process $DockerDesktopPath -WindowStyle Hidden
-} else {
-    Write-Host "Docker Desktop executable not found at default path. If Docker is already running, this is okay."
-}
+Write-Host "Docker CLI found"
 
 Write-Host "Waiting for Docker engine..."
 $dockerReady = $false
-for ($i = 0; $i -lt 60; $i++) {
+for ($i = 0; $i -lt 24; $i++) {
     try {
         docker info *> $null
         $dockerReady = $true
@@ -57,7 +37,7 @@ for ($i = 0; $i -lt 60; $i++) {
     }
 }
 if (-not $dockerReady) {
-    throw "Docker engine is not ready. Open Docker Desktop manually, wait until it finishes starting, then rerun this script."
+    throw "Docker engine is not ready. Start Docker Desktop manually, wait until it finishes starting, then rerun this script."
 }
 Write-Host "Docker engine is ready"
 
