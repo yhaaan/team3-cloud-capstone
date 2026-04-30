@@ -1,0 +1,82 @@
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_samsung_electrics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_mkchemntec
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_mkchemntec", "type": "Company", "name": "엠케이켐앤텍"}
+
+// node: company_skhynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_skhynix", "type": "Company", "name": "SK하이닉스"}
+
+// node: company_dusan_enerbility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dusan_enerbility", "type": "Company", "name": "두산에너빌리티"}
+
+// node: person_jang_deok_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "대표이사 사장", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_kwon_hyeok_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwon_hyeok_seok", "type": "Person", "name": "권혁석", "role": "대표", "affiliated_company": "company_mkchemntec"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electrics", "evidence": "이번 행사에는 장덕현 삼성전기 대표이사 사장과 이달곤 동반성장위원장, 권혁석 엠케이켐앤텍 대표 등 협력사 관계자 200여 명이 참석했다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwon_hyeok_seok", "to_id": "company_mkchemntec", "evidence": "이번 행사에는 장덕현 삼성전기 대표이사 사장과 이달곤 동반성장위원장, 권혁석 엠케이켐앤텍 대표 등 협력사 관계자 200여 명이 참석했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electrics", "evidence": "장덕현 삼성전기 대표이사 사장은 \"AI 산업 성장과 자율주행 시스템 고도화는 큰 기회 요인\"이라며 \"협력사와 함께 차별화된 핵심 기술을 확보해 경쟁력 있는 제품을 만들겠다\"고 말했다."}

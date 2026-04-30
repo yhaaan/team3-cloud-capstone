@@ -1,0 +1,187 @@
+// node: company_hanwha_aerospace
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "㈜한화"}
+
+// node: company_hanwha_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_solution", "type": "Company", "name": "한화솔루션㈜"}
+
+// node: company_hanwha_ocean
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션㈜"}
+
+// node: company_hanwha_impact
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_impact", "type": "Company", "name": "한화임팩트㈜"}
+
+// node: company_hanwha_defense_usa_inc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_defense_usa_inc", "type": "Company", "name": "Hanwha Defense USA, Inc."}
+
+// node: company_hanwha_systems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_systems", "type": "Company", "name": "한화시스템㈜"}
+
+// node: company_hanwha_offshore_singapore
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_offshore_singapore", "type": "Company", "name": "Hanwha Offshore Singapore"}
+
+// node: company_hanwha_aerospace_usa
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_aerospace_usa", "type": "Company", "name": "Hanwha Aerospace USA"}
+
+// node: company_setrec_eye
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_setrec_eye", "type": "Company", "name": "㈜쎄트렉아이"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_dong_gwan", "to_id": "company_hanwha_aerospace", "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ. 정치학 現 ㈜한화 대표이사 現 한화솔루션㈜ 대표이사 現 한화오션㈜ 기타비상무이사 現 한화임팩트㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_dong_gwan", "to_id": "company_hanwha", "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ. 정치학 現 ㈜한화 대표이사 現 한화솔루션㈜ 대표이사 現 한화오션㈜ 기타비상무이사 現 한화임팩트㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_dong_gwan", "to_id": "company_hanwha_solution", "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ. 정치학 現 ㈜한화 대표이사 現 한화솔루션㈜ 대표이사 現 한화오션㈜ 기타비상무이사 現 한화임팩트㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_dong_gwan", "to_id": "company_hanwha_ocean", "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ. 정치학 現 ㈜한화 대표이사 現 한화솔루션㈜ 대표이사 現 한화오션㈜ 기타비상무이사 現 한화임팩트㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_dong_gwan", "to_id": "company_hanwha_impact", "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ. 정치학 現 ㈜한화 대표이사 現 한화솔루션㈜ 대표이사 現 한화오션㈜ 기타비상무이사 現 한화임팩트㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_michael_coulter_마이클_쿨터", "to_id": "company_hanwha_aerospace", "evidence": "한화에어로스페이스의 임원은 Michael Coulter (마이클 쿨터), 직위는 법인장, 이사회상 역할은 사내이사, 담당업무는 미국법인장, 최대주주와의 관계는 발행회사 임원, 주요경력은 U.S. Naval War College 국가안보학 석사 U.S. Department of Defense, Joint Chiefs of staff General Dynamics, Regional Vice President Leonardo DRS, Senior Vice President Global Defense 대표이사 現 Hanwha Defense USA, Inc. 대표이사 現 Hanwha Global Defense Inc. 이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_hand_jae_il", "to_id": "company_hanwha_aerospace", "evidence": "한화에어로스페이스의 임원은 손재일, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 사업부문 대표이사 집행위원회 위원장 HR실장, 최대주주와의 관계는 발행회사 임원, 주요경력은 고려대 학사 한화지상방산㈜ 대표이사 ㈜한화 지원부문 인력팀장 한화디펜스㈜ 대표이사 ㈜한화방산 대표이사 現 Hanwha Aerospace USA 이사 現 ㈜쎄트렉아이 기타비상무이사 現 한화시스템㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_hand_jae_il", "to_id": "company_setrec_eye", "evidence": "한화에어로스페이스의 임원은 손재일, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 사업부문 대표이사 집행위원회 위원장 HR실장, 최대주주와의 관계는 발행회사 임원, 주요경력은 고려대 학사 한화지상방산㈜ 대표이사 ㈜한화 지원부문 인력팀장 한화디펜스㈜ 대표이사 ㈜한화방산 대표이사 現 Hanwha Aerospace USA 이사 現 ㈜쎄트렉아이 기타비상무이사 現 한화시스템㈜ 대표이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yeo_seung_ju", "to_id": "company_hanwha", "evidence": "한화에어로스페이스의 임원은 여승주, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 HR실 HR기획팀, 주요경력은 서강대 수학 한화생명보험㈜ 대표이사 現 ㈜한화 부회장 現 한화시스템㈜ 부회장 現 한화솔루션㈜ 부회장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yeo_seung_ju", "to_id": "company_hanwha_systems", "evidence": "한화에어로스페이스의 임원은 여승주, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 HR실 HR기획팀, 주요경력은 서강대 수학 한화생명보험㈜ 대표이사 現 ㈜한화 부회장 現 한화시스템㈜ 부회장 現 한화솔루션㈜ 부회장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yeo_seung_ju", "to_id": "company_hanwha_solution", "evidence": "한화에어로스페이스의 임원은 여승주, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 HR실 HR기획팀, 주요경력은 서강대 수학 한화생명보험㈜ 대표이사 現 ㈜한화 부회장 現 한화시스템㈜ 부회장 現 한화솔루션㈜ 부회장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_hong_seok_jun", "to_id": "company_hanwha_systems", "evidence": "한화에어로스페이스의 임원은 홍석준, 직위는 실장, 이사회상 역할은 미등기, 담당업무는 전략기획실장, 주요경력은 연세대 석사 한화시스템㈜ 미래통신연구소장 한화시스템㈜ 전략실 전략담당 한화시스템㈜ 전략실 담당임원 전략기획실장 한화시스템㈜ 전략기획실 전략담당 전략기획실 전략담당 現Hanwha Aerospace Europe 이사 現Hanwha Defense USA, Inc. 사내이사."}

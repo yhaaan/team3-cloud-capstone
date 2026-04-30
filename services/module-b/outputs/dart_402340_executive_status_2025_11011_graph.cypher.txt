@@ -1,0 +1,109 @@
+// node: company_sk_square
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+
+// node: person_han_myeong_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_han_myeong_jin", "type": "Person", "name": "한명진", "role": "대표이사", "affiliated_company": "company_sk_square"}
+
+// node: person_jeong_jae_heon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_jae_heon", "type": "Person", "name": "정재헌", "role": "이사", "affiliated_company": "company_sk_square"}
+
+// node: person_kang_ho_in
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kang_ho_in", "type": "Person", "name": "강호인", "role": "이사", "affiliated_company": "company_sk_square"}
+
+// node: person_park_seung_gu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_seung_gu", "type": "Person", "name": "박승구", "role": "이사", "affiliated_company": "company_sk_square"}
+
+// node: person_gi_eun_seon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_gi_eun_seon", "type": "Person", "name": "기은선", "role": "이사", "affiliated_company": "company_sk_square"}
+
+// node: person_hong_ji_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hong_ji_hun", "type": "Person", "name": "홍지훈", "role": "이사", "affiliated_company": "company_sk_square"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_han_myeong_jin", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 한명진, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 대표이사, 미래전략위원회, 최대주주와의 관계는 최대주주 계열회사임원, 주요경력은 現 SK스퀘어㈜ 대표이사 사장 前SK스퀘어㈜ 투자지원센터장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_jae_heon", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 정재헌, 직위는 이사, 이사회상 역할은 기타비상무이사, 담당업무는 인사보상위원회, 사외이사후보추천위원회, 미래전략위원회, 최대주주와의 관계는 최대주주 계열회사임원, 주요경력은 現 SK텔레콤㈜ 사장, 前 SK스퀘어㈜ 투자지원센터장,."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kang_ho_in", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 강호인, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회, 사외이사후보추천위원회, 인사보상위원회, 미래전략위원회, 최대주주와의 관계는 해당사항 없음, 주요경력은 現 법무법인 율촌 고문 現 안전생활실천시민연합 대표 前 GS건설㈜ 사외이사 前 국토교통부 장관."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_seung_gu", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 박승구, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회, 사외이사후보추천위원회, 인사보상위원회, 미래전략위원회, ESG위원회, 최대주주와의 관계는 해당사항 없음, 주요경력은 前 BoA메릴린치 한국 총괄대표 前 크레디트스위스 서울지점장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_gi_eun_seon", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 기은선, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회, 인사보상위원회, 미래전략위원회, ESG위원회, 최대주주와의 관계는 해당사항 없음, 주요경력은 現 강원대 경영회계학부 교수 現 다올투자증권㈜ 사외이사 現 코스닥시장위 기업심사위원 前 삼일회계법인 회계사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_hong_ji_hun", "to_id": "company_sk_square", "evidence": "SK스퀘어의 임원은 홍지훈, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회, 사외이사후보추천위원회 미래전략위원회, ESG위원회, 최대주주와의 관계는 해당사항 없음, 주요경력은 前 White & Case 서울사무소 대표, 前 Shearman & Sterling 변호사."}

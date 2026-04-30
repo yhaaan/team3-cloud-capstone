@@ -1,0 +1,65 @@
+// node: company_samsung_electrics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기", "stock_code": "009150", "industry": "industry_semiconductor"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스"}
+
+// node: company_sk_square
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electrics", "to_id": "industry_semiconductor", "evidence": "반도체 소부장(소재·부품·장비)주인 삼성전기는 이달 들어서만 주가가 두 배 넘게 올랐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electrics", "to_id": "industry_ai", "evidence": "인공지능(AI) 서버에 들어가는 고사양 기판의 병목이 심화하자 유리기판의 선두주자인 삼성전기 주가가 뛴 것이다."}

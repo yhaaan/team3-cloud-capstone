@@ -1,0 +1,74 @@
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_mkchemntec
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_mkchemntec", "type": "Company", "name": "엠케이켐앤텍"}
+
+// node: person_jang_deok_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_kwon_hyuk_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "협부회장", "affiliated_company": "company_mkchemntec"}
+
+// node: event_sangsaeng_cooperation_day_2026
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_sangsaeng_cooperation_day_2026", "type": "Event", "name": "2026년 상생협력데이", "date": "2026-04-28", "description": "삼성전기가 협력사와의 기술 협력과 상생 지원을 확대하기 위해 개최한 행사"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electronics", "evidence": "행사에는 삼성전기 장덕현 사장을 비롯해 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mkchemntec", "evidence": "행사에는 삼성전기 장덕현 사장을 비롯해 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electronics", "to_id": "industry_ai", "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\" 이라며 ... 말했다."}

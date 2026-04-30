@@ -1,0 +1,211 @@
+// node: company_lg_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_lg_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_chemical", "type": "Company", "name": "LG화학"}
+
+// node: person_choi_hae_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_hae_won", "type": "Person", "name": "Choi Hae Won", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_kang_sung_mo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kang_sung_mo", "type": "Person", "name": "강성모", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_kim_nak_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_nak_jin", "type": "Person", "name": "김낙진", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_kim_woo_sub
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_woo_sub", "type": "Person", "name": "김우섭", "role": "전무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_kim_hyun_tae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_hyun_tae", "type": "Person", "name": "김현태", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_bae_jae_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_bae_jae_hyun", "type": "Person", "name": "배재현", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_son_gwon_nam
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_son_gwon_nam", "type": "Person", "name": "손권남", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_lee_dong_hyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_dong_hyung", "type": "Person", "name": "이동형", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_lee_sang_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_sang_hyun", "type": "Person", "name": "이상현", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_lee_jung_kyu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jung_kyu", "type": "Person", "name": "이정규", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// node: person_jo_sang_yeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jo_sang_yeon", "type": "Person", "name": "조상연", "role": "상무", "affiliated_company": "company_lg_energy_solution"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_hae_won", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 Choi Hae Won, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 845주, 주식수 증감은 845, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kang_sung_mo", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 강성모, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,100주, 주식수 증감은 1,100, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_nak_jin", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김낙진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,364주, 주식수 증감은 1,364, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_woo_sub", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김우섭, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 300주, 주식수 증감은 300, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_hyun_tae", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김현태, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 3주, 주식수 증감은 3, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_bae_jae_hyun", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 배재현, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 700주, 주식수 증감은 700, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_son_gwon_nam", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 손권남, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 190주, 주식수 증감은 190, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_dong_hyung", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이동형, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,557주, 주식수 증감은 1,557, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_sang_hyun", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이상현, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 280주, 주식수 증감은 -700, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_jung_kyu", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이정규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,400주, 주식수 증감은 1,400, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jo_sang_yeon", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 조상연, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,236주, 주식수 증감은 1,236, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_lg_chemical", "to_id": "company_lg_energy_solution", "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 LG화학, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 191,499,175주, 주식수 증감은 -825, 지분율은 81.84%, 지분율 증감은 -0.00."}

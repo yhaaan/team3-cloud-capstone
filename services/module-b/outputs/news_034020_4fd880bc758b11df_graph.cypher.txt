@@ -1,0 +1,66 @@
+// node: company_doosan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_doosan", "type": "Company", "name": "두산"}
+
+// node: company_doosan_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_doosan_energy", "type": "Company", "name": "두산에너빌리티"}
+
+// node: company_doosan_bobcat
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_doosan_bobcat", "type": "Company", "name": "두산밥캣"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_nuclear_power", "type": "Industry", "name": "원전"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_doosan_energy", "to_id": "company_doosan", "evidence": "두산이 수익성 중심 포트폴리오 재편과 핵심 계열사 고른 성장에 힘입어 1분기 실적 개선에 성공했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_doosan_energy", "to_id": "industry_nuclear_power", "evidence": "두산에너빌리티의 원전 사업 호조가 실적을 견인했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_doosan", "to_id": "industry_ai", "evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다."}

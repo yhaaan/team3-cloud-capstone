@@ -1,95 +1,107 @@
 from __future__ import annotations
 
-from typing import Any
 import re
+from typing import Any
+
+
+DEFAULT_COMPANY_HINTS = [
+    "삼성전자",
+    "SK하이닉스",
+    "현대차",
+    "LG에너지솔루션",
+    "HD현대중공업",
+    "삼성바이오로직스",
+    "두산에너빌리티",
+    "삼성전기",
+    "SK스퀘어",
+    "한화에어로스페이스",
+]
 
 
 def split_text_into_chunks(
     doc: dict[str, Any],
     max_chunk_length: int = 120,
 ) -> list[dict[str, Any]]:
-    """
-    입력 문서를 청크 단위로 분할한다.
-    현재는 문장 단위로 자른 뒤, 최대 길이를 넘지 않도록 묶는 단순 버전이다.
-    """
-
     content = doc.get("content", "").strip()
     if not content:
         return []
 
-    sentences = split_sentences(content)
-
+    sentences = split_long_parts(split_sentences(content), max_chunk_length)
     chunks: list[str] = []
     current_chunk = ""
 
     for sentence in sentences:
-        sentence = sentence.strip()
-        if not sentence:
-            continue
-
         if len(current_chunk) + len(sentence) + 1 <= max_chunk_length:
             current_chunk = f"{current_chunk} {sentence}".strip()
-        else:
-            if current_chunk:
-                chunks.append(current_chunk)
-            current_chunk = sentence
+            continue
+
+        if current_chunk:
+            chunks.append(current_chunk)
+        current_chunk = sentence
 
     if current_chunk:
         chunks.append(current_chunk)
 
-    chunk_docs: list[dict[str, Any]] = []
-    for index, chunk_text in enumerate(chunks):
-        chunk_docs.append(
-            {
-                "doc_id": doc["source_id"],
-                "chunk_id": f"{doc['source_id']}_chunk_{index}",
-                "text": chunk_text,
-                "title": doc.get("title", ""),
-                "source": doc.get("source", ""),
-                "published_at": doc.get("published_at", ""),
-                "url": doc.get("url", ""),
-                "chunk_index": index,
-                "company_hint": extract_company_hints(doc.get("title", ""), chunk_text),
-            }
-        )
-
-    return chunk_docs
+    return [
+        {
+            "doc_id": doc["source_id"],
+            "chunk_id": f"{doc['source_id']}_chunk_{index}",
+            "text": chunk_text,
+            "title": doc.get("title", ""),
+            "source": doc.get("source", ""),
+            "published_at": doc.get("published_at", ""),
+            "url": doc.get("url", ""),
+            "chunk_index": index,
+            "company_hint": extract_company_hints(doc, chunk_text),
+        }
+        for index, chunk_text in enumerate(chunks)
+    ]
 
 
 def split_sentences(text: str) -> list[str]:
-    """
-    아주 단순한 문장 분리 함수
-    마침표, 물음표, 느낌표 기준으로 분리
-    """
-    parts = re.split(r"(?<=[.!?])\s+|(?<=다\.)\s+", text)
+    normalized = re.sub(r"\s+", " ", text).strip()
+    parts = re.split(r"(?<=[.!?。？！])\s+", normalized)
     return [part.strip() for part in parts if part.strip()]
 
 
-def extract_company_hints(title: str, text: str) -> list[str]:
-    """
-    임시 버전:
-    title과 text에서 자주 등장하는 회사 후보를 매우 단순하게 추출한다.
-    나중에는 NER 또는 룰 기반으로 대체 가능
-    """
-    candidates = []
+def split_long_parts(parts: list[str], max_length: int) -> list[str]:
+    results: list[str] = []
+    for part in parts:
+        if len(part) <= max_length:
+            results.append(part)
+            continue
 
-    for keyword in ["카카오", "네이버", "삼성전자", "A사", "B사", "C사"]:
-        if keyword in title or keyword in text:
-            candidates.append(keyword)
+        for start in range(0, len(part), max_length):
+            piece = part[start : start + max_length].strip()
+            if piece:
+                results.append(piece)
 
-    return candidates
+    return results
 
 
-if __name__ == "__main__":
-    sample_doc = {
-        "source_id": "news_001",
-        "title": "카카오, A사 인수 발표",
-        "content": "카카오는 2026년 3월 20일 A사 인수를 발표했다. 이번 인수는 AI 사업 강화를 위한 전략적 결정이다. 카카오는 신규 사업 확장을 추진할 계획이라고 밝혔다.",
-        "source": "mock_news",
-        "published_at": "2026-03-20",
-        "url": "https://example.com/news/001",
-    }
+def extract_company_hints(doc: dict[str, Any], text: str) -> list[str]:
+    candidates = list(DEFAULT_COMPANY_HINTS)
+    title = doc.get("title", "")
 
-    results = split_text_into_chunks(sample_doc, max_chunk_length=80)
-    for chunk in results:
-        print(chunk)
+    for key in ["company_name", "corp_name"]:
+        if doc.get(key):
+            candidates.append(str(doc[key]))
+
+    candidates.extend(str(value) for value in doc.get("mentioned_companies", []) if value)
+    candidates.extend(
+        re.findall(
+            r"\b[A-Z][A-Za-z0-9&.\- ]{1,40}(?:Inc|Corp|Co|Ltd|Group)\b",
+            f"{title} {text}",
+        )
+    )
+
+    seen: set[str] = set()
+    results: list[str] = []
+    haystack = f"{title} {text}"
+
+    for keyword in candidates:
+        if keyword in haystack and keyword not in seen:
+            seen.add(keyword)
+            results.append(keyword)
+
+    return results

@@ -1,0 +1,15 @@
+// node: company_lg_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_lg_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_chemical", "type": "Company", "name": "LG화학"}

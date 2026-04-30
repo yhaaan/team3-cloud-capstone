@@ -1,0 +1,24 @@
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_sk_square
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "evidence": "SK스퀘어가 SK하이닉스의 지분 20.1%를 보유하는 구조다."}

@@ -1,0 +1,160 @@
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: person_kwak_no_jeong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwak_no_jeong", "type": "Person", "name": "곽노정", "role": "대표이사 사장", "affiliated_company": "company_sk_hynix"}
+
+// node: person_an_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_an_hyun", "type": "Person", "name": "안현", "role": "사장", "affiliated_company": "company_sk_hynix"}
+
+// node: person_jang_yong_ho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_yong_ho", "type": "Person", "name": "장용호", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_han_myeong_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_han_myeong_jin", "type": "Person", "name": "한명진", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_han_ae_ra
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_han_ae_ra", "type": "Person", "name": "한애라", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_jung_deok_gyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_deok_gyun", "type": "Person", "name": "정덕균", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_kim_jung_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jung_won", "type": "Person", "name": "김정원", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_yang_dong_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yang_dong_hun", "type": "Person", "name": "양동훈", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// node: person_son_hyun_chul
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_son_hyun_chul", "type": "Person", "name": "손현철", "role": "이사", "affiliated_company": "company_sk_hynix"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwak_no_jeong", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 곽노정, 직위는 대표이사 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사미래전략위원회 위원, 주요경력은 고려대학교 대학원 박사SK하이닉스 미래기술연구원 상무SK하이닉스 청주 FAB담당 전무SK하이닉스 제조/기술 담당 부사장SK하이닉스 안전개발제조총괄 사장한국 반도체산업협회 13대 회장SK하이닉스 대표이사 사장 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_an_hyun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 안현, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 개발총괄 사장 지속경영위원회 위원 미래전략위원회 위원, 주요경력은 서울대 대학원 원자핵공학 박사 SK하이닉스 NAND개발사업전략 담당 SK하이닉스 미래연구추진단 담당 SK하이닉스 개발총괄 사장 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_yong_ho", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 장용호, 직위는 이사, 이사회상 역할은 기타비상무이사, 담당업무는 기타비상무이사 인사ㆍ보상위원회 위원, 최대주주와의 관계는 계열회사 임원(SK(주)), 주요경력은 서울대 경제학 학사 SK주식회사 PM2 부문장 SK머티리얼즈 대표이사 사장 SK실트론 대표이사 사장 SK주식회사 대표이사 사장 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_han_myeong_jin", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 한명진, 직위는 이사, 이사회상 역할은 기타비상무이사, 담당업무는 기타비상무이사 사외이사후보추천위원회 위원, 최대주주와의 관계는 계열회사 임원 (SK텔레콤), 주요경력은 고려대 경영학 학사SK텔레콤 Global사업개발 본부장SK텔레콤 Global Alliance 실장SK텔레콤 Corporate Strategy 담당SK스퀘어 투자지원센터장SK스퀘어 대표이사 사장 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_han_ae_ra", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 한애라, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사 이사회 의장감사위원회 위원 사외이사후보추천위원회 위원지속경영위원회 위원인사ㆍ보상위원회 위원, 주요경력은 하버드대 대학원 석사 대법원 재판연구관 김앤장 법률사무소 성균관대 법학전문대학원 교수 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_deok_gyun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 정덕균, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사 사외이사후보추천위원회 위원인사ㆍ보상위원회 위원미래전략위원회 위원, 주요경력은 UC 버클리대 전기컴퓨터공학 박사 서울대 전기정보공학부 교수 서울대 반도체공동연구소장 서울대 전기정보공학부 명예교수 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_jung_won", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 김정원, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사감사위원회 위원 지속경영위원회 위원인사ㆍ보상위원회 위원, 주요경력은 시카고대 경영학 석사 한국씨티은행 재무기획그룹 부행장 美 Citi은행 Treasury GPO/Managing Director 김앤장 법률사무소 고문 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yang_dong_hun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 양동훈, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사 감사위원회 위원, 주요경력은 美 시라큐스대 회계학 박사한국회계학회 제36대 회장방송통신위원회 회계전문위원장한국회계학회ㆍ삼일회계법인 저명교수동국대학교 경영대 회계학과 명예교수 (現)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_son_hyun_chul", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 임원은 손현철, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사 지속경영위원회 위원 미래전략위원회 위원, 주요경력은 UC 버클리대 재료공학 박사하이닉스반도체 연구원연세대 공과대 신소재 공학과 교수 (現)."}

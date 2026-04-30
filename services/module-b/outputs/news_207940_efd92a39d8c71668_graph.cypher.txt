@@ -1,0 +1,49 @@
+// node: company_samsung_bio_logics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_bio_logics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: person_choi_seung_ho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_seung_ho", "type": "Person", "name": "최승호", "role": "초기업노조 삼성전자 지부 위원장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_lee_jae_yong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jae_yong", "type": "Person", "name": "이재용", "role": "삼성전자 회장", "affiliated_company": "company_samsung_electronics"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_seung_ho", "to_id": "company_samsung_electronics", "evidence": "최승호 초기업노조 삼성전자 지부 위원장은 유튜브 방송을 통해 \"파업에 참여하지 않고 회사를 위해 일하는 자들을 명단으로 관리하겠다\"며 파업 미참여자에 대한 색출 등 불이익을 예고한 것으로 전해졌다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_jae_yong", "to_id": "company_samsung_electronics", "evidence": "노조는 총파업 첫날 이재용 삼성전자 회장의 서울 용산구 한남동 자택 앞에서 집회를 예고했다."}

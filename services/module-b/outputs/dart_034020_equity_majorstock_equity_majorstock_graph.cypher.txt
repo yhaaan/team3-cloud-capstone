@@ -1,0 +1,24 @@
+// node: company_dosan_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_energy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_dosan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan", "type": "Company", "name": "두산"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan", "to_id": "company_dosan_energy", "evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-05-14, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0, 계약보유주식수는 84,282,066주, 계약보유지분율은 13.16%, 보고사유는 계약 내용의 변경."}

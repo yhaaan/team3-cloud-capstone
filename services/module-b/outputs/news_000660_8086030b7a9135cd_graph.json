@@ -1,0 +1,67 @@
+{
+  "source_id": "news_000660_8086030b7a9135cd",
+  "entities": [
+    {
+      "id": "company_sk_hynix",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660"
+    },
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "company_hanwha_aerospace",
+      "type": "Company",
+      "name": "한화에어로스페이스"
+    },
+    {
+      "id": "company_hd_hyundai_heavy_industries",
+      "type": "Company",
+      "name": "HD현대중공업"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "조선"
+    },
+    {
+      "id": "industry_defense_industry",
+      "type": "Industry",
+      "name": "방산"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_sk_hynix",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스발 '회사 이익 배분' 성과급 기준이 삼성전자 등 반도체 업계를 넘어 조선·방산으로 확산될 조짐을 보이고 있다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스발 '회사 이익 배분' 성과급 기준이 삼성전자 등 반도체 업계를 넘어 조선·방산으로 확산될 조짐을 보이고 있다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hd_hyundai_heavy_industries",
+      "to": "industry_shipbuilding",
+      "evidence": "조선업계에서는 '노란봉투법' 시행 이후 원·하청 구조 전반으로 성과급 요구가 확대되는 양상이다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hanwha_aerospace",
+      "to": "industry_defense_industry",
+      "evidence": "방산업계 역시 다른 방식의 시차를 안고 있다. 한화에어로스페이스 K9 자주포, 현대로템 K2 전차, LIG넥스원 천궁-Ⅱ 등 수출이 확대되고 있지만 대부분 장기 납품 구조로 매출과 이익이 분산 반영된다."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source_id": "news_329180_f823235c8fa868e4",
+  "entities": [
+    {
+      "id": "company_hd_hyundai_heavy_industries",
+      "type": "Company",
+      "name": "HD현대중공업",
+      "stock_code": "329180"
+    },
+    {
+      "id": "person_geum_seok_ho",
+      "type": "Person",
+      "name": "금석호",
+      "role": "대표이사",
+      "affiliated_company": "company_hd_hyundai_heavy_industries"
+    },
+    {
+      "id": "company_ulsan_city",
+      "type": "Company",
+      "name": "울산시"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "조선산업"
+    },
+    {
+      "id": "event_sobu_jang_special_zone_mou",
+      "type": "Event",
+      "name": "친환경 선박 생태계 구축을 위한 상생협력 업무협약",
+      "event_type": "업무협약",
+      "date": "2026-04-28",
+      "description": "울산시가 28일 시장실에서 김두겸 시장과 HD현대중공업 금석호 대표이사 등이 참석한 가운데 체결한 친환경 선박 생태계 구축을 위한 상생협력 업무협약"
+    }
+  ],
+  "relations": [
+    {
+      "type": "APPOINTED_TO",
+      "from": "person_geum_seok_ho",
+      "to": "company_hd_hyundai_heavy_industries",
+      "evidence": "울산시는 28일 시장실에서 김두겸 시장과 HD현대중공업 금석호 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생협력 업무협약'을 체결했다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_ulsan_city",
+      "to": "company_hd_hyundai_heavy_industries",
+      "evidence": "협약에 따라 울산시는 특화단지 조성과 운영을 총괄 지원하고, 기업 투자와 기술개발을 뒷받침할 행정·재정적 지원에 나선다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_ulsan_city",
+      "to": "industry_shipbuilding",
+      "evidence": "이번 협약은 산업통상자원부가 추진하는 '2026년 소부장 특화단지' 공모에 대응하기 위한 것으로, 울산 조선산업의 핵심 부품 자립과 안정적인 공급망 구축을 위한 전략적 협력 차원에서 마련됐다."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: event_major_merge_report
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_major_merge_report", "type": "Event", "name": "주요사항보고서(회사합병결정)", "event_type": "회사합병결정", "date": "2025-08-27"}

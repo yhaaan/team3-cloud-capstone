@@ -1,0 +1,144 @@
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_mkchemntech
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_mkchemntech", "type": "Company", "name": "엠케이켐앤텍"}
+
+// node: person_jang_deok_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_kwon_hyuk_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "협부회장", "affiliated_company": "company_mkchemntech"}
+
+// node: person_lee_dal_gon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_dal_gon", "type": "Person", "name": "이달곤", "role": "동반성장위원회 위원장"}
+
+// node: person_kim_won_taek
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_won_taek", "type": "Person", "name": "김원택", "role": "부사장", "affiliated_company": "company_samsung_electronics"}
+
+// node: event_2026_co_prosperity_day
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_2026_co_prosperity_day", "type": "Event", "name": "2026년 상생협력데이", "date": "2026-04-28", "description": "삼성전기가 협력사와 함께 동반성장 의지를 다지고 우수 협력사 5곳을 시상하며 제품∙기술 전시회를 개최한 행사"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electronics", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mkchemntech", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mkchemntech", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_dal_gon", "to_id": "company_samsung_electronics", "evidence": "이달곤 동반성장위원회 위원장은 \"불확실한 경영환경을 극복하기 위해, 대기업과 중소기업 간 협력을 통해 최고의 제품을 생산하는 것이 중요하다\"며, \"앞으로도 긴밀한 협력을 바탕으로 동반성장을 이어나갈 수 있도록 지원하겠다\"고 밝혔다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_won_taek", "to_id": "company_samsung_electronics", "evidence": "권혁석 엠케이켐앤텍 대표(왼쪽부터), 장덕현 삼성전기 사장, 이달곤 동반성장위원회 위원장, 김원택 삼성전기 부사장이 28일 라마다프라자 수원 호텔에서 열린 '2026년 상생협력데이'에서 기념사진을 촬영하고 있다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electronics", "to_id": "industry_ai", "evidence": "장덕현 사장 \"AI 산업 성장은 큰 기회, 협력사와 함께 차별화된 기술로 경쟁력 확보할 것\""}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electronics", "to_id": "industry_ai", "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\" 이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 말했다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electronics", "to_id": "company_mkchemntech", "evidence": "한편, 삼성전기는 지난해 동반성장위원회 및 협력사들과 '협력기업 생태계 강화 협약'을 맺고 2025년부터 2027년까지 3년간 약 2000억원을 지원하기로 했다."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_samsung_electronics", "evidence": "권혁석 엠케이켐앤텍 협부회장은 \"삼성전기와 협력사가 긴밀히 협력한다면 어떤 위기 속에서도 성장할 수 있다\"며 \"모두가 하나 되어 도약할 수 있는 계기가 되길 바란다\"고 말했다."}

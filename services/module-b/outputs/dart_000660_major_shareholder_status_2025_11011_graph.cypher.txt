@@ -1,0 +1,160 @@
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_sk_square
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어(주)"}
+
+// node: person_kwak_no_jung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwak_no_jung", "type": "Person", "name": "곽노정"}
+
+// node: person_an_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_an_hyun", "type": "Person", "name": "안현"}
+
+// node: person_han_ae_ra
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_han_ae_ra", "type": "Person", "name": "한애라"}
+
+// node: person_jung_deok_gyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_deok_gyun", "type": "Person", "name": "정덕균"}
+
+// node: person_kim_jung_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jung_won", "type": "Person", "name": "김정원"}
+
+// node: person_son_hyun_cheol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_son_hyun_cheol", "type": "Person", "name": "손현철"}
+
+// node: person_yang_dong_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yang_dong_hun", "type": "Person", "name": "양동훈"}
+
+// node: person_ha_young_goo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_ha_young_goo", "type": "Person", "name": "하영구"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kwak_no_jung", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 곽노정, 관계는 특수관계인, 당기말 보유주식수는 5,770주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_an_hyun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 안현, 관계는 특수관계인, 당기말 보유주식수는 4,407주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_han_ae_ra", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 한애라, 관계는 특수관계인, 당기말 보유주식수는 1,806주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_deok_gyun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 정덕균, 관계는 특수관계인, 당기말 보유주식수는 988주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_jung_won", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 김정원, 관계는 특수관계인, 당기말 보유주식수는 988주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_son_hyun_cheol", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 손현철, 관계는 특수관계인, 당기말 보유주식수는 572주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yang_dong_hun", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 양동훈, 관계는 특수관계인, 당기말 보유주식수는 572주, 지분율은 0.00%, 비고는 자사주 상여금 (Stock Grant 지급)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_ha_young_goo", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 하영구, 관계는 특수관계인, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 임기 만료."}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 SK스퀘어(주), 관계는 최대주주, 당기말 보유주식수는 146,100,000주, 지분율은 20.07%."}

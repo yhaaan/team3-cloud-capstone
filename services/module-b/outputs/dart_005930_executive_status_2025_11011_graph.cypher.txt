@@ -1,0 +1,160 @@
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: person_jeon_young_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeon_young_hyun", "type": "Person", "name": "전영현", "role": "부회장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_no_tae_moon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_no_tae_moon", "type": "Person", "name": "노태문", "role": "사장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_song_jae_hyuk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_song_jae_hyuk", "type": "Person", "name": "송재혁", "role": "사장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_shin_je_yoon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_shin_je_yoon", "type": "Person", "name": "신제윤", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_kim_jun_sung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jun_sung", "type": "Person", "name": "김준성", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_heo_eun_nyeong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_heo_eun_nyeong", "type": "Person", "name": "허은녕", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_yoo_myeong_hee
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoo_myeong_hee", "type": "Person", "name": "유명희", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_jo_hye_kyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jo_hye_kyung", "type": "Person", "name": "조혜경", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_lee_hyuk_jae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_hyuk_jae", "type": "Person", "name": "이혁재", "role": "이사", "affiliated_company": "company_samsung_electronics"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeon_young_hyun", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 전영현, 직위는 부회장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DS부문 경영전반 총괄), 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍKAIST 전자공학 박사ㆍ삼성전자 DS부문장 겸) 메모리사업부장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_no_tae_moon", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 노태문, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DX부문 경영전반 총괄), 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ포항공대 전자전기공학 박사 ㆍ삼성전자 DX부문장 겸) MX사업부장, 품질혁신위원장, AI혁신위원장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_song_jae_hyuk", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 송재혁, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍDS부문 CTO, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 전자공학 박사ㆍ삼성전자 DS부문 CTO 겸) 반도체연구소장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_shin_je_yoon", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 신제윤, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ이사회 의장ㆍ감사위원회 위원장ㆍ사외이사 후보추천위원회 위원장ㆍ보상위원회 위원장ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 경제학 학사 ㆍ금융위원회 위원장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_jun_sung", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 김준성, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ내부거래위원회 위원ㆍ보상위원회 위원ㆍ지속가능경영위원회 위원장, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍCarnegie Mellon대 경제학/산업공학 학사ㆍ싱가포르 투자청 토탈리턴그룹 이사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_heo_eun_nyeong", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 허은녕, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ사외이사 후보추천위원회 위원ㆍ내부거래위원회 위원장ㆍ보상위원회 위원 ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍPennsylvania State대 자원경제학 박사ㆍ서울대 공과대학 교수."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yoo_myeong_hee", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 유명희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ감사위원회 위원ㆍ사외이사 후보추천위원회 위원ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍVanderbilt대 법학 박사ㆍ산업통상자원부 통상교섭본부 본부장."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jo_hye_kyung", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 조혜경, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ감사위원회 위원ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 로봇공학 박사ㆍ한성대 AI응용학과 교수."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_hyuk_jae", "to_id": "company_samsung_electronics", "evidence": "삼성전자의 임원은 이혁재, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ내부거래위원회 위원ㆍ지속가능경영 위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍPurdue대 전자컴퓨터공학 박사ㆍ서울대 전기정보공학부 교수."}

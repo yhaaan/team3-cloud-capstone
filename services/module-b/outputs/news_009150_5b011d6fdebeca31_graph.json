@@ -1,0 +1,51 @@
+{
+  "source_id": "news_009150_5b011d6fdebeca31",
+  "entities": [
+    {
+      "id": "company_samsung_electrics",
+      "type": "Company",
+      "name": "삼성전기",
+      "stock_code": "009150",
+      "industry": "industry_semiconductor"
+    },
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "company_sk_hynix",
+      "type": "Company",
+      "name": "SK하이닉스"
+    },
+    {
+      "id": "company_sk_square",
+      "type": "Company",
+      "name": "SK스퀘어"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "AI"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electrics",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 소부장(소재·부품·장비)주인 삼성전기는 이달 들어서만 주가가 두 배 넘게 올랐다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electrics",
+      "to": "industry_ai",
+      "evidence": "인공지능(AI) 서버에 들어가는 고사양 기판의 병목이 심화하자 유리기판의 선두주자인 삼성전기 주가가 뛴 것이다."
+    }
+  ]
+}

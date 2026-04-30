@@ -1,0 +1,83 @@
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: person_gem_seok_ho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_gem_seok_ho", "type": "Person", "name": "금석호", "role": "대표이사", "affiliated_company": "company_hd_hyundai_heavy_industries"}
+
+// node: person_kim_du_gyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_du_gyun", "type": "Person", "name": "김두겸", "role": "울산시장", "affiliated_company": "company_ulsan_city"}
+
+// node: company_ulsan_city
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_ulsan_city", "type": "Company", "name": "울산시"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "조선 산업"}
+
+// node: event_hd_hyundai_specialized_zone_agreement
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_hd_hyundai_specialized_zone_agreement", "type": "Event", "name": "친환경 선박 생태계 구축을 위한 상생 협력 업무 협약", "description": "울산시와 HD현대중공업 간 체결된 친환경 선박 생태계 구축을 위한 상생 협력 업무 협약", "date": "2026-04-28"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_gem_seok_ho", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "시는 28일 시청 본관 7층 시장실에서 김두겸 울산시장과 금석호 HD현대중공업 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생 협력 업무 협약'을 체결한다고 밝혔다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_du_gyun", "to_id": "company_ulsan_city", "evidence": "시는 28일 시청 본관 7층 시장실에서 김두겸 울산시장과 금석호 HD현대중공업 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생 협력 업무 협약'을 체결한다고 밝혔다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_ulsan_city", "evidence": "김두겸 울산시장은 \"... HD현대중공업의 국산화 기술 투자와 구매 확약이 특화단지 유치를 위한 가장 강력한 경쟁력이 될 것\"이라고 밝혔다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_ulsan_city", "to_id": "industry_shipbuilding", "evidence": "이번 협약은 산업통상부의 소부장 특화단지 공모 신청에 따라, 울산 주력 산업인 조선 산업 핵심 소재·부품의 국산화와 안정적인 공급망 구축을 위해 마련됐다."}

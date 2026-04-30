@@ -1,0 +1,50 @@
+{
+  "source_id": "news_034020_4fd880bc758b11df",
+  "entities": [
+    {
+      "id": "company_doosan",
+      "type": "Company",
+      "name": "두산"
+    },
+    {
+      "id": "company_doosan_energy",
+      "type": "Company",
+      "name": "두산에너빌리티"
+    },
+    {
+      "id": "company_doosan_bobcat",
+      "type": "Company",
+      "name": "두산밥캣"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "AI"
+    },
+    {
+      "id": "industry_nuclear_power",
+      "type": "Industry",
+      "name": "원전"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "company_doosan_energy",
+      "to": "company_doosan",
+      "evidence": "두산이 수익성 중심 포트폴리오 재편과 핵심 계열사 고른 성장에 힘입어 1분기 실적 개선에 성공했다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_doosan_energy",
+      "to": "industry_nuclear_power",
+      "evidence": "두산에너빌리티의 원전 사업 호조가 실적을 견인했다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_doosan",
+      "to": "industry_ai",
+      "evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다."
+    }
+  ]
+}

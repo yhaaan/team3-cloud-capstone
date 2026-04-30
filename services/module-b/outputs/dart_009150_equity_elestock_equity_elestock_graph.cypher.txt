@@ -1,0 +1,83 @@
+// node: company_samsung_electro_mechanics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: person_gukmin_pension_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_gukmin_pension_service", "type": "Person", "name": "국민연금공단"}
+
+// node: person_kim_eung_su
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_eung_su", "type": "Person", "name": "김응수", "role": "부사장", "affiliated_company": "company_samsung_electro_mechanics"}
+
+// node: person_park_cheol_min
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_cheol_min", "type": "Person", "name": "박철민", "role": "상무", "affiliated_company": "company_samsung_electro_mechanics"}
+
+// node: person_ju_hyeok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_ju_hyeok", "type": "Person", "name": "주혁", "role": "부사장", "affiliated_company": "company_samsung_electro_mechanics"}
+
+// node: person_kim_sung_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_sung_jin", "type": "Person", "name": "김성진", "role": "부사장", "affiliated_company": "company_samsung_electro_mechanics"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_eung_su", "to_id": "company_samsung_electro_mechanics", "evidence": "삼성전기의 임원·주요주주 소유상황 보고자는 김응수, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 1,500주, 주식수 증감은 0, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_cheol_min", "to_id": "company_samsung_electro_mechanics", "evidence": "삼성전기의 임원·주요주주 소유상황 보고자는 박철민, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 31주, 주식수 증감은 31, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_ju_hyeok", "to_id": "company_samsung_electro_mechanics", "evidence": "삼성전기의 임원·주요주주 소유상황 보고자는 주혁, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 200주, 주식수 증감은 200, 지분율은 0.00%, 지분율 증감은 0.00."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_sung_jin", "to_id": "company_samsung_electro_mechanics", "evidence": "삼성전기의 임원·주요주주 소유상황 보고자는 김성진, 등기 여부는 등기임원, 직위는 부사장, 보유주식수는 2,000주, 주식수 증감은 0, 지분율은 0.00%, 지분율 증감은 0.00."}

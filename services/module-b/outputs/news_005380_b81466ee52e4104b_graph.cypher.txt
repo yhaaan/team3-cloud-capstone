@@ -1,0 +1,32 @@
+// node: person_jeong_eui_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "회장", "affiliated_company": "company_hyundai_motor"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: event_2026_beijing_motor_show
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_2026_beijing_motor_show", "type": "Event", "name": "2026 베이징 모터쇼", "date": "2026-04-29"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_eui_sun", "to_id": "company_hyundai_motor", "evidence": "정의선 현대차그룹 회장."}

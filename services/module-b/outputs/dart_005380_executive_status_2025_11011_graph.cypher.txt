@@ -1,0 +1,211 @@
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대자동차", "stock_code": "005380"}
+
+// node: person_jeong_eui_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "회장", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_doh_jin_myong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_doh_jin_myong", "type": "Person", "name": "도진명Jim MyongDoh", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_kim_su_i
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_su_i", "type": "Person", "name": "김수이", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_tan_seck_yew_benjamin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_tan_seck_yew_benjamin", "type": "Person", "name": "Tan Seck Yew Benjamin", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_munyo_bar_sello_ho_se_antonio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_munyo_bar_sello_ho_se_antonio", "type": "Person", "name": "무뇨스 바르셀로 호세 안토니오", "role": "사장", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_lee_dong_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_dong_seok", "type": "Person", "name": "이동석", "role": "사장", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jin_eun_suk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jin_eun_suk", "type": "Person", "name": "진은숙", "role": "부사장", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_lee_seung_jo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_seung_jo", "type": "Person", "name": "이승조", "role": "부사장", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_sim_dal_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_sim_dal_hun", "type": "Person", "name": "심달훈", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_lee_ji_yoon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_ji_yoon", "type": "Person", "name": "이지윤", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jang_seung_hwa
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_seung_hwa", "type": "Person", "name": "장승화", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_choi_yoon_hee
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_yoon_hee", "type": "Person", "name": "최윤희", "role": "이사", "affiliated_company": "company_hyundai_motor"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_eui_sun", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 정의선, 직위는 회장, 이사회상 역할은 사내이사, 담당업무는 대표이사, 경영전반총괄, 최대주주와의 관계는 임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_doh_jin_myong", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 도진명Jim MyongDoh, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원, 사외이사후보추천위원회 위원, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_su_i", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 김수이, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_tan_seck_yew_benjamin", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 Tan Seck Yew Benjamin, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 지속가능경영 위원회 위원, 사외이사후보 추천위원회 위원, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_munyo_bar_sello_ho_se_antonio", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 무뇨스 바르셀로 호세 안토니오, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사,업무총괄, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_dong_seok", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 이동석, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사, 업무총괄 (생산,안전 등), 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jin_eun_suk", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 진은숙, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 ICT, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_seung_jo", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 이승조, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 CFO, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_sim_dal_hun", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 심달훈, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 선임사외이사, 감사위원회 위원장, 지속가능경영 위원회 위원, 보수위원회 위원, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_ji_yoon", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 이지윤, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원, 사외이사후보 추천위원회위원장, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_seung_hwa", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 장승화, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원장, 보수위원회 위원, 최대주주와의 관계는 계열회사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_yoon_hee", "to_id": "company_hyundai_motor", "evidence": "현대차의 임원은 최윤희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 지속가능경영 위원회 위원, 보수위원회위원장, 최대주주와의 관계는 계열회사임원"}
