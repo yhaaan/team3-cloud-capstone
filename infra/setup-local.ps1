@@ -18,6 +18,7 @@ function Test-CommandExists {
 
 $RepoRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $RepoRoot
+$VenvPython = Join-Path $RepoRoot ".venv\Scripts\python.exe"
 
 Write-Step "Checking Docker"
 if (-not (Test-CommandExists "docker")) {
@@ -43,11 +44,18 @@ Write-Host "Docker engine is ready"
 
 if (-not $SkipPythonInstall) {
     Write-Step "Setting up Python virtual environment"
-    if (-not (Test-Path ".\.venv\Scripts\python.exe")) {
-        python -m venv .venv
+    if (-not (Test-Path $VenvPython)) {
+        if (Test-CommandExists "python") {
+            python -m venv .venv
+        } elseif (Test-CommandExists "py") {
+            py -3 -m venv .venv
+        } else {
+            throw "Python was not found. Install Python 3.11 or later, then rerun this script."
+        }
     }
-    .\.venv\Scripts\python.exe -m pip install --upgrade pip
-    .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+    & $VenvPython -m ensurepip --upgrade
+    & $VenvPython -m pip install --upgrade pip
+    & $VenvPython -m pip install -r requirements.txt
 }
 
 Write-Step "Preparing .env"
@@ -74,4 +82,4 @@ if (-not $SkipNeo4jStart) {
 
 Write-Step "Done"
 Write-Host "Run Module B with:"
-Write-Host ".\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py"
+Write-Host "& `"$VenvPython`" services\module-b\src\run_to_neo4j.py"
