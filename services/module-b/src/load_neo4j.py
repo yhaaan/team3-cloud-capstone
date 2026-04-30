@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import json
@@ -6,10 +6,14 @@ import os
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
 try:
     from neo4j import GraphDatabase
 except ImportError:
     GraphDatabase = None
+
+load_dotenv(override=True)
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -70,7 +74,7 @@ def load_graph_to_neo4j(
     password: str,
 ) -> None:
     if GraphDatabase is None:
-        raise RuntimeError("neo4j 패키지가 설치되지 않았습니다. requirements에 neo4j를 추가하세요.")
+        raise RuntimeError("neo4j ?⑦궎吏媛 ?ㅼ튂?섏? ?딆븯?듬땲?? requirements??neo4j瑜?異붽??섏꽭??")
 
     driver = GraphDatabase.driver(uri, auth=(user, password))
     try:
@@ -99,15 +103,15 @@ def build_argument_parser() -> argparse.ArgumentParser:
         "--input",
         type=Path,
         default=OUTPUT_DIR,
-        help="그래프 JSON 파일 또는 디렉터리 경로",
+        help="洹몃옒??JSON ?뚯씪 ?먮뒗 ?붾젆?곕━ 寃쎈줈",
     )
-    parser.add_argument("--uri", default=os.getenv("NEO4J_URI", "bolt://localhost:7687"))
+    parser.add_argument("--uri", default=os.getenv("NEO4J_URI"))
     parser.add_argument("--user", default=os.getenv("NEO4J_USER", "neo4j"))
     parser.add_argument("--password", default=os.getenv("NEO4J_PASSWORD"))
     parser.add_argument(
         "--export-only",
         action="store_true",
-        help="Cypher 파일만 생성하고 실제 적재는 하지 않음",
+        help="Cypher ?뚯씪留??앹꽦?섍퀬 ?ㅼ젣 ?곸옱???섏? ?딆쓬",
     )
     return parser
 
@@ -125,14 +129,15 @@ if __name__ == "__main__":
         graph_data = load_graph_json(file_path)
         cypher_path = OUTPUT_DIR / f"{file_path.stem}.cypher.txt"
         export_cypher_payload(graph_data, cypher_path)
-        print(f"[OK] Neo4j 적재용 Cypher 내보내기 완료: {cypher_path}")
+        print(f"[OK] Neo4j ?곸옱??Cypher ?대낫?닿린 ?꾨즺: {cypher_path}")
 
         if args.export_only:
             continue
 
-        if not args.password:
-            print("[SKIP] NEO4J_PASSWORD가 없어 실제 적재는 건너뜁니다.")
+        if not args.uri or not args.password:
+            print("[SKIP] NEO4J_URI 또는 NEO4J_PASSWORD가 없어 실제 적재는 건너뜁니다")
             continue
 
         load_graph_to_neo4j(graph_data, args.uri, args.user, args.password)
-        print(f"[OK] Neo4j 적재 완료: {file_path.name}")
+        print(f"[OK] Neo4j ?곸옱 ?꾨즺: {file_path.name}")
+

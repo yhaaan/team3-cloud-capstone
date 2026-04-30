@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import os
@@ -34,7 +34,7 @@ def build_argument_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--neo4j-uri",
-        default=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+        default=os.getenv("NEO4J_URI"),
         help="Neo4j Bolt URI.",
     )
     parser.add_argument(
@@ -44,7 +44,7 @@ def build_argument_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--neo4j-password",
-        default=os.getenv("NEO4J_PASSWORD", "password"),
+        default=os.getenv("NEO4J_PASSWORD"),
         help="Neo4j password.",
     )
     parser.add_argument(
@@ -88,11 +88,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
-    load_dotenv()
+    load_dotenv(override=True)
     args = build_argument_parser().parse_args()
 
-    if not args.chroma_only and not args.neo4j_password:
-        raise RuntimeError("Neo4j password is required. Set --neo4j-password or NEO4J_PASSWORD.")
+    if not args.chroma_only and (not args.neo4j_uri or not args.neo4j_password):
+        raise RuntimeError("Neo4j URI and password are required. Set NEO4J_URI and NEO4J_PASSWORD in .env or pass --neo4j-uri/--neo4j-password.")
     if args.chroma_only and args.skip_chroma:
         raise RuntimeError("--chroma-only cannot be used with --skip-chroma.")
 
@@ -174,3 +174,4 @@ def slice_documents(
 
 if __name__ == "__main__":
     main()
+

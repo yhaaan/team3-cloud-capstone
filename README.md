@@ -15,7 +15,6 @@
 - docs/
 - schemas/
 - services/
-- infra/
 
 ## Rules
 - Do not push directly to main

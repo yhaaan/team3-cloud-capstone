@@ -68,9 +68,9 @@ Rule-based extraction is still available for local fallback or cost-saving runs:
 Load graph outputs into Neo4j:
 
 ```powershell
-$env:NEO4J_URI="bolt://localhost:7687"
+$env:NEO4J_URI="neo4j+s://your-instance.databases.neo4j.io"
 $env:NEO4J_USER="neo4j"
-$env:NEO4J_PASSWORD="password"
+$env:NEO4J_PASSWORD="your_aura_password"
 .\.venv\Scripts\python.exe services\module-b\src\load_neo4j.py --input services\module-b\outputs
 ```
 
@@ -118,42 +118,25 @@ Generate Cypher files only:
 .\.venv\Scripts\python.exe -m unittest services\module-b\tests\test_module_b.py
 ```
 
-## Team Local Neo4j
+## Team AuraDB
 
-Install Docker Desktop manually first, then start Docker Desktop.
-After Docker Desktop is running, run this from the repository root in PowerShell:
+Module B uses AuraDB as the shared team graph database.
+Create one AuraDB instance from Neo4j Aura, then put its connection values in `.env`:
+
+```env
+NEO4J_URI=neo4j+s://your-instance.databases.neo4j.io
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=your_aura_password
+```
+
+Load existing Module B graph outputs into AuraDB once:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1
+py -3 services\module-b\src\load_neo4j.py --input services\module-b\outputs
 ```
 
-The script checks that Docker is available, installs Python dependencies, prepares `.env` from `.env.example`, and starts the Neo4j container with Docker Compose.
-
-If Python dependencies are already installed:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1 -SkipPythonInstall
-```
-
-Run Neo4j locally for Module B:
-
-```powershell
-docker compose -f infra/docker-compose.yml up -d
-```
-
-Neo4j Browser:
-
-```text
-http://localhost:7474
-```
-
-Default local credentials:
-
-```text
-user: neo4j
-password: password
-bolt uri: bolt://localhost:7687
-```
+After that, teammates do not need to run `run_to_neo4j.py` for graph data.
+They can use the same AuraDB URI, user, and password to browse/query the shared graph.
 
 ## Environment Files
 
