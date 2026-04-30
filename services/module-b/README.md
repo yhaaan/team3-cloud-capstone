@@ -120,6 +120,20 @@ Generate Cypher files only:
 
 ## Team Local Neo4j
 
+For Windows teammates who do not have Docker or Neo4j ready, run this from the repository root in PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1
+```
+
+The script checks/installs Docker Desktop through `winget`, starts Docker Desktop, installs Python dependencies, prepares `.env` from `.env.example`, and starts the Neo4j container with Docker Compose.
+
+If Docker Desktop is already installed:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File infra\setup-local.ps1 -SkipDockerInstall
+```
+
 Run Neo4j locally for Module B:
 
 ```powershell
@@ -139,3 +153,14 @@ user: neo4j
 password: password
 bolt uri: bolt://localhost:7687
 ```
+
+## Environment Files
+
+`.env` is intentionally ignored by git because it can contain private OpenAI API keys.
+Commit `.env.example` instead, then each teammate should copy it:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Then fill in `OPENAI_API_KEY`.

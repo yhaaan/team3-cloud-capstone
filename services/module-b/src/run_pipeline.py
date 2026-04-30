@@ -5,7 +5,7 @@ from pathlib import Path
 
 from document_io import iter_input_documents, write_json_file
 from graph_pipeline import extract_graph
-from load_chroma import insert_doc_to_chroma
+from load_chroma import insert_doc_to_chroma, insert_doc_to_chroma_collection
 from load_neo4j import OUTPUT_DIR, export_cypher_payload, load_graph_to_neo4j
 
 
@@ -24,9 +24,17 @@ def run_for_document(
     neo4j_password: str | None,
     allow_fallback: bool,
     min_relation_score: float = 0.6,
+    chroma_collection: object | None = None,
 ) -> None:
     if use_chroma:
-        insert_doc_to_chroma(doc, source_name=doc["source_id"])
+        if chroma_collection is None:
+            insert_doc_to_chroma(doc, source_name=doc["source_id"])
+        else:
+            insert_doc_to_chroma_collection(
+                chroma_collection,
+                doc,
+                source_name=doc["source_id"],
+            )
 
     relation_score = get_relation_relevance_score(doc)
     if relation_score < min_relation_score:

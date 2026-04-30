@@ -7,7 +7,11 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from document_io import iter_input_documents
-from load_chroma import insert_doc_to_chroma
+from load_chroma import (
+    OpenAIEmbeddingFunction,
+    build_client_and_collection,
+    insert_doc_to_chroma_collection,
+)
 from load_neo4j import OUTPUT_DIR
 from run_pipeline import MODULE_A_DATA_DIR, run_for_document
 
@@ -102,15 +106,21 @@ def main() -> None:
     if args.limit is not None:
         documents = documents[: args.limit]
 
+    chroma_client = None
+    chroma_collection = None
+    if not args.skip_chroma:
+        chroma_client, chroma_collection = build_client_and_collection()
+
     for doc in documents:
         if args.chroma_only:
-            insert_doc_to_chroma(doc, source_name=doc["source_id"])
+            insert_doc_to_chroma_collection(chroma_collection, doc, source_name=doc["source_id"])
             continue
 
         run_for_document(
             doc=doc,
             extractor_mode=args.extractor,
             use_chroma=not args.skip_chroma,
+            chroma_collection=chroma_collection,
             use_neo4j=True,
             neo4j_uri=args.neo4j_uri,
             neo4j_user=args.neo4j_user,
@@ -118,6 +128,22 @@ def main() -> None:
             allow_fallback=not args.no_fallback,
             min_relation_score=args.min_relation_score,
         )
+
+    if chroma_collection is not None:
+        chunk_count = chroma_collection.count()
+        print(f"[OK] Chroma collection count: {chunk_count}")
+        if chroma_client is not None:
+            chroma_client.close()
+            chroma_client = None
+
+        verify_client, verify_collection = build_client_and_collection()
+        query_embedding = OpenAIEmbeddingFunction()(["module b chroma validation"])[0]
+        verify_collection.query(
+            query_embeddings=[query_embedding],
+            n_results=1,
+        )
+        verify_client.close()
+        print("[OK] Chroma vector query validation passed")
 
     if args.chroma_only:
         print(f"[OK] Processed and loaded {len(documents)} documents into Chroma")
