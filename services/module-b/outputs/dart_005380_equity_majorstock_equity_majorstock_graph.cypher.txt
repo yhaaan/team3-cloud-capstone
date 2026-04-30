@@ -1,0 +1,15 @@
+// node: company_modern_mobis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_modern_mobis", "type": "Company", "name": "현대모비스"}
+
+// node: company_hyundai_motor_company
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_company", "type": "Company", "name": "현대차"}

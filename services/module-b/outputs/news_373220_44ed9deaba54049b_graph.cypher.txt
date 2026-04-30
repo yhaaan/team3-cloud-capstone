@@ -1,0 +1,49 @@
+// node: company_lg_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_coupang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_coupang", "type": "Company", "name": "쿠팡"}
+
+// node: person_kim_beom_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_beom_seok", "type": "Person", "name": "김범석", "role": "이사회 의장", "affiliated_company": "company_coupang"}
+
+// node: person_kim_yu_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_yu_seok", "type": "Person", "name": "김유석", "role": "부사장", "affiliated_company": "company_coupang"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_beom_seok", "to_id": "company_coupang", "evidence": "김범석 쿠팡Inc 의장으로 변경 지정했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_yu_seok", "to_id": "company_coupang", "evidence": "동생 김유석씨가 부사장으로 재직하면서 4년간 쿠팡으로부터 받은 140억원 규모의 보수와 인센티브가 직접적인 영향을 미쳤다."}

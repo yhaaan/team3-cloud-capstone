@@ -1,0 +1,194 @@
+// node: company_sk_square
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+
+// node: company_sk_corporation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_corporation", "type": "Company", "name": "SK㈜"}
+
+// node: person_gi_eun_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_gi_eun_sun", "type": "Person", "name": "기은선", "role": "사외이사", "affiliated_company": "company_sk_square"}
+
+// node: person_hong_jihoon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hong_jihoon", "type": "Person", "name": "HONG JIHOON", "role": "사외이사", "affiliated_company": "company_sk_square"}
+
+// node: person_choi_tae_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_tae_won", "type": "Person", "name": "최태원", "role": "계열회사임원", "affiliated_company": "company_sk_square"}
+
+// node: person_jang_dong_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_dong_hyun", "type": "Person", "name": "장동현", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+
+// node: person_yoo_young_sang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoo_young_sang", "type": "Person", "name": "유영상", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+
+// node: person_han_myung_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_han_myung_jin", "type": "Person", "name": "한명진", "role": "임원", "affiliated_company": "company_sk_square"}
+
+// node: person_yoon_poong_young
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoon_poong_young", "type": "Person", "name": "윤풍영", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+
+// node: person_jung_jae_heon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_jae_heon", "type": "Person", "name": "정재헌", "role": "임원", "affiliated_company": "company_sk_square"}
+
+// node: person_kang_ho_in
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kang_ho_in", "type": "Person", "name": "강호인", "role": "사외이사", "affiliated_company": "company_sk_square"}
+
+// node: person_park_seung_goo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_seung_goo", "type": "Person", "name": "박승구", "role": "사외이사", "affiliated_company": "company_sk_square"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_gi_eun_sun", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 기은선, 관계는 사외이사, 당기말 보유주식수는 3,837주, 지분율은 0.00%, 비고는 자사주 상여."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_hong_jihoon", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 HONG JIHOON, 관계는 사외이사, 당기말 보유주식수는 584주, 지분율은 0.00%, 비고는 자사주 상여."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_tae_won", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 최태원, 관계는 계열회사임원, 당기말 보유주식수는 196주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_dong_hyun", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 장동현, 관계는 계열회사 임원, 당기말 보유주식수는 60주, 지분율은 0.00%, 비고는 장내 매도."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yoo_young_sang", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 유영상, 관계는 계열회사 임원, 당기말 보유주식수는 2,159주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_han_myung_jin", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 한명진, 관계는 임원, 당기말 보유주식수는 2,159주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yoon_poong_young", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 윤풍영, 관계는 계열회사 임원, 당기말 보유주식수는 9,266주, 지분율은 0.01%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_jae_heon", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 정재헌, 관계는 임원, 당기말 보유주식수는 1,439주, 지분율은 0.00%, 비고는 신규 선임 및 장내 매수."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kang_ho_in", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 강호인, 관계는 사외이사, 당기말 보유주식수는 3,797주, 지분율은 0.00%, 비고는 자사주 상여."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_seung_goo", "to_id": "company_sk_square", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 박승구, 관계는 사외이사, 당기말 보유주식수는 7,837주, 지분율은 0.01%, 비고는 자사주 상여."}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_sk_square", "to_id": "company_sk_corporation", "evidence": "SK스퀘어의 최대주주 관련 인물/법인은 SK㈜, 관계는 최대주주, 당기말 보유주식수는 42,452,202주, 지분율은 32.14%, 비고는 주식소각으로 인한 지분율 상승."}

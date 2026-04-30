@@ -1,55 +1,71 @@
 # Module B
 
-Module B는 Module A가 정제한 문서를 입력받아 다음 산출물을 만든다.
+Module B reads cleaned Module A documents and creates:
 
-- Chroma 적재용 청크
-- 그래프 JSON
-- Neo4j 적재용 Cypher
+- Chroma chunks with OpenAI `text-embedding-3-small` embeddings
+- graph JSON files
+- Neo4j Cypher files or direct Neo4j inserts
 
-## 입력 형식
+## Module A Input
 
-다음 필드를 포함한 `json` 또는 `jsonl` 문서를 지원한다.
+The default input directory is `services/module-a/data`.
+`run_pipeline.py` recursively loads:
 
-```json
-{
-  "source_id": "news_001",
-  "title": "카카오, A사 인수 발표",
-  "content": "카카오는 2026년 3월 20일 A사 인수를 발표했다.",
-  "source": "mock_news",
-  "published_at": "2026-03-20",
-  "url": "https://example.com/news/001"
-}
-```
+- news JSONL files such as `company_news_cleaned.jsonl`
+- DART JSON files under each company's `dart` directory
 
-## 실행
+Module A news fields are mapped to Module B's document contract:
 
-샘플 JSON 디렉터리 기준 실행:
+- `doc_id` -> `source_id`
+- `body_text` or `sentences` -> `content`
+- `originallink` or `naver_link` -> `url`
+
+Module A DART files use `text_blocks` as content. If `text_blocks` is empty, Module B falls back to `normalized_records`.
+
+The common document schema is defined in `schemas/input_document_schema.json`.
+Required common fields:
+
+- `source_id`
+- `document_type`: `news`, `dart`, or `unknown`
+- `title`
+- `content`
+- `source`
+- `published_at`
+- `url`
+- `metadata`
+
+Source-specific Module A details are preserved in `metadata` so Module C can use them when it needs richer context.
+
+## Run
+
+Run with Module A data:
 
 ```powershell
-.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py
+.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py --skip-chroma
 ```
 
-JSONL 입력 기준 실행:
-
-```powershell
-.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py --input services\module-b\tests\sample_news_batch.jsonl
-```
-
-규칙 기반 추출:
-
-```powershell
-.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py --extractor rule
-```
-
-OpenAI 기반 추출:
+OpenAI extraction is the default graph extraction mode. Set these before graph extraction:
 
 ```powershell
 $env:OPENAI_API_KEY="..."
 $env:OPENAI_MODEL="gpt-4.1-mini"
-.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py --extractor openai --skip-chroma
+$env:OPENAI_EMBEDDING_MODEL="text-embedding-3-small"
 ```
 
-Neo4j 실적재:
+Graph extraction and Neo4j loading only run for documents with `relation_relevance_score >= 0.6`.
+Override this threshold when needed:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py --min-relation-score 0.7
+```
+
+Rule-based extraction is still available for local fallback or cost-saving runs:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_pipeline.py --extractor rule --skip-chroma
+```
+
+Load graph outputs into Neo4j:
 
 ```powershell
 $env:NEO4J_URI="bolt://localhost:7687"
@@ -58,20 +74,68 @@ $env:NEO4J_PASSWORD="password"
 .\.venv\Scripts\python.exe services\module-b\src\load_neo4j.py --input services\module-b\outputs
 ```
 
-Cypher 파일만 생성:
+Run Module B and load directly into Neo4j in one command:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py
+```
+
+This command uses OpenAI for graph extraction by default and also inserts chunks into Chroma by default.
+Chroma uses OpenAI `text-embedding-3-small` by default.
+Skip Chroma when needed:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py --skip-chroma
+```
+
+Rebuild only Chroma without touching Neo4j:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py --chroma-only
+```
+
+Smoke test with one Module A document:
+
+```powershell
+.\.venv\Scripts\python.exe services\module-b\src\run_to_neo4j.py --limit 1
+```
+
+Generate Cypher files only:
 
 ```powershell
 .\.venv\Scripts\python.exe services\module-b\src\load_neo4j.py --input services\module-b\outputs --export-only
 ```
 
-## 산출물 위치
+## Outputs
 
-- 그래프 JSON: `services/module-b/outputs/*_graph.json`
+- Graph JSON: `services/module-b/outputs/*_graph.json`
 - Neo4j Cypher: `services/module-b/outputs/*_graph.cypher.txt`
-- Chroma 로컬 DB: `services/module-b/local_db/chroma`
+- Chroma local DB: `services/module-b/local_db/chroma`
 
-## 테스트
+## Tests
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest services\module-b\tests\test_module_b.py
+```
+
+## Team Local Neo4j
+
+Run Neo4j locally for Module B:
+
+```powershell
+docker compose -f infra/docker-compose.yml up -d
+```
+
+Neo4j Browser:
+
+```text
+http://localhost:7474
+```
+
+Default local credentials:
+
+```text
+user: neo4j
+password: password
+bolt uri: bolt://localhost:7687
 ```

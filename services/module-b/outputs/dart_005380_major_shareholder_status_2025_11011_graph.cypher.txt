@@ -1,0 +1,245 @@
+// node: company_hyundai_mobis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: person_jose_munyoes
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jose_munyoes", "type": "Person", "name": "호세 무뇨스", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_seo_gang_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_seo_gang_hyun", "type": "Person", "name": "서강현", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_lee_dong_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_dong_seok", "type": "Person", "name": "이동석", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_eugene_ohr
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_eugene_ohr", "type": "Person", "name": "Eugene M. Ohr", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_lee_seung_jo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_seung_jo", "type": "Person", "name": "이승조", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_kim_su_i
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_su_i", "type": "Person", "name": "김수이", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_do_jin_myung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_do_jin_myung", "type": "Person", "name": "도진명Jim Myong Doh", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_benjamin_tan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_benjamin_tan", "type": "Person", "name": "벤자민 탄", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jung_mong_koo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_mong_koo", "type": "Person", "name": "정몽구", "role": "기타", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jung_sung_i
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_sung_i", "type": "Person", "name": "정성이", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jung_myung_i
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_myung_i", "type": "Person", "name": "정명이", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jung_eui_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_eui_sun", "type": "Person", "name": "정의선", "role": "대표이사", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jang_jae_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_jae_hun", "type": "Person", "name": "장재훈", "role": "계열회사 임원", "affiliated_company": "company_hyundai_motor"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jose_munyoes", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 호세 무뇨스, 관계는 계열회사 임원, 당기말 보유주식수는 13,333주, 지분율은 0.01%, 비고는 자사주 상여금 지급 ('25.7.31)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_seo_gang_hyun", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 서강현, 관계는 계열회사 임원, 당기말 보유주식수는 400주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_dong_seok", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 이동석, 관계는 계열회사 임원, 당기말 보유주식수는 858주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_eugene_ohr", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 Eugene M. Ohr, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 퇴임 ('25.3.20)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_seung_jo", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 이승조, 관계는 계열회사 임원, 당기말 보유주식수는 447주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_su_i", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 김수이, 관계는 계열회사 임원, 당기말 보유주식수는 250주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_do_jin_myung", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 도진명Jim Myong Doh, 관계는 계열회사 임원, 당기말 보유주식수는 300주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_benjamin_tan", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 벤자민 탄, 관계는 계열회사 임원, 당기말 보유주식수는 1,200주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20)."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_mong_koo", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 정몽구, 관계는 기타, 당기말 보유주식수는 11,395,859주, 지분율은 5.57%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_sung_i", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 정성이, 관계는 계열회사 임원, 당기말 보유주식수는 1,445주, 지분율은 0.00%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_myung_i", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 정명이, 관계는 계열회사 임원, 당기말 보유주식수는 1,445주, 지분율은 0.00%."}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_eui_sun", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 정의선, 관계는 대표이사, 당기말 보유주식수는 5,598,478주, 지분율은 2.73%."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_jae_hun", "to_id": "company_hyundai_motor", "evidence": "현대차의 최대주주 관련 인물/법인은 장재훈, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 사임 ('24.12.31)."}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor", "to_id": "company_hyundai_mobis", "evidence": "현대차의 최대주주 관련 인물/법인은 현대모비스, 관계는 본인, 당기말 보유주식수는 45,782,023주, 지분율은 22.36%."}

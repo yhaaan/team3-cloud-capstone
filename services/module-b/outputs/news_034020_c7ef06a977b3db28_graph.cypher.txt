@@ -1,0 +1,48 @@
+// node: company_dosan_enervility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_enervility", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_hanwha_semitec
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_semitec", "type": "Company", "name": "한화세미텍"}
+
+// node: company_hanwha_vision
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_vision", "type": "Company", "name": "한화비전"}
+
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hanwha_vision", "to_id": "company_hanwha_semitec", "evidence": "한화비전, 자회사 한화세미텍 주식 500억원 추가 취득…지분율 100%"}

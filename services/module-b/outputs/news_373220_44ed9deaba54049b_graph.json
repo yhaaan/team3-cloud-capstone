@@ -1,0 +1,44 @@
+{
+  "source_id": "news_373220_44ed9deaba54049b",
+  "entities": [
+    {
+      "id": "company_lg_energy_solution",
+      "type": "Company",
+      "name": "LG에너지솔루션",
+      "stock_code": "373220"
+    },
+    {
+      "id": "company_coupang",
+      "type": "Company",
+      "name": "쿠팡"
+    },
+    {
+      "id": "person_kim_beom_seok",
+      "type": "Person",
+      "name": "김범석",
+      "role": "이사회 의장",
+      "affiliated_company": "company_coupang"
+    },
+    {
+      "id": "person_kim_yu_seok",
+      "type": "Person",
+      "name": "김유석",
+      "role": "부사장",
+      "affiliated_company": "company_coupang"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_kim_beom_seok",
+      "to": "company_coupang",
+      "evidence": "김범석 쿠팡Inc 의장으로 변경 지정했다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_kim_yu_seok",
+      "to": "company_coupang",
+      "evidence": "동생 김유석씨가 부사장으로 재직하면서 4년간 쿠팡으로부터 받은 140억원 규모의 보수와 인센티브가 직접적인 영향을 미쳤다."
+    }
+  ]
+}

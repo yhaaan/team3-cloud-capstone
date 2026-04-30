@@ -1,0 +1,202 @@
+// node: company_hyundai_motor_group
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_group", "type": "Company", "name": "현대자동차그룹"}
+
+// node: company_posco_holdings
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_posco_holdings", "type": "Company", "name": "포스코홀딩스"}
+
+// node: company_hyundai_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_kia", "type": "Company", "name": "기아"}
+
+// node: company_hyundai_mobis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스"}
+
+// node: company_hyundai_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_steel", "type": "Company", "name": "현대제철"}
+
+// node: company_hyundai_rotem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템"}
+
+// node: company_hyundai_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_construction", "type": "Company", "name": "현대건설"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_future_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_future_mobility", "type": "Industry", "name": "미래 모빌리티"}
+
+// node: industry_ev_power_tech
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ev_power_tech", "type": "Industry", "name": "이차전지"}
+
+// node: industry_hydrogen
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_hydrogen", "type": "Industry", "name": "수소"}
+
+// node: event_hmg_future_complex_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_hmg_future_complex_investment", "type": "Event", "name": "HMG 퓨처 콤플렉스 출자 결정", "event_type": "Investment", "description": "현대자동차그룹이 복정역 일대에 'HMG 퓨처 콤플렉스' 조성을 위한 약 8조원 출자를 결정"}
+
+// node: event_posco_global_rnd_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_posco_global_rnd_center", "type": "Event", "name": "포스코홀딩스 글로벌 R&D센터 착공", "event_type": "Construction", "description": "포스코홀딩스가 복정역 인근에 글로벌 R&D센터 착공"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "company_hyundai_kia", "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "company_hyundai_mobis", "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "company_hyundai_steel", "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "company_hyundai_rotem", "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "event_hmg_future_complex_investment", "evidence": "현대차그룹은 최근 이사회를 열고 복정역 일대에 'HMG 퓨처 콤플렉스'를 조성하기 위한 출자를 결정했다. 투자 규모는 약 8조원이다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "industry_ai", "evidence": "이곳에는 인공지능(AI), 소프트웨어중심차량(SDV), 로보틱스 등 미래 모빌리티 핵심 기술을 담당하는 연구 조직이 들어설 예정이다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_posco_holdings", "to_id": "industry_ev_power_tech", "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_posco_holdings", "to_id": "industry_hydrogen", "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_posco_holdings", "to_id": "industry_ai", "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_posco_holdings", "to_id": "event_posco_global_rnd_center", "evidence": "포스코홀딩스의 글로벌 R&D센터 착공에 이어 현대자동차그룹이 8조원 규모 연구개발(R&D) 통합 거점 조성을 공식화하면서다."}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_construction", "to_id": "Event", "evidence": "해당 개발사업을 따낸 곳은 현대건설 컨소시엄이다."}

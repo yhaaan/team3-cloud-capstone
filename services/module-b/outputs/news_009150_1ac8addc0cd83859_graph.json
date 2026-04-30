@@ -1,0 +1,63 @@
+{
+  "source_id": "news_009150_1ac8addc0cd83859",
+  "entities": [
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전기",
+      "stock_code": "009150"
+    },
+    {
+      "id": "person_jang_deok_hyun",
+      "type": "Person",
+      "name": "장덕현",
+      "role": "사장",
+      "affiliated_company": "company_samsung_electronics"
+    },
+    {
+      "id": "person_kim_sung_jin",
+      "type": "Person",
+      "name": "김성진",
+      "role": "부사장",
+      "affiliated_company": "company_samsung_electronics"
+    },
+    {
+      "id": "person_choi_jae_yeol",
+      "type": "Person",
+      "name": "최재열",
+      "role": "부사장",
+      "affiliated_company": "company_samsung_electronics"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "AI"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_jang_deok_hyun",
+      "to": "company_samsung_electronics",
+      "evidence": "핵심 인물은 장덕현 사장이다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_kim_sung_jin",
+      "to": "company_samsung_electronics",
+      "evidence": "김성진 부사장도 동반 수혜…평가차익 구조 동일 다른 주요 임원들도 유사한 흐름을 보인다. 김성진 부사장은 총 2000주를 보유하고 있다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_choi_jae_yeol",
+      "to": "company_samsung_electronics",
+      "evidence": "아울러 최재열 부사장은 총 1205주를 보유하고 있다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electronics",
+      "to": "industry_ai",
+      "evidence": "09:40 최근 인공지능(AI) 서버 투자 확대 흐름이 본격화되는 국면에서 삼성전기 주가가 단기간 급등하며 경영진의 자사주 보유 가치도 크게 확대 된 것으로 확인된다."
+    }
+  ]
+}

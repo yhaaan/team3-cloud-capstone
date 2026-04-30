@@ -1,0 +1,41 @@
+// node: company_samsung_biologics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스"}
+
+// node: person_park_jae_sung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role": "노조위원장", "affiliated_company": "company_samsung_biologics"}
+
+// node: industry_biotech
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_biotech", "type": "Industry", "name": "생명공학"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_jae_sung", "to_id": "company_samsung_biologics", "evidence": "그런데 막상 파업을 이끌어야 할 박재성 노조위원장이 해외 휴가 중이라는 사실이 알려지면서, 노조 내부에서 의견이 엇갈리고 있다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_biologics", "to_id": "industry_biotech", "evidence": "내달 1일부터 예정된 전면파업이 현실화될 경우, 국내 생명공학 산업에 미칠 파장은 결코 작지 않을 것이다."}

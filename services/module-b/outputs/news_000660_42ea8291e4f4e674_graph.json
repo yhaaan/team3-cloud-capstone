@@ -1,0 +1,51 @@
+{
+  "source_id": "news_000660_42ea8291e4f4e674",
+  "entities": [
+    {
+      "id": "company_sk_hynix",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660"
+    },
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "company_hyundai_motor",
+      "type": "Company",
+      "name": "현대차"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_automobile",
+      "type": "Industry",
+      "name": "자동차"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_sk_hynix",
+      "to": "industry_semiconductor",
+      "evidence": "특히 반도체와 자동차는 국내 수출 경제를 이끄는 핵심 업종이라는 점에서 셧다운이 현실화될 경우 수출 경제에 직격탄을 맞을 수 있다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hyundai_motor",
+      "to": "industry_automobile",
+      "evidence": "특히 반도체와 자동차는 국내 수출 경제를 이끄는 핵심 업종이라는 점에서 셧다운이 현실화될 경우 수출 경제에 직격탄을 맞을 수 있다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자 노조가 다음달 '30조 파업'을 예고한 가운데 수출 주력인 반도체와 자동차 생산 현장에서 잇따라 쟁의 먹구름이 몰려오고 있다."
+    }
+  ]
+}

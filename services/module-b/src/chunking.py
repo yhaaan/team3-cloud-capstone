@@ -5,12 +5,16 @@ from typing import Any
 
 
 DEFAULT_COMPANY_HINTS = [
-    "카카오",
-    "네이버",
     "삼성전자",
-    "LG전자",
     "SK하이닉스",
-    "현대자동차",
+    "현대차",
+    "LG에너지솔루션",
+    "HD현대중공업",
+    "삼성바이오로직스",
+    "두산에너빌리티",
+    "삼성전기",
+    "SK스퀘어",
+    "한화에어로스페이스",
 ]
 
 
@@ -18,13 +22,11 @@ def split_text_into_chunks(
     doc: dict[str, Any],
     max_chunk_length: int = 120,
 ) -> list[dict[str, Any]]:
-    """입력 문서를 문장 기반 청크로 분할한다."""
-
     content = doc.get("content", "").strip()
     if not content:
         return []
 
-    sentences = split_sentences(content)
+    sentences = split_long_parts(split_sentences(content), max_chunk_length)
     chunks: list[str] = []
     current_chunk = ""
 
@@ -50,25 +52,48 @@ def split_text_into_chunks(
             "published_at": doc.get("published_at", ""),
             "url": doc.get("url", ""),
             "chunk_index": index,
-            "company_hint": extract_company_hints(doc.get("title", ""), chunk_text),
+            "company_hint": extract_company_hints(doc, chunk_text),
         }
         for index, chunk_text in enumerate(chunks)
     ]
 
 
 def split_sentences(text: str) -> list[str]:
-    """마침표, 물음표, 느낌표를 기준으로 문장을 분리한다."""
-
     normalized = re.sub(r"\s+", " ", text).strip()
-    parts = re.split(r"(?<=[.!?])\s+|(?<=다\.)\s+", normalized)
+    parts = re.split(r"(?<=[.!?。？！])\s+", normalized)
     return [part.strip() for part in parts if part.strip()]
 
 
-def extract_company_hints(title: str, text: str) -> list[str]:
-    """제목과 본문에서 회사 후보명을 단순 추출한다."""
+def split_long_parts(parts: list[str], max_length: int) -> list[str]:
+    results: list[str] = []
+    for part in parts:
+        if len(part) <= max_length:
+            results.append(part)
+            continue
 
+        for start in range(0, len(part), max_length):
+            piece = part[start : start + max_length].strip()
+            if piece:
+                results.append(piece)
+
+    return results
+
+
+def extract_company_hints(doc: dict[str, Any], text: str) -> list[str]:
     candidates = list(DEFAULT_COMPANY_HINTS)
-    candidates.extend(re.findall(r"[A-Z]사", f"{title} {text}"))
+    title = doc.get("title", "")
+
+    for key in ["company_name", "corp_name"]:
+        if doc.get(key):
+            candidates.append(str(doc[key]))
+
+    candidates.extend(str(value) for value in doc.get("mentioned_companies", []) if value)
+    candidates.extend(
+        re.findall(
+            r"\b[A-Z][A-Za-z0-9&.\- ]{1,40}(?:Inc|Corp|Co|Ltd|Group)\b",
+            f"{title} {text}",
+        )
+    )
 
     seen: set[str] = set()
     results: list[str] = []
@@ -80,21 +105,3 @@ def extract_company_hints(title: str, text: str) -> list[str]:
             results.append(keyword)
 
     return results
-
-
-if __name__ == "__main__":
-    sample_doc = {
-        "source_id": "news_001",
-        "title": "카카오, A사 인수 발표",
-        "content": (
-            "카카오는 2026년 3월 20일 A사 인수를 발표했다. "
-            "이번 인수는 AI 사업 강화를 위한 전략적 결정이다. "
-            "카카오는 신규 사업 확장을 추진할 계획이라고 밝혔다."
-        ),
-        "source": "mock_news",
-        "published_at": "2026-03-20",
-        "url": "https://example.com/news/001",
-    }
-
-    for chunk in split_text_into_chunks(sample_doc, max_chunk_length=80):
-        print(chunk)

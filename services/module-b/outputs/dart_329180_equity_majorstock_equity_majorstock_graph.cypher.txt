@@ -1,0 +1,23 @@
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_kookmin_pension_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kookmin_pension_service", "type": "Company", "name": "국민연금공단"}
+
+// node: company_hd_korea_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양"}

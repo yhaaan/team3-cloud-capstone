@@ -1,0 +1,57 @@
+// node: company_samsung_sdi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_sdi", "type": "Company", "name": "삼성SDI"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_samsung_electro_mechanics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: person_choi_ju_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_ju_sun", "type": "Person", "name": "최주선", "role": "사장", "affiliated_company": "company_samsung_sdi"}
+
+// node: person_jang_deok_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electro_mechanics"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_ju_sun", "to_id": "company_samsung_sdi", "evidence": "최주선 삼성SDI 사장은 메모리반도체 연구개발(R&D)에 20년 넘게 종사한 자타공인 반도체 전문가다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "evidence": "장덕현 삼성전기 사장 역시 삼성전자 메모리사업부 솔루션개발실장 등을 역임하며 반도체 개발의 최전선을 지킨 인물이다."}

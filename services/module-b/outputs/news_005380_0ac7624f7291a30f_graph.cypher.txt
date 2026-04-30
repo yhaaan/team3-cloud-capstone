@@ -1,0 +1,24 @@
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: person_park_min_woo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_min_woo", "type": "Person", "name": "박민우", "role": "사장", "affiliated_company": "company_hyundai_motor"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_min_woo", "to_id": "company_hyundai_motor", "evidence": "로보틱스랩장은 AVP본부장인 박민우 사장(사진)이 겸임한다."}

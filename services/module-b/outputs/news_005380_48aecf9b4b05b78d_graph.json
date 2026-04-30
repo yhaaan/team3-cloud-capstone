@@ -1,0 +1,57 @@
+{
+  "source_id": "news_005380_48aecf9b4b05b78d",
+  "entities": [
+    {
+      "id": "company_hyundai_motor",
+      "type": "Company",
+      "name": "현대차"
+    },
+    {
+      "id": "person_kim_yun_deok",
+      "type": "Person",
+      "name": "김윤덕",
+      "role": "국토교통부 장관",
+      "affiliated_company": "company_hyundai_motor"
+    },
+    {
+      "id": "person_jeong_ju_young",
+      "type": "Person",
+      "name": "정주영",
+      "role": "회장",
+      "affiliated_company": "company_hyundai_motor"
+    },
+    {
+      "id": "industry_public_investment",
+      "type": "Industry",
+      "name": "지방 투자"
+    },
+    {
+      "id": "event_hyundai_sae_mangeum_investment",
+      "type": "Event",
+      "name": "현대차 새만금 투자",
+      "event_type": "투자",
+      "date": "2026-02",
+      "description": "현대차그룹의 새만금 9조원 투자 계획"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor",
+      "to": "event_hyundai_sae_mangeum_investment",
+      "evidence": "앞서 지난 2월 전격 발표된 현대차그룹의 새만금 9조원 투자 계획."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_kim_yun_deok",
+      "to": "company_hyundai_motor",
+      "evidence": "김윤덕 국토교통부 장관은 ... 현대차의 요구는 다 되는 걸 원칙으로 하겠다\"고 밝혔습니다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_jeong_ju_young",
+      "to": "company_hyundai_motor",
+      "evidence": "\"그리고 정주영 회장께서 자랑스러워하실 겁니다.\""
+    }
+  ]
+}

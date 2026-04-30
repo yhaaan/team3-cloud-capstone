@@ -1,0 +1,58 @@
+// node: company_dosan_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_energy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: person_park_ji_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_ji_won", "type": "Person", "name": "박지원", "role": "대표이사", "affiliated_company": "company_dosan_energy"}
+
+// node: person_jeong_yeon_in
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_yeon_in", "type": "Person", "name": "정연인", "role": "대표이사", "affiliated_company": "company_dosan_energy"}
+
+// node: person_park_sang_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_sang_hyun", "type": "Person", "name": "박상현", "role": "대표이사", "affiliated_company": "company_dosan_energy"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_ji_won", "to_id": "company_dosan_energy", "evidence": "두산에너빌리티(대표이사 박지원, 정연인, 박상현)가 2026년 1분기 연결 기준 매출 4조2611억 원, 영업이익 2335억 원을 기록했다고 29일 공시했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_yeon_in", "to_id": "company_dosan_energy", "evidence": "두산에너빌리티(대표이사 박지원, 정연인, 박상현)가 2026년 1분기 연결 기준 매출 4조2611억 원, 영업이익 2335억 원을 기록했다고 29일 공시했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_park_sang_hyun", "to_id": "company_dosan_energy", "evidence": "두산에너빌리티(대표이사 박지원, 정연인, 박상현)가 2026년 1분기 연결 기준 매출 4조2611억 원, 영업이익 2335억 원을 기록했다고 29일 공시했다."}

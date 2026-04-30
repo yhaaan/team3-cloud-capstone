@@ -1,0 +1,66 @@
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_automobile
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automobile", "type": "Industry", "name": "자동차"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_sk_hynix", "to_id": "industry_semiconductor", "evidence": "특히 반도체와 자동차는 국내 수출 경제를 이끄는 핵심 업종이라는 점에서 셧다운이 현실화될 경우 수출 경제에 직격탄을 맞을 수 있다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor", "to_id": "industry_automobile", "evidence": "특히 반도체와 자동차는 국내 수출 경제를 이끄는 핵심 업종이라는 점에서 셧다운이 현실화될 경우 수출 경제에 직격탄을 맞을 수 있다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electronics", "to_id": "industry_semiconductor", "evidence": "삼성전자 노조가 다음달 '30조 파업'을 예고한 가운데 수출 주력인 반도체와 자동차 생산 현장에서 잇따라 쟁의 먹구름이 몰려오고 있다."}

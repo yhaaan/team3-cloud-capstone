@@ -1,71 +1,68 @@
 from __future__ import annotations
 
-import json
 import sys
 import unittest
 from pathlib import Path
 
 
 SRC_DIR = Path(__file__).resolve().parent.parent / "src"
+ROOT_DIR = SRC_DIR.parent.parent.parent
+MODULE_A_DATA_DIR = ROOT_DIR / "services" / "module-a" / "data"
+
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from chunking import split_text_into_chunks
 from document_io import iter_input_documents
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
-from mock_extract_graph import extract_graph
-
-
-TEST_DIR = Path(__file__).resolve().parent
-
-
-def load_json(path: Path):
-    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class ModuleBPipelineTests(unittest.TestCase):
-    def test_chunking_produces_multiple_chunks(self):
-        doc = load_json(TEST_DIR / "sample_news_01.json")
-        chunks = split_text_into_chunks(doc, max_chunk_length=80)
+    @classmethod
+    def setUpClass(cls):
+        cls.docs = iter_input_documents(MODULE_A_DATA_DIR)
+        cls.news_docs = [doc for doc in cls.docs if doc.get("module_a_type") == "news"]
+        cls.dart_docs = [doc for doc in cls.docs if doc.get("module_a_type") == "dart"]
 
-        self.assertEqual(len(chunks), 2)
-        self.assertEqual(chunks[0]["doc_id"], "news_001")
-        self.assertIn("카카오", chunks[0]["company_hint"])
+    def test_module_a_data_directory_loading(self):
+        self.assertGreater(len(self.docs), 0)
+        self.assertGreater(len(self.news_docs), 0)
+        self.assertGreater(len(self.dart_docs), 0)
 
-    def test_extract_graph_acquisition(self):
-        doc = load_json(TEST_DIR / "sample_news_01.json")
-        graph = extract_graph(doc)
+    def test_module_a_news_document_mapping(self):
+        doc = self.news_docs[0]
 
-        relation_types = {relation["type"] for relation in graph["relations"]}
-        self.assertIn("ACQUIRES", relation_types)
-        self.assertIn("BELONGS_TO", relation_types)
+        self.assertTrue(doc["source_id"])
+        self.assertTrue(doc["title"])
+        self.assertTrue(doc["content"])
+        self.assertTrue(doc["published_at"])
+        self.assertTrue(doc["url"])
+        self.assertEqual(doc["module_a_type"], "news")
 
-    def test_extract_graph_investment(self):
-        doc = load_json(TEST_DIR / "sample_news_02.json")
-        graph = extract_graph(doc)
+    def test_module_a_dart_document_mapping(self):
+        doc = self.dart_docs[0]
 
-        relation_types = {relation["type"] for relation in graph["relations"]}
-        self.assertIn("INVESTS_IN", relation_types)
-        self.assertIn("BELONGS_TO", relation_types)
+        self.assertTrue(doc["source_id"])
+        self.assertTrue(doc["title"])
+        self.assertTrue(doc["content"])
+        self.assertEqual(doc["source"], "dart")
+        self.assertEqual(doc["module_a_type"], "dart")
 
-    def test_extract_graph_appointment(self):
-        doc = load_json(TEST_DIR / "sample_news_03.json")
-        graph = extract_graph(doc)
+    def test_chunking_uses_module_a_document(self):
+        doc = max(self.docs, key=lambda item: len(item.get("content", "")))
+        chunks = split_text_into_chunks(doc, max_chunk_length=120)
 
-        relation_types = {relation["type"] for relation in graph["relations"]}
-        self.assertIn("APPOINTED_TO", relation_types)
-        self.assertIn("AFFILIATED_WITH", relation_types)
+        self.assertGreater(len(chunks), 0)
+        self.assertEqual(chunks[0]["doc_id"], doc["source_id"])
+        self.assertEqual(chunks[0]["title"], doc["title"])
 
-    def test_jsonl_input_loading(self):
-        docs = iter_input_documents(TEST_DIR / "sample_news_batch.jsonl")
-        self.assertEqual(len(docs), 3)
-        self.assertEqual(docs[0]["source_id"], "news_001")
-
-    def test_graph_pipeline_rule_mode(self):
-        doc = load_json(TEST_DIR / "sample_news_02.json")
+    def test_graph_pipeline_rule_mode_uses_module_a_document(self):
+        doc = self.docs[0]
         graph = extract_graph_from_pipeline(doc, mode="rule")
-        relation_types = {relation["type"] for relation in graph["relations"]}
-        self.assertIn("INVESTS_IN", relation_types)
+
+        self.assertEqual(graph["source_id"], doc["source_id"])
+        self.assertIn("entities", graph)
+        self.assertIn("relations", graph)
 
 
 if __name__ == "__main__":

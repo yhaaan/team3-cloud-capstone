@@ -1,0 +1,31 @@
+// node: company_samsung_bio_logics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_bio_logics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_old_cheil_mojik
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_old_cheil_mojik", "type": "Company", "name": "舊 제일모직"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_samsung_c_t
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_c_t", "type": "Company", "name": "삼성물산"}

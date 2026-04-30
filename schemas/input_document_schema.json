@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ModuleBCommonDocument",
+  "description": "Common document contract used between Module A, Module B, and Module C.",
+  "type": "object",
+  "required": [
+    "source_id",
+    "document_type",
+    "title",
+    "content",
+    "source",
+    "published_at",
+    "url",
+    "metadata"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable document ID. Usually mapped from Module A doc_id."
+    },
+    "document_type": {
+      "type": "string",
+      "enum": ["news", "dart", "unknown"],
+      "description": "Normalized source document family."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable document title."
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Text used for chunking, embedding, and graph extraction."
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Source platform or provider."
+    },
+    "published_at": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Published, received, generated, or business date."
+    },
+    "url": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Original source URL or local source path fallback."
+    },
+    "company_name": {
+      "type": ["string", "null"],
+      "description": "Primary company name when available."
+    },
+    "stock_code": {
+      "type": ["string", "null"],
+      "description": "Stock code when available."
+    },
+    "corp_code": {
+      "type": ["string", "null"],
+      "description": "DART corporation code when available."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Source-specific Module A fields preserved for downstream lookup.",
+      "additionalProperties": true,
+      "properties": {
+        "module_a_path": {
+          "type": "string"
+        },
+        "press": {
+          "type": ["string", "null"]
+        },
+        "dataset": {
+          "type": ["string", "null"]
+        },
+        "dataset_label": {
+          "type": ["string", "null"]
+        },
+        "rcept_no": {
+          "type": ["string", "null"]
+        },
+        "mentioned_companies": {
+          "type": "array"
+        },
+        "mentioned_people": {
+          "type": "array"
+        },
+        "mentioned_entities": {
+          "type": "array"
+        },
+        "relation_keywords_detected": {
+          "type": "array"
+        },
+        "relation_relevance_score": {
+          "type": ["number", "null"]
+        },
+        "is_relation_candidate": {
+          "type": ["boolean", "null"]
+        },
+        "normalized_records": {
+          "type": ["array", "null"]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

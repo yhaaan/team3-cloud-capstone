@@ -1,0 +1,142 @@
+{
+  "source_id": "news_005380_4826c36510d427f5",
+  "entities": [
+    {
+      "id": "company_hyundai_motor_group",
+      "type": "Company",
+      "name": "현대자동차그룹"
+    },
+    {
+      "id": "company_posco_holdings",
+      "type": "Company",
+      "name": "포스코홀딩스"
+    },
+    {
+      "id": "company_hyundai_kia",
+      "type": "Company",
+      "name": "기아"
+    },
+    {
+      "id": "company_hyundai_mobis",
+      "type": "Company",
+      "name": "현대모비스"
+    },
+    {
+      "id": "company_hyundai_steel",
+      "type": "Company",
+      "name": "현대제철"
+    },
+    {
+      "id": "company_hyundai_rotem",
+      "type": "Company",
+      "name": "현대로템"
+    },
+    {
+      "id": "company_hyundai_construction",
+      "type": "Company",
+      "name": "현대건설"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_future_mobility",
+      "type": "Industry",
+      "name": "미래 모빌리티"
+    },
+    {
+      "id": "industry_ev_power_tech",
+      "type": "Industry",
+      "name": "이차전지"
+    },
+    {
+      "id": "industry_hydrogen",
+      "type": "Industry",
+      "name": "수소"
+    },
+    {
+      "id": "event_hmg_future_complex_investment",
+      "type": "Event",
+      "name": "HMG 퓨처 콤플렉스 출자 결정",
+      "event_type": "Investment",
+      "description": "현대자동차그룹이 복정역 일대에 'HMG 퓨처 콤플렉스' 조성을 위한 약 8조원 출자를 결정"
+    },
+    {
+      "id": "event_posco_global_rnd_center",
+      "type": "Event",
+      "name": "포스코홀딩스 글로벌 R&D센터 착공",
+      "event_type": "Construction",
+      "description": "포스코홀딩스가 복정역 인근에 글로벌 R&D센터 착공"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor_group",
+      "to": "company_hyundai_kia",
+      "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor_group",
+      "to": "company_hyundai_mobis",
+      "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor_group",
+      "to": "company_hyundai_steel",
+      "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor_group",
+      "to": "company_hyundai_rotem",
+      "evidence": "현대차·기아·현대모비스·현대제철·현대로템 등 주요 계열사가 참여한다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_hyundai_motor_group",
+      "to": "event_hmg_future_complex_investment",
+      "evidence": "현대차그룹은 최근 이사회를 열고 복정역 일대에 'HMG 퓨처 콤플렉스'를 조성하기 위한 출자를 결정했다. 투자 규모는 약 8조원이다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hyundai_motor_group",
+      "to": "industry_ai",
+      "evidence": "이곳에는 인공지능(AI), 소프트웨어중심차량(SDV), 로보틱스 등 미래 모빌리티 핵심 기술을 담당하는 연구 조직이 들어설 예정이다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_posco_holdings",
+      "to": "industry_ev_power_tech",
+      "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_posco_holdings",
+      "to": "industry_hydrogen",
+      "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_posco_holdings",
+      "to": "industry_ai",
+      "evidence": "포스코홀딩스는 복정역과 인접한 위례 비즈밸리 내 약 1만7000평 부지에 이차전지 소재, 수소, AI를 아우르는 미래 기술 연구 거점을 조성 중이다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_posco_holdings",
+      "to": "event_posco_global_rnd_center",
+      "evidence": "포스코홀딩스의 글로벌 R&D센터 착공에 이어 현대자동차그룹이 8조원 규모 연구개발(R&D) 통합 거점 조성을 공식화하면서다."
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_hyundai_construction",
+      "to": "Event",
+      "evidence": "해당 개발사업을 따낸 곳은 현대건설 컨소시엄이다."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "source_id": "news_329180_97f909450b32531a",
+  "entities": [
+    {
+      "id": "company_hd_hyundai_heavy_industries",
+      "type": "Company",
+      "name": "HD현대중공업",
+      "stock_code": "329180"
+    },
+    {
+      "id": "person_geum_seok_ho",
+      "type": "Person",
+      "name": "금석호",
+      "role": "대표이사",
+      "affiliated_company": "company_hd_hyundai_heavy_industries"
+    },
+    {
+      "id": "company_ulsan",
+      "type": "Company",
+      "name": "울산시"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "조선산업"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_geum_seok_ho",
+      "to": "company_hd_hyundai_heavy_industries",
+      "evidence": "이 자리에는 김두겸 울산시장과 금석호 HD현대중공업 대표이사 등이 참석했다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_ulsan",
+      "to": "industry_shipbuilding",
+      "evidence": "이번 협약은 산업통상부의 소부장 특화단지 공모 신청에 따라, 울산의 주력 산업인 조선산업 핵심 소재·부품의 국산화와 안정적인 공급망 구축을 위해 마련됐다."
+    }
+  ]
+}

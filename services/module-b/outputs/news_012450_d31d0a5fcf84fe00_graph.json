@@ -1,0 +1,57 @@
+{
+  "source_id": "news_012450_d31d0a5fcf84fe00",
+  "entities": [
+    {
+      "id": "company_hanwha_aerospace",
+      "type": "Company",
+      "name": "한화에어로스페이스",
+      "stock_code": "012450"
+    },
+    {
+      "id": "company_mbda",
+      "type": "Company",
+      "name": "MBDA"
+    },
+    {
+      "id": "company_add",
+      "type": "Company",
+      "name": "국방과학연구소"
+    },
+    {
+      "id": "industry_missile",
+      "type": "Industry",
+      "name": "공대공 미사일"
+    },
+    {
+      "id": "industry_advanced_munitions",
+      "type": "Industry",
+      "name": "첨단 포탄 기술"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_hanwha_aerospace",
+      "to": "company_mbda",
+      "evidence": "세계 최고 성능의 장거리 공대공 미사일로 꼽히는 유럽 MBDA의 '미티어'에도 이 기술이 탑재됐다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "company_hanwha_aerospace",
+      "to": "company_add",
+      "evidence": "한화에어로스페이스는 지난 22년간 국방과학연구소(ADD)와 협력해 추진제, 가스발생기, 연소기 등의 핵심 기술을 개발해 왔으며 2033년까지 국산화 개발을 마치고 2036년 이후 양산에 돌입한다는 목표다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hanwha_aerospace",
+      "to": "industry_missile",
+      "evidence": "한화에어로스페이스가 '한국판 미티어' 개발에 나선다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_hanwha_aerospace",
+      "to": "industry_advanced_munitions",
+      "evidence": "K9 자주포용 첨단 포탄 기술 개발 진행"
+    }
+  ]
+}

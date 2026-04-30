@@ -1,0 +1,194 @@
+// node: company_hyundai_motor_group
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_group", "type": "Company", "name": "현대차그룹"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: company_hyundai_motor_america
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_america", "type": "Company", "name": "현대차 미국법인"}
+
+// node: company_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia", "type": "Company", "name": "기아"}
+
+// node: company_kia_america
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia_america", "type": "Company", "name": "기아 미국법인"}
+
+// node: company_hatci
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hatci", "type": "Company", "name": "현대차그룹 미국기술연구소"}
+
+// node: company_hmgma
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hmgma", "type": "Company", "name": "현대차그룹 메타플랜트 아메리카"}
+
+// node: company_boston_dynamics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_boston_dynamics", "type": "Company", "name": "보스턴다이나믹스"}
+
+// node: company_motional
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_motional", "type": "Company", "name": "모셔널"}
+
+// node: company_42dot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_42dot", "type": "Company", "name": "42dot"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "industry_ai", "evidence": "실리콘밸리와 스탠포드공과대학 등 유명 대학이 있는 미국 서부지역은 글로벌 인공지능(AI)·로보틱스 인재들이 밀집한 지역으로 꼽힌다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_group", "to_id": "industry_robotics", "evidence": "실리콘밸리와 스탠포드공과대학 등 유명 대학이 있는 미국 서부지역은 글로벌 인공지능(AI)·로보틱스 인재들이 밀집한 지역으로 꼽힌다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor", "to_id": "company_hyundai_motor_group", "evidence": "현대차그룹은 피지컬 AI 전략을 내세우며 기술 인재 채용을 강화하고 있다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_kia", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor_america", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_kia_america", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hatci", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hmgma", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_boston_dynamics", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_motional", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_42dot", "to_id": "company_hyundai_motor_group", "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."}

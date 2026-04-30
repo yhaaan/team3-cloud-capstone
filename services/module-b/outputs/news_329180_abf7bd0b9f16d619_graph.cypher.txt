@@ -1,0 +1,75 @@
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: person_geum_seok_ho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_geum_seok_ho", "type": "Person", "name": "금석호", "role": "대표이사", "affiliated_company": "company_hd_hyundai_heavy_industries"}
+
+// node: person_kim_du_gyum
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_du_gyum", "type": "Person", "name": "김두겸", "role": "울산시장", "affiliated_company": "company_ulsan_city"}
+
+// node: company_ulsan_city
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_ulsan_city", "type": "Company", "name": "울산시"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "조선산업"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_geum_seok_ho", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "28일 울산시청 본관 시장실에서 김두겸 울산시장, 금석호 HD현대중공업 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생협력 업무협약'을 체결했다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_du_gyum", "to_id": "company_ulsan_city", "evidence": "28일 울산시청 본관 시장실에서 김두겸 울산시장, 금석호 HD현대중공업 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생협력 업무협약'을 체결했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_ulsan_city", "to_id": "industry_shipbuilding", "evidence": "이번 협약은 울산 주력산업인 조선산업의 핵심 소재·부품을 국산화하고 안정적인 공급망을 구축하고자 산업통상부의 소부장 특화단지 공모사업에 신청하면서 마련됐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "industry_shipbuilding", "evidence": "울산시와 HD현대중공업이 산업통상부 주관 '소부장(소재·부품·장비) 특화단지' 지정을 위해 손을 잡았다."}

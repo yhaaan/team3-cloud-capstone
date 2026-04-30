@@ -1,0 +1,47 @@
+{
+  "source_id": "news_009150_6b5e64cfb53478ba",
+  "entities": [
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "company_samsung_electro_mechanics",
+      "type": "Company",
+      "name": "삼성전기",
+      "stock_code": "009150"
+    },
+    {
+      "id": "company_samsung_biologics",
+      "type": "Company",
+      "name": "삼성바이오로직스"
+    },
+    {
+      "id": "person_jang_deok_hyun",
+      "type": "Person",
+      "name": "장덕현",
+      "role": "사장",
+      "affiliated_company": "company_samsung_electro_mechanics"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_jang_deok_hyun",
+      "to": "company_samsung_electro_mechanics",
+      "evidence": "'삼성 반도체 신화'의 한 축을 담당했던 장덕현 사장이 대변혁기를 이끌 장수로 투입됐다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_samsung_electro_mechanics",
+      "to": "industry_ai",
+      "evidence": "인공지능(AI) 대전환기 그룹의 성장 견인차로 올라서면서, \"삼성전자의 줄임말인 '삼전'이 이제는 '삼성전기'를 뜻한다\"는 말까지 나온다."
+    }
+  ]
+}

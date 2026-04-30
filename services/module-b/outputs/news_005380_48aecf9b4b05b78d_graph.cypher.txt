@@ -1,0 +1,66 @@
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: person_kim_yun_deok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_yun_deok", "type": "Person", "name": "김윤덕", "role": "국토교통부 장관", "affiliated_company": "company_hyundai_motor"}
+
+// node: person_jeong_ju_young
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_ju_young", "type": "Person", "name": "정주영", "role": "회장", "affiliated_company": "company_hyundai_motor"}
+
+// node: industry_public_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_public_investment", "type": "Industry", "name": "지방 투자"}
+
+// node: event_hyundai_sae_mangeum_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_hyundai_sae_mangeum_investment", "type": "Event", "name": "현대차 새만금 투자", "event_type": "투자", "date": "2026-02", "description": "현대차그룹의 새만금 9조원 투자 계획"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor", "to_id": "event_hyundai_sae_mangeum_investment", "evidence": "앞서 지난 2월 전격 발표된 현대차그룹의 새만금 9조원 투자 계획."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_yun_deok", "to_id": "company_hyundai_motor", "evidence": "김윤덕 국토교통부 장관은 ... 현대차의 요구는 다 되는 걸 원칙으로 하겠다\"고 밝혔습니다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_ju_young", "to_id": "company_hyundai_motor", "evidence": "\"그리고 정주영 회장께서 자랑스러워하실 겁니다.\""}

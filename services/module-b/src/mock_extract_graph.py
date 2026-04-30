@@ -13,18 +13,13 @@ from chunking import split_sentences
 BASE_DIR = Path(__file__).resolve().parent
 MODULE_B_DIR = BASE_DIR.parent
 ROOT_DIR = MODULE_B_DIR.parent.parent
-TEST_DATA_DIR = MODULE_B_DIR / "tests"
-OUTPUT_DIR = MODULE_B_DIR / "outputs"
 GRAPH_SCHEMA_PATH = ROOT_DIR / "schemas" / "graph_schema.json"
 
-OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-KNOWN_INDUSTRIES = ["AI", "클라우드", "반도체", "게임", "바이오", "엔터테인먼트", "IT"]
 RELATION_KEYWORDS = {
-    "ACQUIRES": ["인수", "합병"],
-    "INVESTS_IN": ["투자", "출자"],
-    "APPOINTED_TO": ["선임", "임명"],
-    "AFFILIATED_WITH": ["재직", "부회장", "대표이사", "COO", "CEO", "회장"],
+    "ACQUIRES": ["acquire", "acquisition", "merger", "인수", "합병"],
+    "INVESTS_IN": ["invest", "investment", "투자", "출자"],
+    "APPOINTED_TO": ["appoint", "appointed", "선임", "임명"],
+    "AFFILIATED_WITH": ["executive", "director", "CEO", "COO", "임원", "대표", "사장", "부사장"],
 }
 
 
@@ -42,59 +37,13 @@ def build_entity_id(entity_type: str, name: str) -> str:
     return f"{entity_type.lower()}_{normalize_name(name)}"
 
 
-def collect_companies(title: str, content: str) -> list[str]:
-    companies: list[str] = []
-
-    prefix_match = re.match(r"^\s*([^,]+),", title)
-    if prefix_match:
-        companies.append(prefix_match.group(1).strip())
-
-    companies.extend(re.findall(r"[A-Z]사", title))
-
-    for known in ["카카오", "네이버", "삼성전자", "LG전자", "SK하이닉스", "현대자동차", "C사"]:
-        if known in title or known in content:
-            companies.append(known)
-
-    companies.extend(re.findall(r"[A-Z]사", content))
-
-    return deduplicate_strings(companies)
-
-
-def collect_people(content: str) -> list[dict[str, str]]:
-    people: list[dict[str, str]] = []
-
-    for match in re.finditer(r"([가-힣]{2,4})을 신임 ([가-힣A-Za-z()]+)로 선임", content):
-        people.append({"name": match.group(1), "role": match.group(2)})
-
-    for match in re.finditer(r"([가-힣]{2,4})은 기존에 ([^.]*)로 재직", content):
-        people.append({"name": match.group(1), "role": match.group(2).strip()})
-
-    return deduplicate_people(people)
-
-
-def collect_industries(content: str) -> list[str]:
-    return [industry for industry in KNOWN_INDUSTRIES if industry in content]
-
-
-def find_evidence_sentence(content: str, keywords: list[str]) -> str:
-    for sentence in split_sentences(content):
-        if all(keyword in sentence for keyword in keywords):
-            return sentence
-
-    for sentence in split_sentences(content):
-        if any(keyword in sentence for keyword in keywords):
-            return sentence
-
-    return ""
-
-
 def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
     title = doc.get("title", "")
     content = doc.get("content", "")
     source_id = doc.get("source_id", "unknown")
 
-    companies = collect_companies(title, content)
-    people = collect_people(content)
+    companies = collect_companies(doc, title, content)
+    people = collect_people(doc, content)
     industries = collect_industries(content)
 
     entities: list[dict[str, Any]] = []
@@ -111,7 +60,7 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
                 "id": build_entity_id("person", person["name"]),
                 "type": "Person",
                 "name": person["name"],
-                "role": person["role"],
+                "role": person.get("role", ""),
             }
         )
 
@@ -122,53 +71,35 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
 
     if len(companies) >= 2 and has_relation_keyword(content, "ACQUIRES"):
         relations.append(
-            {
-                "type": "ACQUIRES",
-                "from": build_entity_id("company", companies[0]),
-                "to": build_entity_id("company", companies[1]),
-                "evidence": find_evidence_sentence(content, [companies[0], companies[1], "인수"]),
-            }
+            build_relation("ACQUIRES", "company", companies[0], "company", companies[1], content)
         )
 
     if len(companies) >= 2 and has_relation_keyword(content, "INVESTS_IN"):
         relations.append(
-            {
-                "type": "INVESTS_IN",
-                "from": build_entity_id("company", companies[0]),
-                "to": build_entity_id("company", companies[1]),
-                "evidence": find_evidence_sentence(content, [companies[0], companies[1], "투자"]),
-            }
+            build_relation("INVESTS_IN", "company", companies[0], "company", companies[1], content)
         )
 
     if companies and industries:
         for industry in industries:
             relations.append(
-                {
-                    "type": "BELONGS_TO",
-                    "from": build_entity_id("company", companies[0]),
-                    "to": build_entity_id("industry", industry),
-                    "evidence": find_evidence_sentence(content, [industry]),
-                }
+                build_relation("BELONGS_TO", "company", companies[0], "industry", industry, content)
             )
 
     if companies and people and has_relation_keyword(content, "APPOINTED_TO"):
         relations.append(
-            {
-                "type": "APPOINTED_TO",
-                "from": build_entity_id("person", people[0]["name"]),
-                "to": build_entity_id("company", companies[0]),
-                "evidence": find_evidence_sentence(content, [people[0]["name"], "선임"]),
-            }
+            build_relation("APPOINTED_TO", "person", people[0]["name"], "company", companies[0], content)
         )
 
     if companies and people and has_relation_keyword(content, "AFFILIATED_WITH"):
         relations.append(
-            {
-                "type": "AFFILIATED_WITH",
-                "from": build_entity_id("person", people[0]["name"]),
-                "to": build_entity_id("company", companies[0]),
-                "evidence": find_evidence_sentence(content, [people[0]["name"]]),
-            }
+            build_relation(
+                "AFFILIATED_WITH",
+                "person",
+                people[0]["name"],
+                "company",
+                companies[0],
+                content,
+            )
         )
 
     graph = {
@@ -180,8 +111,67 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
     return graph
 
 
+def collect_companies(doc: dict[str, Any], title: str, content: str) -> list[str]:
+    companies: list[str] = []
+
+    for key in ["company_name", "corp_name"]:
+        if doc.get(key):
+            companies.append(str(doc[key]))
+
+    companies.extend(str(value) for value in doc.get("mentioned_companies", []) if value)
+    companies.extend(str(value) for value in doc.get("mentioned_entities", []) if value)
+    companies.extend(re.findall(r"\b[A-Z][A-Za-z0-9&.\- ]{1,40}(?:Inc|Corp|Co|Ltd|Group)\b", title))
+    companies.extend(re.findall(r"\b[A-Z][A-Za-z0-9&.\- ]{1,40}(?:Inc|Corp|Co|Ltd|Group)\b", content))
+
+    return deduplicate_strings(companies)
+
+
+def collect_people(doc: dict[str, Any], content: str) -> list[dict[str, str]]:
+    people: list[dict[str, str]] = []
+
+    for value in doc.get("mentioned_people", []):
+        if value:
+            people.append({"name": str(value), "role": ""})
+
+    for match in re.finditer(r"([A-Z][a-z]+ [A-Z][a-z]+).{0,30}(CEO|COO|CFO|director|executive)", content):
+        people.append({"name": match.group(1), "role": match.group(2)})
+
+    return deduplicate_people(people)
+
+
+def collect_industries(content: str) -> list[str]:
+    industries = ["AI", "cloud", "semiconductor", "battery", "bio", "shipbuilding", "energy", "IT"]
+    lower_content = content.lower()
+    return [industry for industry in industries if industry.lower() in lower_content]
+
+
+def build_relation(
+    relation_type: str,
+    from_type: str,
+    from_name: str,
+    to_type: str,
+    to_name: str,
+    content: str,
+) -> dict[str, str]:
+    return {
+        "type": relation_type,
+        "from": build_entity_id(from_type, from_name),
+        "to": build_entity_id(to_type, to_name),
+        "evidence": find_evidence_sentence(content, RELATION_KEYWORDS.get(relation_type, [to_name])),
+    }
+
+
+def find_evidence_sentence(content: str, keywords: list[str]) -> str:
+    for sentence in split_sentences(content):
+        lowered = sentence.lower()
+        if any(keyword.lower() in lowered for keyword in keywords):
+            return sentence
+    return split_sentences(content)[0] if content.strip() else ""
+
+
 def has_relation_keyword(content: str, relation_type: str) -> bool:
-    return any(keyword in content for keyword in RELATION_KEYWORDS[relation_type])
+    lowered = content.lower()
+    return any(keyword.lower() in lowered for keyword in RELATION_KEYWORDS[relation_type])
 
 
 def deduplicate_entities(entities: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -201,9 +191,10 @@ def deduplicate_strings(values: list[str]) -> list[str]:
     seen: set[str] = set()
     results: list[str] = []
     for value in values:
-        if value and value not in seen:
-            seen.add(value)
-            results.append(value)
+        cleaned = value.strip()
+        if cleaned and cleaned not in seen:
+            seen.add(cleaned)
+            results.append(cleaned)
     return results
 
 
@@ -211,18 +202,8 @@ def deduplicate_people(values: list[dict[str, str]]) -> list[dict[str, str]]:
     seen: set[tuple[str, str]] = set()
     results: list[dict[str, str]] = []
     for value in values:
-        key = (value["name"], value["role"])
+        key = (value["name"], value.get("role", ""))
         if key not in seen:
             seen.add(key)
             results.append(value)
     return results
-
-
-if __name__ == "__main__":
-    for file_path in sorted(TEST_DATA_DIR.glob("sample_news_*.json")):
-        doc = load_json_file(file_path)
-        graph_data = extract_graph(doc)
-        output_path = OUTPUT_DIR / f"{file_path.stem}_graph.json"
-        with output_path.open("w", encoding="utf-8") as file:
-            json.dump(graph_data, file, ensure_ascii=False, indent=2)
-        print(f"[OK] 그래프 JSON 생성 완료: {output_path}")

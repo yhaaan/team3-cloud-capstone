@@ -1,0 +1,107 @@
+// node: company_samsung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung", "type": "Company", "name": "삼성"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+
+// node: company_lg
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg", "type": "Company", "name": "LG"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화"}
+
+// node: company_sm_entertainment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sm_entertainment", "type": "Company", "name": "SM엔터테인먼트"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "바이오"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_motor", "to_id": "industry_ai", "evidence": "SK는 반도체·데이터엔지니어, LG는 AI 디지털전환, 현대차는 임베디드 AI, 한화는 항공·우주·호텔다이닝 등 분야에 참여를 희망했습니다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_sk", "to_id": "industry_semiconductor", "evidence": "SK는 반도체·데이터엔지니어, LG는 AI 디지털전환, 현대차는 임베디드 AI, 한화는 항공·우주·호텔다이닝 등 분야에 참여를 희망했습니다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_lg", "to_id": "industry_ai", "evidence": "SK는 반도체·데이터엔지니어, LG는 AI 디지털전환, 현대차는 임베디드 AI, 한화는 항공·우주·호텔다이닝 등 분야에 참여를 희망했습니다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hanwha", "to_id": "industry_bio", "evidence": "SK는 반도체·데이터엔지니어, LG는 AI 디지털전환, 현대차는 임베디드 AI, 한화는 항공·우주·호텔다이닝 등 분야에 참여를 희망했습니다."}

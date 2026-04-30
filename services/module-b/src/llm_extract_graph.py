@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 import requests
+from dotenv import load_dotenv
 from jsonschema import validate
 
 
@@ -15,6 +16,8 @@ ROOT_DIR = MODULE_B_DIR.parent.parent
 ONTOLOGY_PATH = ROOT_DIR / "docs" / "ontology.md"
 GRAPH_SCHEMA_PATH = ROOT_DIR / "schemas" / "graph_schema.json"
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
+
+load_dotenv()
 
 
 def load_text_file(file_path: Path) -> str:
@@ -67,6 +70,11 @@ def extract_graph_with_openai(
     payload = {
         "model": resolved_model,
         "input": build_extraction_prompt(doc),
+        "text": {
+            "format": {
+                "type": "json_object",
+            }
+        },
     }
     headers = {
         "Authorization": f"Bearer {resolved_api_key}",

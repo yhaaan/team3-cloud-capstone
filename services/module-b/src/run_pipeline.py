@@ -10,7 +10,8 @@ from load_neo4j import OUTPUT_DIR, export_cypher_payload, load_graph_to_neo4j
 
 
 BASE_DIR = Path(__file__).resolve().parent
-TEST_DATA_DIR = BASE_DIR.parent / "tests"
+ROOT_DIR = BASE_DIR.parent.parent.parent
+MODULE_A_DATA_DIR = ROOT_DIR / "services" / "module-a" / "data"
 
 
 def run_for_document(
@@ -21,11 +22,22 @@ def run_for_document(
     neo4j_uri: str | None,
     neo4j_user: str | None,
     neo4j_password: str | None,
+    allow_fallback: bool,
+    min_relation_score: float = 0.6,
 ) -> None:
     if use_chroma:
         insert_doc_to_chroma(doc, source_name=doc["source_id"])
 
-    graph_data = extract_graph(doc, mode=extractor_mode)
+    relation_score = get_relation_relevance_score(doc)
+    if relation_score < min_relation_score:
+        print(
+            "[SKIP] Graph extraction skipped: "
+            f"{doc['source_id']} relation_relevance_score={relation_score:.3f} "
+            f"< {min_relation_score:.3f}"
+        )
+        return
+
+    graph_data = extract_graph(doc, mode=extractor_mode, allow_fallback=allow_fallback)
 
     graph_output_path = OUTPUT_DIR / f"{doc['source_id']}_graph.json"
     write_json_file(graph_output_path, graph_data)
@@ -41,22 +53,43 @@ def run_for_document(
 
     print(f"[OK] 그래프 산출물 생성 완료: {graph_output_path.name}")
 
+def get_relation_relevance_score(doc: dict[str, str]) -> float:
+    value = doc.get("relation_relevance_score")
+    if value is None and isinstance(doc.get("metadata"), dict):
+        value = doc["metadata"].get("relation_relevance_score")
+
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return 0.0
+
 
 def build_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Module B pipeline runner")
     parser.add_argument(
         "--input",
         type=Path,
-        default=TEST_DATA_DIR,
+        default=MODULE_A_DATA_DIR,
         help="입력 JSON/JSONL 파일 또는 디렉터리",
     )
     parser.add_argument(
         "--extractor",
         choices=["rule", "openai"],
-        default="rule",
+        default="openai",
         help="그래프 추출 방식",
     )
     parser.add_argument("--skip-chroma", action="store_true", help="Chroma 적재 건너뛰기")
+    parser.add_argument(
+        "--no-fallback",
+        action="store_true",
+        help="OpenAI 추출 실패 시 규칙 기반 추출로 대체하지 않고 오류를 발생시킴",
+    )
+    parser.add_argument(
+        "--min-relation-score",
+        type=float,
+        default=0.6,
+        help="Minimum relation_relevance_score required for graph extraction",
+    )
     parser.add_argument("--neo4j-uri", default=None)
     parser.add_argument("--neo4j-user", default=None)
     parser.add_argument("--neo4j-password", default=None)
@@ -77,4 +110,6 @@ if __name__ == "__main__":
             neo4j_uri=args.neo4j_uri,
             neo4j_user=args.neo4j_user,
             neo4j_password=args.neo4j_password,
+            allow_fallback=not args.no_fallback,
+            min_relation_score=args.min_relation_score,
         )

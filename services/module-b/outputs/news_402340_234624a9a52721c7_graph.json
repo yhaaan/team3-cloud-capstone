@@ -1,0 +1,51 @@
+{
+  "source_id": "news_402340_234624a9a52721c7",
+  "entities": [
+    {
+      "id": "company_sk_square",
+      "type": "Company",
+      "name": "SK스퀘어",
+      "industry": "반도체"
+    },
+    {
+      "id": "company_sk_hynix",
+      "type": "Company",
+      "name": "SK하이닉스"
+    },
+    {
+      "id": "company_hd_hyundai_heavy_industries",
+      "type": "Company",
+      "name": "HD현대중공업"
+    },
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_sk_square",
+      "to": "company_sk_hynix",
+      "evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다."
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_sk_square",
+      "to": "company_hd_hyundai_heavy_industries",
+      "evidence": "연기금은 대신 SK스퀘어를 사들였는데, 이 기간 순매수 규모가 989억원으로, HD현대중공업(2221억원)에 이어 2위였다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_sk_square",
+      "to": "industry_semiconductor",
+      "evidence": "SK스퀘어는 올해 반도체 관련 회사에 대한 투자도 본격적으로 진행될 예정으로, 증권가에서는 투자 회사로서의 역할에 주목하고 있다."
+    }
+  ]
+}

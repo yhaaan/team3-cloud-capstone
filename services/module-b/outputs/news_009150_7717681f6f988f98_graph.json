@@ -1,0 +1,49 @@
+{
+  "source_id": "news_009150_7717681f6f988f98",
+  "entities": [
+    {
+      "id": "company_samsung_sdi",
+      "type": "Company",
+      "name": "삼성SDI"
+    },
+    {
+      "id": "company_samsung_electronics",
+      "type": "Company",
+      "name": "삼성전자"
+    },
+    {
+      "id": "company_samsung_electro_mechanics",
+      "type": "Company",
+      "name": "삼성전기",
+      "stock_code": "009150"
+    },
+    {
+      "id": "person_choi_ju_sun",
+      "type": "Person",
+      "name": "최주선",
+      "role": "사장",
+      "affiliated_company": "company_samsung_sdi"
+    },
+    {
+      "id": "person_jang_deok_hyun",
+      "type": "Person",
+      "name": "장덕현",
+      "role": "사장",
+      "affiliated_company": "company_samsung_electro_mechanics"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_choi_ju_sun",
+      "to": "company_samsung_sdi",
+      "evidence": "최주선 삼성SDI 사장은 메모리반도체 연구개발(R&D)에 20년 넘게 종사한 자타공인 반도체 전문가다."
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_jang_deok_hyun",
+      "to": "company_samsung_electro_mechanics",
+      "evidence": "장덕현 삼성전기 사장 역시 삼성전자 메모리사업부 솔루션개발실장 등을 역임하며 반도체 개발의 최전선을 지킨 인물이다."
+    }
+  ]
+}

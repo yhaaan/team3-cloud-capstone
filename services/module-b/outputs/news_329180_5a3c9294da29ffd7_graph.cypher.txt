@@ -1,0 +1,218 @@
+// node: company_posco_holdings
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_posco_holdings", "type": "Company", "name": "POSCO홀딩스"}
+
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업"}
+
+// node: company_hd_hyundai_electric
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_electric", "type": "Company", "name": "HD현대일렉트릭"}
+
+// node: company_samsung_electrics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기"}
+
+// node: company_iljin_electric
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_iljin_electric", "type": "Company", "name": "일진전기"}
+
+// node: company_daehan_electric_wire
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_daehan_electric_wire", "type": "Company", "name": "대한전선"}
+
+// node: company_hyosung_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyosung_heavy_industries", "type": "Company", "name": "효성중공업"}
+
+// node: company_samsung_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업"}
+
+// node: company_hd_korea_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_korea_shipbuilding_marine", "type": "Company", "name": "HD한국조선해양"}
+
+// node: company_hanwha_ocean
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션"}
+
+// node: company_buguk_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_buguk_steel", "type": "Company", "name": "부국철강"}
+
+// node: company_hyundai_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_steel", "type": "Company", "name": "현대제철"}
+
+// node: industry_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel", "type": "Industry", "name": "철강"}
+
+// node: industry_shipbuilding_and_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_and_heavy_industries", "type": "Industry", "name": "조선 및 중공업"}
+
+// node: industry_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_power_infrastructure", "type": "Industry", "name": "전력기기·전선"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_posco_holdings", "to_id": "industry_steel", "evidence": "철강 업종도 강세다. POSCO홀딩스는 이날 장중 고가 기준 15.45% 상승한 48만2000원을 기록했고, 부국철강은 29.76% 급등한 3445원에 거래됐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_buguk_steel", "to_id": "industry_steel", "evidence": "철강 업종도 강세다. POSCO홀딩스는 이날 장중 고가 기준 15.45% 상승한 48만2000원을 기록했고, 부국철강은 29.76% 급등한 3445원에 거래됐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyundai_steel", "to_id": "industry_steel", "evidence": "현대제철 역시 6.89% 오른 4만6550원을 기록하며 상승 흐름에 동참했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "industry_shipbuilding_and_heavy_industries", "evidence": "POSCO홀딩스와 HD현대중공업 등 대장주들은 신고가 흐름을 보이며 지수 상승을 뒷받침했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hd_korea_shipbuilding_marine", "to_id": "industry_shipbuilding_and_heavy_industries", "evidence": "조선 업종 역시 상승 흐름이 이어지고 있다. HD한국조선해양은 지난해 4월 20만원 수준에서 1년 동안 꾸준히 상승하며 현재 46만9500원까지 올라 두 배 이상의 상승률을 기록했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hanwha_ocean", "to_id": "industry_shipbuilding_and_heavy_industries", "evidence": "한화오션은 이날 13만3600원대에서 보합권을 보였지만 지난해 12월 말 3만5000원대에서 약 280% 상승했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hyosung_heavy_industries", "to_id": "industry_shipbuilding_and_heavy_industries", "evidence": "효성중공업은 전력설비와 중공업 부문을 함께 갖춘 사업 구조를 바탕으로 상승세를 이어갔다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_hd_hyundai_electric", "to_id": "industry_power_infrastructure", "evidence": "전력기기·전선 섹터 중 HD현대일렉트릭은 이날 고가 기준 6.2% 상승한 138만7000원, 삼성전기는 6.42% 오른 84만5000원에 거래됐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_samsung_electrics", "to_id": "industry_power_infrastructure", "evidence": "전력기기·전선 섹터 중 HD현대일렉트릭은 이날 고가 기준 6.2% 상승한 138만7000원, 삼성전기는 6.42% 오른 84만5000원에 거래됐다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_iljin_electric", "to_id": "industry_power_infrastructure", "evidence": "일진전기는 16.74% 급등한 12만8300원, 대한전선은 11.48% 오른 4만8550원을 기록했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_daehan_electric_wire", "to_id": "industry_power_infrastructure", "evidence": "일진전기는 16.74% 급등한 12만8300원, 대한전선은 11.48% 오른 4만8550원을 기록했다."}

@@ -1,0 +1,23 @@
+// node: company_hyundai_motor_company
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_company", "type": "Company", "name": "현대자동차", "stock_code": "005380"}
+
+// node: event_self_stock_disposal_decision
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_self_stock_disposal_decision", "type": "Event", "name": "주요사항보고서(자기주식처분결정)", "date": "2026-03-26"}
+
+// node: event_self_stock_acquisition_decision
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_self_stock_acquisition_decision", "type": "Event", "name": "주요사항보고서(자기주식취득결정)", "date": "2026-01-29"}

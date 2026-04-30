@@ -1,0 +1,109 @@
+// node: company_dosan_energy_ability
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_energy_ability", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_dosan_bobcat
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_bobcat", "type": "Company", "name": "두산밥캣"}
+
+// node: company_dosan_fuelcell
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_fuelcell", "type": "Company", "name": "두산퓨얼셀"}
+
+// node: industry_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_nuclear_power", "type": "Industry", "name": "원전"}
+
+// node: industry_gas_turbine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_gas_turbine", "type": "Industry", "name": "가스터빈"}
+
+// node: industry_steam_turbine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steam_turbine", "type": "Industry", "name": "스팀터빈"}
+
+// node: industry_smr
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_smr", "type": "Industry", "name": "소형모듈원자로"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "company_dosan_bobcat", "evidence": "두산밥캣·두산퓨얼셀 등 자회사의 전년 대비 매출 증대와 아울러 두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다."}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "company_dosan_fuelcell", "evidence": "두산밥캣·두산퓨얼셀 등 자회사의 전년 대비 매출 증대와 아울러 두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "industry_nuclear_power", "evidence": "두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "industry_gas_turbine", "evidence": "두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "industry_steam_turbine", "evidence": "두산에너빌리티는 국내외에서 가스터빈과 스팀터빈 중심의 수주 호조세도 이어갔다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "industry_smr", "evidence": "두산에너빌리티는 연말까지 체코 원전 건설공사, 소형모듈원자로(SMR) 주기기 공급 계약, 해외 가스복합 설계·조달·시공(EPC), 해상풍력 등을 포함해 총 13조 3000억 원의 수주를 달성한 것으로 보고 있다."}

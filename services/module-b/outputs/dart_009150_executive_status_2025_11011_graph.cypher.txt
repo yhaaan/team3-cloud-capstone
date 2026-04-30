@@ -1,0 +1,126 @@
+// node: company_samsung_electrics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: person_jang_deok_hyeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyeon", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_kim_seong_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_seong_jin", "type": "Person", "name": "김성진", "role": "부사장", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_choi_jae_yeol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_jae_yeol", "type": "Person", "name": "최재열", "role": "부사장", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_choi_jong_gu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_jong_gu", "type": "Person", "name": "최종구", "role": "이사", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_yeo_yoon_kyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yeo_yoon_kyung", "type": "Person", "name": "여윤경", "role": "이사", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_lee_yoon_jung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_yoon_jung", "type": "Person", "name": "이윤정", "role": "이사", "affiliated_company": "company_samsung_electrics"}
+
+// node: person_jung_seung_il
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_seung_il", "type": "Person", "name": "정승일", "role": "이사", "affiliated_company": "company_samsung_electrics"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jang_deok_hyeon", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 장덕현, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 경영전반 총괄 경영위원회 위원장 ESG위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 삼성전자 S.LSI사업부 Sensor사업팀장 미국 University of Florida 전자공학 박사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_seong_jin", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 김성진, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 경영지원업무 총괄 경영위원회 위원 ESG위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 삼성전자 무선사업부 지원팀장 고려대 경제학 학사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_jae_yeol", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 최재열, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 컴포넌트사업부 총괄 경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 삼성전기 MLCC개발팀장 연세대 세라믹공학 석사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_jong_gu", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 최종구, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 이사회 의장 경영전반 업무 감사위원회 위원 내부거래위원회 위원 보상위원회 위원장 사외이사후보 추천위원회 위원장 ESG위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 법무법인 화우 특별고문 금융위원회 위원장 미국 위스콘신대학교 공공정책학 석사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_yeo_yoon_kyung", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 여윤경, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 경영전반 업무 감사위원회 위원장 보상위원회 위원 사외이사후보 추천위원회 위원 ESG위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 이화여대 경영대학 재무전공 교수 미국 오하이오주립대 개인재무학 박사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_yoon_jung", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 이윤정, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 경영전반 업무 내부거래위원회 위원 보상위원회 위원 사외이사후보 추천위원회 위원 ESG위원회 위원장, 최대주주와의 관계는 계열회사 임원, 주요경력은 김ㆍ장 법률사무소 변호사 영국 University of London SOAS 환경법학 석사."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jung_seung_il", "to_id": "company_samsung_electrics", "evidence": "삼성전기의 임원은 정승일, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 경영전반 업무 감사위원회 위원 내부거래위원회 위원장 보상위원회 위원 사외이사후보 추천위원회 위원 ESG위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 트러스톤자산운용 고문 한국전력공사 사장 서울대 경영학 석사."}

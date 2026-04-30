@@ -1,0 +1,45 @@
+{
+  "source_id": "news_402340_858f0ca456fa9ea0",
+  "entities": [
+    {
+      "id": "company_sk_hynix",
+      "type": "Company",
+      "name": "SK하이닉스"
+    },
+    {
+      "id": "company_sk_square",
+      "type": "Company",
+      "name": "SK스퀘어"
+    },
+    {
+      "id": "company_hd_hyundai_heavy_industries",
+      "type": "Company",
+      "name": "HD현대중공업"
+    },
+    {
+      "id": "industry_ai_semiconductor",
+      "type": "Industry",
+      "name": "인공지능(AI) 반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_연기금",
+      "to": "company_sk_square",
+      "evidence": "연기금은 SK하이닉스를 팔아치우는 대신 SK스퀘어를 사들인 것으로 나타났다."
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_sk_square",
+      "to": "company_sk_hynix",
+      "evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다."
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_sk_hynix",
+      "to": "industry_ai_semiconductor",
+      "evidence": "11:09 인공지능(AI) 반도체 슈퍼사이클을 타고 SK하이닉스가 130만원선을 돌파한 가운데 연기금이 비중 조절에 나섰다."
+    }
+  ]
+}

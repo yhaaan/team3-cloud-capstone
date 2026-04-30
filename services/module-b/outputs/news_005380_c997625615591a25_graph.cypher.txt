@@ -1,0 +1,157 @@
+// node: person_madison_hwang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_madison_hwang", "type": "Person", "name": "매디슨 황", "role": "옴니버스 및 로보틱스 제품 마케팅 수석", "affiliated_company": "company_nvidia"}
+
+// node: person_kim_min_pyo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_min_pyo", "type": "Person", "name": "김민표", "role": "두산로보틱스 대표", "affiliated_company": "company_dosan_robotics"}
+
+// node: person_jensen_huang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jensen_huang", "type": "Person", "name": "젠슨 황", "role": "CEO", "affiliated_company": "company_nvidia"}
+
+// node: person_lee_jae_yong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jae_yong", "type": "Person", "name": "이재용", "role": "삼성전자 회장", "affiliated_company": "company_samsung_electronics"}
+
+// node: person_jeong_iseon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_iseon", "type": "Person", "name": "정의선", "role": "현대차그룹 회장", "affiliated_company": "company_hyundai_motor_company"}
+
+// node: person_choi_tae_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_tae_won", "type": "Person", "name": "최태원", "role": "SK그룹 회장", "affiliated_company": "company_sk_hynix"}
+
+// node: company_dosan_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_robotics", "type": "Company", "name": "두산로보틱스", "industry": "industry_robotics"}
+
+// node: company_nvidia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_nvidia", "type": "Company", "name": "엔비디아"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스"}
+
+// node: company_hyundai_motor_company
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor_company", "type": "Company", "name": "현대차"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로봇"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_madison_hwang", "to_id": "company_nvidia", "evidence": "젠슨 황 엔비디아 최고경영자(CEO)의 장녀인 매디슨 황 옴니버스 및 로보틱스 제품 마케팅 수석이 국내 주요 기업들을 잇달아 만나며 피지컬 인공지능(AI) 협력 확대에 속도를 내고 있다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_kim_min_pyo", "to_id": "company_dosan_robotics", "evidence": "황 수석이사는 경기 분당에 위치한 두산로보틱스 이노베이션센터를 찾아 김민표 두산로보틱스 대표와 만나 피지컬 AI 기술 협력 방안을 논의했다."}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "company_dosan_robotics", "to_id": "industry_robotics", "evidence": "두산로보틱스는 해당 협력을 기반으로 내년 에이전틱 운영체제 기반 지능형 로봇 솔루션을 공개하고, 2028년에는 산업용 휴머노이드를 출시한다는 계획이다."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_lee_jae_yong", "to_id": "company_samsung_electronics", "evidence": "재계에서는 황 수석이사가 지난해 서울에서 열린 이재용 삼성전자 회장, 정의선 현대차그룹 회장, 젠슨 황 CEO의 회동에 동행한 데 이어..."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_jeong_iseon", "to_id": "company_hyundai_motor_company", "evidence": "재계에서는 황 수석이사가 지난해 서울에서 열린 이재용 삼성전자 회장, 정의선 현대차그룹 회장, 젠슨 황 CEO의 회동에 동행한 데 이어..."}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r.evidence = $evidence
+
+:params {"from_id": "person_choi_tae_won", "to_id": "company_sk_hynix", "evidence": "올해 초 미국 실리콘밸리에서 최태원 SK그룹 회장과 젠슨 황 CEO 만남에도 참여한 점에 주목하고 있다."}
