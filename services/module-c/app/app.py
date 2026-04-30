@@ -29,8 +29,23 @@ if prompt := st.chat_input("질문을 입력하세요"):
         try:
             # 백엔드 서버 주소
             response = requests.post("http://127.0.0.1:8000/chat", json=payload)
-            answer = response.json().get("answer")
+            # 1. 응답 전체를 JSON으로 받기
+            data = response.json()
+
+            # 2. 최종 답변(텍스트) 추출 및 출력
+            answer = data.get("final_response")
             st.markdown(answer)
-            st.session_state.messages.append({"role": "assistant", "content": answer})
+
+            # 3. 그래프 데이터(JSON) 추출 및 출력
+            relation_graph = data.get("relation_graph")
+
+            if relation_graph:
+                st.markdown("---")
+                st.markdown("### 📊 관계 그래프 데이터 (JSON)")
+                # JSON 데이터를 확장 가능한 박스(expander) 안에 넣어 깔끔하게 보여줍니다.
+                with st.expander("그래프 데이터 보기"):
+                    st.json(relation_graph)
+            else:
+                st.info("표시할 그래프 데이터가 없습니다.")
         except Exception as e:
             st.error(f"백엔드 연결 실패: {e}")
