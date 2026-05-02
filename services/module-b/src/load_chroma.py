@@ -26,7 +26,6 @@ OPENAI_EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 DEFAULT_EMBEDDING_DIMENSIONS = 1536
 CHROMA_UPSERT_BATCH_SIZE = 100
-CHROMA_HNSW_SYNC_SIZE = 10
 
 load_dotenv()
 
@@ -164,11 +163,7 @@ def build_client_and_collection():
 
     collection = client.get_or_create_collection(
         name="module_b_chunks",
-        metadata={
-            "hnsw:space": "cosine",
-            "hnsw:batch_size": CHROMA_HNSW_SYNC_SIZE,
-            "hnsw:sync_threshold": CHROMA_HNSW_SYNC_SIZE,
-        },
+        metadata={"hnsw:space": "cosine"},
     )
     return client, collection
 

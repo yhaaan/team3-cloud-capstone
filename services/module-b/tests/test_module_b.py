@@ -15,6 +15,7 @@ if str(SRC_DIR) not in sys.path:
 from chunking import split_text_into_chunks
 from document_io import iter_input_documents
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
+from role_normalizer import normalize_graph_roles, normalize_role
 
 
 class ModuleBPipelineTests(unittest.TestCase):
@@ -63,6 +64,32 @@ class ModuleBPipelineTests(unittest.TestCase):
         self.assertEqual(graph["source_id"], doc["source_id"])
         self.assertIn("entities", graph)
         self.assertIn("relations", graph)
+
+    def test_role_normalization_preserves_raw_and_standardizes_role(self):
+        role, label = normalize_role("삼성전자 회장")
+
+        self.assertEqual(role, "CHAIRMAN")
+        self.assertEqual(label, "회장")
+
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {
+                    "id": "person_test",
+                    "type": "Person",
+                    "name": "홍길동",
+                    "role": "삼성전자 회장",
+                }
+            ],
+            "relations": [],
+        }
+
+        normalized = normalize_graph_roles(graph)
+        person = normalized["entities"][0]
+
+        self.assertEqual(person["role"], "CHAIRMAN")
+        self.assertEqual(person["role_label"], "회장")
+        self.assertEqual(person["role_raw"], "삼성전자 회장")
 
 
 if __name__ == "__main__":

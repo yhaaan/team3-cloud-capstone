@@ -8,6 +8,7 @@ from typing import Any
 from jsonschema import validate
 
 from chunking import split_sentences
+from role_normalizer import normalize_graph_roles
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -107,6 +108,7 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
         "entities": deduplicate_entities(entities),
         "relations": [relation for relation in relations if relation["evidence"]],
     }
+    graph = normalize_graph_roles(graph)
     validate(instance=graph, schema=load_json_file(GRAPH_SCHEMA_PATH))
     return graph
 
