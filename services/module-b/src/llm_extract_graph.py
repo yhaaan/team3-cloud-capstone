@@ -9,6 +9,8 @@ import requests
 from dotenv import load_dotenv
 from jsonschema import validate
 
+from role_normalizer import normalize_graph_roles
+
 
 BASE_DIR = Path(__file__).resolve().parent
 MODULE_B_DIR = BASE_DIR.parent
@@ -92,6 +94,7 @@ def extract_graph_with_openai(
     response_json = response.json()
     output_text = extract_output_text(response_json)
     graph_data = json.loads(output_text)
+    graph_data = normalize_graph_roles(graph_data)
     validate(instance=graph_data, schema=load_json_file(GRAPH_SCHEMA_PATH))
     return graph_data
 

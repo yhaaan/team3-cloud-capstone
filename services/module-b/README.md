@@ -112,6 +112,12 @@ Generate Cypher files only:
 - Neo4j Cypher: `services/module-b/outputs/*_graph.cypher.txt`
 - Chroma local DB: `services/module-b/local_db/chroma`
 
+Person roles are normalized before graph JSON, Cypher export, and Neo4j loading:
+
+- `role`: query-safe standard code such as `CHAIRMAN`, `CEO`, `PRESIDENT`, `DIRECTOR`
+- `role_label`: Korean display label such as `회장`, `대표이사`, `사장`, `이사`
+- `role_raw`: original extracted title text such as `삼성전자 회장`, `대표이사 사장`
+
 ## Tests
 
 ```powershell

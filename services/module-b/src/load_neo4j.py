@@ -8,6 +8,8 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from role_normalizer import normalize_graph_roles
+
 try:
     from neo4j import GraphDatabase
 except ImportError:
@@ -37,7 +39,7 @@ SET r.evidence = $evidence
 
 def load_graph_json(file_path: Path) -> dict[str, Any]:
     with file_path.open("r", encoding="utf-8") as file:
-        return json.load(file)
+        return normalize_graph_roles(json.load(file))
 
 
 def export_cypher_payload(graph_data: dict[str, Any], output_path: Path) -> None:
