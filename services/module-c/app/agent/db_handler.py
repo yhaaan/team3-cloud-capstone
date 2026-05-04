@@ -156,29 +156,29 @@ class VectorHandler():
     # 벡터 DB 초기화 함수
     def get_vector_db(self):
         try:
-            persist_dir = "./chroma_db"
-            vector = Chroma(
-                persist_directory=persist_dir,
-                embedding_function=OpenAIEmbeddings(api_key=Config.OPENAI_API_KEY)
-            )
-            # # 지정된 경로로 클라이언트 생성
-            # client = chromadb.PersistentClient(
-            #     path="../module-b/local_db/chroma"
-            # )
-            
-            # # 임베딩 모델 설정
-            # embeddings = OpenAIEmbeddings(
-            #     model="text-embedding-3-small",
-            #     api_key=Config.OPENAI_API_KEY
-            # )
-            
-            # # LangChain의 Chroma 객체와 연결
-            # # collection_name은 "module_b_chunks"로 지정
+            # persist_dir = "./chroma_db"
             # vector = Chroma(
-            #     client=client,
-            #     collection_name="module_b_chunks",
-            #     embedding_function=embeddings
+            #     persist_directory=persist_dir,
+            #     embedding_function=OpenAIEmbeddings(api_key=Config.OPENAI_API_KEY)
             # )
+            # 지정된 경로로 클라이언트 생성
+            client = chromadb.PersistentClient(
+                path="../module-b/local_db/chroma"
+            )
+            
+            # 임베딩 모델 설정
+            embeddings = OpenAIEmbeddings(
+                model="text-embedding-3-small",
+                api_key=Config.OPENAI_API_KEY
+            )
+            
+            # LangChain의 Chroma 객체와 연결
+            # collection_name은 "module_b_chunks"로 지정
+            vector = Chroma(
+                client=client,
+                collection_name="module_b_chunks",
+                embedding_function=embeddings
+            )
 
             # heartbeat 대신 '더미 검색'으로 실제 작동 여부 확인
             # 아주 짧은 텍스트로 1개의 결과만 찾아보게 시도
