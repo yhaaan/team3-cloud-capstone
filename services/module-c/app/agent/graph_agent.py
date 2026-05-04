@@ -8,6 +8,9 @@ from typing import Any, Dict, Optional, TypedDict, List, Annotated
 from operator import add # 리스트를 덮어쓰지 않고 '추가'하기 위해 필요
 from langgraph.checkpoint.memory import MemorySaver # 메모리 저장소
 from app.schemas import RelationGraph, EntityExtractionData, ChatResponse
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 # 상태 정의
 class GraphState(TypedDict):
@@ -16,7 +19,8 @@ class GraphState(TypedDict):
     error_msg: str                      # 에러 메시지
     cypher_query: str                   # 생성된 사이퍼 쿼리(그래프 DB 탐색용)
     vector_context: str                 # 벡터 DB 탐색 결과
-    graph_context: List[Dict[str, Any]] # 그래프 DB 탐색 결과
+    graph_context: str                  # 그래프 DB 탐색 결과(llm이 알기 쉽게 관계 하나 하나를 글 형태로 정리)
+    graph_structured_data: List[Dict[str, Any]] # 그래프 DB 탐색 결과를 구조화한 데이터(시각화를 위해 노드의 id와 같은 부가 정보 전부 포함된 구조화된 데이터)
     final_response: str                 # 최종 답변
     relation_graph: RelationGraph       # 그래프 DB 탐색 결과 구조화 데이터
     # # Annotated와 add를 쓰면, return {"history": [새 메시지]} 할 때 기존 리스트에 합쳐집니다.
@@ -25,10 +29,11 @@ class GraphState(TypedDict):
 
 class GraphAgent:
     def __init__(self):
-        self.app = self._build_graph()
         self.llm = LLMManager()
         self.retriever = KnowledgeRetriever()
         self.formatter = GraphFormatter()
+        self.app = self._build_graph()
+        
 
     # 그래프 구성
     def _build_graph(self):
@@ -73,9 +78,9 @@ class GraphAgent:
 
     # 실행 함수
     def run_agent(self, query: str):
+        print("[LangGraph 실행]\n")
         inputs = {"query": query}
         result = self.app.invoke(inputs)
-        print("그래프를 실행합니다.")
         return ChatResponse(
             final_response=result.get("final_response"),
             relation_graph=result.get("relation_graph")
@@ -87,16 +92,67 @@ class GraphAgent:
         user_query = state.get("query")
         result = self.llm.extract_entities(user_query)
 
-        print("엔티티 추출이 완료되었습니다.")
-        print(result)
+        print("[엔티티 추출 완료]")
+        print(f"추출된 엔티티: {result}\n")
 
         # 에러 메시지가 있다면 바로 상태에 저장 (다음 노드에서 분기 처리용)
         if result.error_msg:
             return {"error_msg": result.error_msg}
+        
+        refined_entities = self.link_entity(result.data)
+        result.data.named_entities.companies = refined_entities.get("companies")
+        result.data.named_entities.people = refined_entities.get("people")
+
+        print(f"그래프 DB에 맞게 재정의된 엔티티: {result}\n")
+        
         return {
             "entities": result.data
         }
     
+
+    def link_entity(self, entities: EntityExtractionData):
+        # DB에서 미리 가져온 공식 명칭 리스트 (또는 ChromaDB 컬렉션)
+        official_companies = self.retriever.company_node_names
+        official_people = self.retriever.person_node_names
+
+        # 보정 작업 (List Comprehension)
+        refined_companies = [
+            self.find_best_match(name, official_companies) 
+            for name in entities.named_entities.companies
+        ]
+        
+        refined_people = [
+            self.find_best_match(name, official_people) 
+            for name in entities.named_entities.people
+        ]
+
+        # None(매칭 실패) 제거
+        return {
+            "companies": [c for c in refined_companies if c],
+            "people": [p for p in refined_people if p]
+        }
+    
+
+    def find_best_match(self, extracted_name, official_names):
+        if not extracted_name or not official_names:
+            return None
+
+        # 글자 단위(char) n-gram으로 벡터화 (오타나 부분 일치에 강함)
+        vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(2, 3))
+        tfidf_matrix = vectorizer.fit_transform(official_names)
+        
+        target_vec = vectorizer.transform([extracted_name])
+        
+        # 모든 공식 명칭과 유사도 비교
+        similarities = cosine_similarity(target_vec, tfidf_matrix).flatten()
+        best_idx = similarities.argmax()
+        
+        # 유사도가 0.4(40%) 미만이면 잘못된 추출로 간주
+        if similarities[best_idx] < 0.4:
+            return None
+            
+        return official_names[best_idx]
+
 
     # 사이퍼 쿼리 생성
     def generate_cypher(self, state: GraphState):
@@ -104,8 +160,8 @@ class GraphAgent:
         entities = state.get("entities")
         result = self.llm.generate_cypher(user_query, entities)
 
-        print("사이퍼 쿼리 생성이 완료되었습니다.")
-        print(result)
+        print("[사이퍼 쿼리 생성 완료]")
+        print(f"사이퍼 쿼리: {result}\n")
 
         return {
             "cypher_query": result
@@ -119,7 +175,9 @@ class GraphAgent:
         result = self.retriever.get_corporate_context(user_query, cypher_query)
         return {
             "vector_context": result.vector_context,
-            "graph_context": result.graph_context
+            "graph_context": result.graph_db_response.graph_context,
+            "graph_structured_data": result.graph_db_response.graph_structured_data,
+            "error_msg": result.db_error_msg
         }
     
 
@@ -133,17 +191,19 @@ class GraphAgent:
             return {"final_response": error_msg}
         
         user_query = state.get("query")
+        entities = state.get("entities")
         vector_context = state.get("vector_context")
         graph_context = state.get("graph_context")
 
-        # JSON 문자열로 직렬화 (ensure_ascii=False는 한글 깨짐 방지)
-        graph_context_json_str = json.dumps(graph_context, indent=2, ensure_ascii=False) 
+        # # JSON 문자열로 직렬화 (ensure_ascii=False는 한글 깨짐 방지)
+        # graph_context_json_str = json.dumps(graph_context, indent=2, ensure_ascii=False) 
 
         # 에러가 없으면 정상적으로 LLM 호출
         answer = self.llm.generate_final_response(
             query=user_query,
+            entities=entities,
             vector_context=vector_context,
-            graph_context=graph_context_json_str
+            graph_context=graph_context
         )
         
         return {"final_response": answer}
@@ -151,8 +211,8 @@ class GraphAgent:
 
     # 그래프 DB 탐색 결과 구조화
     def format_graph(self, state: GraphState):
-        graph_context = state.get("graph_context")
-        result = self.formatter.format_for_visualization(graph_context)
+        graph_structured_data = state.get("graph_structured_data")
+        result = self.formatter.format_for_visualization(graph_structured_data)
         return {"relation_graph": result}
     
 
@@ -167,6 +227,6 @@ class GraphAgent:
     # 구조화하기에 유효한 그래프 DB 탐색 결과가 있는지 판단
     def check_graph_result(self, state: GraphState):
         # graph_context가 비어있거나 검색 실패(None 문자열 등)인 경우
-        if not state.get("graph_context") or state["graph_context"] == "None":
+        if not state.get("graph_context") or state["graph_context"] == "":
             return "skip_visualization" # 시각화 건너뛰고 답변 생성으로
         return "format_visualization"   # 구조화 노드로 이동

@@ -1,11 +1,11 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 # region RelationGraph (그래프 DB 탐색 결과 구조화 데이터)
 # 노드 구조
 class RelationNode(BaseModel):
     id: str
-    label: str
+    name: str
 
 # 엣지 구조
 class RelationLink(BaseModel):
@@ -36,7 +36,7 @@ class ChatResponse(BaseModel):
 # 기업명/인물명 엔티티 데이터 구조
 class NamedEntityData(BaseModel):
     companies: List[str] = Field(default_factory=list, description="추출된 상장사/법인명 리스트")
-    persons: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
+    people: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
 
 # 관계 필터 데이터 구조
 class RelationFilter(BaseModel):
@@ -51,3 +51,9 @@ class EntityExtractionData(BaseModel):
     relation_filters: List[RelationFilter] = Field(default_factory=list)
     time_info: Optional[str] = Field(default=None, description="명시된 시간 정보")
 # endregion
+
+
+# 그래프 DB 탐색 응답 데이터
+class GraphDBSearchResponse(BaseModel):
+    graph_context: str
+    graph_structured_data: List[Dict[str, Any]] = Field(default_factory=list)
