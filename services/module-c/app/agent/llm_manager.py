@@ -23,7 +23,7 @@ class LLMManager:
         # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
         self.gpto4mini = ChatOpenAI(
             model="o4-mini",
-            api_key=Config.OPENAI_API_KEY,
+            api_key=Config.OPENAI_API_KEY
         )
 
         # 엔티티 추출용 llm 체인 정의
@@ -62,9 +62,10 @@ class LLMManager:
     
 
     # 최종 답변 생성 함수
-    def generate_final_response(self, query: str, vector_context: str, graph_context: str) -> str:
+    def generate_final_response(self, query: str, entities: EntityExtractionData, vector_context: str, graph_context: str) -> str:
         response = self.final_response_genration_chain.invoke({
             "user_query": query,
+            "entity_extraction_data": entities,
             "vector_context": vector_context,
             "graph_context": graph_context
         })
