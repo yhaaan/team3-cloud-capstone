@@ -11,6 +11,7 @@ class Config:
         NEO4J_URI = os.environ["NEO4J_URI"]
         NEO4J_USER = os.environ["NEO4J_USER"]
         NEO4J_PASSWORD = os.environ["NEO4J_PASSWORD"]
+        NEO4J_EX_PASSWORD = os.environ["NEO4J_EX_PASSWORD"]
     except KeyError as e:
         import sys
         print(f"필수 환경 변수 누락: {e}")
