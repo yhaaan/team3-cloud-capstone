@@ -91,6 +91,69 @@ class ModuleBPipelineTests(unittest.TestCase):
         self.assertEqual(person["role_label"], "회장")
         self.assertEqual(person["role_raw"], "삼성전자 회장")
 
+    def test_role_normalization_prefers_specific_role_aliases(self):
+        self.assertEqual(normalize_role("삼성전자 부회장"), ("VICE_CHAIRMAN", "부회장"))
+        self.assertEqual(normalize_role("부사장"), ("VICE_PRESIDENT", "부사장"))
+
+    def test_role_normalization_is_idempotent_for_exported_graphs(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {
+                    "id": "person_test",
+                    "type": "Person",
+                    "name": "홍길동",
+                    "role": "VICE_CHAIRMAN",
+                    "role_raw": "부회장",
+                    "role_label": "부회장",
+                }
+            ],
+            "relations": [],
+        }
+
+        normalized = normalize_graph_roles(graph)
+        person = normalized["entities"][0]
+
+        self.assertEqual(person["role"], "VICE_CHAIRMAN")
+        self.assertEqual(person["role_label"], "부회장")
+        self.assertEqual(person["role_raw"], "부회장")
+
+    def test_graph_normalization_deduplicates_and_repairs_relations(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "company_example_inc", "type": "Company", "name": "Example Inc."},
+                {"id": "company_example_inc", "type": "Company", "name": "Example Inc"},
+            ],
+            "relations": [
+                {
+                    "type": "BELONGS_TO",
+                    "from": "company_example_inc",
+                    "to": "industry_ai",
+                    "evidence": "Example Inc.는 AI 산업에 속한다.",
+                },
+                {
+                    "type": "AFFILIATED_WITH",
+                    "from": "person_missing",
+                    "to": "",
+                    "evidence": "endpoint가 비어 있는 관계는 제거한다.",
+                },
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph)
+
+        self.assertEqual(
+            [entity["id"] for entity in normalized["entities"]].count("company_example_inc"),
+            1,
+        )
+        self.assertIn(
+            {"id": "industry_ai", "type": "Industry", "name": "AI"},
+            normalized["entities"],
+        )
+        self.assertEqual(len(normalized["relations"]), 1)
+        self.assertEqual(normalized["relations"][0]["to"], "industry_ai")
+
 
 if __name__ == "__main__":
     unittest.main()

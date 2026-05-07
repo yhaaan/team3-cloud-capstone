@@ -12,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_john_rim_chongbo", "type": "Person", "name": "존림", "role": "사장", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_john_rim_chongbo", "type": "Person", "name": "존림", "role": "PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "사장", "role_label": "사장"}
 
 // node: person_no_kyun
 
@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_no_kyun", "type": "Person", "name": "노균", "role": "부사장", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_no_kyun", "type": "Person", "name": "노균", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "부사장", "role_label": "부사장"}
 
 // node: person_yu_seung_ho
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_yu_seung_ho", "type": "Person", "name": "유승호", "role": "부사장", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_yu_seung_ho", "type": "Person", "name": "유승호", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "부사장", "role_label": "부사장"}
 
 // node: person_kim_yunice_kyunghee
 
@@ -36,7 +36,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_yunice_kyunghee", "type": "Person", "name": "김유니스경희", "role": "이사", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_kim_yunice_kyunghee", "type": "Person", "name": "김유니스경희", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
 
 // node: person_lee_chang_woo
 
@@ -44,7 +44,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_chang_woo", "type": "Person", "name": "이창우", "role": "이사", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_lee_chang_woo", "type": "Person", "name": "이창우", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
 
 // node: person_suh_seung_hwan
 
@@ -52,7 +52,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_suh_seung_hwan", "type": "Person", "name": "서승환", "role": "이사", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_suh_seung_hwan", "type": "Person", "name": "서승환", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
 
 // node: person_lee_ho_seung
 
@@ -60,7 +60,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_ho_seung", "type": "Person", "name": "이호승", "role": "이사", "affiliated_company": "company_samsung_biologics"}
+:params {"id": "person_lee_ho_seung", "type": "Person", "name": "이호승", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
 
 // relation: AFFILIATED_WITH
 

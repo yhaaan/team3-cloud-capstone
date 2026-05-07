@@ -14,6 +14,30 @@ SET n:`Company`
 
 :params {"id": "company_hyundai_motor_company", "type": "Company", "name": "현대자동차"}
 
+// node: person_choi_jae_woong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_jae_woong", "type": "Person", "name": "Choi JAE Woong"}
+
+// node: company_seong_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_seong_hyun", "type": "Company", "name": "Seong Hyun"}
+
+// node: industry_electric_vehicle_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_vehicle_infrastructure", "type": "Industry", "name": "Electric Vehicle Infrastructure"}
+
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})

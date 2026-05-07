@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_sang_gyun", "type": "Person", "name": "이상균", "role": "대표이사 부회장", "affiliated_company": "company_hd_hyundai_heavy_industries"}
+:params {"id": "person_lee_sang_gyun", "type": "Person", "name": "이상균", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "대표이사 부회장", "role_label": "부회장"}
 
 // node: person_choi_sung_an
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_sung_an", "type": "Person", "name": "최성안", "role": "대표이사 부회장", "affiliated_company": "company_samsung_heavy_industries"}
+:params {"id": "person_choi_sung_an", "type": "Person", "name": "최성안", "role": "VICE_CHAIRMAN", "affiliated_company": "company_samsung_heavy_industries", "role_raw": "대표이사 부회장", "role_label": "부회장"}
 
 // node: person_kim_jung_kwan
 
@@ -36,7 +36,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_jung_kwan", "type": "Person", "name": "김정관", "role": "산업통상부 장관"}
+:params {"id": "person_kim_jung_kwan", "type": "Person", "name": "김정관", "role": "MINISTER", "role_raw": "산업통상부 장관", "role_label": "장관"}
 
 // node: person_park_jung_seok
 
@@ -44,7 +44,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_jung_seok", "type": "Person", "name": "박정석", "role": "한국해운협회 회장"}
+:params {"id": "person_park_jung_seok", "type": "Person", "name": "박정석", "role": "CHAIRMAN", "role_raw": "한국해운협회 회장", "role_label": "회장"}
 
 // node: event_shipbuilding_shipping_joint_strategy_conference
 
@@ -53,6 +53,14 @@ SET n += $properties
 SET n:`Event`
 
 :params {"id": "event_shipbuilding_shipping_joint_strategy_conference", "type": "Event", "name": "조선-해운 상생발전 전략협의회 출범식", "date": "2026-04-28"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
 
 // relation: APPOINTED_TO
 
@@ -71,24 +79,6 @@ MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r.evidence = $evidence
 
 :params {"from_id": "person_choi_sung_an", "to_id": "company_samsung_heavy_industries", "evidence": "28일 열린 조선-해운 상생발전 전략협의회 출범식 사전 환담에서 ... 최성안 삼성중공업 대표이사 부회장..."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kim_jung_kwan", "to_id": "", "evidence": "28일 열린 조선-해운 상생발전 전략협의회 출범식 사전 환담에서 ... 김정관 산업부 장관에게, 현재 중국이 세계 시장의 약 70%를 점유하고 있는 상황에 우려를 표했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_park_jung_seok", "to_id": "", "evidence": "박정석 한국해운협회 회장은 \"한국 조선을 우리가 굉장히 높게 보고 잘하고 있지만, 5년 이상 (지속)된다는 것은 잘 모르겠다\"면서 ..."}
 
 // relation: INVESTS_IN
 

@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electro_mechanics"}
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "사장", "role_label": "사장"}
 
 // node: person_lee_dal_gon
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_dal_gon", "type": "Person", "name": "이달곤", "role": "동반성장위원장"}
+:params {"id": "person_lee_dal_gon", "type": "Person", "name": "이달곤", "role": "OTHER", "role_raw": "동반성장위원장", "role_label": "동반성장위원장"}
 
 // node: person_kwon_hyuk_seok
 
@@ -36,7 +36,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "협부회장", "affiliated_company": "company_mk_chem_n_tech"}
+:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "VICE_CHAIRMAN", "affiliated_company": "company_mk_chem_n_tech", "role_raw": "협부회장", "role_label": "부회장"}
 
 // node: company_mk_chem_n_tech
 

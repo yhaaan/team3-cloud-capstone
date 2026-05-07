@@ -191,12 +191,3 @@ MERGE (source)-[r:INVESTS_IN]->(target)
 SET r.evidence = $evidence
 
 :params {"from_id": "company_posco_holdings", "to_id": "event_posco_global_rnd_center", "evidence": "포스코홀딩스의 글로벌 R&D센터 착공에 이어 현대자동차그룹이 8조원 규모 연구개발(R&D) 통합 거점 조성을 공식화하면서다."}
-
-// relation: ACQUIRES
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hyundai_construction", "to_id": "Event", "evidence": "해당 개발사업을 따낸 곳은 현대건설 컨소시엄이다."}

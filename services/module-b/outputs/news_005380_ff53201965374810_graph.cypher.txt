@@ -4,7 +4,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "현대차그룹 회장", "affiliated_company": "company_hyundai_motors"}
+:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "CHAIRMAN", "affiliated_company": "company_hyundai_motors", "role_raw": "현대차그룹 회장", "role_label": "회장"}
 
 // node: person_jang_jae_hun
 
@@ -12,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_jae_hun", "type": "Person", "name": "장재훈", "role": "현대차그룹 부회장", "affiliated_company": "company_hyundai_motors"}
+:params {"id": "person_jang_jae_hun", "type": "Person", "name": "장재훈", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hyundai_motors", "role_raw": "현대차그룹 부회장", "role_label": "부회장"}
 
 // node: company_hyundai_motors
 
@@ -61,6 +61,14 @@ SET n += $properties
 SET n:`Event`
 
 :params {"id": "event_auto_china_2026", "type": "Event", "name": "오토차이나 2026", "date": "2026-04-29"}
+
+// node: industry_electric_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_vehicle", "type": "Industry", "name": "Electric Vehicle"}
 
 // relation: AFFILIATED_WITH
 
