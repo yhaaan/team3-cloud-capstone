@@ -1,4 +1,3 @@
-import json
 from langgraph.graph import StateGraph, END
 from pydantic import BaseModel, Field
 from app.agent.llm_manager import LLMManager
@@ -10,6 +9,12 @@ from langgraph.checkpoint.memory import MemorySaver # 메모리 저장소
 from app.schemas import RelationGraph, EntityExtractionData, ChatResponse
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+from psycopg_pool import AsyncConnectionPool
+from langgraph.checkpoint.postgres.aio import AsyncPostgresSaver
+from app.config import Config
+from langchain_core.messages import BaseMessage
+from langgraph.graph.message import add_messages
+from langgraph.types import RetryPolicy
 
 
 # 상태 정의
@@ -23,8 +28,7 @@ class GraphState(TypedDict):
     graph_structured_data: List[Dict[str, Any]] # 그래프 DB 탐색 결과를 구조화한 데이터(시각화를 위해 노드의 id와 같은 부가 정보 전부 포함된 구조화된 데이터)
     final_response: str                 # 최종 답변
     relation_graph: RelationGraph       # 그래프 DB 탐색 결과 구조화 데이터
-    # # Annotated와 add를 쓰면, return {"history": [새 메시지]} 할 때 기존 리스트에 합쳐집니다.
-    # history: Annotated[List[str], add]
+    messages: Annotated[List[BaseMessage], add_messages]
 
 
 class GraphAgent:
@@ -32,25 +36,68 @@ class GraphAgent:
         self.llm = LLMManager()
         self.retriever = KnowledgeRetriever()
         self.formatter = GraphFormatter()
-        self.app = self._build_graph()
         
+        # 비동기 객체들을 위한 자리 마련
+        self.pool = None
+        self.app = None
+        self.init_error = None
+
+
+    # 비동기 초기화 함수 (최초 1회 실행 필요)
+    async def initialize(self):
+        if self.app is not None:
+            return
+
+        # 1. DB 커넥션 풀 생성 및 오픈
+        # 이제 Config에서 조합된 안전한 스트링을 사용합니다.
+        self.pool = AsyncConnectionPool(
+            conninfo=Config.CHAT_HISTORY_CONN_INFO, 
+            max_size=20, 
+            open=False
+        )
+        await self.pool.open()
+
+        # 2. 체크포인터 설정
+        async with self.pool.connection() as conn:
+            await conn.set_autocommit(True)
+
+           # PostgresSaver가 아니라 AsyncPostgresSaver를 써야 합니다!
+            checkpointer = AsyncPostgresSaver(conn)
+            
+            # 대화 기록 저장을 위한 테이블 자동 생성
+            await checkpointer.setup()
+
+            # 3. 그래프 구성 및 컴파일 (체크포인터 포함)
+            workflow = self._build_workflow()
+            self.app = workflow.compile(checkpointer=checkpointer)
+          
 
     # 그래프 구성
-    def _build_graph(self):
+    def _build_workflow(self):
         workflow = StateGraph(GraphState)
 
+        # 재시도 정책 객체 생성
+        retry_policy = RetryPolicy(
+            initial_interval=0.5,      # initial_backoff -> initial_interval
+            backoff_factor=2.0,        # backoff_type="exponential" 대신 이 배수를 사용
+            max_interval=5.0,          # max_backoff -> max_interval
+            max_attempts=2,            # stop_after_attempt -> max_attempts
+            jitter=True,               # 기본값 유지
+            retry_on=Exception         # 그대로 사용
+        )
+
         # 노드 등록
-        workflow.add_node("extract_entity", self.extract_entity)
-        workflow.add_node("generate_cypher", self.generate_cypher)
-        workflow.add_node("serach_databases", self.serach_databases)
-        workflow.add_node("generate_answer", self.generate_answer)
+        workflow.add_node("extract_entity", self.extract_entity, retry=retry_policy)
+        workflow.add_node("generate_cypher", self.generate_cypher, retry=retry_policy)
+        workflow.add_node("search_databases", self.search_databases, retry=retry_policy)
+        workflow.add_node("generate_answer", self.generate_answer, retry=retry_policy)
         workflow.add_node("format_graph", self.format_graph)
 
         # 진입점 설정
         workflow.set_entry_point("extract_entity")
 
         # 엣지 연결
-        workflow.add_edge("generate_cypher", "serach_databases")
+        workflow.add_edge("generate_cypher", "search_databases")
         workflow.add_edge("format_graph", "generate_answer")
         workflow.add_edge("generate_answer", END)
 
@@ -65,7 +112,7 @@ class GraphAgent:
         )
 
         workflow.add_conditional_edges(
-            "serach_databases",
+            "search_databases",
             self.check_graph_result,
             {
                 "skip_visualization": "generate_answer",    # 바로 최종 답변 생성
@@ -73,31 +120,68 @@ class GraphAgent:
             }
         )
         
-        return workflow.compile()
+        return workflow
 
 
     # 실행 함수
-    def run_agent(self, query: str):
-        print("[LangGraph 실행]\n")
+    async def run_agent(self, query: str, session_id: str):
+        # 만약 초기화가 안 되어 있다면 수행
+        if not self.app:
+            await self.initialize()
+
+        print(f"[LangGraph 실행] Thread ID: {session_id}\n")
+
+        # 체크포인터를 쓰려면 config에 thread_id를 넣어줘야 함
+        config = {"configurable": {"thread_id": session_id}}
         inputs = {"query": query}
-        result = self.app.invoke(inputs)
+
+        # 비동기 실행 (ainvoke)
+        result = await self.app.ainvoke(inputs, config=config)
+
         return ChatResponse(
             final_response=result.get("final_response"),
             relation_graph=result.get("relation_graph")
         )
     
 
+    # 최근 기록 문맥 문자열로 가져오기
+    def get_recent_history_context_str(self, state: GraphState):
+        # 최근 대화 맥락 추출 (최근 2쌍(4개) 메시지(현재 질문 제외)만 텍스트로 변환)
+        history = state.get("messages", [])[:-1][-4:] 
+        context_list = []
+        for msg in history:
+            role = "사용자" if msg.type == "human" else "AI"
+            context_list.append(f"{role}: {msg.content}")
+        # 리스트를 줄바꿈 문자열로 합침
+        context_str = "\n".join(context_list) if context_list else ""
+        return context_str
+    
+
     # 엔티티 추출
     def extract_entity(self, state: GraphState):
         user_query = state.get("query")
-        result = self.llm.extract_entities(user_query)
+        context_str = self.get_recent_history_context_str(state)
+        
+        result = self.llm.extract_entities(user_query, context_str)
 
         print("[엔티티 추출 완료]")
         print(f"추출된 엔티티: {result}\n")
 
+        # 무조건 이전의 찌꺼기들을 초기화해서 반환 목록에 넣습니다.
+        # 이렇게 하면 성공이든 실패든 이전 state가 청소됩니다.
+        update_data = {
+            "entities": None,
+            "error_msg": None,
+            "cypher_query": None,
+            "graph_context": None,
+            "vector_context": None,
+            "graph_structured_data": None
+        }
+
         # 에러 메시지가 있다면 바로 상태에 저장 (다음 노드에서 분기 처리용)
         if result.error_msg:
-            return {"error_msg": result.error_msg}
+            update_data["error_msg"] = result.error_msg
+            return update_data # 에러 메시지만 채워서 반환
         
         refined_entities = self.link_entity(result.data)
         result.data.named_entities.companies = refined_entities.get("companies")
@@ -105,9 +189,8 @@ class GraphAgent:
 
         print(f"그래프 DB에 맞게 재정의된 엔티티: {result}\n")
         
-        return {
-            "entities": result.data
-        }
+        update_data["entities"] = result.data
+        return update_data # 엔티티 채우고 에러는 None인 상태로 반환
     
 
     def link_entity(self, entities: EntityExtractionData):
@@ -169,7 +252,7 @@ class GraphAgent:
 
 
     # DB 병렬 탐색
-    def serach_databases(self, state: GraphState):
+    def search_databases(self, state: GraphState):
         user_query = state.get("query")
         cypher_query = state.get("cypher_query")
         result = self.retriever.get_corporate_context(user_query, cypher_query)
@@ -194,16 +277,15 @@ class GraphAgent:
         entities = state.get("entities")
         vector_context = state.get("vector_context")
         graph_context = state.get("graph_context")
-
-        # # JSON 문자열로 직렬화 (ensure_ascii=False는 한글 깨짐 방지)
-        # graph_context_json_str = json.dumps(graph_context, indent=2, ensure_ascii=False) 
+        context_str = self.get_recent_history_context_str(state)
 
         # 에러가 없으면 정상적으로 LLM 호출
         answer = self.llm.generate_final_response(
             query=user_query,
             entities=entities,
             vector_context=vector_context,
-            graph_context=graph_context
+            graph_context=graph_context,
+            history_context=context_str
         )
         
         return {"final_response": answer}
