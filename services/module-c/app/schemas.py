@@ -15,6 +15,7 @@ class RelationLink(BaseModel):
 
 # 전체 구조화 데이터 구조
 class RelationGraph(BaseModel):
+    center: Optional[str] = None # 중앙 노드 이름
     nodes: List[RelationNode]
     links: List[RelationLink]
 # endregion
@@ -24,11 +25,14 @@ class RelationGraph(BaseModel):
 # 채팅 요청 데이터
 class ChatRequest(BaseModel):
     query: str # 사용자의 자연어 질문
+    rag_on: bool # RAG 사용 여부
+    recent_history_str: Optional[List[Dict[str, str]]] = [] # 프론트에서 보낸 최근 대화 문자열(최근 질문 제외하고 2쌍)
 
 # 채팅 응답 데이터
 class ChatResponse(BaseModel):
-    final_response: str # 최종 자연어 답변
-    relation_graph: Optional[RelationGraph] = None # 그래프 DB 탐색 결과를 시각화하기 좋게 구조화한 데이터
+    answer: str # 최종 자연어 답변
+    has_center: bool # 중앙 노드 있는지 여부
+    graph_data: Optional[RelationGraph] = None # 그래프 DB 탐색 결과를 시각화하기 좋게 구조화한 데이터
 # endregion
 
 

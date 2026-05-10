@@ -28,7 +28,6 @@ class GraphState(TypedDict):
     graph_structured_data: List[Dict[str, Any]] # 그래프 DB 탐색 결과를 구조화한 데이터(시각화를 위해 노드의 id와 같은 부가 정보 전부 포함된 구조화된 데이터)
     final_response: str                 # 최종 답변
     relation_graph: RelationGraph       # 그래프 DB 탐색 결과 구조화 데이터
-    messages: Annotated[List[BaseMessage], add_messages]
 
 
 class GraphAgent:

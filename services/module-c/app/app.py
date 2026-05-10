@@ -5,15 +5,6 @@ import uuid
 
 st.title("Module C 테스트 클라이언트")
 
-# # 백엔드 상태 확인 함수
-# def get_server_status():
-#     try:
-#         # 타임아웃을 짧게(예: 2초) 설정해서 대기 시간을 줄이는 것이 좋습니다.
-#         response = requests.get("http://localhost:8000/check-status", timeout=10)
-#         return response.json()
-#     except:
-#         return {"status": "error", "message": "백엔드 서버가 실행되지 않았습니다."}
-
 def wait_for_server(url="http://localhost:8000/check-status", max_retries=10, delay=1):
     """서버가 켜질 때까지 max_retries번만큼 반복해서 확인하는 함수"""
     for i in range(max_retries):
@@ -45,13 +36,6 @@ if "backend_ok" not in st.session_state or not st.session_state.backend_ok:
     except Exception as e:
         st.session_state.backend_ok = False
         st.session_state.error_msg = "서버와 통신할 수 없습니다. 도커가 켜져 있는지 확인해주세요."
-
-    # status_info = get_server_status()
-    # if status_info.get("status") == "ok":
-    #     st.session_state.backend_ok = True
-    # else:
-    #     st.session_state.backend_ok = False
-    #     st.session_state.error_msg = status_info['message']
 
 
 # 상태에 따른 화면 렌더링
