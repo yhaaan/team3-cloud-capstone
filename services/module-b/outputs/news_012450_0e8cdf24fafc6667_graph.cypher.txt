@@ -60,7 +60,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_seung_yeon", "type": "Person", "name": "김승연", "role": "회장", "affiliated_company": "company_hanwha"}
+:params {"id": "person_kim_seung_yeon", "type": "Person", "name": "김승연", "role": "CHAIRMAN", "affiliated_company": "company_hanwha", "role_raw": "회장", "role_label": "회장"}
 
 // node: person_kim_dong_gwan
 
@@ -68,7 +68,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_dong_gwan", "type": "Person", "name": "김동관", "role": "부회장", "affiliated_company": "company_hanwha"}
+:params {"id": "person_kim_dong_gwan", "type": "Person", "name": "김동관", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hanwha", "role_raw": "부회장", "role_label": "부회장"}
 
 // relation: ACQUIRES
 

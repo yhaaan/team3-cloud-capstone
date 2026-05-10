@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electro_mechanics"}
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "사장", "role_label": "사장"}
 
 // node: person_choi_jae_woong
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_jae_woong", "type": "Person", "name": "최재웅", "role": "대표", "affiliated_company": "company_seonghyun_law_firm"}
+:params {"id": "person_choi_jae_woong", "type": "Person", "name": "최재웅", "role": "CEO", "affiliated_company": "company_seonghyun_law_firm", "role_raw": "대표", "role_label": "대표이사"}
 
 // node: company_seonghyun_law_firm
 

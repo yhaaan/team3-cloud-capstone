@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_gi_eun_sun", "type": "Person", "name": "기은선", "role": "사외이사", "affiliated_company": "company_sk_square"}
+:params {"id": "person_gi_eun_sun", "type": "Person", "name": "기은선", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
 
 // node: person_hong_jihoon
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_hong_jihoon", "type": "Person", "name": "HONG JIHOON", "role": "사외이사", "affiliated_company": "company_sk_square"}
+:params {"id": "person_hong_jihoon", "type": "Person", "name": "HONG JIHOON", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
 
 // node: person_choi_tae_won
 
@@ -36,7 +36,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_tae_won", "type": "Person", "name": "최태원", "role": "계열회사임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_choi_tae_won", "type": "Person", "name": "최태원", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "계열회사임원", "role_label": "계열회사임원"}
 
 // node: person_jang_dong_hyun
 
@@ -44,7 +44,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_dong_hyun", "type": "Person", "name": "장동현", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_jang_dong_hyun", "type": "Person", "name": "장동현", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
 
 // node: person_yoo_young_sang
 
@@ -52,7 +52,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_yoo_young_sang", "type": "Person", "name": "유영상", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_yoo_young_sang", "type": "Person", "name": "유영상", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
 
 // node: person_han_myung_jin
 
@@ -60,7 +60,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_han_myung_jin", "type": "Person", "name": "한명진", "role": "임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_han_myung_jin", "type": "Person", "name": "한명진", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "임원", "role_label": "임원"}
 
 // node: person_yoon_poong_young
 
@@ -68,7 +68,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_yoon_poong_young", "type": "Person", "name": "윤풍영", "role": "계열회사 임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_yoon_poong_young", "type": "Person", "name": "윤풍영", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
 
 // node: person_jung_jae_heon
 
@@ -76,7 +76,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jung_jae_heon", "type": "Person", "name": "정재헌", "role": "임원", "affiliated_company": "company_sk_square"}
+:params {"id": "person_jung_jae_heon", "type": "Person", "name": "정재헌", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "임원", "role_label": "임원"}
 
 // node: person_kang_ho_in
 
@@ -84,7 +84,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kang_ho_in", "type": "Person", "name": "강호인", "role": "사외이사", "affiliated_company": "company_sk_square"}
+:params {"id": "person_kang_ho_in", "type": "Person", "name": "강호인", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
 
 // node: person_park_seung_goo
 
@@ -92,7 +92,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_seung_goo", "type": "Person", "name": "박승구", "role": "사외이사", "affiliated_company": "company_sk_square"}
+:params {"id": "person_park_seung_goo", "type": "Person", "name": "박승구", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
 
 // relation: AFFILIATED_WITH
 

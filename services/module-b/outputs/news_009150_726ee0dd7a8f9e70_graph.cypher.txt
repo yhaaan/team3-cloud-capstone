@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "사장", "affiliated_company": "company_samsung_electronics"}
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_raw": "사장", "role_label": "사장"}
 
 // node: person_kwon_hyuk_seok
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "협부회장", "affiliated_company": "company_mk_chem_and_tech"}
+:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "VICE_CHAIRMAN", "affiliated_company": "company_mk_chem_and_tech", "role_raw": "협부회장", "role_label": "부회장"}
 
 // node: company_mk_chem_and_tech
 
@@ -44,7 +44,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_idalgon", "type": "Person", "name": "이달곤", "role": "위원장"}
+:params {"id": "person_idalgon", "type": "Person", "name": "이달곤", "role": "OTHER", "role_raw": "위원장", "role_label": "위원장"}
 
 // node: company_wooseong_si
 
@@ -111,15 +111,6 @@ MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r.evidence = $evidence
 
 :params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mk_chem_and_tech", "evidence": "행사에는 장덕현 사장과 동반성장위원회 이달곤 위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 약 200명이 참석했다."}
-
-// relation: APPOINTED_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_idalgon", "to_id": "", "evidence": "행사에는 장덕현 사장과 동반성장위원회 이달곤 위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 약 200명이 참석했다."}
 
 // relation: BELONGS_TO
 

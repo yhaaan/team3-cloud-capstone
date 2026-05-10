@@ -78,6 +78,46 @@ SET n:`Company`
 
 :params {"id": "company_setrec_eye", "type": "Company", "name": "㈜쎄트렉아이"}
 
+// node: person_kim_dong_gwan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_dong_gwan", "type": "Person", "name": "KIM Dong Gwan"}
+
+// node: person_michael_coulter_마이클_쿨터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_michael_coulter_마이클_쿨터", "type": "Person", "name": "michael coulter 마이클 쿨터"}
+
+// node: person_hand_jae_il
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hand_jae_il", "type": "Person", "name": "Hand JAE IL"}
+
+// node: person_yeo_seung_ju
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yeo_seung_ju", "type": "Person", "name": "YEO Seung JU"}
+
+// node: person_hong_seok_jun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hong_seok_jun", "type": "Person", "name": "Hong Seok JUN"}
+
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})

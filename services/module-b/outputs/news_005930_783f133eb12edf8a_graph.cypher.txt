@@ -78,6 +78,14 @@ SET n:`Industry`
 
 :params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
 
+// node: company_svg
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_svg", "type": "Company", "name": "SVG"}
+
 // relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
