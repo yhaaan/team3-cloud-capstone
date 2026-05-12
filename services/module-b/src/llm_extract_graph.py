@@ -9,6 +9,7 @@ import requests
 from dotenv import load_dotenv
 from jsonschema import validate
 
+from company_whitelist import load_default_company_whitelist
 from role_normalizer import normalize_graph_roles
 
 
@@ -33,8 +34,24 @@ def load_json_file(file_path: Path) -> dict[str, Any]:
 def build_extraction_prompt(doc: dict[str, Any]) -> str:
     ontology = load_text_file(ONTOLOGY_PATH)
     graph_schema = json.dumps(load_json_file(GRAPH_SCHEMA_PATH), ensure_ascii=False, indent=2)
+    company_whitelist = load_default_company_whitelist()
+    allowed_companies = company_whitelist.allowed_companies_for_doc(doc)
+    allowed_company_text = "\n".join(
+        f"- {company.company_name} ({company.stock_code}, {company.market})"
+        for company in allowed_companies
+    ) or "- No listed company from the whitelist was detected in this document."
 
     return f"""
+Listed-company whitelist rules:
+- Only create Company entities for companies in the allowed listed-company set below.
+- Do not create Company entities for unlisted companies, foreign companies, subsidiaries, public agencies, organizations, or generic institutions that are not in the allowed set.
+- Do not create any relation if either endpoint would be an unlisted Company.
+- When creating a Company entity, use the exact company_name from the allowed set as Company.name.
+- If the document mentions no allowed listed company, return the source_id with empty entities and relations.
+
+Allowed listed companies detected for this document:
+{allowed_company_text}
+
 다음 금융/산업 문서에서 온톨로지 기준 엔티티와 관계를 추출해라.
 
 반드시 지켜야 할 출력 조건:
@@ -46,6 +63,7 @@ def build_extraction_prompt(doc: dict[str, Any]) -> str:
 - 모든 relation.from/relation.to는 반드시 entities 배열에 존재하는 id여야 한다.
 - 같은 id를 가진 엔티티를 중복 생성하지 않는다. 같은 대상을 한 번만 만들고 표기는 가장 공식적인 이름으로 통일한다.
 - 관계의 evidence는 반드시 입력 문서에 실제로 있는 원문 문장 또는 원문에 가까운 단일 문장을 사용한다.
+- Do not invent evidence source fields. Module B will attach evidence_source_id, evidence_source_type, evidence_source_url, and evidence_published_at after extraction.
 - 텍스트 근거가 없는 엔티티/관계는 만들지 않는다.
 
 엔티티 품질 규칙:
@@ -112,7 +130,7 @@ def extract_graph_with_openai(
     response_json = response.json()
     output_text = extract_output_text(response_json)
     graph_data = json.loads(output_text)
-    graph_data = normalize_graph_roles(graph_data)
+    graph_data = normalize_graph_roles(graph_data, load_default_company_whitelist(), doc)
     validate(instance=graph_data, schema=load_json_file(GRAPH_SCHEMA_PATH))
     return graph_data
 

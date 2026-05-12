@@ -6,7 +6,7 @@ from pathlib import Path
 from document_io import iter_input_documents, write_json_file
 from graph_pipeline import extract_graph
 from load_chroma import insert_doc_to_chroma, insert_doc_to_chroma_collection
-from load_neo4j import OUTPUT_DIR, export_cypher_payload, load_graph_to_neo4j
+from load_neo4j import OUTPUT_DIR, export_cypher_payload, load_graph_json, load_graph_to_neo4j
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -25,6 +25,7 @@ def run_for_document(
     allow_fallback: bool,
     min_relation_score: float = 0.6,
     chroma_collection: object | None = None,
+    force_graph: bool = False,
 ) -> None:
     if use_chroma:
         if chroma_collection is None:
@@ -45,10 +46,13 @@ def run_for_document(
         )
         return
 
-    graph_data = extract_graph(doc, mode=extractor_mode, allow_fallback=allow_fallback)
-
     graph_output_path = OUTPUT_DIR / f"{doc['source_id']}_graph.json"
-    write_json_file(graph_output_path, graph_data)
+    if graph_output_path.exists() and not force_graph:
+        graph_data = load_graph_json(graph_output_path, doc)
+        print(f"[SKIP] Graph extraction reused existing output: {graph_output_path.name}")
+    else:
+        graph_data = extract_graph(doc, mode=extractor_mode, allow_fallback=allow_fallback)
+        write_json_file(graph_output_path, graph_data)
 
     cypher_output_path = OUTPUT_DIR / f"{doc['source_id']}_graph.cypher.txt"
     export_cypher_payload(graph_data, cypher_output_path)
@@ -98,6 +102,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
         default=0.6,
         help="Minimum relation_relevance_score required for graph extraction",
     )
+    parser.add_argument(
+        "--force-graph",
+        action="store_true",
+        help="Regenerate graph JSON even when an output file already exists.",
+    )
     parser.add_argument("--neo4j-uri", default=None)
     parser.add_argument("--neo4j-user", default=None)
     parser.add_argument("--neo4j-password", default=None)
@@ -120,4 +129,5 @@ if __name__ == "__main__":
             neo4j_password=args.neo4j_password,
             allow_fallback=not args.no_fallback,
             min_relation_score=args.min_relation_score,
+            force_graph=args.force_graph,
         )

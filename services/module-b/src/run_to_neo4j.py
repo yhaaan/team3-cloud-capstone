@@ -84,6 +84,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
         default=None,
         help="Start processing after this source_id.",
     )
+    parser.add_argument(
+        "--force-graph",
+        action="store_true",
+        help="Regenerate graph JSON even when an output file already exists.",
+    )
     return parser
 
 
@@ -127,6 +132,7 @@ def main() -> None:
             neo4j_password=args.neo4j_password,
             allow_fallback=not args.no_fallback,
             min_relation_score=args.min_relation_score,
+            force_graph=args.force_graph,
         )
 
     if chroma_collection is not None:

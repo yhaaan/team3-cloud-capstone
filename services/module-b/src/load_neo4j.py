@@ -8,6 +8,7 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from company_whitelist import load_default_company_whitelist
 from role_normalizer import normalize_graph_roles
 
 try:
@@ -33,13 +34,17 @@ RELATION_QUERY = """
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:%s]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 """
 
 
-def load_graph_json(file_path: Path) -> dict[str, Any]:
+def load_graph_json(file_path: Path, source_doc: dict[str, Any] | None = None) -> dict[str, Any]:
     with file_path.open("r", encoding="utf-8") as file:
-        return normalize_graph_roles(json.load(file))
+        return normalize_graph_roles(
+            json.load(file),
+            load_default_company_whitelist(),
+            source_doc,
+        )
 
 
 def export_cypher_payload(graph_data: dict[str, Any], output_path: Path) -> None:
@@ -57,7 +62,7 @@ def export_cypher_payload(graph_data: dict[str, Any], output_path: Path) -> None
             {
                 "from_id": relation["from"],
                 "to_id": relation["to"],
-                "evidence": relation["evidence"],
+                "properties": build_relation_properties(relation),
             },
             ensure_ascii=False,
         )
@@ -93,10 +98,18 @@ def load_graph_to_neo4j(
                     RELATION_QUERY % relation["type"],
                     from_id=relation["from"],
                     to_id=relation["to"],
-                    evidence=relation["evidence"],
+                    properties=build_relation_properties(relation),
                 )
     finally:
         driver.close()
+
+
+def build_relation_properties(relation: dict[str, Any]) -> dict[str, Any]:
+    return {
+        key: value
+        for key, value in relation.items()
+        if key not in {"type", "from", "to"}
+    }
 
 
 def build_argument_parser() -> argparse.ArgumentParser:

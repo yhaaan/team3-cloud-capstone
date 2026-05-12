@@ -8,6 +8,7 @@ from typing import Any
 from jsonschema import validate
 
 from chunking import split_sentences
+from company_whitelist import load_default_company_whitelist
 from role_normalizer import normalize_graph_roles
 
 
@@ -42,8 +43,13 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
     title = doc.get("title", "")
     content = doc.get("content", "")
     source_id = doc.get("source_id", "unknown")
+    company_whitelist = load_default_company_whitelist()
 
-    companies = collect_companies(doc, title, content)
+    companies = [
+        company
+        for company in collect_companies(doc, title, content)
+        if company_whitelist.is_allowed_name(company)
+    ]
     people = collect_people(doc, content)
     industries = collect_industries(content)
 
@@ -108,7 +114,7 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
         "entities": deduplicate_entities(entities),
         "relations": [relation for relation in relations if relation["evidence"]],
     }
-    graph = normalize_graph_roles(graph)
+    graph = normalize_graph_roles(graph, company_whitelist, doc)
     validate(instance=graph, schema=load_json_file(GRAPH_SCHEMA_PATH))
     return graph
 
