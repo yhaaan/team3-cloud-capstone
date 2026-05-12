@@ -12,6 +12,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class ChatRequest(BaseModel):
     question: str
     rag_on: bool
@@ -21,30 +22,51 @@ class ChatRequest(BaseModel):
 def chat(req: ChatRequest):
     answer = f"""
 삼성전자 중심 관계 분석 결과입니다.
-삼성전자를 중심으로 A회사, B회사, C회사, D회사가 각각 지분 관계를 가진다고 가정한 테스트 응답입니다.
 
-- A회사: 삼성전자 지분 35%
-- B회사: 삼성전자 지분 30%
-- C회사: 삼성전자 지분 10%
-- D회사: 삼성전자 지분 25%
+삼성전자를 중심으로 여러 관계가 연결된다고 가정한 테스트 응답입니다.
 """
+
     graph = {
-        "center": "삼성전자",
+        "center":"애플",
         "nodes": [
-            {"id": "A회사", "label": "A회사", "share": 35},
-            {"id": "B회사", "label": "B회사", "share": 30},
-            {"id": "C회사", "label": "C회사", "share": 10},
-            {"id": "D회사", "label": "D회사", "share": 25}
+            {
+                "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
+                "name": "삼성전자"
+            },
+            {
+                "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:279",
+                "name": "인공지능"
+            },
+            {
+                "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
+                "name": "삼성전자"
+            },
+            {
+                "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:2958",
+                "name": "애플"
+            }
         ],
-        "edges": [
-            {"from": "A회사", "to": "삼성전자", "label": "35%", "share": 35},
-            {"from": "B회사", "to": "삼성전자", "label": "30%", "share": 30},
-            {"from": "C회사", "to": "삼성전자", "label": "10%", "share": 10},
-            {"from": "D회사", "to": "삼성전자", "label": "25%", "share": 25}
+        "links": [
+            {
+                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
+                "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:279",
+                "relation": "BELONGS_TO"
+            },
+            {
+                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
+                "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:279",
+                "relation": "BELONGS_TO"
+            },
+            {
+                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
+                "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:2958",
+                "relation": "BELONGS_TO"
+            }
         ]
     }
 
     return {
         "answer": answer,
+        "center": True,
         "graph": graph
     }

@@ -3,14 +3,12 @@ from pyvis.network import Network
 import streamlit as st
 import requests
 
-
 st.set_page_config(
     page_title="클라우드",
     page_icon="💬",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
-
 
 # Backend =================
 BACKEND_URL = "http://localhost:5000/chat"
@@ -124,13 +122,14 @@ def create_network_graph(graph_data, has_center=False):
             source,
             target,
             label=relation,
-            width=3,
+            width=5,
             color={
                 "color": edge_color,
                 "highlight": edge_color,
                 "hover": edge_color
             },
-            arrows="",
+            arrows="to" if not has_center else "",
+            arrowStrikethrough=False,
             font={
                 "size": 18,
                 "align": "top",
@@ -145,51 +144,51 @@ def create_network_graph(graph_data, has_center=False):
     # Options
     # =========================
     net.set_options("""
-const options = {
-  "nodes": {
-    "shape": "ellipse",
-    "shadow": {
-      "enabled": true,
-      "color": "rgba(0,0,0,0.12)",
-      "size": 10,
-      "x": 2,
-      "y": 4
-    }
-  },
-
-  "edges": {
-    "smooth": {
-      "enabled": false
-    },
-    "length": 400
-  },
-
-  "physics": {
-    "enabled": true,
-    "solver": "repulsion",
-
-    "stabilization": {
-      "enabled": true,
-      "iterations": 220,
-      "fit": true
+    const options = {
+    "nodes": {
+        "shape": "ellipse",
+        "shadow": {
+        "enabled": true,
+        "color": "rgba(0,0,0,0.12)",
+        "size": 10,
+        "x": 2,
+        "y": 4
+        }
     },
 
-    "repulsion": {
-      "nodeDistance": 120,
-      "centralGravity": 0.08,
-      "springLength": 180,
-      "springConstant": 0.03
-    }
-  },
+    "edges": {
+        "smooth": {
+        "enabled": false
+        },
+        "length": 400
+    },
 
-  "interaction": {
-    "hover": true,
-    "dragNodes": true,
-    "zoomView": true,
-    "dragView": true
-  }
-}
-""")
+    "physics": {
+        "enabled": true,
+        "solver": "repulsion",
+
+        "stabilization": {
+        "enabled": true,
+        "iterations": 220,
+        "fit": true
+        },
+
+        "repulsion": {
+        "nodeDistance": 120,
+        "centralGravity": 0.08,
+        "springLength": 180,
+        "springConstant": 0.03
+        }
+    },
+
+    "interaction": {
+        "hover": true,
+        "dragNodes": true,
+        "zoomView": true,
+        "dragView": true
+    }
+    }
+    """)
 
     html = net.generate_html()
 
@@ -425,11 +424,9 @@ st.markdown(f"""
     box-shadow: 0 12px 30px rgba(7, 89, 201, 0.08);
 }}
 
-.network-title {{
-    font-size: 15px;
-    font-weight: 800;
-    color: #323232;
-    margin: 4px 0 12px 4px;
+.graph-wrapper iframe {{
+    border-radius: 22px !important;
+    overflow: hidden !important;
 }}
 
 [data-testid="stSidebar"] {{
@@ -489,6 +486,7 @@ body:has(.question-box) [data-testid="stChatInput"] {{
     white-space: nowrap;
     pointer-events: none;
 }}
+            
 /* =========================
    PC Sidebar Offset
 ========================= */
@@ -692,15 +690,18 @@ for msg in st.session_state.messages:
             )
 
     elif msg_type == "network":
+
         st.markdown(
-            """
-            <div class="network-card">
-                <div class="network-title">관계 그래프</div>
-            </div>
-            """,
+            '<div class="graph-wrapper">',
             unsafe_allow_html=True
         )
+
         components.html(msg["content"], height=680)
+
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
 
 
 # Chat Input ==============
