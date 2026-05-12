@@ -3,12 +3,14 @@ from pydantic import BaseModel, Field
 from app.config import Config
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
-from app.agent.prompts import ENTITY_EXTRACTION_PROMPT, CYPHER_GENERATION_PROMPT, FINAL_RESPONSE_GENERATION_PROMPT
+from app.agent.prompts import *
 from app.schemas import EntityExtractionData
+
 
 class EnitityExtractionResponse(BaseModel):
     data: Optional[EntityExtractionData] = Field(None, description="정상 추출 시 데이터 객체")
     error_msg: Optional[str] = Field(default=None, description="예외 처리 우선순위에 따른 에러 메시지")
+
 
 class LLMManager:
     def __init__(self):
@@ -20,11 +22,15 @@ class LLMManager:
             temperature=0  # 정확도를 위해 0으로 설정
         )
 
-        # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
+        # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 질문 재구성, 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
         self.gpto4mini = ChatOpenAI(
             model="o4-mini",
             api_key=Config.OPENAI_API_KEY
         )
+
+        # 질문 재구성용 llm 체인 정의
+        self.query_rewrite_prompt = ChatPromptTemplate.from_template(QUERY_REWRITE_PROMPT)
+        self.query_rewrite_chain = self.query_rewrite_prompt | self.gpto4mini
 
         # 엔티티 추출용 llm 체인 정의
         self.entity_extraction_llm = self.gpto4mini.with_structured_output(EnitityExtractionResponse)
@@ -38,6 +44,15 @@ class LLMManager:
         # 최종 답변 생성용 llm 체인 정의
         self.final_response_generation_prompt = ChatPromptTemplate.from_template(FINAL_RESPONSE_GENERATION_PROMPT)
         self.final_response_genration_chain = self.final_response_generation_prompt | self.gpt4o
+
+
+    # 질문 재구성 함수
+    def rewrite_query(self, query: str, history_context: str = "") -> str:
+        response = self.query_rewrite_chain.invoke({
+            "user_query": query,
+            "history_context": history_context
+        })
+        return response.content
 
 
     # 엔티티 추출 함수
@@ -65,10 +80,9 @@ class LLMManager:
     
 
     # 최종 답변 생성 함수
-    def generate_final_response(self, query: str, entities: EntityExtractionData, vector_context: str, graph_context: str, history_context: str = "") -> str:
+    def generate_final_response(self, query: str, vector_context: str, graph_context: str, history_context: str = "") -> str:
         response = self.final_response_genration_chain.invoke({
             "user_query": query,
-            "entity_extraction_data": entities,
             "vector_context": vector_context,
             "graph_context": graph_context,
             "history_context": history_context

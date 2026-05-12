@@ -4,123 +4,66 @@ from app.schemas import RelationGraph, RelationNode, RelationLink
 
 class GraphFormatter:
     @staticmethod
-    def format_for_visualization(graph_structured_data: List[Dict[str, Any]]) -> RelationGraph:
-        unique_nodes: Dict[str, RelationNode] = {}
+    def format_for_visualization(graph_structured_data: List[Dict[str, Any]], center_name: str) -> RelationGraph:
+        name_to_node: Dict[str, RelationNode] = {}
+        id_to_name: Dict[str, str] = {}
         unique_links: List[RelationLink] = []
-        
-        # 중복 링크 체크를 위한 셋 (source-target-relation 조합)
         seen_links = set()
 
+        # 1. 노드 정보 수집 (n, m, p 모두 포함)
         for path_data in graph_structured_data:
-            # [수정 1] path_data가 dict인지 먼저 확인 (문자열 에러 방지)
-            if not isinstance(path_data, dict):
-                continue
+            nodes_to_process = []
+            if 'n' in path_data: nodes_to_process.append(path_data['n'])
+            if 'm' in path_data: nodes_to_process.append(path_data['m'])
+            # 이제 process_data_for_all에서 p에 노드 리스트를 넣어주므로 바로 확장 가능!
+            if 'p' in path_data and isinstance(path_data['p'], list):
+                nodes_to_process.extend(path_data['p'])
 
-            # 1. 노드 정리 (all_nodes 활용)
-            # .keys() 없이 'in'을 사용하는 것이 더 안전하고 빠릅니다.
-            if 'all_nodes' in path_data:
-                for node_id, node_info in path_data['all_nodes'].items():
-                    if node_id not in unique_nodes:
-                        unique_nodes[node_id] = RelationNode(
-                            id=node_id,
-                            name=node_info.get('properties', {}).get('name', 'Unknown')
+            for node in nodes_to_process:
+                if isinstance(node, dict) and 'name' in node:
+                    name = node['name'].strip() # 공복 제거로 중복 방지
+                    node_id = node.get('id')
+                    
+                    if name not in name_to_node:
+                        name_to_node[name] = RelationNode(
+                            id=name, 
+                            name=name,
+                            type=node.get('type', 'Entity')
                         )
-
-            # 2. 링크 정리 (r 리스트 활용)
-            if 'r' in path_data:
-                # [수정 2] r이 리스트인지 단일 객체인지 한 번 더 체크 (방어 로직)
-                rel_list = path_data['r']
-                if not isinstance(rel_list, list):
-                    rel_list = [rel_list]
-
-                for rel in rel_list:
-                    # 데이터가 dict 형태인지 확인 (안전장치)
-                    if not isinstance(rel, dict): continue
                     
-                    link_id = f"{rel.get('start_id')}-{rel.get('end_id')}-{rel.get('type')}"
-                    
-                    if link_id not in seen_links:
-                        unique_links.append(RelationLink(
-                            source=rel.get('start_id'),
-                            target=rel.get('end_id'),
-                            relation=rel.get('type')
-                        ))
-                        seen_links.add(link_id)
+                    if node_id:
+                        id_to_name[node_id] = name
+
+        # 2. 관계 데이터를 돌며 링크 생성
+        for path_data in graph_structured_data:
+            rels = path_data.get('r', [])
+            if not isinstance(rels, list): rels = [rels]
+
+            for rel in rels:
+                s_id = rel.get('start_id')
+                e_id = rel.get('end_id')
+                rel_type = rel.get('type')
+
+                # id_to_name에 없더라도 에러가 나지 않도록 방어 로직
+                source_name = id_to_name.get(s_id, s_id)
+                target_name = id_to_name.get(e_id, e_id)
+
+                # 만약 방금 생성된 이름이 노드 리스트에 없다면 강제로 추가 (에러 방지)
+                for name in [source_name, target_name]:
+                    if name not in name_to_node:
+                        name_to_node[name] = RelationNode(id=name, name=name, type='Unknown')
+
+                link_key = f"{source_name}-{target_name}-{rel_type}"
+                if link_key not in seen_links:
+                    unique_links.append(RelationLink(
+                        source=source_name,
+                        target=target_name,
+                        relation=rel_type
+                    ))
+                    seen_links.add(link_key)
 
         return RelationGraph(
-            nodes=list(unique_nodes.values()),
+            center=center_name,
+            nodes=list(name_to_node.values()),
             links=unique_links
         )
-    
-
-
-
-# class GraphFormatter:
-#     def format_for_visualization(self, graph_context: List[Dict[str, Any]]) -> RelationGraph:
-#         nodes_map = {}  # 중복 노드 방지를 위한 딕셔너리
-#         links = []
-        
-#         for data in graph_context:
-#             # 1. 노드 처리 (clean_nodes를 단일 데이터 단위로 호출)
-#             # 리스트가 아닌 '단일 데이터'에서 노드를 추출해 nodes_map에 업데이트
-#             self.clean_nodes(data, nodes_map)
-            
-#             # 2. 관계 처리 (map_relations를 단일 데이터 단위로 호출)
-#             # 리스트가 아닌 '단일 데이터'에서 링크를 추출해 리스트에 추가
-#             new_links = self.map_relations(data)
-#             if new_links:
-#                 links.extend(new_links)
-        
-#         return RelationGraph(nodes=list(nodes_map.values()), links=links)
-
-
-#     # 한 개의 데이터에서 노드들을 추출하고 중복을 체크하여 맵에 저장
-#     def clean_nodes(self, data: Dict[str, Any], nodes_map: Dict[str, RelationNode]):
-#         # 시작 노드 n, 끝 노드 m에 대해 수행
-#         for key in ['n', 'm']: 
-#             if key in data and data[key]:
-#                 node_data = data[key]
-#                 print(node_data)
-                
-#                 node_id = node_data.get("id")
-#                 print(f"!!!!! {node_id}\n")
-
-#                 # node_props = dict(node_data) if not isinstance(node_data, dict) else node_data
-                
-#                 if node_id and node_id not in nodes_map:
-#                     nodes_map[node_id] = {
-#                         "id": str(node_id),
-#                         "label": node_data.get("name")
-#                     }
-
-
-#     # 한 개의 데이터에서 관계(r)를 추출하여 Link 객체로 변환
-#     def map_relations(self, data: Dict[str, Any]) -> List[RelationLink]:
-#         links = []
-        
-#         if 'r' in data.keys() and data['r']:
-#             rel_data = data['r']
-            
-#             # 리스트로 여러 관계가 들어온 경우 (현재 상황)
-#             if isinstance(rel_data, list):
-#                 for rel in rel_data:
-#                     # 각 관계 딕셔너리에서 ID 추출
-#                     source = rel.get('start_id')
-#                     target = rel.get('end_id')
-                    
-#                     if source and target:
-#                         links.append(RelationLink(
-#                             source=str(source),
-#                             target=str(target),
-#                             relation=rel.get('type') or "CONNECTED"
-#                         ))
-            
-#             # 단일 딕셔너리로 들어온 경우
-#             elif isinstance(rel_data, dict):
-#                 links.append(RelationLink(
-#                     source=str(rel_data.get('start_id')),
-#                     target=str(rel_data.get('end_id')),
-#                     relation=rel_data.get('type') or "CONNECTED"
-#                 ))
-                
-#         return links

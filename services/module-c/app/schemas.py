@@ -24,15 +24,15 @@ class RelationGraph(BaseModel):
 # region 채팅 데이터 구조
 # 채팅 요청 데이터
 class ChatRequest(BaseModel):
-    query: str # 사용자의 자연어 질문
+    question: str # 사용자의 자연어 질문
     rag_on: bool # RAG 사용 여부
-    recent_history_str: Optional[List[Dict[str, str]]] = [] # 프론트에서 보낸 최근 대화 문자열(최근 질문 제외하고 2쌍)
+    recent_history: Optional[List[Dict[str, str]]] = [] # 프론트에서 보낸 최근 대화 문자열(최근 질문 제외하고 2쌍)
 
 # 채팅 응답 데이터
 class ChatResponse(BaseModel):
     answer: str # 최종 자연어 답변
     has_center: bool # 중앙 노드 있는지 여부
-    graph_data: Optional[RelationGraph] = None # 그래프 DB 탐색 결과를 시각화하기 좋게 구조화한 데이터
+    graph: Optional[RelationGraph] = None # 그래프 DB 탐색 결과를 시각화하기 좋게 구조화한 데이터
 # endregion
 
 

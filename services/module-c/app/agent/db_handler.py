@@ -1,4 +1,4 @@
-from typing import Iterable, List
+from typing import List
 from neo4j import Record
 from app.config import Config
 from langchain_neo4j import Neo4jGraph
@@ -72,52 +72,43 @@ class Neo4jHandler():
             if 'm' in record.keys(): 
                 d['m']['id'] = record['m'].element_id
 
-            rel_source = record.get('r') or record.get('p')
-            if rel_source is not None:
-                structured_rels = []
+            structured_rels = []
+
+            # --- 로직 분리 ---
+            
+            # CASE A: Path (p)가 들어온 경우
+            if 'p' in record.keys():
+                path_obj = record['p']
                 
-                # 1. 이미 리스트거나 Path 객체(p)라면 그대로 사용
-                # 2. 만약 단일 Relationship 객체(r)라면 [rel_source] 로 감싸서 리스트로 변환
-                # dict와 str도 Iterable에 해당하므로, 이들은 제외하고 체크하는 것이 안전합니다.
-                if isinstance(rel_source, Iterable) and not isinstance(rel_source, (str, dict)):
-                    rel_list = rel_source
-                else:
-                    rel_list = [rel_source] # 단일 객체를 리스트에 담기
-                
-                for rel_obj in rel_list:
-                    # (1) 관계 딕셔너리화 (start_id, end_id 주입)
-                    rel_info = {
-                        "id": rel_obj.element_id,
-                        "type": rel_obj.type,
-                        "start_id": rel_obj.start_node.element_id,
-                        "end_id": rel_obj.end_node.element_id,
-                        "properties": dict(rel_obj)
-                    }
+                # --- 추가: Path 내의 모든 노드 정보를 추출하여 d['p']에 저장 ---
+                nodes_in_path = []
+                for node in path_obj.nodes:
+                    nodes_in_path.append({
+                        "id": node.element_id,
+                        "name": node.get('name', 'Unknown'),
+                        "type": list(node.labels)[0] if node.labels else 'Entity',
+                        # 필요한 다른 속성들 추가
+                    })
+                d['p'] = nodes_in_path # 이제 '인공지능' 노드의 ID와 이름이 매핑되어 들어감!
+
+                # 기존 관계 파싱 로직
+                for rel in path_obj.relationships:
+                    rel_info = self._parse_single_rel(rel)
                     structured_rels.append(rel_info)
+                    llm_contexts.append(self._make_llm_context(rel))
 
-                    # (2) LLM용 텍스트 생성
-                    s_name = rel_obj.start_node.get('name') or "알 수 없음"
-                    e_name = rel_obj.end_node.get('name') or "알 수 없음"
-                    llm_contexts.append(f"[{s_name}] -({rel_obj.type})-> [{e_name}]\n근거: {rel_obj.get('evidence', '없음')}")
+            # CASE B: 단일 Relationship (r)이 들어온 경우
+            elif 'r' in record.keys():
+                rel_obj = record['r']
+                print(f"rel_obj: {rel_obj}\n")
+                rel_obj.element_id
+                # r이 만약 문자열(str)로 들어오는 예외 상황 방어
+                if hasattr(rel_obj, 'element_id'):
+                    rel_info = self._parse_single_rel(rel_obj)
+                    structured_rels.append(rel_info)
+                    llm_contexts.append(self._make_llm_context(rel_obj))
 
-                    # (3) ★중간 노드 추출★ 
-                    # 관계의 양 끝 노드가 n이나 m이 아닐 수도 있으므로, 
-                    # 프론트엔드에서 노드 리스트를 만들 때 누락되지 않게 따로 챙겨야 합니다.
-                    # 여기서는 'nodes'라는 키를 d에 추가해서 모든 관련 노드 객체를 담아줍니다.
-                    if 'all_nodes' not in d.keys(): 
-                        d['all_nodes'] = {}
-                    
-                    for node in [rel_obj.start_node, rel_obj.end_node]:
-                        node_id = node.element_id
-                        d['all_nodes'][node_id] = {
-                            "id": node_id,
-                            "label": node.get('name') or "Unknown",
-                            "type": list(node.labels)[0] if node.labels else "Entity",
-                            "properties": dict(node)
-                        }
-
-                d['r'] = structured_rels # 수정 불가능했던 리스트를 정제된 리스트로 교체
-
+            d['r'] = structured_rels
             all_processed_data.append(d)
 
         unique_contexts = list(set(llm_contexts))
@@ -127,6 +118,24 @@ class Neo4jHandler():
             graph_context=final_context,
             graph_structured_data=all_processed_data
         )
+    
+
+    def _parse_single_rel(self, rel_obj):
+        """Relationship 객체 하나를 받아서 프론트용 dict로 변환"""
+        return {
+            "id": rel_obj.element_id,
+            "type": rel_obj.type,
+            "start_id": rel_obj.start_node.element_id,
+            "end_id": rel_obj.end_node.element_id,
+            "properties": dict(rel_obj)
+        }
+
+    def _make_llm_context(self, rel_obj):
+        """LLM이 읽을 문장 생성"""
+        s_name = rel_obj.start_node.get('name') or "알 수 없음"
+        e_name = rel_obj.end_node.get('name') or "알 수 없음"
+        evidence = rel_obj.get('evidence', '없음')
+        return f"[{s_name}] -({rel_obj.type})-> [{e_name}]\n근거: {evidence}"
 
 
     # 해당 타입 모든 노드 이름 가져오기 함수
@@ -156,11 +165,6 @@ class VectorHandler():
     # 벡터 DB 초기화 함수
     def get_vector_db(self):
         try:
-            # persist_dir = "./chroma_db"
-            # vector = Chroma(
-            #     persist_directory=persist_dir,
-            #     embedding_function=OpenAIEmbeddings(api_key=Config.OPENAI_API_KEY)
-            # )
             # 지정된 경로로 클라이언트 생성
             client = chromadb.PersistentClient(
                 path="../module-b/local_db/chroma"
@@ -195,17 +199,65 @@ class VectorHandler():
             return None
     
 
-    # 벡터 DB 탐색 함수
-    def search_vector_db(self, query: str):
+    def search_vector_db(self, query: str, window_size: int = 2):
         try:
-            # 질문 전체(Full Text)를 벡터로 변환하여 유사 문서 검색
-            docs = self.vector_db.similarity_search(query, k=3)
-            # 가공 과정 (Document 객체에서 텍스트만 추출)
-            context = "\n".join([d.page_content for d in docs])
-            self.vector_db_error = None
-            print("✔️ 벡터 DB 탐색이 성공적으로 완료되었습니다.")
-            return context
+            # 1. 유사한 청크 검색 (k=3)
+            initial_docs = self.vector_db.similarity_search(query, k=3)
+            
+            formatted_contexts = []
+            
+            for i, d in enumerate(initial_docs):
+                doc_id = d.metadata.get('doc_id')
+                current_idx = d.metadata.get('chunk_index')
+                
+                # 맥락 확장 로직
+                if doc_id and current_idx is not None:
+                    # [수정 포인트] window_size만큼 인덱스 범위 생성
+                    # 예: idx가 5이고 window_size가 2이면 [3, 4, 5, 6, 7] 생성
+                    start_idx = max(0, current_idx - window_size)
+                    end_idx = current_idx + window_size
+                    context_indices = list(range(start_idx, end_idx + 1))
+                    
+                    # ChromaDB에서 범위 내 청크들 한 번에 가져오기
+                    related_chunks = self.vector_db.get(
+                        where={
+                            "$and": [
+                                {"doc_id": {"$eq": doc_id}},
+                                {"chunk_index": {"$in": context_indices}}
+                            ]
+                        }
+                    )
+                    
+                    # 가져온 청크들을 인덱스 순서대로 정렬 (중요!)
+                    combined_docs = sorted(
+                        zip(related_chunks['metadatas'], related_chunks['documents']),
+                        key=lambda x: x[0].get('chunk_index', 0)
+                    )
+                    
+                    # 텍스트 병합 (청크 사이를 자연스럽게 띄어줌)
+                    full_text = " ".join([text for meta, text in combined_docs])
+                else:
+                    full_text = d.page_content
+
+                # 2. 메타데이터 추출 및 포맷팅
+                source = d.metadata.get('source', '알 수 없는 출처')
+                title = d.metadata.get('title', '제목 없음')
+                pub_date = d.metadata.get('published_at', '날짜 미상')
+                url = d.metadata.get('url', '링크 없음')
+                
+                chunk_text = (
+                    f"--- [문서 {i+1} 출처 정보] ---\n"
+                    f"발행일: {pub_date}\n"
+                    f"출처/문서명: {source} ({title})\n"
+                    f"원문 링크: {url}\n"
+                    f"내용: {full_text}\n"
+                )
+                formatted_contexts.append(chunk_text)
+            
+            full_context = "\n\n".join(formatted_contexts)
+            print(f"✔️ Window Size {window_size}가 적용된 맥락 확장이 완료되었습니다.")
+            return full_context
+
         except Exception as e:
-            self.vector_db_error = "❌ ChromaDB 데이터베이스 탐색에 실패했습니다."
             print(f"벡터 DB 탐색 에러: {e}")
             return None

@@ -13,7 +13,7 @@ st.set_page_config(
 
 
 # Backend =================
-BACKEND_URL = "http://localhost:5000/chat"
+BACKEND_URL = "http://127.0.0.1:8000/chat"
 # Backend =================
 
 
@@ -715,11 +715,15 @@ if question:
 
     with st.spinner("답변을 생성하는 중입니다..."):
         try:
+            # 현재 질문 제외 4쌍(8개) 정도를 보냄
+            recent_history = st.session_state.messages[:-1][-8:]
+
             response = requests.post(
                 BACKEND_URL,
                 json={
                     "question": question,
-                    "rag_on": st.session_state.rag_on
+                    "rag_on": st.session_state.rag_on,
+                    "recent_history": recent_history
                 },
                 timeout=30
             )
@@ -728,8 +732,7 @@ if question:
             data = response.json()
 
             answer = data.get("answer", "답변을 받지 못했습니다.")
-
-            has_center = data.get("center", False)
+            has_center = data.get("has_center", False)
             graph_data = data.get("graph")
 
             answer += f"""
