@@ -20,7 +20,7 @@ class GraphState(TypedDict):
     final_response: str                 # 최종 답변
     relation_graph: RelationGraph       # 그래프 DB 탐색 결과 구조화 데이터
     has_center: Optional[bool] = False  # 구조화 데이터 중앙 노드 존재 여부
-    center_name: str                    # 구조화 데이터 중앙 노드 이름
+    center_id: str                    # 구조화 데이터 중앙 노드 이름
 
 
 class GraphAgent:
@@ -178,12 +178,12 @@ class GraphAgent:
         print("[사이퍼 쿼리 생성 완료]")
         print(f"사이퍼 쿼리: {result}\n")
 
-        has_center, center_name = self.extract_center_from_cypher(result)
+        has_center, center_id = self.extract_center_from_cypher(result)
 
         return {
             "cypher_query": result,
             "has_center": has_center,
-            "center_name": center_name
+            "center_id": center_id
         }
     
 

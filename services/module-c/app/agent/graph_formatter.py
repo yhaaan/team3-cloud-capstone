@@ -4,7 +4,7 @@ from app.schemas import RelationGraph, RelationNode, RelationLink
 
 class GraphFormatter:
     @staticmethod
-    def format_for_visualization(graph_structured_data: List[Dict[str, Any]], center_name: str) -> RelationGraph:
+    def format_for_visualization(graph_structured_data: List[Dict[str, Any]], center_id: str) -> RelationGraph:
         name_to_node: Dict[str, RelationNode] = {}
         id_to_name: Dict[str, str] = {}
         unique_links: List[RelationLink] = []
@@ -63,7 +63,7 @@ class GraphFormatter:
                     seen_links.add(link_key)
 
         return RelationGraph(
-            center=center_name,
+            center=center_id,
             nodes=list(name_to_node.values()),
             links=unique_links
         )
