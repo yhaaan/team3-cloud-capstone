@@ -24,13 +24,10 @@ def chat(req: ChatRequest):
 삼성전자 중심 관계 분석 결과입니다.
 
 삼성전자를 중심으로 여러 관계가 연결된다고 가정한 테스트 응답입니다.
-
-현재 질문: {req.question}
-현재 RAG 상태: {"ON" if req.rag_on else "OFF"}
 """
 
     graph = {
-        "center": "삼성전자",
+        "center":"애플",
         "nodes": [
             {
                 "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
