@@ -1,61 +1,88 @@
 # main.py
+from langchain_openai import ChatOpenAI
 from app.agent.graph_agent import GraphAgent
 from fastapi import FastAPI
-import uuid
 from app.schemas import ChatRequest, ChatResponse
 from app.config import Config
-from contextlib import asynccontextmanager
+from langchain_core.messages import SystemMessage, HumanMessage
 
 
-# 1. 서버 시작/종료 시 관리를 위한 lifespan (최신 방식)
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # 시작할 때 에러가 나도 서버는 켜지도록 예외 처리
-    try:
-        await agent.initialize()
-    except Exception as e:
-        print(f"서버 초기화 중 오류 발생: {e}")
-        # agent 내부에 에러 상태를 저장해두면 나중에 체크하기 좋아요
-        agent.init_error = str(e) 
-    yield
-    if agent.pool:
-        await agent.pool.close()
-
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 config = Config()
 agent = GraphAgent() 
 
-
-@app.get("/check-status")
-def check_status():
-    # 초기화 중 에러가 있었는지 확인
-    init_error = getattr(agent, 'init_error', None)
-    if init_error:
-        return {"status": "error", "message": f"초기화 실패: {agent.init_error}"}
-    
-    # 기존 리트리버 체크 + 도커 DB(Pool) 상태도 함께 체크하면 더 완벽합니다.
-    is_retriever_ok = agent.retriever.check_connection()
-    is_docker_db_ok = agent.pool is not None and not agent.pool.closed
-    
-    if not is_retriever_ok:
-        return {"status": "error", "message": agent.retriever.db_connect_error_msg}
-    if not is_docker_db_ok:
-        return {"status": "error", "message": "도커 PostgreSQL 연결에 실패했습니다."}
-        
-    return {"status": "ok"}
+# RAG 사용 안 할 때 답해줄 AI(LLM)
+gpt4o = ChatOpenAI(
+    model="gpt-4o",
+    api_key=Config.OPENAI_API_KEY,
+    temperature=0  # 정확도를 위해 0으로 설정
+)
 
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
-    # session_id(thread_id)를 함께 넘겨줘야 기록이 남습니다.
-    # 만약 request에 session_id가 없다면 임시로 "default_user" 등을 넣으세요.
-    session_id = getattr(request, "session_id", "default_session")
-    
+    print(f"RAG 사용 여부: {request.rag_on}\n")
+    if not request.rag_on:
+        # 순수 LLM 모드: 외부 지식 차단
+        # DB 조회를 생략하고 빈 컨텍스트를 주거나, 아예 일반 답변 프롬프트를 사용합니다.
+        system_prompt = "당신은 기업 분석 전문가입니다. 당신이 기존에 학습한 지식으로만 답변하세요."
+
+        messages = [
+            SystemMessage(content=system_prompt),
+            HumanMessage(content=request.question)
+        ]
+
+        # 최종 답변 생성
+        response = gpt4o.invoke(messages)
+
+        return ChatResponse(
+            answer=response.content,
+            has_center=False,
+            graph=None
+        )
+
+    recent_history_str = get_recent_history_context_str(request.recent_history)
     # 비동기로 변경되었으므로 await 필수
-    result = await agent.run_agent(request.query, session_id)
+    result = await agent.run_agent(request.question, recent_history_str)
     
     return ChatResponse(
-        final_response=result.final_response,
-        relation_graph=result.relation_graph
+        answer=result.answer,
+        has_center=result.has_center,
+        graph=result.graph
     )
+
+
+def get_recent_history_context_str(messages, limit=4):
+    """
+    messages: DB나 세션에서 가져온 메시지 객체 리스트
+    limit: 필터링 후 최종적으로 포함할 메시지 개수 (기본 4개)
+    """
+    cleaned_messages = []
+    
+    # 1. 역순으로 검사 (최신 대화부터)
+    # 호출 시 현재 질문을 제외하고 싶다면 messages[:-1]을 넣는 것이 좋습니다.
+    for msg in reversed(messages):
+        # 목표한 개수에 도달하면 즉시 중단
+        if len(cleaned_messages) >= limit:
+            break
+            
+        content = msg.get("content", "")
+        role = msg.get("role")
+
+        # [필터링] 에러 응답 및 불필요한 HTML 제외
+        if role == "assistant":
+            if any(err in content for err in ["<html>", "⚠️", "Internal Server Error"]):
+                continue # 에러 답변은 무시하고 그 이전 메시지를 더 찾아봄
+        
+        # 유효한 메시지만 추가
+        role_label = "사용자" if role == "user" else "AI"
+        cleaned_messages.append(f"{role_label}: {content}")
+
+    # 2. 역순 수집되었으므로 다시 정방향으로 뒤집기
+    cleaned_messages.reverse()
+
+    # 3. 문자열로 합치기
+    recent_history_str = "\n\n".join(cleaned_messages)
+    print(f"[최근 대화 {len(cleaned_messages)}개 추출 완료]\n{recent_history_str}\n")
+        
+    return recent_history_str
