@@ -1,149 +1,99 @@
-// node: company_hd_hyundai_joonggongup
+// node: company_hd_현대중공업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_joonggongup", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_hd_현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
 
-// node: company_hd_hyundai_samho
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_hyundai_samho", "type": "Company", "name": "HD현대삼호"}
-
-// node: company_samsung_joonggongup
+// node: company_삼성중공업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_joonggongup", "type": "Company", "name": "삼성중공업"}
+:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
 
-// node: company_koryo_haeun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_koryo_haeun", "type": "Company", "name": "고려해운"}
-
-// node: company_hanwha_ocean
+// node: company_한화오션
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션"}
+:params {"id": "company_한화오션", "type": "Company", "name": "한화오션", "stock_code": "042660"}
 
-// node: company_korea_gas_corporation
+// node: company_한국가스공사
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_korea_gas_corporation", "type": "Company", "name": "한국가스공사"}
+:params {"id": "company_한국가스공사", "type": "Company", "name": "한국가스공사", "stock_code": "036460"}
 
-// node: person_kim_jae_eul
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_jae_eul", "type": "Person", "name": "김재을", "role": "PRESIDENT", "affiliated_company": "company_hd_hyundai_samho", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_park_jeong_seok
+// node: person_이상균
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_jeong_seok", "type": "Person", "name": "박정석", "role": "CHAIRMAN", "affiliated_company": "company_koryo_haeun", "role_raw": "회장", "role_label": "회장"}
+:params {"id": "person_이상균", "type": "Person", "name": "이상균", "role_raw": "HD현대중공업 부회장", "affiliated_company": "company_hd_현대중공업", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
 
-// node: person_lee_sang_gyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_sang_gyun", "type": "Person", "name": "이상균", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hd_hyundai_joonggongup", "role_raw": "부회장", "role_label": "부회장"}
-
-// node: person_choi_seong_an
+// node: person_최성안
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_seong_an", "type": "Person", "name": "최성안", "role": "VICE_CHAIRMAN", "affiliated_company": "company_samsung_joonggongup", "role_raw": "부회장", "role_label": "부회장"}
+:params {"id": "person_최성안", "type": "Person", "name": "최성안", "role_raw": "삼성중공업 부회장", "affiliated_company": "company_삼성중공업", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
 
-// node: person_jung_in_seop
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jung_in_seop", "type": "Person", "name": "정인섭", "role": "PRESIDENT", "affiliated_company": "company_hanwha_ocean", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_choi_yeon_hye
+// node: person_정인섭
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_yeon_hye", "type": "Person", "name": "최연혜", "role": "PRESIDENT", "affiliated_company": "company_korea_gas_corporation", "role_raw": "사장", "role_label": "사장"}
+:params {"id": "person_정인섭", "type": "Person", "name": "정인섭", "role_raw": "한화오션 사장", "affiliated_company": "company_한화오션", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: person_최연혜
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_최연혜", "type": "Person", "name": "최연혜", "role_raw": "한국가스공사 사장", "affiliated_company": "company_한국가스공사", "role": "PRESIDENT", "role_label": "사장"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_kim_jae_eul", "to_id": "company_hd_hyundai_samho", "evidence": "김재을 HD현대삼호 사장은 28일 롯데호텔 서울에서 열린 조선·해운 상생발전 전략협의회 출범식에서 \"한국 경쟁력이 빨리 올라와야 한다고 말하지만 기본적으로 기울어진 운동장인 상황에서 이를 극복하기란 굉장히 쉽지 않다\"고 토로했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_park_jeong_seok", "to_id": "company_koryo_haeun", "evidence": "한국해운협회장을 맡고 있는 박정석 고려해운 회장은 \"중국은 계획경제 체제로 국가 주도로 조선 산업을 일사불란하게 밀어붙이고 있다\"며 \"미국·일본 등은 해운과 조선을 하나의 국가 전략 산업으로 통합 육성하겠다는 분명한 방향성을 보여주며 과감한 정책을 추진하고 있다\"고 설명했다."}
+:params {"from_id": "person_이상균", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업 부회장인 이상균 한국조선해양플랜트협회장", "date": "", "evidence_source_id": "news_329180_ce60cc10a7cce00f", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026042819513857823", "evidence_published_at": "2026-04-28T19:53:00+09:00"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_sang_gyun", "to_id": "company_hd_hyundai_joonggongup", "evidence": "4월28일 서울 중구 롯데호텔에서 열린 조선·해운 상생발전 전략협의회 출범식에서 김정관 산업부 장관(왼쪽부터), 정인섭 한화오션 사장, 박정석 한국해운협회장, 최연혜 한국가스공사 사장, HD현대중공업 부회장인 이상균 한국조선해양플랜트협회장, 최성안 삼성중공업 부회장, 황종우 해수부 장관이 기념촬영하고 있다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_choi_seong_an", "to_id": "company_samsung_joonggongup", "evidence": "4월28일 서울 중구 롯데호텔에서 열린 조선·해운 상생발전 전략협의회 출범식에서 김정관 산업부 장관(왼쪽부터), 정인섭 한화오션 사장, 박정석 한국해운협회장, 최연혜 한국가스공사 사장, HD현대중공업 부회장인 이상균 한국조선해양플랜트협회장, 최성안 삼성중공업 부회장, 황종우 해수부 장관이 기념촬영하고 있다."}
+:params {"from_id": "person_최성안", "to_id": "company_삼성중공업", "properties": {"evidence": "최성안 삼성중공업 부회장은 \"화물창에 들어가는 카고펌프·재액화 장치 등 핵심 기자재를 여전히 일본·미국·프랑스에서 수입하고 있다\"며", "date": "", "evidence_source_id": "news_329180_ce60cc10a7cce00f", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026042819513857823", "evidence_published_at": "2026-04-28T19:53:00+09:00"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_jung_in_seop", "to_id": "company_hanwha_ocean", "evidence": "4월28일 서울 중구 롯데호텔에서 열린 조선·해운 상생발전 전략협의회 출범식에서 김정관 산업부 장관(왼쪽부터), 정인섭 한화오션 사장, 박정석 한국해운협회장, 최연혜 한국가스공사 사장, HD현대중공업 부회장인 이상균 한국조선해양플랜트협회장, 최성안 삼성중공업 부회장, 황종우 해수부 장관이 기념촬영하고 있다."}
+:params {"from_id": "person_정인섭", "to_id": "company_한화오션", "properties": {"evidence": "4월28일 서울 중구 롯데호텔에서 열린 조선·해운 상생발전 전략협의회 출범식에서 김정관 산업부 장관(왼쪽부터), 정인섭 한화오션 사장", "date": "", "evidence_source_id": "news_329180_ce60cc10a7cce00f", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026042819513857823", "evidence_published_at": "2026-04-28T19:53:00+09:00"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_choi_yeon_hye", "to_id": "company_korea_gas_corporation", "evidence": "4월28일 서울 중구 롯데호텔에서 열린 조선·해운 상생발전 전략협의회 출범식에서 김정관 산업부 장관(왼쪽부터), 정인섭 한화오션 사장, 박정석 한국해운협회장, 최연혜 한국가스공사 사장, HD현대중공업 부회장인 이상균 한국조선해양플랜트협회장, 최성안 삼성중공업 부회장, 황종우 해수부 장관이 기념촬영하고 있다."}
+:params {"from_id": "person_최연혜", "to_id": "company_한국가스공사", "properties": {"evidence": "최연혜 한국가스공사 사장", "date": "", "evidence_source_id": "news_329180_ce60cc10a7cce00f", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026042819513857823", "evidence_published_at": "2026-04-28T19:53:00+09:00"}}

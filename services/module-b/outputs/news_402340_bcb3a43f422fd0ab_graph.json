@@ -5,37 +5,38 @@
       "id": "company_sk_hynix",
       "type": "Company",
       "name": "SK하이닉스",
-      "industry": "반도체"
+      "stock_code": "000660"
     },
     {
       "id": "company_sk_square",
       "type": "Company",
-      "name": "SK스퀘어"
+      "name": "SK스퀘어",
+      "stock_code": "402340"
     },
     {
       "id": "company_hd_hyundai_heavy_industries",
       "type": "Company",
-      "name": "HD현대중공업"
+      "name": "HD현대중공업",
+      "stock_code": "329180"
     },
     {
-      "id": "industry_semiconductor",
-      "type": "Industry",
-      "name": "반도체",
-      "description": "인공지능(AI) 열풍에 따른 반도체 슈퍼사이클이 유효하다"
+      "id": "company_mirae_asset_securities",
+      "type": "Company",
+      "name": "미래에셋증권",
+      "stock_code": "006800"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_sk_hynix",
-      "to": "industry_semiconductor",
-      "evidence": "SK하이닉스가 반도체 훈풍을 타고 130만원선을 돌파한 가운데 '큰 손' 연기금은 오히려 비중 조절에 나섰다."
-    },
-    {
       "type": "INVESTS_IN",
-      "from": "company_sk_square",
+      "from": "company_mirae_asset_securities",
       "to": "company_sk_hynix",
-      "evidence": "SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주로, SK하이닉스와 주가 상관관계가 98%에 달한다."
+      "evidence": "미래에셋증권은 SK하이닉스 목표가를 기존 166만원에서 200만원으로 끌어올렸다.",
+      "date": "",
+      "evidence_source_id": "news_402340_bcb3a43f422fd0ab",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12030694",
+      "evidence_published_at": "2026-04-29T13:27:00+09:00"
     }
   ]
 }

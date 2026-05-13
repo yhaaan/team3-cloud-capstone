@@ -1,0 +1,58 @@
+// node: company_lg_hwahak
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_hwahak", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+
+// node: company_lg_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_koryeo_ahyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_koryeo_ahyun", "type": "Company", "name": "고려아연", "stock_code": "010130"}
+
+// node: company_sewonjunggong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sewonjunggong", "type": "Company", "name": "세원정공", "stock_code": "021820"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_lg_hwahak", "to_id": "company_lg_energy_solution", "properties": {"evidence": "LG화학의 타법인 출자 대상은 주식회사 LG에너지솔루션, 출자 목적은 경영참여, 최초 취득일은 2021.12.01, 당기말 보유수량은 185,747,525, 당기말 지분율은 79%, 장부가액은 6,419,487,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_051910_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_lg_hwahak", "to_id": "company_koryeo_ahyun", "properties": {"evidence": "LG화학의 타법인 출자 대상은 고려아연, 출자 목적은 단순투자, 최초 취득일은 2022.11.24, 당기말 보유수량은 391,547, 당기말 지분율은 2%, 장부가액은 515,276,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_051910_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_lg_hwahak", "to_id": "company_sewonjunggong", "properties": {"evidence": "LG화학의 타법인 출자 대상은 세원정공, 출자 목적은 단순투자, 최초 취득일은 2024.03.28, 당기말 보유수량은 33,935, 당기말 지분율은 4%, 장부가액은 339,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_051910_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195", "evidence_published_at": "2026-03-13"}}

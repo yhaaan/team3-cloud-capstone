@@ -1,0 +1,24 @@
+// node: company_호텔신라
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_호텔신라", "type": "Company", "name": "호텔신라"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_호텔신라", "to_id": "industry_ai", "properties": {"evidence": "of Illinois, Urbana-Champaign 경영전문대학원(MBA) 호텔신라 TR부문장.", "date": "2026-03-11", "evidence_source_id": "dart_008770_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398", "evidence_published_at": "2026-03-11"}}

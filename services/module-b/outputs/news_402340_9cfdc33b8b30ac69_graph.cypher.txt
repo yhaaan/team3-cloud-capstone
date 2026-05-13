@@ -1,91 +1,3 @@
-// node: company_coupang
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_coupang", "type": "Company", "name": "쿠팡"}
-
-// node: person_kim_beom_seok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_beom_seok", "type": "Person", "name": "김범석", "role": "BOARD_CHAIR", "affiliated_company": "company_coupang", "role_raw": "의장", "role_label": "이사회 의장"}
-
-// node: person_kim_yoo_seok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_yoo_seok", "type": "Person", "name": "김유석"}
-
-// node: company_uae
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_uae", "type": "Company", "name": "아랍에미리트"}
-
-// node: company_opec
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_opec", "type": "Company", "name": "석유수출국기구"}
-
-// node: company_opec_plus
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_opec_plus", "type": "Company", "name": "OPEC+"}
-
-// node: company_saudi_arabia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_saudi_arabia", "type": "Company", "name": "사우디"}
-
-// node: company_iraq
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_iraq", "type": "Company", "name": "이라크"}
-
-// node: company_upbit
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_upbit", "type": "Company", "name": "업비트"}
-
-// node: company_bithumb
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_bithumb", "type": "Company", "name": "빗썸"}
-
-// node: company_sk_hynix
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스"}
-
 // node: company_sk_square
 
 MERGE (n:Entity {id: $id})
@@ -94,29 +6,19 @@ SET n:`Company`
 
 :params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
 
-// relation: AFFILIATED_WITH
+// node: company_sk_hynix
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "person_kim_beom_seok", "to_id": "company_coupang", "evidence": "공정거래위원회가 쿠팡의 동일인을 법인에서 김범석 의장(자연인)으로 변경 지정했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kim_yoo_seok", "to_id": "company_coupang", "evidence": "김 의장의 친동생 김유석 씨가 물류·배송 관련 회의를 수백회 주재하는 등 사실상 경영에 참여한 것이 동일인 변경의 주요 근거로, 사익편취 우려가 있다고 공정위가 판단한 것이다."}
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
 // relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "evidence": "SK스퀘어가 SK하이닉스 지분 20%를 보유한 최대주주인 데다, 주가 상관관계가 98%에 달해 단일종목 10% 편입 한도 규제를 받는 펀드들의 대안으로 주목받고 있기 때문인 것으로 풀이된다."}
+:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "SK스퀘어가 SK하이닉스 지분 20%를 보유한 최대주주인 데다, 주가 상관관계가 98%에 달해 단일종목 10% 편입 한도 규제를 받는 펀드들의 대안으로 주목받고 있기 때문인 것으로 풀이된다.", "date": "", "evidence_source_id": "news_402340_9cfdc33b8b30ac69", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169519", "evidence_published_at": "2026-04-29T16:12:00+09:00"}}

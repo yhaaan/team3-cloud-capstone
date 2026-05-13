@@ -1,0 +1,82 @@
+// node: company_hd_korea_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_samsung_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_hanwha_ocean
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: company_hd_hyundai_marine_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_marine_engine", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+
+// node: company_hd_hyundai_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_energy_solution", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_marine_engine", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "HD현대마린엔진은 엔진 판가 상승과 인도 물량 증가 효과로 매출과 영업이익이 각각 60.8%, 216.5% 뛰었고", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_energy_solution", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "HD현대에너지솔루션은 모듈 판매 확대와 판가 인상에 힘입어 매출이 87.6% 증가하며 흑자로 돌아섰다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "자회사별로는 지난해 12월 HD현대미포와의 합병으로 몸집을 키운 통합 HD현대중공업이 매출 5조9163억원, 영업이익 9054억원을 달성하며 성장을 이끌었다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}

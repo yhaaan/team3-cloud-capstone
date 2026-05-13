@@ -1,126 +1,126 @@
-// node: company_samsung_biologics
+// node: company_삼성바이오로직스
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
 
-// node: person_john_rim_chongbo
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_john_rim_chongbo", "type": "Person", "name": "존림", "role": "PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_no_kyun
+// node: person_존림
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_no_kyun", "type": "Person", "name": "노균", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "부사장", "role_label": "부사장"}
+:params {"id": "person_존림", "type": "Person", "name": "존림", "role_raw": "사장", "role": "PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_label": "사장"}
 
-// node: person_yu_seung_ho
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_yu_seung_ho", "type": "Person", "name": "유승호", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_biologics", "role_raw": "부사장", "role_label": "부사장"}
-
-// node: person_kim_yunice_kyunghee
+// node: person_노균
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_yunice_kyunghee", "type": "Person", "name": "김유니스경희", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
+:params {"id": "person_노균", "type": "Person", "name": "노균", "role_raw": "부사장", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_label": "부사장"}
 
-// node: person_lee_chang_woo
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_chang_woo", "type": "Person", "name": "이창우", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
-
-// node: person_suh_seung_hwan
+// node: person_유승호
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_suh_seung_hwan", "type": "Person", "name": "서승환", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
+:params {"id": "person_유승호", "type": "Person", "name": "유승호", "role_raw": "부사장", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_label": "부사장"}
 
-// node: person_lee_ho_seung
+// node: person_김유니스경희
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_ho_seung", "type": "Person", "name": "이호승", "role": "DIRECTOR", "affiliated_company": "company_samsung_biologics", "role_raw": "이사", "role_label": "이사"}
+:params {"id": "person_김유니스경희", "type": "Person", "name": "김유니스경희", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_삼성바이오로직스", "role_label": "이사"}
+
+// node: person_이창우
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이창우", "type": "Person", "name": "이창우", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_삼성바이오로직스", "role_label": "이사"}
+
+// node: person_서승환
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_서승환", "type": "Person", "name": "서승환", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_삼성바이오로직스", "role_label": "이사"}
+
+// node: person_이호승
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이호승", "type": "Person", "name": "이호승", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_삼성바이오로직스", "role_label": "이사"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_john_rim_chongbo", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 존림 (Rim John Chongbo), 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사 / 이사회의장 / 경영위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성바이오로직스 CMO2센터장 - Northwestern Univ. MBA."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_no_kyun", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 노균, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 EPCV센터장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성바이오로직스 DS센터장 - 서울대 화학공학 박사."}
+:params {"from_id": "person_존림", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 존림 (Rim John Chongbo), 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사 / 이사회의장 / 경영위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성바이오로직스 CMO2센터장 - Northwestern Univ. MBA.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_yu_seung_ho", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 유승호, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 경영지원센터장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성전자(DX) 경영지원그룹장 부사장 - 삼성전자 글로벌지원그룹(본사) 담당임원 - 연세대 경영학 학사."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kim_yunice_kyunghee", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 김유니스경희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ESG위원장 / 내부거래위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 한국ESG기준원 ESG기준위원회 위원 - 이화여대 법학전문대학원 교수 - Yale University Law School Juris Doctor."}
+:params {"from_id": "person_노균", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 노균, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 EPCV센터장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성바이오로직스 DS센터장 - 서울대 화학공학 박사.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_chang_woo", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 이창우, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 서울대 경영대학 명예교수 - 한국공인회계사회 윤리위원장 - UC Berkeley 경영학 박사."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_suh_seung_hwan", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 서승환, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 보상위원장 / 감사위원회 위원, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 연세대 총장 - 국토교통부 장관 - Princeton Univ. 경제학 박사."}
+:params {"from_id": "person_유승호", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 유승호, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 경영지원센터장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 삼성전자(DX) 경영지원그룹장 부사장 - 삼성전자 글로벌지원그룹(본사) 담당임원 - 연세대 경영학 학사.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_ho_seung", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스의 임원은 이호승, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천위원장 / 감사위원회 위원, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 대통령비서실 정책실장 - 기획재정부 1차관 - Univ. of Georgia 경영학 석사."}
+:params {"from_id": "person_김유니스경희", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 김유니스경희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ESG위원장 / 내부거래위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 한국ESG기준원 ESG기준위원회 위원 - 이화여대 법학전문대학원 교수 - Yale University Law School Juris Doctor.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이창우", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 이창우, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원장, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 서울대 경영대학 명예교수 - 한국공인회계사회 윤리위원장 - UC Berkeley 경영학 박사.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_서승환", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 서승환, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 보상위원장 / 감사위원회 위원, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 연세대 총장 - 국토교통부 장관 - Princeton Univ. 경제학 박사.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이호승", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원은 이호승, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천위원장 / 감사위원회 위원, 최대주주와의 관계는 계열회사 임원(당사 임원), 주요경력은 - 대통령비서실 정책실장 - 기획재정부 1차관 - Univ. of Georgia 경영학 석사.", "date": "2026-03-12", "evidence_source_id": "dart_207940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001119", "evidence_published_at": "2026-03-12"}}

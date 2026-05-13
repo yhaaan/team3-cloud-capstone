@@ -1,23 +1,15 @@
-// node: company_samsung_electronics
+// node: company_삼성전자
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_samsung_electromechanics
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electromechanics", "type": "Company", "name": "삼성전기"}
-
-// node: industry_semiconductor
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}

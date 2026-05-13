@@ -1,66 +1,24 @@
-// node: company_chaebi
+// node: company_현대차
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_chaebi", "type": "Company", "name": "채비"}
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: company_hyundai_motor_company
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_motor_company", "type": "Company", "name": "현대자동차"}
-
-// node: person_choi_jae_woong
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_jae_woong", "type": "Person", "name": "Choi JAE Woong"}
-
-// node: company_seong_hyun
+// node: company_채비
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_seong_hyun", "type": "Company", "name": "Seong Hyun"}
+:params {"id": "company_채비", "type": "Company", "name": "채비", "stock_code": "0011T0"}
 
-// node: industry_electric_vehicle_infrastructure
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_electric_vehicle_infrastructure", "type": "Industry", "name": "Electric Vehicle Infrastructure"}
-
-// relation: AFFILIATED_WITH
+// relation: INVESTS_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
 
-:params {"from_id": "person_choi_jae_woong", "to_id": "company_seong_hyun", "evidence": "법률자문: 법무법인 성현 (최재웅 대표 변호사)"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hyundai_motor_company", "to_id": "industry_electric_vehicle_infrastructure", "evidence": "현대차 신차 고객 전용 전기차 충전 구독 상품을 5월 출시한다고 29일 밝혔다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_chaebi", "to_id": "company_hyundai_motor_company", "evidence": "채비가 현대자동차와 전략적 파트너십을 체결하고 현대차 신차 고객 전용 전기차 충전 구독 상품을 5월 출시한다고 29일 밝혔다."}
+:params {"from_id": "company_채비", "to_id": "company_현대차", "properties": {"evidence": "채비가 현대자동차와 전략적 파트너십을 체결하고 현대차 신차 고객 전용 전기차 충전 구독 상품을 5월 출시한다고 29일 밝혔다.", "date": "", "evidence_source_id": "news_005380_aac595e606c00999", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202604291844229365204ead0791_12", "evidence_published_at": "2026-04-29T18:46:00+09:00"}}

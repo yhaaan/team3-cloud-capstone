@@ -1,0 +1,31 @@
+// node: company_imarket_korea
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_imarket_korea", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_hd_hyundai_junggongup
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_junggongup", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}

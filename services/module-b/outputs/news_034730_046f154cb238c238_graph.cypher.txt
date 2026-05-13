@@ -1,0 +1,55 @@
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730", "country": "KR"}
+
+// node: company_sk텔레콤
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk텔레콤", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "country": "KR"}
+
+// node: company_sk하이닉스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "country": "KR"}
+
+// node: company_레인보우로보틱스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_레인보우로보틱스", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810", "country": "KR"}
+
+// node: company_삼성전기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150", "country": "KR"}
+
+// node: company_삼성전자
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930", "country": "KR"}
+
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380", "country": "KR"}

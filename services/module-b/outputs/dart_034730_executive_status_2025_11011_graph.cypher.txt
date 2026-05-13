@@ -1,0 +1,92 @@
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_cloud
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_cloud", "type": "Industry", "name": "cloud"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "battery"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "industry_ai", "properties": {"evidence": "Chairperson of the Board of Directors - (겸) SK Hynix America 회장.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "industry_cloud", "properties": {"evidence": "SK의 임원은 신장수, 직위는 부문장, 이사회상 역할은 미등기, 담당업무는 Cloud부문장 겸) SHE 추진단장 겸) SUPEX 추구협의회 임원, 주요경력은 - New York State Univ.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "industry_battery", "properties": {"evidence": "SK의 임원은 김유석, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 업무지원실 임원, 주요경력은 - Yale University 석사 - SK온 Battery 전략기획본부장 - (겸) 최종현학술원 상임이사 - (겸) 한국고등교육재단 상임이사.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "industry_bio", "properties": {"evidence": "SK의 임원은 김연태, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 PM4담당 겸) 혁신신약TF 임원, 최대주주와의 관계는 계열회사 임원, 주요경력은 - University College London 석사 - SK㈜ Bio 투자센터 임원 - (겸) SK바이오팜 기타비상무이사.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "industry_it", "properties": {"evidence": "SK의 임원은 유정준, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 부회장 겸) 미주총괄, 최대주주와의 관계는 계열회사 임원, 주요경력은 - Illinois State University 석사 - SK온 부회장 겸) SK Americas, Inc.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}

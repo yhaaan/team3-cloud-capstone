@@ -1,0 +1,31 @@
+// node: company_lg_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_samsung_sdi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_sdi", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}

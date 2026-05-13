@@ -1,0 +1,32 @@
+// node: company_기아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_정원정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정원정", "type": "Person", "name": "정원정", "role_raw": "국내사업본부장 부사장", "affiliated_company": "company_기아", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정원정", "to_id": "company_기아", "properties": {"evidence": "협약식은 서울 압구정동 기아 브랜드 체험관 '기아360'에서 열렸으며, 기아 국내사업본부장 정원정 부사장, 신한은행 장호식 CIB대기업그룹장(부행장) 등이 참석했다.", "date": "", "evidence_source_id": "news_000270_723096e317b741ec", "evidence_source_type": "news", "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840429", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}

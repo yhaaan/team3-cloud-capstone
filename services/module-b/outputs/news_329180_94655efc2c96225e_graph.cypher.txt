@@ -1,0 +1,41 @@
+// node: company_hd_korea_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "country": "KR"}
+
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "country": "KR"}
+
+// node: company_hd_hyundai_marine_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_marine_engine", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "country": "KR"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "구체적으로 조선 부문 계열사인 HD현대중공업은 올해 1분기 매출 5조9163억원, 영업이익 9054억원을 기록하며 HD한국조선해양의 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_329180_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_marine_engine", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "HD현대마린엔진은 엔진 판매 단가 상승과 인도 물량 증가에 힘입어 영업이익이 전년 동기 대비 200% 넘게 증가했다.", "date": "", "evidence_source_id": "news_329180_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}

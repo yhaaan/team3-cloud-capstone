@@ -1,0 +1,58 @@
+// node: company_hyundorotem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundorotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: person_lee_yong_bae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_yong_bae", "type": "Person", "name": "이용배", "role_raw": "계열사임원", "affiliated_company": "company_hyundorotem", "role": "OTHER", "role_label": "계열사임원"}
+
+// node: person_kim_du_hong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_du_hong", "type": "Person", "name": "김두홍", "role_raw": "계열사임원", "affiliated_company": "company_hyundorotem", "role": "OTHER", "role_label": "계열사임원"}
+
+// node: person_kim_jung_hoon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jung_hoon", "type": "Person", "name": "김정훈", "role_raw": "계열사임원", "affiliated_company": "company_hyundorotem", "role": "OTHER", "role_label": "계열사임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_yong_bae", "to_id": "company_hyundorotem", "properties": {"evidence": "현대로템의 최대주주 관련 인물/법인은 이용배, 관계는 계열사임원, 당기말 보유주식수는 1,612주, 지분율은 0.00%.", "date": "2026-03-19", "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_du_hong", "to_id": "company_hyundorotem", "properties": {"evidence": "현대로템의 최대주주 관련 인물/법인은 김두홍, 관계는 계열사임원, 당기말 보유주식수는 645주, 지분율은 0.00%.", "date": "2026-03-19", "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_jung_hoon", "to_id": "company_hyundorotem", "properties": {"evidence": "현대로템의 최대주주 관련 인물/법인은 김정훈, 관계는 계열사임원, 당기말 보유주식수는 1,947주, 지분율은 0.00%.", "date": "2026-03-19", "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}

@@ -1,41 +1,185 @@
-// node: company_sk_hynix
+// node: company_sk하이닉스
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_sk_telecom
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤"}
-
-// node: company_sk_square
+// node: company_sk텔레콤
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어"}
+:params {"id": "company_sk텔레콤", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+
+// node: company_sk스퀘어
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk스퀘어", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
 
 // relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2021년 11월 02일, 보유주식수는 146,104,782주, 지분율은 20.07%, 변동 사유는 최대주주 변경."}
+:params {"from_id": "company_sk텔레콤", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK텔레콤(주), 변동일은 2021년 05월 03일, 보유주식수는 146,103,332주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (사외이사 6인).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
 
 // relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_sk_telecom", "to_id": "company_sk_hynix", "evidence": "SK하이닉스의 최대주주 변동 대상은 SK텔레콤(주), 변동일은 2021년 05월 03일, 보유주식수는 146,103,332주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (사외이사 6인)."}
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2023년 03월 28일, 보유주식수는 146,130,570주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(노종원 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2023년 03월 29일, 보유주식수는 146,129,920주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(신창환 사외이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2023년 08월 04일, 보유주식수는 146,133,332주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (사외이사 7인).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2024년 03월 22일, 보유주식수는 146,132,006주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(윤태화 사외이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2024년 03월 27일, 보유주식수는 146,110,333주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(박정호 사내이사, 송호근 사외이사, 조현재 사외이사) 특수관계자 추가(안현 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2024년 04월 26일, 보유주식수는 146,113,064주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (곽노정 사내이사, 사외이사 6인).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2025년 02월 03일, 보유주식수는 146,115,588주, 지분율은 20.07%, 변동 사유는 자사주 상여금(곽노정 사내이사, 안현 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2025년 03월 27일, 보유주식수는 146,113,535주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(하영구 사외이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2025년 04월 25일, 보유주식수는 146,115,103주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (사외이사 5인).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk텔레콤", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK텔레콤(주), 변동일은 2021년 06월 11일, 보유주식수는 146,104,332주, 지분율은 20.07%, 변동 사유는 장내매수 (오종훈 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk텔레콤", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK텔레콤(주), 변동일은 2021년 08월 20일, 보유주식수는 146,104,782주, 지분율은 20.07%, 변동 사유는 장내매수 (오종훈 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2021년 11월 02일, 보유주식수는 146,104,782주, 지분율은 20.07%, 변동 사유는 최대주주 변경.", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2022년 02월 25일, 보유주식수는 146,131,909주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (박정호 사내이사, 이석희 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2022년 03월 30일, 보유주식수는 146,121,434주, 지분율은 20.07%, 변동 사유는 특수관계자 제외(이석희 사내이사, 오종훈 사내이사) 특수관계자 추가(곽노정 사내이사, 노종원 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2022년 05월 02일, 보유주식수는 146,124,674주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (사외이사 6인).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2022년 05월 03일, 보유주식수는 146,125,674주, 지분율은 20.07%, 변동 사유는 장내매수 (곽노정 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "SK하이닉스의 최대주주 변동 대상는 SK스퀘어(주), 변동일은 2023년 02월 24일, 보유주식수는 146,132,237주, 지분율은 20.07%, 변동 사유는 자사주 상여금 (박정호 사내이사, 곽노정 사내이사, 노종원 사내이사).", "date": "2026-03-17", "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635", "evidence_published_at": "2026-03-17"}}

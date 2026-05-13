@@ -1,0 +1,39 @@
+// node: company_samsung_biologics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: person_park_jae_sung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role_raw": "삼성바이오로직스 노조위원장", "role": "OTHER", "role_label": "노조위원장"}
+
+// node: person_hwang_yong_sik
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hwang_yong_sik", "type": "Person", "name": "황용식", "role_raw": "세종대 경영학부 교수", "role": "OTHER", "role_label": "세종대 경영학부 교수"}

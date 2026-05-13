@@ -1,108 +1,31 @@
-// node: company_hd_hyundai_heavy_industries
+// node: company_hd현대중공업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
 
-// node: company_samsung_heavy_industries
+// node: company_삼성중공업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
 
-// node: person_lee_sang_gyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_sang_gyun", "type": "Person", "name": "이상균", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "대표이사 부회장", "role_label": "부회장"}
-
-// node: person_choi_sung_an
+// node: person_이상균
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_sung_an", "type": "Person", "name": "최성안", "role": "VICE_CHAIRMAN", "affiliated_company": "company_samsung_heavy_industries", "role_raw": "대표이사 부회장", "role_label": "부회장"}
+:params {"id": "person_이상균", "type": "Person", "name": "이상균", "role_raw": "HD현대중공업 대표이사 부회장", "affiliated_company": "company_hd현대중공업", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
 
-// node: person_kim_jung_kwan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_jung_kwan", "type": "Person", "name": "김정관", "role": "MINISTER", "role_raw": "산업통상부 장관", "role_label": "장관"}
-
-// node: person_park_jung_seok
+// node: person_최성안
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_jung_seok", "type": "Person", "name": "박정석", "role": "CHAIRMAN", "role_raw": "한국해운협회 회장", "role_label": "회장"}
-
-// node: event_shipbuilding_shipping_joint_strategy_conference
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_shipbuilding_shipping_joint_strategy_conference", "type": "Event", "name": "조선-해운 상생발전 전략협의회 출범식", "date": "2026-04-28"}
-
-// node: industry_shipbuilding
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
-
-// relation: APPOINTED_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_lee_sang_gyun", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "28일 열린 조선-해운 상생발전 전략협의회 출범식 사전 환담에서 이상균 HD현대중공업 대표이사 부회장..."}
-
-// relation: APPOINTED_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_choi_sung_an", "to_id": "company_samsung_heavy_industries", "evidence": "28일 열린 조선-해운 상생발전 전략협의회 출범식 사전 환담에서 ... 최성안 삼성중공업 대표이사 부회장..."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_samsung_heavy_industries", "evidence": "HD현대중공업[329180]과 삼성중공업[010140] 등 국내 조선업계가 산업통상부 장관을 만나 중국의 조선 시장 독점에 대응하기 위한 한일 전략적 연합을 제안했다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "industry_shipbuilding", "evidence": "HD현대중공업[329180]과 삼성중공업[010140] 등 국내 조선업계가 산업통상부 장관을 만나 중국의 조선 시장 독점에 대응하기 위한 한일 전략적 연합을 제안했다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_heavy_industries", "to_id": "industry_shipbuilding", "evidence": "HD현대중공업[329180]과 삼성중공업[010140] 등 국내 조선업계가 산업통상부 장관을 만나 중국의 조선 시장 독점에 대응하기 위한 한일 전략적 연합을 제안했다."}
+:params {"id": "person_최성안", "type": "Person", "name": "최성안", "role_raw": "삼성중공업 대표이사 부회장", "affiliated_company": "company_삼성중공업", "role": "VICE_CHAIRMAN", "role_label": "부회장"}

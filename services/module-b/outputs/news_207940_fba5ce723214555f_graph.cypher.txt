@@ -4,38 +4,60 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스"}
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
 
-// node: person_park_jae_sung
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_park_min_woo
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role": "OTHER", "affiliated_company": "company_samsung_biologics", "role_raw": "노조위원장", "role_label": "노조위원장"}
+:params {"id": "person_park_min_woo", "type": "Person", "name": "박민우", "role_raw": "사장", "affiliated_company": "company_hyundai_motor", "role": "PRESIDENT", "role_label": "사장"}
 
-// node: industry_biotech
+// node: person_kang_ji_suk
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Industry`
+SET n:`Person`
 
-:params {"id": "industry_biotech", "type": "Industry", "name": "생명공학"}
+:params {"id": "person_kang_ji_suk", "type": "Person", "name": "강지숙", "role_raw": "대표", "affiliated_company": "company_lotte_sonhe_insurance", "role": "CEO", "role_label": "대표이사"}
 
-// relation: AFFILIATED_WITH
+// node: person_lim_jong_ryong
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
 
-:params {"from_id": "person_park_jae_sung", "to_id": "company_samsung_biologics", "evidence": "그런데 막상 파업을 이끌어야 할 박재성 노조위원장이 해외 휴가 중이라는 사실이 알려지면서, 노조 내부에서 의견이 엇갈리고 있다."}
+:params {"id": "person_lim_jong_ryong", "type": "Person", "name": "임종룡", "role_raw": "회장", "role": "CHAIRMAN", "role_label": "회장"}
 
-// relation: BELONGS_TO
+// node: person_choi_tae_won
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
 
-:params {"from_id": "company_samsung_biologics", "to_id": "industry_biotech", "evidence": "내달 1일부터 예정된 전면파업이 현실화될 경우, 국내 생명공학 산업에 미칠 파장은 결코 작지 않을 것이다."}
+:params {"id": "person_choi_tae_won", "type": "Person", "name": "최태원", "role_raw": "회장", "role": "CHAIRMAN", "role_label": "회장"}

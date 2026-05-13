@@ -2,132 +2,41 @@
   "source_id": "news_005380_3afa0f4c91021a58",
   "entities": [
     {
-      "id": "company_hyundai_motor_group",
+      "id": "company_hyundai",
       "type": "Company",
-      "name": "현대차그룹"
-    },
-    {
-      "id": "company_hyundai_motor",
-      "type": "Company",
-      "name": "현대차"
-    },
-    {
-      "id": "company_hyundai_motor_america",
-      "type": "Company",
-      "name": "현대차 미국법인"
+      "name": "현대차",
+      "stock_code": "005380"
     },
     {
       "id": "company_kia",
       "type": "Company",
-      "name": "기아"
+      "name": "기아",
+      "stock_code": "000270"
     },
     {
-      "id": "company_kia_america",
+      "id": "company_samsung_electronics",
       "type": "Company",
-      "name": "기아 미국법인"
+      "name": "삼성전자",
+      "stock_code": "005930"
     },
     {
-      "id": "company_hatci",
+      "id": "company_qrocell",
       "type": "Company",
-      "name": "현대차그룹 미국기술연구소"
+      "name": "큐로셀",
+      "stock_code": "372320"
     },
     {
-      "id": "company_hmgma",
+      "id": "company_samsungsdi",
       "type": "Company",
-      "name": "현대차그룹 메타플랜트 아메리카"
+      "name": "삼성SDI",
+      "stock_code": "006400"
     },
     {
-      "id": "company_boston_dynamics",
+      "id": "company_ls",
       "type": "Company",
-      "name": "보스턴다이나믹스"
-    },
-    {
-      "id": "company_motional",
-      "type": "Company",
-      "name": "모셔널"
-    },
-    {
-      "id": "company_42dot",
-      "type": "Company",
-      "name": "42dot"
-    },
-    {
-      "id": "industry_ai",
-      "type": "Industry",
-      "name": "AI"
-    },
-    {
-      "id": "industry_robotics",
-      "type": "Industry",
-      "name": "로보틱스"
+      "name": "LS",
+      "stock_code": "006260"
     }
   ],
-  "relations": [
-    {
-      "type": "BELONGS_TO",
-      "from": "company_hyundai_motor_group",
-      "to": "industry_ai",
-      "evidence": "실리콘밸리와 스탠포드공과대학 등 유명 대학이 있는 미국 서부지역은 글로벌 인공지능(AI)·로보틱스 인재들이 밀집한 지역으로 꼽힌다."
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_hyundai_motor_group",
-      "to": "industry_robotics",
-      "evidence": "실리콘밸리와 스탠포드공과대학 등 유명 대학이 있는 미국 서부지역은 글로벌 인공지능(AI)·로보틱스 인재들이 밀집한 지역으로 꼽힌다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hyundai_motor",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차그룹은 피지컬 AI 전략을 내세우며 기술 인재 채용을 강화하고 있다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_kia",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hyundai_motor_america",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_kia_america",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hatci",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hmgma",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_boston_dynamics",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_motional",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_42dot",
-      "to": "company_hyundai_motor_group",
-      "evidence": "현대차, 현대차 미국법인, 기아, 기아 미국법인, 현대차그룹 미국기술연구소(HATCI), 현대차그룹 메타플랜트 아메리카(HMGMA), 보스턴다이나믹스, 모셔널, 42dot 등 주요 9개 회사가 참여한다."
-    }
-  ]
+  "relations": []
 }

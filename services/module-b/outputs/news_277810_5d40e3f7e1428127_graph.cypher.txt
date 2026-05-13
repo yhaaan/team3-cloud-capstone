@@ -1,0 +1,41 @@
+// node: company_레인보우로보틱스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_레인보우로보틱스", "type": "Company", "name": "레인보우로보틱스"}
+
+// node: person_활용되는_대표
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_활용되는_대표", "type": "Person", "name": "활용되는 대표"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_레인보우로보틱스", "to_id": "industry_ai", "properties": {"evidence": "사입력: 2026년05월12일 06:00 최종수정: 2026년05월12일 06:00 트위터 밴드 ※ 본문 글자 크기 조정 더 작게 작게 보통 크게 더 크게 ※ 번역할 언어 선택 -- 선택 -- AI 핵심 요약 beta 분석 중...", "date": "", "evidence_source_id": "news_277810_5d40e3f7e1428127", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260511001217", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_활용되는_대표", "to_id": "company_레인보우로보틱스", "properties": {"evidence": "MSCI 지수는 글로벌 패시브 자금의 주요 벤치마크로 활용되는 대표 지수다.", "date": "", "evidence_source_id": "news_277810_5d40e3f7e1428127", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260511001217", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}

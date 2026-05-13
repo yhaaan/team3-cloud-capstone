@@ -1,0 +1,24 @@
+// node: company_드림어스컴퍼니
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_드림어스컴퍼니", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
+
+// node: person_이기영
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이기영", "type": "Person", "name": "이기영", "role_raw": "대표이사", "affiliated_company": "company_드림어스컴퍼니", "role": "CEO", "role_label": "대표이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이기영", "to_id": "company_드림어스컴퍼니", "properties": {"evidence": "이기영 드림어스컴퍼니 대표이사는 \"앞으로도 역량 있는 엔터사와의 파트너십을 확대해 IP의 성장을 지원하고 글로벌 시장에서 비즈니스 파이를 키워나가겠다\"고 강조했다.", "date": "", "evidence_source_id": "news_060570_31391eeb4b2a6a40", "evidence_source_type": "news", "evidence_source_url": "https://www.nc.press/news/articleView.html?idxno=613147", "evidence_published_at": "2026-04-20T11:15:00+09:00"}}

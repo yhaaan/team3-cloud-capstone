@@ -4,54 +4,37 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
 
-// node: person_삼성전기_사장
+// node: company_우성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
+
+// node: company_코스모신소재
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+
+// node: person_장덕현
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_삼성전기_사장", "type": "Person", "name": "삼성전기 사장"}
-
-// node: person_이켐앤텍_대표
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이켐앤텍_대표", "type": "Person", "name": "이켐앤텍 대표"}
-
-// node: person_협부_회장
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_협부_회장", "type": "Person", "name": "협부 회장"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_삼성전기", "to_id": "industry_ai", "evidence": "삼성전기가 인공지능(AI) 산업의 성장에 발맞춰 협력사들과의 '차별화된 기술 경쟁력' 확보를 위한 동반성장 의지를 다졌다."}
+:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "affiliated_company": "company_삼성전기", "role": "PRESIDENT", "role_label": "사장"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_삼성전기_사장", "to_id": "company_삼성전기", "evidence": "▲ 장덕현 삼성전기 사장이 28일 수원 라마다프라자 호텔에서 주요 협력사 관계자 200여 명을 초청한 '2026년 상생협력데이(DAY)'에서 환영사를 하고 있다."}
+:params {"from_id": "person_장덕현", "to_id": "company_삼성전기", "properties": {"evidence": "▲ 장덕현 삼성전기 사장이 28일 수원 라마다프라자 호텔에서 주요 협력사 관계자 200여 명을 초청한 '2026년 상생협력데이(DAY)'에서 환영사를 하고 있다.", "date": "", "evidence_source_id": "news_009150_e2f4b63826fd85f8", "evidence_source_type": "news", "evidence_source_url": "https://www.mediapen.com/news/view/1095987", "evidence_published_at": "2026-04-28T20:46:00+09:00"}}

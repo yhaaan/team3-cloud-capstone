@@ -1,0 +1,91 @@
+// node: company_hyundai_car
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_car", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_hyundai_mobis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: person_jang_jae_hun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_jae_hun", "type": "Person", "name": "장재훈", "role_raw": "부회장", "affiliated_company": "company_hyundai_car", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+
+// node: person_lee_jong_ha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jong_ha", "type": "Person", "name": "이종하", "role_raw": "상무", "affiliated_company": "company_hyundai_mobis", "role": "OTHER", "role_label": "상무"}
+
+// node: person_lee_jae_min
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jae_min", "type": "Person", "name": "이재민", "role_raw": "전무", "affiliated_company": "company_hyundai_car", "role": "OTHER", "role_label": "전무"}
+
+// node: person_jang_su_hang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_su_hang", "type": "Person", "name": "장수항", "role_raw": "전무", "affiliated_company": "company_kia", "role": "OTHER", "role_label": "전무"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jang_jae_hun", "to_id": "company_hyundai_car", "properties": {"evidence": "장재훈 부회장은 현대차 대표이사 사장과 현대차그룹 부회장을 맡아 미래 모빌리티 투자와 글로벌 사업 확대를 이끌어왔다.", "date": "", "evidence_source_id": "news_005380_6eb9d4540de83d27", "evidence_source_type": "news", "evidence_source_url": "https://www.autodaily.co.kr/news/articleView.html?idxno=543972", "evidence_published_at": "2026-05-12T09:12:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_jong_ha", "to_id": "company_hyundai_mobis", "properties": {"evidence": "현대모비스 이종하 상무가 산업포장을 받는 등 현대차그룹 임직원 8명이 정부 포상과 산업통상자원부 장관 표창을 수상했다.", "date": "", "evidence_source_id": "news_005380_6eb9d4540de83d27", "evidence_source_type": "news", "evidence_source_url": "https://www.autodaily.co.kr/news/articleView.html?idxno=543972", "evidence_published_at": "2026-05-12T09:12:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_jae_min", "to_id": "company_hyundai_car", "properties": {"evidence": "현대차 이재민 전무가 대통령표창을 받는 등 현대차그룹 임직원 8명이 정부 포상과 산업통상자원부 장관 표창을 수상했다.", "date": "", "evidence_source_id": "news_005380_6eb9d4540de83d27", "evidence_source_type": "news", "evidence_source_url": "https://www.autodaily.co.kr/news/articleView.html?idxno=543972", "evidence_published_at": "2026-05-12T09:12:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jang_su_hang", "to_id": "company_kia", "properties": {"evidence": "기아 장수항 전무가 국무총리표창을 받는 등 현대차그룹 임직원 8명이 정부 포상과 산업통상자원부 장관 표창을 수상했다.", "date": "", "evidence_source_id": "news_005380_6eb9d4540de83d27", "evidence_source_type": "news", "evidence_source_url": "https://www.autodaily.co.kr/news/articleView.html?idxno=543972", "evidence_published_at": "2026-05-12T09:12:00+09:00"}}

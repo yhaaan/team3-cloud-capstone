@@ -6,10 +6,10 @@ SET n:`Company`
 
 :params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: person_min_gyeong_gwon
+// node: person_min_gyeong_kwon
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_min_gyeong_gwon", "type": "Person", "name": "민경권", "role": "CEO", "affiliated_company": "company_samsung_electronics", "role_raw": "대표", "role_label": "대표이사"}
+:params {"id": "person_min_gyeong_kwon", "type": "Person", "name": "민경권", "role_raw": "대표", "affiliated_company": "company_samsung_electronics", "role": "CEO", "role_label": "대표이사"}

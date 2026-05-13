@@ -1,0 +1,39 @@
+// node: company_hanwha_aerospace
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_saetrek_eye
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_saetrek_eye", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320"}
+
+// node: company_hanwha_systems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_systems", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+
+// node: company_yuanta_securities
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_yuanta_securities", "type": "Company", "name": "유안타증권", "stock_code": "003470"}

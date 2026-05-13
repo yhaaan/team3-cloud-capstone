@@ -1,0 +1,82 @@
+// node: company_hd한국조선해양
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+
+// node: company_삼성중공업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+
+// node: company_한화
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_한화에어로스페이스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_한화에어로스페이스", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: company_한화오션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_한화오션", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: industry_조선산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_조선산업", "type": "Industry", "name": "조선산업"}
+
+// node: company_HD한국조선해양
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_HD한국조선해양", "type": "Company", "name": "HD한국조선해양"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_HD한국조선해양", "to_id": "industry_조선산업", "properties": {"evidence": "한국 조선산업이 올해를 기점으로 한 단계 더 성장할 것이라는 분석이 나온다.", "date": "", "evidence_source_id": "news_009540_67ffa4159ad1126f", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723081", "evidence_published_at": "2026-05-07T17:57:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_한화오션", "to_id": "industry_조선산업", "properties": {"evidence": "한국 조선산업이 올해를 기점으로 한 단계 더 성장할 것이라는 분석이 나온다.", "date": "", "evidence_source_id": "news_009540_67ffa4159ad1126f", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723081", "evidence_published_at": "2026-05-07T17:57:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_삼성중공업", "to_id": "industry_조선산업", "properties": {"evidence": "한국 조선산업이 올해를 기점으로 한 단계 더 성장할 것이라는 분석이 나온다.", "date": "", "evidence_source_id": "news_009540_67ffa4159ad1126f", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723081", "evidence_published_at": "2026-05-07T17:57:00+09:00"}}

@@ -1,75 +1,15 @@
-// node: company_samsung_electronics
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
 
-// node: person_jang_deok_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_kim_sung_jin
+// node: person_장덕현
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_sung_jin", "type": "Person", "name": "김성진", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_raw": "부사장", "role_label": "부사장"}
-
-// node: person_choi_jae_yeol
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_jae_yeol", "type": "Person", "name": "최재열", "role": "VICE_PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_raw": "부사장", "role_label": "부사장"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electronics", "evidence": "핵심 인물은 장덕현 사장이다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kim_sung_jin", "to_id": "company_samsung_electronics", "evidence": "김성진 부사장도 동반 수혜…평가차익 구조 동일 다른 주요 임원들도 유사한 흐름을 보인다. 김성진 부사장은 총 2000주를 보유하고 있다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_choi_jae_yeol", "to_id": "company_samsung_electronics", "evidence": "아울러 최재열 부사장은 총 1205주를 보유하고 있다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "industry_ai", "evidence": "09:40 최근 인공지능(AI) 서버 투자 확대 흐름이 본격화되는 국면에서 삼성전기 주가가 단기간 급등하며 경영진의 자사주 보유 가치도 크게 확대 된 것으로 확인된다."}
+:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role_raw": "사장", "affiliated_company": "company_삼성전기", "role": "PRESIDENT", "role_label": "사장"}

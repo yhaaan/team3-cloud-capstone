@@ -1,15 +1,15 @@
-// node: company_sk_hynix
+// node: company_sk하이닉스
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "industry": "반도체"}
+:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_hyundai_motors
+// node: company_현대차
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motors", "type": "Company", "name": "현대차"}
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}

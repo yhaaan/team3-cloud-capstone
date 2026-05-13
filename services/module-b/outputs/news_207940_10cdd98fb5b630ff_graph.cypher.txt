@@ -1,0 +1,154 @@
+// node: company_samsung_biologics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_daesang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_daesang", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_samsung_c_t
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_c_t", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_samsung_life
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_life", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// node: company_samsung_e_phs
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_e_phs", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "0126Z0"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_samsung_s
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_s", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: company_samsung_fire
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_fire", "type": "Company", "name": "삼성화재", "stock_code": "000810"}
+
+// node: company_shinyoung_s
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_shinyoung_s", "type": "Company", "name": "신영증권", "stock_code": "001720"}
+
+// node: company_sk_biopharm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_biopharm", "type": "Company", "name": "SK바이오팜", "stock_code": "326030"}
+
+// node: company_chaebi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_chaebi", "type": "Company", "name": "채비", "stock_code": "0011T0"}
+
+// node: company_hotel_shilla
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hotel_shilla", "type": "Company", "name": "호텔신라", "stock_code": "008770"}
+
+// node: person_lee_jae_yong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jae_yong", "type": "Person", "name": "이재용", "role": "CHAIRMAN", "affiliated_company": "company_samsung_electronics", "role_raw": "삼성전자 회장", "role_label": "회장"}
+
+// node: person_lee_bu_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_bu_jin", "type": "Person", "name": "이부진", "role": "PRESIDENT", "affiliated_company": "company_hotel_shilla", "role_raw": "사장", "role_label": "사장"}
+
+// node: person_lee_seo_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_seo_hyun", "type": "Person", "name": "이서현", "role": "PRESIDENT", "affiliated_company": "company_samsung_c_t", "role_raw": "사장", "role_label": "사장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_jae_yong", "to_id": "company_samsung_electronics", "properties": {"evidence": "이재용 삼성전자 회장 등 오너 일가의 상속세 완납 소식은 4일 세간에 알려졌다.", "date": "", "evidence_source_id": "news_207940_10cdd98fb5b630ff", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061", "evidence_published_at": "2026-05-07T16:36:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_bu_jin", "to_id": "company_hotel_shilla", "properties": {"evidence": "장녀(이부진 사장)가 이끄는 호텔업(호텔신라)과 차녀(이서현 사장) 몫으로 생각돼 온 패션 등 영역(삼성물산 패션·리조트 부문)은 그룹 핵심 사업과의 연관성이나 연결성이 이미 상대적으로 낮다.", "date": "", "evidence_source_id": "news_207940_10cdd98fb5b630ff", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061", "evidence_published_at": "2026-05-07T16:36:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_seo_hyun", "to_id": "company_samsung_c_t", "properties": {"evidence": "장녀(이부진 사장)가 이끄는 호텔업(호텔신라)과 차녀(이서현 사장) 몫으로 생각돼 온 패션 등 영역(삼성물산 패션·리조트 부문)은 그룹 핵심 사업과의 연관성이나 연결성이 이미 상대적으로 낮다.", "date": "", "evidence_source_id": "news_207940_10cdd98fb5b630ff", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061", "evidence_published_at": "2026-05-07T16:36:00+09:00"}}

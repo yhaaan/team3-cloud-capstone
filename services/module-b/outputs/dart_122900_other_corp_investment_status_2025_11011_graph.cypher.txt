@@ -1,0 +1,116 @@
+// node: company_아이마켓코리아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_아이마켓코리아", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+
+// node: company_피플바이오
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_피플바이오", "type": "Company", "name": "피플바이오", "stock_code": "304840"}
+
+// node: company_SG
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_SG", "type": "Company", "name": "SG", "stock_code": "255220"}
+
+// node: company_지아이이노베이션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_지아이이노베이션", "type": "Company", "name": "지아이이노베이션", "stock_code": "358570"}
+
+// node: company_그래디언트
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_그래디언트", "type": "Company", "name": "그래디언트", "stock_code": "035080"}
+
+// node: company_아이엠
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_아이엠", "type": "Company", "name": "아이엠", "stock_code": "101390"}
+
+// node: company_에스엠
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_에스엠", "type": "Company", "name": "에스엠", "stock_code": "041510"}
+
+// node: company_레이
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_레이", "type": "Company", "name": "레이", "stock_code": "228670"}
+
+// node: company_대상
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_대상", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "company_피플바이오", "properties": {"evidence": "아이마켓코리아의 타법인 출자 대상은 ㈜피플바이오, 출자 목적은 사업관련, 최초 취득일은 2018.06.28, 당기말 보유수량은 709,365, 당기말 지분율은 3.3%, 장부가액은 758,000,000.", "date": "2026-03-19", "evidence_source_id": "dart_122900_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859", "evidence_published_at": "2026-03-19"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "company_SG", "properties": {"evidence": "아이마켓코리아의 타법인 출자 대상은 SG생활안전㈜, 출자 목적은 사업관련, 최초 취득일은 2019.12.27, 당기말 보유수량은 45,600, 당기말 지분율은 7.1%, 장부가액은 3,263,000,000.", "date": "2026-03-19", "evidence_source_id": "dart_122900_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859", "evidence_published_at": "2026-03-19"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "company_지아이이노베이션", "properties": {"evidence": "아이마켓코리아의 타법인 출자 대상은 ㈜지아이이노베이션, 출자 목적은 사업관련, 최초 취득일은 2021.04.16, 당기말 보유수량은 533,333, 당기말 지분율은 0.8%, 장부가액은 9,408,000,000.", "date": "2026-03-19", "evidence_source_id": "dart_122900_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859", "evidence_published_at": "2026-03-19"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "company_그래디언트", "properties": {"evidence": "아이마켓코리아의 타법인 출자 대상은 ㈜그래디언트 바이오컨버전스, 출자 목적은 사업관련, 최초 취득일은 2022.04.15, 당기말 보유수량은 3,136,000, 당기말 지분율은 49%, 장부가액은 4,900,000,000.", "date": "2026-03-19", "evidence_source_id": "dart_122900_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859", "evidence_published_at": "2026-03-19"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "company_아이엠", "properties": {"evidence": "아이마켓코리아의 타법인 출자 대상은 아이엠테크놀로지㈜, 출자 목적은 사업관련, 최초 취득일은 2022.04.01, 당기말 보유수량은 43,428, 당기말 지분율은 84.4%, 장부가액은 5,073,000,000.", "date": "2026-03-19", "evidence_source_id": "dart_122900_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859", "evidence_published_at": "2026-03-19"}}

@@ -1,10 +1,26 @@
-// node: company_samsung_electro_mechanics
+// node: company_samsung_electrical
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_samsung_electrical", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_woseong
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_woseong", "type": "Company", "name": "우성", "stock_code": "006980"}
+
+// node: company_cosmosynthetic_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_cosmosynthetic_materials", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
 
 // node: company_hyundai_motor
 
@@ -12,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차"}
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
 // node: person_jang_deok_hyun
 
@@ -20,81 +36,4 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_choi_jae_woong
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_jae_woong", "type": "Person", "name": "최재웅", "role": "CEO", "affiliated_company": "company_seonghyun_law_firm", "role_raw": "대표", "role_label": "대표이사"}
-
-// node: company_seonghyun_law_firm
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_seonghyun_law_firm", "type": "Company", "name": "법무법인 성현"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// node: event_2026_win_win_cooperation_day
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_2026_win_win_cooperation_day", "type": "Event", "name": "2026 상생협력데이", "date": "2026-04-28"}
-
-// relation: APPOINTED_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\"이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 말했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_choi_jae_woong", "to_id": "company_seonghyun_law_firm", "evidence": "법률자문: 법무법인 성현 (최재웅 대표 변호사)"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electro_mechanics", "to_id": "industry_ai", "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\"이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 말했다."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electro_mechanics", "to_id": "company_hyundai_motor", "evidence": "진학사 캐치 \"4월 4주차 현대차·한화파워·AK플라자 채용 진행한다\""}
-
-// relation: APPOINTED_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "evidence": "장덕현 삼성전기 사장은 ..."}
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "role": "PRESIDENT", "role_label": "사장"}

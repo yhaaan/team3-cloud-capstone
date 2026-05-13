@@ -1,23 +1,7 @@
-// node: company_doshan_energy
+// node: company_두산에너빌리티
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_doshan_energy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
-
-// node: event_self_stock_acquisition_decision_1
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_self_stock_acquisition_decision_1", "type": "Event", "name": "[기재정정]주요사항보고서(자기주식취득결정)", "event_type": "자기주식취득결정", "date": "2026-04-13"}
-
-// node: event_self_stock_acquisition_decision_2
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_self_stock_acquisition_decision_2", "type": "Event", "name": "주요사항보고서(자기주식취득결정)", "event_type": "자기주식취득결정", "date": "2026-04-01"}
+:params {"id": "company_두산에너빌리티", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}

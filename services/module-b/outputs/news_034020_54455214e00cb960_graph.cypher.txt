@@ -1,26 +1,10 @@
-// node: company_dosan_energy
+// node: company_dosanenergy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
-
-// node: company_dosan_bobcat
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan_bobcat", "type": "Company", "name": "두산밥캣"}
-
-// node: company_dosan_fuelcell
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan_fuelcell", "type": "Company", "name": "두산퓨얼셀"}
+:params {"id": "company_dosanenergy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
 
 // node: company_sk_hynix
 
@@ -28,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스"}
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
 // node: company_samsung_electronics
 
@@ -36,39 +20,4 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
-
-// node: industry_energy_transition
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_energy_transition", "type": "Industry", "name": "에너지 전환"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_dosan_bobcat", "to_id": "company_dosan_energy", "evidence": "자회사인 두산밥캣과 두산퓨얼셀의 매출 증가에 더해, 원전 기자재와 가스터빈 매출 확대가 수익성 개선을 이끌었다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_dosan_fuelcell", "to_id": "company_dosan_energy", "evidence": "자회사인 두산밥캣과 두산퓨얼셀의 매출 증가에 더해, 원전 기자재와 가스터빈 매출 확대가 수익성 개선을 이끌었다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_dosan_energy", "to_id": "industry_energy_transition", "evidence": "데이터센터와 원전, 소형모듈원자로(SMR) 등 에너지 전환 수요가 맞물리며 중장기 성장 기반도 강화되고 있다는 평가다."}
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}

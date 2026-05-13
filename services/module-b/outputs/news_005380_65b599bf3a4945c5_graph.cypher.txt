@@ -1,90 +1,31 @@
-// node: company_hyundai_motor_group
+// node: company_현대차
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor_group", "type": "Company", "name": "현대자동차그룹"}
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: company_hyundai_engineering
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_engineering", "type": "Company", "name": "현대엔지니어링"}
-
-// node: company_korea_ev_charging_service
+// node: company_기아
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_korea_ev_charging_service", "type": "Company", "name": "한국전기차충전서비스"}
+:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_a_tech_system
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_a_tech_system", "type": "Company", "name": "에이텍시스템"}
-
-// node: company_hyundai_motor
+// node: company_LG에너지솔루션
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대자동차"}
+:params {"id": "company_LG에너지솔루션", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아"}
-
-// node: company_dtc
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dtc", "type": "Company", "name": "디티씨"}
-
-// node: person_jeong_eui_sun
+// node: person_정의선
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "CHAIRMAN", "affiliated_company": "company_hyundai_engineering", "role_raw": "회장", "role_label": "회장"}
-
-// relation: ACQUIRES
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hyundai_engineering", "to_id": "company_korea_ev_charging_service", "evidence": "29일 업계에 따르면 현대엔지니어링은 최근 한국전기차충전서비스 지분 7.57%를 약 55억원에 인수했다."}
-
-// relation: ACQUIRES
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_hyundai_engineering", "to_id": "company_a_tech_system", "evidence": "기존 주주였던 에이텍시스템의 지분을 넘겨받는 방식이다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jeong_eui_sun", "to_id": "company_hyundai_engineering", "evidence": "현대엔지니어링은 현대차그룹의 비상장 계열사로 정의선 회장이 11% 이상의 지분을 보유하고 있다."}
+:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "회장", "affiliated_company": "company_현대차", "role": "CHAIRMAN", "role_label": "회장"}

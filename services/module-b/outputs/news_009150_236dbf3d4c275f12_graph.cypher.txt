@@ -1,50 +1,7 @@
-// node: company_samsung_electro_mechanics
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
-
-// node: person_kwon_hyuk_seok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "CEO", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "대표", "role_label": "대표이사"}
-
-// node: person_jang_deok_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "사장", "role_label": "사장"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_samsung_electro_mechanics", "evidence": "왼쪽부터엠케이켐앤텍 권혁석 대표, 삼성전기 장덕현 사장, 동반성장위원회 이달곤 위원장, 삼성전기 김원택 부사장이 포즈를 취하고 있다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "evidence": "왼쪽부터엠케이켐앤텍 권혁석 대표, 삼성전기 장덕현 사장, 동반성장위원회 이달곤 위원장, 삼성전기 김원택 부사장이 포즈를 취하고 있다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_samsung_electro_mechanics", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(협력사 협의회 대표) 등 관계자 200여 명이 참석했다."}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}

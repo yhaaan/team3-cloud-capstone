@@ -1,0 +1,23 @@
+// node: company_hyundai_geonseol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_geonseol", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+
+// node: company_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}

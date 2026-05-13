@@ -1,82 +1,23 @@
-// node: company_한화에어로스페이스
+// node: company_hanwha_aerospace
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화에어로스페이스", "type": "Company", "name": "한화에어로스페이스"}
+:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "country": "KR"}
 
-// node: person_공급하는_대표
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_공급하는_대표", "type": "Person", "name": "공급하는 대표"}
-
-// node: person_다비오_대표이사
+// node: company_lig_defense_and_aerospace
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_다비오_대표이사", "type": "Person", "name": "다비오 대표이사"}
+:params {"id": "company_lig_defense_and_aerospace", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550", "country": "KR"}
 
-// node: person_대표이사_사장
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_대표이사_사장", "type": "Person", "name": "대표이사 사장"}
-
-// node: person_박주흠_대표이사
+// node: company_perstek
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_박주흠_대표이사", "type": "Person", "name": "박주흠 대표이사"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// node: industry_it
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_한화에어로스페이스", "to_id": "industry_ai", "evidence": "15:31 관련종목▶ 퍼스텍(010820), 한화에어로스페이스(012450), LIG디펜스앤에어로스페이스(079550) 다비오 \"AI 기술 방산 조달·획득 경직성\" 신익현 LIG D&A 대표이사 사장이 29일 국회의원회관 제8간담회의실에서 열린 'K-방산 상생 생태계 구축을 위한 정책세미나'에서 인사를 하고 있다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_한화에어로스페이스", "to_id": "industry_it", "evidence": "그는 지난 27일 LIG D&A가 잠실 롯데월드타워에서 개최한 제1회 'Tech Summit' 사례를 언급하며, 방산혁신펀드 투자기업 20개사와 기존 협력사가 한자리에 모여 AI·CXL 등 첨단 기술의 국방 적용 가능성을 논의했다고 밝혔다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_공급하는_대표", "to_id": "company_한화에어로스페이스", "evidence": "15:31 관련종목▶ 퍼스텍(010820), 한화에어로스페이스(012450), LIG디펜스앤에어로스페이스(079550) 다비오 \"AI 기술 방산 조달·획득 경직성\" 신익현 LIG D&A 대표이사 사장이 29일 국회의원회관 제8간담회의실에서 열린 'K-방산 상생 생태계 구축을 위한 정책세미나'에서 인사를 하고 있다."}
+:params {"id": "company_perstek", "type": "Company", "name": "퍼스텍", "stock_code": "010820", "country": "KR"}
