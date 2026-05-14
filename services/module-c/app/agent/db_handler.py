@@ -135,7 +135,18 @@ class Neo4jHandler():
         s_name = rel_obj.start_node.get('name') or "알 수 없음"
         e_name = rel_obj.end_node.get('name') or "알 수 없음"
         evidence = rel_obj.get('evidence', '없음')
-        return f"[{s_name}] -({rel_obj.type})-> [{e_name}]\n근거: {evidence}"
+        evidence_published_at = rel_obj.get('evidence_published_at', '알 수 없음')
+        evidence_source_type = rel_obj.get('evidence_source_type', '알 수 없음')
+        evidence_source_url = rel_obj.get('evidence_source_url', '알 수 없음')
+
+        graph_text = (
+            f"[{s_name}] -({rel_obj.type})-> [{e_name}]\n"
+            f"근거: {evidence}\n"
+            f"- 발행일: {evidence_published_at}\n"
+            f"- 출처/문서명: {evidence_source_type}\n"
+            f"- 원문 링크: {evidence_source_url}\n"
+        )
+        return graph_text
 
 
     # 해당 타입 모든 노드 이름 가져오기 함수
