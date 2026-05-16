@@ -313,4 +313,140 @@ rcept_dt: 접수일
 rm: 비고
 
 
+8.주요사항보고 원문
 
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "corp_code": "",
+  "source": "",
+  "dataset": "",
+  "event_type": "",
+  "report_nm": "",
+  "rcept_no": "",
+  "rcept_dt": "",
+  "document_count": 0,
+  "plain_text": "",
+  "text_blocks": [],
+  "counterparty_candidates": [],
+  "amount_candidates": [],
+  "ratio_candidates": [],
+  "date_candidates": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "raw_file_path": "",
+  "generated_at": ""
+}
+속성 의미:
+
+doc_id: 문서 고유 ID
+company_name: 공시 대상 회사명
+stock_code: 종목코드
+corp_code: DART 기업코드
+source: 데이터 출처, 현재는 dart
+dataset: 데이터 종류, 현재는 major_issue_report_detail
+event_type: 주요사항보고 이벤트 유형
+report_nm: 보고서명
+rcept_no: 접수번호
+rcept_dt: 접수일
+document_count: 원문에서 추출된 문서 수
+plain_text: DART 원문에서 태그를 제거한 전체 본문 텍스트
+text_blocks: 관계 분석에 활용하기 쉽도록 나눈 문장형 텍스트 블록
+counterparty_candidates: 거래상대방 또는 관계 기업 후보
+amount_candidates: 본문에서 추출한 금액 후보
+ratio_candidates: 본문에서 추출한 비율 후보
+date_candidates: 본문에서 추출한 날짜 후보
+relation_keywords_detected: 본문에서 탐지된 관계 키워드
+relation_relevance_score: 관계 분석 후보로서의 점수
+is_relation_candidate: 관계 분석 후보 여부
+raw_file_path: 원본 raw 파일 경로
+generated_at: 정제 파일 생성 시각
+
+
+8. 연결대상 종속회사 현황 (사업보고서)
+
+
+
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "corp_code": "",
+  "source": "dart",
+  "dataset": "consolidated_subsidiary_status",
+  "dataset_label": "연결대상 종속회사 현황",
+  "report_nm": "",
+  "rcept_no": "",
+  "rcept_dt": "",
+  "document_count": 0,
+  "target_section_count": 0,
+  "raw_record_count": 0,
+  "record_count": 0,
+  "meaningful_record_count": 0,
+  "normalized_records": [],
+  "text_blocks": [],
+  "listed_subsidiaries": [],
+  "subsidiary_candidates": [],
+  "mentioned_entities": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "raw_file_path": "",
+  "generated_at": ""
+}
+속성 의미:
+
+doc_id: 문서 고유 ID
+company_name: 공시를 낸 회사명
+stock_code: 공시를 낸 회사의 종목코드
+corp_code: 공시를 낸 회사의 DART 기업코드
+source: 데이터 출처, 현재는 dart
+dataset: 데이터 종류, 현재는 consolidated_subsidiary_status
+dataset_label: 사람이 읽기 쉬운 데이터명, 연결대상 종속회사 현황
+report_nm: 원천 사업보고서명
+rcept_no: 사업보고서 접수번호
+rcept_dt: 사업보고서 접수일
+document_count: raw에서 추출된 대상 문서 수
+target_section_count: XII. 상세표 - 1. 연결대상 종속회사 현황(상세) 섹션 수
+raw_record_count: 상세표에서 추출된 전체 행 수
+record_count: 상장사 목록과 매칭되어 최종 저장된 행 수
+meaningful_record_count: 의미 있는 최종 행 수, 현재는 record_count와 동일
+normalized_records: 상장사로 확인된 종속회사 상세 행
+text_blocks: LLM이 읽기 쉽도록 만든 문장형 텍스트 블록
+listed_subsidiaries: 상장사로 매칭된 종속회사 목록
+subsidiary_candidates: 상장 종속회사 후보명 목록
+mentioned_entities: 본문에서 언급된 상장 종속회사 후보명 목록
+relation_keywords_detected: 탐지된 관계 키워드
+relation_relevance_score: 모회사-자회사 관계 후보 점수
+is_relation_candidate: 관계 후보 문서 여부
+raw_file_path: 원본 raw 파일 경로
+generated_at: 정제 파일 생성 시각
+
+normalized_records 구조
+
+{
+  "record_type": "table_row",
+  "source_filename": "",
+  "table_index": 0,
+  "row_index": 0,
+  "cells": [],
+  "row_text": "",
+  "raw_company_name": "",
+  "matched_company_name": "",
+  "matched_stock_code": "",
+  "matched_market": ""
+}
+속성 의미:
+
+record_type: 레코드 유형, 현재는 표 행이므로 table_row
+source_filename: 원문 XML 파일명
+table_index: 대상 섹션 안에서 몇 번째 표인지
+row_index: 해당 표 안에서 몇 번째 행인지
+cells: 표의 각 칸 내용
+row_text: 표 행을 한 줄 문자열로 합친 값
+raw_company_name: DART 표에 적힌 원래 상호명
+matched_company_name: listed_companies.xlsx와 매칭된 상장사명
+matched_stock_code: 매칭된 상장사의 종목코드
+matched_market: 매칭된 상장사의 시장 구분
