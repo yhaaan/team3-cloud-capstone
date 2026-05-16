@@ -1,0 +1,74 @@
+// node: company_dosan_energy_ability
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan_energy_ability", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_kukjeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kukjeon", "type": "Company", "name": "국전", "stock_code": "307750"}
+
+// node: company_dosan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+
+// node: company_ray
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_ray", "type": "Company", "name": "레이", "stock_code": "228670"}
+
+// node: company_kepco
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kepco", "type": "Company", "name": "한국전력", "stock_code": "015760"}
+
+// node: company_kepco_technology
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kepco_technology", "type": "Company", "name": "한전기술", "stock_code": "052690"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "company_dosan", "properties": {"evidence": "16:43 \"공공 및 민간 운영·설계·제조역량, 국가전략으로 결집해야\" 한전기술·두산에너빌리티 \"미국 내 공급망 비중 확대\" 강조", "date": "", "evidence_source_id": "news_034020_56e497b15303dbce", "evidence_source_type": "news", "evidence_source_url": "https://www.energy-news.co.kr/news/articleView.html?idxno=225208", "evidence_published_at": "2026-05-07T16:44:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_kepco_technology", "to_id": "company_kepco", "properties": {"evidence": "이진웅 한국전력기술 처장은 한전기술이 미국 원전사업 진출을 위해 △현지 AP1000 건설시장 참여 △미국 가동 원전 O&M 사업 참여 △미국·유럽 SMR 개발 협력 등 세 가지 축으로 사업을 추진하고 있음을 밝혔다.", "date": "", "evidence_source_id": "news_034020_56e497b15303dbce", "evidence_source_type": "news", "evidence_source_url": "https://www.energy-news.co.kr/news/articleView.html?idxno=225208", "evidence_published_at": "2026-05-07T16:44:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_dosan_energy_ability", "to_id": "company_dosan", "properties": {"evidence": "박수용 두산에너빌리티 상무는 \"탄소중립, 에너지안보, AI·데이터센터 확산에 따른 전력 수요 증가로 전 세계 원전 확대 흐름이 본격화되고 있다\"고 진단했다.", "date": "", "evidence_source_id": "news_034020_56e497b15303dbce", "evidence_source_type": "news", "evidence_source_url": "https://www.energy-news.co.kr/news/articleView.html?idxno=225208", "evidence_published_at": "2026-05-07T16:44:00+09:00"}}

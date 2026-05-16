@@ -1,0 +1,82 @@
+// node: company_hyundai_wia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_wia", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+
+// node: company_hyundai_rotem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: company_hyundai_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_yujin_investment_securities
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_yujin_investment_securities", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
+
+// node: company_hyundai_mobis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: person_jeong_uisun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_uisun", "type": "Person", "name": "정의선", "role_raw": "현대차그룹 회장", "role": "CHAIRMAN", "role_label": "회장"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hyundai_rotem", "to_id": "company_hyundai_wia", "properties": {"evidence": "현대차그룹은 현대위아의 방위사업부를 현대로템에 넘기는 절차를 진행 중이다.", "date": "", "evidence_source_id": "news_011210_b07eaabc651bb181", "evidence_source_type": "news", "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184", "evidence_published_at": "2026-05-09T09:02:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeong_uisun", "to_id": "company_hyundai_motor", "properties": {"evidence": "이를 두고 정의선 현대차그룹 회장이 직접 보유한 현대위아 지분 가치 제고와도 맞물린 다층적 포석이라는 해석이 제기되고 있다.", "date": "", "evidence_source_id": "news_011210_b07eaabc651bb181", "evidence_source_type": "news", "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184", "evidence_published_at": "2026-05-09T09:02:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeong_uisun", "to_id": "company_hyundai_wia", "properties": {"evidence": "이를 두고 정의선 현대차그룹 회장이 직접 보유한 현대위아 지분 가치 제고와도 맞물린 다층적 포석이라는 해석이 제기되고 있다.", "date": "", "evidence_source_id": "news_011210_b07eaabc651bb181", "evidence_source_type": "news", "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184", "evidence_published_at": "2026-05-09T09:02:00+09:00"}}

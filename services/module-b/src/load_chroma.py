@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import json
 import hashlib
+import time
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +27,7 @@ OPENAI_EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 DEFAULT_EMBEDDING_DIMENSIONS = 1536
 CHROMA_UPSERT_BATCH_SIZE = 100
+RETRYABLE_EMBEDDING_STATUS_CODES = {429, 500, 502, 503, 504}
 
 load_dotenv()
 
@@ -82,22 +84,40 @@ class OpenAIEmbeddingFunction:
         return self(input)
 
     def _embed_batch(self, input_batch: list[str]) -> list[list[float]]:
-        response = requests.post(
-            OPENAI_EMBEDDINGS_URL,
-            headers={
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            },
-            json={"model": self.model, "input": input_batch},
-            timeout=self.timeout,
+        last_error: str | None = None
+        for attempt in range(1, 6):
+            try:
+                response = requests.post(
+                    OPENAI_EMBEDDINGS_URL,
+                    headers={
+                        "Authorization": f"Bearer {self.api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={"model": self.model, "input": input_batch},
+                    timeout=self.timeout,
+                )
+            except requests.RequestException as exc:
+                last_error = str(exc)
+            else:
+                if response.ok:
+                    response_json = response.json()
+                    ordered = sorted(response_json["data"], key=lambda item: item["index"])
+                    return [item["embedding"] for item in ordered]
+
+                last_error = f"({response.status_code}): {response.text}"
+                if response.status_code not in RETRYABLE_EMBEDDING_STATUS_CODES:
+                    break
+
+            if attempt < 5:
+                wait_seconds = min(2**attempt, 30)
+                print(
+                    f"[WARN] OpenAI embeddings retry {attempt}/5 after failure: {last_error}"
+                )
+                time.sleep(wait_seconds)
+
+        raise RuntimeError(
+            f"OpenAI embeddings request failed after retries: {last_error}"
         )
-        if not response.ok:
-            raise RuntimeError(
-                f"OpenAI embeddings request failed ({response.status_code}): {response.text}"
-            )
-        response_json = response.json()
-        ordered = sorted(response_json["data"], key=lambda item: item["index"])
-        return [item["embedding"] for item in ordered]
 
     def _cache_key(self, text: str) -> str:
         digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
@@ -163,7 +183,10 @@ def build_client_and_collection():
 
     collection = client.get_or_create_collection(
         name="module_b_chunks",
-        metadata={"hnsw:space": "cosine"},
+        metadata={
+            "hnsw:space": "cosine",
+            "hnsw:sync_threshold": 100000,
+        },
     )
     return client, collection
 
@@ -204,13 +227,14 @@ def insert_doc_to_chroma_collection(
     collection: Any,
     doc: dict[str, Any],
     source_name: str = "inline_doc",
+    embedding_function: OpenAIEmbeddingFunction | None = None,
 ) -> int:
     ids, documents, metadatas = build_chunk_payloads(doc)
     if not documents:
         print(f"[SKIP] No chunks: {source_name}")
         return 0
 
-    embedding_function = OpenAIEmbeddingFunction()
+    embedding_function = embedding_function or OpenAIEmbeddingFunction()
     for start in range(0, len(documents), CHROMA_UPSERT_BATCH_SIZE):
         end = start + CHROMA_UPSERT_BATCH_SIZE
         batch_documents = documents[start:end]

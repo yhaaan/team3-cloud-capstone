@@ -1,23 +1,7 @@
-// node: company_samsung_bio_logics
+// node: company_samsung_biologics
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_bio_logics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
-
-// node: event_samsung_bio_logics_4th_plant_start
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_samsung_bio_logics_4th_plant_start", "type": "Event", "name": "삼성바이오로직스 제4공장 가동 개시", "event_type": "공장 가동", "date": "2023-06", "description": "삼성바이오로직스는 2023년 6월 인천 송도에 위치한 제1바이오캠퍼스 내 마지막 생산 시설인 제4공장의 전체 가동을 공식적으로 개시했다."}
-
-// node: event_samsung_bio_logics_2nd_biocampus_investment
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_samsung_bio_logics_2nd_biocampus_investment", "type": "Event", "name": "삼성바이오로직스 제2바이오캠퍼스 부지 매입 및 인프라 확장", "event_type": "부지 매입 및 시설 투자", "description": "삼성바이오로직스는 송도 11공구 내 대규모 토지를 매입하고 2032년까지 총 7조5000억원 규모의 자본을 투입하는 중장기 시설 투자 계획을 수립했다."}
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}

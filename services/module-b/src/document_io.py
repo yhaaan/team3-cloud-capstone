@@ -35,6 +35,8 @@ def iter_input_documents(input_path: Path) -> list[dict[str, Any]]:
     if input_path.is_dir():
         documents: list[dict[str, Any]] = []
         for child in sorted(input_path.rglob("*")):
+            if child.stem == "_processed_interim_files":
+                continue
             if child.suffix.lower() == ".json":
                 documents.append(normalize_document(load_json_file(child), child))
             elif child.suffix.lower() == ".jsonl":
@@ -186,9 +188,7 @@ def normalize_module_a_dart_document(doc: dict[str, Any], source_path: Path) -> 
         "title": title or str(doc["doc_id"]),
         "content": build_dart_content(doc),
         "source": "dart",
-        "published_at": str(
-            doc.get("rcept_dt") or doc.get("generated_at") or doc.get("bsns_year") or "unknown"
-        ),
+        "published_at": get_dart_published_at(doc),
         "url": build_dart_url(rcept_no) or source_path.as_posix(),
         "company_name": doc.get("company_name"),
         "stock_code": doc.get("stock_code"),
@@ -238,6 +238,49 @@ def build_dart_content(doc: dict[str, Any]) -> str:
         doc.get("bsns_year"),
     ]
     return " ".join(str(part) for part in summary_parts if part) or str(doc["doc_id"])
+
+
+def get_dart_published_at(doc: dict[str, Any]) -> str:
+    rcept_dt = normalize_dart_date(str(doc.get("rcept_dt") or "").strip())
+    if rcept_dt:
+        return rcept_dt
+
+    record_dates = sorted(
+        {
+            normalize_dart_date(str(record.get("rcept_dt") or "").strip())
+            for record in doc.get("normalized_records", [])
+            if normalize_dart_date(str(record.get("rcept_dt") or "").strip())
+        }
+    )
+    if record_dates:
+        return record_dates[-1]
+
+    rcept_no_date = normalize_dart_date(str(doc.get("rcept_no") or "")[:8])
+    if rcept_no_date:
+        return rcept_no_date
+
+    record_rcept_no_dates = sorted(
+        {
+            normalize_dart_date(str(record.get("rcept_no") or "")[:8])
+            for record in doc.get("normalized_records", [])
+            if normalize_dart_date(str(record.get("rcept_no") or "")[:8])
+        }
+    )
+    if record_rcept_no_dates:
+        return record_rcept_no_dates[-1]
+
+    bsns_year = str(doc.get("bsns_year") or "").strip()
+    if bsns_year:
+        return bsns_year
+
+    return "unknown"
+
+
+def normalize_dart_date(value: str) -> str:
+    cleaned = value.strip()
+    if len(cleaned) == 8 and cleaned.isdigit():
+        return f"{cleaned[:4]}-{cleaned[4:6]}-{cleaned[6:8]}"
+    return cleaned
 
 
 def build_dart_url(rcept_no: str) -> str:

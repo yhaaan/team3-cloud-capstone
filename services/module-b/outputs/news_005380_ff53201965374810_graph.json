@@ -2,85 +2,52 @@
   "source_id": "news_005380_ff53201965374810",
   "entities": [
     {
-      "id": "person_jeong_eui_sun",
-      "type": "Person",
-      "name": "정의선",
-      "role": "CHAIRMAN",
-      "affiliated_company": "company_hyundai_motors",
-      "role_raw": "현대차그룹 회장",
-      "role_label": "회장"
-    },
-    {
-      "id": "person_jang_jae_hun",
-      "type": "Person",
-      "name": "장재훈",
-      "role": "VICE_CHAIRMAN",
-      "affiliated_company": "company_hyundai_motors",
-      "role_raw": "현대차그룹 부회장",
-      "role_label": "부회장"
-    },
-    {
-      "id": "company_hyundai_motors",
+      "id": "company_현대차",
       "type": "Company",
       "name": "현대차",
       "stock_code": "005380"
     },
     {
-      "id": "company_byd",
-      "type": "Company",
-      "name": "BYD"
+      "id": "person_정의선",
+      "type": "Person",
+      "name": "정의선",
+      "role_raw": "현대차그룹 회장",
+      "affiliated_company": "company_현대차",
+      "role": "CHAIRMAN",
+      "role_label": "회장"
     },
     {
-      "id": "company_huawei",
-      "type": "Company",
-      "name": "화웨이"
-    },
-    {
-      "id": "company_xiaomi",
-      "type": "Company",
-      "name": "샤오미"
-    },
-    {
-      "id": "company_geely",
-      "type": "Company",
-      "name": "지리자동차"
-    },
-    {
-      "id": "event_auto_china_2026",
-      "type": "Event",
-      "name": "오토차이나 2026",
-      "date": "2026-04-29"
-    },
-    {
-      "id": "industry_electric_vehicle",
-      "type": "Industry",
-      "name": "Electric Vehicle"
+      "id": "person_장재훈",
+      "type": "Person",
+      "name": "장재훈",
+      "role_raw": "현대차그룹 부회장",
+      "affiliated_company": "company_현대차",
+      "role": "VICE_CHAIRMAN",
+      "role_label": "부회장"
     }
   ],
   "relations": [
     {
       "type": "AFFILIATED_WITH",
-      "from": "person_jeong_eui_sun",
-      "to": "company_hyundai_motors",
-      "evidence": "정의선 현대자동차그룹 회장이 8년 만에 베이징 모터쇼를 찾아 중국 전기차 시장을 직접 점검했다."
+      "from": "person_정의선",
+      "to": "company_현대차",
+      "evidence": "정의선 현대차그룹 회장이 8년 만에 베이징 모터쇼를 찾아 중국 전기차 시장을 직접 점검했다.",
+      "date": "",
+      "evidence_source_id": "news_005380_ff53201965374810",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1639576/?sc=Naver",
+      "evidence_published_at": "2026-04-29T19:51:00+09:00"
     },
     {
       "type": "AFFILIATED_WITH",
-      "from": "person_jang_jae_hun",
-      "to": "company_hyundai_motors",
-      "evidence": "장재훈 현대차그룹 부회장은 지난 24일 베이징 모터쇼에서 기자들과 만나 \"(중국은) 가장 어려운 시장이지만 다시 한번 재기해서 성공을 만들겠다\"고 언급한 바 있다."
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_hyundai_motors",
-      "to": "industry_electric_vehicle",
-      "evidence": "현대차는 이번 모터쇼에서 아이오닉V를 세계 최초로 공개하며 중국 시장 재공략 의지를 밝혔다."
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_hyundai_motors",
-      "to": "company_byd",
-      "evidence": "현장에서 BYD를 비롯해 화웨이, 지리자동차, 샤오미 등 중국 주요 업체 부스를 둘러보며 전기차와 배터리, 자율주행 등 핵심 기술 경쟁력을 집중적으로 점검한 것으로 전해졌다."
+      "from": "person_장재훈",
+      "to": "company_현대차",
+      "evidence": "장재훈 현대차그룹 부회장은 지난 24일 베이징 모터쇼에서 기자들과 만나 \"(중국은) 가장 어려운 시장이지만 다시 한번 재기해서 성공을 만들겠다\"고 언급한 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_005380_ff53201965374810",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1639576/?sc=Naver",
+      "evidence_published_at": "2026-04-29T19:51:00+09:00"
     }
   ]
 }

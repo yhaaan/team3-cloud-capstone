@@ -1,32 +1,24 @@
-// node: person_jeong_eui_sun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jeong_eui_sun", "type": "Person", "name": "정의선", "role": "CHAIRMAN", "affiliated_company": "company_hyundai_motor", "role_raw": "회장", "role_label": "회장"}
-
-// node: company_hyundai_motor
+// node: company_현대차
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: event_2026_beijing_motor_show
+// node: person_정의선
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Event`
+SET n:`Person`
 
-:params {"id": "event_2026_beijing_motor_show", "type": "Event", "name": "2026 베이징 모터쇼", "date": "2026-04-29"}
+:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "현대차 회장", "affiliated_company": "company_현대차", "role": "CHAIRMAN", "role_label": "회장"}
 
-// relation: APPOINTED_TO
+// relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
-SET r.evidence = $evidence
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
 
-:params {"from_id": "person_jeong_eui_sun", "to_id": "company_hyundai_motor", "evidence": "정의선 현대차그룹 회장."}
+:params {"from_id": "person_정의선", "to_id": "company_현대차", "properties": {"evidence": "정의선 현대차그룹 회장이 8년 만에 세계 최대 자동차 전시회인 베이징 모터쇼를 찾았다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}

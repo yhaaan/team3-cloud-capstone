@@ -1,0 +1,31 @@
+// node: company_기아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_송호성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_송호성", "type": "Person", "name": "송호성", "role_raw": "대표이사", "affiliated_company": "company_기아", "role": "CEO", "role_label": "대표이사"}
+
+// node: person_최준영
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_최준영", "type": "Person", "name": "최준영", "role_raw": "정책개발담당 사장", "affiliated_company": "company_현대차", "role": "PRESIDENT", "role_label": "사장"}

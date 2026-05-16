@@ -1,0 +1,23 @@
+// node: company_아이마켓코리아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_아이마켓코리아", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+
+// node: event_자기주식처분결정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_자기주식처분결정", "type": "Event", "name": "주요사항보고서(자기주식처분결정)"}
+
+// node: event_교환사채권발행결정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Event`
+
+:params {"id": "event_교환사채권발행결정", "type": "Event", "name": "주요사항보고서(교환사채권발행결정)"}

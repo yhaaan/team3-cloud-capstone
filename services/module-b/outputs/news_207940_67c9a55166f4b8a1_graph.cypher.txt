@@ -1,0 +1,109 @@
+// node: company_samsung_c_t_corp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_c_t_corp", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_samsung_life_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_life_insurance", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// node: company_samsung_biologics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_samsung_sds
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_sds", "type": "Company", "name": "삼성에스디에스", "stock_code": "018260"}
+
+// node: company_samsung_e_and_a
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_e_and_a", "type": "Company", "name": "삼성E&A", "stock_code": "028050"}
+
+// node: company_heungkuk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_heungkuk", "type": "Company", "name": "흥국", "stock_code": "010240"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_c_t_corp", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성물산(028260)이 보유한 삼성전자(005930)와 삼성생명(032830), 삼성바이오로직스(207940) 등 주요 계열사 지분가치가 빠르게 커지면서 주가 재평가가 이어질 것이란 분석이 나왔다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_c_t_corp", "to_id": "company_samsung_life_insurance", "properties": {"evidence": "삼성물산(028260)이 보유한 삼성전자(005930)와 삼성생명(032830), 삼성바이오로직스(207940) 등 주요 계열사 지분가치가 빠르게 커지면서 주가 재평가가 이어질 것이란 분석이 나왔다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_c_t_corp", "to_id": "company_samsung_biologics", "properties": {"evidence": "삼성물산(028260)이 보유한 삼성전자(005930)와 삼성생명(032830), 삼성바이오로직스(207940) 등 주요 계열사 지분가치가 빠르게 커지면서 주가 재평가가 이어질 것이란 분석이 나왔다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_c_t_corp", "to_id": "company_samsung_sds", "properties": {"evidence": "삼성에스디에스(018260)와 삼성E&A(028050) 지분가치까지 더하면 주요 상장 계열사 보유가치가 132조 9000억원에 달한다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_c_t_corp", "to_id": "company_samsung_e_and_a", "properties": {"evidence": "삼성에스디에스(018260)와 삼성E&A(028050) 지분가치까지 더하면 주요 상장 계열사 보유가치가 132조 9000억원에 달한다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_heungkuk", "to_id": "company_samsung_c_t_corp", "properties": {"evidence": "박종렬 흥국증권 연구원은 12일 삼성물산에 대해 투자 의견 '매수'를 유지하고 목표주가를 기존 40만원에서 58만원으로 상향했다.", "date": "", "evidence_source_id": "news_207940_67c9a55166f4b8a1", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03135686645448264", "evidence_published_at": "2026-05-12T08:08:00+09:00"}}

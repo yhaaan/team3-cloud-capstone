@@ -1,0 +1,23 @@
+// node: company_dosal_tuja_jeungwon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosal_tuja_jeungwon", "type": "Company", "name": "다올투자증권", "stock_code": "030210"}
+
+// node: company_dosanbobkaet
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosanbobkaet", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+
+// node: company_dosan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}

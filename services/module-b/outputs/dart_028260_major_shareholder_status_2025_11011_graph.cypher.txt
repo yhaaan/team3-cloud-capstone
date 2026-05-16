@@ -1,0 +1,117 @@
+// node: company_삼성물산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성물산", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_삼성생명
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성생명", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// node: person_이재용
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이재용", "type": "Person", "name": "이재용"}
+
+// node: person_오세철
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_오세철", "type": "Person", "name": "오세철", "role_raw": "발행회사 임원", "role": "OTHER", "role_label": "발행회사 임원"}
+
+// node: person_정해린
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정해린", "type": "Person", "name": "정해린", "role_raw": "발행회사 임원", "role": "OTHER", "role_label": "발행회사 임원"}
+
+// node: person_이재언
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이재언", "type": "Person", "name": "이재언", "role_raw": "발행회사 임원", "role": "OTHER", "role_label": "발행회사 임원"}
+
+// node: person_이준서
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이준서", "type": "Person", "name": "이준서", "role_raw": "발행회사 임원", "role": "OTHER", "role_label": "발행회사 임원"}
+
+// node: person_정병석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정병석", "type": "Person", "name": "정병석", "role_raw": "발행회사 임원", "role": "OTHER", "role_label": "발행회사 임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 이 재 용, 관계는 최대주주 본인, 당기말 보유주식수는 33,880,220주, 지분율은 19.76%.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_오세철", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 오세철, 관계는 발행회사 임원, 당기말 보유주식수는 3,000주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정해린", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 정해린, 관계는 발행회사 임원, 당기말 보유주식수는 4,000주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재언", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 이재언, 관계는 발행회사 임원, 당기말 보유주식수는 3,400주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이준서", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 이준서, 관계는 발행회사 임원, 당기말 보유주식수는 4,299주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정병석", "to_id": "company_삼성물산", "properties": {"evidence": "삼성물산의 최대주주 관련 인물/법인은 정병석, 관계는 발행회사 임원, 당기말 보유주식수는 200주, 지분율은 0.00%.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}

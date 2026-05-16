@@ -1,0 +1,39 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_기아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_현대위아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대위아", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+
+// node: company_현대모비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대모비스", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: company_삼성증권
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성증권", "type": "Company", "name": "삼성증권", "stock_code": "016360"}

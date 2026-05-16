@@ -4,97 +4,106 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_samsung_electronics_components
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics_components", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
-
-// node: company_jang_deok_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "company_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "OTHER", "affiliated_company": "company_samsung_electronics_components", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
-
-// node: company_kim_sung_jin
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "company_kim_sung_jin", "type": "Person", "name": "김성진", "role": "OTHER", "affiliated_company": "company_samsung_electronics_components", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
-
-// node: company_choi_jae_yeol
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "company_choi_jae_yeol", "type": "Person", "name": "최재열", "role": "OTHER", "affiliated_company": "company_samsung_electronics_components", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
-
-// node: company_yeo_yoon_kyung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "company_yeo_yoon_kyung", "type": "Person", "name": "여윤경", "role": "OTHER", "affiliated_company": "company_samsung_electronics_components", "role_raw": "계열회사 임원", "role_label": "계열회사 임원"}
-
-// node: company_samsung_life_insurance_special_account
+// node: company_samsung_electro_mechanics
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_life_insurance_special_account", "type": "Company", "name": "삼성생명보험(특별계정)"}
+:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_samsung_life_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_life_insurance", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// node: person_jang_deok_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role_raw": "계열회사 임원", "role": "OTHER", "affiliated_company": "company_samsung_electro_mechanics", "role_label": "계열회사 임원"}
+
+// node: person_kim_seong_jin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_seong_jin", "type": "Person", "name": "김성진", "role_raw": "계열회사 임원", "role": "OTHER", "affiliated_company": "company_samsung_electro_mechanics", "role_label": "계열회사 임원"}
+
+// node: person_choi_jae_yeol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_jae_yeol", "type": "Person", "name": "최재열", "role_raw": "계열회사 임원", "role": "OTHER", "affiliated_company": "company_samsung_electro_mechanics", "role_label": "계열회사 임원"}
+
+// node: person_yeo_yun_kyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yeo_yun_kyung", "type": "Person", "name": "여윤경", "role_raw": "계열회사 임원", "role": "OTHER", "affiliated_company": "company_samsung_electro_mechanics", "role_label": "계열회사 임원"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_electronics", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 삼성전자(주), 관계는 최대주주 본인, 당기말 보유주식수는 17,693,084주, 지분율은 23.69%.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_samsung_life_insurance", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 삼성생명보험(특별계정), 관계는 계열회사, 당기말 보유주식수는 77,210주, 지분율은 0.10%, 비고는 장내매매.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_jang_deok_hyun", "to_id": "company_samsung_electronics_components", "evidence": "삼성전기의 최대주주 관련 인물/법인은 장덕현, 관계는 계열회사 임원, 당기말 보유주식수는 6,000주, 지분율은 0.01%, 비고는 장내매매."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_kim_sung_jin", "to_id": "company_samsung_electronics_components", "evidence": "삼성전기의 최대주주 관련 인물/법인은 김성진, 관계는 계열회사 임원, 당기말 보유주식수는 2,007주, 지분율은 0.00%, 비고는 장내매매."}
+:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 장덕현, 관계는 계열회사 임원, 당기말 보유주식수는 6,000주, 지분율은 0.01%, 비고는 장내매매.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_choi_jae_yeol", "to_id": "company_samsung_electronics_components", "evidence": "삼성전기의 최대주주 관련 인물/법인은 최재열, 관계는 계열회사 임원, 당기말 보유주식수는 1,205주, 지분율은 0.00%, 비고는 장내매매."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_yeo_yoon_kyung", "to_id": "company_samsung_electronics_components", "evidence": "삼성전기의 최대주주 관련 인물/법인은 여윤경, 관계는 계열회사 임원, 당기말 보유주식수는 50주, 지분율은 0.00%."}
+:params {"from_id": "person_kim_seong_jin", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 김성진, 관계는 계열회사 임원, 당기말 보유주식수는 2,007주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_samsung_life_insurance_special_account", "to_id": "company_samsung_electronics_components", "evidence": "삼성전기의 최대주주 관련 인물/법인은 삼성생명보험(특별계정), 관계는 계열회사, 당기말 보유주식수는 77,210주, 지분율은 0.10%, 비고는 장내매매."}
+:params {"from_id": "person_choi_jae_yeol", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 최재열, 관계는 계열회사 임원, 당기말 보유주식수는 1,205주, 지분율은 0.00%, 비고는 장내매매.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yeo_yun_kyung", "to_id": "company_samsung_electro_mechanics", "properties": {"evidence": "삼성전기의 최대주주 관련 인물/법인은 여윤경, 관계는 계열회사 임원, 당기말 보유주식수는 50주, 지분율은 0.00%.", "date": "2026-03-10", "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071", "evidence_published_at": "2026-03-10"}}

@@ -1,0 +1,33 @@
+// node: company_현대로템
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대로템", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: person_이용배
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이용배", "type": "Person", "name": "이용배", "role_raw": "현대로템 대표이사 사장", "affiliated_company": "company_현대로템", "role": "CEO", "role_label": "대표이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "이날 협약식에는 이용배 현대로템 대표이사 사장과 허희영 한국항공대 총장 등 관계자들이 참석했다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "이날 협약식에는 이용배 현대로템 대표이사 사장과 허희영 한국항공대 총장 등 관계자들이 참석했다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}

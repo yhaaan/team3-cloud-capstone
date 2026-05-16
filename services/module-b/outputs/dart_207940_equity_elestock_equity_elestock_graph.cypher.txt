@@ -4,55 +4,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스"}
-
-// node: company_john_chongbo_rim
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_john_chongbo_rim", "type": "Company", "name": "John Chongbo Rim"}
-
-// node: company_김기중
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_김기중", "type": "Company", "name": "김기중"}
-
-// node: company_김동중
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_김동중", "type": "Company", "name": "김동중"}
-
-// node: company_김희정
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_김희정", "type": "Company", "name": "김희정"}
-
-// node: company_노균
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_노균", "type": "Company", "name": "노균"}
-
-// node: company_박용
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_박용", "type": "Company", "name": "박용"}
+:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
 
 // node: company_삼성물산
 
@@ -60,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성물산", "type": "Company", "name": "삼성물산"}
+:params {"id": "company_삼성물산", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
 
 // node: company_삼성전자
 
@@ -68,108 +20,345 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자"}
+:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_서상원
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_서상원", "type": "Company", "name": "서상원"}
-
-// node: company_안소연
+// node: person_조성일
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_안소연", "type": "Company", "name": "안소연"}
+:params {"id": "person_조성일", "type": "Person", "name": "조성일", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
 
-// node: company_유승호
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_유승호", "type": "Company", "name": "유승호"}
-
-// node: company_윤여완
+// node: person_박용
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_윤여완", "type": "Company", "name": "윤여완"}
+:params {"id": "person_박용", "type": "Person", "name": "박용", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
 
-// node: company_윤종규
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_윤종규", "type": "Company", "name": "윤종규"}
-
-// node: company_이규호
+// node: person_유승호
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_이규호", "type": "Company", "name": "이규호"}
+:params {"id": "person_유승호", "type": "Person", "name": "유승호", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_raw": "부사장", "role_label": "부사장"}
 
-// node: company_이재선
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_이재선", "type": "Company", "name": "이재선"}
-
-// node: company_제임스최
+// node: person_John Chongbo Rim
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_제임스최", "type": "Company", "name": "제임스최"}
+:params {"id": "person_John Chongbo Rim", "type": "Person", "name": "John Chongbo Rim", "role": "CEO", "affiliated_company": "company_삼성바이오로직스", "role_raw": "대표이사", "role_label": "대표이사"}
 
-// node: company_조성일
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_조성일", "type": "Company", "name": "조성일"}
-
-// node: company_조영진
+// node: person_이규호
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_조영진", "type": "Company", "name": "조영진"}
+:params {"id": "person_이규호", "type": "Person", "name": "이규호", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_raw": "부사장", "role_label": "부사장"}
 
-// node: company_진용환
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_진용환", "type": "Company", "name": "진용환"}
-
-// node: company_홍연진
+// node: person_김기중
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_홍연진", "type": "Company", "name": "홍연진"}
+:params {"id": "person_김기중", "type": "Person", "name": "김기중", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
 
-// node: company_황인찬
+// node: person_이재선
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Person`
 
-:params {"id": "company_황인찬", "type": "Company", "name": "황인찬"}
+:params {"id": "person_이재선", "type": "Person", "name": "이재선", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_김희정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김희정", "type": "Person", "name": "김희정", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_조영진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_조영진", "type": "Person", "name": "조영진", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_서상원
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_서상원", "type": "Person", "name": "서상원", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_진용환
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_진용환", "type": "Person", "name": "진용환", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_김동중
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김동중", "type": "Person", "name": "김동중", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_raw": "부사장", "role_label": "부사장"}
+
+// node: person_윤종규
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤종규", "type": "Person", "name": "윤종규", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_홍연진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_홍연진", "type": "Person", "name": "홍연진", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_황인찬
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_황인찬", "type": "Person", "name": "황인찬", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_윤여완
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤여완", "type": "Person", "name": "윤여완", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_제임스최
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_제임스최", "type": "Person", "name": "제임스최", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_raw": "부사장", "role_label": "부사장"}
+
+// node: person_안소연
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_안소연", "type": "Person", "name": "안소연", "role": "OTHER", "affiliated_company": "company_삼성바이오로직스", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_노균
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_노균", "type": "Person", "name": "노균", "role": "VICE_PRESIDENT", "affiliated_company": "company_삼성바이오로직스", "role_raw": "부사장", "role_label": "부사장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_조성일", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 조성일, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 0주, 주식수 증감은 -195, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박용", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 박용, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 465주, 주식수 증감은 465, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_유승호", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 유승호, 등기 여부는 등기임원, 직위는 부사장, 보유주식수는 200주, 주식수 증감은 200, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_John Chongbo Rim", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 John Chongbo Rim, 등기 여부는 등기임원, 직위는 대표이사, 보유주식수는 400주, 주식수 증감은 400, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이규호", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 이규호, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 100주, 주식수 증감은 100, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김기중", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 김기중, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 55주, 주식수 증감은 -30, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재선", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 이재선, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 175주, 주식수 증감은 -95, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김희정", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 김희정, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1주, 주식수 증감은 -1, 지분율은 0.00%, 지분율 증감은 -0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_조영진", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 조영진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 386주, 주식수 증감은 -209, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_서상원", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 서상원, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 491주, 주식수 증감은 -264, 지분율은 0.00%, 지분율 증감은 -0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_진용환", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 진용환, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 52주, 주식수 증감은 -29, 지분율은 0.00%, 지분율 증감은 -0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김동중", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 김동중, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 3,012주, 주식수 증감은 -1,620, 지분율은 0.01%, 지분율 증감은 -0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤종규", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 윤종규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 21주, 주식수 증감은 -12, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_홍연진", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 홍연진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 18주, 주식수 증감은 -11, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_황인찬", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 황인찬, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 28주, 주식수 증감은 -16, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤여완", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 윤여완, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 35주, 주식수 증감은 -19, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_제임스최", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 제임스최, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 653주, 주식수 증감은 -352, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_안소연", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 안소연, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 387주, 주식수 증감은 387, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_노균", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 노균, 등기 여부는 등기임원, 직위는 부사장, 보유주식수는 60주, 주식수 증감은 60, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_삼성물산", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 삼성물산, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 19,932,350주, 주식수 증감은 -10,714,355, 지분율은 43.06%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_삼성전자", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 삼성전자, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 14,449,944주, 주식수 증감은 -7,767,365, 지분율은 31.22%, 지분율 증감은 0.00.", "date": "2025-12-30", "evidence_source_id": "dart_207940_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449", "evidence_published_at": "2025-12-30"}}

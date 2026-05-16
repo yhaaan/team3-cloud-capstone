@@ -1,0 +1,33 @@
+// node: company_삼성전자
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: person_이원진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이원진", "type": "Person", "name": "이원진", "role_raw": "사장", "affiliated_company": "company_삼성전자", "role": "PRESIDENT", "role_label": "사장"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이원진", "to_id": "company_삼성전자", "properties": {"evidence": "최근 영상디스플레이(VD) 사업부장에 이원진 글로벌 마케팅실장(사장)이 새롭게 선임됐다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이원진", "to_id": "company_삼성전자", "properties": {"evidence": "이원진 사장은 광고 기반 무료 스트리밍 서비스인 '삼성 TV 플러스' 등 플랫폼 비즈니스를 성공시킨 인물이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}

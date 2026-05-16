@@ -1,0 +1,24 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_장재훈
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_장재훈", "type": "Person", "name": "장재훈", "role_raw": "현대자동차그룹 부회장", "affiliated_company": "company_현대차", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_장재훈", "to_id": "company_현대차", "properties": {"evidence": "장재훈 현대자동차그룹 부회장이 국가 산업 발전에 기여한 공로를 인정받아 대한민국 산업계 최고 훈격인 금탑산업훈장을 수훈했다.", "date": "", "evidence_source_id": "news_005380_39830ea68fdfcfc1", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161639", "evidence_published_at": "2026-05-12T09:06:00+09:00"}}

@@ -1,0 +1,39 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_tpc로보틱스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_tpc로보틱스", "type": "Company", "name": "TPC로보틱스", "stock_code": "048770"}
+
+// node: company_모베이스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_모베이스", "type": "Company", "name": "모베이스", "stock_code": "101330"}
+
+// node: company_휴림로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_휴림로봇", "type": "Company", "name": "휴림로봇", "stock_code": "090710"}
+
+// node: company_유진로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_유진로봇", "type": "Company", "name": "유진로봇", "stock_code": "056080"}

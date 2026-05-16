@@ -1,41 +1,24 @@
-// node: company_samsung_electronics_components
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics_components", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
 
-// node: person_jang_deok_hyun
+// node: person_장덕현
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics_components", "role_raw": "사장", "role_label": "사장"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role_raw": "사장", "affiliated_company": "company_삼성전기", "role": "PRESIDENT", "role_label": "사장"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electronics_components", "evidence": "2026년 상생협력데이서 인사말하는 장덕현 사장 [출처: 연합뉴스 자료사진]"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics_components", "to_id": "industry_ai", "evidence": "07:52 SNS 기사보내기 주가 4월에만 100% 이상 상승…목표가 못 따라가 (서울=연합인포맥스) 윤영숙 기자 = 삼성전기[009150]가 올해 1분기 인공지능(AI) 서버향 고부가 부품 수요 확대에 힘입어 30%대 영업이익 증가세를 기록할 것으로 전망된다."}
+:params {"from_id": "person_장덕현", "to_id": "company_삼성전기", "properties": {"evidence": "2026년 상생협력데이서 인사말하는 장덕현 사장 [출처: 연합뉴스 자료사진] <", "date": "", "evidence_source_id": "news_009150_75f850a7ce58cda3", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4412233", "evidence_published_at": "2026-04-29T07:54:00+09:00"}}

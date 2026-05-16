@@ -1,0 +1,56 @@
+// node: company_hd한국조선해양
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+
+// node: company_hd현대중공업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_삼성전자
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_hd현대마린엔진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+
+// node: company_hd현대에너지솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+
+// node: person_그룹_회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_그룹_회장", "type": "Person", "name": "그룹 회장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_그룹_회장", "to_id": "company_hd한국조선해양", "properties": {"evidence": "회사는 최근 국빈 방문 과정에서 그룹 회장이 인도 주요 인사들과 면담했으며, \"타밀 나두주와의 그린필드 조선소 건설에 대해서 재차 지원 확인을 받았다\"고 설명했다.", "date": "", "evidence_source_id": "news_009540_32edbae62d2c4f50", "evidence_source_type": "news", "evidence_source_url": "http://www.joseilbo.com/news/news_read.php?uid=567863&class=17&grp=", "evidence_published_at": "2026-05-07T18:04:00+09:00"}}

@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # Backend =================
-BACKEND_URL = "http://localhost:5000/chat"
+BACKEND_URL = "http://127.0.0.1:8000/chat"
 # Backend =================
 
 
@@ -38,7 +38,7 @@ def create_network_graph(graph_data, has_center=False):
         directed=False
     )
 
-    center_name = graph_data.get("center") if has_center else None
+    center_id = graph_data.get("center") if has_center else None
 
     pastel_colors = [
         {"background": "#e8f0ff", "border": "#7aa7ff"},
@@ -61,8 +61,8 @@ def create_network_graph(graph_data, has_center=False):
 
         is_center_node = (
             has_center
-            and center_name is not None
-            and node_name == center_name
+            and center_id is not None
+            and node_id == center_id
         )
 
         if is_center_node:
@@ -145,48 +145,48 @@ def create_network_graph(graph_data, has_center=False):
     # =========================
     net.set_options("""
     const options = {
-    "nodes": {
+      "nodes": {
         "shape": "ellipse",
         "shadow": {
-        "enabled": true,
-        "color": "rgba(0,0,0,0.12)",
-        "size": 10,
-        "x": 2,
-        "y": 4
+          "enabled": true,
+          "color": "rgba(0,0,0,0.12)",
+          "size": 10,
+          "x": 2,
+          "y": 4
         }
-    },
-
-    "edges": {
+      },
+    
+      "edges": {
         "smooth": {
-        "enabled": false
+          "enabled": false
         },
         "length": 400
-    },
-
-    "physics": {
+      },
+    
+      "physics": {
         "enabled": true,
         "solver": "repulsion",
-
+    
         "stabilization": {
-        "enabled": true,
-        "iterations": 220,
-        "fit": true
+          "enabled": true,
+          "iterations": 220,
+          "fit": true
         },
-
+    
         "repulsion": {
-        "nodeDistance": 120,
-        "centralGravity": 0.08,
-        "springLength": 180,
-        "springConstant": 0.03
+          "nodeDistance": 120,
+          "centralGravity": 0.08,
+          "springLength": 180,
+          "springConstant": 0.03
         }
-    },
-
-    "interaction": {
+      },
+    
+      "interaction": {
         "hover": true,
         "dragNodes": true,
         "zoomView": true,
         "dragView": true
-    }
+      }
     }
     """)
 
@@ -486,7 +486,6 @@ body:has(.question-box) [data-testid="stChatInput"] {{
     white-space: nowrap;
     pointer-events: none;
 }}
-            
 /* =========================
    PC Sidebar Offset
 ========================= */
@@ -690,18 +689,11 @@ for msg in st.session_state.messages:
             )
 
     elif msg_type == "network":
-
         st.markdown(
             '<div class="graph-wrapper">',
             unsafe_allow_html=True
         )
-
         components.html(msg["content"], height=680)
-
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
-        )
 
 
 # Chat Input ==============
@@ -716,11 +708,15 @@ if question:
 
     with st.spinner("답변을 생성하는 중입니다..."):
         try:
+            # 현재 질문 제외 4쌍(8개) 정도를 보냄
+            recent_history = st.session_state.messages[:-1][-8:]
+
             response = requests.post(
                 BACKEND_URL,
                 json={
                     "question": question,
-                    "rag_on": st.session_state.rag_on
+                    "rag_on": st.session_state.rag_on,
+                    "recent_history": recent_history
                 },
                 timeout=30
             )
@@ -729,14 +725,13 @@ if question:
             data = response.json()
 
             answer = data.get("answer", "답변을 받지 못했습니다.")
-
-            has_center = data.get("center", False)
+            has_center = data.get("has_center", False)
             graph_data = data.get("graph")
 
             answer += f"""
 
-현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}
-"""
+            현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}
+            """
 
             st.session_state.messages.append({
                 "role": "assistant",
@@ -758,15 +753,15 @@ if question:
 
         except Exception as e:
             error_message = f"""
-⚠️ 백엔드 서버와 연결할 수 없습니다.
+            ⚠️ 백엔드 서버와 연결할 수 없습니다.
 
-서버가 실행 중인지 확인해주세요.
+            서버가 실행 중인지 확인해주세요.
 
-오류 내용:
-{e}
+            오류 내용:
+            {e}
 
-현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}
-"""
+            현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}
+            """
 
             st.session_state.messages.append({
                 "role": "assistant",

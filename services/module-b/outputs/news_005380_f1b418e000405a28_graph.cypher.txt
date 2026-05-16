@@ -1,0 +1,122 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차"}
+
+// node: company_기아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_기아", "type": "Company", "name": "기아"}
+
+// node: person_그룹_부회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_그룹_부회장", "type": "Person", "name": "그룹 부회장"}
+
+// node: person_대차그룹_부회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_대차그룹_부회장", "type": "Person", "name": "대차그룹 부회장"}
+
+// node: person_대표_이사
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_대표_이사", "type": "Person", "name": "대표 이사"}
+
+// node: person_동차그룹_부회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_동차그룹_부회장", "type": "Person", "name": "동차그룹 부회장"}
+
+// node: person_상자원부_장관
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_상자원부_장관", "type": "Person", "name": "상자원부 장관"}
+
+// node: person_장재훈_부회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_장재훈_부회장", "type": "Person", "name": "장재훈 부회장"}
+
+// node: person_현대차_대표
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_현대차_대표", "type": "Person", "name": "현대차 대표"}
+
+// node: person_현대차_부회장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_현대차_부회장", "type": "Person", "name": "현대차 부회장"}
+
+// node: person_황기영_대표
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_황기영_대표", "type": "Person", "name": "황기영 대표"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_현대차", "to_id": "company_기아", "properties": {"evidence": "장 부회장은 대규모 국내 투자와 핵심 미래 기술 확보를 통해 미래 모빌리티 패러다임 전환을 주도하고 국가 미래 성장동력 창출 및 지역경제 활성화에 기여한 공로를 인정받아 최고 훈격인 금탑산업훈장을 수훈했다.", "date": "", "evidence_source_id": "news_005380_f1b418e000405a28", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065571023381208", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_현대차", "to_id": "industry_ai", "properties": {"evidence": "전동화·AI·로보틱스 중심의 미래차 전환과 수출 확대를 이끈 완성차 업계 리더십이 국가 산업 발전 공로를 인정받았기 때문이다.", "date": "", "evidence_source_id": "news_005380_f1b418e000405a28", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065571023381208", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_그룹_부회장", "to_id": "company_현대차", "properties": {"evidence": "대한민국 자동차 산업 발전에 기여한 공로를 인정받아 장재훈 현대자동차그룹 부회장이 금탑산업훈장을, 황기영 KG모빌리티(KGM) 대표는 동탑산업훈장을 각각 수훈을 받는다.", "date": "", "evidence_source_id": "news_005380_f1b418e000405a28", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065571023381208", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}

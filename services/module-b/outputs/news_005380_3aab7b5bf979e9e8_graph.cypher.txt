@@ -1,0 +1,33 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_장재훈
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_장재훈", "type": "Person", "name": "장재훈", "role_raw": "현대차 부회장", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_장재훈", "to_id": "company_현대차", "properties": {"evidence": "12일 업계에 따르면 장재훈 현대차 부회장이 금탑산업훈장을 받고, 황기영 KGM 대표가 동탑산업훈장을 받는다.", "date": "", "evidence_source_id": "news_005380_3aab7b5bf979e9e8", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=201967", "evidence_published_at": "2026-05-12T09:46:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_장재훈", "to_id": "company_현대차", "properties": {"evidence": "장재훈 부회장은 대규모 국내 투자와 함께 미래 모빌리티 패러다임 전환을 주도해 국가 경제 발전에 기여한 공로를 인정받았다.", "date": "", "evidence_source_id": "news_005380_3aab7b5bf979e9e8", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=201967", "evidence_published_at": "2026-05-12T09:46:00+09:00"}}

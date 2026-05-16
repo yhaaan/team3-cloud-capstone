@@ -1,83 +1,63 @@
-// node: company_samsung_electro_mechanics
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electro_mechanics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
 
-// node: company_mk_chem_and_tech
+// node: company_코스모신소재
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_mk_chem_and_tech", "type": "Company", "name": "엠케이켐앤텍"}
+:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
 
-// node: person_jang_deok_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_kwon_hyuk_seok
+// node: company_우성
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "VICE_CHAIRMAN", "affiliated_company": "company_mk_chem_and_tech", "role_raw": "협부회장", "role_label": "부회장"}
+:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
 
-// node: person_lee_dal_gon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_dal_gon", "type": "Person", "name": "이달곤", "role": "OTHER", "affiliated_company": "company_samsung_electro_mechanics", "role_raw": "동반성장위원장", "role_label": "동반성장위원장"}
-
-// node: industry_ai
+// node: company_LG
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Industry`
+SET n:`Company`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "company_LG", "type": "Company", "name": "LG", "stock_code": "003550"}
 
-// relation: AFFILIATED_WITH
+// node: company_SK
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electro_mechanics", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여명이 참석했다."}
+:params {"id": "company_SK", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// relation: AFFILIATED_WITH
+// node: company_대상
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mk_chem_and_tech", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여명이 참석했다."}
+:params {"id": "company_대상", "type": "Company", "name": "대상", "stock_code": "001680"}
 
-// relation: AFFILIATED_WITH
+// node: company_SG
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "person_lee_dal_gon", "to_id": "company_samsung_electro_mechanics", "evidence": "행사에는 삼성전기 장덕현 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여명이 참석했다."}
+:params {"id": "company_SG", "type": "Company", "name": "SG", "stock_code": "255220"}
 
-// relation: BELONGS_TO
+// node: company_오아
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "company_samsung_electro_mechanics", "to_id": "industry_ai", "evidence": "삼성전기 장덕현 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\"이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 당부했다."}
+:params {"id": "company_오아", "type": "Company", "name": "오아", "stock_code": "342870"}

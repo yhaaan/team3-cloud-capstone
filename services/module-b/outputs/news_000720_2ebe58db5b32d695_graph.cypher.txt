@@ -1,0 +1,39 @@
+// node: company_hyundai_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_construction", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+
+// node: company_dl_e_and_c
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_dl_e_and_c", "type": "Company", "name": "DL이앤씨", "stock_code": "375500"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_daewoo_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_daewoo_construction", "type": "Company", "name": "대우건설", "stock_code": "047040"}
+
+// node: company_gs_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_gs_construction", "type": "Company", "name": "GS건설", "stock_code": "006360"}

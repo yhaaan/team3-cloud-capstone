@@ -1,66 +1,41 @@
-// node: company_doosan
+// node: company_dosan
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_doosan", "type": "Company", "name": "두산"}
+:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150", "country": "KR"}
 
-// node: company_doosan_energy
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_doosan_energy", "type": "Company", "name": "두산에너빌리티"}
-
-// node: company_doosan_bobcat
+// node: company_dosanenergy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_doosan_bobcat", "type": "Company", "name": "두산밥캣"}
+:params {"id": "company_dosanenergy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "country": "KR"}
 
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// node: industry_nuclear_power
+// node: company_dosanbobcat
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Industry`
+SET n:`Company`
 
-:params {"id": "industry_nuclear_power", "type": "Industry", "name": "원전"}
+:params {"id": "company_dosanbobcat", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "country": "KR"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "company_doosan_energy", "to_id": "company_doosan", "evidence": "두산이 수익성 중심 포트폴리오 재편과 핵심 계열사 고른 성장에 힘입어 1분기 실적 개선에 성공했다."}
+:params {"from_id": "company_dosanenergy", "to_id": "company_dosan", "properties": {"evidence": "계열사인 두산에너빌리티는 원자력과 가스터빈 사업의 경쟁력을 바탕으로 1분기 매출 4조2611억원, 영업이익 2335억원으로 전년 동기 대비 각각 13.7%, 63.9% 증가했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
 
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_doosan_energy", "to_id": "industry_nuclear_power", "evidence": "두산에너빌리티의 원전 사업 호조가 실적을 견인했다."}
-
-// relation: BELONGS_TO
+// relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
 
-:params {"from_id": "company_doosan", "to_id": "industry_ai", "evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다."}
+:params {"from_id": "company_dosanbobcat", "to_id": "company_dosan", "properties": {"evidence": "두산밥캣 역시 북미와 유럽 시장의 견조한 수요에 힘입어 매출 2조2473억원, 영업이익 2070억원의 실적을 올렸다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}

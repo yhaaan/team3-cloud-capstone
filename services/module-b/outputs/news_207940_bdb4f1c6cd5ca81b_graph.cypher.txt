@@ -1,18 +1,18 @@
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자"}
-
 // node: company_samsung_biologics
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스"}
+:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
 // node: person_choi_seung_ho
 
@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_choi_seung_ho", "type": "Person", "name": "최승호", "role": "OTHER", "affiliated_company": "company_samsung_electronics", "role_raw": "초기업노조 삼성전자지부 위원장", "role_label": "초기업노조 위원장"}
+:params {"id": "person_choi_seung_ho", "type": "Person", "name": "최승호", "role_raw": "초기업노조 삼성전자지부 위원장", "affiliated_company": "company_samsung_electronics", "role": "OTHER", "role_label": "초기업노조 위원장"}
 
 // node: person_park_jae_sung
 
@@ -28,56 +28,4 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role": "OTHER", "affiliated_company": "company_samsung_biologics", "role_raw": "노조위원장", "role_label": "노조위원장"}
-
-// node: industry_semiconductor
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
-
-// node: industry_biopharmaceutical
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_biopharmaceutical", "type": "Industry", "name": "바이오의약품"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_choi_seung_ho", "to_id": "company_samsung_electronics", "evidence": "28일 업계에 따르면 최승호 초기업노조 삼성전자지부 위원장은 최근 동남아 지역으로 일주일 일정의 휴가를 떠난 것으로 알려졌다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_park_jae_sung", "to_id": "company_samsung_biologics", "evidence": "삼성바이오로직스 노조는 오는 5월 1일부터 5일간 총파업을 예고한 상태인데, 박재성 노조위원장이 현재 해외여행 중인 것으로 파악됐다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "industry_semiconductor", "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다."}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_biologics", "to_id": "industry_biopharmaceutical", "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다."}
+:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role_raw": "삼성바이오로직스 노조위원장", "affiliated_company": "company_samsung_biologics", "role": "OTHER", "role_label": "노조위원장"}

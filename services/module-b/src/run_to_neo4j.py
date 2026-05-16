@@ -84,6 +84,11 @@ def build_argument_parser() -> argparse.ArgumentParser:
         default=None,
         help="Start processing after this source_id.",
     )
+    parser.add_argument(
+        "--force-graph",
+        action="store_true",
+        help="Regenerate graph JSON even when an output file already exists.",
+    )
     return parser
 
 
@@ -108,12 +113,19 @@ def main() -> None:
 
     chroma_client = None
     chroma_collection = None
+    embedding_function = None
     if not args.skip_chroma:
         chroma_client, chroma_collection = build_client_and_collection()
+        embedding_function = OpenAIEmbeddingFunction()
 
     for doc in documents:
         if args.chroma_only:
-            insert_doc_to_chroma_collection(chroma_collection, doc, source_name=doc["source_id"])
+            insert_doc_to_chroma_collection(
+                chroma_collection,
+                doc,
+                source_name=doc["source_id"],
+                embedding_function=embedding_function,
+            )
             continue
 
         run_for_document(
@@ -127,6 +139,7 @@ def main() -> None:
             neo4j_password=args.neo4j_password,
             allow_fallback=not args.no_fallback,
             min_relation_score=args.min_relation_score,
+            force_graph=args.force_graph,
         )
 
     if chroma_collection is not None:

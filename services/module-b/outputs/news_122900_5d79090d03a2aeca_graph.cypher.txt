@@ -1,0 +1,31 @@
+// node: company_imarket_korea
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_imarket_korea", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+
+// node: company_gradient
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_gradient", "type": "Company", "name": "그래디언트", "stock_code": "035080"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: person_kim_hak_jae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_hak_jae", "type": "Person", "name": "김학재", "role": "CEO", "affiliated_company": "company_imarket_korea", "role_raw": "대표이사", "role_label": "대표이사"}

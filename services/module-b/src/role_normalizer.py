@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from company_whitelist import CompanyWhitelist
+
 
 COMPANY_SUFFIX_PATTERN = re.compile(
     r"(주식회사|㈜|\(주\)|주\)|그룹|전자|중공업|하이닉스|바이오로직스|스퀘어|오션|현대|삼성|SK|LG|HD)",
@@ -24,7 +26,11 @@ ROLE_PATTERNS: list[tuple[str, str, tuple[str, ...]]] = [
 ]
 
 
-def normalize_graph_roles(graph_data: dict[str, Any]) -> dict[str, Any]:
+def normalize_graph_roles(
+    graph_data: dict[str, Any],
+    company_whitelist: CompanyWhitelist | None = None,
+    source_doc: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     for entity in graph_data.get("entities", []):
         if entity.get("type") != "Person":
             continue
@@ -40,9 +46,20 @@ def normalize_graph_roles(graph_data: dict[str, Any]) -> dict[str, Any]:
         entity["role_label"] = role_label
 
     graph_data["entities"] = deduplicate_entities_by_id(graph_data.get("entities", []))
+    if company_whitelist is not None:
+        graph_data["entities"] = filter_allowed_companies(
+            graph_data["entities"],
+            company_whitelist,
+        )
+        if not any(entity.get("type") == "Company" for entity in graph_data["entities"]):
+            graph_data["entities"] = []
+            graph_data["relations"] = []
+            return graph_data
     graph_data["relations"] = repair_relations(
         graph_data.get("relations", []),
         graph_data["entities"],
+        company_whitelist=company_whitelist,
+        source_doc=source_doc,
     )
     return graph_data
 
@@ -93,6 +110,8 @@ def deduplicate_entities_by_id(entities: list[dict[str, Any]]) -> list[dict[str,
 def repair_relations(
     relations: list[dict[str, Any]],
     entities: list[dict[str, Any]],
+    company_whitelist: CompanyWhitelist | None = None,
+    source_doc: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     entity_by_id = {entity["id"]: entity for entity in entities if entity.get("id")}
     repaired: list[dict[str, Any]] = []
@@ -106,8 +125,8 @@ def repair_relations(
         if not from_id or not to_id or not evidence:
             continue
 
-        ensure_endpoint_entity(from_id, entity_by_id, entities)
-        ensure_endpoint_entity(to_id, entity_by_id, entities)
+        ensure_endpoint_entity(from_id, entity_by_id, entities, company_whitelist)
+        ensure_endpoint_entity(to_id, entity_by_id, entities, company_whitelist)
 
         if from_id not in entity_by_id or to_id not in entity_by_id:
             continue
@@ -121,15 +140,31 @@ def repair_relations(
         repaired_relation["from"] = from_id
         repaired_relation["to"] = to_id
         repaired_relation["evidence"] = evidence
+        if source_doc is not None:
+            repaired_relation.update(build_evidence_source(source_doc))
         repaired.append(repaired_relation)
 
     return repaired
+
+
+def build_evidence_source(source_doc: dict[str, Any]) -> dict[str, str]:
+    source_type = str(
+        source_doc.get("document_type") or source_doc.get("module_a_type") or ""
+    )
+    return {
+        "date": str(source_doc.get("published_at") or "") if source_type == "dart" else "",
+        "evidence_source_id": str(source_doc.get("source_id") or ""),
+        "evidence_source_type": source_type,
+        "evidence_source_url": str(source_doc.get("url") or ""),
+        "evidence_published_at": str(source_doc.get("published_at") or ""),
+    }
 
 
 def ensure_endpoint_entity(
     entity_id: str,
     entity_by_id: dict[str, dict[str, Any]],
     entities: list[dict[str, Any]],
+    company_whitelist: CompanyWhitelist | None = None,
 ) -> None:
     if entity_id in entity_by_id:
         return
@@ -138,13 +173,31 @@ def ensure_endpoint_entity(
     if entity_type is None:
         return
 
+    entity_name = infer_name_from_id(entity_id, entity_type)
+    if entity_type == "Company" and (
+        company_whitelist is None or not company_whitelist.is_allowed_name(entity_name)
+    ):
+        return
+
     entity = {
         "id": entity_id,
         "type": entity_type,
-        "name": infer_name_from_id(entity_id, entity_type),
+        "name": entity_name,
     }
     entities.append(entity)
     entity_by_id[entity_id] = entity
+
+
+def filter_allowed_companies(
+    entities: list[dict[str, Any]],
+    company_whitelist: CompanyWhitelist,
+) -> list[dict[str, Any]]:
+    return [
+        entity
+        for entity in entities
+        if entity.get("type") != "Company"
+        or company_whitelist.is_allowed_name(str(entity.get("name") or ""))
+    ]
 
 
 def infer_entity_type_from_id(entity_id: str) -> str | None:

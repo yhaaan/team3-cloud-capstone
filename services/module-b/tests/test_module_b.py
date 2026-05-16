@@ -13,6 +13,7 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from chunking import split_text_into_chunks
+from company_whitelist import CompanyWhitelist, ListedCompany
 from document_io import iter_input_documents
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
 from role_normalizer import normalize_graph_roles, normalize_role
@@ -153,6 +154,105 @@ class ModuleBPipelineTests(unittest.TestCase):
         )
         self.assertEqual(len(normalized["relations"]), 1)
         self.assertEqual(normalized["relations"][0]["to"], "industry_ai")
+
+    def test_graph_normalization_filters_unlisted_companies_and_relations(self):
+        whitelist = CompanyWhitelist(
+            [ListedCompany("005930", "Samsung Electronics", "KOSPI")]
+        )
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {
+                    "id": "company_samsung_electronics",
+                    "type": "Company",
+                    "name": "Samsung Electronics",
+                },
+                {"id": "company_unlisted", "type": "Company", "name": "Unlisted Co"},
+                {"id": "industry_ai", "type": "Industry", "name": "AI"},
+            ],
+            "relations": [
+                {
+                    "type": "BELONGS_TO",
+                    "from": "company_samsung_electronics",
+                    "to": "industry_ai",
+                    "evidence": "Samsung Electronics belongs to AI.",
+                },
+                {
+                    "type": "INVESTS_IN",
+                    "from": "company_samsung_electronics",
+                    "to": "company_unlisted",
+                    "evidence": "Samsung Electronics invested in Unlisted Co.",
+                },
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist)
+
+        self.assertEqual(
+            [entity["id"] for entity in normalized["entities"]],
+            ["company_samsung_electronics", "industry_ai"],
+        )
+        self.assertEqual(len(normalized["relations"]), 1)
+        self.assertEqual(normalized["relations"][0]["type"], "BELONGS_TO")
+
+    def test_graph_normalization_adds_evidence_source_fields(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "company_example", "type": "Company", "name": "Example"},
+                {"id": "industry_ai", "type": "Industry", "name": "AI"},
+            ],
+            "relations": [
+                {
+                    "type": "BELONGS_TO",
+                    "from": "company_example",
+                    "to": "industry_ai",
+                    "evidence": "Example belongs to AI.",
+                },
+            ],
+        }
+        source_doc = {
+            "source_id": "news_001",
+            "document_type": "news",
+            "url": "https://example.com/news/1",
+            "published_at": "2026-05-12T10:00:00+09:00",
+        }
+
+        normalized = normalize_graph_roles(graph, source_doc=source_doc)
+        relation = normalized["relations"][0]
+
+        self.assertEqual(relation["evidence_source_id"], "news_001")
+        self.assertEqual(relation["evidence_source_type"], "news")
+        self.assertEqual(relation["evidence_source_url"], "https://example.com/news/1")
+        self.assertEqual(relation["evidence_published_at"], "2026-05-12T10:00:00+09:00")
+        self.assertEqual(relation["date"], "")
+
+    def test_graph_normalization_adds_relation_date_for_dart_source(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "company_example", "type": "Company", "name": "Example"},
+                {"id": "industry_ai", "type": "Industry", "name": "AI"},
+            ],
+            "relations": [
+                {
+                    "type": "BELONGS_TO",
+                    "from": "company_example",
+                    "to": "industry_ai",
+                    "evidence": "Example belongs to AI.",
+                },
+            ],
+        }
+        source_doc = {
+            "source_id": "dart_001",
+            "document_type": "dart",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032",
+            "published_at": "2026-03-20",
+        }
+
+        normalized = normalize_graph_roles(graph, source_doc=source_doc)
+
+        self.assertEqual(normalized["relations"][0]["date"], "2026-03-20")
 
 
 if __name__ == "__main__":

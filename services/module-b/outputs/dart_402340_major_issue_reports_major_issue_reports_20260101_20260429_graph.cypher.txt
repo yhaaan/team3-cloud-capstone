@@ -5,19 +5,3 @@ SET n += $properties
 SET n:`Company`
 
 :params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
-
-// node: event_자기주식처분결정
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_자기주식처분결정", "type": "Event", "name": "주요사항보고서(자기주식처분결정)", "event_type": "주요사항보고서", "date": "2026-03-25"}
-
-// node: event_자기주식취득결정
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Event`
-
-:params {"id": "event_자기주식취득결정", "type": "Event", "name": "주요사항보고서(자기주식취득결정)", "event_type": "주요사항보고서", "date": "2026-03-25"}

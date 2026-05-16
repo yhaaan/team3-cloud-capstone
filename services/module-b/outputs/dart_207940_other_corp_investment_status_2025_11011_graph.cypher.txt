@@ -1,75 +1,7 @@
-// node: company_samsung_bio_logics
+// node: company_삼성바이오로직스
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_bio_logics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
-
-// node: company_samsung_bio_epice
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_bio_epice", "type": "Company", "name": "삼성바이오에피스㈜"}
-
-// node: company_samsung_biologics_america_inc
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_biologics_america_inc", "type": "Company", "name": "Samsung Biologics America, Inc."}
-
-// node: company_svic_54_new_technology_business_investment_association
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_svic_54_new_technology_business_investment_association", "type": "Company", "name": "SVIC 54호 신기술사업투자조합"}
-
-// node: company_svic_64_new_technology_business_investment_association
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_svic_64_new_technology_business_investment_association", "type": "Company", "name": "SVIC 64호 신기술사업투자조합"}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_bio_logics", "to_id": "company_samsung_bio_epice", "evidence": "삼성바이오로직스의 타법인 출자 대상은 삼성바이오에피스㈜, 출자 목적은 경영참여, 최초 취득일은 2012.02.28."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_bio_logics", "to_id": "company_samsung_biologics_america_inc", "evidence": "삼성바이오로직스의 타법인 출자 대상은 Samsung Biologics America, Inc., 출자 목적은 경영참여, 최초 취득일은 2020.03.09, 당기말 보유수량은 10,000, 당기말 지분율은 100%, 장부가액은 11,914,000,000."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_bio_logics", "to_id": "company_svic_54_new_technology_business_investment_association", "evidence": "삼성바이오로직스의 타법인 출자 대상은 SVIC 54호 신기술사업투자조합, 출자 목적은 경영참여, 최초 취득일은 2021.08.13, 당기말 지분율은 33%, 장부가액은 30,635,000,000."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_bio_logics", "to_id": "company_svic_64_new_technology_business_investment_association", "evidence": "삼성바이오로직스의 타법인 출자 대상은 SVIC 64호 신기술사업투자조합, 출자 목적은 경영참여, 최초 취득일은 2023.11.09, 당기말 지분율은 24.8%, 장부가액은 3,333,000,000."}
+:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}

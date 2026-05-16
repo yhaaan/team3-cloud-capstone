@@ -1,0 +1,49 @@
+// node: company_hyundai_rotem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: company_korean_air
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_korean_air", "type": "Company", "name": "대한항공", "stock_code": "003490"}
+
+// node: company_hd_hyundai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+
+// node: company_hd_hyundai_heavy_industries
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai", "to_id": "company_hd_hyundai_heavy_industries", "properties": {"evidence": "HD현대와는 2025년 4월 무인수상정(USV) 개발을 위한 MOU를 체결한 데 이어, 같은 해 11월 자율 무인 수상함 시제함 설계·건조 및 AI 솔루션 공급 계약을 체결했다.", "date": "", "evidence_source_id": "news_064350_56f9fd4efe69fc1f", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607", "evidence_published_at": "2026-05-07T17:17:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hd_hyundai", "properties": {"evidence": "현재 시제함은 HD현대중공업 울산 조선소에서 건조 중이며, 이르면 올해 10월 진수 후 미국 연안에서 시험 운항에 투입될 예정이다.", "date": "", "evidence_source_id": "news_064350_56f9fd4efe69fc1f", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607", "evidence_published_at": "2026-05-07T17:17:00+09:00"}}

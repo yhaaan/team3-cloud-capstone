@@ -1,0 +1,74 @@
+// node: company_hanwha_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_system", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+
+// node: company_hanwha_ocean
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: company_korean_aerospace_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_korean_aerospace_industry", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
+
+// node: company_edgefoundry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_edgefoundry", "type": "Company", "name": "엣지파운드리", "stock_code": "105550"}
+
+// node: company_hanwha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_daesang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_daesang", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hanwha_system", "to_id": "company_korean_aerospace_industry", "properties": {"evidence": "한화시스템의 타법인 출자 대상은 한국항공우주산업(주), 출자 목적은 일반투자, 최초 취득일은 2025.11.03, 당기말 보유수량은 566,635, 당기말 지분율은 0.58%, 장부가액은 64,823,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_272210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001225", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hanwha_system", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화시스템의 타법인 출자 대상은 한화오션주식회사, 출자 목적은 일반투자, 최초 취득일은 2023.05.23, 당기말 보유수량은 35,450,910, 당기말 지분율은 11.57%, 장부가액은 4,027,223,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_272210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001225", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hanwha_system", "to_id": "company_edgefoundry", "properties": {"evidence": "한화시스템의 타법인 출자 대상은 엣지파운드리, 출자 목적은 일반투자, 최초 취득일은 2025.03.12, 당기말 보유수량은 6,856,820, 당기말 지분율은 8.76%, 장부가액은 10,697,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_272210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001225", "evidence_published_at": "2026-03-13"}}

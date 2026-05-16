@@ -1,0 +1,33 @@
+// node: company_두산퓨얼셀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+
+// node: company_두산에너빌리티
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_두산에너빌리티", "type": "Company", "name": "두산에너빌리티"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_두산에너빌리티", "to_id": "company_두산퓨얼셀", "properties": {"evidence": "두산퓨얼셀의 최대주주 관련 인물/법인은 두산에너빌리티㈜, 관계는 최대주주, 당기말 보유주식수는 22,780,229주, 지분율은 34.78%.", "date": "2026-03-18", "evidence_source_id": "dart_336260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264", "evidence_published_at": "2026-03-18"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_두산에너빌리티", "to_id": "company_두산퓨얼셀", "properties": {"evidence": "두산퓨얼셀의 최대주주 관련 인물/법인은 두산에너빌리티㈜, 관계는 최대주주, 당기말 보유주식수는 2,039,091주, 지분율은 12.47%.", "date": "2026-03-18", "evidence_source_id": "dart_336260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264", "evidence_published_at": "2026-03-18"}}

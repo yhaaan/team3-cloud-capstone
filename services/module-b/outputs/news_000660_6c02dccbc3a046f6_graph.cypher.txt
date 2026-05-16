@@ -1,0 +1,74 @@
+// node: company_sk하이닉스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK"}
+
+// node: company_현대로템
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대로템", "type": "Company", "name": "현대로템"}
+
+// node: person_관리_감독
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_관리_감독", "type": "Person", "name": "관리 감독"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk하이닉스", "to_id": "company_sk", "properties": {"evidence": "IBK투자증권은 2026년 연간 매출액 5조3,318억 원(+28.1% YoY), 영업이익 1조8,171억 원(+55.5% YoY)을 전망하며 영업이익률은 34.1%까지 확대될 것으로 봤다.", "date": "", "evidence_source_id": "news_000660_6c02dccbc3a046f6", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk하이닉스", "to_id": "industry_ai", "properties": {"evidence": "AI 워크로드가 학습에서 추론·에이전틱(자율 작동형) 단계로 이동하며 GPU 대비 CPU 탑재 비율이 8대1에서 4대1, 1대1 이상까지 상승할 것으로 보인다.", "date": "", "evidence_source_id": "news_000660_6c02dccbc3a046f6", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk하이닉스", "to_id": "industry_it", "properties": {"evidence": "메타는 자체 ARM 기반 CPU인 그래비톤(Graviton)을 수천만 코어 계약했고, 마이크로소프트도 자체 CPU 코발트(Cobalt) 공급량을 크게 확대할 계획이다.", "date": "", "evidence_source_id": "news_000660_6c02dccbc3a046f6", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}

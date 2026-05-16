@@ -1,168 +1,23 @@
-// node: company_samsung_electronics
+// node: company_삼성전기
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
 
-// node: company_wooseong_se
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_wooseong_se", "type": "Company", "name": "우성에스이"}
-
-// node: company_jungjin_nexttech
+// node: company_우성
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_jungjin_nexttech", "type": "Company", "name": "정진넥스텍"}
+:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
 
-// node: company_abico_tech
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_abico_tech", "type": "Company", "name": "아비코테크"}
-
-// node: company_cosmo_new_materials
+// node: company_코스모신소재
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_cosmo_new_materials", "type": "Company", "name": "코스모신소재"}
-
-// node: company_rezonac
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_rezonac", "type": "Company", "name": "레조낙"}
-
-// node: person_jang_deok_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_raw": "사장", "role_label": "사장"}
-
-// node: person_lee_dal_gon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_dal_gon", "type": "Person", "name": "이달곤", "role": "OTHER", "role_raw": "동반성장위원회 위원장", "role_label": "동반성장위원회 위원장"}
-
-// node: person_kwon_hyuk_seok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kwon_hyuk_seok", "type": "Person", "name": "권혁석", "role": "VICE_CHAIRMAN", "affiliated_company": "company_mk_chem_and_tech", "role_raw": "엠케이켐앤텍 대표이자 협부회장", "role_label": "부회장"}
-
-// node: company_mk_chem_and_tech
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_mk_chem_and_tech", "type": "Company", "name": "엠케이켐앤텍"}
-
-// node: industry_ai
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electronics", "evidence": "행사에는 장덕현 사장과 이달곤 동반성장위원장, 협력사 관계자 등 200여 명이 참석했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_lee_dal_gon", "to_id": "company_samsung_electronics", "evidence": "이달곤 동반성장위원회 위원장은 \"불확실한 경영환경을 극복하기 위해, 대기업과 중소기업 간 협력을 통해 최고의 제품을 생산하는 것이 중요하다\"며 \"앞으로도 긴밀한 협력을 바탕으로 동반성장을 이어나갈 수 있도록 지원하겠다\"고 말했다."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kwon_hyuk_seok", "to_id": "company_mk_chem_and_tech", "evidence": "권혁석 엠케이켐앤텍 대표이자 협부회장은 \"삼성전기와 협력사가 긴밀히 협력한다면 어떤 위기 속에서도 성장할 수 있다\"며 \"모두가 하나 되어 도약할 수 있는 계기가 되길 바란다\"고 밝혔다."}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "company_wooseong_se", "evidence": "생산성·기술개발·품질·특별 등 4개 부문에서 5개 기업이 선정됐다. 설비 효율을 개선한 우성에스이"}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "company_jungjin_nexttech", "evidence": "생산성·기술개발·품질·특별 등 4개 부문에서 5개 기업이 선정됐다. 신공법을 도입한 정진넥스텍"}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "company_abico_tech", "evidence": "생산성·기술개발·품질·특별 등 4개 부문에서 5개 기업이 선정됐다. 품질 개선 성과를 낸 아비코테크"}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "company_cosmo_new_materials", "evidence": "생산성·기술개발·품질·특별 등 4개 부문에서 5개 기업이 선정됐다. AI 서버용 소재를 개발한 코스모신소재"}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "company_rezonac", "evidence": "생산성·기술개발·품질·특별 등 4개 부문에서 5개 기업이 선정됐다. 공급망 안정에 기여한 레조낙"}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "company_samsung_electronics", "to_id": "industry_ai", "evidence": "삼성전기가 협력사와의 'AI 동반성장'을 전면에 내세웠다."}
+:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}

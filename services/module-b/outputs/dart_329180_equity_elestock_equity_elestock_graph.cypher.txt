@@ -1,34 +1,34 @@
-// node: company_hd_hyundai_heavy_industries
+// node: company_hd_현대중공업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_hd_현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
 
-// node: company_hd_korea_shipbuilding
+// node: company_hd_한국조선해양
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양"}
+:params {"id": "company_hd_한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
 
-// node: person_lee_kang_kuk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_kang_kuk", "type": "Person", "name": "이강국", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_ju_dae_jung
+// node: person_lee_gang_guk
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_ju_dae_jung", "type": "Person", "name": "주대중", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_lee_gang_guk", "type": "Person", "name": "이강국", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
+
+// node: person_joo_dae_jung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_joo_dae_jung", "type": "Person", "name": "주대중", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
 // node: person_lee_jong_seok
 
@@ -36,15 +36,15 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_jong_seok", "type": "Person", "name": "이종석", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_lee_jong_seok", "type": "Person", "name": "이종석", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
-// node: person_lee_kang_ho
+// node: person_lee_gang_ho
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_kang_ho", "type": "Person", "name": "이강호", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_lee_gang_ho", "type": "Person", "name": "이강호", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
 // node: person_lee_chang_jun
 
@@ -52,7 +52,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_chang_jun", "type": "Person", "name": "이창준", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_lee_chang_jun", "type": "Person", "name": "이창준", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
 // node: person_kim_sung_hun
 
@@ -60,7 +60,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_sung_hun", "type": "Person", "name": "김성훈", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_kim_sung_hun", "type": "Person", "name": "김성훈", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
 // node: person_hwang_tae_hwan
 
@@ -68,7 +68,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_hwang_tae_hwan", "type": "Person", "name": "황태환", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "전무", "role_label": "전무"}
+:params {"id": "person_hwang_tae_hwan", "type": "Person", "name": "황태환", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "전무", "role_label": "전무"}
 
 // node: person_lee_chul_heon
 
@@ -76,15 +76,15 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_chul_heon", "type": "Person", "name": "이철헌", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "전무", "role_label": "전무"}
+:params {"id": "person_lee_chul_heon", "type": "Person", "name": "이철헌", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "전무", "role_label": "전무"}
 
-// node: person_lee_sang_kyun
+// node: person_lee_sang_gyun
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_sang_kyun", "type": "Person", "name": "이상균", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "부회장", "role_label": "부회장"}
+:params {"id": "person_lee_sang_gyun", "type": "Person", "name": "이상균", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hd_현대중공업", "role_raw": "부회장", "role_label": "부회장"}
 
 // node: person_yoon_dae_gyu
 
@@ -92,7 +92,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_yoon_dae_gyu", "type": "Person", "name": "윤대규", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "상무", "role_label": "상무"}
+:params {"id": "person_yoon_dae_gyu", "type": "Person", "name": "윤대규", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "상무", "role_label": "상무"}
 
 // node: person_lee_tae_jin
 
@@ -100,112 +100,103 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_tae_jin", "type": "Person", "name": "이태진", "role": "OTHER", "affiliated_company": "company_hd_hyundai_heavy_industries", "role_raw": "전무", "role_label": "전무"}
+:params {"id": "person_lee_tae_jin", "type": "Person", "name": "이태진", "role": "OTHER", "affiliated_company": "company_hd_현대중공업", "role_raw": "전무", "role_label": "전무"}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_kang_kuk", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강국, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 20주, 주식수 증감은 20, 지분율은 0.00%, 지분율 증감은 0.00."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_ju_dae_jung", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 주대중, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 550주, 주식수 증감은 550, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_lee_gang_guk", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강국, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 20주, 주식수 증감은 20, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_jong_seok", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이종석, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 80주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_lee_kang_ho", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강호, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 121주, 주식수 증감은 121, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_joo_dae_jung", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 주대중, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 550주, 주식수 증감은 550, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_chang_jun", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이창준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 324주, 주식수 증감은 324, 지분율은 0.00%, 지분율 증감은 0.00."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_kim_sung_hun", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 김성훈, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 32주, 주식수 증감은 32, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_lee_jong_seok", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이종석, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 80주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_hwang_tae_hwan", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 황태환, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 243주, 주식수 증감은 243, 지분율은 0.00%, 지분율 증감은 0.00."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_lee_chul_heon", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이철헌, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 1,016주, 주식수 증감은 16, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_lee_gang_ho", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강호, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 121주, 주식수 증감은 121, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_sang_kyun", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이상균, 등기 여부는 등기임원, 직위는 부회장, 보유주식수는 1,188주, 주식수 증감은 81, 지분율은 0.00%, 지분율 증감은 0.00."}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
-
-:params {"from_id": "person_yoon_dae_gyu", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 윤대규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 8주, 주식수 증감은 8, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_lee_chang_jun", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이창준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 324주, 주식수 증감은 324, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
 // relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r.evidence = $evidence
+SET r += $properties
 
-:params {"from_id": "person_lee_tae_jin", "to_id": "company_hd_hyundai_heavy_industries", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이태진, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 180주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00."}
+:params {"from_id": "person_kim_sung_hun", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 김성훈, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 32주, 주식수 증감은 32, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
 
-// relation: ACQUIRES
+// relation: AFFILIATED_WITH
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
-SET r.evidence = $evidence
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
 
-:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hd_korea_shipbuilding", "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 HD한국조선해양, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 66,370,374주, 주식수 증감은 -86,529, 지분율은 74.76%, 지분율 증감은 -0.10."}
+:params {"from_id": "person_hwang_tae_hwan", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 황태환, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 243주, 주식수 증감은 243, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_chul_heon", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이철헌, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 1,016주, 주식수 증감은 16, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_sang_gyun", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이상균, 등기 여부는 등기임원, 직위는 부회장, 보유주식수는 1,188주, 주식수 증감은 81, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yoon_dae_gyu", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 윤대규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 8주, 주식수 증감은 8, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_tae_jin", "to_id": "company_hd_현대중공업", "properties": {"evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이태진, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 180주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-01", "evidence_source_id": "dart_329180_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464", "evidence_published_at": "2026-04-01"}}

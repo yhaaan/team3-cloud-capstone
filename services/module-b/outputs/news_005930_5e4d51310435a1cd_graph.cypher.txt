@@ -1,0 +1,65 @@
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_sk_hynix
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_device", "type": "Company", "name": "디바이스", "stock_code": "187870"}
+
+// node: person_jeon_young_hyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeon_young_hyun", "type": "Person", "name": "전영현", "role_raw": "삼성전자 대표이사 부회장", "affiliated_company": "company_samsung_electronics", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+
+// node: person_no_tae_moon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_no_tae_moon", "type": "Person", "name": "노태문", "role_raw": "삼성전자 사장", "affiliated_company": "company_samsung_electronics", "role": "PRESIDENT", "role_label": "사장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeon_young_hyun", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자 대표이사인 전영현 부회장과 노태문 사장이 노사 임금협상 진행 상황과 관련해 임직원들에게 \"미래 경쟁력이 손실되지 않도록 해달라\"고 당부했다.", "date": "", "evidence_source_id": "news_005930_5e4d51310435a1cd", "evidence_source_type": "news", "evidence_source_url": "https://www.khan.co.kr/article/202605072130015", "evidence_published_at": "2026-05-07T21:30:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_no_tae_moon", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자 대표이사인 전영현 부회장과 노태문 사장이 노사 임금협상 진행 상황과 관련해 임직원들에게 \"미래 경쟁력이 손실되지 않도록 해달라\"고 당부했다.", "date": "", "evidence_source_id": "news_005930_5e4d51310435a1cd", "evidence_source_type": "news", "evidence_source_url": "https://www.khan.co.kr/article/202605072130015", "evidence_published_at": "2026-05-07T21:30:00+09:00"}}

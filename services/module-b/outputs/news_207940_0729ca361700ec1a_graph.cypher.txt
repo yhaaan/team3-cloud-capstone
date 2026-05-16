@@ -1,23 +1,23 @@
-// node: company_samsung_bio_logics
+// node: company_삼성바이오로직스
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_bio_logics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "industry": "industry_bio"}
+:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
 
-// node: company_celltrion
+// node: company_셀트리온
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_celltrion", "type": "Company", "name": "셀트리온", "industry": "industry_bio"}
+:params {"id": "company_셀트리온", "type": "Company", "name": "셀트리온", "stock_code": "068270"}
 
-// node: industry_bio
+// node: company_다올투자증권
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Industry`
+SET n:`Company`
 
-:params {"id": "industry_bio", "type": "Industry", "name": "바이오"}
+:params {"id": "company_다올투자증권", "type": "Company", "name": "다올투자증권", "stock_code": "030210"}

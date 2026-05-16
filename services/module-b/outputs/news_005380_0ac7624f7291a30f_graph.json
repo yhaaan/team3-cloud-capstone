@@ -2,26 +2,31 @@
   "source_id": "news_005380_0ac7624f7291a30f",
   "entities": [
     {
-      "id": "company_hyundai_motor",
+      "id": "company_현대차",
       "type": "Company",
-      "name": "현대차"
+      "name": "현대차",
+      "stock_code": "005380"
     },
     {
-      "id": "person_park_min_woo",
+      "id": "person_박민우",
       "type": "Person",
       "name": "박민우",
-      "role": "PRESIDENT",
-      "affiliated_company": "company_hyundai_motor",
       "role_raw": "사장",
+      "role": "PRESIDENT",
       "role_label": "사장"
     }
   ],
   "relations": [
     {
-      "type": "APPOINTED_TO",
-      "from": "person_park_min_woo",
-      "to": "company_hyundai_motor",
-      "evidence": "로보틱스랩장은 AVP본부장인 박민우 사장(사진)이 겸임한다."
+      "type": "AFFILIATED_WITH",
+      "from": "person_박민우",
+      "to": "company_현대차",
+      "evidence": "로보틱스랩장은 AVP본부장인 박민우 사장(사진)이 겸임한다.",
+      "date": "",
+      "evidence_source_id": "news_005380_0ac7624f7291a30f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026042962991",
+      "evidence_published_at": "2026-04-29T17:38:00+09:00"
     }
   ]
 }

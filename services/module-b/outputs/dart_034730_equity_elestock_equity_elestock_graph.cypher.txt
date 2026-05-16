@@ -1,0 +1,109 @@
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: person_cha_jaemin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_cha_jaemin", "type": "Person", "name": "차재민", "role": "OTHER", "affiliated_company": "company_sk", "role_raw": "본부장", "role_label": "본부장"}
+
+// node: person_kim_sunhee
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_sunhee", "type": "Person", "name": "김선희", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk", "role_raw": "사외이사", "role_label": "사외이사"}
+
+// node: person_lee_kwanyoung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_kwanyoung", "type": "Person", "name": "이관영", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk", "role_raw": "사외이사", "role_label": "사외이사"}
+
+// node: person_lee_kyunjung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_kyunjung", "type": "Person", "name": "이계정", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk", "role_raw": "사외이사", "role_label": "사외이사"}
+
+// node: person_yoon_chiwon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoon_chiwon", "type": "Person", "name": "윤치원", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk", "role_raw": "사외이사", "role_label": "사외이사"}
+
+// node: person_jung_jongho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jung_jongho", "type": "Person", "name": "정종호", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk", "role_raw": "사외이사", "role_label": "사외이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_cha_jaemin", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 차재민, 등기 여부는 비등기임원, 직위는 본부장, 보유주식수는 0주, 주식수 증감은 -174, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_sunhee", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 김선희, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 1,902주, 주식수 증감은 231, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_kwanyoung", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 이관영, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 504주, 주식수 증감은 144, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_kyunjung", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 이계정, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 144주, 주식수 증감은 144, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yoon_chiwon", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 윤치원, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 849주, 주식수 증감은 144, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jung_jongho", "to_id": "company_sk", "properties": {"evidence": "SK의 임원·주요주주 소유상황 보고자는 정종호, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 504주, 주식수 증감은 144, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_034730_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260209000557", "evidence_published_at": "2026-04-07"}}

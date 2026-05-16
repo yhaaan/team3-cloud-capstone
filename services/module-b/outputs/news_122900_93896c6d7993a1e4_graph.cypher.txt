@@ -1,0 +1,24 @@
+// node: company_아이마켓코리아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_아이마켓코리아", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+
+// node: industry_상품_종합_도매업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_상품_종합_도매업", "type": "Industry", "name": "상품 종합 도매업"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_아이마켓코리아", "to_id": "industry_상품_종합_도매업", "properties": {"evidence": "아이마켓코리아는 2010년 7월 30일 코스피 시장에 상장된 상품 종합 도매업체다.", "date": "", "evidence_source_id": "news_122900_93896c6d7993a1e4", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=640402", "evidence_published_at": "2026-03-12T18:06:00+09:00"}}

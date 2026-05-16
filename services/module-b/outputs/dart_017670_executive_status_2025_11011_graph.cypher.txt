@@ -1,0 +1,143 @@
+// node: company_sk_telecom
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤"}
+
+// node: person_yoo_young_sang
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoo_young_sang", "type": "Person", "name": "유영상", "role_raw": "사장", "role": "PRESIDENT", "affiliated_company": "company_sk_telecom", "role_label": "사장"}
+
+// node: person_kim_yang_seop
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_yang_seop", "type": "Person", "name": "김양섭", "role_raw": "센터장", "role": "OTHER", "affiliated_company": "company_sk_telecom", "role_label": "센터장"}
+
+// node: person_kang_dong_su
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kang_dong_su", "type": "Person", "name": "강동수", "role_raw": "기타비상무이사", "role": "DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "이사"}
+
+// node: person_kim_yong_hak
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_yong_hak", "type": "Person", "name": "김용학", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "사외이사"}
+
+// node: person_kim_jun_mo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jun_mo", "type": "Person", "name": "김준모", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "사외이사"}
+
+// node: person_oh_hye_yeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_oh_hye_yeon", "type": "Person", "name": "오혜연", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "사외이사"}
+
+// node: person_no_mi_kyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_no_mi_kyung", "type": "Person", "name": "노미경", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "사외이사"}
+
+// node: person_kim_chang_bo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_chang_bo", "type": "Person", "name": "김창보", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_telecom", "role_label": "사외이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yoo_young_sang", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 유영상, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 前 SK텔레콤 MNO 사업대표.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_yang_seop", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 김양섭, 직위는 센터장, 이사회상 역할은 사내이사, 담당업무는 Corp. Planning 센터장 (CFO), 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 前 SK이노베이션 재무본부장(CFO).", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kang_dong_su", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 강동수, 직위는 기타비상무이사, 이사회상 역할은 기타비상무이사, 담당업무는 기타비상무이사, 최대주주와의 관계는 최대주주의 임원, 주요경력은 現 SK Inc. PM부문장 前 SK이노베이션 Portfolio부문장.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_yong_hak", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 김용학, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 前 연세대학교 총장(現 명예교수).", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_jun_mo", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 김준모, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 現 KAIST 전기 및 전자공학부 교수.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_oh_hye_yeon", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 오혜연, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 現 KAIST 전산학부 교수前 카이스트 MARS 인공지능 통합연구센터 소장.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_no_mi_kyung", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 노미경, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 前 HSBC 홍콩, Credit Risk Review/아태지역 Risk 총괄.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_chang_bo", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤의 임원은 김창보, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 최대주주와의 관계는 최대주주 계열회사의 임원, 주요경력은 現 법무법인 대륙아주 변호사 前 서울고등법원장.", "date": "2026-03-18", "evidence_source_id": "dart_017670_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532", "evidence_published_at": "2026-03-18"}}

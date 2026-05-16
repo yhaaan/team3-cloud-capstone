@@ -1,0 +1,49 @@
+// node: company_현대차
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_현대글로비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_현대글로비스", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+
+// node: person_jang_jae_hoon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jang_jae_hoon", "type": "Person", "name": "장재훈", "role_raw": "현대자동차그룹 부회장", "affiliated_company": "company_현대차", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+
+// node: person_jeong_ui_sun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_ui_sun", "type": "Person", "name": "정의선", "role_raw": "현대차그룹 회장", "affiliated_company": "company_현대차", "role": "CHAIRMAN", "role_label": "회장"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jang_jae_hoon", "to_id": "company_현대차", "properties": {"evidence": "장재훈 현대자동차그룹 부회장이 국내 산업계 최고 훈격인 금탑산업훈장을 수훈했다.", "date": "", "evidence_source_id": "news_005380_ca13a7b75e04abc2", "evidence_source_type": "news", "evidence_source_url": "http://www.the-biz.co.kr/news/articleView.html?idxno=720399", "evidence_published_at": "2026-05-12T09:50:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeong_ui_sun", "to_id": "company_현대차", "properties": {"evidence": "정의선 현대차그룹 회장의 최측근으로 알려진 장 부회장은 2011년 현대글로비스 글로벌사업실장 상무로 현대차그룹에 합류했다.", "date": "", "evidence_source_id": "news_005380_ca13a7b75e04abc2", "evidence_source_type": "news", "evidence_source_url": "http://www.the-biz.co.kr/news/articleView.html?idxno=720399", "evidence_published_at": "2026-05-12T09:50:00+09:00"}}

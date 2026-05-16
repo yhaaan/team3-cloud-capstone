@@ -27,7 +27,7 @@ def chat(req: ChatRequest):
 """
 
     graph = {
-        "center":"애플",
+        "center":"4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
         "nodes": [
             {
                 "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
@@ -67,6 +67,6 @@ def chat(req: ChatRequest):
 
     return {
         "answer": answer,
-        "center": True,
+        "has_center": True,
         "graph": graph
     }

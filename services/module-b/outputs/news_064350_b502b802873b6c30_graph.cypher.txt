@@ -1,0 +1,64 @@
+// node: company_hyundai_rotem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: company_korean_air
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_korean_air", "type": "Company", "name": "대한항공", "stock_code": "003490"}
+
+// node: company_hd_hyundai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd_hyundai", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_kia
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_samsung_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: person_yi_ung_bae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yi_ung_bae", "type": "Person", "name": "이용배", "role_raw": "현대로템 대표이사", "affiliated_company": "company_hyundai_rotem", "role": "CEO", "role_label": "대표이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yi_ung_bae", "to_id": "company_hyundai_rotem", "properties": {"evidence": "협약식에는 이용배 현대로템 대표이사와 브라이언 쉼프 안두릴 공동창업자 겸 최고경영자(CEO) 등 양사 관계자들이 참석했다.", "date": "", "evidence_source_id": "news_064350_b502b802873b6c30", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2582436", "evidence_published_at": "2026-05-07T17:50:00+09:00"}}

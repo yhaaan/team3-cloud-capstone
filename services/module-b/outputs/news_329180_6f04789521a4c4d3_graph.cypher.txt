@@ -1,0 +1,56 @@
+// node: company_hd한국조선해양
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+
+// node: company_hd현대중공업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_삼성중공업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+
+// node: company_hd현대
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+
+// node: company_hd현대마린엔진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+
+// node: company_hd현대에너지솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_hd현대", "to_id": "company_hd한국조선해양", "properties": {"evidence": "HD현대는 HD한국조선해양을 중심으로 인도 남부 대형 그린필드 조선소 개발에 참여할 예정이다.", "date": "", "evidence_source_id": "news_329180_6f04789521a4c4d3", "evidence_source_type": "news", "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616", "evidence_published_at": "2026-05-07T17:06:00+09:00"}}
