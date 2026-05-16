@@ -450,3 +450,150 @@ raw_company_name: DART 표에 적힌 원래 상호명
 matched_company_name: listed_companies.xlsx와 매칭된 상장사명
 matched_stock_code: 매칭된 상장사의 종목코드
 matched_market: 매칭된 상장사의 시장 구분
+
+
+
+9. 계열회사 등에 관한 사항 공시
+
+
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "corp_code": "",
+  "source": "dart",
+  "dataset": "affiliate_status",
+  "dataset_label": "계열회사 등에 관한 사항",
+  "report_nm": "",
+  "rcept_no": "",
+  "rcept_dt": "",
+  "document_count": 0,
+  "target_section_count": 0,
+  "raw_record_count": 0,
+  "record_count": 0,
+  "meaningful_record_count": 0,
+  "normalized_records": [],
+  "text_blocks": [],
+  "listed_affiliates": [],
+  "affiliate_candidates": [],
+  "mentioned_entities": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "raw_file_path": "",
+  "generated_at": ""
+}
+속성 의미:
+
+doc_id: 문서 고유 ID
+company_name: 공시를 낸 회사명
+stock_code: 공시를 낸 회사의 종목코드
+corp_code: 공시를 낸 회사의 DART 기업코드
+source: 데이터 출처, 현재는 dart
+dataset: 데이터 종류, 현재는 affiliate_status
+dataset_label: 사람이 읽기 쉬운 데이터명, 계열회사 등에 관한 사항
+report_nm: 원천 사업보고서명
+rcept_no: 사업보고서 접수번호
+rcept_dt: 사업보고서 접수일
+document_count: raw에서 추출된 대상 문서 수
+target_section_count: IX. 계열회사 등에 관한 사항 섹션 수
+raw_record_count: IX 섹션에서 추출한 전체 표 행 수
+record_count: 상장사 목록과 매칭되어 최종 저장된 행 수
+meaningful_record_count: 의미 있는 최종 행 수, 현재는 record_count와 동일
+normalized_records: 상장사로 확인된 계열회사 관련 표 행
+text_blocks: LLM이 읽기 쉽도록 만든 문장형 텍스트 블록
+listed_affiliates: 상장사로 매칭된 계열회사 목록
+affiliate_candidates: 상장 계열회사 후보명 목록
+mentioned_entities: 본문에서 언급된 상장 계열회사 후보명 목록
+relation_keywords_detected: 탐지된 관계 키워드
+relation_relevance_score: 계열회사 관계 후보 점수
+is_relation_candidate: 관계 후보 문서 여부
+raw_file_path: 원본 raw 파일 경로
+generated_at: 정제 파일 생성 시각
+
+
+
+10. 사업의 개요 + 주요 제품 및 서비스 공시
+
+
+{
+  "doc_id": "",
+  "company_name": "",
+  "stock_code": "",
+  "corp_code": "",
+  "source": "dart",
+  "dataset": "business_segments",
+  "dataset_label": "사업부문 및 주요 제품/서비스",
+  "sections_used": [],
+  "report_nm": "",
+  "rcept_no": "",
+  "rcept_dt": "",
+  "document_count": 0,
+  "target_section_count": 0,
+  "record_count": 0,
+  "meaningful_record_count": 0,
+  "normalized_records": [],
+  "text_blocks": [],
+  "industry_keywords": [],
+  "product_service_keywords": [],
+  "value_chain_keywords": [],
+  "mentioned_listed_companies": [],
+  "mentioned_entities": [],
+  "relation_keywords_detected": [],
+  "relation_relevance_score": 0.0,
+  "is_relation_candidate": false,
+  "raw_file_path": "",
+  "generated_at": ""
+}
+속성 의미:
+
+doc_id: 문서 고유 ID
+company_name: 공시를 낸 회사명
+stock_code: 공시를 낸 회사의 종목코드
+corp_code: 공시를 낸 회사의 DART 기업코드
+source: 데이터 출처, 현재는 dart
+dataset: 데이터 종류, 현재는 business_segments
+dataset_label: 사람이 읽기 쉬운 데이터명, 사업부문 및 주요 제품/서비스
+sections_used: 정제에 사용한 사업보고서 섹션 목록
+report_nm: 원천 사업보고서명
+rcept_no: 사업보고서 접수번호
+rcept_dt: 사업보고서 접수일
+document_count: raw에서 추출된 대상 문서 수
+target_section_count: 수집된 대상 섹션 수
+record_count: 정제된 표 행 또는 문장 레코드 수
+meaningful_record_count: 의미 있는 정제 레코드 수, 현재는 record_count와 동일
+normalized_records: 사업부문/제품/서비스 관련 표 행 또는 문장 데이터
+text_blocks: LLM이 읽기 쉽도록 만든 문장형 텍스트 블록
+industry_keywords: 산업 관련 키워드
+product_service_keywords: 제품/서비스 관련 키워드
+value_chain_keywords: 공급망/밸류체인 관련 키워드
+mentioned_listed_companies: 본문에서 언급된 상장사 후보
+mentioned_entities: 본문에서 언급된 상장사명 목록
+relation_keywords_detected: 탐지된 관계 추론용 키워드
+relation_relevance_score: 관계 추론 후보 점수
+is_relation_candidate: 관계 후보 문서 여부
+raw_file_path: 원본 raw 파일 경로
+generated_at: 정제 파일 생성 시각
+
+normalized_records 구조
+
+{
+  "record_type": "table_row",
+  "section_key": "",
+  "section_title": "",
+  "source_filename": "",
+  "table_index": 0,
+  "row_index": 0,
+  "cells": [],
+  "row_text": ""
+}
+속성 의미:
+
+record_type: 레코드 유형, 표 행이면 table_row
+section_key: 어느 섹션에서 나온 데이터인지 구분하는 키
+section_title: 원문 섹션 제목
+source_filename: 원문 XML 파일명
+table_index: 해당 섹션 안에서 몇 번째 표인지
+row_index: 해당 표 안에서 몇 번째 행인지
+cells: 표의 각 칸 내용
+row_text: 표 행을 한 줄 문자열로 합친 값
