@@ -75,6 +75,15 @@ def build_argument_parser() -> argparse.ArgumentParser:
         help="Process only the first N documents. Useful for smoke tests.",
     )
     parser.add_argument(
+        "--datasets",
+        nargs="+",
+        default=None,
+        help=(
+            "Process only documents whose dataset is in this list. "
+            "Example: --datasets major_issue_report_detail consolidated_subsidiary_status"
+        ),
+    )
+    parser.add_argument(
         "--start-from",
         default=None,
         help="Start processing from this source_id.",
@@ -103,6 +112,7 @@ def main() -> None:
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     documents = iter_input_documents(args.input)
+    documents = filter_documents_by_dataset(documents, args.datasets)
     documents = slice_documents(
         documents,
         start_from=args.start_from,
@@ -183,6 +193,25 @@ def slice_documents(
     if start_after:
         index += 1
     return documents[index:]
+
+
+def filter_documents_by_dataset(
+    documents: list[dict[str, str]],
+    datasets: list[str] | None = None,
+) -> list[dict[str, str]]:
+    if not datasets:
+        return documents
+
+    allowed_datasets = set(datasets)
+    return [
+        doc
+        for doc in documents
+        if doc.get("dataset") in allowed_datasets
+        or (
+            isinstance(doc.get("metadata"), dict)
+            and doc["metadata"].get("dataset") in allowed_datasets
+        )
+    ]
 
 
 if __name__ == "__main__":

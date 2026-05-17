@@ -41,12 +41,30 @@ def build_extraction_prompt(doc: dict[str, Any]) -> str:
         for company in allowed_companies
     ) or "- No listed company from the whitelist was detected in this document."
 
+    business_inference_rules = """
+Business inference extraction rules:
+- Entity.type may include Company, Person, Event, Industry, BusinessArea, and ProductService.
+- Relation.type may include ACQUIRES, INVESTS_IN, APPOINTED_TO, AFFILIATED_WITH, BELONGS_TO, OPERATES_IN, PRODUCES, and PART_OF.
+- For business_segments documents, extract specific BusinessArea entities when explicitly supported by text_blocks/content.
+- For business_segments documents, extract ProductService entities for concrete products or services when explicitly supported by text_blocks/content.
+- BusinessArea and ProductService names must be concise noun phrases, not full sentences.
+- OPERATES_IN must use Company -> BusinessArea.
+- PRODUCES must use Company -> ProductService.
+- PART_OF must use BusinessArea -> Industry or ProductService -> BusinessArea.
+- Use BELONGS_TO only for broad Company -> Industry links. Use OPERATES_IN/PRODUCES for business-segment details.
+""".strip()
+
     return f"""
+{business_inference_rules}
+
 Listed-company whitelist rules:
 - Only create Company entities for companies in the allowed listed-company set below.
 - Do not create Company entities for unlisted companies, foreign companies, subsidiaries, public agencies, organizations, or generic institutions that are not in the allowed set.
 - Do not create any relation if either endpoint would be an unlisted Company.
 - When creating a Company entity, use the exact company_name from the allowed set as Company.name.
+- For business_segments documents, fill Company.description with one concise Korean sentence based only on text_blocks/content.
+- Company.description must summarize main business areas, products, or services in 120 Korean characters or less.
+- Do not copy full text into Company.description. Omit description if the document does not provide clear business details.
 - If the document mentions no allowed listed company, return the source_id with empty entities and relations.
 
 Allowed listed companies detected for this document:

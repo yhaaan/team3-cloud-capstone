@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from company_whitelist import CompanyWhitelist
+from company_whitelist import CompanyWhitelist, normalize_stock_code
 
 
 COMPANY_SUFFIX_PATTERN = re.compile(
@@ -31,6 +31,9 @@ def normalize_graph_roles(
     company_whitelist: CompanyWhitelist | None = None,
     source_doc: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    if company_whitelist is not None:
+        canonicalize_company_entities(graph_data, company_whitelist)
+
     for entity in graph_data.get("entities", []):
         if entity.get("type") != "Person":
             continue
@@ -62,6 +65,47 @@ def normalize_graph_roles(
         source_doc=source_doc,
     )
     return graph_data
+
+
+def canonicalize_company_entities(
+    graph_data: dict[str, Any],
+    company_whitelist: CompanyWhitelist,
+) -> None:
+    id_mapping: dict[str, str] = {}
+
+    for entity in graph_data.get("entities", []):
+        if entity.get("type") != "Company":
+            continue
+
+        original_id = str(entity.get("id") or "").strip()
+        listed_company = company_whitelist.find(
+            name=str(entity.get("name") or ""),
+            stock_code=str(entity.get("stock_code") or ""),
+        )
+        if listed_company is None:
+            continue
+
+        canonical_id = build_company_id(listed_company.stock_code)
+        entity["id"] = canonical_id
+        entity["name"] = listed_company.company_name
+        entity["stock_code"] = normalize_stock_code(listed_company.stock_code)
+        if original_id and original_id != canonical_id:
+            id_mapping[original_id] = canonical_id
+
+    if not id_mapping:
+        return
+
+    for relation in graph_data.get("relations", []):
+        from_id = str(relation.get("from") or "").strip()
+        to_id = str(relation.get("to") or "").strip()
+        if from_id in id_mapping:
+            relation["from"] = id_mapping[from_id]
+        if to_id in id_mapping:
+            relation["to"] = id_mapping[to_id]
+
+
+def build_company_id(stock_code: str) -> str:
+    return f"company_{normalize_stock_code(stock_code)}"
 
 
 def normalize_role(raw_role: str) -> tuple[str, str]:
@@ -207,13 +251,21 @@ def infer_entity_type_from_id(entity_id: str) -> str | None:
         return "Person"
     if entity_id.startswith("industry_"):
         return "Industry"
+    if entity_id.startswith("business_area_"):
+        return "BusinessArea"
+    if entity_id.startswith("product_service_"):
+        return "ProductService"
     if entity_id.startswith("event_"):
         return "Event"
     return None
 
 
 def infer_name_from_id(entity_id: str, entity_type: str) -> str:
-    prefix = f"{entity_type.lower()}_"
+    prefixes = {
+        "BusinessArea": "business_area_",
+        "ProductService": "product_service_",
+    }
+    prefix = prefixes.get(entity_type, f"{entity_type.lower()}_")
     raw_name = entity_id.removeprefix(prefix).replace("_", " ").strip()
     if not raw_name:
         return entity_id
