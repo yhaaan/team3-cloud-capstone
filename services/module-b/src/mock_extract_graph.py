@@ -17,6 +17,33 @@ MODULE_B_DIR = BASE_DIR.parent
 ROOT_DIR = MODULE_B_DIR.parent.parent
 GRAPH_SCHEMA_PATH = ROOT_DIR / "schemas" / "graph_schema.json"
 
+BUSINESS_AREA_KEYWORDS = [
+    "HBM",
+    "cloud",
+    "battery",
+    "shipbuilding",
+    "construction",
+    "logistics",
+    "insurance",
+    "platform",
+    "semiconductor",
+    "bio",
+    "energy",
+    "AI",
+]
+
+PRODUCT_SERVICE_KEYWORDS = [
+    "DRAM",
+    "OLED",
+    "EV battery",
+    "LNG carrier",
+    "cloud service",
+    "securities brokerage",
+    "smartphone",
+    "display",
+    "memory",
+]
+
 RELATION_KEYWORDS = {
     "ACQUIRES": ["acquire", "acquisition", "merger", "인수", "합병"],
     "INVESTS_IN": ["invest", "investment", "투자", "출자"],
@@ -36,7 +63,12 @@ def normalize_name(value: str) -> str:
 
 
 def build_entity_id(entity_type: str, name: str) -> str:
-    return f"{entity_type.lower()}_{normalize_name(name)}"
+    prefixes = {
+        "business_area": "business_area",
+        "product_service": "product_service",
+    }
+    prefix = prefixes.get(entity_type.lower(), entity_type.lower())
+    return f"{prefix}_{normalize_name(name)}"
 
 
 def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
@@ -52,6 +84,8 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
     ]
     people = collect_people(doc, content)
     industries = collect_industries(content)
+    business_areas = collect_business_areas(doc, content)
+    product_services = collect_product_services(doc, content)
 
     entities: list[dict[str, Any]] = []
     relations: list[dict[str, Any]] = []
@@ -76,6 +110,24 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
             {"id": build_entity_id("industry", industry), "type": "Industry", "name": industry}
         )
 
+    for business_area in business_areas:
+        entities.append(
+            {
+                "id": build_entity_id("business_area", business_area),
+                "type": "BusinessArea",
+                "name": business_area,
+            }
+        )
+
+    for product_service in product_services:
+        entities.append(
+            {
+                "id": build_entity_id("product_service", product_service),
+                "type": "ProductService",
+                "name": product_service,
+            }
+        )
+
     if len(companies) >= 2 and has_relation_keyword(content, "ACQUIRES"):
         relations.append(
             build_relation("ACQUIRES", "company", companies[0], "company", companies[1], content)
@@ -90,6 +142,58 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
         for industry in industries:
             relations.append(
                 build_relation("BELONGS_TO", "company", companies[0], "industry", industry, content)
+            )
+
+    if companies and business_areas:
+        for business_area in business_areas:
+            relations.append(
+                build_relation(
+                    "OPERATES_IN",
+                    "company",
+                    companies[0],
+                    "business_area",
+                    business_area,
+                    content,
+                )
+            )
+
+    if companies and product_services:
+        for product_service in product_services:
+            relations.append(
+                build_relation(
+                    "PRODUCES",
+                    "company",
+                    companies[0],
+                    "product_service",
+                    product_service,
+                    content,
+                )
+            )
+
+    if business_areas and industries:
+        for business_area in business_areas:
+            relations.append(
+                build_relation(
+                    "PART_OF",
+                    "business_area",
+                    business_area,
+                    "industry",
+                    industries[0],
+                    content,
+                )
+            )
+
+    if product_services and business_areas:
+        for product_service in product_services:
+            relations.append(
+                build_relation(
+                    "PART_OF",
+                    "product_service",
+                    product_service,
+                    "business_area",
+                    business_areas[0],
+                    content,
+                )
             )
 
     if companies and people and has_relation_keyword(content, "APPOINTED_TO"):
@@ -151,6 +255,30 @@ def collect_industries(content: str) -> list[str]:
     industries = ["AI", "cloud", "semiconductor", "battery", "bio", "shipbuilding", "energy", "IT"]
     lower_content = content.lower()
     return [industry for industry in industries if industry.lower() in lower_content]
+
+
+def collect_business_areas(doc: dict[str, Any], content: str) -> list[str]:
+    if doc.get("dataset") != "business_segments":
+        return []
+
+    lower_content = content.lower()
+    return [
+        keyword
+        for keyword in BUSINESS_AREA_KEYWORDS
+        if keyword.lower() in lower_content
+    ]
+
+
+def collect_product_services(doc: dict[str, Any], content: str) -> list[str]:
+    if doc.get("dataset") != "business_segments":
+        return []
+
+    lower_content = content.lower()
+    return [
+        keyword
+        for keyword in PRODUCT_SERVICE_KEYWORDS
+        if keyword.lower() in lower_content
+    ]
 
 
 def build_relation(

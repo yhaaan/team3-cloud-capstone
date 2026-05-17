@@ -1,0 +1,23 @@
+// node: company_삼성물산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성물산", "type": "Company", "name": "삼성물산"}
+
+// node: company_삼성바이오로직스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스"}
+
+// node: company_삼성에피스홀딩스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_삼성에피스홀딩스", "type": "Company", "name": "삼성에피스홀딩스"}

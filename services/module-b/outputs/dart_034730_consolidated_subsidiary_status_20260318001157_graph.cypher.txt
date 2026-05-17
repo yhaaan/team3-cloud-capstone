@@ -1,0 +1,109 @@
+// node: company_sk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_sk_inoe_be_isyeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_inoe_be_isyeon", "type": "Company", "name": "SK이노베이션", "stock_code": "096770"}
+
+// node: company_yuil_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_yuil_robotics", "type": "Company", "name": "유일로보틱스", "stock_code": "388720"}
+
+// node: company_sk_ie_itek_nologi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_ie_itek_nologi", "type": "Company", "name": "SK아이이테크놀로지", "stock_code": "361610"}
+
+// node: company_sk_bai_opam
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_bai_opam", "type": "Company", "name": "SK바이오팜", "stock_code": "326030"}
+
+// node: company_sk_osyeon_peullanteu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_sk_osyeon_peullanteu", "type": "Company", "name": "SK오션플랜트", "stock_code": "100090"}
+
+// node: company_skc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_skc", "type": "Company", "name": "SKC", "stock_code": "011790"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_sk_inoe_be_isyeon", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_yuil_robotics", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_sk_ie_itek_nologi", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_sk_bai_opam", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_sk_osyeon_peullanteu", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_sk", "to_id": "company_skc", "properties": {"evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}

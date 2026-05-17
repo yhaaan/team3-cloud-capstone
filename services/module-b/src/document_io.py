@@ -180,7 +180,8 @@ def normalize_module_a_dart_document(doc: dict[str, Any], source_path: Path) -> 
     rcept_no = str(doc.get("rcept_no") or "").strip()
     dataset_label = str(doc.get("dataset_label") or doc.get("dataset") or "DART disclosure")
     company_name = str(doc.get("company_name") or doc.get("corp_name") or "").strip()
-    title = " ".join(part for part in [company_name, dataset_label] if part).strip()
+    report_name = str(doc.get("report_nm") or "").strip()
+    title = " ".join(part for part in [company_name, report_name or dataset_label] if part).strip()
 
     return {
         "source_id": str(doc["doc_id"]),
@@ -207,11 +208,24 @@ def normalize_module_a_dart_document(doc: dict[str, Any], source_path: Path) -> 
             "dataset_label": doc.get("dataset_label"),
             "bsns_year": doc.get("bsns_year"),
             "reprt_code": doc.get("reprt_code"),
+            "report_nm": doc.get("report_nm"),
+            "event_type": doc.get("event_type"),
             "rcept_no": doc.get("rcept_no"),
+            "rcept_dt": doc.get("rcept_dt"),
+            "document_count": doc.get("document_count"),
+            "target_section_count": doc.get("target_section_count"),
+            "raw_record_count": doc.get("raw_record_count"),
             "record_count": doc.get("record_count"),
             "meaningful_record_count": doc.get("meaningful_record_count"),
             "normalized_records": doc.get("normalized_records"),
+            "plain_text": doc.get("plain_text"),
             "text_blocks": doc.get("text_blocks"),
+            "counterparty_candidates": doc.get("counterparty_candidates", []),
+            "amount_candidates": doc.get("amount_candidates", []),
+            "ratio_candidates": doc.get("ratio_candidates", []),
+            "date_candidates": doc.get("date_candidates", []),
+            "listed_subsidiaries": doc.get("listed_subsidiaries", []),
+            "subsidiary_candidates": doc.get("subsidiary_candidates", []),
             "mentioned_entities": doc.get("mentioned_entities", []),
             "relation_keywords_detected": doc.get("relation_keywords_detected", []),
             "relation_relevance_score": doc.get("relation_relevance_score"),
@@ -231,8 +245,13 @@ def build_dart_content(doc: dict[str, Any]) -> str:
     if records:
         return json.dumps(records, ensure_ascii=False)
 
+    plain_text = str(doc.get("plain_text") or "").strip()
+    if plain_text:
+        return plain_text
+
     summary_parts = [
         doc.get("company_name"),
+        doc.get("report_nm"),
         doc.get("dataset_label") or doc.get("dataset"),
         doc.get("rcept_no"),
         doc.get("bsns_year"),
