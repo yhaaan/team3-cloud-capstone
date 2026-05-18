@@ -1,11 +1,11 @@
 import os
-from typing import Optional
+from typing import List, Optional
 import numpy as np
 from openai import OpenAI
 from pydantic import BaseModel
 from sklearn.metrics.pairwise import cosine_similarity
 from app.agent.db_handler import VectorHandler, Neo4jHandler 
-from app.schemas import GraphDBSearchResponse
+from app.schemas import GraphDBSearchResponse, CypherGenerationResponse
 from app.config import Config
 from app.utils import get_embeddings
 
@@ -62,9 +62,9 @@ class KnowledgeRetriever:
 
 
     # DB 병렬 탐색 함수
-    def get_corporate_context(self, query: str, cypher_query: str) -> DBSearchResponse:
+    def get_corporate_context(self, query: str, cypher_queries: List[str], center_entity_name: str) -> DBSearchResponse:
         vector_search_result = self.chroma.search_vector_db(query)
-        graph_search_result = self.neo4j.search_graph_db(cypher_query)
+        graph_search_result = self.neo4j.search_graph_db(cypher_queries, center_entity_name)
 
         return DBSearchResponse(
             vector_context=vector_search_result,
@@ -134,8 +134,8 @@ class KnowledgeRetriever:
 
         print(f"{extracted_name} : {similarities[best_idx]}")
         
-        # 임계값 설정 (OpenAI 3-small 기준 0.4~0.45가 적당)
-        if similarities[best_idx] < 0.42:
+        # 임계값 설정
+        if similarities[best_idx] < 0.5:
             return None
             
         return official_names[best_idx]

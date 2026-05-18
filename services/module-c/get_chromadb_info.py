@@ -9,7 +9,7 @@ client = chromadb.PersistentClient(path="services/module-b/local_db/chroma")
 collection = client.get_collection(name="module_b_chunks")
 
 # 3. 딱 5개만 뽑아서 메타데이터와 내용 확인하기
-results = collection.peek(limit=5)
+results = collection.peek(limit=10)
 
 print("--- [Metadata 확인] ---")
 for meta in results['metadatas']:
