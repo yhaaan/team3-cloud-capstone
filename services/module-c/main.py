@@ -37,7 +37,7 @@ async def chat(request: ChatRequest):
 
         return ChatResponse(
             answer=response.content,
-            has_center=False,
+            how="",
             graph=None
         )
 
@@ -47,7 +47,7 @@ async def chat(request: ChatRequest):
     
     return ChatResponse(
         answer=result.answer,
-        has_center=result.has_center,
+        how=result.how,
         graph=result.graph
     )
 

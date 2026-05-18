@@ -821,15 +821,19 @@ for msg in st.session_state.messages:
 
     if msg_type == "text":
         if msg["role"] == "user":
+            # 문자열 포맷팅 안에서 HTML 태그와 마kp다운 컨텐츠를 결합합니다.
             st.markdown(
                 f'<div class="question-box">{msg["content"]}</div>',
                 unsafe_allow_html=True
             )
         else:
+            # [핵심] replace(chr(10), "<br>")를 절대 쓰지 마세요!
+            # HTML 가두리 안에서도 마크다운이 터지도록 줄바꿈(\n) 문자열 그대로 박스 안에 주입합니다.
             st.markdown(
-                f'<div class="answer-box">{msg["content"].replace(chr(10), "<br>")}</div>',
+                f'<div class="answer-box">\n\n{msg["content"]}\n\n</div>',
                 unsafe_allow_html=True
             )
+            
 
     elif msg_type == "network":
         st.markdown(
@@ -878,7 +882,7 @@ if question:
                     "rag_on": st.session_state.rag_on,
                     "recent_history": recent_history
                 },
-                timeout=30
+                timeout=150
             )
 
             response.raise_for_status()
