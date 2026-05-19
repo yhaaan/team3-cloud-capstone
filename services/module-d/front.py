@@ -2,6 +2,8 @@ import streamlit.components.v1 as components
 from pyvis.network import Network
 import streamlit as st
 import requests
+import pandas as pd
+import plotly.express as px
 
 st.set_page_config(
     page_title="클라우드",
@@ -14,7 +16,6 @@ st.set_page_config(
 BACKEND_URL = "http://127.0.0.1:8000/chat"
 # Backend =================
 
-
 # Session State ===========
 if "history" not in st.session_state:
     st.session_state.history = []
@@ -26,41 +27,45 @@ if "rag_on" not in st.session_state:
     st.session_state.rag_on = False
 # Session State ===========
 
+# Graph Colors ============
+PASTEL_COLORS = [
+    {"background": "#e8f0ff", "border": "#7aa7ff"},
+    {"background": "#e8fff1", "border": "#67d391"},
+    {"background": "#fff4e8", "border": "#ffb366"},
+    {"background": "#f3e8ff", "border": "#bb86fc"},
+    {"background": "#ffe8ef", "border": "#ff8fb1"},
+    {"background": "#e8fbff", "border": "#5ccfe6"},
+]
+
+PLOTLY_COLORS = [color["background"] for color in PASTEL_COLORS]
+PLOTLY_LINE_COLORS = [color["border"] for color in PASTEL_COLORS]
+# Graph Colors ============
+
 
 # PyVis Graph Function ====
-def create_network_graph(graph_data, has_center=False):
+def create_network_graph(graph_data, how):
+    is_center_graph = how == "netcenter"
 
     net = Network(
         height="650px",
         width="100%",
         bgcolor="#ffffff",
         font_color="#222222",
-        directed=False
+        directed=not is_center_graph
     )
 
-    center_id = graph_data.get("center") if has_center else None
-
-    pastel_colors = [
-        {"background": "#e8f0ff", "border": "#7aa7ff"},
-        {"background": "#e8fff1", "border": "#67d391"},
-        {"background": "#fff4e8", "border": "#ffb366"},
-        {"background": "#f3e8ff", "border": "#bb86fc"},
-        {"background": "#ffe8ef", "border": "#ff8fb1"},
-        {"background": "#e8fbff", "border": "#5ccfe6"},
-    ]
-
+    center_id = graph_data.get("center") if is_center_graph else None
     node_color_map = {}
 
-    # =========================
-    # Nodes
-    # =========================
     for idx, node in enumerate(graph_data.get("nodes", [])):
+        node_id = node.get("id")
+        node_name = node.get("name", node.get("label", node_id))
 
-        node_id = node["id"]
-        node_name = node.get("name", node_id)
+        if not node_id:
+            continue
 
         is_center_node = (
-            has_center
+            is_center_graph
             and center_id is not None
             and node_id == center_id
         )
@@ -71,12 +76,16 @@ def create_network_graph(graph_data, has_center=False):
                 "border": "#cfcfcf"
             }
             font_size = 34
-            border_width = 2
+            border_width = 3
+            min_width = 90
+            min_height = 46
             title = f"<b>{node_name}</b><br>중심 노드"
         else:
-            node_color = pastel_colors[idx % len(pastel_colors)]
+            node_color = PASTEL_COLORS[idx % len(PASTEL_COLORS)]
             font_size = 20
             border_width = 1
+            min_width = 70
+            min_height = 35
             title = f"<b>{node_name}</b>"
 
         node_color_map[node_id] = node_color
@@ -93,28 +102,27 @@ def create_network_graph(graph_data, has_center=False):
                 "bold": True
             },
             borderWidth=border_width,
-            borderRadius=999,
             widthConstraint={
-                "minimum": 80 if is_center_node else 70
+                "minimum": min_width
             },
             heightConstraint={
-                "minimum": 42 if is_center_node else 35
+                "minimum": min_height
             },
             title=title
         )
 
-    # =========================
-    # Links
-    # =========================
-    for link in graph_data.get("links", []):
+    links = graph_data.get("links", graph_data.get("linkes", []))
 
-        source = link["source"]
-        target = link["target"]
-        relation = link.get("relation", "")
+    for link in links:
+        source = link.get("source")
+        target = link.get("target")
+        relation = link.get("relation", link.get("label", ""))
 
-        edge_base_node = source
+        if not source or not target:
+            continue
+
         edge_color = node_color_map.get(
-            edge_base_node,
+            source,
             {"border": "#7aa7ff"}
         )["border"]
 
@@ -128,7 +136,7 @@ def create_network_graph(graph_data, has_center=False):
                 "highlight": edge_color,
                 "hover": edge_color
             },
-            arrows="to" if not has_center else "",
+            arrows="" if is_center_graph else "to",
             arrowStrikethrough=False,
             font={
                 "size": 18,
@@ -140,9 +148,6 @@ def create_network_graph(graph_data, has_center=False):
             title=f"관계: {relation}"
         )
 
-    # =========================
-    # Options
-    # =========================
     net.set_options("""
     const options = {
       "nodes": {
@@ -155,24 +160,20 @@ def create_network_graph(graph_data, has_center=False):
           "y": 4
         }
       },
-    
       "edges": {
         "smooth": {
           "enabled": false
         },
         "length": 400
       },
-    
       "physics": {
         "enabled": true,
         "solver": "repulsion",
-    
         "stabilization": {
           "enabled": true,
           "iterations": 220,
           "fit": true
         },
-    
         "repulsion": {
           "nodeDistance": 120,
           "centralGravity": 0.08,
@@ -180,7 +181,6 @@ def create_network_graph(graph_data, has_center=False):
           "springConstant": 0.03
         }
       },
-    
       "interaction": {
         "hover": true,
         "dragNodes": true,
@@ -209,10 +209,155 @@ def create_network_graph(graph_data, has_center=False):
     """
 
     html = html.replace("</body>", search_script + "</body>")
-
     return html
 # PyVis Graph Function ====
 
+
+# Plotly Graph Function ===
+def create_plotly_graph(graph_data, how):
+    title = graph_data.get("title", "")
+
+    if how == "pie":
+        df = pd.DataFrame({
+            "label": graph_data.get("labels", []),
+            "value": graph_data.get("values", [])
+        })
+
+        fig = px.pie(
+            df,
+            names="label",
+            values="value",
+            title=title,
+            color_discrete_sequence=PLOTLY_COLORS
+        )
+
+        fig.update_traces(
+            hole=0.42,
+            pull=[0.02] * len(df),
+            textinfo="percent+label",
+            textposition="inside",
+            marker=dict(
+                line=dict(
+                    color="white",
+                    width=2
+                )
+            )
+        )
+
+    elif how == "bar":
+        labels = graph_data.get("labels", {
+            "x": "x",
+            "y": "y"
+        })
+
+        df = pd.DataFrame({
+            "x": graph_data.get("x", []),
+            "y": graph_data.get("y", [])
+        })
+
+        fig = px.bar(
+            df,
+            x="x",
+            y="y",
+            text="y",
+            color="x",
+            title=title,
+            labels=labels,
+            color_discrete_sequence=PLOTLY_COLORS
+        )
+
+        fig.update_traces(
+            textposition="outside",
+            marker=dict(
+                line=dict(
+                    color="white",
+                    width=1.5
+                )
+            )
+        )
+
+    elif how == "line":
+        labels = graph_data.get("labels", {
+            "x": "x",
+            "y": "y",
+            "name": "name"
+        })
+
+        rows = []
+
+        for item in graph_data.get("data", []):
+            name = item.get("name", "데이터")
+            x_values = item.get("x", [])
+            y_values = item.get("y", [])
+
+            for x, y in zip(x_values, y_values):
+                rows.append({
+                    "x": x,
+                    "y": y,
+                    "name": name
+                })
+
+        df = pd.DataFrame(rows)
+
+        fig = px.line(
+            df,
+            x="x",
+            y="y",
+            color="name",
+            markers=True,
+            title=title,
+            labels=labels,
+            color_discrete_sequence=PLOTLY_LINE_COLORS
+        )
+
+        fig.update_traces(
+            line=dict(width=3),
+            marker=dict(size=8)
+        )
+
+        fig.update_layout(
+            legend_title_text=labels.get("name", "name")
+        )
+
+    else:
+        return None
+
+    fig.update_layout(
+        height=520,
+        margin=dict(
+            l=30,
+            r=30,
+            t=60,
+            b=30
+        ),
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        font=dict(
+            family="Arial",
+            size=14,
+            color="#323232"
+        ),
+        legend=dict(
+            bgcolor="rgba(0,0,0,0)"
+        ),
+        showlegend=False if how in ["pie", "bar"] else True
+    )
+
+    if how != "pie":
+        fig.update_xaxes(
+            showgrid=True,
+            gridcolor="#eeeeee",
+            zeroline=False
+        )
+
+        fig.update_yaxes(
+            showgrid=True,
+            gridcolor="#eeeeee",
+            zeroline=False
+        )
+
+    return fig
+# Plotly Graph Function ===
 
 # CSS 제거 ================
 st.markdown("""
@@ -486,9 +631,7 @@ body:has(.question-box) [data-testid="stChatInput"] {{
     white-space: nowrap;
     pointer-events: none;
 }}
-/* =========================
-   PC Sidebar Offset
-========================= */
+
 @media (min-width: 769px) {{
 
     :root {{
@@ -532,6 +675,7 @@ body:has(.question-box) [data-testid="stChatInput"] {{
         transition: left 300ms ease;
     }}
 }}
+
 @media (max-width: 768px) {{
     .block-container {{
         padding-top: 5rem;
@@ -646,7 +790,6 @@ with st.sidebar:
                 st.rerun()
 # Sidebar =================
 
-
 # Main UI =================
 is_chat_started = len(st.session_state.messages) > 0
 
@@ -678,22 +821,44 @@ for msg in st.session_state.messages:
 
     if msg_type == "text":
         if msg["role"] == "user":
+            # 문자열 포맷팅 안에서 HTML 태그와 마kp다운 컨텐츠를 결합합니다.
             st.markdown(
                 f'<div class="question-box">{msg["content"]}</div>',
                 unsafe_allow_html=True
             )
         else:
+            # [핵심] replace(chr(10), "<br>")를 절대 쓰지 마세요!
+            # HTML 가두리 안에서도 마크다운이 터지도록 줄바꿈(\n) 문자열 그대로 박스 안에 주입합니다.
             st.markdown(
-                f'<div class="answer-box">{msg["content"].replace(chr(10), "<br>")}</div>',
+                f'<div class="answer-box">\n\n{msg["content"]}\n\n</div>',
                 unsafe_allow_html=True
             )
+            
 
     elif msg_type == "network":
         st.markdown(
-            '<div class="graph-wrapper">',
+            '<div class="network-card graph-wrapper">',
             unsafe_allow_html=True
         )
         components.html(msg["content"], height=680)
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
+
+    elif msg_type == "plotly":
+        st.markdown(
+            '<div class="network-card">',
+            unsafe_allow_html=True
+        )
+        st.plotly_chart(
+            msg["content"],
+            use_container_width=True
+        )
+        st.markdown(
+            '</div>',
+            unsafe_allow_html=True
+        )
 
 
 # Chat Input ==============
@@ -708,7 +873,6 @@ if question:
 
     with st.spinner("답변을 생성하는 중입니다..."):
         try:
-            # 현재 질문 제외 4쌍(8개) 정도를 보냄
             recent_history = st.session_state.messages[:-1][-8:]
 
             response = requests.post(
@@ -718,14 +882,14 @@ if question:
                     "rag_on": st.session_state.rag_on,
                     "recent_history": recent_history
                 },
-                timeout=30
+                timeout=150
             )
 
             response.raise_for_status()
             data = response.json()
 
             answer = data.get("answer", "답변을 받지 못했습니다.")
-            has_center = data.get("has_center", False)
+            how = data.get("how")
             graph_data = data.get("graph")
 
             answer += f"""
@@ -739,17 +903,39 @@ if question:
                 "content": answer
             })
 
-            if graph_data:
-                graph_html = create_network_graph(
-                    graph_data=graph_data,
-                    has_center=has_center
-                )
+            if graph_data and how:
 
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "type": "network",
-                    "content": graph_html
-                })
+                if how in ["network", "netcenter"]:
+                    graph_html = create_network_graph(
+                        graph_data=graph_data,
+                        how=how
+                    )
+
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "type": "network",
+                        "content": graph_html
+                    })
+
+                elif how in ["pie", "bar", "line"]:
+                    fig = create_plotly_graph(
+                        graph_data=graph_data,
+                        how=how
+                    )
+
+                    if fig is not None:
+                        st.session_state.messages.append({
+                            "role": "assistant",
+                            "type": "plotly",
+                            "content": fig
+                        })
+
+                else:
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "type": "text",
+                        "content": f"지원하지 않는 그래프 형식입니다: {how}"
+                    })
 
         except Exception as e:
             error_message = f"""

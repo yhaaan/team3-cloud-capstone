@@ -20,14 +20,11 @@ class ChatRequest(BaseModel):
 
 @app.post("/chat")
 def chat(req: ChatRequest):
-    answer = f"""
-삼성전자 중심 관계 분석 결과입니다.
-
-삼성전자를 중심으로 여러 관계가 연결된다고 가정한 테스트 응답입니다.
-"""
+    answer = "중심 기반 관계 그래프 back_netcenter.py 테스트입니다."
 
     graph = {
-        "center":"4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
+        "center": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
+
         "nodes": [
             {
                 "id": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
@@ -46,6 +43,7 @@ def chat(req: ChatRequest):
                 "name": "애플"
             }
         ],
+
         "links": [
             {
                 "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
@@ -53,12 +51,12 @@ def chat(req: ChatRequest):
                 "relation": "BELONGS_TO"
             },
             {
-                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
-                "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:279",
+                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
+                "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
                 "relation": "BELONGS_TO"
             },
             {
-                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:1978",
+                "source": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:959",
                 "target": "4:0ffbdc19-ef92-4b85-9c3e-016e214bc51e:2958",
                 "relation": "BELONGS_TO"
             }
@@ -67,6 +65,6 @@ def chat(req: ChatRequest):
 
     return {
         "answer": answer,
-        "has_center": True,
+        "how": "netcenter",
         "graph": graph
     }

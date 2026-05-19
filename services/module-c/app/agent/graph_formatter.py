@@ -10,27 +10,28 @@ class GraphFormatter:
         unique_links: List[RelationLink] = []
         seen_links = set()
 
-        # 1. 노드 정보 수집 (n, m, p 모두 포함)
+        # 1. 노드 정보 수집
         for path_data in graph_structured_data:
             nodes_to_process = []
-            if 'n' in path_data: nodes_to_process.append(path_data['n'])
-            if 'm' in path_data: nodes_to_process.append(path_data['m'])
-            # 이제 process_data_for_all에서 p에 노드 리스트를 넣어주므로 바로 확장 가능!
+            if 'n' in path_data and path_data['n']: nodes_to_process.append(path_data['n'])
+            if 'm' in path_data and path_data['m']: nodes_to_process.append(path_data['m'])
             if 'p' in path_data and isinstance(path_data['p'], list):
                 nodes_to_process.extend(path_data['p'])
 
             for node in nodes_to_process:
                 if isinstance(node, dict) and 'name' in node:
-                    name = node['name'].strip() # 공복 제거로 중복 방지
-                    node_id = node.get('id')
+                    name = node['name'].strip()
+                    node_id = node.get('id') # 이제 무조건 element_id가 들어옵니다.
                     
                     if name not in name_to_node:
+                        # 시각화 컴포넌트 편의를 위해 id=name 구조 유지
                         name_to_node[name] = RelationNode(
                             id=name, 
                             name=name,
                             type=node.get('type', 'Entity')
                         )
                     
+                    # [매우 중요] 내부 해시 ID와 실제 한국어 이름을 매핑 테이블에 동기화
                     if node_id:
                         id_to_name[node_id] = name
 
@@ -44,11 +45,11 @@ class GraphFormatter:
                 e_id = rel.get('end_id')
                 rel_type = rel.get('type')
 
-                # id_to_name에 없더라도 에러가 나지 않도록 방어 로직
+                # 정제된 id_to_name에서 실제 한글 이름을 조회합니다.
                 source_name = id_to_name.get(s_id, s_id)
                 target_name = id_to_name.get(e_id, e_id)
 
-                # 만약 방금 생성된 이름이 노드 리스트에 없다면 강제로 추가 (에러 방지)
+                # 매핑에 실패한 유령 ID가 올 경우 최소한 무형의 Unknown 노드로 강제 추가 방어
                 for name in [source_name, target_name]:
                     if name not in name_to_node:
                         name_to_node[name] = RelationNode(id=name, name=name, type='Unknown')
