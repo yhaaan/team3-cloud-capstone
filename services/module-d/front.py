@@ -136,7 +136,7 @@ def create_network_graph(graph_data, how):
                 "highlight": edge_color,
                 "hover": edge_color
             },
-            arrows="" if is_center_graph else "to",
+            arrows="to",
             arrowStrikethrough=False,
             font={
                 "size": 18,
@@ -501,14 +501,18 @@ st.markdown(f"""
 }}
 
 .main-title.center {{
-    top: 40%;
+    top: 35%;
     transform: translate(-50%, -50%);
     font-size: clamp(24px, 4vw, 34px);
-}}
+    transition:
+        top 0.28s ease,
+        transform 0.28s ease,
+        font-size 0.28s ease;
+}}      
 
 .main-title.top {{
     top: 60px;
-    font-size: clamp(22px, 3.5vw, 34px);
+    font-size: clamp(24px, 4vw, 34px);
 }}
 
 .title-blur-zone {{
@@ -557,21 +561,6 @@ st.markdown(f"""
     margin-top: 16px;
     color: #323232;
     font-weight: 600;
-}}
-
-.network-card {{
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid #e8e8e8;
-    border-radius: 22px;
-    padding: 14px;
-    margin-top: 18px;
-    box-shadow: 0 12px 30px rgba(7, 89, 201, 0.08);
-}}
-
-.graph-wrapper iframe {{
-    border-radius: 22px !important;
-    overflow: hidden !important;
 }}
 
 [data-testid="stSidebar"] {{
@@ -836,10 +825,6 @@ for msg in st.session_state.messages:
             
 
     elif msg_type == "network":
-        st.markdown(
-            '<div class="network-card graph-wrapper">',
-            unsafe_allow_html=True
-        )
         components.html(msg["content"], height=680)
         st.markdown(
             '</div>',
@@ -847,17 +832,9 @@ for msg in st.session_state.messages:
         )
 
     elif msg_type == "plotly":
-        st.markdown(
-            '<div class="network-card">',
-            unsafe_allow_html=True
-        )
         st.plotly_chart(
             msg["content"],
             use_container_width=True
-        )
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
         )
 
 
@@ -892,10 +869,7 @@ if question:
             how = data.get("how")
             graph_data = data.get("graph")
 
-            answer += f"""
-
-            현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}
-            """
+            answer += f"""\n\n현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}"""
 
             st.session_state.messages.append({
                 "role": "assistant",
