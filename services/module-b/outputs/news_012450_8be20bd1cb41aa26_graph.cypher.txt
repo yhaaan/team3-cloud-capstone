@@ -1,23 +1,127 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "country": "KR"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "방산 부품 제조 및 핵심 부품 공급을 주력으로 하는 기업"}
 
-// node: company_lig_defense_and_aerospace
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lig_defense_and_aerospace", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550", "country": "KR"}
-
-// node: company_perstek
+// node: company_079550
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_perstek", "type": "Company", "name": "퍼스텍", "stock_code": "010820", "country": "KR"}
+:params {"id": "company_079550", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550", "description": "방산혁신펀드 운용 및 첨단 방산 기술 협력 추진 기업"}
+
+// node: company_010820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010820", "type": "Company", "name": "퍼스텍", "stock_code": "010820", "description": "초정밀 광학·전자광학·유도무기 부품 생산하는 방산 중견기업"}
+
+// node: business_area_방위산업_부품
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_방위산업_부품", "type": "BusinessArea", "name": "방산 부품"}
+
+// node: business_area_방산_혁신_기술
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_방산_혁신_기술", "type": "BusinessArea", "name": "방산 혁신 기술"}
+
+// node: industry_방위산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_방위산업", "type": "Industry", "name": "방위산업"}
+
+// node: business_area_방산_부품
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_방산_부품", "type": "BusinessArea", "name": "방산 부품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_방산_부품", "properties": {"evidence": "퍼스텍은 초정밀 광학시스템, EO/IR 장비, 유도무기 부품 등을 생산하며 한화에어로스페이스·KAI·LIG D&A 등 주요 체계기업에 핵심 부품을 공급하는 대표적 방산 중견기업.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010820", "to_id": "business_area_방산_부품", "properties": {"evidence": "퍼스텍은 초정밀 광학시스템, EO/IR 장비, 유도무기 부품 등을 생산하며 한화에어로스페이스·KAI·LIG D&A 등 주요 체계기업에 핵심 부품을 공급하는 대표적 방산 중견기업.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "business_area_방산_혁신_기술", "properties": {"evidence": "LIG D&A가 군인공제회·IBK캐피탈과 함께 출범시킨 '방산혁신펀드'를 상생의 핵심 수단으로 소개했다.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_방산_부품", "to_id": "industry_방위산업", "properties": {"evidence": "퍼스텍은 초정밀 광학시스템, EO/IR 장비, 유도무기 부품 등을 생산하며 한화에어로스페이스·KAI·LIG D&A 등 주요 체계기업에 핵심 부품을 공급하는 대표적 방산 중견기업.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_방산_혁신_기술", "to_id": "industry_방위산업", "properties": {"evidence": "LIG D&A가 군인공제회·IBK캐피탈과 함께 출범시킨 '방산혁신펀드'를 상생의 핵심 수단으로 소개했다.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "industry_방위산업", "properties": {"evidence": "퍼스텍은 초정밀 광학시스템, EO/IR 장비, 유도무기 부품 등을 생산하며 한화에어로스페이스·KAI·LIG D&A 등 주요 체계기업에 핵심 부품을 공급하는 대표적 방산 중견기업.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "industry_방위산업", "properties": {"evidence": "LIG D&A가 군인공제회·IBK캐피탈과 함께 출범시킨 '방산혁신펀드'를 상생의 핵심 수단으로 소개했다.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010820", "to_id": "industry_방위산업", "properties": {"evidence": "퍼스텍은 초정밀 광학시스템, EO/IR 장비, 유도무기 부품 등을 생산하며 한화에어로스페이스·KAI·LIG D&A 등 주요 체계기업에 핵심 부품을 공급하는 대표적 방산 중견기업.", "date": "", "evidence_source_id": "news_012450_8be20bd1cb41aa26", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202604290814428353", "evidence_published_at": "2026-04-29T15:32:00+09:00"}}

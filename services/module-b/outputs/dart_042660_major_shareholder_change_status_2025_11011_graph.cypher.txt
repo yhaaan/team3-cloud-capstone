@@ -1,15 +1,58 @@
-// node: company_한화오션
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화오션", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "조선해양 플랜트 및 선박 건조 중심의 사업을 영위"}
 
-// node: company_한화
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_조선해양플랜트
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_조선해양플랜트", "type": "BusinessArea", "name": "조선해양플랜트"}
+
+// node: industry_조선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_조선", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_조선해양플랜트", "properties": {"evidence": "한화오션의 최대주주 변동 대상은 한화에어로 스페이스(주) 외 4인, 변동일은 2023년 05월 24일, 보유주식수는 104,438,643주, 지분율은 49.33%, 변동 사유는 제3자배정 유상증자 참여.", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_조선해양플랜트", "to_id": "industry_조선", "properties": {"evidence": "한화오션의 최대주주 변동 대상은 한화에어로 스페이스(주) 외 4인, 변동일은 2023년 05월 24일, 보유주식수는 104,438,643주, 지분율은 49.33%, 변동 사유는 제3자배정 유상증자 참여.", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "company_042660", "properties": {"evidence": "한화오션의 최대주주 변동 대상은 한화에어로 스페이스(주) 외 4인, 변동일은 2023년 05월 24일, 보유주식수는 104,438,643주, 지분율은 49.33%, 변동 사유는 제3자배정 유상증자 참여.", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}

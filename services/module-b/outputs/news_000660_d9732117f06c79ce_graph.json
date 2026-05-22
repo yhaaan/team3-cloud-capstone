@@ -2,35 +2,92 @@
   "source_id": "news_000660_d9732117f06c79ce",
   "entities": [
     {
-      "id": "company_sk_hi_nix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "메모리 반도체 및 고대역폭 메모리(HBM) 제품 중심의 사업을 영위한다."
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
-    },
-    {
-      "id": "company_sk_jung_kwon",
+      "id": "company_001510",
       "type": "Company",
       "name": "SK증권",
-      "stock_code": "001510"
+      "stock_code": "001510",
+      "description": "금융투자업 중심의 증권사를 운영한다."
     },
     {
-      "id": "company_mirae_asset_jung_kwon",
+      "id": "company_006800",
       "type": "Company",
       "name": "미래에셋증권",
-      "stock_code": "006800"
+      "stock_code": "006800",
+      "description": "금융투자 및 증권 서비스 사업을 한다."
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
+    },
+    {
+      "id": "product_service_hbm",
+      "type": "ProductService",
+      "name": "고대역폭 메모리(HBM)"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "시장에서는 AI 산업 확산에 따른 고성능 메모리 수요 폭증이 SK하이닉스의 실적 성장을 견인할 것으로 보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000660_d9732117f06c79ce",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=837475",
+      "evidence_published_at": "2026-05-07T20:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_hbm",
+      "evidence": "SK하이닉스의 강점인 고대역폭 메모리(HBM) 동향도 호의적이라고 분석했다.",
+      "date": "",
+      "evidence_source_id": "news_000660_d9732117f06c79ce",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=837475",
+      "evidence_published_at": "2026-05-07T20:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 슈퍼사이클에 대한 기대감이 여전한 가운데...",
+      "date": "",
+      "evidence_source_id": "news_000660_d9732117f06c79ce",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=837475",
+      "evidence_published_at": "2026-05-07T20:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_hbm",
+      "to": "business_area_memory",
+      "evidence": "시장에서는 AI 산업 확산에 따른 고성능 메모리 수요 폭증이 SK하이닉스의 실적 성장을 견인할 것으로 보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000660_d9732117f06c79ce",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=837475",
+      "evidence_published_at": "2026-05-07T20:00:00+09:00"
+    }
+  ]
 }

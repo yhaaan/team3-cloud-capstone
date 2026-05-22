@@ -1,23 +1,75 @@
-// node: company_dosan_energy
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "원전 기본 설계와 주요 기자재용 주단품을 준비하는 사업을 하는 회사"}
 
-// node: company_dosan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
-
-// node: company_hyundai_construction
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_construction", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "원전 기본 설계를 담당하는 건설회사"}
+
+// node: company_000150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_원자력발전
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_원자력발전", "type": "BusinessArea", "name": "원자력발전"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_원자력발전", "properties": {"evidence": "현대건설과 두산에너빌리티가 각각 원전 기본 설계와 주요 기자재용 주단품을 준비하는 방식으로 페르미아메리카와 협업한다.", "date": "", "evidence_source_id": "news_034020_6b9fc244a6c9e31f", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436789", "evidence_published_at": "2026-04-29T11:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_원자력발전", "properties": {"evidence": "현대건설과 두산에너빌리티가 각각 원전 기본 설계와 주요 기자재용 주단품을 준비하는 방식으로 페르미아메리카와 협업한다.", "date": "", "evidence_source_id": "news_034020_6b9fc244a6c9e31f", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436789", "evidence_published_at": "2026-04-29T11:48:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_원자력발전", "to_id": "industry_에너지", "properties": {"evidence": "기업과산업 화학·에너지 '현대건설 두산에너빌리티 협력'", "date": "", "evidence_source_id": "news_034020_6b9fc244a6c9e31f", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436789", "evidence_published_at": "2026-04-29T11:48:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "industry_에너지", "properties": {"evidence": "'현대건설 두산에너빌리티 협력' 페르미 전 CEO \"미국 장관 통해 한국 지원 요청 사실 있어\"", "date": "", "evidence_source_id": "news_034020_6b9fc244a6c9e31f", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436789", "evidence_published_at": "2026-04-29T11:48:00+09:00"}}

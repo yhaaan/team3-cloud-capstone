@@ -1,0 +1,7 @@
+// node: company_066570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_066570", "type": "Company", "name": "LG전자", "stock_code": "066570", "description": "LG전자는 대표이사·경영위원회·ESG위원회 및 MS 사업본부·VS 연구소·ID 개발·금융 등 다양한 분야 임원을 보유"}

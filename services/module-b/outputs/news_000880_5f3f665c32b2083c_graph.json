@@ -1,0 +1,80 @@
+{
+  "source_id": "news_000880_5f3f665c32b2083c",
+  "entities": [
+    {
+      "id": "company_000880",
+      "type": "Company",
+      "name": "한화",
+      "stock_code": "000880",
+      "description": "야구단 운영 등 스포츠를 포함한 다양한 사업을 하는 종합기업"
+    },
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "통신 및 IT 서비스를 주력으로 하는 기업"
+    },
+    {
+      "id": "business_area_sports",
+      "type": "BusinessArea",
+      "name": "스포츠"
+    },
+    {
+      "id": "industry_entertainment",
+      "type": "Industry",
+      "name": "엔터테인먼트"
+    },
+    {
+      "id": "industry_telecommunications",
+      "type": "Industry",
+      "name": "통신"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000880",
+      "to": "business_area_sports",
+      "evidence": "17일 오후 수원KT위즈파크에서 열린 '2026 신한 SOL Bank KBO리그' 한화 이글스와 KT 위즈의 경기",
+      "date": "",
+      "evidence_source_id": "news_000880_5f3f665c32b2083c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150062",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_sports",
+      "to": "industry_entertainment",
+      "evidence": "프로야구 경기 등 스포츠 사업은 엔터테인먼트 산업에 속함",
+      "date": "",
+      "evidence_source_id": "news_000880_5f3f665c32b2083c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150062",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_entertainment",
+      "evidence": "한화 이글스 야구단 운영 사업",
+      "date": "",
+      "evidence_source_id": "news_000880_5f3f665c32b2083c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150062",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_telecommunications",
+      "evidence": "KT 위즈 야구단이 KT의 스포츠 사업 연장선임",
+      "date": "",
+      "evidence_source_id": "news_000880_5f3f665c32b2083c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150062",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    }
+  ]
+}

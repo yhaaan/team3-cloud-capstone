@@ -1,0 +1,101 @@
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "정유, 에너지, 배터리 사업을 주력으로 하는 통합 에너지기업이다."}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_refining", "type": "BusinessArea", "name": "정유"}
+
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지"}
+
+// node: business_area_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery", "type": "BusinessArea", "name": "배터리"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_refining", "properties": {"evidence": "SK이노베이션은 단기적으로는 유가와 배터리 사업 변동성 영향이 존재하지만 중장기적으로는 정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_energy", "properties": {"evidence": "SK이노베이션은 단기적으로는 유가와 배터리 사업 변동성 영향이 존재하지만 중장기적으로는 정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_battery", "properties": {"evidence": "SK이노베이션은 단기적으로는 유가와 배터리 사업 변동성 영향이 존재하지만 중장기적으로는 정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_refining", "to_id": "industry_energy", "properties": {"evidence": "정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy", "to_id": "industry_energy", "properties": {"evidence": "정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery", "to_id": "industry_energy", "properties": {"evidence": "정유·에너지·배터리 사업이 동시에 회복 국면에 진입할 가능성이 높다고 분석했다.", "date": "", "evidence_source_id": "news_096770_57c8ca9f72915826", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453177", "evidence_published_at": "2026-05-17T06:56:00+09:00"}}

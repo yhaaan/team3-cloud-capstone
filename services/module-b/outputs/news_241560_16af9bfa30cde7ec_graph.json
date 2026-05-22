@@ -1,0 +1,63 @@
+{
+  "source_id": "news_241560_16af9bfa30cde7ec",
+  "entities": [
+    {
+      "id": "company_241560",
+      "type": "Company",
+      "name": "두산밥캣",
+      "stock_code": "241560",
+      "description": "건설기계 및 중장비를 생산·판매하는 기업"
+    },
+    {
+      "id": "company_000150",
+      "type": "Company",
+      "name": "페스카로",
+      "stock_code": "000150"
+    },
+    {
+      "id": "business_area_construction_machinery",
+      "type": "BusinessArea",
+      "name": "건설기계"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "건설"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_241560",
+      "to": "business_area_construction_machinery",
+      "evidence": "두산밥캣은 69,700원으로 거래를 마쳤다.",
+      "date": "",
+      "evidence_source_id": "news_241560_16af9bfa30cde7ec",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519701",
+      "evidence_published_at": "2026-05-15T17:34:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction_machinery",
+      "to": "industry_construction",
+      "evidence": "두산밥캣은 69,700원으로 거래를 마쳤다.",
+      "date": "",
+      "evidence_source_id": "news_241560_16af9bfa30cde7ec",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519701",
+      "evidence_published_at": "2026-05-15T17:34:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000150",
+      "to": "industry_construction",
+      "evidence": "두산",
+      "date": "",
+      "evidence_source_id": "news_241560_16af9bfa30cde7ec",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519701",
+      "evidence_published_at": "2026-05-15T17:34:00+09:00"
+    }
+  ]
+}

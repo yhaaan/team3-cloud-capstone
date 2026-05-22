@@ -1,15 +1,24 @@
-// node: company_아이마켓코리아
+// node: company_122900
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_아이마켓코리아", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+:params {"id": "company_122900", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
 
-// node: company_그래디언트
+// node: company_035080
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_그래디언트", "type": "Company", "name": "그래디언트", "stock_code": "035080"}
+:params {"id": "company_035080", "type": "Company", "name": "그래디언트", "stock_code": "035080"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035080", "to_id": "company_122900", "properties": {"evidence": "아이마켓코리아의 대량보유 보고자는 그래디언트, 보고 유형은 일반, 접수일은 2025-12-19, 보유주식수는 14,412,000주, 지분율은 43.11%.", "date": "2025-12-19", "evidence_source_id": "dart_122900_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251219000328", "evidence_published_at": "2025-12-19"}}

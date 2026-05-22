@@ -2,54 +2,51 @@
   "source_id": "news_005930_5e4d51310435a1cd",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체, 가전, 스마트폰 사업을 영위하며 디바이스솔루션 부문을 포함한다."
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
     },
     {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
       "stock_code": "000660"
     },
     {
-      "id": "company_device",
-      "type": "Company",
-      "name": "디바이스",
-      "stock_code": "187870"
+      "id": "business_area_device_solution",
+      "type": "BusinessArea",
+      "name": "디바이스솔루션"
     },
     {
-      "id": "person_jeon_young_hyun",
-      "type": "Person",
-      "name": "전영현",
-      "role_raw": "삼성전자 대표이사 부회장",
-      "affiliated_company": "company_samsung_electronics",
-      "role": "VICE_CHAIRMAN",
-      "role_label": "부회장"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     },
     {
-      "id": "person_no_tae_moon",
-      "type": "Person",
-      "name": "노태문",
-      "role_raw": "삼성전자 사장",
-      "affiliated_company": "company_samsung_electronics",
-      "role": "PRESIDENT",
-      "role_label": "사장"
+      "id": "business_area_consumer_electronics",
+      "type": "BusinessArea",
+      "name": "가전"
+    },
+    {
+      "id": "business_area_smartphone",
+      "type": "BusinessArea",
+      "name": "스마트폰"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeon_young_hyun",
-      "to": "company_samsung_electronics",
-      "evidence": "삼성전자 대표이사인 전영현 부회장과 노태문 사장이 노사 임금협상 진행 상황과 관련해 임직원들에게 \"미래 경쟁력이 손실되지 않도록 해달라\"고 당부했다.",
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_device_solution",
+      "evidence": "사측은 지난 3월 말 집중 교섭에서 반도체 사업을 담당하는 디바이스솔루션(DS) 부문 직원들에게 국내 업계 1위 달성 시 경쟁사 이상의 보상을 주겠다고 제시했다.",
       "date": "",
       "evidence_source_id": "news_005930_5e4d51310435a1cd",
       "evidence_source_type": "news",
@@ -57,10 +54,54 @@
       "evidence_published_at": "2026-05-07T21:30:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_no_tae_moon",
-      "to": "company_samsung_electronics",
-      "evidence": "삼성전자 대표이사인 전영현 부회장과 노태문 사장이 노사 임금협상 진행 상황과 관련해 임직원들에게 \"미래 경쟁력이 손실되지 않도록 해달라\"고 당부했다.",
+      "type": "PART_OF",
+      "from": "business_area_device_solution",
+      "to": "industry_semiconductor",
+      "evidence": "사측은 지난 3월 말 집중 교섭에서 반도체 사업을 담당하는 디바이스솔루션(DS) 부문 직원들에게 국내 업계 1위 달성 시 경쟁사 이상의 보상을 주겠다고 제시했다.",
+      "date": "",
+      "evidence_source_id": "news_005930_5e4d51310435a1cd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605072130015",
+      "evidence_published_at": "2026-05-07T21:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_consumer_electronics",
+      "evidence": "삼성전자 '가전·스마트폰·TV' DX 노조, 공동대응 철회···삼성전자 '노노갈등' 현실화",
+      "date": "",
+      "evidence_source_id": "news_005930_5e4d51310435a1cd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605072130015",
+      "evidence_published_at": "2026-05-07T21:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_smartphone",
+      "evidence": "삼성전자 '가전·스마트폰·TV' DX 노조, 공동대응 철회···삼성전자 '노노갈등' 현실화",
+      "date": "",
+      "evidence_source_id": "news_005930_5e4d51310435a1cd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605072130015",
+      "evidence_published_at": "2026-05-07T21:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_consumer_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 사업과 가전, 스마트폰 사업 모두 관련 산업은 반도체 등 전자산업군으로 본 문서 내 통상적 분류 함의",
+      "date": "",
+      "evidence_source_id": "news_005930_5e4d51310435a1cd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605072130015",
+      "evidence_published_at": "2026-05-07T21:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_smartphone",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 사업과 가전, 스마트폰 사업 모두 관련 산업은 반도체 등 전자산업군으로 본 문서 내 통상적 분류 함의",
       "date": "",
       "evidence_source_id": "news_005930_5e4d51310435a1cd",
       "evidence_source_type": "news",

@@ -1,0 +1,162 @@
+// node: company_033780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033780", "type": "Company", "name": "KT&G", "stock_code": "033780", "description": "궐련형 전자담배와 니코틴 파우치 등 차세대 담배 사업을 주요 사업으로 함"}
+
+// node: company_459550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_459550", "type": "Company", "name": "알트", "stock_code": "459550"}
+
+// node: business_area_ngp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ngp", "type": "BusinessArea", "name": "차세대 담배"}
+
+// node: product_service_릴_에이블
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_릴_에이블", "type": "ProductService", "name": "릴 에이블"}
+
+// node: product_service_니코틴_파우치
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_니코틴_파우치", "type": "ProductService", "name": "니코틴 파우치"}
+
+// node: business_area_전자담배
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전자담배", "type": "BusinessArea", "name": "전자담배"}
+
+// node: business_area_니코틴_파우치
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_니코틴_파우치", "type": "BusinessArea", "name": "니코틴 파우치"}
+
+// node: industry_담배
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_담배", "type": "Industry", "name": "담배"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "company_459550", "properties": {"evidence": "글로벌에서는 스웨덴 니코틴 파우치 기업 ASF를 인수, 검증된 브랜드 'LOOP'을 손에 넣으면서 북유럽 NGP 시장 진출의 교두보를 구축했다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "business_area_ngp", "properties": {"evidence": "KT&G가 궐련형 전자담배와 니코틴 파우치 등 차세대 담배(NGP·Next Generation Products) 의 투트랙 판매 전략을 본격화하고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "product_service_릴_에이블", "properties": {"evidence": "국내에서는 궐련형 전자담배 릴 에이블의 판매 채널을 전국으로 확대하는 등 사업 영역을 빠르게 넓혀가고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "product_service_니코틴_파우치", "properties": {"evidence": "KT&G가 궐련형 전자담배와 니코틴 파우치 등 차세대 담배(NGP·Next Generation Products) 의 투트랙 판매 전략을 본격화하고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "business_area_전자담배", "properties": {"evidence": "국내에서는 궐련형 전자담배 릴 에이블의 판매 채널을 전국으로 확대하는 등 사업 영역을 빠르게 넓혀가고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "business_area_니코틴_파우치", "properties": {"evidence": "글로벌에서는 스웨덴 니코틴 파우치 기업 ASF를 인수, 검증된 브랜드 'LOOP'을 손에 넣으면서 북유럽 NGP 시장 진출의 교두보를 구축했다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전자담배", "to_id": "industry_담배", "properties": {"evidence": "KT&G가 궐련형 전자담배와 니코틴 파우치 등 차세대 담배(NGP·Next Generation Products) 의 투트랙 판매 전략을 본격화하고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_니코틴_파우치", "to_id": "industry_담배", "properties": {"evidence": "KT&G가 궐련형 전자담배와 니코틴 파우치 등 차세대 담배(NGP·Next Generation Products) 의 투트랙 판매 전략을 본격화하고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ngp", "to_id": "industry_담배", "properties": {"evidence": "KT&G가 궐련형 전자담배와 니코틴 파우치 등 차세대 담배(NGP·Next Generation Products) 의 투트랙 판매 전략을 본격화하고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_릴_에이블", "to_id": "business_area_전자담배", "properties": {"evidence": "국내에서는 궐련형 전자담배 릴 에이블의 판매 채널을 전국으로 확대하는 등 사업 영역을 빠르게 넓혀가고 있다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_니코틴_파우치", "to_id": "business_area_니코틴_파우치", "properties": {"evidence": "글로벌에서는 스웨덴 니코틴 파우치 기업 ASF를 인수, 검증된 브랜드 'LOOP'을 손에 넣으면서 북유럽 NGP 시장 진출의 교두보를 구축했다.", "date": "", "evidence_source_id": "news_033780_784eb85f94d43405", "evidence_source_type": "news", "evidence_source_url": "http://www.paxetv.com/news/articleView.html?idxno=272210", "evidence_published_at": "2026-05-15T16:52:00+09:00"}}

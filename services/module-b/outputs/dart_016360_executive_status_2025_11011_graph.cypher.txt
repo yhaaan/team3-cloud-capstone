@@ -1,0 +1,24 @@
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "industry_it", "properties": {"evidence": "삼성증권의 임원은 윤석모, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 리서치센터장, 최대주주와의 관계는 계열회사의 미등기임원, 주요경력은 연세대학교 경영학 삼성증권 리서치센터 Equity부문장.", "date": "2026-03-12", "evidence_source_id": "dart_016360_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379", "evidence_published_at": "2026-03-12"}}

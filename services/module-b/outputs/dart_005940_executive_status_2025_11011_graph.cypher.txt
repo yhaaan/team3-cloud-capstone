@@ -1,0 +1,41 @@
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "industry_ai", "properties": {"evidence": "NH투자증권의 임원은 이재경, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 채널솔루션부문장 (연금자산관리본부장 겸직), 주요경력은 이화여대 국제사무학 NH투자증권 Retail사업총괄부문장 NH투자증권 PWM사업부대표 NH투자증권 Premier Blue본부장 삼성증권 삼성타운센터 본부장.", "date": "2026-03-13", "evidence_source_id": "dart_005940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771", "evidence_published_at": "2026-03-13"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "industry_it", "properties": {"evidence": "NH투자증권의 임원은 전용석, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 O&T부문장, 주요경력은 서울대 계산통계학 학/석/박사 NH투자증권 IT본부장 키움증권 CIO/CISO, 상무보.", "date": "2026-03-13", "evidence_source_id": "dart_005940_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771", "evidence_published_at": "2026-03-13"}}

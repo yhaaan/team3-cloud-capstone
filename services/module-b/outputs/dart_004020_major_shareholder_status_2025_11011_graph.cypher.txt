@@ -1,15 +1,24 @@
-// node: company_hyundai_steel
+// node: company_004020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_steel", "type": "Company", "name": "현대제철", "stock_code": "004020"}
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020"}
 
-// node: company_kia
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "company_004020", "properties": {"evidence": "현대제철의 최대주주 관련 인물/법인은 기아(주), 관계는 최대주주, 당기말 보유주식수는 23,049,159주, 지분율은 17.27%.", "date": "2026-03-18", "evidence_source_id": "dart_004020_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001506", "evidence_published_at": "2026-03-18"}}

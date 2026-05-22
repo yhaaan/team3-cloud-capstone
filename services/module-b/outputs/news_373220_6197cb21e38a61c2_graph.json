@@ -2,41 +2,185 @@
   "source_id": "news_373220_6197cb21e38a61c2",
   "entities": [
     {
-      "id": "company_lg에너지솔루션",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "이차전지 및 전기차 배터리 출하 중심의 배터리 제조업체"
     },
     {
-      "id": "company_sk",
+      "id": "company_006400",
+      "type": "Company",
+      "name": "삼성SDI",
+      "stock_code": "006400",
+      "description": "이차전지 및 전기차용 배터리 생산과 출하를 주력으로 하는 배터리 기업"
+    },
+    {
+      "id": "company_096770",
+      "type": "Company",
+      "name": "SK이노베이션",
+      "stock_code": "096770",
+      "description": "배터리 사업 운영 및 전기차용 이차전지 생산 중심 회사"
+    },
+    {
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
     },
     {
-      "id": "company_삼성sdi",
-      "type": "Company",
-      "name": "삼성SDI",
-      "stock_code": "006400"
+      "id": "business_area_battery",
+      "type": "BusinessArea",
+      "name": "배터리"
     },
     {
-      "id": "company_ski노베이션",
-      "type": "Company",
-      "name": "SK이노베이션",
-      "stock_code": "096770"
+      "id": "business_area_second_battery",
+      "type": "BusinessArea",
+      "name": "이차전지"
     },
     {
-      "id": "company_대신증권",
-      "type": "Company",
-      "name": "대신증권",
-      "stock_code": "003540"
+      "id": "product_service_electric_vehicle_battery",
+      "type": "ProductService",
+      "name": "전기차 배터리"
     },
     {
-      "id": "company_삼성증권",
-      "type": "Company",
-      "name": "삼성증권",
-      "stock_code": "016360"
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "에너지"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_battery",
+      "evidence": "LG에너지솔루션의 출하량은 11.8GWh(기가와트시)로 16% 증가세를 나타냈다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_second_battery",
+      "evidence": "LG에너지솔루션은 작년 4분기 영업손실이 1천220억원에서 올해 1분기 2천80억원으로 확대됐고, 영업이익률도 마이너스(-) 1.9%에서 -3.2%로 떨어졌다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_373220",
+      "to": "product_service_electric_vehicle_battery",
+      "evidence": "LG에너지솔루션의 출하량은 11.8GWh(기가와트시)로 16% 증가세를 나타냈다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_battery",
+      "evidence": "삼성SDI 역시 2.2GWh(-28%)로 줄었다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_second_battery",
+      "evidence": "삼성SDI의 1분기 영업손실은 1천556억원으로 전 분기 2천992억원 대비 줄었지만, 매출 역시 7.3% 감소했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006400",
+      "to": "product_service_electric_vehicle_battery",
+      "evidence": "삼성SDI 역시 2.2GWh(-28%)로 줄었다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_battery",
+      "evidence": "SK이노베이션의 배터리 사업 부문은 작년 2분기 664억원이었던 손실 규모가 4분기에는 4천414억원으로 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_second_battery",
+      "evidence": "SK이노베이션의 이차 전지 자회사인 SK온은 3.9GWh로 6% 감소했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_096770",
+      "to": "product_service_electric_vehicle_battery",
+      "evidence": "SK이노베이션의 이차 전지 자회사인 SK온은 3.9GWh로 6% 감소했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_battery",
+      "to": "industry_energy",
+      "evidence": "이차 전지 업계가 긴장하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_second_battery",
+      "to": "business_area_battery",
+      "evidence": "이차전지 업계가 긴장하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_electric_vehicle_battery",
+      "to": "business_area_second_battery",
+      "evidence": "전기차 배터리 중심으로 출하량이 증가했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_6197cb21e38a61c2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251",
+      "evidence_published_at": "2026-05-12T09:28:00+09:00"
+    }
+  ]
 }

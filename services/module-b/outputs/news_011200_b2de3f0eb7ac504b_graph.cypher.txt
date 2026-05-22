@@ -1,0 +1,117 @@
+// node: company_011200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011200", "type": "Company", "name": "HMM", "stock_code": "011200", "description": "컨테이너·벌크선 등 해운부문에서 운임 변동성에 따른 실적 변화를 겪음"}
+
+// node: company_006800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006800", "type": "Company", "name": "미래에셋증권", "stock_code": "006800"}
+
+// node: business_area_container_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_container_shipping", "type": "BusinessArea", "name": "컨테이너 운송"}
+
+// node: business_area_bulk_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bulk_shipping", "type": "BusinessArea", "name": "벌크선 운송"}
+
+// node: product_service_vlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_vlcc", "type": "ProductService", "name": "원유운반선(VLCC)"}
+
+// node: product_service_dry_bulk_cargo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dry_bulk_cargo", "type": "ProductService", "name": "건화물선"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "logistics"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_container_shipping", "properties": {"evidence": "컨테이너 사업 부문 매출 감소가 전체 외형 축소를 이끌었다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_bulk_shipping", "properties": {"evidence": "반면 벌크선 사업은 오히려 호조를 보이며 실적 방어에 성공했다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "product_service_vlcc", "properties": {"evidence": "원유운반선(VLCC)과 건화물선 시황 개선이 벌크 부문 실적 상승을 이끈 것으로 분석된다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "product_service_dry_bulk_cargo", "properties": {"evidence": "원유운반선(VLCC)과 건화물선 시황 개선이 벌크 부문 실적 상승을 이끈 것으로 분석된다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_container_shipping", "to_id": "industry_logistics", "properties": {"evidence": "글로벌 해운업계가 다시 거대한 변동성에 휩싸인 가운데 HMM이 운임 반등 기대감 속에서 시장의 주목을 받고 있다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bulk_shipping", "to_id": "industry_logistics", "properties": {"evidence": "글로벌 해운업계가 다시 거대한 변동성에 휩싸인 가운데 HMM이 운임 반등 기대감 속에서 시장의 주목을 받고 있다.", "date": "", "evidence_source_id": "news_011200_b2de3f0eb7ac504b", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453144", "evidence_published_at": "2026-05-16T17:38:00+09:00"}}

@@ -1,160 +1,280 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "DS부문, DX부문 경영과 메모리사업, MX사업, 반도체연구소 운영"}
 
-// node: person_jeon_young_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jeon_young_hyun", "type": "Person", "name": "전영현", "role_raw": "부회장", "role": "VICE_CHAIRMAN", "affiliated_company": "company_samsung_electronics", "role_label": "부회장"}
-
-// node: person_no_tae_moon
+// node: person_jeon_younghyun
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_no_tae_moon", "type": "Person", "name": "노태문", "role_raw": "사장", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_label": "사장"}
+:params {"id": "person_jeon_younghyun", "type": "Person", "name": "전영현", "role_raw": "부회장", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
 
-// node: person_song_jae_hyeok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_song_jae_hyeok", "type": "Person", "name": "송재혁", "role_raw": "사장", "role": "PRESIDENT", "affiliated_company": "company_samsung_electronics", "role_label": "사장"}
-
-// node: person_shin_je_yoon
+// node: person_no_taemun
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_shin_je_yoon", "type": "Person", "name": "신제윤", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
+:params {"id": "person_no_taemun", "type": "Person", "name": "노태문", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
 
-// node: person_kim_jun_sung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_jun_sung", "type": "Person", "name": "김준성", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
-
-// node: person_heo_eun_nyeong
+// node: person_song_jaehyuk
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_heo_eun_nyeong", "type": "Person", "name": "허은녕", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
+:params {"id": "person_song_jaehyuk", "type": "Person", "name": "송재혁", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
 
-// node: person_yoo_myeong_hee
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_yoo_myeong_hee", "type": "Person", "name": "유명희", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
-
-// node: person_jo_hye_kyung
+// node: person_shin_jeyoon
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_jo_hye_kyung", "type": "Person", "name": "조혜경", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
+:params {"id": "person_shin_jeyoon", "type": "Person", "name": "신제윤", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
 
-// node: person_lee_hyuk_jae
+// node: person_kim_junsung
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_lee_hyuk_jae", "type": "Person", "name": "이혁재", "role_raw": "이사", "role": "DIRECTOR", "affiliated_company": "company_samsung_electronics", "role_label": "이사"}
+:params {"id": "person_kim_junsung", "type": "Person", "name": "김준성", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
 
-// relation: AFFILIATED_WITH
+// node: person_heo_eunnyoung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_heo_eunnyoung", "type": "Person", "name": "허은녕", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: person_yoo_myeonghee
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yoo_myeonghee", "type": "Person", "name": "유명희", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: person_cho_hyekyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_cho_hyekyung", "type": "Person", "name": "조혜경", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: person_lee_hyukjae
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_hyukjae", "type": "Person", "name": "이혁재", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: business_area_ds_division
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ds_division", "type": "BusinessArea", "name": "DS부문"}
+
+// node: business_area_dx_division
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_dx_division", "type": "BusinessArea", "name": "DX부문"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리사업부"}
+
+// node: business_area_mx_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mx_business", "type": "BusinessArea", "name": "MX사업부"}
+
+// node: business_area_semiconductor_research
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor_research", "type": "BusinessArea", "name": "반도체연구소"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jeon_young_hyun", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 전영현, 직위는 부회장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DS부문 경영전반 총괄), 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍKAIST 전자공학 박사ㆍ삼성전자 DS부문장 겸) 메모리사업부장.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_jeon_younghyun", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 전영현, 직위는 부회장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DS부문 경영전반 총괄), 최대주주와의 관계는 계열회사 임원", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_no_tae_moon", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 노태문, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DX부문 경영전반 총괄), 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ포항공대 전자전기공학 박사 ㆍ삼성전자 DX부문장 겸) MX사업부장, 품질혁신위원장, AI혁신위원장.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_no_taemun", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 노태문, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍ대표이사 (DX부문 경영전반 총괄)", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_song_jae_hyeok", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 송재혁, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍDS부문 CTO, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 전자공학 박사ㆍ삼성전자 DS부문 CTO 겸) 반도체연구소장.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_song_jaehyuk", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 송재혁, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 ㆍDS부문 CTO", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_shin_je_yoon", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 신제윤, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ이사회 의장ㆍ감사위원회 위원장ㆍ사외이사 후보추천위원회 위원장ㆍ보상위원회 위원장ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 경제학 학사 ㆍ금융위원회 위원장.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_shin_jeyoon", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 신제윤, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kim_jun_sung", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 김준성, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ내부거래위원회 위원ㆍ보상위원회 위원ㆍ지속가능경영위원회 위원장, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍCarnegie Mellon대 경제학/산업공학 학사ㆍ싱가포르 투자청 토탈리턴그룹 이사.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_kim_junsung", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 김준성, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_heo_eun_nyeong", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 허은녕, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ사외이사 후보추천위원회 위원ㆍ내부거래위원회 위원장ㆍ보상위원회 위원 ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍPennsylvania State대 자원경제학 박사ㆍ서울대 공과대학 교수.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_heo_eunnyoung", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 허은녕, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_yoo_myeong_hee", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 유명희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ감사위원회 위원ㆍ사외이사 후보추천위원회 위원ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍVanderbilt대 법학 박사ㆍ산업통상자원부 통상교섭본부 본부장.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_yoo_myeonghee", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 유명희, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jo_hye_kyung", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 조혜경, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ감사위원회 위원ㆍ지속가능경영위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍ서울대 로봇공학 박사ㆍ한성대 AI응용학과 교수.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_cho_hyekyung", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 조혜경, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_lee_hyuk_jae", "to_id": "company_samsung_electronics", "properties": {"evidence": "삼성전자의 임원은 이혁재, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ㆍ내부거래위원회 위원ㆍ지속가능경영 위원회 위원, 최대주주와의 관계는 계열회사 임원, 주요경력은 ㆍPurdue대 전자컴퓨터공학 박사ㆍ서울대 전기정보공학부 교수.", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+:params {"from_id": "person_lee_hyukjae", "to_id": "company_005930", "properties": {"evidence": "삼성전자의 임원은 이혁재, 직위는 이사, 이사회상 역할은 사외이사", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_ds_division", "properties": {"evidence": "대표이사 (DS부문 경영전반 총괄), 삼성전자 DS부문장 겸) 메모리사업부장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_dx_division", "properties": {"evidence": "대표이사 (DX부문 경영전반 총괄), 삼성전자 DX부문장 겸) MX사업부장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자 DS부문장 겸) 메모리사업부장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_mx_business", "properties": {"evidence": "삼성전자 DX부문장 겸) MX사업부장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_semiconductor_research", "properties": {"evidence": "삼성전자 DS부문 CTO 겸) 반도체연구소장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자 DS부문장 겸) 메모리사업부장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ds_division", "to_id": "industry_semiconductor", "properties": {"evidence": "DS부문 경영전반", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor_research", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체연구소장", "date": "2026-03-10", "evidence_source_id": "dart_005930_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820", "evidence_published_at": "2026-03-10"}}

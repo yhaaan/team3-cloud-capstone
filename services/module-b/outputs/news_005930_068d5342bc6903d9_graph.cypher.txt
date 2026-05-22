@@ -1,23 +1,126 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "노트북 중심 PC 시장 대응과 갤럭시 S27 OLED 패널 중국산 도입 검토"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_telecom
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_017670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "1분기 영업이익 증가와 가입자 회복으로 실적 정상화"}
+
+// node: business_area_notebook
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_notebook", "type": "BusinessArea", "name": "노트북"}
+
+// node: business_area_pc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_pc", "type": "BusinessArea", "name": "PC 시장"}
+
+// node: product_service_oled_panel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_oled_panel", "type": "ProductService", "name": "OLED 패널"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: business_area_smartphone
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smartphone", "type": "BusinessArea", "name": "스마트폰"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_notebook", "properties": {"evidence": "PC업체들이 대부분 수익성이 좋은 노트북으로 몰려간 한편, 삼성전자는 갤럭시에 중국 BOE 패널 탑재를 검토 중이라는 소식입니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_smartphone", "properties": {"evidence": "삼성전자가 갤럭시 S27 기본 모델에 중국산 OLED 패널을 적용할 가능성이 제기됐습니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_oled_panel", "properties": {"evidence": "삼성전자는 갤럭시 S27 기본 모델의 OLED 공급처로 중국 BOE를 검토 중이라고 보도했습니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_notebook", "to_id": "business_area_pc", "properties": {"evidence": "글로벌 PC 시장의 중심이 데스크톱에서 노트북으로 더 뚜렷하게 이동하고 있습니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_pc", "to_id": "industry_semiconductor", "properties": {"evidence": "메모리 반도체 가격 급등으로 제조 원가 부담이 커진 데 따른 대응으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smartphone", "to_id": "industry_semiconductor", "properties": {"evidence": "메모리 반도체 가격 급등으로 제조 원가 부담이 커진 데 따른 대응으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_pc", "properties": {"evidence": "SK텔레콤 주가가 실적 정상화와 가입자 회복 기대에 힘입어 10만원선에 근접했습니다.", "date": "", "evidence_source_id": "news_005930_068d5342bc6903d9", "evidence_source_type": "news", "evidence_source_url": "https://www.ilovepc.co.kr/news/articleView.html?idxno=59288", "evidence_published_at": "2026-05-12T09:14:00+09:00"}}

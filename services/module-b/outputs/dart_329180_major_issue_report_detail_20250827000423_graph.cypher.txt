@@ -1,7 +1,41 @@
-// node: company_hd현대중공업
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "선박 건조업 사업을 영위하며, HD현대미포를 흡수합병하여 경영효율성을 제고하고 성장기반을 마련함"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "선박 건조"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "본건 합병은 유사 사업 분야인 선박 건조 부문의 계열회사를 통합하여 시너지를 창출하고 지속적인 성장을 도모하는 것을 목표로 합니다.", "date": "2025-08-27", "evidence_source_id": "dart_329180_major_issue_report_detail_20250827000423", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000423", "evidence_published_at": "2025-08-27"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "선박 건조 부문의 계열회사를 통합", "date": "2025-08-27", "evidence_source_id": "dart_329180_major_issue_report_detail_20250827000423", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000423", "evidence_published_at": "2025-08-27"}}

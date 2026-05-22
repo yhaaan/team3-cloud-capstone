@@ -1,0 +1,66 @@
+// node: company_032830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830", "description": "생명보험 및 금융서비스를 주요 사업으로 하는 보험회사"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: industry_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_insurance", "type": "Industry", "name": "insurance"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "financial services"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "business_area_financial_services", "properties": {"evidence": "용인 삼성생명 블루밍스의 원클럽맨으로 남을 것 같았던 윤예빈.", "date": "", "evidence_source_id": "news_032830_b6ae164817d944fa", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2149761", "evidence_published_at": "2026-05-16T12:27:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_financial_services", "to_id": "industry_insurance", "properties": {"evidence": "용인 삼성생명 블루밍스의 원클럽맨으로 남을 것 같았던 윤예빈.", "date": "", "evidence_source_id": "news_032830_b6ae164817d944fa", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2149761", "evidence_published_at": "2026-05-16T12:27:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "industry_insurance", "properties": {"evidence": "용인 삼성생명 블루밍스의 원클럽맨으로 남을 것 같았던 윤예빈.", "date": "", "evidence_source_id": "news_032830_b6ae164817d944fa", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2149761", "evidence_published_at": "2026-05-16T12:27:00+09:00"}}

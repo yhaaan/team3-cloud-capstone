@@ -1,0 +1,24 @@
+// node: company_011200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011200", "type": "Company", "name": "HMM", "stock_code": "011200"}
+
+// node: person_한국산업은행
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_한국산업은행", "type": "Person", "name": "한국산업은행"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_한국산업은행", "to_id": "company_011200", "properties": {"evidence": "HMM의 최대주주 관련 인물/법인은 한국산업은행, 관계는 최대주주 본인, 당기말 보유주식수는 334,133,427주, 지분율은 35.42%.", "date": "2026-03-18", "evidence_source_id": "dart_011200_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}

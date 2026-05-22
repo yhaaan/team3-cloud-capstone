@@ -1,26 +1,448 @@
-// node: company_한화
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "전략, 글로벌, 건설부문 대표이사 중심으로 다양한 사업 부문 운영"}
 
-// node: industry_ai
+// node: company_012450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: company_009830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009830", "type": "Company", "name": "한화솔루션", "stock_code": "009830"}
+
+// node: company_042660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: company_272210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+
+// node: company_452260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_452260", "type": "Company", "name": "한화갤러리아", "stock_code": "452260"}
+
+// node: company_088350
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_088350", "type": "Company", "name": "한화생명", "stock_code": "088350"}
+
+// node: company_000370
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000370", "type": "Company", "name": "한화손해보험", "stock_code": "000370"}
+
+// node: company_302440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_302440", "type": "Company", "name": "SK바이오사이언스", "stock_code": "302440"}
+
+// node: company_004170
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004170", "type": "Company", "name": "신세계", "stock_code": "004170"}
+
+// node: company_052860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_052860", "type": "Company", "name": "아이앤씨", "stock_code": "052860"}
+
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: company_051910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+
+// node: company_065770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_065770", "type": "Company", "name": "CS", "stock_code": "065770"}
+
+// node: company_255220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_255220", "type": "Company", "name": "SG", "stock_code": "255220"}
+
+// node: Industry_energy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "Industry_energy", "type": "Industry", "name": "energy"}
 
-// node: industry_it
+// node: Industry_construction
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+:params {"id": "Industry_construction", "type": "Industry", "name": "construction"}
+
+// node: BusinessArea_전략부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_전략부문", "type": "BusinessArea", "name": "전략부문"}
+
+// node: BusinessArea_글로벌부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_글로벌부문", "type": "BusinessArea", "name": "글로벌부문"}
+
+// node: BusinessArea_건설부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_건설부문", "type": "BusinessArea", "name": "건설부문"}
+
+// node: BusinessArea_Material사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_Material사업부", "type": "BusinessArea", "name": "Material사업부"}
+
+// node: BusinessArea_IR팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_IR팀", "type": "BusinessArea", "name": "IR팀"}
+
+// node: BusinessArea_인사지원팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_인사지원팀", "type": "BusinessArea", "name": "인사지원팀"}
+
+// node: BusinessArea_기술혁신실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_기술혁신실", "type": "BusinessArea", "name": "기술혁신실"}
+
+// node: BusinessArea_HR팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_HR팀", "type": "BusinessArea", "name": "HR팀"}
+
+// node: BusinessArea_전략기획실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_전략기획실", "type": "BusinessArea", "name": "전략기획실"}
+
+// node: BusinessArea_경영지원실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_경영지원실", "type": "BusinessArea", "name": "경영지원실"}
+
+// node: BusinessArea_재무실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_재무실", "type": "BusinessArea", "name": "재무실"}
+
+// node: BusinessArea_한화인재경영원
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_한화인재경영원", "type": "BusinessArea", "name": "한화인재경영원"}
+
+// node: BusinessArea_소재개발연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_소재개발연구센터", "type": "BusinessArea", "name": "소재개발연구센터"}
+
+// node: BusinessArea_컴플라이언스위원회
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_컴플라이언스위원회", "type": "BusinessArea", "name": "컴플라이언스위원회"}
+
+// node: person_김동관
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김동관", "type": "Person", "name": "김동관"}
+
+// node: person_김승연
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김승연", "type": "Person", "name": "김승연"}
+
+// node: person_류두형
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_류두형", "type": "Person", "name": "류두형"}
+
+// node: person_김우석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김우석", "type": "Person", "name": "김우석"}
+
+// node: person_이석재
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이석재", "type": "Person", "name": "이석재"}
+
+// node: person_권익환
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_권익환", "type": "Person", "name": "권익환"}
+
+// node: person_이용규
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이용규", "type": "Person", "name": "이용규"}
+
+// node: person_여승주
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_여승주", "type": "Person", "name": "여승주"}
+
+// node: person_한상윤
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_한상윤", "type": "Person", "name": "한상윤"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_전략부문", "properties": {"evidence": "한화의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_글로벌부문", "properties": {"evidence": "한화의 임원은 류두형, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 글로벌부문 대표이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_건설부문", "properties": {"evidence": "한화의 임원은 김우석, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 건설부문 대표이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_Material사업부", "properties": {"evidence": "한화의 임원은 김태욱, 직위는 사업부장, 이사회상 역할은 미등기, 담당업무는 글로벌부문 Material사업부장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_IR팀", "properties": {"evidence": "한화의 임원은 한상윤, 직위는 팀장, 이사회상 역할은 미등기, 담당업무는 전략부문 재무실 IR팀장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_인사지원팀", "properties": {"evidence": "한화의 임원은 권인, 직위는 담당임원, 이사회상 역할은 미등기, 담당업무는 전략부문 인사지원팀", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_기술혁신실", "properties": {"evidence": "한화의 임원은 심무강, 직위는 담당임원, 이사회상 역할은 미등기, 담당업무는 글로벌부문 기술혁신실", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_HR팀", "properties": {"evidence": "한화의 임원은 박기출, 직위는 담당임원, 이사회상 역할은 미등기, 담당업무는 글로벌부문 HR팀", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_전략기획실", "properties": {"evidence": "한화의 임원은 박종욱, 직위는 팀장, 이사회상 역할은 미등기, 담당업무는 전략부문 전략기획실 전략1팀장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_경영지원실", "properties": {"evidence": "한화의 임원은 서정민, 직위는 실장, 이사회상 역할은 미등기, 담당업무는 경영지원실장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_재무실", "properties": {"evidence": "한화의 임원은 신용인, 직위는 실장, 이사회상 역할은 미등기, 담당업무는 전략부문 재무실장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_한화인재경영원", "properties": {"evidence": "한화의 임원은 금종한, 직위는 원장, 이사회상 역할은 미등기, 담당업무는 한화인재경영원장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_소재개발연구센터", "properties": {"evidence": "한화의 임원은 김재형, 직위는 연구센터장, 이사회상 역할은 미등기, 담당업무는 글로벌부문 소재개발연구센터장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "BusinessArea_컴플라이언스위원회", "properties": {"evidence": "한화의 임원은 조현일, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 컴플라이언스위원회", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
 
 // relation: BELONGS_TO
 
@@ -29,7 +451,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화", "to_id": "industry_ai", "properties": {"evidence": "한화의 임원은 오용근, 직위는 실장, 이사회상 역할은 미등기, 담당업무는 건설부문 기획실장, 최대주주와의 관계는 해당사항 없음 (미등기 임원), 주요경력은 연세대 건축공학 한국과학기술원(KAIST) MBA 前 한화 건설부문 운영혁신실장.", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+:params {"from_id": "company_000880", "to_id": "Industry_energy", "properties": {"evidence": "한화 주요 경력 내역에서 한화에어로스페이스, 한화솔루션, 한화오션 등 에너지 관련 계열사 대표이사 포함", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
 
 // relation: BELONGS_TO
 
@@ -38,4 +460,85 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화", "to_id": "industry_it", "properties": {"evidence": "한화의 임원은 금종한, 직위는 원장, 이사회상 역할은 미등기, 담당업무는 한화인재경영원장, 최대주주와의 관계는 해당사항 없음 (미등기 임원), 주요경력은 University of Washington MBA 前 한화첨단소재 경영기획부문장 前 한화솔루션 전략부문 인사전략실장.", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+:params {"from_id": "company_000880", "to_id": "Industry_construction", "properties": {"evidence": "한화 주요 경력 내역에서 건설부문 대표이사, 건설부문 다양한 담당임원 배치 확인", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김동관", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김승연", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 김승연, 직위는 회장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_류두형", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 류두형, 직위는 대표이사, 이사회상 역할은 사내이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김우석", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 김우석, 직위는 대표이사, 이사회상 역할는 사내이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이석재", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 이석재, 직위는 사외이사, 이사회상 역할는 사외이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_권익환", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 권익환, 직위는 사외이사, 이사회상 역할는 사외이사", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이용규", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 이용규, 직위는 사외이사, 이사회상 역할는 사외이사/감사위원장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_여승주", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 여승주, 직위는 부회장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_한상윤", "to_id": "company_000880", "properties": {"evidence": "한화의 임원은 한상윤, 직위는 팀장, 담당업무는 전략부문 재무실 IR팀장", "date": "2026-03-31", "evidence_source_id": "dart_000880_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}

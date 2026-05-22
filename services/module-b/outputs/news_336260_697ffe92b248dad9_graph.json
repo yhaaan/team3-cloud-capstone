@@ -2,17 +2,72 @@
   "source_id": "news_336260_697ffe92b248dad9",
   "entities": [
     {
-      "id": "company_doosan_fuel_cell",
+      "id": "company_336260",
       "type": "Company",
       "name": "두산퓨얼셀",
-      "stock_code": "336260"
+      "stock_code": "336260",
+      "description": "수소연료전지와 전동기 발전기 및 전기 변환·공급·제어 장치 제조업체다."
     },
     {
-      "id": "company_doosan",
-      "type": "Company",
-      "name": "두산",
-      "stock_code": "000150"
+      "id": "business_area_수소연료전지",
+      "type": "BusinessArea",
+      "name": "수소연료전지"
+    },
+    {
+      "id": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조",
+      "type": "BusinessArea",
+      "name": "전동기 발전기 및 전기 변환 공급 제어 장치 제조"
+    },
+    {
+      "id": "industry_에너지",
+      "type": "Industry",
+      "name": "에너지"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_336260",
+      "to": "business_area_수소연료전지",
+      "evidence": "19:22 [디지털투데이 임민철 에디터] 수소연료전지 전문 회사 두산퓨얼셀(336260)이 2026년 1분기 연결 기준 잠정 실적을 29일 공시했다.",
+      "date": "",
+      "evidence_source_id": "news_336260_697ffe92b248dad9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_336260",
+      "to": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조",
+      "evidence": "두산퓨얼셀은 2019년 10월 18일 코스피 시장에 상장된 전동기 발전기 및 전기 변환 · 공급 · 제어 장치 제조업체다.",
+      "date": "",
+      "evidence_source_id": "news_336260_697ffe92b248dad9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_수소연료전지",
+      "to": "industry_에너지",
+      "evidence": "수소연료전지 전문 회사 두산퓨얼셀(336260)이 2026년 1분기 연결 기준 잠정 실적을 29일 공시했다.",
+      "date": "",
+      "evidence_source_id": "news_336260_697ffe92b248dad9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조",
+      "to": "industry_에너지",
+      "evidence": "두산퓨얼셀은 2019년 10월 18일 코스피 시장에 상장된 전동기 발전기 및 전기 변환 · 공급 · 제어 장치 제조업체다.",
+      "date": "",
+      "evidence_source_id": "news_336260_697ffe92b248dad9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    }
+  ]
 }

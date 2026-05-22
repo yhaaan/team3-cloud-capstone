@@ -2,150 +2,172 @@
   "source_id": "dart_005380_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "자동차 제조 및 경영전반 총괄, ICT 등 다양한 사업을 영위하는 기업"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_현대모비스",
+      "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
       "stock_code": "012330"
     },
     {
-      "id": "company_제일기획",
+      "id": "company_181710",
       "type": "Company",
-      "name": "제일기획",
-      "stock_code": "030000"
+      "name": "NHN",
+      "stock_code": "181710"
     },
     {
-      "id": "company_한진칼",
+      "id": "company_180640",
       "type": "Company",
       "name": "한진칼",
       "stock_code": "180640"
     },
     {
+      "id": "company_030000",
+      "type": "Company",
+      "name": "제일기획",
+      "stock_code": "030000"
+    },
+    {
+      "id": "company_002320",
+      "type": "Company",
+      "name": "한진",
+      "stock_code": "002320"
+    },
+    {
+      "id": "business_area_automotive_manufacturing",
+      "type": "BusinessArea",
+      "name": "자동차 제조"
+    },
+    {
+      "id": "business_area_ict",
+      "type": "BusinessArea",
+      "name": "ICT"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
+    },
+    {
+      "id": "industry_ict",
+      "type": "Industry",
+      "name": "플랫폼"
+    },
+    {
       "id": "person_정의선",
       "type": "Person",
-      "name": "정의선",
-      "role_raw": "회장",
-      "affiliated_company": "company_현대차",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
-    },
-    {
-      "id": "person_도진명",
-      "type": "Person",
-      "name": "도진명",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
-    },
-    {
-      "id": "person_김수이",
-      "type": "Person",
-      "name": "김수이",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
-    },
-    {
-      "id": "person_Tan_Seck_Yew_Benjamin",
-      "type": "Person",
-      "name": "Tan Seck Yew Benjamin",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
-    },
-    {
-      "id": "person_무뇨스_바르셀로_호세_안토니오",
-      "type": "Person",
-      "name": "무뇨스 바르셀로 호세 안토니오",
-      "role_raw": "사장",
-      "affiliated_company": "company_현대차",
-      "role": "PRESIDENT",
-      "role_label": "사장"
-    },
-    {
-      "id": "person_이동석",
-      "type": "Person",
-      "name": "이동석",
-      "role_raw": "사장",
-      "affiliated_company": "company_현대차",
-      "role": "PRESIDENT",
-      "role_label": "사장"
+      "name": "정의선"
     },
     {
       "id": "person_진은숙",
       "type": "Person",
-      "name": "진은숙",
-      "role_raw": "부사장",
-      "affiliated_company": "company_현대차",
-      "role": "VICE_PRESIDENT",
-      "role_label": "부사장"
-    },
-    {
-      "id": "person_이승조",
-      "type": "Person",
-      "name": "이승조",
-      "role_raw": "부사장",
-      "affiliated_company": "company_현대차",
-      "role": "VICE_PRESIDENT",
-      "role_label": "부사장"
-    },
-    {
-      "id": "person_심달훈",
-      "type": "Person",
-      "name": "심달훈",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
-    },
-    {
-      "id": "person_이지윤",
-      "type": "Person",
-      "name": "이지윤",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
+      "name": "진은숙"
     },
     {
       "id": "person_장승화",
       "type": "Person",
-      "name": "장승화",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
+      "name": "장승화"
     },
     {
       "id": "person_최윤희",
       "type": "Person",
-      "name": "최윤희",
-      "role_raw": "이사",
-      "affiliated_company": "company_현대차",
-      "role": "DIRECTOR",
-      "role_label": "이사"
+      "name": "최윤희"
     }
   ],
   "relations": [
     {
-      "type": "APPOINTED_TO",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_automotive_manufacturing",
+      "evidence": "현대차의 임원은 정의선, 담당업무는 대표이사, 경영전반총괄",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_ict",
+      "evidence": "현대차의 임원은 진은숙, 담당업무는 ICT",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_automotive_manufacturing",
+      "to": "industry_automotive",
+      "evidence": "자동차 제조 관련 명시",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ict",
+      "to": "industry_ict",
+      "evidence": "현대차 임원 진은숙의 ICT 담당 업무 및 NHN 경력",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_005380",
+      "to": "company_000270",
+      "evidence": "정의선 임원 주요경력: 기아자동차 사장('05~'08) 현대자동차 부회장('09~'18) 현대자동차 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_005380",
+      "to": "company_012330",
+      "evidence": "정의선 임원 주요경력 겸직현황: 현대모비스 대표이사.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_181710",
+      "to": "industry_ict",
+      "evidence": "진은숙 임원 경력: NHN 엔터테인먼트 총괄이사('13~'19) NHN 토스트 총괄이사 겸 대표이사('13~'21)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "AFFILIATED_WITH",
       "from": "person_정의선",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 정의선, 직위는 회장, 이사회상 역할은 사내이사, 담당업무는 대표이사, 경영전반총괄,",
+      "to": "company_005380",
+      "evidence": "현대차의 임원은 정의선, 직위는 회장",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -153,120 +175,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "APPOINTED_TO",
-      "from": "person_도진명",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 도진명Jim MyongDoh, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원, 사외이사후보추천위원회 위원,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_김수이",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 김수이, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_Tan_Seck_Yew_Benjamin",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 Tan Seck Yew Benjamin, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 지속가능경영 위원회 위원, 사외이사후보 추천위원회 위원,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_무뇨스_바르셀로_호세_안토니오",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 무뇨스 바르셀로 호세 안토니오, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사,업무총괄,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_이동석",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 이동석, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사, 업무총괄 (생산,안전 등),",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
+      "type": "AFFILIATED_WITH",
       "from": "person_진은숙",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 진은숙, 직위는 부사장, 이사회상 역할는 사내이사, 담당업무는 ICT,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_이승조",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 이승조, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 CFO,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_심달훈",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 심달훈, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 선임사외이사, 감사위원회 위원장, 지속가능경영 위원회 위원, 보수위원회 위원,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_이지윤",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 이지윤, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원, 사외이사후보 추천위원회위원장,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_장승화",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 장승화, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회 위원,지속가능경영 위원회 위원장, 보수위원회 위원,",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_최윤희",
-      "to": "company_현대차",
-      "evidence": "현대차의 임원은 최윤희, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 지속가능경영 위원회 위원, 보수위원회위원장,",
+      "to": "company_005380",
+      "evidence": "현대차의 임원은 진은숙, 직위는 부사장, 담당업무는 ICT",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -275,20 +187,9 @@
     },
     {
       "type": "AFFILIATED_WITH",
-      "from": "person_정의선",
-      "to": "company_기아",
-      "evidence": "정의선 ... ·겸직현황: 기아 이사 현대모비스 대표이사.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_executive_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정의선",
-      "to": "company_현대모비스",
-      "evidence": "정의선 ... ·겸직현황: 기아 이사 현대모비스 대표이사.",
+      "from": "person_진은숙",
+      "to": "company_181710",
+      "evidence": "진은숙 경력: NHN 엔터테인먼트 총괄이사('13~'19) NHN 토스트 총괄이사 겸 대표이사('13~'21)",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -298,8 +199,19 @@
     {
       "type": "AFFILIATED_WITH",
       "from": "person_장승화",
-      "to": "company_제일기획",
-      "evidence": "장승화 ... ·겸직현황 : 제일기획 사외이사.",
+      "to": "company_005380",
+      "evidence": "현대차의 임원은 장승화, 직위는 이사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_장승화",
+      "to": "company_030000",
+      "evidence": "장승화 겸직현황 : 제일기획 사외이사.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -309,8 +221,19 @@
     {
       "type": "AFFILIATED_WITH",
       "from": "person_최윤희",
-      "to": "company_한진칼",
-      "evidence": "최윤희 ... 겸직현황 : 한진칼 사외이사.",
+      "to": "company_005380",
+      "evidence": "현대차의 임원은 최윤희, 직위는 이사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_최윤희",
+      "to": "company_180640",
+      "evidence": "최윤희 겸직현황 : 한진칼 사외이사.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_executive_status_2025_11011",
       "evidence_source_type": "dart",

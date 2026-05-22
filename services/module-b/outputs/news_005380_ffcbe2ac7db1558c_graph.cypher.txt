@@ -1,39 +1,118 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "description": "로보틱스 자회사를 보유한 자동차 및 모빌리티 기업", "stock_code": "005380"}
 
-// node: company_tpc로보틱스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_tpc로보틱스", "type": "Company", "name": "TPC로보틱스", "stock_code": "048770"}
-
-// node: company_모베이스
+// node: company_048770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_모베이스", "type": "Company", "name": "모베이스", "stock_code": "101330"}
+:params {"id": "company_048770", "type": "Company", "name": "TPC로보틱스", "stock_code": "048770"}
 
-// node: company_휴림로봇
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_휴림로봇", "type": "Company", "name": "휴림로봇", "stock_code": "090710"}
-
-// node: company_유진로봇
+// node: company_101330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_유진로봇", "type": "Company", "name": "유진로봇", "stock_code": "056080"}
+:params {"id": "company_101330", "type": "Company", "name": "모베이스", "stock_code": "101330"}
+
+// node: company_090710
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_090710", "type": "Company", "name": "휴림로봇", "stock_code": "090710"}
+
+// node: company_056080
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_056080", "type": "Company", "name": "유진로봇", "stock_code": "056080"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "현대자동차그룹의 로보틱스 자회사인 보스턴다이내믹스의 미국 증시 상장 기대감이 고조되면서 국내 증시에서 로봇 관련주들이 전방위적인 불기둥을 뿜어내고 있다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_048770", "to_id": "business_area_robotics", "properties": {"evidence": "가장 두드러진 상승세를 보이는 곳은 TPC로보틱스다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_101330", "to_id": "business_area_robotics", "properties": {"evidence": "이 외에도 로봇 부품 및 시스템 관련주인 모베이스(+27.10%), 휴림로봇(+15.00%), 유진로봇(+10.64%) 등이 두 자릿수 이상의 급등세를 기록 중이다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_090710", "to_id": "business_area_robotics", "properties": {"evidence": "이 외에도 로봇 부품 및 시스템 관련주인 모베이스(+27.10%), 휴림로봇(+15.00%), 유진로봇(+10.64%) 등이 두 자릿수 이상의 급등세를 기록 중이다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_056080", "to_id": "business_area_robotics", "properties": {"evidence": "이 외에도 로봇 부품 및 시스템 관련주인 모베이스(+27.10%), 휴림로봇(+15.00%), 유진로봇(+10.64%) 등이 두 자릿수 이상의 급등세를 기록 중이다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_automotive", "properties": {"evidence": "현대자동차그룹의 로보틱스 자회사인 보스턴다이내믹스의 미국 증시 상장 기대감이 고조되면서 국내 증시에서 로봇 관련주들이 전방위적인 불기둥을 뿜어내고 있다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "현대자동차그룹의 로보틱스 자회사인 보스턴다이내믹스의 미국 증시 상장 기대감이 고조되면서 국내 증시에서 로봇 관련주들이 전방위적인 불기둥을 뿜어내고 있다.", "date": "", "evidence_source_id": "news_005380_ffcbe2ac7db1558c", "evidence_source_type": "news", "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1157465", "evidence_published_at": "2026-05-12T09:48:00+09:00"}}

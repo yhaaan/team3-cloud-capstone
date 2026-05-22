@@ -2,11 +2,72 @@
   "source_id": "news_373220_18c193798de4608e",
   "entities": [
     {
-      "id": "company_lg에너지솔루션",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "배터리 생산과 공급망 생태계 강화, 원통형 배터리 생산 라인 구축에 주력"
+    },
+    {
+      "id": "business_area_battery_manufacturing",
+      "type": "BusinessArea",
+      "name": "배터리 제조"
+    },
+    {
+      "id": "product_service_cylindrical_battery",
+      "type": "ProductService",
+      "name": "원통형 배터리"
+    },
+    {
+      "id": "industry_battery",
+      "type": "Industry",
+      "name": "배터리"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_battery_manufacturing",
+      "evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.",
+      "date": "",
+      "evidence_source_id": "news_373220_18c193798de4608e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608",
+      "evidence_published_at": "2026-05-07T16:46:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_373220",
+      "to": "product_service_cylindrical_battery",
+      "evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.",
+      "date": "",
+      "evidence_source_id": "news_373220_18c193798de4608e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608",
+      "evidence_published_at": "2026-05-07T16:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_battery_manufacturing",
+      "to": "industry_battery",
+      "evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.",
+      "date": "",
+      "evidence_source_id": "news_373220_18c193798de4608e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608",
+      "evidence_published_at": "2026-05-07T16:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cylindrical_battery",
+      "to": "business_area_battery_manufacturing",
+      "evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.",
+      "date": "",
+      "evidence_source_id": "news_373220_18c193798de4608e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608",
+      "evidence_published_at": "2026-05-07T16:46:00+09:00"
+    }
+  ]
 }

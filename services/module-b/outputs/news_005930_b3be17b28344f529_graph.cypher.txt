@@ -1,55 +1,67 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "삼성 월렛 해외 NFC 결제 서비스로 글로벌 결제 시장에서 디지털 결제 솔루션 제공"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: business_area_digital_payment
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "business_area_digital_payment", "type": "BusinessArea", "name": "디지털 결제"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hanwha
+// node: product_service_samsung_wallet
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`ProductService`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "product_service_samsung_wallet", "type": "ProductService", "name": "삼성 월렛"}
 
-// node: company_hyundai_construction
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_construction", "type": "Company", "name": "현대건설", "stock_code": "000720"}
-
-// node: company_hyundai_motors
+// node: industry_finance
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_hyundai_motors", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_digital_payment", "properties": {"evidence": "삼성전자 및 비자(Visa)와 협업을 통해 해외결제(NFC)망 서비스 확대를 위한 '삼성 월렛 해외 NFC 결제 서비스'를 비자 브랜드까지 전면 확대 시행한다고 12일 밝혔다.", "date": "", "evidence_source_id": "news_005930_b3be17b28344f529", "evidence_source_type": "news", "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_samsung_wallet", "properties": {"evidence": "삼성전자 및 비자(Visa)와 협업을 통해 해외결제(NFC)망 서비스 확대를 위한 '삼성 월렛 해외 NFC 결제 서비스'를 비자 브랜드까지 전면 확대 시행한다고 12일 밝혔다.", "date": "", "evidence_source_id": "news_005930_b3be17b28344f529", "evidence_source_type": "news", "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_samsung_wallet", "to_id": "business_area_digital_payment", "properties": {"evidence": "삼성 월렛 기반의 해외 결제 서비스 지원 브랜드 범위를 넓혔다는 평가다.", "date": "", "evidence_source_id": "news_005930_b3be17b28344f529", "evidence_source_type": "news", "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_digital_payment", "to_id": "industry_finance", "properties": {"evidence": "하나카드가 해외 결제 시장에서 '실물카드 없는 여행' 경쟁 강화에 나섰다.", "date": "", "evidence_source_id": "news_005930_b3be17b28344f529", "evidence_source_type": "news", "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}

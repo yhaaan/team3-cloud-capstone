@@ -31,8 +31,11 @@ def normalize_graph_roles(
     company_whitelist: CompanyWhitelist | None = None,
     source_doc: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    filter_non_dart_person_entities(graph_data, source_doc)
+
     if company_whitelist is not None:
         canonicalize_company_entities(graph_data, company_whitelist)
+        add_dart_executive_entities(graph_data, company_whitelist, source_doc)
 
     for entity in graph_data.get("entities", []):
         if entity.get("type") != "Person":
@@ -65,6 +68,229 @@ def normalize_graph_roles(
         source_doc=source_doc,
     )
     return graph_data
+
+
+def filter_non_dart_person_entities(
+    graph_data: dict[str, Any],
+    source_doc: dict[str, Any] | None = None,
+) -> None:
+    if allows_person_entities(source_doc, graph_data):
+        return
+
+    removed_person_ids = {
+        str(entity.get("id") or "")
+        for entity in graph_data.get("entities", [])
+        if entity.get("type") == "Person"
+    }
+    if not removed_person_ids:
+        return
+
+    graph_data["entities"] = [
+        entity for entity in graph_data.get("entities", []) if entity.get("type") != "Person"
+    ]
+    graph_data["relations"] = [
+        relation
+        for relation in graph_data.get("relations", [])
+        if relation.get("from") not in removed_person_ids
+        and relation.get("to") not in removed_person_ids
+    ]
+
+
+def allows_person_entities(
+    source_doc: dict[str, Any] | None = None,
+    graph_data: dict[str, Any] | None = None,
+) -> bool:
+    if not source_doc:
+        source_id = str((graph_data or {}).get("source_id") or "")
+        return source_id.startswith("dart_") and "_executive_status_" in source_id
+
+    source_type = str(
+        source_doc.get("document_type") or source_doc.get("module_a_type") or ""
+    )
+    dataset = str(source_doc.get("dataset") or "")
+    if not dataset and isinstance(source_doc.get("metadata"), dict):
+        dataset = str(source_doc["metadata"].get("dataset") or "")
+
+    return source_type == "dart" and dataset == "executive_status"
+
+
+def add_dart_executive_entities(
+    graph_data: dict[str, Any],
+    company_whitelist: CompanyWhitelist,
+    source_doc: dict[str, Any] | None = None,
+) -> None:
+    if not source_doc or source_doc.get("dataset") != "executive_status":
+        return
+
+    records = source_doc.get("normalized_records")
+    if records is None and isinstance(source_doc.get("metadata"), dict):
+        records = source_doc["metadata"].get("normalized_records")
+    if not isinstance(records, list):
+        return
+
+    listed_company = company_whitelist.find(
+        name=str(source_doc.get("company_name") or ""),
+        stock_code=str(source_doc.get("stock_code") or ""),
+    )
+    if listed_company is None:
+        return
+
+    company_id = build_company_id(listed_company.stock_code)
+    ensure_entity(
+        graph_data,
+        {
+            "id": company_id,
+            "type": "Company",
+            "name": listed_company.company_name,
+            "stock_code": normalize_stock_code(listed_company.stock_code),
+        },
+    )
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+
+        person_name = string_value(record.get("nm")).strip()
+        if not person_name:
+            continue
+
+        birth_ym = normalize_birth_ym(record.get("birth_ym"))
+        person_id = build_person_id(person_name, birth_ym)
+        remap_existing_person_entities(graph_data, person_name, person_id)
+        role_raw = string_value(record.get("ofcps")).strip()
+        person_entity = {
+            "id": person_id,
+            "type": "Person",
+            "name": person_name,
+            "affiliated_company": listed_company.company_name,
+        }
+        add_if_present(person_entity, "birth_ym", birth_ym)
+        add_if_present(person_entity, "gender", record.get("sexdstn"))
+        add_if_present(person_entity, "role", role_raw)
+        add_if_present(person_entity, "executive_type", record.get("rgist_exctv_at"))
+        add_if_present(person_entity, "full_time_status", record.get("fte_at"))
+        add_if_present(person_entity, "responsibility", record.get("chrg_job"))
+        add_if_present(person_entity, "main_career", record.get("main_career"))
+        add_if_present(person_entity, "major_shareholder_relation", record.get("mxmm_shrholdr_relate"))
+        add_if_present(person_entity, "tenure", record.get("hffc_pd"))
+        add_if_present(person_entity, "tenure_end_on", normalize_korean_date(record.get("tenure_end_on")))
+        ensure_entity(graph_data, person_entity)
+
+        evidence = build_executive_evidence(record, listed_company.company_name)
+        ensure_relation(
+            graph_data,
+            {
+                "type": "AFFILIATED_WITH",
+                "from": person_id,
+                "to": company_id,
+                "evidence": evidence,
+            },
+        )
+
+
+def remap_existing_person_entities(
+    graph_data: dict[str, Any],
+    person_name: str,
+    canonical_person_id: str,
+) -> None:
+    old_ids: set[str] = set()
+    for entity in graph_data.get("entities", []):
+        if entity.get("type") != "Person":
+            continue
+        if entity.get("id") == canonical_person_id:
+            continue
+        if string_value(entity.get("name")).strip() == person_name:
+            old_id = string_value(entity.get("id")).strip()
+            if old_id:
+                old_ids.add(old_id)
+            entity["id"] = canonical_person_id
+
+    if not old_ids:
+        return
+
+    for relation in graph_data.get("relations", []):
+        if relation.get("from") in old_ids:
+            relation["from"] = canonical_person_id
+        if relation.get("to") in old_ids:
+            relation["to"] = canonical_person_id
+
+
+def ensure_entity(graph_data: dict[str, Any], entity: dict[str, Any]) -> None:
+    entities = graph_data.setdefault("entities", [])
+    entity_id = str(entity.get("id") or "")
+    for existing in entities:
+        if existing.get("id") != entity_id:
+            continue
+        for key, value in entity.items():
+            if value and not existing.get(key):
+                existing[key] = value
+        return
+    entities.append(entity)
+
+
+def ensure_relation(graph_data: dict[str, Any], relation: dict[str, Any]) -> None:
+    relations = graph_data.setdefault("relations", [])
+    relation_key = (
+        relation.get("type"),
+        relation.get("from"),
+        relation.get("to"),
+        relation.get("evidence"),
+    )
+    for existing in relations:
+        existing_key = (
+            existing.get("type"),
+            existing.get("from"),
+            existing.get("to"),
+            existing.get("evidence"),
+        )
+        if existing_key == relation_key:
+            return
+    relations.append(relation)
+
+
+def add_if_present(entity: dict[str, Any], key: str, value: Any) -> None:
+    cleaned = string_value(value).strip()
+    if cleaned and cleaned != "-":
+        entity[key] = cleaned
+
+
+def string_value(value: Any) -> str:
+    return "" if value is None else str(value)
+
+
+def normalize_birth_ym(value: Any) -> str:
+    text = string_value(value).strip()
+    match = re.search(r"(\d{4})\D+(\d{1,2})", text)
+    if match:
+        return f"{match.group(1)}-{int(match.group(2)):02d}"
+    return text
+
+
+def normalize_korean_date(value: Any) -> str:
+    text = string_value(value).strip()
+    match = re.search(r"(\d{4})\D+(\d{1,2})\D+(\d{1,2})", text)
+    if match:
+        return f"{match.group(1)}-{int(match.group(2)):02d}-{int(match.group(3)):02d}"
+    return text
+
+
+def build_person_id(name: str, birth_ym: str) -> str:
+    normalized_name = re.sub(r"[^0-9A-Za-z가-힣]+", "_", name.strip()).strip("_").lower()
+    normalized_birth_ym = re.sub(r"[^0-9]+", "", birth_ym)
+    if normalized_birth_ym:
+        return f"person_{normalized_name}_{normalized_birth_ym}"
+    return f"person_{normalized_name}"
+
+
+def build_executive_evidence(record: dict[str, Any], company_name: str) -> str:
+    parts = [
+        string_value(record.get("nm")).strip(),
+        company_name,
+        string_value(record.get("ofcps")).strip(),
+        string_value(record.get("rgist_exctv_at")).strip(),
+        string_value(record.get("birth_ym")).strip(),
+    ]
+    return " ".join(part for part in parts if part and part != "-")
 
 
 def canonicalize_company_entities(

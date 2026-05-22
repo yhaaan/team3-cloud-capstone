@@ -1,82 +1,130 @@
-// node: company_sk스퀘어
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk스퀘어", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK하이닉스 지분 투자 중심의 대안 투자처로, 배당수입과 자산가치 중심의 경영"}
 
-// node: company_kd
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kd", "type": "Company", "name": "KD", "stock_code": "044180"}
-
-// node: company_lg이노텍
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg이노텍", "type": "Company", "name": "LG이노텍", "stock_code": "011070"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_한화오션
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_한화오션", "type": "Company", "name": "한화오션", "stock_code": "042660"}
-
-// node: company_에이비엘바이오
+// node: company_011070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_에이비엘바이오", "type": "Company", "name": "에이비엘바이오", "stock_code": "298380"}
+:params {"id": "company_011070", "type": "Company", "name": "LG이노텍", "stock_code": "011070", "description": "아이폰 카메라모듈과 AI 서버용 고밀도 반도체 기판 생산, 패키지솔루션 사업 확장"}
 
-// node: company_sk하이닉스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
-
-// node: company_삼성전자
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "상선 및 특수선 건조, 원가 절감과 수주 경쟁력 강화로 수익성 개선 중"}
 
-// node: company_삼성바이오로직스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
-
-// node: company_현대차
+// node: company_298380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_298380", "type": "Company", "name": "에이비엘바이오", "stock_code": "298380", "description": "바이오 신약 개발 중심, BBB 셔틀 및 면역 활성화 항체 플랫폼 핵심 기술 보유"}
 
-// node: company_대신증권
+// node: business_area_memory
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_대신증권", "type": "Company", "name": "대신증권", "stock_code": "003540"}
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: business_area_foundry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_foundry", "type": "BusinessArea", "name": "Foundry"}
+
+// node: product_service_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dram", "type": "ProductService", "name": "DRAM"}
+
+// node: product_service_hbm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hbm", "type": "ProductService", "name": "HBM"}
+
+// node: business_area_camera_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_camera_module", "type": "BusinessArea", "name": "Camera module"}
+
+// node: business_area_ai_server_component
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_server_component", "type": "BusinessArea", "name": "AI server components"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: business_area_biopharma
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharma", "type": "BusinessArea", "name": "Biopharma"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
 
 // relation: INVESTS_IN
 
@@ -85,31 +133,157 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk스퀘어", "to_id": "company_sk하이닉스", "properties": {"evidence": "펀드의 단일 종목 편입 한도(10%) 규제로 인해 SK하이닉스에 직접 투자하기 어려운 기관들에게 SK스퀘어는 하이닉스를 20.1% 보유한 사실상의 대안 투자처로 기능하고 있다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "company_000660", "properties": {"evidence": "SK스퀘어는 하이닉스를 20.1% 보유한 사실상의 대안 투자처로 기능하고 있다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
 
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_대신증권", "to_id": "company_sk스퀘어", "properties": {"evidence": "대신증권은 투자의견 매수(Buy)를 유지하면서 목표주가를 기존 76만원에서 100만원으로 32% 상향했다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
-
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_대신증권", "to_id": "company_lg이노텍", "properties": {"evidence": "DS투자증권은 투자의견 매수(Buy)를 유지하며 목표주가를 39만원에서 66만원으로 대폭 상향했다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "business_area_memory", "properties": {"evidence": "NAV의 97%를 차지하는 SK하이닉스의 실적·주가 상승 전망이 반영된 결과다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: BELONGS_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_대신증권", "to_id": "company_한화오션", "properties": {"evidence": "DS투자증권은 투자의견 매수(Buy)를 유지하며 목표주가를 16만원에서 17만원으로 상향했다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "industry_semiconductor", "properties": {"evidence": "SK스퀘어는 SK하이닉스 지분 보유를 중심으로 반도체 산업에 속한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "NAV의 97%를 차지하는 SK하이닉스의 실적·주가 상승 전망이 반영된 결과다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "SK하이닉스는 반도체 업계 대표 기업이다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "business_area_camera_module", "properties": {"evidence": "LG이노텍은 카메라 모듈의 전방 시장 다변화를 추진한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "business_area_ai_server_component", "properties": {"evidence": "AI 서버용 FC-BGA 공급확대로 턴어라운드가 예상된다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "industry_semiconductor", "properties": {"evidence": "LG이노텍은 고밀도 반도체 기판과 패키지솔루션 사업을 영위한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션은 상선, 특수선, 해양플랜트 부문에서 선가 상승 효과와 수익성 개선을 이룬다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "industry_shipbuilding", "properties": {"evidence": "한화오션은 선박 건조 산업인 조선업에 종사한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298380", "to_id": "business_area_biopharma", "properties": {"evidence": "에이비엘바이오는 핵심 플랫폼인 BBB 셔틀, 면역 활성화 항체 기술로 신약 개발을 진행한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298380", "to_id": "industry_bio", "properties": {"evidence": "에이비엘바이오는 바이오 신약 개발 업계에 속한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "메모리 사업은 반도체 산업의 세부 영역이다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_foundry", "to_id": "industry_semiconductor", "properties": {"evidence": "파운드리 사업은 반도체 산업의 한 분야이다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_camera_module", "to_id": "industry_semiconductor", "properties": {"evidence": "카메라 모듈 사업은 반도체 산업 내 부품 분야다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_server_component", "to_id": "industry_semiconductor", "properties": {"evidence": "AI 서버 부품은 반도체 산업 내 고부가가치 부문이다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선 사업 부문은 조선 산업에 속한다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharma", "to_id": "industry_bio", "properties": {"evidence": "바이오 신약 개발 사업은 바이오 산업 내 세부 분야다.", "date": "", "evidence_source_id": "news_402340_7f62e224f72bfd49", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345", "evidence_published_at": "2026-04-28T18:02:00+09:00"}}

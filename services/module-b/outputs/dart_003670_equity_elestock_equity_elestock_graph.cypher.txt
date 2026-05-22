@@ -1,0 +1,33 @@
+// node: company_003670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003670", "type": "Company", "name": "포스코퓨처엠", "stock_code": "003670"}
+
+// node: company_005490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005490", "type": "Company", "name": "POSCO홀딩스", "stock_code": "005490"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "company_003670", "properties": {"evidence": "포스코퓨처엠의 임원·주요주주 소유상황 보고자는 POSCO홀딩스, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 51,747,787주, 주식수 증감은 5,486,186, 지분율은 62.38%, 지분율 증감은 2.66.", "date": "2026-03-06", "evidence_source_id": "dart_003670_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250528000250", "evidence_published_at": "2026-03-06"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "company_003670", "properties": {"evidence": "포스코퓨처엠의 임원·주요주주 소유상황 보고자는 POSCO홀딩스, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 51,747,787주, 주식수 증감은 0, 지분율은 58.18%, 지분율 증감은 -4.20.", "date": "2026-03-06", "evidence_source_id": "dart_003670_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250528000250", "evidence_published_at": "2026-03-06"}}

@@ -1,0 +1,220 @@
+// node: company_454910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910", "description": "로봇 연구개발과 AI 및 소프트웨어 개발을 주력으로 하는 산업용 로봇 기업"}
+
+// node: person_박인원
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박인원", "type": "Person", "name": "박인원", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: person_김민표
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김민표", "type": "Person", "name": "김민표", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_조길성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_조길성", "type": "Person", "name": "조길성", "role_raw": "전무", "role": "OTHER", "role_label": "전무"}
+
+// node: person_강남훈
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_강남훈", "type": "Person", "name": "강남훈", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_김은태
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김은태", "type": "Person", "name": "김은태", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_유혜련
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_유혜련", "type": "Person", "name": "유혜련", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_오창훈
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_오창훈", "type": "Person", "name": "오창훈", "role_raw": "전무", "role": "OTHER", "role_label": "전무"}
+
+// node: person_이우섭
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이우섭", "type": "Person", "name": "이우섭", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_김현수
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김현수", "type": "Person", "name": "김현수", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: business_area_로봇연구개발
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_로봇연구개발", "type": "BusinessArea", "name": "로봇연구개발"}
+
+// node: business_area_AI소프트웨어개발
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_AI소프트웨어개발", "type": "BusinessArea", "name": "AI·소프트웨어개발"}
+
+// node: industry_로봇산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_로봇산업", "type": "Industry", "name": "로봇산업"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박인원", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 박인원, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김민표", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 김민표, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_조길성", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 조길성, 직위는 전무, 이사회상 역할은 사내이사, 담당업무는 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_강남훈", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 강남훈, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김은태", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 김은태, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 감사위원회", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_유혜련", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 유혜련, 직위는 사외이사, 이사회상 역할는 사외이사, 담당업무는 감사위원회", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_오창훈", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 오창훈, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 AI&SW 담당", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이우섭", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 이우섭, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 Robot R&D 담당", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김현수", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스의 임원은 김현수, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 영업 담당", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "business_area_로봇연구개발", "properties": {"evidence": "두산로보틱스의 임원은 이우섭, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 Robot R&D 담당", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "business_area_AI소프트웨어개발", "properties": {"evidence": "두산로보틱스의 임원은 오창훈, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 AI&SW 담당", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_로봇연구개발", "to_id": "industry_로봇산업", "properties": {"evidence": "두산로보틱스는 로봇 연구개발을 주요 사업 영역으로 한다", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_AI소프트웨어개발", "to_id": "industry_로봇산업", "properties": {"evidence": "두산로보틱스는 AI 및 소프트웨어 개발을 주요 사업 영역으로 한다", "date": "2026-03-18", "evidence_source_id": "dart_454910_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562", "evidence_published_at": "2026-03-18"}}

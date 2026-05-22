@@ -1,33 +1,162 @@
-// node: company_현대로템
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대로템", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "항공우주개발과 우주산업 기술협력, 방산 무기체계 개발 사업을 영위"}
 
-// node: person_이용배
+// node: business_area_우주산업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_이용배", "type": "Person", "name": "이용배", "role_raw": "대표이사", "affiliated_company": "company_현대로템", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_우주산업", "type": "BusinessArea", "name": "우주산업"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_항공우주시스템
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_항공우주시스템", "type": "BusinessArea", "name": "항공우주시스템"}
+
+// node: product_service_재사용발사체용메탄엔진기술
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_재사용발사체용메탄엔진기술", "type": "ProductService", "name": "재사용 발사체용 메탄 엔진 기술"}
+
+// node: product_service_장거리공대공유도무기시제품
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_장거리공대공유도무기시제품", "type": "ProductService", "name": "장거리 공대공 유도무기 시제품"}
+
+// node: product_service_극초음속비행체하이코어
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_극초음속비행체하이코어", "type": "ProductService", "name": "극초음속 비행체 하이코어"}
+
+// node: industry_방위산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_방위산업", "type": "Industry", "name": "방위산업"}
+
+// node: industry_우주산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_우주산업", "type": "Industry", "name": "우주산업"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "현대로템(대표이사 이용배)이 1분기 호실적을 지속하기 위해 신성장 동력인 우주산업을 강화한다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "business_area_우주산업", "properties": {"evidence": "현대로템(대표이사 이용배)이 1분기 호실적을 지속하기 위해 신성장 동력인 우주산업을 강화한다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "이용배 대표가 이를 통해 흑자 경영을 지속한다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "business_area_항공우주시스템", "properties": {"evidence": "올해 초 자사의 항공우주개발센터 안에 항공우주시스템팀을 신설했으며", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_재사용발사체용메탄엔진기술", "properties": {"evidence": "정부의 재사용 발사체용 메탄 엔진 기술 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_장거리공대공유도무기시제품", "properties": {"evidence": "장거리 공대공 유도무기 시제품과 극초음속 비행체 하이코어(HyCore) 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_극초음속비행체하이코어", "properties": {"evidence": "장거리 공대공 유도무기 시제품과 극초음속 비행체 하이코어(HyCore) 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_우주산업", "to_id": "industry_우주산업", "properties": {"evidence": "현대로템(대표이사 이용배)이 1분기 호실적을 지속하기 위해 신성장 동력인 우주산업을 강화한다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_항공우주시스템", "to_id": "business_area_우주산업", "properties": {"evidence": "올해 초 자사의 항공우주개발센터 안에 항공우주시스템팀을 신설했으며", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_재사용발사체용메탄엔진기술", "to_id": "business_area_우주산업", "properties": {"evidence": "정부의 재사용 발사체용 메탄 엔진 기술 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_장거리공대공유도무기시제품", "to_id": "business_area_우주산업", "properties": {"evidence": "장거리 공대공 유도무기 시제품과 극초음속 비행체 하이코어(HyCore) 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_극초음속비행체하이코어", "to_id": "business_area_우주산업", "properties": {"evidence": "장거리 공대공 유도무기 시제품과 극초음속 비행체 하이코어(HyCore) 개발 과제 등 다양한 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_우주산업", "to_id": "industry_방위산업", "properties": {"evidence": "장거리 공대공 유도무기 시제품과 극초음속 비행체 하이코어 등 방위 관련 우주산업 사업을 수행했다.", "date": "", "evidence_source_id": "news_064350_6800aa6af7f0d2e3", "evidence_source_type": "news", "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50345", "evidence_published_at": "2026-05-11T14:28:00+09:00"}}

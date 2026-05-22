@@ -1,0 +1,41 @@
+// node: company_015760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_015760", "type": "Company", "name": "한국전력", "stock_code": "015760", "description": "대규모 해상풍력 발전력을 연결하는 전력망 운영과 송전사업을 수행"}
+
+// node: business_area_offshore_wind_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_wind_power", "type": "BusinessArea", "name": "해상풍력"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "business_area_offshore_wind_power", "properties": {"evidence": "한국전력(한전)이 대규모 해상풍력 발전력을 서해안 초고압직류송전(HVDC)망에 직접 연결한다.", "date": "", "evidence_source_id": "news_015760_2e3950974f3e9889", "evidence_source_type": "news", "evidence_source_url": "http://www.metroseoul.co.kr/article/20260517500098", "evidence_published_at": "2026-05-17T11:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_wind_power", "to_id": "industry_energy", "properties": {"evidence": "한국전력(한전)이 대규모 해상풍력 발전력을 서해안 초고압직류송전(HVDC)망에 직접 연결한다.", "date": "", "evidence_source_id": "news_015760_2e3950974f3e9889", "evidence_source_type": "news", "evidence_source_url": "http://www.metroseoul.co.kr/article/20260517500098", "evidence_published_at": "2026-05-17T11:28:00+09:00"}}

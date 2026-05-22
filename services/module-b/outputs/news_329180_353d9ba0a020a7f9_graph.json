@@ -2,17 +2,72 @@
   "source_id": "news_329180_353d9ba0a020a7f9",
   "entities": [
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "특수선 사업 분야 생산능력과 해외 투자 사업을 운영"
     },
     {
-      "id": "company_hd한국조선해양",
-      "type": "Company",
-      "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "id": "business_area_특수선사업",
+      "type": "BusinessArea",
+      "name": "특수선 사업"
+    },
+    {
+      "id": "business_area_해외투자사업",
+      "type": "BusinessArea",
+      "name": "해외 투자 사업"
+    },
+    {
+      "id": "industry_조선",
+      "type": "Industry",
+      "name": "조선"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_특수선사업",
+      "evidence": "특히 특수선 사업을 영위하는 HD현대중공업 의 생산능력과 해외 투자 사업 확대를 위해 HD현대중공업 ·HD현대미포 합병, 글로벌 투자전문 법인 설립 등 굵직한 구조 개편이 추진됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_353d9ba0a020a7f9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202604232154025120107487",
+      "evidence_published_at": "2026-04-29T08:12:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_해외투자사업",
+      "evidence": "특히 특수선 사업을 영위하는 HD현대중공업 의 생산능력과 해외 투자 사업 확대를 위해 HD현대중공업 ·HD현대미포 합병, 글로벌 투자전문 법인 설립 등 굵직한 구조 개편이 추진됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_353d9ba0a020a7f9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202604232154025120107487",
+      "evidence_published_at": "2026-04-29T08:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_특수선사업",
+      "to": "industry_조선",
+      "evidence": "특히 특수선 사업을 영위하는 HD현대중공업 의 생산능력과 해외 투자 사업 확대를 위해 HD현대중공업 ·HD현대미포 합병, 글로벌 투자전문 법인 설립 등 굵직한 구조 개편이 추진됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_353d9ba0a020a7f9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202604232154025120107487",
+      "evidence_published_at": "2026-04-29T08:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_해외투자사업",
+      "to": "industry_조선",
+      "evidence": "특히 특수선 사업을 영위하는 HD현대중공업 의 생산능력과 해외 투자 사업 확대를 위해 HD현대중공업 ·HD현대미포 합병, 글로벌 투자전문 법인 설립 등 굵직한 구조 개편이 추진됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_353d9ba0a020a7f9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thebell.co.kr/free/content/ArticleView.asp?key=202604232154025120107487",
+      "evidence_published_at": "2026-04-29T08:12:00+09:00"
+    }
+  ]
 }

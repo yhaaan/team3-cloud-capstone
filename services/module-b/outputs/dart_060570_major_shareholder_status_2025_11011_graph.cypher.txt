@@ -1,23 +1,41 @@
-// node: company_dreamus_company
+// node: company_060570
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dreamus_company", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
+:params {"id": "company_060570", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
 
-// node: person_lee_ki_young
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_ki_young", "type": "Person", "name": "이기영", "role_raw": "대표이사", "affiliated_company": "company_dreamus_company", "role": "CEO", "role_label": "대표이사"}
-
-// node: person_soo_wooseok
+// node: person_ikiyoung
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_soo_wooseok", "type": "Person", "name": "서우석", "role_raw": "기타비상무이사", "affiliated_company": "company_dreamus_company", "role": "DIRECTOR", "role_label": "이사"}
+:params {"id": "person_ikiyoung", "type": "Person", "name": "이기영", "role_raw": "대표이사", "role": "CEO", "role_label": "대표이사"}
+
+// node: person_seo_useok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_seo_useok", "type": "Person", "name": "서우석", "role_raw": "기타비상무이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_ikiyoung", "to_id": "company_060570", "properties": {"evidence": "드림어스컴퍼니의 최대주주 관련 인물/법인은 이기영, 관계는 대표이사, 당기말 보유주식수는 28,000주, 지분율은 0.04%.", "date": "2026-03-19", "evidence_source_id": "dart_060570_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_seo_useok", "to_id": "company_060570", "properties": {"evidence": "드림어스컴퍼니의 최대주주 관련 인물/법인은 서우석, 관계는 기타비상무이사, 당기말 보유주식수는 56,000주, 지분율은 0.08%.", "date": "2026-03-19", "evidence_source_id": "dart_060570_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}

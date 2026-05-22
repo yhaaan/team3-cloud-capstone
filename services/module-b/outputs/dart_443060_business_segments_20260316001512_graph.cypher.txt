@@ -1,0 +1,483 @@
+// node: company_443060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_443060", "type": "Company", "name": "HD현대마린솔루션", "stock_code": "443060", "description": "선박 After Service 사업으로 AM솔루션, 벙커링, 친환경솔루션, 디지털솔루션을 제공합니다."}
+
+// node: business_area_am_솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_am_솔루션", "type": "BusinessArea", "name": "AM솔루션"}
+
+// node: business_area_벙커링
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_벙커링", "type": "BusinessArea", "name": "벙커링"}
+
+// node: business_area_친환경솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_친환경솔루션", "type": "BusinessArea", "name": "친환경솔루션"}
+
+// node: business_area_디지털솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_디지털솔루션", "type": "BusinessArea", "name": "디지털솔루션"}
+
+// node: productservice_선박부품_서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_선박부품_서비스", "type": "ProductService", "name": "선박부품/서비스"}
+
+// node: productservice_육상발전_기술지원_운영관리
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_육상발전_기술지원_운영관리", "type": "ProductService", "name": "육상발전 기술지원 및 운영관리 서비스"}
+
+// node: productservice_유무상_보증_대행서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_유무상_보증_대행서비스", "type": "ProductService", "name": "유무상 보증 대행서비스"}
+
+// node: productservice_유류공급
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_유류공급", "type": "ProductService", "name": "유류 공급"}
+
+// node: productservice_FSRU
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_FSRU", "type": "ProductService", "name": "FSRU"}
+
+// node: productservice_EPLO
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_EPLO", "type": "ProductService", "name": "EPLO"}
+
+// node: productservice_AMP
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_AMP", "type": "ProductService", "name": "AMP"}
+
+// node: productservice_Dual_Fuel_Conversion
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_Dual_Fuel_Conversion", "type": "ProductService", "name": "Dual Fuel Conversion"}
+
+// node: productservice_재액화장치_개조
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_재액화장치_개조", "type": "ProductService", "name": "재액화장치 개조"}
+
+// node: productservice_EGCS
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_EGCS", "type": "ProductService", "name": "EGCS"}
+
+// node: productservice_BWTS
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_BWTS", "type": "ProductService", "name": "BWTS"}
+
+// node: productservice_선박통합제어시스템
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_선박통합제어시스템", "type": "ProductService", "name": "선박통합제어시스템"}
+
+// node: productservice_스마트쉽_솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_스마트쉽_솔루션", "type": "ProductService", "name": "스마트쉽 솔루션"}
+
+// node: productservice_전동화_시스템
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_전동화_시스템", "type": "ProductService", "name": "전동화 시스템"}
+
+// node: industry_조선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_조선", "type": "Industry", "name": "조선"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "business_area_am_솔루션", "properties": {"evidence": "당사는 AM솔루션, 벙커링, 친환경솔루션, 디지털솔루션 4개 군에 관한 제품 및 서비스를 제공하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "business_area_벙커링", "properties": {"evidence": "당사는 AM솔루션, 벙커링, 친환경솔루션, 디지털솔루션 4개 군에 관한 제품 및 서비스를 제공하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "당사는 AM솔루션, 벙커링, 친환경솔루션, 디지털솔루션 4개 군에 관한 제품 및 서비스를 제공하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "business_area_디지털솔루션", "properties": {"evidence": "당사는 AM솔루션, 벙커링, 친환경솔루션, 디지털솔루션 4개 군에 관한 제품 및 서비스를 제공하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_선박부품_서비스", "properties": {"evidence": "AM솔루션 - 선박부품/서비스: 메인엔진, 보조엔진, 전장품, 엔진 보조기기, 보일러류, 기타 소모품 등 부품 공급 및 유지/보수/수리 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_육상발전_기술지원_운영관리", "properties": {"evidence": "AM솔루션 - 육상발전 사업소: 디젤/가스 엔진의 발전소 운영을 위한 부품 공급, 기술지원 및 운영관리 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_유무상_보증_대행서비스", "properties": {"evidence": "AM솔루션 - 유/무상 보증 대행서비스: HD현대 그룹 건조 선박 대상 유/무상 보증대행 업무", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_유류공급", "properties": {"evidence": "벙커링 - 유류 공급: HD현대 그룹 신조 선박 출항유 공급 등", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_FSRU", "properties": {"evidence": "친환경솔루션 - FSRU(Floating Storage Re-gasification Unit): 부유식 재기화 장치", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_EPLO", "properties": {"evidence": "친환경솔루션 - EPLO(Engine Part Load Optimization): 엔진 부분부하 최적화 개조", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_AMP", "properties": {"evidence": "친환경솔루션 - AMP(Aleternative Maritime Power): 육상전원 공급장치", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_Dual_Fuel_Conversion", "properties": {"evidence": "친환경솔루션 - Dual Fuel Conversion: 이중연료장치 엔진 개조", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_재액화장치_개조", "properties": {"evidence": "친환경솔루션 - 재액화장치 개조: LNG 저장탱크에서 발생하는 기체(BOG)를 재액화하거나 가스가 자연적 증발하지 않도록 하는 개조", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_EGCS", "properties": {"evidence": "친환경솔루션 - EGCS(Exhaust Gas Cleaning System): 배기가스 탈황 장치 설치", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_BWTS", "properties": {"evidence": "친환경솔루션 - BWTS(Ballast Water Treatment System): 평형수 처리 시스템 설치", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_선박통합제어시스템", "properties": {"evidence": "디지털솔루션 - 선박통합제어시스템: LNG, LPG, MeOH DF 선박 내 기관류 및 전력, 가스솔루션 제어 시스템", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_스마트쉽_솔루션", "properties": {"evidence": "디지털솔루션 - 스마트쉽 솔루션: 선박 연료 절감 및 경제 운항 지원", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "productservice_전동화_시스템", "properties": {"evidence": "디지털솔루션 - 전동화 시스템: 선박 프로펠러 축에 설치하는 친환경 발전기인 Shaft Generator", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_am_솔루션", "to_id": "industry_조선", "properties": {"evidence": "선박 및 엔진After Service 사업", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_벙커링", "to_id": "industry_조선", "properties": {"evidence": "벙커링은 선박에 연료를 공급하는 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_친환경솔루션", "to_id": "industry_조선", "properties": {"evidence": "친환경솔루션는 환경 규제에 대응하기 위한 선박의 개조 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_디지털솔루션", "to_id": "industry_조선", "properties": {"evidence": "디지털솔루션은 차세대 선박 운항기술 및 선박 빅데이터 기반 해양 플랫폼 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_선박부품_서비스", "to_id": "business_area_am_솔루션", "properties": {"evidence": "AM솔루션 - 선박부품/서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_육상발전_기술지원_운영관리", "to_id": "business_area_am_솔루션", "properties": {"evidence": "AM솔루션 - 육상발전 사업소: ... 운영관리 서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_유무상_보증_대행서비스", "to_id": "business_area_am_솔루션", "properties": {"evidence": "AM솔루션 - 유/무상 보증 대행서비스", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_유류공급", "to_id": "business_area_벙커링", "properties": {"evidence": "벙커링 - 유류 공급", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_FSRU", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - FSRU", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_EPLO", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - EPLO", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_AMP", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - AMP", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_Dual_Fuel_Conversion", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - Dual Fuel Conversion", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_재액화장치_개조", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - 재액화장치 개조", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_EGCS", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - EGCS", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_BWTS", "to_id": "business_area_친환경솔루션", "properties": {"evidence": "친환경솔루션 - BWTS", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_선박통합제어시스템", "to_id": "business_area_디지털솔루션", "properties": {"evidence": "디지털솔루션 - 선박통합제어시스템", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_스마트쉽_솔루션", "to_id": "business_area_디지털솔루션", "properties": {"evidence": "디지털솔루션 - 스마트쉽 솔루션", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_전동화_시스템", "to_id": "business_area_디지털솔루션", "properties": {"evidence": "디지털솔루션 - 전동화 시스템", "date": "2026-03-16", "evidence_source_id": "dart_443060_business_segments_20260316001512", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001512", "evidence_published_at": "2026-03-16"}}

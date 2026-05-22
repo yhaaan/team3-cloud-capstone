@@ -1,7 +1,67 @@
-// node: company_lg에너지솔루션
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg에너지솔루션", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220", "description": "배터리 생산과 공급망 생태계 강화, 원통형 배터리 생산 라인 구축에 주력"}
+
+// node: business_area_battery_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery_manufacturing", "type": "BusinessArea", "name": "배터리 제조"}
+
+// node: product_service_cylindrical_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cylindrical_battery", "type": "ProductService", "name": "원통형 배터리"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_battery_manufacturing", "properties": {"evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.", "date": "", "evidence_source_id": "news_373220_18c193798de4608e", "evidence_source_type": "news", "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608", "evidence_published_at": "2026-05-07T16:46:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "product_service_cylindrical_battery", "properties": {"evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.", "date": "", "evidence_source_id": "news_373220_18c193798de4608e", "evidence_source_type": "news", "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608", "evidence_published_at": "2026-05-07T16:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery_manufacturing", "to_id": "industry_battery", "properties": {"evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.", "date": "", "evidence_source_id": "news_373220_18c193798de4608e", "evidence_source_type": "news", "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608", "evidence_published_at": "2026-05-07T16:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cylindrical_battery", "to_id": "business_area_battery_manufacturing", "properties": {"evidence": "LG에너지솔루션은 오창 공장에 약 6000억 원을 투자해 원통형 배터리 생산 라인을 구축하는 등 국내 공급망 생태계를 강화하는 데 역량을 집중하고 있기도 하다.", "date": "", "evidence_source_id": "news_373220_18c193798de4608e", "evidence_source_type": "news", "evidence_source_url": "http://www.ttlnews.com/news/articleView.html?idxno=3105608", "evidence_published_at": "2026-05-07T16:46:00+09:00"}}

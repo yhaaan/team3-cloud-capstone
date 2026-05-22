@@ -2,11 +2,56 @@
   "source_id": "dart_000720_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_현대건설",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
-      "stock_code": "000720"
+      "stock_code": "000720",
+      "description": "건설사업을 영위하는 현대건설"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
+    },
+    {
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "construction"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "business_area_construction",
+      "evidence": "현대건설의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 12,469,877주, 지분율은 11.20%, 주식수 증감은 2,370,845, 지분율 증감은 2.13, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-02",
+      "evidence_source_id": "dart_000720_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000226",
+      "evidence_published_at": "2026-04-02"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction",
+      "to": "industry_construction",
+      "evidence": "현대건설의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 12,469,877주, 지분율은 11.20%, 주식수 증감은 2,370,845, 지분율 증감은 2.13, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-02",
+      "evidence_source_id": "dart_000720_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000226",
+      "evidence_published_at": "2026-04-02"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000720",
+      "to": "industry_construction",
+      "evidence": "현대건설의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 12,469,877주, 지분율은 11.20%, 주식수 증감은 2,370,845, 지분율 증감은 2.13, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-02",
+      "evidence_source_id": "dart_000720_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000226",
+      "evidence_published_at": "2026-04-02"
+    }
+  ]
 }

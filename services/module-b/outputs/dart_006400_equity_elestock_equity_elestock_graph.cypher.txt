@@ -1,15 +1,92 @@
-// node: company_삼성sdi
+// node: company_006400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성sdi", "type": "Company", "name": "삼성SDI"}
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400", "description": "2차전지와 전자재료 중심 사업을 영위하는 기업"}
 
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: business_area_ev_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ev_battery", "type": "BusinessArea", "name": "2차전지"}
+
+// node: business_area_electronic_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electronic_materials", "type": "BusinessArea", "name": "전자재료"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_ev_battery", "properties": {"evidence": "삼성SDI의 임원·주요주주 소유상황 보고자", "date": "2026-03-30", "evidence_source_id": "dart_006400_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106", "evidence_published_at": "2026-03-30"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_electronic_materials", "properties": {"evidence": "삼성SDI의 임원·주요주주 소유상황 보고자", "date": "2026-03-30", "evidence_source_id": "dart_006400_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106", "evidence_published_at": "2026-03-30"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ev_battery", "to_id": "industry_battery", "properties": {"evidence": "2차전지", "date": "2026-03-30", "evidence_source_id": "dart_006400_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106", "evidence_published_at": "2026-03-30"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electronic_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "전자재료", "date": "2026-03-30", "evidence_source_id": "dart_006400_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106", "evidence_published_at": "2026-03-30"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자는 반도체 산업에 속함", "date": "2026-03-30", "evidence_source_id": "dart_006400_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106", "evidence_published_at": "2026-03-30"}}

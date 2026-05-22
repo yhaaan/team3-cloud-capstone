@@ -1,0 +1,127 @@
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260", "description": "LS그룹은 전력 인프라 중심의 초고압·해저케이블, 변압기 등 고부가가치 설비투자 사업을 영위한다."}
+
+// node: business_area_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_infrastructure", "type": "BusinessArea", "name": "전력 인프라"}
+
+// node: product_service_high_voltage_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_high_voltage_cable", "type": "ProductService", "name": "초고압 케이블"}
+
+// node: product_service_submarine_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_submarine_cable", "type": "ProductService", "name": "해저케이블"}
+
+// node: product_service_high_voltage_transformer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_high_voltage_transformer", "type": "ProductService", "name": "초고압 변압기"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: company_025560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_025560", "type": "Company", "name": "미래산업", "stock_code": "025560"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_power_infrastructure", "properties": {"evidence": "LS그룹이 매년 5조원씩 자산을 늘릴 수 있었던 것은 글로벌 빅테크 기업의 AI 인프라 투자 확대로 초고압·해저케이블, 초고압 변압기 등 전력 인프라 전반에서 고부가가치 수주가 급증한 것과 무관치 않다.", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "product_service_high_voltage_cable", "properties": {"evidence": "글로벌 빅테크 기업의 AI 인프라 투자 확대로 초고압·해저케이블, 초고압 변압기 등 전력 인프라 전반에서 고부가가치 수주가 급증한 것과 무관치 않다.", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "product_service_submarine_cable", "properties": {"evidence": "글로벌 빅테크 기업의 AI 인프라 투자 확대로 초고압·해저케이블, 초고압 변압기 등 전력 인프라 전반에서 고부가가치 수주가 급증한 것과 무관치 않다.", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "product_service_high_voltage_transformer", "properties": {"evidence": "글로벌 빅테크 기업의 AI 인프라 투자 확대로 초고압·해저케이블, 초고압 변압기 등 전력 인프라 전반에서 고부가가치 수주가 급증한 것과 무관치 않다.", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_infrastructure", "to_id": "industry_energy", "properties": {"evidence": "LS그룹이 매년 5조원씩 자산을 늘릴 수 있었던 것은 글로벌 빅테크 기업의 AI 인프라 투자 확대로 초고압·해저케이블, 초고압 변압기 등 전력 인프라 전반에서 고부가가치 수주가 급증한 것과 무관치 않다.", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_high_voltage_cable", "to_id": "business_area_power_infrastructure", "properties": {"evidence": "초고압·해저케이블, 초고압 변압기 등 전력 인프라", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_submarine_cable", "to_id": "business_area_power_infrastructure", "properties": {"evidence": "초고압·해저케이블, 초고압 변압기 등 전력 인프라", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_high_voltage_transformer", "to_id": "business_area_power_infrastructure", "properties": {"evidence": "초고압·해저케이블, 초고압 변압기 등 전력 인프라", "date": "", "evidence_source_id": "news_006260_184c4cd4de331d87", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169820", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}

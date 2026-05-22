@@ -1,0 +1,41 @@
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "야구단 등 스포츠 및 화학, 방산 등 사업을 하는 기업"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "통신 및 미디어, AI 플랫폼 등 디지털 서비스 제공 기업"}
+
+// node: business_area_sports
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_sports", "type": "BusinessArea", "name": "스포츠"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_sports", "properties": {"evidence": "17일 오후 수원KT위즈파크에서 열린 '2026 신한 SOL Bank KBO리그' 한화 이글스와 KT 위즈의 경기", "date": "", "evidence_source_id": "news_000880_d84daae67221e88b", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150067", "evidence_published_at": "2026-05-17T15:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_sports", "properties": {"evidence": "17일 오후 수원KT위즈파크에서 열린 '2026 신한 SOL Bank KBO리그' 한화 이글스와 KT 위즈의 경기", "date": "", "evidence_source_id": "news_000880_d84daae67221e88b", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150067", "evidence_published_at": "2026-05-17T15:08:00+09:00"}}

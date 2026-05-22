@@ -1,0 +1,430 @@
+// node: company_010950
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010950", "type": "Company", "name": "S-Oil", "stock_code": "010950", "description": "정유, 석유화학, 윤활기유 중심의 다각화된 석유화학 및 정유 사업을 영위하는 기업입니다."}
+
+// node: business_area_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_refining", "type": "BusinessArea", "name": "정유부문"}
+
+// node: business_area_lubricants
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_lubricants", "type": "BusinessArea", "name": "윤활부문"}
+
+// node: business_area_petrochemicals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_petrochemicals", "type": "BusinessArea", "name": "석유화학부문"}
+
+// node: product_lpg
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_lpg", "type": "ProductService", "name": "LPG"}
+
+// node: product_gasoline
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_gasoline", "type": "ProductService", "name": "휘발유"}
+
+// node: product_naphtha
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_naphtha", "type": "ProductService", "name": "납사"}
+
+// node: product_kerosene
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_kerosene", "type": "ProductService", "name": "등유"}
+
+// node: product_jet_fuel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_jet_fuel", "type": "ProductService", "name": "항공유"}
+
+// node: product_diesel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_diesel", "type": "ProductService", "name": "경유"}
+
+// node: product_bunker_fuel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_bunker_fuel", "type": "ProductService", "name": "Bunker유"}
+
+// node: product_blending_fuel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_blending_fuel", "type": "ProductService", "name": "Blending유"}
+
+// node: product_asphalt
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_asphalt", "type": "ProductService", "name": "아스팔트"}
+
+// node: product_other
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_other", "type": "ProductService", "name": "기타"}
+
+// node: product_lubricant_base_oil
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_lubricant_base_oil", "type": "ProductService", "name": "윤활기유"}
+
+// node: product_lubricants
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_lubricants", "type": "ProductService", "name": "윤활유"}
+
+// node: product_basic_chem_polymer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_basic_chem_polymer", "type": "ProductService", "name": "Basic Chemical/Polymer"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical", "type": "Industry", "name": "화학"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "business_area_refining", "properties": {"evidence": "정유뿐 아니라 석유화학ㆍ윤활기유 등으로 다각화된 사업 포트폴리오를 보유하고 있습니다. 전체 매출액에서 70% 이상으로 가장 높은 비중을 차지하는 정유부문", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "business_area_lubricants", "properties": {"evidence": "또한, 윤활 및 석유화학부문에서도 높은 사업 안정성을 가지고 있습니다. 윤활부문은 고급 윤활기유를 중심으로 하루 4만 4천배럴의 생산능력을 보유하고 있으며", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "business_area_petrochemicals", "properties": {"evidence": "석유화학부문은 지속적인 투자와 공정 효율화를 통하여 연간 약 330만톤의 대규모 방향족 제품 생산능력 뿐 아니라 연간 약 77만톤의 올레핀계 제품 생산능력도 보유하고 있습니다.", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_lpg", "properties": {"evidence": "정유 | 제품 및 상품 | LPG | 난방유 및 자동차용 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_gasoline", "properties": {"evidence": "정유 | 제품 및 상품 | 휘발유 | 자동차 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_naphtha", "properties": {"evidence": "정유 | 제품 및 상품 | 납사 | 석유화학제품의 원료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_kerosene", "properties": {"evidence": "정유 | 제품 및 상품 | 등유 | 난방용 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_jet_fuel", "properties": {"evidence": "정유 | 제품 및 상품 | 항공유 | 항공기 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_diesel", "properties": {"evidence": "정유 | 제품 및 상품 | 경유 | 수송, 난방용 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_bunker_fuel", "properties": {"evidence": "정유 | 제품 및 상품 | Bunker유 | 산업 및 해상수송용 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_blending_fuel", "properties": {"evidence": "정유 | 제품 및 상품 | Blending유 | 해상수송용 연료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_asphalt", "properties": {"evidence": "정유 | 제품 및 상품 | 아스팔트 | 도로포장용 원료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_other", "properties": {"evidence": "정유 | 제품 및 상품 | 기타 | 파라핀 제조용 등", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_lubricant_base_oil", "properties": {"evidence": "윤활 | 제품 및 상품 | 윤활기유 | 윤활유 원료 등", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_lubricants", "properties": {"evidence": "윤활 | 제품 및 상품 | 윤활유 | 윤활유 등", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010950", "to_id": "product_basic_chem_polymer", "properties": {"evidence": "석유화학 | 제품 및 상품 | Basic Chemical/Polymer | 석유화학제품의 원재료", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_refining", "to_id": "industry_energy", "properties": {"evidence": "S-Oil의 정유부문은 원유정제능력을 보유한 에너지 관련 사업입니다.", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_lpg", "to_id": "business_area_refining", "properties": {"evidence": "LPG는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_gasoline", "to_id": "business_area_refining", "properties": {"evidence": "휘발유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_naphtha", "to_id": "business_area_refining", "properties": {"evidence": "납사는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_kerosene", "to_id": "business_area_refining", "properties": {"evidence": "등유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_jet_fuel", "to_id": "business_area_refining", "properties": {"evidence": "항공유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_diesel", "to_id": "business_area_refining", "properties": {"evidence": "경유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_bunker_fuel", "to_id": "business_area_refining", "properties": {"evidence": "Bunker유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_blending_fuel", "to_id": "business_area_refining", "properties": {"evidence": "Blending유는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_asphalt", "to_id": "business_area_refining", "properties": {"evidence": "아스팔트는 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_other", "to_id": "business_area_refining", "properties": {"evidence": "기타 제품은 정유부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_lubricant_base_oil", "to_id": "business_area_lubricants", "properties": {"evidence": "윤활기유는 윤활부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_lubricants", "to_id": "business_area_lubricants", "properties": {"evidence": "윤활유는 윤활부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_basic_chem_polymer", "to_id": "business_area_petrochemicals", "properties": {"evidence": "Basic Chemical/Polymer는 석유화학부문 제품으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_petrochemicals", "to_id": "industry_chemical", "properties": {"evidence": "석유화학부문은 화학 관련 사업입니다.", "date": "2026-03-20", "evidence_source_id": "dart_010950_business_segments_20260320000559", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559", "evidence_published_at": "2026-03-20"}}

@@ -1,0 +1,161 @@
+// node: company_001440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001440", "type": "Company", "name": "대한전선", "stock_code": "001440", "description": "해저케이블 설계, 생산, 운송, 시공을 아우르는 턴키 수행 역량과 포설선 운영"}
+
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: business_area_submarine_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_submarine_cable", "type": "BusinessArea", "name": "해저케이블"}
+
+// node: business_area_submarine_cabling_installation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_submarine_cabling_installation", "type": "BusinessArea", "name": "해저케이블 시공"}
+
+// node: business_area_submarine_cabling_production
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_submarine_cabling_production", "type": "BusinessArea", "name": "해저케이블 생산"}
+
+// node: business_area_offshore_wind_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_wind_power", "type": "BusinessArea", "name": "해상풍력"}
+
+// node: business_area_turnkey_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_turnkey_construction", "type": "BusinessArea", "name": "턴키 시공"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_submarine_cable", "properties": {"evidence": "대한전선이 대형 해저케이블 전용 CLV(포설선)를 추가 확보하며 해외 시장 공략에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_submarine_cabling_installation", "properties": {"evidence": "생산 중심이던 경쟁 구도가 설계와 생산, 운송, 시공을 아우르는 '턴키 수행 역량' 중심으로 재편되는 흐름 속에서 대한전선이 수직계열화 체계를 한층 강화했다는 평가가 나온다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_submarine_cabling_production", "properties": {"evidence": "대한전선은 최근 해저케이블 생산 기반 확대에도 속도를 내고 있다. 충남 당진 해저케이블 공장을 중심으로 생산능력을 강화하고 있으며 추가 설비 투자도 진행 중이다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_offshore_wind_power", "properties": {"evidence": "기존에 보유한 '팔로스'호에 더해 국내에서 복수 CLV 선단을 운영하게 되면서 해상풍력과 HVDC(초고압직류송전) 프로젝트 대응 능력을 확대하게 됐다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_turnkey_construction", "properties": {"evidence": "설계와 생산, 운송, 시공을 아우르는 '턴키 수행 역량' 중심으로 재편되는 흐름 속에서 대한전선이 수직계열화 체계를 한층 강화했다는 평가가 나온다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_submarine_cable", "to_id": "industry_energy", "properties": {"evidence": "글로벌 해저케이블 시장에서 시공 역량의 중요성이 커지는 가운데 대한전선이 대형 해저케이블 전용 CLV(포설선)를 추가 확보하며 해외 시장 공략에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_submarine_cabling_installation", "to_id": "business_area_submarine_cable", "properties": {"evidence": "생산 중심이던 경쟁 구도가 설계와 생산, 운송, 시공을 아우르는 '턴키 수행 역량' 중심으로 재편되는 흐름 속에서 대한전선이 수직계열화 체계를 한층 강화했다는 평가가 나온다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_submarine_cabling_production", "to_id": "business_area_submarine_cable", "properties": {"evidence": "대한전선은 최근 해저케이블 생산 기반 확대에도 속도를 내고 있다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_wind_power", "to_id": "industry_energy", "properties": {"evidence": "유럽을 중심으로 해상풍력 단지 확대와 국가 간 전력망 연결 사업이 증가하고 있고, 미국과 아시아 지역에서도 대규모 송전망 투자 수요가 이어지고 있다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_turnkey_construction", "to_id": "industry_energy", "properties": {"evidence": "생산 중심이던 경쟁 구도가 설계와 생산, 운송, 시공을 아우르는 '턴키 수행 역량' 중심으로 재편되는 흐름 속에서 대한전선이 수직계열화 체계를 한층 강화했다는 평가가 나온다.", "date": "", "evidence_source_id": "news_001440_e56940c4219e8788", "evidence_source_type": "news", "evidence_source_url": "http://www.opinionnews.co.kr/news/articleView.html?idxno=138406", "evidence_published_at": "2026-05-14T14:58:00+09:00"}}

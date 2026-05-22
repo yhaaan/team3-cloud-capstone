@@ -2,81 +2,76 @@
   "source_id": "news_005380_c997625615591a25",
   "entities": [
     {
-      "id": "company_hyundai",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "자동차 제조 및 인공지능 협력 추진"
     },
     {
-      "id": "company_lg_electronics",
+      "id": "company_066570",
       "type": "Company",
       "name": "LG전자",
-      "stock_code": "066570"
+      "stock_code": "066570",
+      "description": "전자제품 제조 및 피지컬 AI 협력 추진"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
-    },
-    {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체 및 로봇 플랫폼 중심의 피지컬 AI 생태계 구축"
     },
     {
-      "id": "company_dusan_robotics",
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "반도체 및 로봇 플랫폼 중심의 피지컬 AI 생태계 구축"
+    },
+    {
+      "id": "company_454910",
       "type": "Company",
       "name": "두산로보틱스",
-      "stock_code": "454910"
+      "stock_code": "454910",
+      "description": "지능형 로봇 솔루션 및 산업용 휴머노이드 개발"
     },
     {
-      "id": "person_madison_hwang",
-      "type": "Person",
-      "name": "매디슨 황",
-      "role_raw": "옴니버스 및 로보틱스 제품 마케팅 수석",
-      "role": "OTHER",
-      "role_label": "옴니버스 및 로보틱스 제품 마케팅 수석"
+      "id": "business_area_physical_ai",
+      "type": "BusinessArea",
+      "name": "피지컬 AI"
     },
     {
-      "id": "person_kim_min_pyo",
-      "type": "Person",
-      "name": "김민표",
-      "role_raw": "두산로보틱스 대표",
-      "role": "CEO",
-      "role_label": "대표이사"
+      "id": "business_area_robotics",
+      "type": "BusinessArea",
+      "name": "로봇"
     },
     {
-      "id": "person_lee_jae_yong",
-      "type": "Person",
-      "name": "이재용",
-      "role_raw": "삼성전자 회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "반도체"
     },
     {
-      "id": "person_jeong_seon",
-      "type": "Person",
-      "name": "정의선",
-      "role_raw": "현대차그룹 회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "AI"
     },
     {
-      "id": "person_choi_tae_won",
-      "type": "Person",
-      "name": "최태원",
-      "role_raw": "SK그룹 회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로봇"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_madison_hwang",
-      "to": "company_dusan_robotics",
+      "type": "OPERATES_IN",
+      "from": "company_454910",
+      "to": "business_area_physical_ai",
       "evidence": "황 수석이사는 경기 분당에 위치한 두산로보틱스 이노베이션센터를 찾아 김민표 두산로보틱스 대표와 만나 피지컬 AI 기술 협력 방안을 논의했다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
@@ -85,10 +80,10 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_min_pyo",
-      "to": "company_dusan_robotics",
-      "evidence": "황 수석이사는 경기 분당에 위치한 두산로보틱스 이노베이션센터를 찾아 김민표 두산로보틱스 대표와 만나 피지컬 AI 기술 협력 방안을 논의했다.",
+      "type": "OPERATES_IN",
+      "from": "company_454910",
+      "to": "business_area_robotics",
+      "evidence": "두산로보틱스는 해당 협력을 기반으로 내년 에이전틱 운영체제 기반 지능형 로봇 솔루션을 공개하고, 2028년에는 산업용 휴머노이드를 출시한다는 계획이다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
       "evidence_source_type": "news",
@@ -96,9 +91,9 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_madison_hwang",
-      "to": "company_hyundai",
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_physical_ai",
       "evidence": "황 수석이사는 전날 현대차와 LG전자를 잇따라 방문한 데 이어 이날 삼성전자와 SK하이닉스 경영진과도 만나 반도체 및 로봇 플랫폼을 아우르는 피지컬 AI 생태계 구축 방안을 논의한 것으로 전해졌다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
@@ -107,9 +102,9 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_madison_hwang",
-      "to": "company_lg_electronics",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_physical_ai",
       "evidence": "황 수석이사는 전날 현대차와 LG전자를 잇따라 방문한 데 이어 이날 삼성전자와 SK하이닉스 경영진과도 만나 반도체 및 로봇 플랫폼을 아우르는 피지컬 AI 생태계 구축 방안을 논의한 것으로 전해졌다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
@@ -118,9 +113,9 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_madison_hwang",
-      "to": "company_samsung_electronics",
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_semiconductor",
       "evidence": "황 수석이사는 전날 현대차와 LG전자를 잇따라 방문한 데 이어 이날 삼성전자와 SK하이닉스 경영진과도 만나 반도체 및 로봇 플랫폼을 아우르는 피지컬 AI 생태계 구축 방안을 논의한 것으로 전해졌다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
@@ -129,9 +124,9 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_madison_hwang",
-      "to": "company_sk_hynix",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor",
       "evidence": "황 수석이사는 전날 현대차와 LG전자를 잇따라 방문한 데 이어 이날 삼성전자와 SK하이닉스 경영진과도 만나 반도체 및 로봇 플랫폼을 아우르는 피지컬 AI 생태계 구축 방안을 논의한 것으로 전해졌다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
@@ -140,10 +135,10 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_jae_yong",
-      "to": "company_samsung_electronics",
-      "evidence": "재계에서는 황 수석이사가 지난해 서울에서 열린 이재용 삼성전자 회장, 정의선 현대차그룹 회장, 젠슨 황 CEO의 회동에 동행한 데 이어...",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_physical_ai",
+      "evidence": "전날엔 현대차·LG 찾아가… 서울대 강연도 젠슨 황 엔비디아 최고경영자(CEO)의 장녀인 매디슨 황 옴니버스 및 로보틱스 제품 마케팅 수석이 국내 주요 기업들을 잇달아 만나며 피지컬 인공지능(AI) 협력 확대에 속도를 내고 있다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
       "evidence_source_type": "news",
@@ -151,10 +146,10 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeong_seon",
-      "to": "company_hyundai",
-      "evidence": "재계에서는 황 수석이사가 지난해 서울에서 열린 이재용 삼성전자 회장, 정의선 현대차그룹 회장, 젠슨 황 CEO의 회동에 동행한 데 이어...",
+      "type": "PART_OF",
+      "from": "business_area_physical_ai",
+      "to": "industry_ai",
+      "evidence": "피지컬 인공지능(AI) 협력 확대에 속도를 내고 있다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
       "evidence_source_type": "news",
@@ -162,10 +157,21 @@
       "evidence_published_at": "2026-04-29T17:09:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_choi_tae_won",
-      "to": "company_sk_hynix",
-      "evidence": "올해 초 미국 실리콘밸리에서 최태원 SK그룹 회장과 젠슨 황 CEO 만남에도 참여한 점에 주목하고 있다.",
+      "type": "PART_OF",
+      "from": "business_area_robotics",
+      "to": "industry_robotics",
+      "evidence": "두산로보틱스가 개발 중인 에이전틱 로봇 운영체제와 엔비디아의 AI·로보틱스 시뮬레이션 및 학습 인프라를 연동해 산업 현장에서 활용 가능한 로봇 실행 플랫폼을 구축하는 데 공감대를 이룬 것으로 알려졌다.",
+      "date": "",
+      "evidence_source_id": "news_005380_c997625615591a25",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12060233?ref=naver",
+      "evidence_published_at": "2026-04-29T17:09:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "황 수석이사는 전날 현대차와 LG전자를 잇따라 방문한 데 이어 이날 삼성전자와 SK하이닉스 경영진과도 만나 반도체 및 로봇 플랫폼을 아우르는 피지컬 AI 생태계 구축 방안을 논의한 것으로 전해졌다.",
       "date": "",
       "evidence_source_id": "news_005380_c997625615591a25",
       "evidence_source_type": "news",

@@ -1,0 +1,73 @@
+{
+  "source_id": "dart_007660_business_segments_20260323000847",
+  "entities": [
+    {
+      "id": "company_007660",
+      "type": "Company",
+      "name": "이수페타시스",
+      "stock_code": "007660",
+      "description": "전자제품 핵심부품인 고다층PCB(MLB)를 전문 생산·판매하는 기업"
+    },
+    {
+      "id": "business_area_pcb_production_sale",
+      "type": "BusinessArea",
+      "name": "PCB 생산과 판매"
+    },
+    {
+      "id": "product_service_pcb",
+      "type": "ProductService",
+      "name": "PCB(인쇄회로기판)"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자부품"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_007660",
+      "to": "business_area_pcb_production_sale",
+      "evidence": "당사는 전자제품의 핵심부품인 인쇄회로기판(PCB)을 전문으로 생산하고 있으며, 한국 (주)이수페타시스(본사)에는 4개의 공장 및 연구소를 운영하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_business_segments_20260323000847",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_007660",
+      "to": "product_service_pcb",
+      "evidence": "고다층PCB(MLB:Multi Layer Board)의 양산과 판매",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_business_segments_20260323000847",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_pcb",
+      "to": "business_area_pcb_production_sale",
+      "evidence": "고다층PCB(MLB:Multi Layer Board)의 양산과 판매",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_business_segments_20260323000847",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_pcb_production_sale",
+      "to": "industry_electronics",
+      "evidence": "전자제품의 핵심부품인 인쇄회로기판(PCB)을 전문으로 생산하고 있으며",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_business_segments_20260323000847",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

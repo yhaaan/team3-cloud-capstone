@@ -1,7 +1,50 @@
-// node: company_현대건설
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대건설", "type": "Company", "name": "현대건설"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "건설업을 주력 사업으로 하는 회사"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "construction"}
+
+// node: business_area_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "construction"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_construction", "properties": {"evidence": "현대건설의 임원·주요주주 소유상황 보고서 내 주요 사업영역이 명시되어있지 않으나, 회사명과 산업 구분에 따른 건설업 중심의 운영이 확인됨", "date": "2026-05-14", "evidence_source_id": "dart_000720_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250605000044", "evidence_published_at": "2026-05-14"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction", "to_id": "industry_construction", "properties": {"evidence": "건설업은 산업(construction) 범주로 포함됨", "date": "2026-05-14", "evidence_source_id": "dart_000720_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250605000044", "evidence_published_at": "2026-05-14"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "industry_construction", "properties": {"evidence": "현대건설은 건설 산업에 속하는 회사임", "date": "2026-05-14", "evidence_source_id": "dart_000720_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250605000044", "evidence_published_at": "2026-05-14"}}

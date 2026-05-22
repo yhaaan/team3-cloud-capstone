@@ -1,0 +1,41 @@
+// node: company_011200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011200", "type": "Company", "name": "HMM", "stock_code": "011200", "description": "해운 물류 중심으로 채무 재조정 및 글로벌 해운동맹 가입 추진"}
+
+// node: industry_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipping", "type": "Industry", "name": "shipbuilding"}
+
+// node: business_area_shipping_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipping_logistics", "type": "BusinessArea", "name": "logistics"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_shipping_logistics", "properties": {"evidence": "현대상선의 경영정상화를 위한 자구 노력 가운데 하나가 사채권자 채무 재조정 문제였다.", "date": "", "evidence_source_id": "news_011200_75aa770d64af92df", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605150854465401570d99e4c8_23", "evidence_published_at": "2026-05-16T09:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipping_logistics", "to_id": "industry_shipping", "properties": {"evidence": "국가 물류안보의 문제라고 인식하고 기업 회생에 직접 개입했다.", "date": "", "evidence_source_id": "news_011200_75aa770d64af92df", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605150854465401570d99e4c8_23", "evidence_published_at": "2026-05-16T09:02:00+09:00"}}

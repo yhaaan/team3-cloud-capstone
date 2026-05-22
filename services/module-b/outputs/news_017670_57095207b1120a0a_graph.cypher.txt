@@ -1,47 +1,67 @@
-// node: company_sk_telecom
+// node: company_017670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "차세대 인증 솔루션 'SK텔레콤 패스키' 개발, 소프트웨어 품질 GS 인증 1등급 획득"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: business_area_next_generation_authentication_solution
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "business_area_next_generation_authentication_solution", "type": "BusinessArea", "name": "차세대 인증 솔루션"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hanwha
+// node: product_service_passkey
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`ProductService`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "product_service_passkey", "type": "ProductService", "name": "패스키"}
 
-// node: person_oh_chang_seok
+// node: industry_software_security
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Industry`
 
-:params {"id": "person_oh_chang_seok", "type": "Person", "name": "오창석", "role": "CHAIRMAN", "role_raw": "회장", "role_label": "회장"}
+:params {"id": "industry_software_security", "type": "Industry", "name": "소프트웨어 보안"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_next_generation_authentication_solution", "properties": {"evidence": "SK텔레콤의 차세대 인증 설루션 'SK텔레콤 패스키'가 국가 공인 기준에서 최고 수준임을 입증했다.", "date": "", "evidence_source_id": "news_017670_57095207b1120a0a", "evidence_source_type": "news", "evidence_source_url": "https://thetracker.co.kr/View.aspx?No=4074083", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "product_service_passkey", "properties": {"evidence": "이번에 인증 받은 SK텔레콤 패스키는 비밀번호를 통한 접속 방식 대신 지문, 안면 기반의 생체 인식이나 PIN, 패턴과 같은 잠금 해제 방식을 적용해 보다 쉽고 안전하게 로그인할 수 있는 FIDO 기반의 차세대 인증 설루션이다.", "date": "", "evidence_source_id": "news_017670_57095207b1120a0a", "evidence_source_type": "news", "evidence_source_url": "https://thetracker.co.kr/View.aspx?No=4074083", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_passkey", "to_id": "business_area_next_generation_authentication_solution", "properties": {"evidence": "이번에 인증 받은 SK텔레콤 패스키는 비밀번호를 통한 접속 방식 대신 지문, 안면 기반의 생체 인식이나 PIN, 패턴과 같은 잠금 해제 방식을 적용해 보다 쉽고 안전하게 로그인할 수 있는 FIDO 기반의 차세대 인증 설루션이다.", "date": "", "evidence_source_id": "news_017670_57095207b1120a0a", "evidence_source_type": "news", "evidence_source_url": "https://thetracker.co.kr/View.aspx?No=4074083", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_next_generation_authentication_solution", "to_id": "industry_software_security", "properties": {"evidence": "SK텔레콤은 SK텔레콤 패스키가 한국정보통신기술협회(TTA)로부터 소프트웨어 품질인증 최고 등급인 GS 인증 1등급을 획득했다고 12일 밝혔다.", "date": "", "evidence_source_id": "news_017670_57095207b1120a0a", "evidence_source_type": "news", "evidence_source_url": "https://thetracker.co.kr/View.aspx?No=4074083", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}

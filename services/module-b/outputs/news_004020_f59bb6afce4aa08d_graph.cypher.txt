@@ -1,31 +1,66 @@
-// node: company_현대제철
+// node: company_004020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대제철", "type": "Company", "name": "현대제철", "stock_code": "004020"}
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020", "description": "현대제철은 건설공법 개발과 철강 생산을 주요 사업으로 영위합니다."}
 
-// node: company_넥센
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_넥센", "type": "Company", "name": "넥센", "stock_code": "005720"}
-
-// node: company_한화
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "건설공법"}
+
+// node: industry_steel_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_industry", "type": "Industry", "name": "철강 산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "business_area_construction", "properties": {"evidence": "\"새 건설공법 개발\"…현대제철, HCORE 설루션 파트너십 공모", "date": "", "evidence_source_id": "news_004020_f59bb6afce4aa08d", "evidence_source_type": "news", "evidence_source_url": "https://www.news1.kr/industry/general-industry/6163475", "evidence_published_at": "2026-05-12T09:17:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction", "to_id": "industry_steel_industry", "properties": {"evidence": "\"새 건설공법 개발\"…현대제철, HCORE 설루션 파트너십 공모", "date": "", "evidence_source_id": "news_004020_f59bb6afce4aa08d", "evidence_source_type": "news", "evidence_source_url": "https://www.news1.kr/industry/general-industry/6163475", "evidence_published_at": "2026-05-12T09:17:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "industry_steel_industry", "properties": {"evidence": "현대제철은 철강 관련 사업을 주요 분야로 영위합니다.", "date": "", "evidence_source_id": "news_004020_f59bb6afce4aa08d", "evidence_source_type": "news", "evidence_source_url": "https://www.news1.kr/industry/general-industry/6163475", "evidence_published_at": "2026-05-12T09:17:00+09:00"}}

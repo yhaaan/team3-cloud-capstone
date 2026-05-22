@@ -1,0 +1,41 @@
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: person_park_kyunghee
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_park_kyunghee", "type": "Person", "name": "박경희", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_lee_jongwan
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jongwan", "type": "Person", "name": "이종완", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_park_kyunghee", "to_id": "company_016360", "properties": {"evidence": "삼성증권의 임원·주요주주 소유상황 보고자는 박경희, 등기 여부는 등기임원, 직위는 부사장", "date": "2026-04-02", "evidence_source_id": "dart_016360_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000317", "evidence_published_at": "2026-04-02"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_jongwan", "to_id": "company_016360", "properties": {"evidence": "삼성증권의 임원·주요주주 소유상황 보고자는 이종완, 등기 여부는 비등기임원, 직위는 부사장", "date": "2026-04-02", "evidence_source_id": "dart_016360_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000317", "evidence_published_at": "2026-04-02"}}

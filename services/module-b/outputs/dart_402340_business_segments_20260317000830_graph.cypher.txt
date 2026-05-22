@@ -1,0 +1,431 @@
+// node: company_402340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "지주회사 및 투자업 중심으로 11번가, 티맵모빌리티, SK하이닉스 등 주요 자회사 보유"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_017670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "DRAM, NAND Flash 등 반도체 제품을 생산하는 반도체 전문 기업"}
+
+// node: company_452400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_452400", "type": "Company", "name": "이닉스", "stock_code": "452400"}
+
+// node: company_216050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_216050", "type": "Company", "name": "인크로스", "stock_code": "216050", "description": "디지털 광고 미디어렙 서비스 제공"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: company_259960
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_259960", "type": "Company", "name": "크래프톤", "stock_code": "259960"}
+
+// node: business_area_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_investment", "type": "BusinessArea", "name": "투자사업"}
+
+// node: business_area_commerce
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_commerce", "type": "BusinessArea", "name": "커머스사업", "description": "온라인 쇼핑몰 등 전자상거래 및 인터넷 관련 사업"}
+
+// node: business_area_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_platform", "type": "BusinessArea", "name": "플랫폼사업", "description": "앱스토어 및 정보통신, 인터넷 플랫폼 서비스"}
+
+// node: business_area_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility", "type": "BusinessArea", "name": "모빌리티사업", "description": "모빌리티 관련 데이터 및 온라인 정보 제공"}
+
+// node: business_area_advertising
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_advertising", "type": "BusinessArea", "name": "광고업"}
+
+// node: industry_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_investment", "type": "Industry", "name": "투자업"}
+
+// node: industry_ecommerce
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ecommerce", "type": "Industry", "name": "e-Commerce"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "모빌리티"}
+
+// node: industry_advertising
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_advertising", "type": "Industry", "name": "디지털 광고"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: product_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_dram", "type": "ProductService", "name": "DRAM"}
+
+// node: product_nand_flash
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_nand_flash", "type": "ProductService", "name": "NAND Flash"}
+
+// node: product_ecommerce_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_ecommerce_service", "type": "ProductService", "name": "전자상거래"}
+
+// node: product_app_store
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_app_store", "type": "ProductService", "name": "앱스토어"}
+
+// node: product_mobility_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_mobility_service", "type": "ProductService", "name": "모빌리티 서비스"}
+
+// node: product_advertisement
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_advertisement", "type": "ProductService", "name": "광고 서비스"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "Semiconductor"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_investment", "properties": {"evidence": "SK스퀘어의 각 부문은 ... ① 투자사업 ...로 구분되어 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_investment", "to_id": "industry_investment", "properties": {"evidence": "투자사업은 지주회사, 투자업 중심임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_commerce", "properties": {"evidence": "SK스퀘어의 각 부문은 ... ② 온라인쇼핑몰 등의 커머스사업으로 구분되어 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_commerce", "to_id": "industry_ecommerce", "properties": {"evidence": "커머스사업은 전자상거래 및 인터넷 관련 사업임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_platform", "properties": {"evidence": "SK스퀘어의 각 부문은 ... ③ 플랫폼사업으로 구분되어 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_platform", "to_id": "industry_platform", "properties": {"evidence": "플랫폼사업은 앱스토어 운용 및 정보통신, 인터넷 플랫폼 서비스임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_mobility", "properties": {"evidence": "SK스퀘어의 각 부문은 ... ④ 모빌리티사업으로 구분되어 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility", "to_id": "industry_mobility", "properties": {"evidence": "모빌리티사업은 모빌리티 관련 데이터베이스 및 온라인정보 제공업임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_216050", "to_id": "business_area_advertising", "properties": {"evidence": "인크로스㈜는 디지털 광고 미디어렙 서비스임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_advertising", "to_id": "industry_advertising", "properties": {"evidence": "인크로스㈜는 디지털 광고 미디어렙 서비스임", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "product_ecommerce_service", "properties": {"evidence": "커머스사업 11번가㈜ 전자상거래 및 인터넷 관련 사업", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_ecommerce_service", "to_id": "business_area_commerce", "properties": {"evidence": "커머스사업 11번가㈜ 전자상거래 및 인터넷 관련 사업", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "product_app_store", "properties": {"evidence": "플랫폼사업 원스토어㈜ 앱스토어 운용", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_app_store", "to_id": "business_area_platform", "properties": {"evidence": "플랫폼사업 원스토어㈜ 앱스토어 운용", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "product_mobility_service", "properties": {"evidence": "모빌리티사업 티맵모빌리티㈜ 모빌리티 관련 데이터베이스 및 온라인정보 제공업", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_mobility_service", "to_id": "business_area_mobility", "properties": {"evidence": "모빌리티사업 티맵모빌리티㈜ 모빌리티 관련 데이터베이스 및 온라인정보 제공업", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_216050", "to_id": "product_advertisement", "properties": {"evidence": "인크로스㈜ 디지털 광고 미디어렙 서비스", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_advertisement", "to_id": "business_area_advertising", "properties": {"evidence": "인크로스㈜ 디지털 광고 미디어렙 서비스", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK하이닉스는 DRAM, NAND Flash 등 반도체 부문 제품을 생산함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_dram", "properties": {"evidence": "SK하이닉스는 DRAM을 생산함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_nand_flash", "properties": {"evidence": "SK하이닉스는 NAND Flash를 생산함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_dram", "to_id": "business_area_semiconductor", "properties": {"evidence": "DRAM은 반도체 부문에 속함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_nand_flash", "to_id": "business_area_semiconductor", "properties": {"evidence": "NAND Flash는 반도체 부문에 속함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "SK하이닉스 반도체 부문은 반도체 산업에 속함", "date": "2026-03-17", "evidence_source_id": "dart_402340_business_segments_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}

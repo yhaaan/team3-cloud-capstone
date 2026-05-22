@@ -1,0 +1,231 @@
+// node: company_010140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "조선해양부문 초대형컨테이너선, LNG선, 원유운반선, 해양플랫폼과 토건부문 건축·토목공사 수행"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선해양"}
+
+// node: business_area_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "토건"}
+
+// node: product_service_container_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_container_ship", "type": "ProductService", "name": "초대형컨테이너선"}
+
+// node: product_service_lng_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_ship", "type": "ProductService", "name": "LNG선"}
+
+// node: product_service_oil_tanker
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_oil_tanker", "type": "ProductService", "name": "원유운반선"}
+
+// node: product_service_lng_fpso
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_fpso", "type": "ProductService", "name": "LNG-FPSO"}
+
+// node: product_service_fpu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_fpu", "type": "ProductService", "name": "FPU"}
+
+// node: product_service_civil_engineering_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_civil_engineering_construction", "type": "ProductService", "name": "토목건축사업"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "construction"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_shipbuilding", "properties": {"evidence": "회사는 ... 조선해양부문과 토건부문으로 사업을 구분하고 있습니다. 조선해양부문은 초대형컨테이너선, LNG선, 원유운반선 등 선박 및 LNG-FPSO, FPU 등 해양플랫폼을 건조, 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_construction", "properties": {"evidence": "토건부문은 건축 및 토목공사, 하이테크 공사를 수행하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_container_ship", "properties": {"evidence": "조선해양부문은 초대형컨테이너선 ... 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_lng_ship", "properties": {"evidence": "조선해양부문은 ... LNG선 ... 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_oil_tanker", "properties": {"evidence": "조선해양부문은 ... 원유운반선 ... 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_lng_fpso", "properties": {"evidence": "조선해양부문은 ... LNG-FPSO ... 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_fpu", "properties": {"evidence": "조선해양부문은 ... FPU 등 해양플랫폼을 건조, 판매하고 있으며...", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_civil_engineering_construction", "properties": {"evidence": "토건부문은 건축 및 토목공사, 하이테크 공사를 수행하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "회사는 조선해양부문을 구분하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction", "to_id": "industry_construction", "properties": {"evidence": "토건부문은 건축 및 토목공사, 하이테크 공사를 수행하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_container_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선해양부문 품목은 초대형컨테이너선, LNG선, 원유운반선 LNG-FPSO, FPU 등", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선해양부문 품목은 초대형컨테이너선, LNG선, 원유운반선 LNG-FPSO, FPU 등", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_oil_tanker", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선해양부문 품목은 초대형컨테이너선, LNG선, 원유운반선 LNG-FPSO, FPU 등", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_fpso", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선해양부문 품목은 초대형컨테이너선, LNG선, 원유운반선 LNG-FPSO, FPU 등", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_fpu", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선해양부문 품목은 초대형컨테이너선, LNG선, 원유운반선 LNG-FPSO, FPU 등", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_civil_engineering_construction", "to_id": "business_area_construction", "properties": {"evidence": "토건부문은 건축 및 토목공사, 하이테크 공사를 수행하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_010140_business_segments_20260312001037", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}

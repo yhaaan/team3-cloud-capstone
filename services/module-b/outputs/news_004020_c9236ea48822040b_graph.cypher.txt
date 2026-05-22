@@ -1,0 +1,206 @@
+// node: company_004020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020", "description": "철강 제조 및 제철소 운영"}
+
+// node: company_047050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047050", "type": "Company", "name": "포스코인터내셔널", "stock_code": "047050", "description": "에너지 및 소재 사업 운영"}
+
+// node: company_460860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_460860", "type": "Company", "name": "동국제강", "stock_code": "460860"}
+
+// node: company_016380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016380", "type": "Company", "name": "KG스틸", "stock_code": "016380"}
+
+// node: company_306200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_306200", "type": "Company", "name": "세아제강", "stock_code": "306200"}
+
+// node: company_002710
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002710", "type": "Company", "name": "TCC스틸", "stock_code": "002710"}
+
+// node: company_002240
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002240", "type": "Company", "name": "고려제강", "stock_code": "002240"}
+
+// node: industry_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel", "type": "Industry", "name": "철강"}
+
+// node: business_area_steel_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_steel_manufacturing", "type": "BusinessArea", "name": "철강 제조"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "현대제철 당진제철소, 1538도 심장은 오늘도 멈추지 않는다", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047050", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "포스코인터내셔널, 에너지·소재 양 날개로 구조적 성장 본궤도", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_460860", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016380", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_306200", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002710", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002240", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_steel_manufacturing", "to_id": "industry_steel", "properties": {"evidence": "한국철강협회는 이번 행사가 철강산업 화합과 상생, 재도약 의지를 다지는 자리였다", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "industry_steel", "properties": {"evidence": "현대제철 당진제철소, 1538도 심장은 오늘도 멈추지 않는다", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047050", "to_id": "industry_steel", "properties": {"evidence": "포스코인터내셔널, 에너지·소재 양 날개로 구조적 성장 본궤도", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_460860", "to_id": "industry_steel", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016380", "to_id": "industry_steel", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_306200", "to_id": "industry_steel", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002710", "to_id": "industry_steel", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002240", "to_id": "industry_steel", "properties": {"evidence": "행사에는 포스코, 현대제철, 동국제강, KG스틸, 세아제강, TCC스틸, 고려제강 등 철강업계 임직원과 가족 5000여명이 참가했다.", "date": "", "evidence_source_id": "news_004020_c9236ea48822040b", "evidence_source_type": "news", "evidence_source_url": "http://www.ftoday.co.kr/news/articleView.html?idxno=359037", "evidence_published_at": "2026-05-16T16:06:00+09:00"}}

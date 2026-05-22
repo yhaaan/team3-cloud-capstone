@@ -1,15 +1,75 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "안전사고 대응과 중공업·조선 사업장을 운영하는 기업"}
 
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: business_area_heavy_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_heavy_industry", "type": "BusinessArea", "name": "중공업"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션 거제사업장에서는 지난 2월과 3월 각각 크레인 및 발판 자재 작업 과정에서 사고가 발생해 작업자들이 중상을 입었다.", "date": "", "evidence_source_id": "news_042660_afce8424f142daad", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260507501044", "evidence_published_at": "2026-05-07T16:54:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_heavy_industry", "properties": {"evidence": "중공업 · 방산 · 철강 한화오션 \"안전사고 유발 징계 불가피\"… 노조 철회 요구 일축", "date": "", "evidence_source_id": "news_042660_afce8424f142daad", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260507501044", "evidence_published_at": "2026-05-07T16:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "중공업 · 방산 · 철강 한화오션 \"안전사고 유발 징계 불가피\"… 노조 철회 요구 일축", "date": "", "evidence_source_id": "news_042660_afce8424f142daad", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260507501044", "evidence_published_at": "2026-05-07T16:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_heavy_industry", "to_id": "industry_shipbuilding", "properties": {"evidence": "중공업 · 방산 · 철강 한화오션 \"안전사고 유발 징계 불가피\"… 노조 철회 요구 일축", "date": "", "evidence_source_id": "news_042660_afce8424f142daad", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260507501044", "evidence_published_at": "2026-05-07T16:54:00+09:00"}}

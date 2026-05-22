@@ -2,11 +2,45 @@
   "source_id": "news_099320_ddd876dbbb730bc3",
   "entities": [
     {
-      "id": "company_쎄트렉아이",
+      "id": "company_099320",
       "type": "Company",
       "name": "쎄트렉아이",
-      "stock_code": "099320"
+      "stock_code": "099320",
+      "description": "항공기우주선 및 부품 제조업 업체"
+    },
+    {
+      "id": "business_area_항공기우주선_및_부품_제조업",
+      "type": "BusinessArea",
+      "name": "항공기우주선 및 부품 제조업"
+    },
+    {
+      "id": "industry_항공우주",
+      "type": "Industry",
+      "name": "항공우주"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_099320",
+      "to": "business_area_항공기우주선_및_부품_제조업",
+      "evidence": "쎄트렉아이는 2008년 6월 13일 코스닥시장에 상장된 항공기우주선 및 부품 제조업 업체다.",
+      "date": "",
+      "evidence_source_id": "news_099320_ddd876dbbb730bc3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661558",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_항공기우주선_및_부품_제조업",
+      "to": "industry_항공우주",
+      "evidence": "쎄트렉아이는 2008년 6월 13일 코스닥시장에 상장된 항공기우주선 및 부품 제조업 업체다.",
+      "date": "",
+      "evidence_source_id": "news_099320_ddd876dbbb730bc3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661558",
+      "evidence_published_at": "2026-04-29T19:26:00+09:00"
+    }
+  ]
 }

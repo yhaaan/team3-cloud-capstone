@@ -1,15 +1,84 @@
-// node: company_lg_chemistry
+// node: company_051910
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_chemistry", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910", "description": "신사업 투자 확대와 수처리, 편광필름 사업 매각으로 사업 구조 조정 중인 화학 회사"}
 
-// node: company_lg_energy_solution
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: business_area_water_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_water_solution", "type": "BusinessArea", "name": "수처리"}
+
+// node: business_area_polarizing_film
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_polarizing_film", "type": "BusinessArea", "name": "편광필름"}
+
+// node: industry_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical", "type": "Industry", "name": "화학"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "business_area_water_solution", "properties": {"evidence": "휴업 대상 노동자들은 이미 매각된 수처리(워터솔루션) 사업과 편광필름 사업에서 일하던 노동자들이다.", "date": "", "evidence_source_id": "news_051910_ce7dd07ed6c75969", "evidence_source_type": "news", "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209", "evidence_published_at": "2026-05-12T06:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "business_area_polarizing_film", "properties": {"evidence": "휴업 대상 노동자들은 이미 매각된 수처리(워터솔루션) 사업과 편광필름 사업에서 일하던 노동자들이다.", "date": "", "evidence_source_id": "news_051910_ce7dd07ed6c75969", "evidence_source_type": "news", "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209", "evidence_published_at": "2026-05-12T06:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_water_solution", "to_id": "industry_chemical", "properties": {"evidence": "LG화학이 수처리 사업부를 매각하는 과정에서 나타난 사업 구조 조정", "date": "", "evidence_source_id": "news_051910_ce7dd07ed6c75969", "evidence_source_type": "news", "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209", "evidence_published_at": "2026-05-12T06:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_polarizing_film", "to_id": "industry_chemical", "properties": {"evidence": "LG화학이 편광필름·편광필름소재 사업을 매각한 내용", "date": "", "evidence_source_id": "news_051910_ce7dd07ed6c75969", "evidence_source_type": "news", "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209", "evidence_published_at": "2026-05-12T06:34:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "industry_chemical", "properties": {"evidence": "LG화학의 사업 특성상 화학 산업에 속함", "date": "", "evidence_source_id": "news_051910_ce7dd07ed6c75969", "evidence_source_type": "news", "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209", "evidence_published_at": "2026-05-12T06:34:00+09:00"}}

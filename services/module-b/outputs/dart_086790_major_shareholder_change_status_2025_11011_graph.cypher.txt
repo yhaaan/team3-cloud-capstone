@@ -1,0 +1,24 @@
+// node: company_086790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086790", "type": "Company", "name": "하나금융지주", "stock_code": "086790", "description": "금융서비스 중심의 금융지주회사"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "finance"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "industry_finance", "properties": {"evidence": "하나금융지주의 최대주주 변동 대상은 국민연금공단, 변동일은 2011년 04월 28일, 보유주식수는 19,198,416주, 지분율은 7.90%, 변동 사유는 기존 최대주주의 지분매각으로 인한 변경.", "date": "2026-03-16", "evidence_source_id": "dart_086790_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292", "evidence_published_at": "2026-03-16"}}

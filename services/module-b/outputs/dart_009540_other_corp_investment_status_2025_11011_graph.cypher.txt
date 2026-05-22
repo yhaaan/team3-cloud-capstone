@@ -1,58 +1,58 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "조선 및 해양 플랜트 사업과 다양한 계열사 경영 참여, 투자 활동을 수행하는 기업"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd현대에너지솔루션
+// node: company_029460
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_029460", "type": "Company", "name": "케이씨", "stock_code": "029460"}
 
-// node: company_hd현대마린엔진
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
-
-// node: company_케이씨
+// node: company_450330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_케이씨", "type": "Company", "name": "케이씨", "stock_code": "029460"}
+:params {"id": "company_450330", "type": "Company", "name": "하스", "stock_code": "450330"}
 
-// node: company_하스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_하스", "type": "Company", "name": "하스", "stock_code": "450330"}
-
-// node: company_현대힘스
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대힘스", "type": "Company", "name": "현대힘스", "stock_code": "460930"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선, 해양 및 플랜트 주요 사업을 운영하는 HD한국조선해양의 주요 계열사"}
+
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+
+// node: company_071970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+
+// node: company_460930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_460930", "type": "Company", "name": "현대힘스", "stock_code": "460930"}
 
 // relation: INVESTS_IN
 
@@ -61,7 +61,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_케이씨", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 ㈜케이씨씨, 출자 목적은 투자, 최초 취득일은 2019.10.15, 당기말 보유수량은 5,109, 당기말 지분율은 0.06%, 장부가액은 2,148,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_029460", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 ㈜케이씨씨, 출자 목적은 투자, 최초 취득일은 2019.10.15, 당기말 보유수량은 5,109, 당기말 지분율은 0.06%, 장부가액은 2,148,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
 
 // relation: INVESTS_IN
 
@@ -70,7 +70,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_하스", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 ㈜하스코(동아정기), 출자 목적은 투자, 최초 취득일은 2006.06.21, 당기말 보유수량은 142, 당기말 지분율은 0.01%.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_450330", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 ㈜하스코(동아정기), 출자 목적은 투자, 최초 취득일은 2006.06.21, 당기말 보유수량은 142, 당기말 지분율은 0.01%.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
 
 // relation: INVESTS_IN
 
@@ -79,7 +79,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_현대힘스", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 현대힘스㈜, 출자 목적은 경영 참여, 최초 취득일은 2008.04.25, 당기말 보유수량은 7,400,000, 당기말 지분율은 20.84%, 장부가액은 32,501,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_460930", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 현대힘스㈜, 출자 목적은 경영 참여, 최초 취득일은 2008.04.25, 당기말 보유수량은 7,400,000, 당기말 지분율은 20.84%, 장부가액은 32,501,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
 
 // relation: INVESTS_IN
 
@@ -88,7 +88,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대중공업㈜, 출자 목적은 경영 참여, 최초 취득일은 2019.06.03, 당기말 보유수량은 72,668,285, 당기말 지분율은 69.23%, 장부가액은 6,200,239,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_329180", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대중공업㈜, 출자 목적은 경영 참여, 최초 취득일은 2019.06.03, 당기말 보유수량은 72,668,285, 당기말 지분율은 69.23%, 장부가액은 6,200,239,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
 
 // relation: INVESTS_IN
 
@@ -97,7 +97,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_hd현대에너지솔루션", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대에너지솔루션㈜, 출자 목적은 경영 참여, 최초 취득일은 2016.12.21, 당기말 보유수량은 6,000,000, 당기말 지분율은 53.57%, 장부가액은 319,404,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_322000", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대에너지솔루션㈜, 출자 목적은 경영 참여, 최초 취득일은 2016.12.21, 당기말 보유수량은 6,000,000, 당기말 지분율은 53.57%, 장부가액은 319,404,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
 
 // relation: INVESTS_IN
 
@@ -106,4 +106,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd한국조선해양", "to_id": "company_hd현대마린엔진", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대마린엔진㈜, 출자 목적은 경영 참여, 최초 취득일은 2024.07.29, 당기말 보유수량은 11,888,844, 당기말 지분율은 35.05%, 장부가액은 81,956,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_009540", "to_id": "company_071970", "properties": {"evidence": "HD한국조선해양의 타법인 출자 대상은 HD현대마린엔진㈜, 출자 목적은 경영 참여, 최초 취득일은 2024.07.29, 당기말 보유수량은 11,888,844, 당기말 지분율은 35.05%, 장부가액은 81,956,000,000.", "date": "2026-03-20", "evidence_source_id": "dart_009540_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001032", "evidence_published_at": "2026-03-20"}}

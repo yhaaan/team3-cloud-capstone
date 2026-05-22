@@ -1,0 +1,92 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130"}
+
+// node: person_ark_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_ark_energy", "type": "Person", "name": "Ark Energy", "role": "CEO", "role_raw": "CEO", "role_label": "대표이사"}
+
+// node: person_pedalpoint_holdings
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_pedalpoint_holdings", "type": "Person", "name": "Pedalpoint Holdings", "role": "OTHER", "role_raw": "CFO", "role_label": "CFO"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "industry_ai", "properties": {"evidence": "고려아연의 임원은 Hedy Cray, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 Global Affairs, 주요경력은 - Queensland University of Technology (법학 학사, 석사) - 호주 로펌 Clayton Utz 변호사, 이사.", "date": "2026-03-25", "evidence_source_id": "dart_010130_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "industry_energy", "properties": {"evidence": "고려아연의 임원은 최주원, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 TL/TML CEO, SMC CFO Ark Energy CEO, 주요경력은 - Lehigh University 졸업 - 딜로이트, 삼일PwC 회계법인 - 고려아연㈜ 상무이사.", "date": "2026-03-25", "evidence_source_id": "dart_010130_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "industry_it", "properties": {"evidence": "고려아연의 임원은 이승호, 직위는 사장급, 이사회상 역할은 미등기, 담당업무는 Crucible 사업부 VC PM, CFO, 재경본부, 최대주주와의 관계는 계열회사 임원, 주요경력은 - 연세대 경제학과 졸업 - Stanford University 통계학 졸업(석사) - 고려아연㈜ 투자전략본부장.", "date": "2026-03-25", "evidence_source_id": "dart_010130_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_ark_energy", "to_id": "company_010130", "properties": {"evidence": "고려아연의 임원은 James Andrew Murphy, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ESG위원회 위원 사외이사후보추천위원회 위원, 주요경력은 - 퀸즐랜드 주(州) 재무 책임자 (Queensland Treasury - Under Treasurer) - 퀸즐랜드 주(州) 총리 비서실장 - Oliver Wyman 선임 고문.", "date": "2026-03-25", "evidence_source_id": "dart_010130_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_ark_energy", "to_id": "company_010130", "properties": {"evidence": "고려아연의 임원은 최윤범, 직위는 회장, 이사회상 역할은 사내이사, 담당업무는 회장, 최대주주와의 관계는 계열회사 임원, 주요경력은 - 미 Amherst 대학 수학/영문과 졸업 - 미 콜롬비아대학원 로스쿨 졸업(법학박사) - 호주 SMC 대표이사 사장 - 고려아연㈜ 대표이사 부회장.", "date": "2026-03-25", "evidence_source_id": "dart_010130_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}

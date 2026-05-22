@@ -1,47 +1,151 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "전동화, 소프트웨어 차량, 스마트팩토리 중심의 완성차 생산 및 AI·로봇 자동화 추진"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
 
-// node: company_samsung_biologics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
-
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: person_no_tae_moon
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_no_tae_moon", "type": "Person", "name": "노태문", "role_raw": "대표", "affiliated_company": "company_samsung_electronics", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: business_area_ai_robot_automation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_robot_automation", "type": "BusinessArea", "name": "AI·로봇 자동화"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "완성차 생산"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_biotech
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_biotech", "type": "Industry", "name": "바이오"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전기전자"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "현대차그룹은 전동화와 소프트웨어 중심 차량(SDV), 스마트팩토리 전환을 동시에 추진하고 있다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_ai_robot_automation", "properties": {"evidence": "생산 공정에서도 로봇과 자동화 설비 활용 범위가 넓어지는 추세다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "현대차그룹은 전동화와 소프트웨어 중심 차량(SDV), 스마트팩토리 전환을 동시에 추진하고 있다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_robot_automation", "to_id": "industry_automotive", "properties": {"evidence": "생산 공정에서도 로봇과 자동화 설비 활용 범위가 넓어지는 추세다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "industry_biotech", "properties": {"evidence": "삼성바이오로직스 노조도 AI·자동화 등 신기술 도입 시 노조 동의가 필요하다는 취지의 요구를 제기한 것으로 알려졌다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_electronics", "properties": {"evidence": "삼성전자는 생산 자동화와 AI 기반 공정 관리 비중이 높은 데다, 현재 노조의 협상력이 강해진 상황에서 성과급 갈등이 장기화되고 있기 때문이다.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "industry_electronics", "properties": {"evidence": "문서 내 SK에 대해 구체적 사업 내용은 없으나 전기전자 분야에 속하는 것으로 추정됨.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_electronics", "properties": {"evidence": "문서 내 SK하이닉스에 대해 구체적 사업 내용은 없으나 전기전자 분야에 속하는 것으로 추정됨.", "date": "", "evidence_source_id": "news_005380_7f9abfcad5d973c5", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605071840009908ea14faf6f5_1", "evidence_published_at": "2026-05-07T18:50:00+09:00"}}

@@ -2,29 +2,151 @@
   "source_id": "news_000660_39426e0e04f947c9",
   "entities": [
     {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "반도체 메모리 분야 대표 기업"
     },
     {
-      "id": "company_sk",
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "반도체 및 전자제품 제조 대표기업"
+    },
+    {
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
     },
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_service_HBM",
+      "type": "ProductService",
+      "name": "고대역폭메모리"
+    },
+    {
+      "id": "business_area_AI_semiconductor",
+      "type": "BusinessArea",
+      "name": "AI 반도체"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스는 개인투자자 거래 비중이 압도적으로 높은 대표 종목이다. 최근 AI 서버 투자 확대 기대와 HBM 공급 경쟁이 겹치면서 변동성도 커졌다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_AI_semiconductor",
+      "evidence": "AI 반도체와 고대역폭메모리(HBM) 투자 열풍 속에서 글로벌 자금이 한국 반도체 대표주 방향성에 강하게 베팅하고 있다는 의미다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_HBM",
+      "evidence": "AI 반도체와 고대역폭메모리(HBM) 투자 열풍 속에서 글로벌 자금이 한국 반도체 대표주 방향성에 강하게 베팅하고 있다는 의미다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "업계에서는 삼성전자·SK하이닉스 같은 국내 대표주를 기초로 한 단일종목 레버리지 ETF가 반도체 방향성 베팅에 사용되고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_HBM",
+      "to": "business_area_memory",
+      "evidence": "AI 반도체와 고대역폭메모리(HBM) 투자 열풍 속에서 글로벌 자금이 한국 반도체 대표주 방향성에 강하게 베팅하고 있다는 의미다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_AI_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "AI 반도체와 고대역폭메모리(HBM) 투자 열풍 속에서 글로벌 자금이 한국 반도체 대표주 방향성에 강하게 베팅하고 있다는 의미다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_memory",
+      "evidence": "삼성전자·SK하이닉스 같은 국내 대표주를 기초로 한 단일종목 레버리지 ETF 상장이 가능해졌다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_semiconductor",
+      "evidence": "국내 ETF 시장에 '삼성전자 2배', 'SK하이닉스 2배' 시대가 열린다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "국내 ETF 시장에 '삼성전자 2배', 'SK하이닉스 2배' 시대가 열린다.",
+      "date": "",
+      "evidence_source_id": "news_000660_39426e0e04f947c9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840434",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,136 @@
+// node: company_000810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000810", "type": "Company", "name": "삼성화재", "stock_code": "000810", "description": "대한민국 손해보험업계 1위로 보험료 인상, 상품 구조 개편 통한 수익성 개선에 주력"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: industry_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_insurance", "type": "Industry", "name": "insurance"}
+
+// node: business_area_property_casualty_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_property_casualty_insurance", "type": "BusinessArea", "name": "property and casualty insurance"}
+
+// node: business_area_automobile_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automobile_insurance", "type": "BusinessArea", "name": "automobile insurance"}
+
+// node: product_service_medical_expense_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_medical_expense_insurance", "type": "ProductService", "name": "medical expense insurance"}
+
+// node: product_service_non_medical_expense_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_non_medical_expense_insurance", "type": "ProductService", "name": "non-medical expense insurance"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "industry_insurance", "properties": {"evidence": "국내 손해보험업계 1위 기업 삼성화재가 손해율 안정화 조짐을 보이면서 시장의 관심을 끌고 있다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_property_casualty_insurance", "properties": {"evidence": "삼성화재는 지난해 손해율 급등 이후 고손해 담보 중심으로 보험료를 인상하고 보장 범위와 한도를 조정하는 방식으로 상품 구조를 손봤다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_automobile_insurance", "properties": {"evidence": "자동차보험 부문도 예상보다 양호했다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "product_service_medical_expense_insurance", "properties": {"evidence": "특히 실손보험과 비실손보험 손해율이 동시에 안정화될 경우 보험업계 전반의 분위기까지 바뀔 수 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "product_service_non_medical_expense_insurance", "properties": {"evidence": "특히 실손보험과 비실손보험 손해율이 동시에 안정화될 경우 보험업계 전반의 분위기까지 바뀔 수 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_property_casualty_insurance", "to_id": "industry_insurance", "properties": {"evidence": "국내 손해보험업계 1위 기업 삼성화재가 손해율 안정화 조짐을 보이면서 시장의 관심을 끌고 있다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automobile_insurance", "to_id": "industry_insurance", "properties": {"evidence": "보험업계에서는 자동차보험 수익성이 개선될 경우 삼성화재의 실적 안정성이 더욱 강화될 것으로 보고 있다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_medical_expense_insurance", "to_id": "business_area_property_casualty_insurance", "properties": {"evidence": "특히 실손보험과 비실손보험 손해율이 동시에 안정화될 경우 보험업계 전반의 분위기까지 바뀔 수 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_non_medical_expense_insurance", "to_id": "business_area_property_casualty_insurance", "properties": {"evidence": "특히 실손보험과 비실손보험 손해율이 동시에 안정화될 경우 보험업계 전반의 분위기까지 바뀔 수 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_000810_ae92d91e73177d59", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453128", "evidence_published_at": "2026-05-16T16:28:00+09:00"}}

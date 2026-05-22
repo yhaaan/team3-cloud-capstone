@@ -1,15 +1,67 @@
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "히트펌프 및 전기 난방 사업 등 친환경 에너지 전환 기술 중심 사업 추진"}
 
-// node: company_현대차
+// node: business_area_hipump_boiler
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "business_area_hipump_boiler", "type": "BusinessArea", "name": "히트펌프 보일러"}
+
+// node: business_area_electric_heating
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_heating", "type": "BusinessArea", "name": "전기 난방 사업"}
+
+// node: industry_electric_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_electronics", "type": "Industry", "name": "전기·전자"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_hipump_boiler", "properties": {"evidence": "삼성전자가 독자적인 히트펌프 기술력을 바탕으로 국내 난방 전기화 사업을 본격 추진한다.", "date": "", "evidence_source_id": "news_005930_133fea13f9b70cf1", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042914080966666ed0c62d49_1", "evidence_published_at": "2026-04-29T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_electric_heating", "properties": {"evidence": "삼성전자가 독자적인 히트펌프 기술력을 바탕으로 국내 난방 전기화 사업을 본격 추진한다.", "date": "", "evidence_source_id": "news_005930_133fea13f9b70cf1", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042914080966666ed0c62d49_1", "evidence_published_at": "2026-04-29T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_hipump_boiler", "to_id": "industry_electric_electronics", "properties": {"evidence": "산업 > 전기·전자 삼성전자가 불러온 난방 패러다임 변화…전기 히트펌프로 성능·효율↑", "date": "", "evidence_source_id": "news_005930_133fea13f9b70cf1", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042914080966666ed0c62d49_1", "evidence_published_at": "2026-04-29T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_heating", "to_id": "industry_electric_electronics", "properties": {"evidence": "산업 > 전기·전자 삼성전자가 불러온 난방 패러다임 변화…전기 히트펌프로 성능·효율↑", "date": "", "evidence_source_id": "news_005930_133fea13f9b70cf1", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042914080966666ed0c62d49_1", "evidence_published_at": "2026-04-29T18:02:00+09:00"}}

@@ -1,0 +1,115 @@
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: company_357430
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_357430", "type": "Company", "name": "마스턴프리미어리츠", "stock_code": "357430"}
+
+// node: company_000110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000110", "type": "Company", "name": "채비", "stock_code": "000110"}
+
+// node: company_226590
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_226590", "type": "Company", "name": "엠디바이스", "stock_code": "226590"}
+
+// node: company_350520
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_350520", "type": "Company", "name": "이지스레지던스리츠", "stock_code": "350520"}
+
+// node: company_417310
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_417310", "type": "Company", "name": "코람코더원리츠", "stock_code": "417310"}
+
+// node: company_950250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_950250", "type": "Company", "name": "테라뷰", "stock_code": "950250"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "company_357430", "properties": {"evidence": "삼성증권의 타법인 출자 대상은 에이엘디제일차PFV(주), 출자 목적은 단순투자, 최초 취득일은 2008.06.17, 당기말 보유수량은 25,000, 당기말 지분율은 5.0%.", "date": "2026-03-12", "evidence_source_id": "dart_016360_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "industry_ai", "properties": {"evidence": "삼성증권의 타법인 출자 대상은 삼성-AFWP AI반도체 신기술사업투자조합 제1호, 출자 목적은 경영참여, 최초 취득일은 2024.05.31, 당기말 보유수량은 2,000,000,000, 당기말 지분율은 2.8%, 장부가액은 2,000,000,000.", "date": "2026-03-12", "evidence_source_id": "dart_016360_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "industry_bio", "properties": {"evidence": "삼성증권의 타법인 출자 대상은 List Biotherapeutics, Inc.(CPS), 출자 목적은 단순투자, 최초 취득일은 2022.04.11, 당기말 지분율은 0.0%.", "date": "2026-03-12", "evidence_source_id": "dart_016360_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "industry_it", "properties": {"evidence": "삼성증권의 타법인 출자 대상은 삼성-두나무 혁신 IT 신기술사업투자조합 제1호, 출자 목적은 경영참여, 최초 취득일은 2023.07.18, 당기말 보유수량은 3,000,000,000, 당기말 지분율은 17.2%, 장부가액은 3,000,000,000.", "date": "2026-03-12", "evidence_source_id": "dart_016360_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379", "evidence_published_at": "2026-03-12"}}

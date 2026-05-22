@@ -2,43 +2,154 @@
   "source_id": "dart_012450_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_한화에어로스페이스",
+      "id": "company_012450",
       "type": "Company",
-      "name": "한화에어로스페이스"
+      "name": "한화에어로스페이스",
+      "stock_code": "012450",
+      "description": "항공우주 및 방산 분야의 전략기획, 연구개발, 제조, 구매, 품질보증 등 다각적 사업"
     },
     {
-      "id": "person_carnegie_mellon",
-      "type": "Person",
-      "name": "Carnegie Mellon",
-      "role": "CEO",
-      "role_raw": "CEO",
-      "role_label": "대표이사"
+      "id": "business_area_pgm사업부",
+      "type": "BusinessArea",
+      "name": "PGM사업부"
     },
     {
-      "id": "person_hanwha_futureproof",
-      "type": "Person",
-      "name": "Hanwha Futureproof",
-      "role": "CEO",
-      "role_raw": "CEO",
-      "role_label": "대표이사"
+      "id": "business_area_ls사업부",
+      "type": "BusinessArea",
+      "name": "LS사업부"
     },
     {
-      "id": "industry_ai",
+      "id": "business_area_mds사업부",
+      "type": "BusinessArea",
+      "name": "MDS사업부"
+    },
+    {
+      "id": "business_area_항공사업부",
+      "type": "BusinessArea",
+      "name": "항공사업부"
+    },
+    {
+      "id": "business_area_우주사업부",
+      "type": "BusinessArea",
+      "name": "우주사업부"
+    },
+    {
+      "id": "business_area_전략부문",
+      "type": "BusinessArea",
+      "name": "전략부문"
+    },
+    {
+      "id": "business_area_ls사업부_화력체계연구센터",
+      "type": "BusinessArea",
+      "name": "화력체계연구센터"
+    },
+    {
+      "id": "business_area_ls사업부_ips연구센터",
+      "type": "BusinessArea",
+      "name": "IPS연구센터"
+    },
+    {
+      "id": "business_area_ls사업부_기동체계연구센터",
+      "type": "BusinessArea",
+      "name": "기동체계연구센터"
+    },
+    {
+      "id": "business_area_ls사업부_유무인복합연구센터",
+      "type": "BusinessArea",
+      "name": "유무인복합연구센터"
+    },
+    {
+      "id": "business_area_ls사업부_항법사업센터",
+      "type": "BusinessArea",
+      "name": "항법사업센터"
+    },
+    {
+      "id": "business_area_ls사업부_품질보증실",
+      "type": "BusinessArea",
+      "name": "품질보증실"
+    },
+    {
+      "id": "business_area_ls사업부_원가실",
+      "type": "BusinessArea",
+      "name": "원가실"
+    },
+    {
+      "id": "business_area_ls사업부_경영지원실",
+      "type": "BusinessArea",
+      "name": "경영지원실"
+    },
+    {
+      "id": "business_area_ls사업부_ls사업3팀",
+      "type": "BusinessArea",
+      "name": "LS사업3팀"
+    },
+    {
+      "id": "business_area_ls사업부_ls사업2팀",
+      "type": "BusinessArea",
+      "name": "LS사업2팀"
+    },
+    {
+      "id": "business_area_ls사업부_ls사업4팀",
+      "type": "BusinessArea",
+      "name": "LS사업4팀"
+    },
+    {
+      "id": "business_area_ls사업부_발사체계연구센터",
+      "type": "BusinessArea",
+      "name": "발사체계연구센터"
+    },
+    {
+      "id": "business_area_ls사업부_mro사업부",
+      "type": "BusinessArea",
+      "name": "MRO사업부"
+    },
+    {
+      "id": "business_area_support실",
+      "type": "BusinessArea",
+      "name": "지원실"
+    },
+    {
+      "id": "business_area_strategic실",
+      "type": "BusinessArea",
+      "name": "전략실"
+    },
+    {
+      "id": "business_area_재무실",
+      "type": "BusinessArea",
+      "name": "재무실"
+    },
+    {
+      "id": "business_area_cr실",
+      "type": "BusinessArea",
+      "name": "CR실"
+    },
+    {
+      "id": "business_area_hr실",
+      "type": "BusinessArea",
+      "name": "HR실"
+    },
+    {
+      "id": "business_area_communicaton위원회",
+      "type": "BusinessArea",
+      "name": "커뮤니케이션위원회"
+    },
+    {
+      "id": "industry_방산",
       "type": "Industry",
-      "name": "AI"
+      "name": "방산"
     },
     {
-      "id": "industry_it",
+      "id": "industry_항공우주",
       "type": "Industry",
-      "name": "IT"
+      "name": "항공우주"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_한화에어로스페이스",
-      "to": "industry_ai",
-      "evidence": "한화에어로스페이스의 임원은 김명효, 직위는 담당임원, 이사회상 역할은 미등기, 담당업무는 항공사업부 CTO 한국연구소 기반기술연구센터, 주요경력은 KAIST 석사 민수엔진개발팀 수석연구원 제어시스템팀장 전기추진개발팀장 전기추진TF장.",
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_pgm사업부",
+      "evidence": "한화에어로스페이스 임원 채훈, 담당업무는 PGM사업부 PGM연구소장",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -46,10 +157,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_한화에어로스페이스",
-      "to": "industry_it",
-      "evidence": "한화에어로스페이스의 임원은 최성규, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 전략기획실 제조혁신담당, 주요경력은 한양대 학사 SAS Institute 제조산업 사업담당 SK온 Factory Automation 기술담당.",
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부",
+      "evidence": "한화에어로스페이스 임원 다수가 LS사업부 관련 업무 담당",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -57,10 +168,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "APPOINTED_TO",
-      "from": "person_carnegie_mellon",
-      "to": "company_한화에어로스페이스",
-      "evidence": "한화에어로스페이스의 임원은 전진구, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천위원회 위원장 감사위원회 위원 내부거래위원회 위원 보상위원회 위원 ESG위원회 위원, 최대주주와의 관계는 발행회사 임원, 주요경력은 해병대 사령부 사령관 국방연구원 자문위원 국방과학연구소 자문위원 現 서경대 석좌교수 現 합참 선임관찰관.",
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_mds사업부",
+      "evidence": "한화에어로스페이스 임원 김광섭, 손승현 등 MDS사업부 에너지시스템연구센터장",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -68,10 +179,307 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_carnegie_mellon",
-      "to": "company_한화에어로스페이스",
-      "evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ.",
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_항공사업부",
+      "evidence": "한화에어로스페이스 임원들이 항공사업부 무인기사업단, CTO 한국연구소, 아산사업장장 등 담당",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_우주사업부",
+      "evidence": "한화에어로스페이스 임원 오승호, 이준원 등 우주사업부 발사체연구센터장 및 사업부장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_전략부문",
+      "evidence": "한화에어로스페이스 임원 김동관, 안병철 등이 전략부문 대표이사, 전략총괄 담당",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_화력체계연구센터",
+      "evidence": "한화에어로스페이스 임원 허만정, 한화디펜스 LS사업부 화력체계연구센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_ips연구센터",
+      "evidence": "한화에어로스페이스 임원 최명환, LS사업부 IPS연구센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_기동체계연구센터",
+      "evidence": "한화에어로스페이스 임원 박광남, LS사업부 기동체계연구센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_유무인복합연구센터",
+      "evidence": "한화에어로스페이스 임원 박매훈, LS사업부 유무인복합연구센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_항법사업센터",
+      "evidence": "한화에어로스페이스 임원 김광진, LS사업부 항법사업센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_품질보증실",
+      "evidence": "한화에어로스페이스 임원 강민규, 장기영, 품질보증실장 및 품질보증실 운영",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_원가실",
+      "evidence": "한화에어로스페이스 임원 강세호, 원가실장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_경영지원실",
+      "evidence": "한화에어로스페이스 임원 김대동, 경영진단실 경영진단팀",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_ls사업3팀",
+      "evidence": "한화에어로스페이스 임원 박상원, LS사업3팀장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_ls사업2팀",
+      "evidence": "한화에어로스페이스 임원 강민규, LS사업2팀장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_ls사업4팀",
+      "evidence": "한화에어로스페이스 임원 박주용, LS사업4팀장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_발사체계연구센터",
+      "evidence": "한화에어로스페이스 임원 조상환, 발사체계연구센터장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_ls사업부_mro사업부",
+      "evidence": "한화에어로스페이스 임원 안장혁, 장성원, MRO사업부장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_support실",
+      "evidence": "한화에어로스페이스 임원 김무영 실장, 지원실장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_strategic실",
+      "evidence": "한화에어로스페이스 임원 최성규, 정서영 등 전략기획실 담당",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_재무실",
+      "evidence": "한화에어로스페이스 임원 한상윤 IR팀장, 윤안식 재무실장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_cr실",
+      "evidence": "한화에어로스페이스 임원 문지훈 CR실장",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_hr실",
+      "evidence": "한화에어로스페이스 임원 여승주 부회장, 고상휘, 김경우, 고정호, 고상휘 등 HR기획팀",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_communicaton위원회",
+      "evidence": "한화에어로스페이스 임원 박장우, 박종국, 박지영, 이명건 커뮤니케이션위원회 관련 업무",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_pgm사업부",
+      "to": "industry_방산",
+      "evidence": "PGM사업부는 한화에어로스페이스의 방산 사업부문임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ls사업부",
+      "to": "industry_방산",
+      "evidence": "LS사업부는 한화에어로스페이스의 방산 사업부문임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_mds사업부",
+      "to": "industry_방산",
+      "evidence": "MDS사업부는 한화에어로스페이스의 방산 사업부문임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_항공사업부",
+      "to": "industry_항공우주",
+      "evidence": "항공사업부는 한화에어로스페이스의 항공우주 사업부문임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_우주사업부",
+      "to": "industry_항공우주",
+      "evidence": "우주사업부는 한화에어로스페이스의 항공우주 사업부문임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_전략부문",
+      "to": "industry_방산",
+      "evidence": "전략부문은 한화에어로스페이스 방산부문 전략기획 담당",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_executive_status_2025_11011",
       "evidence_source_type": "dart",

@@ -1,0 +1,15 @@
+// node: company_267250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250", "description": "HD현대는 주력 건설·조선·에너지 사업을 영위하는 종합 중공업 기업입니다."}
+
+// node: person_jeong_mong_jun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_mong_jun", "type": "Person", "name": "정몽준"}

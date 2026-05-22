@@ -2,23 +2,169 @@
   "source_id": "news_006400_e62287d5212ee868",
   "entities": [
     {
-      "id": "company_samsung_sdi",
+      "id": "company_006400",
       "type": "Company",
       "name": "삼성SDI",
-      "stock_code": "006400"
+      "stock_code": "006400",
+      "description": "전기자동차용, 에너지저장장치(ESS) 배터리 생산 및 공급"
     },
     {
-      "id": "company_lg_energy_solution",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "전기차용 리튬인산철(LFP), 원통형 배터리 등 생산·공급"
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
+    },
+    {
+      "id": "company_096770",
+      "type": "Company",
+      "name": "SK이노베이션",
+      "stock_code": "096770",
+      "description": "전기자동차용 배터리 생산 및 공급"
+    },
+    {
+      "id": "business_area_ev_battery",
+      "type": "BusinessArea",
+      "name": "EV battery"
+    },
+    {
+      "id": "business_area_ess",
+      "type": "BusinessArea",
+      "name": "Energy storage system"
+    },
+    {
+      "id": "industry_battery",
+      "type": "Industry",
+      "name": "Battery"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_ev_battery",
+      "evidence": "삼성SDI가 독일 메르세데스벤츠에 수조원대 전기자동차용 배터리를 공급한다는 소식이 단초가 됐다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_ess",
+      "evidence": "국내 배터리업계의 또 다른 먹거리인 ESS 사업도 주목하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_ev_battery",
+      "evidence": "LG에너지솔루션은 2024년부터 벤츠 전동화 전략에 올라탄 LG에너지솔루션이 벤츠에 납품하는 배터리는 리튬·인산철(LFP)부터 차세대 원통형 배터리 등을 포함해 25조원 규모에 달한다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_ev_battery",
+      "evidence": "SK이노베이션은 지난달 주가가 27.69% 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006400",
+      "to": "business_area_ev_battery",
+      "evidence": "삼성SDI는 2028년부터 벤츠의 차세대 전기차에 하이니켈(니켈 비중 80% 이상) 기반 니켈코발트망간(NCM) 각형 배터리를 공급하기로 했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ev_battery",
+      "to": "industry_battery",
+      "evidence": "국내 2차전지 관련주가 긴 침체를 끝으로 지난달부터 반등에 성공했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ess",
+      "to": "industry_battery",
+      "evidence": "국내 배터리업계의 또 다른 먹거리인 ESS 사업도 주목하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006400",
+      "to": "industry_battery",
+      "evidence": "국내 2차전지 관련주가 긴 침체를 끝으로 지난달부터 반등에 성공했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_373220",
+      "to": "industry_battery",
+      "evidence": "LG에너지솔루션은 2024년부터 벤츠 전동화 전략에 올라탄 LG에너지솔루션이 벤츠에 납품하는 배터리는 리튬·인산철(LFP)부터 차세대 원통형 배터리 등을 포함해 25조원 규모에 달한다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_battery",
+      "evidence": "SK는 배터리 관련 주가 상승이 있었다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_096770",
+      "to": "industry_battery",
+      "evidence": "SK이노베이션은 지난달 주가가 27.69% 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    }
+  ]
 }

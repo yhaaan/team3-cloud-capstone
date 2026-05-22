@@ -1,0 +1,74 @@
+{
+  "source_id": "dart_055550_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_055550",
+      "type": "Company",
+      "name": "신한지주",
+      "stock_code": "055550",
+      "description": "금융서비스 지주사로 은행, 카드, 보험, 증권, 자산운용 등 계열사 경영권 보유"
+    },
+    {
+      "id": "company_006220",
+      "type": "Company",
+      "name": "제주은행",
+      "stock_code": "006220"
+    },
+    {
+      "id": "business_area_financial_services",
+      "type": "BusinessArea",
+      "name": "금융서비스"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_055550",
+      "to": "company_006220",
+      "evidence": "신한지주의 타법인 출자 대상은 제주은행, 출자 목적은 경영권, 최초 취득일은 2002.04.29, 당기말 보유수량은 24,196,000, 당기말 지분율은 64.0%, 장부가액은 179,643,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_055550",
+      "to": "business_area_financial_services",
+      "evidence": "신한지주의 타법인 출자 대상은 신한은행, 신한카드, 신한투자증권, 신한라이프생명보험, 제주은행 등 금융 계열사 경영권 보유.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_financial_services",
+      "to": "industry_finance",
+      "evidence": "금융서비스는 금융 산업의 한 분야임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006220",
+      "to": "industry_finance",
+      "evidence": "제주은행은 금융업에 속함.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

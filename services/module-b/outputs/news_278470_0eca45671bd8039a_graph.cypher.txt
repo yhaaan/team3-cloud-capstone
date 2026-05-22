@@ -1,0 +1,65 @@
+// node: company_278470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_278470", "type": "Company", "name": "에이피알", "stock_code": "278470", "description": "뷰티·디바이스 분야에서 매출 2조원 이상 가능성 기대, 미국과 유럽 시장 중심 글로벌 확장 진행"}
+
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_뷰티
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_뷰티", "type": "BusinessArea", "name": "뷰티"}
+
+// node: business_area_디바이스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_디바이스", "type": "BusinessArea", "name": "디바이스"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_뷰티", "properties": {"evidence": "코스피가 장중 8000선을 처음 돌파한 가운데 뷰티·디바이스 기업 에이피알이 가파른 실적 성장세로 증권가의 주목을 받고 있다.", "date": "", "evidence_source_id": "news_278470_0eca45671bd8039a", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026051514184961789", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_디바이스", "properties": {"evidence": "코스피가 장중 8000선을 처음 돌파한 가운데 뷰티·디바이스 기업 에이피알이 가파른 실적 성장세로 증권가의 주목을 받고 있다.", "date": "", "evidence_source_id": "news_278470_0eca45671bd8039a", "evidence_source_type": "news", "evidence_source_url": "https://www.ddaily.co.kr/page/view/2026051514184961789", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}

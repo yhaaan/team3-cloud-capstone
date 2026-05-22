@@ -1,0 +1,92 @@
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "KT는 통신 및 플랫폼 사업을 주요 영업 분야로 하는 기업입니다."}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "platform"}
+
+// node: industry_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecommunication", "type": "Industry", "name": "telecommunication"}
+
+// node: business_area_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_platform_business", "type": "BusinessArea", "name": "platform business"}
+
+// node: business_area_telecom_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_telecom_service", "type": "BusinessArea", "name": "telecom service"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_platform_business", "properties": {"evidence": "KT는 통신 및 플랫폼 사업을 주요 영업 분야로 하는 기업입니다.", "date": "", "evidence_source_id": "news_030200_929a06970be25d24", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150023", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_telecom_service", "properties": {"evidence": "KT는 통신 및 플랫폼 사업을 주요 영업 분야로 하는 기업입니다.", "date": "", "evidence_source_id": "news_030200_929a06970be25d24", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150023", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_platform_business", "to_id": "industry_platform", "properties": {"evidence": "KT는 통신 및 플랫폼 사업을 주요 영업 분야로 하는 기업입니다.", "date": "", "evidence_source_id": "news_030200_929a06970be25d24", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150023", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_telecom_service", "to_id": "industry_telecommunication", "properties": {"evidence": "KT는 통신 및 플랫폼 사업을 주요 영업 분야로 하는 기업입니다.", "date": "", "evidence_source_id": "news_030200_929a06970be25d24", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150023", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "industry_platform", "properties": {"evidence": "'2026 신한 SOL Bank KBO리그' 경기 중 한화 이글스에 대한 언급으로, 한화는 금융 및 플랫폼 산업에 속해있다고 봅니다.", "date": "", "evidence_source_id": "news_030200_929a06970be25d24", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150023", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}

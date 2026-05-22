@@ -2,66 +2,47 @@
   "source_id": "dart_004020_other_corp_investment_status_2025_11011",
   "entities": [
     {
-      "id": "company_현대제철",
+      "id": "company_004020",
       "type": "Company",
       "name": "현대제철",
-      "stock_code": "004020"
+      "stock_code": "004020",
+      "description": "철강 사업을 주력으로 하고 경영참여 및 단순투자 형태 출자를 보유"
     },
     {
-      "id": "company_HDC",
+      "id": "company_004560",
       "type": "Company",
-      "name": "HDC",
-      "stock_code": "012630"
+      "name": "현대비앤지스틸",
+      "stock_code": "004560"
     },
     {
-      "id": "company_SK",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
-    },
-    {
-      "id": "company_대모",
-      "type": "Company",
-      "name": "대모",
-      "stock_code": "317850"
-    },
-    {
-      "id": "company_대상",
-      "type": "Company",
-      "name": "대상",
-      "stock_code": "001680"
-    },
-    {
-      "id": "company_모비스",
-      "type": "Company",
-      "name": "모비스",
-      "stock_code": "250060"
-    },
-    {
-      "id": "company_아이엠",
-      "type": "Company",
-      "name": "아이엠",
-      "stock_code": "101390"
-    },
-    {
-      "id": "company_현대모비스",
+      "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
       "stock_code": "012330"
     },
     {
-      "id": "company_현대비앤지스틸",
+      "id": "company_012630",
       "type": "Company",
-      "name": "현대비앤지스틸",
-      "stock_code": "004560"
+      "name": "HDC",
+      "stock_code": "012630"
+    },
+    {
+      "id": "business_area_steel",
+      "type": "BusinessArea",
+      "name": "철강"
+    },
+    {
+      "id": "industry_steel",
+      "type": "Industry",
+      "name": "철강"
     }
   ],
   "relations": [
     {
       "type": "INVESTS_IN",
-      "from": "company_현대제철",
-      "to": "company_HDC",
-      "evidence": "현대제철의 타법인 출자 대상은 HDC, 출자 목적은 단순투자, 최초 취득일은 2005.05.20, 당기말 보유수량은 177,285, 당기말 지분율은 0.3%, 장부가액은 3,317,000,000.",
+      "from": "company_004020",
+      "to": "company_004560",
+      "evidence": "현대제철의 타법인 출자 대상은 현대비앤지스틸, 출자 목적은 경영참여, 최초 취득일은 2000.11.01, 당기말 보유수량은 4,693,822, 당기말 지분율은 30.9%, 장부가액은 68,617,000,000.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -70,8 +51,8 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_현대제철",
-      "to": "company_현대모비스",
+      "from": "company_004020",
+      "to": "company_012330",
       "evidence": "현대제철의 타법인 출자 대상은 현대모비스, 출자 목적은 단순투자, 최초 취득일은 1978.11.01, 당기말 보유수량은 5,504,846, 당기말 지분율은 6.1%, 장부가액은 2,053,308,000,000.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
@@ -81,9 +62,42 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_현대제철",
-      "to": "company_현대비앤지스틸",
+      "from": "company_004020",
+      "to": "company_012630",
+      "evidence": "현대제철의 타법인 출자 대상은 HDC, 출자 목적은 단순투자, 최초 취득일은 2005.05.20, 당기말 보유수량은 177,285, 당기말 지분율은 0.3%, 장부가액은 3,317,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001506",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_steel",
+      "evidence": "현대제철의 타법인 출자 대상은 현대스틸파이프, 출자 목적은 경영참여, 최초 취득일은 2023.10.17, 당기말 보유수량은 2,098,537, 당기말 지분율은 100.0%, 장부가액은 455,225,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001506",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004560",
+      "to": "business_area_steel",
       "evidence": "현대제철의 타법인 출자 대상은 현대비앤지스틸, 출자 목적은 경영참여, 최초 취득일은 2000.11.01, 당기말 보유수량은 4,693,822, 당기말 지분율은 30.9%, 장부가액은 68,617,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001506",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_steel",
+      "to": "industry_steel",
+      "evidence": "철강 사업을 주력으로 하고 경영참여 및 단순투자 형태 출자를 보유",
       "date": "2026-03-18",
       "evidence_source_id": "dart_004020_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

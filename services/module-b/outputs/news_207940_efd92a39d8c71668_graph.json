@@ -2,29 +2,47 @@
   "source_id": "news_207940_efd92a39d8c71668",
   "entities": [
     {
-      "id": "company_samsung_biologics",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "바이오 의약품 위탁생산과 관련된 사업을 영위하는 기업"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
-    },
-    {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
     },
     {
-      "id": "company_hyundai_motor",
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660"
+    },
+    {
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
       "stock_code": "005380"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_bio",
+      "evidence": "삼성바이오로직스 노동조합이 28일 부분 파업에 돌입했다. 삼성바이오로직스의 파업은 2011년 창사 이래 처음이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_efd92a39d8c71668",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mediawatch.kr/news/article.html?no=259436",
+      "evidence_published_at": "2026-04-29T07:46:00+09:00"
+    }
+  ]
 }

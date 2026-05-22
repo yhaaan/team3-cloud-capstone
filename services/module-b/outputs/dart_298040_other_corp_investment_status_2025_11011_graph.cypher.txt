@@ -1,0 +1,116 @@
+// node: company_298040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298040", "type": "Company", "name": "효성중공업", "stock_code": "298040", "description": "효성중공업은 건설 및 산업기계 등 다양한 분야에 투자 및 경영참여하고 있습니다."}
+
+// node: company_002780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002780", "type": "Company", "name": "진흥기업", "stock_code": "002780"}
+
+// node: company_004800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004800", "type": "Company", "name": "효성", "stock_code": "004800"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_033290
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033290", "type": "Company", "name": "로젠", "stock_code": "033290"}
+
+// node: company_365900
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_365900", "type": "Company", "name": "브이씨", "stock_code": "365900"}
+
+// node: business_area_건설업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_건설업", "type": "BusinessArea", "name": "건설업"}
+
+// node: business_area_산업기계
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_산업기계", "type": "BusinessArea", "name": "산업기계"}
+
+// node: industry_건설
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_건설", "type": "Industry", "name": "건설"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "company_002780", "properties": {"evidence": "효성중공업의 타법인 출자 대상은 진흥기업㈜, 출자 목적은 경영참여, 최초 취득일은 2012.03.31, 당기말 보유수량은 70,661,330, 당기말 지분율은 48.21%, 장부가액은 145,916,000,000.", "date": "2026-03-23", "evidence_source_id": "dart_298040_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "company_004800", "properties": {"evidence": "효성중공업의 타법인 출자 대상은 효성에스티티지디씨(주), 출자 목적은 단순투자, 최초 취득일은 2019.10.25, 당기말 보유수량은 4,836,113, 당기말 지분율은 40.00%, 장부가액은 33,092,000,000.", "date": "2026-03-23", "evidence_source_id": "dart_298040_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_건설업", "properties": {"evidence": "효성중공업은 건설 및 산업기계 등 다양한 분야에 투자 및 경영참여하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_298040_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_산업기계", "properties": {"evidence": "효성중공업은 건설 및 산업기계 등 다양한 분야에 투자 및 경영참여하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_298040_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_건설업", "to_id": "industry_건설", "properties": {"evidence": "건설업은 건설 산업 분야에 속합니다.", "date": "2026-03-23", "evidence_source_id": "dart_298040_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}

@@ -1,31 +1,110 @@
-// node: company_삼성전기
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "AI 산업 성장과 자율주행 고도화 기회 속 핵심 기술과 제품 중심의 부품 제조"}
 
-// node: company_우성
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
-
-// node: company_코스모신소재
+// node: company_006980
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+:params {"id": "company_006980", "type": "Company", "name": "우성", "stock_code": "006980"}
 
-// node: person_장덕현
+// node: company_005070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "affiliated_company": "company_삼성전기", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "company_005070", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+
+// node: business_area_MLCC설비
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_MLCC설비", "type": "BusinessArea", "name": "MLCC 설비"}
+
+// node: business_area_AI서버필름
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_AI서버필름", "type": "BusinessArea", "name": "AI 서버용 필름"}
+
+// node: industry_전자부품
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_전자부품", "type": "Industry", "name": "전자 부품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_MLCC설비", "properties": {"evidence": "MLCC 설비를 공급하는 우성에스이는 설비 제작·셋업 일정 단축 성과로 생산성 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_AI서버필름", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI 서버용 필름 개발을 통한 수율 개선 성과로 기술개발 부문 우수상을,", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "industry_전자부품", "properties": {"evidence": "삼성전기는 AI 산업 성장과 자율주행 고도화는 기회이며 핵심 기술로 경쟁력 있는 제품을 만든다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006980", "to_id": "industry_전자부품", "properties": {"evidence": "MLCC 설비를 공급하는 우성에스이가 생산성 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005070", "to_id": "industry_전자부품", "properties": {"evidence": "코스모신소재가 AI 서버용 필름 개발을 통한 기술개발 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_MLCC설비", "to_id": "industry_전자부품", "properties": {"evidence": "MLCC 설비와 AI 서버용 필름은 전자 부품에 해당한다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_AI서버필름", "to_id": "industry_전자부품", "properties": {"evidence": "MLCC 설비와 AI 서버용 필름은 전자 부품에 해당한다.", "date": "", "evidence_source_id": "news_009150_e5e787668f029f2b", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=132353", "evidence_published_at": "2026-04-28T17:42:00+09:00"}}

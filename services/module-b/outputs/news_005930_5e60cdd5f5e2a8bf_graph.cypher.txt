@@ -1,7 +1,186 @@
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "가전 효율화 및 AI 가전, 프리미엄 제품, 냉난방공조, 구독서비스 중심 사업 구조 전환"}
+
+// node: business_area_gajeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_gajeon", "type": "BusinessArea", "name": "가전"}
+
+// node: business_area_ai_gajeon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_gajeon", "type": "BusinessArea", "name": "AI 가전"}
+
+// node: business_area_premium_product
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_premium_product", "type": "BusinessArea", "name": "프리미엄 제품"}
+
+// node: business_area_hvac
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hvac", "type": "BusinessArea", "name": "냉난방공조"}
+
+// node: business_area_subscription_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_subscription_service", "type": "BusinessArea", "name": "가전 구독 서비스"}
+
+// node: business_area_b2b_market
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_b2b_market", "type": "BusinessArea", "name": "B2B 시장"}
+
+// node: product_service_smartthings
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_smartthings", "type": "ProductService", "name": "스마트싱스"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_home_appliance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_home_appliance", "type": "Industry", "name": "가전"}
+
+// node: industry_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_software", "type": "Industry", "name": "소프트웨어"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_gajeon", "properties": {"evidence": "삼성전자가 적자 늪에 빠진 가전 사업부의 생산 라인을 대대적으로 정리하는 고강도 효율화 작업에 착수했습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_ai_gajeon", "properties": {"evidence": "삼성전자는 AI 가전, 프리미엄 제품 중심으로 사업 구조를 전환한다는 계획.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_premium_product", "properties": {"evidence": "삼성전자는 AI 가전, 프리미엄 제품 중심으로 사업 구조를 전환한다는 계획.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_hvac", "properties": {"evidence": "여기에 냉난방공조(HVAC)와 가전 구독 서비스, B2B 시장도 집중 공략하고 있습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_subscription_service", "properties": {"evidence": "여기에 냉난방공조(HVAC)와 가전 구독 서비스, B2B 시장도 집중 공략하고 있습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_b2b_market", "properties": {"evidence": "여기에 냉난방공조(HVAC)와 가전 구독 서비스, B2B 시장도 집중 공략하고 있습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_smartthings", "properties": {"evidence": "가전 관리 플랫폼인 스마트싱스를 고도화해 하드웨어를 넘어선 강력한 소프트웨어 생태계를 구축하겠다는 복안.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_gajeon", "to_id": "industry_home_appliance", "properties": {"evidence": "삼성전자가 적자 늪에 빠진 가전 사업부의 생산 라인을 대대적으로 정리하는 고강도 효율화 작업에 착수했습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_gajeon", "to_id": "industry_ai", "properties": {"evidence": "하드웨어 제조 중심에서 벗어나 인공지능(AI) 생태계를 판매하는 플랫폼 기업으로의 전환을 본격화하고 있습니다.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_smartthings", "to_id": "business_area_ai_gajeon", "properties": {"evidence": "가전 관리 플랫폼인 스마트싱스를 고도화해 하드웨어를 넘어선 강력한 소프트웨어 생태계를 구축하겠다는 복안.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_subscription_service", "to_id": "industry_software", "properties": {"evidence": "가전 관리 플랫폼인 스마트싱스를 고도화해 하드웨어를 넘어선 강력한 소프트웨어 생태계를 구축하겠다는 복안.", "date": "", "evidence_source_id": "news_005930_5e60cdd5f5e2a8bf", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202604290053", "evidence_published_at": "2026-04-29T17:50:00+09:00"}}

@@ -2,26 +2,137 @@
   "source_id": "news_060570_dca74181121b18e2",
   "entities": [
     {
-      "id": "company_dreamus_company",
+      "id": "company_060570",
       "type": "Company",
       "name": "드림어스컴퍼니",
-      "stock_code": "060570"
+      "stock_code": "060570",
+      "description": "음원 유통과 아티스트 IP 투자, 글로벌 IP 밸류업 비즈니스를 주력으로 하는 엔터테인먼트 기업"
     },
     {
-      "id": "company_daechang",
-      "type": "Company",
-      "name": "대창",
-      "stock_code": "012800"
+      "id": "industry_entertainment",
+      "type": "Industry",
+      "name": "entertainment"
     },
     {
-      "id": "person_lee_gi_young",
-      "type": "Person",
-      "name": "이기영",
-      "role": "CEO",
-      "affiliated_company": "company_dreamus_company",
-      "role_raw": "대표이사",
-      "role_label": "대표이사"
+      "id": "business_area_ip_business",
+      "type": "BusinessArea",
+      "name": "IP business"
+    },
+    {
+      "id": "business_area_music_distribution",
+      "type": "BusinessArea",
+      "name": "music distribution"
+    },
+    {
+      "id": "business_area_ip_investment",
+      "type": "BusinessArea",
+      "name": "IP investment"
+    },
+    {
+      "id": "product_service_ip_value_up",
+      "type": "ProductService",
+      "name": "IP value-up service"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_060570",
+      "to": "business_area_ip_business",
+      "evidence": "드림어스컴퍼니의 전략적인 IP 비즈니스 지원이 있었다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_060570",
+      "to": "business_area_music_distribution",
+      "evidence": "드림어스컴퍼니가 유통을 담당하며 아티스트의 음악적 스펙트럼 확장에 힘을 보탰다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_060570",
+      "to": "business_area_ip_investment",
+      "evidence": "잠재력 있는 아티스트 IP에 선제적으로 투자하고 성장을 견인하는 IP 성장 파트너십 모델",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_060570",
+      "to": "product_service_ip_value_up",
+      "evidence": "아티스트의 기획 단계부터 글로벌 활동까지 IP의 전 생애주기를 설계하는 IP 밸류업 비즈니스",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ip_business",
+      "to": "industry_entertainment",
+      "evidence": "드림어스컴퍼니의 전략적인 IP 비즈니스 지원이 있었다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_music_distribution",
+      "to": "industry_entertainment",
+      "evidence": "드림어스컴퍼니가 유통을 담당하며 아티스트의 음악적 스펙트럼 확장에 힘을 보탰다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ip_investment",
+      "to": "industry_entertainment",
+      "evidence": "잠재력 있는 아티스트 IP에 선제적으로 투자하고 성장을 견인하는 IP 성장 파트너십 모델",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_ip_value_up",
+      "to": "business_area_ip_business",
+      "evidence": "IP 밸류업 비즈니스가 대성의 사례를 통해 그 유효성을 입증했다는 평가다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_entertainment",
+      "evidence": "드림어스컴퍼니의 전략적인 IP 비즈니스 지원이 있었다.",
+      "date": "",
+      "evidence_source_id": "news_060570_dca74181121b18e2",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026042010370854034",
+      "evidence_published_at": "2026-04-20T10:37:00+09:00"
+    }
+  ]
 }

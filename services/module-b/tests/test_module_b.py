@@ -207,7 +207,10 @@ class ModuleBPipelineTests(unittest.TestCase):
             "relations": [],
         }
 
-        normalized = normalize_graph_roles(graph)
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
         person = normalized["entities"][0]
 
         self.assertEqual(person["role"], "CHAIRMAN")
@@ -234,7 +237,10 @@ class ModuleBPipelineTests(unittest.TestCase):
             "relations": [],
         }
 
-        normalized = normalize_graph_roles(graph)
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
         person = normalized["entities"][0]
 
         self.assertEqual(person["role"], "VICE_CHAIRMAN")
@@ -444,6 +450,89 @@ class ModuleBPipelineTests(unittest.TestCase):
         }
 
         validate(instance=graph, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
+
+    def test_graph_normalization_adds_dart_executive_person_identity(self):
+        whitelist = CompanyWhitelist([ListedCompany("267250", "HD현대", "KOSPI")])
+        graph = {
+            "source_id": "dart_267250_executive_status_2025_11011",
+            "entities": [
+                {"id": "person_권오갑", "type": "Person", "name": "권오갑"},
+            ],
+            "relations": [],
+        }
+        source_doc = {
+            "source_id": "dart_267250_executive_status_2025_11011",
+            "document_type": "dart",
+            "dataset": "executive_status",
+            "company_name": "HD현대",
+            "stock_code": "267250",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872",
+            "published_at": "2026-03-20",
+            "normalized_records": [
+                {
+                    "nm": "권오갑",
+                    "sexdstn": "남",
+                    "birth_ym": "1951년 02월",
+                    "ofcps": "대표이사",
+                    "rgist_exctv_at": "사내이사",
+                    "fte_at": "상근",
+                    "chrg_job": "대표이사",
+                    "main_career": "2025~현재 : HD현대 명예회장",
+                    "mxmm_shrholdr_relate": "계열회사 임원",
+                    "hffc_pd": "8년",
+                    "tenure_end_on": "2026년 03월 28일",
+                }
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist, source_doc)
+        person = next(entity for entity in normalized["entities"] if entity["type"] == "Person")
+
+        self.assertEqual(person["id"], "person_권오갑_195102")
+        self.assertEqual(person["birth_ym"], "1951-02")
+        self.assertEqual(person["gender"], "남")
+        self.assertEqual(person["main_career"], "2025~현재 : HD현대 명예회장")
+        self.assertEqual(person["executive_type"], "사내이사")
+        self.assertEqual(
+            normalized["relations"][0]["type"],
+            "AFFILIATED_WITH",
+        )
+        self.assertEqual(normalized["relations"][0]["from"], "person_권오갑_195102")
+        self.assertEqual(normalized["relations"][0]["to"], "company_267250")
+        validate(instance=normalized, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
+
+    def test_graph_normalization_removes_person_entities_from_news(self):
+        whitelist = CompanyWhitelist([ListedCompany("005930", "Samsung Electronics", "KOSPI")])
+        graph = {
+            "source_id": "news_001",
+            "entities": [
+                {
+                    "id": "company_samsung_electronics",
+                    "type": "Company",
+                    "name": "Samsung Electronics",
+                },
+                {"id": "person_jane_doe", "type": "Person", "name": "Jane Doe"},
+            ],
+            "relations": [
+                {
+                    "type": "AFFILIATED_WITH",
+                    "from": "person_jane_doe",
+                    "to": "company_samsung_electronics",
+                    "evidence": "Jane Doe is affiliated with Samsung Electronics.",
+                }
+            ],
+        }
+        source_doc = {
+            "source_id": "news_001",
+            "document_type": "news",
+            "url": "https://example.com/news/1",
+            "published_at": "2026-05-12T10:00:00+09:00",
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist, source_doc)
+
+        self.assertFalse(any(entity["type"] == "Person" for entity in normalized["entities"]))
+        self.assertEqual(normalized["relations"], [])
 
 
 if __name__ == "__main__":

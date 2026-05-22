@@ -1,0 +1,211 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "삼성에피스홀딩스는 다양한 삼성 계열회사의 투자 지분을 보유한 지주회사이다."}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_207940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+
+// node: company_018260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_018260", "type": "Company", "name": "삼성에스디에스", "stock_code": "018260"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "삼성전자는 반도체, 모바일, 디스플레이, 가전제품 등을 생산하는 글로벌 전자기업이다."}
+
+// node: company_010140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: company_029780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_029780", "type": "Company", "name": "삼성카드", "stock_code": "029780"}
+
+// node: company_012750
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012750", "type": "Company", "name": "에스원", "stock_code": "012750"}
+
+// node: company_030000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030000", "type": "Company", "name": "제일기획", "stock_code": "030000"}
+
+// node: company_008770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_008770", "type": "Company", "name": "호텔신라", "stock_code": "008770"}
+
+// node: company_067280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_067280", "type": "Company", "name": "멀티캠퍼스", "stock_code": "067280"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_028260", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성물산, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_207940", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성바이오로직스, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_018260", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성에스디에스, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_009150", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성전기, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_005930", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성전자, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_010140", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성중공업, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_016360", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성증권, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_029780", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 삼성카드, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_012750", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 에스원, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_030000", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 제일기획, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_008770", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 호텔신라, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "company_067280", "properties": {"evidence": "삼성에피스홀딩스의 상장 계열회사 후보로 멀티캠퍼스, ... 등이 탐지되었다.", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_affiliate_status_20260515003119", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}

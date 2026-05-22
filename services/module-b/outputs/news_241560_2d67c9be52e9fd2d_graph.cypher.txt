@@ -1,58 +1,57 @@
-// node: company_dosanbabcet
+// node: company_241560
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosanbabcet", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "description": "북미 소형 건설기계 시장 강자로 현금 창출과 배당으로 그룹 재무를 지원"}
 
-// node: company_dosan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
-
-// node: company_dosaneobiliti
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosaneobiliti", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
 
-// node: company_woniksips
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_woniksips", "type": "Company", "name": "원익IPS", "stock_code": "240810"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_small_construction_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_small_construction_equipment", "type": "BusinessArea", "name": "소형 건설기계"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "건설"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosanbabcet", "to_id": "company_dosaneobiliti", "properties": {"evidence": "두산밥캣의 지배구조는 두산에너빌리티를 거쳐 최상단 지주사인 ㈜두산이 간접적으로 영향력을 행사하는 형태다.", "date": "", "evidence_source_id": "news_241560_2d67c9be52e9fd2d", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661851", "evidence_published_at": "2026-05-11T15:32:00+09:00"}}
+:params {"from_id": "company_241560", "to_id": "business_area_small_construction_equipment", "properties": {"evidence": "북미 소형 장비 시장의 강자로 꼽히는 두산밥캣은 올해도 양호한 수준의 영업현금을 확보할 것이라는 전망이 나온다.", "date": "", "evidence_source_id": "news_241560_2d67c9be52e9fd2d", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661851", "evidence_published_at": "2026-05-11T15:32:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosaneobiliti", "to_id": "company_dosan", "properties": {"evidence": "두산밥캣의 지배구조는 두산에너빌리티를 거쳐 최상단 지주사인 ㈜두산이 간접적으로 영향력을 행사하는 형태다.", "date": "", "evidence_source_id": "news_241560_2d67c9be52e9fd2d", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661851", "evidence_published_at": "2026-05-11T15:32:00+09:00"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_woniksips", "to_id": "company_dosanbabcet", "properties": {"evidence": "글로벌 대형 제조업 및 금융사를 주로 투자 대상으로 삼으며 주요 국내 투자 레퍼런스로는 한국타이어, 원익IPS 등이 있다.", "date": "", "evidence_source_id": "news_241560_2d67c9be52e9fd2d", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661851", "evidence_published_at": "2026-05-11T15:32:00+09:00"}}
+:params {"from_id": "business_area_small_construction_equipment", "to_id": "industry_construction", "properties": {"evidence": "키워드 #두산밥캣 #두산에너빌리티 #배당성향 #건설기계", "date": "", "evidence_source_id": "news_241560_2d67c9be52e9fd2d", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661851", "evidence_published_at": "2026-05-11T15:32:00+09:00"}}

@@ -1,79 +1,199 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "현대차그룹 핵심 계열사 및 로봇, 자율주행, 스마트팩토리 연계 제조 기업"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hyundai_mobis
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_hyundai_autoever
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_autoever", "type": "Company", "name": "현대오토에버", "stock_code": "307950"}
-
-// node: company_rainbow_robotics
+// node: company_012330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_rainbow_robotics", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
 
-// node: company_lg_innotek
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lg_innotek", "type": "Company", "name": "LG이노텍", "stock_code": "011070"}
-
-// node: company_lg_cns
+// node: company_307950
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_cns", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400"}
+:params {"id": "company_307950", "type": "Company", "name": "현대오토에버", "stock_code": "307950"}
 
-// node: company_dosan_robotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan_robotics", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
-
-// node: company_robotize
+// node: company_277810
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_robotize", "type": "Company", "name": "로보티즈", "stock_code": "108490"}
+:params {"id": "company_277810", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
 
-// node: company_sl
+// node: company_011070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sl", "type": "Company", "name": "에스엘", "stock_code": "005850"}
+:params {"id": "company_011070", "type": "Company", "name": "LG이노텍", "stock_code": "011070"}
+
+// node: company_064400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064400", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400"}
+
+// node: company_454910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
+
+// node: company_108490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_108490", "type": "Company", "name": "로보티즈", "stock_code": "108490"}
+
+// node: company_005850
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005850", "type": "Company", "name": "에스엘", "stock_code": "005850"}
+
+// node: company_000150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_physical_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_physical_ai", "type": "BusinessArea", "name": "피지컬 AI"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: business_area_ai_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_software", "type": "BusinessArea", "name": "AI 소프트웨어"}
+
+// node: business_area_smart_factory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smart_factory", "type": "BusinessArea", "name": "스마트팩토리"}
+
+// node: industry_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_manufacturing", "type": "Industry", "name": "제조업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_physical_ai", "properties": {"evidence": "'RISE 현대차고정피지컬AI ETF'는 현대차그룹 핵심 계열사뿐 아니라 로봇·AI 전환 과정의 직접적인 수혜가 기대되는 주요 협력 기업들까지 함께 담아 피지컬 AI 생태계 전반에 투자할 수 있도록 구성한 것이 특징이다.", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "육동휘 KB자산운용 ETF상품마케팅본부장은 \"현대차그룹은 제조업과 로봇, 자율주행, 스마트팩토리를 모두 연결할 수 있는 기업으로...\"", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_ai_software", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이는 한편 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대해 미래 성장성에 초점을 맞췄다.", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_smart_factory", "properties": {"evidence": "육동휘 KB자산운용 ETF상품마케팅본부장은 \"현대차그룹은 제조업과 로봇, 자율주행, 스마트팩토리를 모두 연결할 수 있는 기업으로...\"", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_physical_ai", "to_id": "industry_manufacturing", "properties": {"evidence": "'RISE 현대차고정피지컬AI ETF'는 현대차그룹 핵심 계열사뿐 아니라 로봇·AI 전환 과정의 직접적인 수혜가 기대되는 주요 협력 기업들까지 함께 담아 피지컬 AI 생태계 전반에 투자할 수 있도록 구성한 것이 특징이다.", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_manufacturing", "properties": {"evidence": "육동휘 KB자산운용 ETF상품마케팅본부장은 \"현대차그룹은 제조업과 로봇, 자율주행, 스마트팩토리를 모두 연결할 수 있는 기업으로...\"", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_software", "to_id": "industry_manufacturing", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이는 한편 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대해 미래 성장성에 초점을 맞췄다.", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smart_factory", "to_id": "industry_manufacturing", "properties": {"evidence": "육동휘 KB자산운용 ETF상품마케팅본부장은 \"현대차그룹은 제조업과 로봇, 자율주행, 스마트팩토리를 모두 연결할 수 있는 기업으로...\"", "date": "", "evidence_source_id": "news_005380_6d61722b3d4bbded", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=518537", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}

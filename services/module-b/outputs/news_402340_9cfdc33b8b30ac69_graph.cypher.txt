@@ -1,24 +1,58 @@
-// node: company_sk_square
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK하이닉스 지분 20% 최대주주; 투자 및 지주 사업 중심"}
 
-// node: company_sk_hynix
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "메모리 반도체 중심 반도체 제조 기업"}
 
-// relation: ACQUIRES
+// node: business_area_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_investment", "type": "BusinessArea", "name": "투자사업"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: INVESTS_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "SK스퀘어가 SK하이닉스 지분 20%를 보유한 최대주주인 데다, 주가 상관관계가 98%에 달해 단일종목 10% 편입 한도 규제를 받는 펀드들의 대안으로 주목받고 있기 때문인 것으로 풀이된다.", "date": "", "evidence_source_id": "news_402340_9cfdc33b8b30ac69", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169519", "evidence_published_at": "2026-04-29T16:12:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "company_000660", "properties": {"evidence": "SK스퀘어가 SK하이닉스 지분 20%를 보유한 최대주주인 데다, 주가 상관관계가 98%에 달해 단일종목 10% 편입 한도 규제를 받는 펀드들의 대안으로 주목받고 있기 때문인 것으로 풀이된다.", "date": "", "evidence_source_id": "news_402340_9cfdc33b8b30ac69", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169519", "evidence_published_at": "2026-04-29T16:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_investment", "properties": {"evidence": "SK스퀘어가 SK하이닉스 지분 20%를 보유한 최대주주인 데다, 주가 상관관계가 98%에 달해 단일종목 10% 편입 한도 규제를 받는 펀드들의 대안으로 주목받고 있기 때문인 것으로 풀이된다.", "date": "", "evidence_source_id": "news_402340_9cfdc33b8b30ac69", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169519", "evidence_published_at": "2026-04-29T16:12:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "SK하이닉스 주가가 이달 들어 61% 급등하며 130만원 선을 돌파하자, 연기금이 최근 10거래일 간 1571억원어치를 순매도하며 비중 조절에 나섰다.", "date": "", "evidence_source_id": "news_402340_9cfdc33b8b30ac69", "evidence_source_type": "news", "evidence_source_url": "https://news.dealsitetv.com/articles/169519", "evidence_published_at": "2026-04-29T16:12:00+09:00"}}

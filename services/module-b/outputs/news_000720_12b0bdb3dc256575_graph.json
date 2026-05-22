@@ -2,23 +2,45 @@
   "source_id": "news_000720_12b0bdb3dc256575",
   "entities": [
     {
-      "id": "company_hyundai_geonseol",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
-      "stock_code": "000720"
+      "stock_code": "000720",
+      "description": "현대건설은 배구단 운영과 선수 영입으로 스포츠 사업에 참여하고 있으며 전통적 강팀으로 알려짐."
     },
     {
-      "id": "company_kia",
-      "type": "Company",
-      "name": "기아",
-      "stock_code": "000270"
+      "id": "business_area_volleyball_team",
+      "type": "BusinessArea",
+      "name": "배구단"
     },
     {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "id": "industry_sports",
+      "type": "Industry",
+      "name": "스포츠"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "business_area_volleyball_team",
+      "evidence": "현대건설은 11일 메가와 아시아 쿼터 계약을 체결했다고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_000720_12b0bdb3dc256575",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147515",
+      "evidence_published_at": "2026-05-11T19:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_volleyball_team",
+      "to": "industry_sports",
+      "evidence": "현대건설 배구단의 화력을 한층 끌어올릴 핵심 카드가 될 것으로 보인다.",
+      "date": "",
+      "evidence_source_id": "news_000720_12b0bdb3dc256575",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147515",
+      "evidence_published_at": "2026-05-11T19:28:00+09:00"
+    }
+  ]
 }

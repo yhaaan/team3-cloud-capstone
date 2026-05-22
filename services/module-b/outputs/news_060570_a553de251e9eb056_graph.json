@@ -2,11 +2,72 @@
   "source_id": "news_060570_a553de251e9eb056",
   "entities": [
     {
-      "id": "company_드림어스컴퍼니",
+      "id": "company_060570",
       "type": "Company",
       "name": "드림어스컴퍼니",
-      "stock_code": "060570"
+      "stock_code": "060570",
+      "description": "음악 스트리밍 플랫폼 운영사다."
+    },
+    {
+      "id": "business_area_music_streaming",
+      "type": "BusinessArea",
+      "name": "음악 스트리밍 플랫폼"
+    },
+    {
+      "id": "product_service_FLO_이용권",
+      "type": "ProductService",
+      "name": "FLO 이용권"
+    },
+    {
+      "id": "industry_영상_오디오물_제공_서비스업",
+      "type": "Industry",
+      "name": "영상·오디오물 제공 서비스업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_060570",
+      "to": "business_area_music_streaming",
+      "evidence": "드림어스컴퍼니는 2003년 12월 19일 코스닥에 상장된 음악 스트리밍 플랫폼 운영사다.",
+      "date": "",
+      "evidence_source_id": "news_060570_a553de251e9eb056",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452",
+      "evidence_published_at": "2026-03-27T14:10:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_060570",
+      "to": "product_service_FLO_이용권",
+      "evidence": "드림어스컴퍼니(060570)는 3월 27일 공시를 통해 에스케이텔레콤과 195억원 규모의 FLO 이용권 제공 계약을 체결했다고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_060570_a553de251e9eb056",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452",
+      "evidence_published_at": "2026-03-27T14:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_music_streaming",
+      "to": "industry_영상_오디오물_제공_서비스업",
+      "evidence": "키워드 #드림어스컴퍼니 #영상·오디오물 제공 서비스업",
+      "date": "",
+      "evidence_source_id": "news_060570_a553de251e9eb056",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452",
+      "evidence_published_at": "2026-03-27T14:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_FLO_이용권",
+      "to": "business_area_music_streaming",
+      "evidence": "드림어스컴퍼니는 음악 스트리밍 플랫폼 운영사이며 FLO 이용권 제공 계약을 체결했다.",
+      "date": "",
+      "evidence_source_id": "news_060570_a553de251e9eb056",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452",
+      "evidence_published_at": "2026-03-27T14:10:00+09:00"
+    }
+  ]
 }

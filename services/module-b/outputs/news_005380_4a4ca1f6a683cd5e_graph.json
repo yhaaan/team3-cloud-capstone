@@ -2,66 +2,60 @@
   "source_id": "news_005380_4a4ca1f6a683cd5e",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "전기차 전용공장 신설과 전동화, 소프트웨어중심차량, 로보틱스, AI, 수소 에너지 등 미래차 기술 개발과 투자 주도"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "person_장재훈",
-      "type": "Person",
-      "name": "장재훈",
-      "role_raw": "현대차 대표이사 사장과 현대차그룹 부회장",
-      "affiliated_company": "company_현대차",
-      "role": "VICE_CHAIRMAN",
-      "role_label": "부회장"
+      "id": "business_area_ev_vehicle",
+      "type": "BusinessArea",
+      "name": "전기차"
     },
     {
-      "id": "person_이종하",
-      "type": "Person",
-      "name": "이종하",
-      "role_raw": "현대모비스 상무",
-      "affiliated_company": "company_현대모비스",
-      "role": "OTHER",
-      "role_label": "상무"
+      "id": "business_area_software_defined_vehicle",
+      "type": "BusinessArea",
+      "name": "소프트웨어중심차량"
     },
     {
-      "id": "person_이재민",
-      "type": "Person",
-      "name": "이재민",
-      "role_raw": "현대차 전무",
-      "affiliated_company": "company_현대차",
-      "role": "OTHER",
-      "role_label": "전무"
+      "id": "business_area_robotics",
+      "type": "BusinessArea",
+      "name": "로보틱스"
     },
     {
-      "id": "person_장수항",
-      "type": "Person",
-      "name": "장수항",
-      "role_raw": "기아 전무",
-      "affiliated_company": "company_기아",
-      "role": "OTHER",
-      "role_label": "기아 전무"
+      "id": "business_area_physical_ai",
+      "type": "BusinessArea",
+      "name": "피지컬 인공지능"
     },
     {
-      "id": "company_현대모비스",
-      "type": "Company",
-      "name": "현대모비스",
-      "stock_code": "012330"
+      "id": "business_area_hydrogen_energy",
+      "type": "BusinessArea",
+      "name": "수소 에너지"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
+    },
+    {
+      "id": "industry_future_technology",
+      "type": "Industry",
+      "name": "미래차"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_장재훈",
-      "to": "company_현대차",
-      "evidence": "장 부회장은 현대차 대표이사 사장과 현대차그룹 부회장을 역임하며 모빌리티 산업 생태계 강화를 위한 대규모 투자, 미래 모빌리티 신사업 확대, 글로벌 수소 생태계 구축, 글로벌 통상 리스크 대응 및 자동차 산업 생태계 동반성장 지원 등을 주도해왔다.",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_ev_vehicle",
+      "evidence": "울산 전기차(EV) 전용공장 신설, 전동화 및 소프트웨어중심차량(SDV) 경쟁력 강화",
       "date": "",
       "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
       "evidence_source_type": "news",
@@ -69,10 +63,10 @@
       "evidence_published_at": "2026-05-12T09:13:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이종하",
-      "to": "company_현대모비스",
-      "evidence": "한편 이날 행사에서는 장 부회장 외에도 이종하 현대모비스 상무가 산업포장을 받는 등 현대차그룹 임직원 8명이 정부 포상 및 산업부 장관 표창을 수상했다.",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_software_defined_vehicle",
+      "evidence": "울산 전기차(EV) 전용공장 신설, 전동화 및 소프트웨어중심차량(SDV) 경쟁력 강화",
       "date": "",
       "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
       "evidence_source_type": "news",
@@ -80,10 +74,10 @@
       "evidence_published_at": "2026-05-12T09:13:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이재민",
-      "to": "company_현대차",
-      "evidence": "한편 이날 행사에서는 장 부회장 외에도 이재민 현대차 전무가 대통령표창을 받는 등 현대차그룹 임직원 8명이 정부 포상 및 산업부 장관 표창을 수상했다.",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_robotics",
+      "evidence": "또 로보틱스와 피지컬 인공지능(AI) 등 미래 기술 경쟁력 강화와 제조 혁신을 추진하는 한편",
       "date": "",
       "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
       "evidence_source_type": "news",
@@ -91,10 +85,76 @@
       "evidence_published_at": "2026-05-12T09:13:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_장수항",
-      "to": "company_기아",
-      "evidence": "한편 이날 행사에서는 장 부회장 외에도 장수항 기아 전무가 국무총리표창을 받는 등 현대차그룹 임직원 8명이 정부 포상 및 산업부 장관 표창을 수상했다.",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_physical_ai",
+      "evidence": "또 로보틱스와 피지컬 인공지능(AI) 등 미래 기술 경쟁력 강화와 제조 혁신을 추진하는 한편",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_hydrogen_energy",
+      "evidence": "수소위원회 공동 의장으로 활동하며 글로벌 수소 에너지 생태계 확대에도 기여하고 있다",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ev_vehicle",
+      "to": "industry_automotive",
+      "evidence": "울산 전기차(EV) 전용공장 신설",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_software_defined_vehicle",
+      "to": "industry_automotive",
+      "evidence": "소프트웨어중심차량(SDV) 경쟁력 강화",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_robotics",
+      "to": "industry_future_technology",
+      "evidence": "로보틱스와 피지컬 인공지능(AI) 등 미래 기술 경쟁력 강화",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_physical_ai",
+      "to": "industry_future_technology",
+      "evidence": "로보틱스와 피지컬 인공지능(AI) 등 미래 기술 경쟁력 강화",
+      "date": "",
+      "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mydaily.co.kr/page/view/2026051209071168612",
+      "evidence_published_at": "2026-05-12T09:13:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_hydrogen_energy",
+      "to": "industry_future_technology",
+      "evidence": "글로벌 수소 에너지 생태계 확대에도 기여하고 있다",
       "date": "",
       "evidence_source_id": "news_005380_4a4ca1f6a683cd5e",
       "evidence_source_type": "news",

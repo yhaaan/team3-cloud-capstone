@@ -1,0 +1,125 @@
+// node: company_018260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_018260", "type": "Company", "name": "삼성에스디에스", "stock_code": "018260", "description": "클라우드, 데이터센터, AI 인프라 사업을 영위하는 IT 서비스 기업"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: business_area_ai_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_infrastructure", "type": "BusinessArea", "name": "AI 인프라"}
+
+// node: business_area_cloud
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cloud", "type": "BusinessArea", "name": "클라우드"}
+
+// node: business_area_data_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_data_center", "type": "BusinessArea", "name": "데이터센터"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "business_area_ai_infrastructure", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "business_area_cloud", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "business_area_data_center", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_infrastructure", "to_id": "industry_ai", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cloud", "to_id": "industry_ai", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_data_center", "to_id": "industry_ai", "properties": {"evidence": "시장에서는 삼성SDS가 클라우드와 데이터센터, AI 인프라 사업 경쟁력을 바탕으로 정부 AI 프로젝트 확대의 수혜를 받을 가능성에 주목하고 있다.", "date": "", "evidence_source_id": "news_018260_a34ebd4f6d444820", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000365", "evidence_published_at": "2026-05-12T10:33:00+09:00"}}

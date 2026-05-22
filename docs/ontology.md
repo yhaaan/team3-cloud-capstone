@@ -1,203 +1,313 @@
+# Module B Ontology
 
----
+## Purpose
 
-## 2. `docs/ontology.md`
+Module B extracts a compact graph from financial and company documents for Graph RAG.
+The graph should prioritize relations that help users discover listed companies from
+industry, business-area, product, service, investment, acquisition, executive, or event
+questions.
 
-```md
-# Module B 온톨로지 정의서
+The ontology is intentionally small. Extract only entities and relations supported by
+source text. Do not infer facts that are not evidenced by the input document.
 
-## 1. 목적
-이 온톨로지는 Module B가 금융 및 산업 관련 텍스트에서 구조화된 지식을 추출하기 위해 사용하는 최소한의 엔티티 유형과 관계 유형을 정의한다.
+## Entity Types
 
-버전 1의 목표는 모든 정보를 다 추출하는 것이 아니다.
-Graph RAG에 실제로 유용하고, 일관되게 뽑을 수 있는 정보만 먼저 추출하는 것이 목표이다.
+### Company
 
-## 2. 엔티티 유형
+A listed company allowed by Module B's whitelist.
 
-### 2-1. Company
-정의:
-금융 또는 산업 활동에 참여하는 기업, 법인, 스타트업, 기관 등
-
-필수 필드:
+Required fields:
 - id
 - type
 - name
 
-선택 필드:
+Optional fields:
 - stock_code
 - country
 - industry
+- description
 
-예시:
-- 카카오
-- 삼성전자
-- 네이버
+Rules:
+- Create Company entities only for companies in the allowed listed-company set supplied in the prompt.
+- The whitelist already excludes rows without corp_code, but corp_code is not a graph field.
+- Use stock_code as the stable listed-company identifier when available.
+- Do not create Company nodes for unlisted companies, subsidiaries, public agencies, institutions, or foreign companies unless they are explicitly in the allowed set.
 
-### 2-2. Person
-정의:
-기업 또는 사건과 관련되어 언급되는 인물. 예: 대표이사, 임원, 창업자, 주요 인사
+Examples:
+- Samsung Electronics
+- SK hynix
+- Hyundai Motor
 
-필수 필드:
+### Person
+
+A person connected to a company or event.
+
+Required fields:
 - id
 - type
 - name
 
-선택 필드:
+Optional fields:
 - role
+- role_raw
+- role_label
+- birth_ym
+- gender
+- main_career
+- executive_type
+- full_time_status
+- responsibility
+- tenure
+- tenure_end_on
+- major_shareholder_relation
 - affiliated_company
 
-예시:
-- 김범수
-- 이재용
+Rules:
+- Create Person entities only from DART executive_status documents.
+- Do not create Person entities from news documents or non-executive DART documents.
+- Put only the person's name in name.
+- Put source title text in role when present. Module B normalizes roles after extraction.
+- Do not merge company names or title phrases into Person.name.
+- For DART executive_status records, use name plus birth_ym as the stable person identity when birth_ym is available.
+- Preserve main_career as source-backed career text for later human-network analysis.
 
-### 2-3. Event
-정의:
-인수, 투자, 선임, 제휴, 조직 개편 등 의미 있는 비즈니스/금융 이벤트
+Examples:
+- Lee Jae-yong
+- Jensen Huang
 
-필수 필드:
+### Event
+
+A business or financial event worth representing as its own entity.
+
+Required fields:
 - id
 - type
 - name
 
-선택 필드:
+Optional fields:
 - event_type
 - date
 - description
 
-예시:
-- 카카오의 A사 인수
-- 삼성전자 조직개편
-- 네이버 투자 발표
+Examples:
+- acquisition announcement
+- executive appointment
+- business restructuring
 
-### 2-4. Industry
-정의:
-기업 또는 사건과 연결되는 산업 분야 또는 사업 도메인
+### Industry
 
-필수 필드:
+A broad sector, market, or thematic industry category.
+
+Required fields:
 - id
 - type
 - name
 
-선택 필드:
+Optional fields:
 - description
 
-예시:
-- AI
-- 클라우드
-- 반도체
-- 바이오
+Rules:
+- Use Industry for broad categories that users are likely to ask about.
+- Prefer concise names such as semiconductor, battery, cloud, shipbuilding, insurance, construction, bio, energy, AI, platform, automotive, finance, or display.
 
-## 3. 관계 유형
+Examples:
+- Semiconductor
+- Battery
+- Cloud
+- Shipbuilding
+- Insurance
 
-### 3-1. ACQUIRES
-의미:
-한 기업이 다른 기업을 인수함
+### BusinessArea
 
-허용 방향:
+A company's operating segment, business line, or business area.
+
+Required fields:
+- id
+- type
+- name
+
+Optional fields:
+- description
+
+Rules:
+- Use BusinessArea for segment-level concepts that connect a company to a broader Industry.
+- Names must be concise noun phrases, not full sentences.
+- BusinessArea should usually connect upward to Industry with PART_OF.
+
+Examples:
+- Memory
+- Foundry
+- Financial services
+- Shipbuilding
+- Construction
+- Logistics
+- Cloud business
+
+### ProductService
+
+A concrete product, service, or offering.
+
+Required fields:
+- id
+- type
+- name
+
+Optional fields:
+- description
+
+Rules:
+- Use ProductService for specific products and services supported by source text.
+- Names must be concise noun phrases, not full sentences.
+- ProductService should usually connect upward to BusinessArea with PART_OF.
+
+Examples:
+- DRAM
+- HBM
+- OLED
+- EV battery
+- LNG carrier
+- Brokerage service
+- Cloud service
+- Smartphone
+
+## Relation Types
+
+### ACQUIRES
+
+Meaning:
+A company acquires, merges with, or takes over another listed company.
+
+Direction:
 Company -> Company
 
-예시:
-카카오는 A사를 인수했다.
+### INVESTS_IN
 
-### 3-2. INVESTS_IN
-의미:
-한 기업이 다른 기업 또는 사업체에 투자함
+Meaning:
+A company invests in another listed company.
 
-허용 방향:
+Direction:
 Company -> Company
 
-예시:
-네이버는 B사에 전략적 투자를 진행했다.
+### APPOINTED_TO
 
-### 3-3. APPOINTED_TO
-의미:
-한 인물이 특정 기업의 직위에 선임됨
+Meaning:
+A person is appointed to a position at a company.
 
-허용 방향:
+Direction:
 Person -> Company
 
-예시:
-홍길동은 카카오의 대표이사로 선임되었다.
+### AFFILIATED_WITH
 
-### 3-4. AFFILIATED_WITH
-의미:
-한 인물이 특정 기업에 소속되거나 연관되어 있음
+Meaning:
+A person is affiliated with or belongs to a company.
 
-허용 방향:
+Direction:
 Person -> Company
 
-예시:
-김철수는 삼성전자 부회장이다.
+### BELONGS_TO
 
-### 3-5. BELONGS_TO
-의미:
-한 기업이 특정 산업 분야에 속함
+Meaning:
+A listed company belongs to a broad industry category.
 
-허용 방향:
+Direction:
 Company -> Industry
 
-예시:
-삼성전자는 반도체 산업에 속한다.
+Use when:
+- The source text supports only broad industry classification.
+- There is not enough evidence for a more specific BusinessArea or ProductService path.
 
-## 4. 공통 엔티티 규칙
-- 모든 엔티티는 고유한 id를 가져야 한다.
-- 모든 엔티티는 type을 가져야 한다.
-- 모든 엔티티는 사람이 읽을 수 있는 name을 가져야 한다.
-- 가능하면 공식 한국어 명칭을 사용한다.
-- role을 별도로 저장하는 경우, person의 name에는 직함을 넣지 않는다.
-- 날짜는 가능한 경우 YYYY-MM-DD 형식을 사용한다.
-- 불확실한 정보는 임의로 생성하지 않는다.
+### OPERATES_IN
 
-## 5. 공통 관계 규칙
-- 모든 관계는 type을 가져야 한다.
-- 모든 관계는 from과 to를 포함해야 한다.
-- 모든 관계는 근거 문장 evidence를 포함해야 한다.
-- 이 문서에 정의된 관계 유형만 사용한다.
-- 텍스트 근거가 불분명하면 관계를 생성하지 않는다.
+Meaning:
+A listed company operates in a business area or segment.
 
-## 6. 엔티티 ID 규칙
-권장 형식:
-- company_{정규화된이름}
-- person_{정규화된이름}
-- event_{짧은이름}
-- industry_{정규화된이름}
+Direction:
+Company -> BusinessArea
 
-예시:
-- company_kakao
-- company_samsung_electronics
-- person_kim_beom_su
-- industry_ai
+Examples:
+- Samsung Electronics -> Memory
+- Hyundai Heavy Industries -> Shipbuilding
 
-## 7. LLM 추출 규칙
-엔티티와 관계를 추출할 때 다음 규칙을 따른다.
-- 이 문서에 정의된 엔티티 유형만 사용한다
-- 이 문서에 정의된 관계 유형만 사용한다
-- 반드시 유효한 JSON만 반환한다
-- 모든 관계에는 근거 문장을 포함한다
-- 텍스트 근거가 부족한 엔티티/관계는 생략한다
-- 없는 사실을 추측해서 만들지 않는다
+### PRODUCES
 
-## 8. 버전 1 제한사항
-이 온톨로지는 의도적으로 작은 범위로 시작한다.
+Meaning:
+A listed company produces, sells, or provides a product or service.
 
-버전 1에서 아직 다루지 않는 항목:
-- 자회사 관계
-- 지분율
-- 제휴 강도
-- 세부 계약 구조
-- 여러 문서에 걸친 타임라인 연결
-- 다양한 출처 간 별칭 통합
+Direction:
+Company -> ProductService
 
-## 9. 예시
-입력 문장:
-카카오는 2026년 3월 20일 A사 인수를 발표했다. 이번 결정은 AI 사업 강화를 위한 전략의 일환이다.
+Examples:
+- Samsung Electronics -> DRAM
+- Samsung SDI -> EV battery
+- HD Hyundai Heavy Industries -> LNG carrier
 
-예상 엔티티:
-- Company: 카카오
-- Company: A사
-- Industry: AI
-- Event: 카카오의 A사 인수
+### PART_OF
 
-예상 관계:
-- 카카오 ACQUIRES A사
-- 카카오 BELONGS_TO AI
+Meaning:
+A narrower concept belongs to a broader business area or industry.
+
+Allowed directions:
+- BusinessArea -> Industry
+- ProductService -> BusinessArea
+
+Examples:
+- Memory -> Semiconductor
+- HBM -> Memory
+- LNG carrier -> Shipbuilding
+
+## Preferred Industry Discovery Paths
+
+When evidence allows, prefer paths that make industry questions resolve to companies:
+
+- Company -> BusinessArea -> Industry
+- Company -> ProductService -> BusinessArea -> Industry
+- Company -> Industry
+
+Use Company -> Industry only when the document gives broad industry evidence without
+specific business areas or products/services.
+
+## Common Rules
+
+- Every entity must have id, type, and name.
+- Every relation must have type, from, to, and evidence.
+- Every relation endpoint must exist in the entities array.
+- Evidence must come from the input document.
+- Do not create entities or relations from unsupported assumptions.
+- Do not add fields outside schemas/graph_schema.json.
+- Use dates in YYYY-MM-DD format when available.
+
+## ID Rules
+
+Recommended id prefixes:
+- company_{stock_code_or_normalized_name}
+- person_{normalized_name}
+- event_{normalized_event_name}
+- industry_{normalized_name}
+- business_area_{normalized_name}
+- product_service_{normalized_name}
+
+Module B canonicalizes listed Company ids to stock_code-based ids during normalization.
+
+## Example
+
+Input sentence:
+Samsung Electronics operates memory and foundry businesses and produces DRAM and HBM
+for the semiconductor market.
+
+Expected entities:
+- Company: Samsung Electronics
+- BusinessArea: Memory
+- BusinessArea: Foundry
+- ProductService: DRAM
+- ProductService: HBM
+- Industry: Semiconductor
+
+Expected relations:
+- Samsung Electronics OPERATES_IN Memory
+- Samsung Electronics OPERATES_IN Foundry
+- Samsung Electronics PRODUCES DRAM
+- Samsung Electronics PRODUCES HBM
+- DRAM PART_OF Memory
+- HBM PART_OF Memory
+- Memory PART_OF Semiconductor
+- Foundry PART_OF Semiconductor

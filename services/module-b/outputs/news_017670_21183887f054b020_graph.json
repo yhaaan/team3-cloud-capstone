@@ -2,48 +2,94 @@
   "source_id": "news_017670_21183887f054b020",
   "entities": [
     {
-      "id": "company_sk_square",
-      "type": "Company",
-      "name": "SK스퀘어",
-      "stock_code": "402340"
-    },
-    {
-      "id": "company_sk_telecom",
-      "type": "Company",
-      "name": "SK텔레콤",
-      "stock_code": "017670"
-    },
-    {
-      "id": "company_skc",
-      "type": "Company",
-      "name": "SKC",
-      "stock_code": "011790"
-    },
-    {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "034730",
+      "description": "지주사로서 주요 자회사들의 지분 가치를 보유하며 기업가치 성장에 기여"
     },
     {
-      "id": "company_sk_hynix",
+      "id": "company_402340",
+      "type": "Company",
+      "name": "SK스퀘어",
+      "stock_code": "402340",
+      "description": "지분법 이익 증가에 따른 실적 개선 기대되는 투자회사"
+    },
+    {
+      "id": "company_017670",
+      "type": "Company",
+      "name": "SK텔레콤",
+      "stock_code": "017670",
+      "description": "안정적 현금흐름을 바탕으로 통신사업 실적 개선에 기여"
+    },
+    {
+      "id": "company_011790",
+      "type": "Company",
+      "name": "SKC",
+      "stock_code": "011790",
+      "description": "주가 상승과 실적 개선 기대"
+    },
+    {
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "반도체 실적 개선과 현금창출력 급증 기대"
     },
     {
-      "id": "company_sk_innovation",
+      "id": "company_096770",
       "type": "Company",
       "name": "SK이노베이션",
-      "stock_code": "096770"
+      "stock_code": "096770",
+      "description": "석유, 윤활유, E&P, E&S 부문에서 견조한 실적 전망"
+    },
+    {
+      "id": "business_area_investment",
+      "type": "BusinessArea",
+      "name": "Investment"
+    },
+    {
+      "id": "business_area_telecommunications",
+      "type": "BusinessArea",
+      "name": "Telecommunications"
+    },
+    {
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "Semiconductor"
+    },
+    {
+      "id": "business_area_chemical_energy",
+      "type": "BusinessArea",
+      "name": "Chemical and Energy"
+    },
+    {
+      "id": "industry_investment",
+      "type": "Industry",
+      "name": "Investment"
+    },
+    {
+      "id": "industry_telecom",
+      "type": "Industry",
+      "name": "Telecommunications"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "Semiconductor"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "Energy"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
-      "from": "company_sk",
-      "to": "company_sk_square",
-      "evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.",
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_investment",
+      "evidence": "SK스퀘어에 대해선 SK하이닉스 실적 개선에 따른 지분법 이익 증가로 큰 폭의 이익 증가를 예상했다.",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",
@@ -51,10 +97,10 @@
       "evidence_published_at": "2026-05-12T09:40:00+09:00"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_sk",
-      "to": "company_sk_telecom",
-      "evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.",
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_telecommunications",
+      "evidence": "SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",
@@ -62,10 +108,10 @@
       "evidence_published_at": "2026-05-12T09:40:00+09:00"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_sk",
-      "to": "company_skc",
-      "evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor",
+      "evidence": "SK하이닉스 실적 급증으로 현금창출력 회복 전망",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",
@@ -73,10 +119,10 @@
       "evidence_published_at": "2026-05-12T09:40:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk_square",
-      "to": "company_sk_hynix",
-      "evidence": "먼저 SK스퀘어에 대해선 SK하이닉스 실적 개선에 따른 지분법 이익 증가로 큰 폭의 이익 증가를 예상했다.",
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_chemical_energy",
+      "evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",
@@ -84,10 +130,10 @@
       "evidence_published_at": "2026-05-12T09:40:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_innovation",
-      "evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며, SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.",
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_investment",
+      "evidence": "SK의 지주사 역할과 자회사 지분 가치를 통한 기업가치 상승",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",
@@ -95,10 +141,87 @@
       "evidence_published_at": "2026-05-12T09:40:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_telecom",
-      "evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며, SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.",
+      "type": "BELONGS_TO",
+      "from": "company_402340",
+      "to": "industry_investment",
+      "evidence": "SK스퀘어 지분법 이익 예상 근거",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_telecom",
+      "evidence": "SK텔레콤 안정적 현금흐름 및 실적 개선",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스 실적 개선",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_096770",
+      "to": "industry_energy",
+      "evidence": "SK이노베이션 석유, 윤활유, E&P, E&S 부문 실적",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_investment",
+      "to": "industry_investment",
+      "evidence": "Investment industry classification",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_telecommunications",
+      "to": "industry_telecom",
+      "evidence": "Telecommunications industry classification",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "Semiconductor industry classification",
+      "date": "",
+      "evidence_source_id": "news_017670_21183887f054b020",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011",
+      "evidence_published_at": "2026-05-12T09:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_chemical_energy",
+      "to": "industry_energy",
+      "evidence": "Energy industry classification",
       "date": "",
       "evidence_source_id": "news_017670_21183887f054b020",
       "evidence_source_type": "news",

@@ -2,46 +2,174 @@
   "source_id": "news_006400_1a55dfdcf467cf53",
   "entities": [
     {
-      "id": "company_samsung_sdi",
+      "id": "company_006400",
       "type": "Company",
       "name": "삼성SDI",
-      "stock_code": "006400"
+      "stock_code": "006400",
+      "description": "소형전지 및 에너지저장장치(ESS) 전해액 공급 사업을 운영"
     },
     {
-      "id": "company_donghwa_enterprise",
+      "id": "company_000500",
       "type": "Company",
-      "name": "동화기업"
+      "name": "가온전선",
+      "stock_code": "000500"
     },
     {
-      "id": "company_hd_korea_shipbuilding_marine",
+      "id": "company_012200",
       "type": "Company",
-      "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "name": "계양전기",
+      "stock_code": "012200"
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_004540",
       "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
+      "name": "깨끗한나라",
+      "stock_code": "004540"
     },
     {
-      "id": "company_samsung_heavy_industries",
+      "id": "company_010140",
       "type": "Company",
       "name": "삼성중공업",
       "stock_code": "010140"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_005930",
       "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "name": "삼성전자",
+      "stock_code": "005930"
     },
     {
-      "id": "company_hyundai_motor",
+      "id": "company_010170",
+      "type": "Company",
+      "name": "대한광통신",
+      "stock_code": "010170"
+    },
+    {
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
       "stock_code": "005380"
+    },
+    {
+      "id": "company_009830",
+      "type": "Company",
+      "name": "한화솔루션",
+      "stock_code": "009830"
+    },
+    {
+      "id": "company_020150",
+      "type": "Company",
+      "name": "롯데에너지머티리얼즈",
+      "stock_code": "020150"
+    },
+    {
+      "id": "company_950220",
+      "type": "Company",
+      "name": "네오이뮨텍",
+      "stock_code": "950220"
+    },
+    {
+      "id": "company_086670",
+      "type": "Company",
+      "name": "비엠티",
+      "stock_code": "086670"
+    },
+    {
+      "id": "company_226590",
+      "type": "Company",
+      "name": "엠디바이스",
+      "stock_code": "226590"
+    },
+    {
+      "id": "company_048770",
+      "type": "Company",
+      "name": "TPC로보틱스",
+      "stock_code": "048770"
+    },
+    {
+      "id": "company_006260",
+      "type": "Company",
+      "name": "LS",
+      "stock_code": "006260"
+    },
+    {
+      "id": "company_001440",
+      "type": "Company",
+      "name": "대한전선",
+      "stock_code": "001440"
+    },
+    {
+      "id": "company_161890",
+      "type": "Company",
+      "name": "한국콜마",
+      "stock_code": "161890"
+    },
+    {
+      "id": "company_010950",
+      "type": "Company",
+      "name": "S-Oil",
+      "stock_code": "010950"
+    },
+    {
+      "id": "business_area_ess",
+      "type": "BusinessArea",
+      "name": "에너지저장장치(ESS)"
+    },
+    {
+      "id": "product_service_전해액",
+      "type": "ProductService",
+      "name": "전해액"
+    },
+    {
+      "id": "industry_배터리",
+      "type": "Industry",
+      "name": "배터리"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_ess",
+      "evidence": "NH투자증권은 12일 동화기업에 대해 삼성SDI와 EVE향 에너지저장장치(ESS) 전해액 공급 확대가 본격화되며 판매 회복세가 나타날 것으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_1a55dfdcf467cf53",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583453",
+      "evidence_published_at": "2026-05-12T07:42:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006400",
+      "to": "product_service_전해액",
+      "evidence": "삼성SDI와 EVE향 에너지저장장치(ESS) 전해액 공급 확대가 본격화되며 판매 회복세가 나타날 것으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_1a55dfdcf467cf53",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583453",
+      "evidence_published_at": "2026-05-12T07:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ess",
+      "to": "industry_배터리",
+      "evidence": "NH투자증권은 12일 동화기업에 대해 삼성SDI와 EVE향 에너지저장장치(ESS) 전해액 공급 확대가 본격화되며 판매 회복세가 나타날 것으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_1a55dfdcf467cf53",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583453",
+      "evidence_published_at": "2026-05-12T07:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_전해액",
+      "to": "business_area_ess",
+      "evidence": "삼성SDI와 EVE향 에너지저장장치(ESS) 전해액 공급 확대가 본격화되며 판매 회복세가 나타날 것으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_006400_1a55dfdcf467cf53",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583453",
+      "evidence_published_at": "2026-05-12T07:42:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,24 @@
+// node: company_003490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003490", "type": "Company", "name": "대한항공", "stock_code": "003490"}
+
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_180640", "to_id": "company_003490", "properties": {"evidence": "대한항공의 최대주주 관련 인물/법인은 한진칼, 관계는 본인, 당기말 보유주식수는 96,207,460주, 지분율은 26.13%.", "date": "2026-03-18", "evidence_source_id": "dart_003490_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}

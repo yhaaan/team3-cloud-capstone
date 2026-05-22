@@ -1,0 +1,101 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "바이오 투자 지주회사로 ESG 경영과 자회사 삼성바이오에피스의 활동 중심."}
+
+// node: company_207940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "위탁연구개발과 항암 신약 개발 플랫폼을 보유한 바이오 의약품 전문기업."}
+
+// node: business_area_bio_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_investment", "type": "BusinessArea", "name": "바이오 투자"}
+
+// node: business_area_biopharma_cdo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharma_cdo", "type": "BusinessArea", "name": "위탁연구개발"}
+
+// node: business_area_anticancer_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_anticancer_platform", "type": "BusinessArea", "name": "항암 신약 개발 플랫폼"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio_investment", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범한 이후 처음으로 글로벌 ESG 평가에 참여했다.", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_biopharma_cdo", "properties": {"evidence": "삼성바이오로직스는 미국 바이오 학회에서 위탁연구개발(CRDO) 역량과 항암 신약 개발 플랫폼을 집중 소개했다.", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_anticancer_platform", "properties": {"evidence": "삼성바이오로직스는 미국 바이오 학회에서 위탁연구개발(CRDO) 역량과 항암 신약 개발 플랫폼을 집중 소개했다.", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_investment", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스는 바이오 투자 지주회사 체제로 출범", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharma_cdo", "to_id": "industry_bio", "properties": {"evidence": "삼성바이오로직스는 위탁연구개발(CRDO) 역량과 항암 신약 개발 플랫폼을 집중 소개했다.", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_anticancer_platform", "to_id": "industry_bio", "properties": {"evidence": "삼성바이오로직스는 위탁연구개발(CRDO) 역량과 항암 신약 개발 플랫폼을 집중 소개했다.", "date": "", "evidence_source_id": "news_0126Z0_ecc0e49862217560", "evidence_source_type": "news", "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198727", "evidence_published_at": "2026-05-14T13:14:00+09:00"}}

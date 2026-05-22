@@ -2,48 +2,184 @@
   "source_id": "news_329180_6f04789521a4c4d3",
   "entities": [
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "stock_code": "009540",
+      "description": "FDC 및 파워십 운용 기반의 해상 데이터센터와 조선 사업을 영위한다."
     },
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "조선과 발전설비 공급계약을 포함한 해양·조선 사업을 수행한다."
     },
     {
-      "id": "company_삼성중공업",
+      "id": "company_010140",
       "type": "Company",
       "name": "삼성중공업",
-      "stock_code": "010140"
+      "stock_code": "010140",
+      "description": "플로팅데이터센터 플랫폼 개념 설계 인증을 보유한 조선사다."
     },
     {
-      "id": "company_hd현대",
-      "type": "Company",
-      "name": "HD현대",
-      "stock_code": "267250"
-    },
-    {
-      "id": "company_hd현대마린엔진",
+      "id": "company_071970",
       "type": "Company",
       "name": "HD현대마린엔진",
-      "stock_code": "071970"
+      "stock_code": "071970",
+      "description": "엔진 생산에 강점을 가진 조선용 엔진 제조업체다."
     },
     {
-      "id": "company_hd현대에너지솔루션",
+      "id": "company_322000",
       "type": "Company",
       "name": "HD현대에너지솔루션",
-      "stock_code": "322000"
+      "stock_code": "322000",
+      "description": "에너지 솔루션 사업을 영위하며 흑자 전환에 성공했다."
+    },
+    {
+      "id": "company_267250",
+      "type": "Company",
+      "name": "HD현대",
+      "stock_code": "267250",
+      "description": "조선소 개발 및 해양/조선 사업 총괄한다."
+    },
+    {
+      "id": "business_area_floating_data_center",
+      "type": "BusinessArea",
+      "name": "플로팅데이터센터"
+    },
+    {
+      "id": "business_area_power_ship",
+      "type": "BusinessArea",
+      "name": "파워십"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선업"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd현대",
-      "to": "company_hd한국조선해양",
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_floating_data_center",
+      "evidence": "HD한국조선해양이 '플로팅데이터센터(FDC)' 시장 공략에 강한 자신감을 나타냈다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_power_ship",
+      "evidence": "힘센엔진 기반의 파워 솔루션 경쟁력을 갖추고 있어 경쟁사 대비 차별화 요소가 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양은 인도 조선 진출과 관련해 '현지에서 자체 수요용으로 발주받기로 확언을 받았다'며 안정적인 사업 기반 확보 가능성을 언급했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD현대중공업은 미국 에너지 인프라 개발기업과 6271억원 규모의 20MW급 힘센엔진 기반 발전설비 공급계약을 체결한 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_floating_data_center",
+      "evidence": "삼성중공업은 최근 미국 및 영국 선급으로부터 FDC의 개념설계 인증(AiP)을 획득했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_071970",
+      "to": "business_area_power_ship",
+      "evidence": "HD현대마린엔진은 지난해 1분기 대비 216.5% 증가한 326억원의 영업이익을 거뒀고",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_322000",
+      "to": "business_area_power_ship",
+      "evidence": "HD현대에너지솔루션은 흑자 전환에 성공했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_267250",
+      "to": "business_area_shipbuilding",
       "evidence": "HD현대는 HD한국조선해양을 중심으로 인도 남부 대형 그린필드 조선소 개발에 참여할 예정이다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_floating_data_center",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양이 '플로팅데이터센터(FDC)' 시장 공략에 강한 자신감을 나타냈다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_power_ship",
+      "to": "industry_shipbuilding",
+      "evidence": "힘센엔진 기반의 파워 솔루션 경쟁력을 갖추고 있어 경쟁사 대비 차별화 요소가 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_6f04789521a4c4d3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260507010001616",
+      "evidence_published_at": "2026-05-07T17:06:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양은 인도 조선 진출과 관련해 '현지에서 자체 수요용으로 발주받기로 확언을 받았다'며 안정적인 사업 기반 확보 가능성을 언급했다.",
       "date": "",
       "evidence_source_id": "news_329180_6f04789521a4c4d3",
       "evidence_source_type": "news",

@@ -1,0 +1,50 @@
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체 수출 중심의 주요 사업을 영위하는 한국 대표 기업"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: business_area_semiconductor_export
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor_export", "type": "BusinessArea", "name": "반도체 수출"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_semiconductor_export", "properties": {"evidence": "반도체가 중심인 수출이 한국 경제를 지탱하는 현실에서 투자와, 소비, 성장률에 연쇄적으로 미칠 충격이 크다는 것이다.", "date": "", "evidence_source_id": "news_005930_3b010d5d054dbbf7", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260517506784?OutUrl=naver", "evidence_published_at": "2026-05-17T15:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor_export", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체가 중심인 수출이 한국 경제를 지탱하는 현실에서 투자와, 소비, 성장률에 연쇄적으로 미칠 충격이 크다는 것이다.", "date": "", "evidence_source_id": "news_005930_3b010d5d054dbbf7", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260517506784?OutUrl=naver", "evidence_published_at": "2026-05-17T15:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 업황의 호조로 올해 한국경제 성장률이 2.5%에 이를 수 있다는 전망이 나오지만, 삼성전자 파업이 현실화될 경우 경제 전반의 타격이 불가피하다는 우려가 나온다.", "date": "", "evidence_source_id": "news_005930_3b010d5d054dbbf7", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260517506784?OutUrl=naver", "evidence_published_at": "2026-05-17T15:02:00+09:00"}}

@@ -1,55 +1,24 @@
-// node: company_sk
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "사회적가치 생태계 기업과 조직을 지원하는 국내 최대 규모 민간 플랫폼 SOVAC을 운영"}
 
-// node: company_sk우
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk우", "type": "Company", "name": "SK우", "stock_code": "03473K"}
-
-// node: company_sk하이닉스
+// node: business_area_social_value_platform
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "business_area_social_value_platform", "type": "BusinessArea", "name": "사회적가치 플랫폼"}
 
-// node: company_레인보우로보틱스
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_레인보우로보틱스", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
-
-// node: company_삼성전기
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
-
-// node: company_삼성전자
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_현대차
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"from_id": "company_034730", "to_id": "business_area_social_value_platform", "properties": {"evidence": "SK(034730)는 9월 21~22일 서울 코엑스에서 열리는 SOVAC 2026의 참가 기업·조직을 공개 모집한다고 12일 밝혔다. SOVAC은 2019년 SK의 제안으로 출범했으며 사회적기업 등 사회문제 해결을 업으로 하는 조직들이 사회적가치 창출을 위해 교류·소통하는 국내 최대 규모의 민간 플랫폼이다.", "date": "", "evidence_source_id": "news_034730_78005ab7e546680e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042895?ref=naver", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}

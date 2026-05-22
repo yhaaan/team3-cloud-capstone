@@ -1,63 +1,75 @@
-// node: company_lgchem
+// node: company_051910
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lgchem", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910", "description": "초박막 포장필름 소재 유니커블 기술력을 바탕으로 소비재 패키징 소재를 생산"}
 
-// node: company_lgh
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lgh", "type": "Company", "name": "LG생활건강", "stock_code": "051900"}
-
-// node: company_hd_korea_shipbuilding
+// node: company_051900
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_051900", "type": "Company", "name": "LG생활건강", "stock_code": "051900"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_kia
+// node: industry_packaging
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "industry_packaging", "type": "Industry", "name": "packaging"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_hanwha_ocean
+// node: business_area_packaging_materials
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "business_area_packaging_materials", "type": "BusinessArea", "name": "packaging materials"}
 
-// node: company_hyundai_motor
+// node: product_service_ultrathin_film
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`ProductService`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "product_service_ultrathin_film", "type": "ProductService", "name": "ultrathin packaging film"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "business_area_packaging_materials", "properties": {"evidence": "LG화학은 이번 전시회에서 유니커블 소재가 적용된 LG생활건강의 주방세제 파우치와 국내 주요 식품 기업의 주력 제품 포장재 등 실제 상용화된 사례를 소개하고 이를 바탕으로 포장 필름을 포함한 다양한 패키징 분야로 글로벌 고객과의 협력을 확대할 계획이다.", "date": "", "evidence_source_id": "news_051910_568a34cf7590139f", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605071023283377df3c2a17b7_23", "evidence_published_at": "2026-05-07T13:54:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "product_service_ultrathin_film", "properties": {"evidence": "LG화학이...초박막 포장필름 소재인 '유니커블(UNIQABLE™)' 기술력을 집중 조명한다.", "date": "", "evidence_source_id": "news_051910_568a34cf7590139f", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605071023283377df3c2a17b7_23", "evidence_published_at": "2026-05-07T13:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_packaging_materials", "to_id": "industry_packaging", "properties": {"evidence": "인터팩은 식품·제약·화장품 등 소비재 패키징부터 포장·가공설비까지 포장 분야 전 밸류체인을 포괄하는 유럽 최대 패키징 산업 전문 전시회다.", "date": "", "evidence_source_id": "news_051910_568a34cf7590139f", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605071023283377df3c2a17b7_23", "evidence_published_at": "2026-05-07T13:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ultrathin_film", "to_id": "business_area_packaging_materials", "properties": {"evidence": "LG화학은...초박막 포장필름 소재인 '유니커블(UNIQABLE™)' 기술력을 집중 조명한다.", "date": "", "evidence_source_id": "news_051910_568a34cf7590139f", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=202605071023283377df3c2a17b7_23", "evidence_published_at": "2026-05-07T13:54:00+09:00"}}

@@ -1,55 +1,471 @@
-// node: company_두산퓨얼셀
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260", "description": "발전용 연료전지 시장에서 1위 점유율과 다양한 연료 사용 제품을 보유한 수소경제 핵심 기업"}
 
-// node: company_ls_electric
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_ls_electric", "type": "Company", "name": "LS ELECTRIC", "stock_code": "010120"}
-
-// node: company_기아
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_두산
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_두산", "type": "Company", "name": "두산", "stock_code": "000150"}
-
-// node: company_한화
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
 
-// node: company_현대로템
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대로템", "type": "Company", "name": "현대로템", "stock_code": "064350"}
-
-// node: company_현대차
+// node: company_009830
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_009830", "type": "Company", "name": "한화솔루션", "stock_code": "009830"}
+
+// node: company_064350
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_010120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010120", "type": "Company", "name": "LS ELECTRIC", "stock_code": "010120"}
+
+// node: company_382900
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_382900", "type": "Company", "name": "범한퓨얼셀", "stock_code": "382900"}
+
+// node: company_271940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_271940", "type": "Company", "name": "일진하이솔루스", "stock_code": "271940"}
+
+// node: company_126340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_126340", "type": "Company", "name": "비나텍", "stock_code": "126340"}
+
+// node: company_089980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_089980", "type": "Company", "name": "상아프론테크", "stock_code": "089980"}
+
+// node: company_000010
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000010", "type": "Company", "name": "덕양에너젠", "stock_code": "000010"}
+
+// node: industry_hydrogen_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_hydrogen_energy", "type": "Industry", "name": "수소에너지"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: business_area_fuel_cell
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_fuel_cell", "type": "BusinessArea", "name": "연료전지"}
+
+// node: business_area_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility", "type": "BusinessArea", "name": "모빌리티"}
+
+// node: business_area_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_storage", "type": "BusinessArea", "name": "저장"}
+
+// node: business_area_hydrogen_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hydrogen_infrastructure", "type": "BusinessArea", "name": "수소 인프라"}
+
+// node: product_service_PAFC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_PAFC", "type": "ProductService", "name": "인산형 연료전지"}
+
+// node: product_service_SOFC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_SOFC", "type": "ProductService", "name": "고체산화물 연료전지"}
+
+// node: product_service_hydrogen_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hydrogen_vehicle", "type": "ProductService", "name": "수소차"}
+
+// node: product_service_hydrogen_storage_container
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hydrogen_storage_container", "type": "ProductService", "name": "수소 저장용기"}
+
+// node: product_service_hydrogen_heat_management_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hydrogen_heat_management_system", "type": "ProductService", "name": "수소차 열관리 시스템"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_fuel_cell", "properties": {"evidence": "두산퓨얼셀이 발전용 연료전지 시장에서의 탄탄한 점유율을 바탕으로 차세대 수소경제 핵심 기업으로 도약하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_PAFC", "properties": {"evidence": "현재 주력인 인산형 연료전지(PAFC)를 기반으로 다양한 연료를 활용할 수 있는 제품 라인업을 보유하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_SOFC", "properties": {"evidence": "본격 양산에 돌입한 고체산화물연료전지(SOFC)는 기존 모델 대비 전력 효율이 높고 다양한 산업에 적용이 가능해 회사의 기술 포트폴리오를 한층 강화할 핵심 동력으로 꼽힌다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_mobility", "properties": {"evidence": "2024년 하이엑시움모터스 지분을 100% 취득함으로써 친환경 상용차 등 모빌리티 분야로 사업 영역을 확장하며 시너지를 모색하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "두산퓨얼셀이 차세대 수소경제 핵심 기업으로 도약하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_hydrogen_infrastructure", "properties": {"evidence": "LS ELECTRIC은 수소 인프라 및 전력 설비 투자 확대 기대가 동시에 작용하며 상승 흐름을 이어가고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "LS ELECTRIC은 수소 인프라 및 전력 설비 투자 확대 기대가 동시에 작용하며 상승 흐름을 이어가고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_271940", "to_id": "business_area_storage", "properties": {"evidence": "일진하이솔루스는 수소 저장용기 영역에서 중장기 성장성이 부각된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_271940", "to_id": "product_service_hydrogen_storage_container", "properties": {"evidence": "일진하이솔루스는 수소 저장용기 영역에서 중장기 성장성이 부각된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_271940", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "일진하이솔루스는 저장 및 핵심 부품 영역에서 안정적인 성장이 예상된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_126340", "to_id": "business_area_fuel_cell", "properties": {"evidence": "비나텍은 연료전지 핵심 부품 영역에서 중장기 성장성이 부각된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_126340", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "비나텍은 연료전지 핵심 부품 영역에서 중장기 성장성이 부각된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_089980", "to_id": "business_area_storage", "properties": {"evidence": "상아프론테크는 저장 및 핵심 부품 영역에서 기술 경쟁력을 바탕으로 안정적인 성장이 예상된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_089980", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "상아프론테크는 저장 및 핵심 부품 영역에서 기술 경쟁력을 바탕으로 안정적인 성장이 예상된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000010", "to_id": "business_area_fuel_cell", "properties": {"evidence": "덕양에너젠은 수소 생산·저장·운송·활용 전반 밸류체인 기대 속에서 동반 상승 흐름을 보이고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000010", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "덕양에너젠은 수소 생산·저장·운송·활용 전반 밸류체인 기대 속에서 동반 상승 흐름을 보이고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_mobility", "properties": {"evidence": "현대차는 수소차 시장 확대의 직접 수혜 기업이다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_hydrogen_vehicle", "properties": {"evidence": "현대차는 수소차 시장 확대의 직접 수혜 기업이다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "현대차가 수소차 시장 확대의 직접 수혜 기업으로 평가받는다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_mobility", "properties": {"evidence": "기아는 수소차 시장 확대의 직접 수혜 기업으로 평가받는다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "product_service_hydrogen_vehicle", "properties": {"evidence": "기아는 수소차 시장 확대의 직접 수혜 기업으로 평가받는다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "industry_automotive", "properties": {"evidence": "기아가 수소차 시장 확대의 직접 수혜 기업으로 평가받는다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_storage", "properties": {"evidence": "두산퓨얼셀은 기자재 공급 및 장기유지보수서비스(LTSA)를 기반으로 안정적인 수익 모델을 확보했다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_fuel_cell", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "산업 전반에서 발전·모빌리티·산업용 에너지로 수소 활용도가 확대되고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "수소는 발전·모빌리티·산업용 에너지 전반에서 활용도가 확대되고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_storage", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "수소 생산·저장·운송·활용 전반 밸류체인 기대 속에서 동반 상승 흐름을 보이고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_hydrogen_infrastructure", "to_id": "industry_hydrogen_energy", "properties": {"evidence": "국내외 정부가 수소 생산 및 저장 인프라 구축에 대규모 투자를 진행하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_PAFC", "to_id": "business_area_fuel_cell", "properties": {"evidence": "인산형 연료전지(PAFC)를 기반으로 다양한 연료를 활용할 수 있는 제품 라인업을 보유하고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_SOFC", "to_id": "business_area_fuel_cell", "properties": {"evidence": "고체산화물연료전지(SOFC)는 회사의 기술 포트폴리오를 한층 강화할 핵심 동력이다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_hydrogen_storage_container", "to_id": "business_area_storage", "properties": {"evidence": "일진하이솔루스는 수소 저장용기 영역에서 중장기 성장성이 부각된다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_hydrogen_vehicle", "to_id": "business_area_mobility", "properties": {"evidence": "현대차와 기아는 수소차 시장 확대의 직접 수혜 기업이다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_hydrogen_heat_management_system", "to_id": "business_area_mobility", "properties": {"evidence": "한온시스템은 수소차 열관리 시스템 성장 기대가 반영되고 있다.", "date": "", "evidence_source_id": "news_336260_0c7187015df3a402", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450750", "evidence_published_at": "2026-05-06T13:18:00+09:00"}}

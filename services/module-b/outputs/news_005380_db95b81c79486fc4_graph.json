@@ -2,35 +2,110 @@
   "source_id": "news_005380_db95b81c79486fc4",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "자동차 및 로봇 사업을 영위하는 기업"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
-      "stock_code": "000270"
+      "stock_code": "000270",
+      "description": "자동차 생산 및 판매 사업을 하는 기업"
     },
     {
-      "id": "company_현대위아",
+      "id": "company_011210",
       "type": "Company",
       "name": "현대위아",
-      "stock_code": "011210"
+      "stock_code": "011210",
+      "description": "자동차 부품 및 기계 산업을 하는 기업"
     },
     {
-      "id": "company_현대모비스",
+      "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
-      "stock_code": "012330"
+      "stock_code": "012330",
+      "description": "자동차 모듈 및 부품 생산 기업"
     },
     {
-      "id": "company_삼성증권",
-      "type": "Company",
-      "name": "삼성증권",
-      "stock_code": "016360"
+      "id": "business_area_robotics",
+      "type": "BusinessArea",
+      "name": "로봇 사업"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_robotics",
+      "evidence": "현대차그룹의 로봇 사업 부분 성장성이 부상하면서 투자심리를 자극하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "industry_automotive",
+      "evidence": "임은영 삼성증권 연구원은 ... 자동차 업종 전반의 주가가 상승했다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000270",
+      "to": "industry_automotive",
+      "evidence": "임은영 삼성증권 연구원은 ... 자동차 업종 전반의 주가가 상승했다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "industry_automotive",
+      "evidence": "현대위아 (95,700원 ▲6,100 +6.81%) (7.03%) 등도 동반 상승 중이다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "industry_automotive",
+      "evidence": "현대모비스도 60만7000원까지 오르며 신고가를 새로 썼다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_robotics",
+      "to": "industry_automotive",
+      "evidence": "현대차그룹의 로봇 사업 부분 성장성이 부상하면서 투자심리를 자극하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_005380_db95b81c79486fc4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mt.co.kr/stock/2026/05/12/2026051209503935022",
+      "evidence_published_at": "2026-05-12T09:53:00+09:00"
+    }
+  ]
 }

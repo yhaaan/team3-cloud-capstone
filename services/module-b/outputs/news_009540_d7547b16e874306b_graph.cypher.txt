@@ -1,39 +1,65 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "조선소 건설 검토 및 인도 조선소 투자 추진 중"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk하이닉스
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// node: company_삼성전자
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: person_노태문
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_노태문", "type": "Person", "name": "노태문", "role_raw": "노태문 대표", "affiliated_company": "company_삼성전자", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선소"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD한국조선해양은 7일 올해 1분기 실적 발표 컨퍼런스콜에서 인도 조선소 투자와 관련해 ... 그린필드 조선소 건설을 위한 피지빌리티 스터디(타당성 검토)를 진행 중", "date": "", "evidence_source_id": "news_009540_d7547b16e874306b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=20260507172106132924debea800_1", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "항공·조선 [컨콜] HD한국조선해양 ...", "date": "", "evidence_source_id": "news_009540_d7547b16e874306b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=20260507172106132924debea800_1", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}

@@ -1,23 +1,50 @@
-// node: company_setrecai
+// node: company_099320
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_setrecai", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320"}
+:params {"id": "company_099320", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320"}
 
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
 
-// node: person_park_sung_dong
+// node: person_박성동
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_sung_dong", "type": "Person", "name": "박성동"}
+:params {"id": "person_박성동", "type": "Person", "name": "박성동"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박성동", "to_id": "company_099320", "properties": {"evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-01-08, 보유주식수는 823,760주, 지분율은 7.52%", "date": "2026-03-05", "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374", "evidence_published_at": "2026-03-05"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박성동", "to_id": "company_099320", "properties": {"evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-03-05, 보유주식수는 707,061주, 지분율은 6.46%", "date": "2026-03-05", "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374", "evidence_published_at": "2026-03-05"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "company_099320", "properties": {"evidence": "쎄트렉아이의 대량보유 보고자는 한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-01-23, 보유주식수는 4,094,464주, 지분율은 37.39%", "date": "2026-03-05", "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374", "evidence_published_at": "2026-03-05"}}

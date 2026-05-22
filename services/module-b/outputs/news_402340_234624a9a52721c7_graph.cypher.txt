@@ -1,34 +1,50 @@
-// node: company_sk_square
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK그룹 지주사로 SK하이닉스 지분 보유 및 반도체 투자를 주력으로 함"}
 
-// node: company_sk_hynix
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
-
-// node: company_hd_hyundai_hi
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_hi", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_samsung_electronics
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_investment", "type": "BusinessArea", "name": "투자"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
 
 // relation: ACQUIRES
 
@@ -37,7 +53,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "company_000660", "properties": {"evidence": "SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
 
 // relation: INVESTS_IN
 
@@ -46,4 +62,31 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "SK스퀘어는 올해 반도체 관련 회사에 대한 투자도 본격적으로 진행될 예정으로, 증권가에서는 투자 회사로서의 역할에 주목하고 있다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "company_000660", "properties": {"evidence": "SK스퀘어는 올해 반도체 관련 회사에 대한 투자도 본격적으로 진행될 예정으로, 증권가에서는 투자 회사로서의 역할에 주목하고 있다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_investment", "properties": {"evidence": "SK스퀘어는 올해 반도체 관련 회사에 대한 투자도 본격적으로 진행될 예정으로, 증권가에서는 투자 회사로서의 역할에 주목하고 있다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_investment", "to_id": "industry_semiconductor", "properties": {"evidence": "SK스퀘어는 올해 반도체 관련 회사에 대한 투자도 본격적으로 진행될 예정으로, 증권가에서는 투자 회사로서의 역할에 주목하고 있다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "인공지능(AI) 반도체 슈퍼사이클을 타고 SK하이닉스 주가가 130만원을 돌파하자 연기금 포트폴리오도 바뀌고 있다.", "date": "", "evidence_source_id": "news_402340_234624a9a52721c7", "evidence_source_type": "news", "evidence_source_url": "https://www.tfmedia.co.kr/news/article.html?no=204124", "evidence_published_at": "2026-04-29T09:06:00+09:00"}}

@@ -2,33 +2,83 @@
   "source_id": "news_329180_94655efc2c96225e",
   "entities": [
     {
-      "id": "company_hd_korea_shipbuilding",
-      "type": "Company",
-      "name": "HD한국조선해양",
-      "stock_code": "009540",
-      "country": "KR"
-    },
-    {
-      "id": "company_hd_hyundai_heavy_industries",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
       "stock_code": "329180",
-      "country": "KR"
+      "description": "조선 사업 주도, 엔진기계·해양플랜트 부문 확장"
     },
     {
-      "id": "company_hd_hyundai_marine_engine",
+      "id": "company_009540",
+      "type": "Company",
+      "name": "HD한국조선해양",
+      "stock_code": "009540",
+      "description": "고부가가치 선박 중심 조선, 친환경 선박 및 해양플랜트"
+    },
+    {
+      "id": "company_071970",
       "type": "Company",
       "name": "HD현대마린엔진",
       "stock_code": "071970",
-      "country": "KR"
+      "description": "친환경 발전용 엔진 생산·판매"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "Shipbuilding"
+    },
+    {
+      "id": "business_area_marine_engines",
+      "type": "BusinessArea",
+      "name": "Marine engines"
+    },
+    {
+      "id": "business_area_offshore_plants",
+      "type": "BusinessArea",
+      "name": "Offshore plants"
+    },
+    {
+      "id": "business_area_floating_wind_power",
+      "type": "BusinessArea",
+      "name": "Floating wind power"
+    },
+    {
+      "id": "business_area_smr",
+      "type": "BusinessArea",
+      "name": "SMR"
+    },
+    {
+      "id": "productservice_lng_carrier",
+      "type": "ProductService",
+      "name": "LNG carrier"
+    },
+    {
+      "id": "productservice_gas_ship",
+      "type": "ProductService",
+      "name": "Gas ship"
+    },
+    {
+      "id": "productservice_environmental_engines",
+      "type": "ProductService",
+      "name": "Environmental engines"
+    },
+    {
+      "id": "productservice_power_generating_engines",
+      "type": "ProductService",
+      "name": "Power generating engines"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "Shipbuilding"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd_hyundai_heavy_industries",
-      "to": "company_hd_korea_shipbuilding",
-      "evidence": "구체적으로 조선 부문 계열사인 HD현대중공업은 올해 1분기 매출 5조9163억원, 영업이익 9054억원을 기록하며 HD한국조선해양의 실적 성장을 주도했다.",
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양이 고부가가치 선박 중심으로 수익성 방어에 성공했다.",
       "date": "",
       "evidence_source_id": "news_329180_94655efc2c96225e",
       "evidence_source_type": "news",
@@ -36,10 +86,186 @@
       "evidence_published_at": "2026-05-07T17:42:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd_hyundai_marine_engine",
-      "to": "company_hd_korea_shipbuilding",
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_offshore_plants",
+      "evidence": "실적 개선에는 친환경 선박 비중 확대와 생산성 향상, 해양 부문 수익성 개선 효과가 반영됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "productservice_lng_carrier",
+      "evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "productservice_gas_ship",
+      "evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding",
+      "evidence": "조선 부문 계열사인 HD현대중공업은 올해 1분기 매출 5조9163억원, 영업이익 9054억원을 기록하며 HD한국조선해양의 실적 성장을 주도했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_071970",
+      "to": "business_area_marine_engines",
       "evidence": "HD현대마린엔진은 엔진 판매 단가 상승과 인도 물량 증가에 힘입어 영업이익이 전년 동기 대비 200% 넘게 증가했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_071970",
+      "to": "productservice_environmental_engines",
+      "evidence": "친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_071970",
+      "to": "productservice_power_generating_engines",
+      "evidence": "인공지능(AI) 데이터센터 확대에 따른 발전용 엔진 수요 증가에도 주목하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_floating_wind_power",
+      "evidence": "HD한국조선해양은 부유식 해상풍력 상업화가 예상보다 지연되고 있지만 국내외 실증 사업 참여를 추진 중이라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_smr",
+      "evidence": "미국 테라파워의 SMR(소형모듈원전) 실증 프로젝트도 수행하며 관련 기술 역량 확보에 나서고 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "조선 부문 계열사인 HD현대중공업은 올해 1분기 매출 5조9163억원, 영업이익 9054억원을 기록하며 HD한국조선해양의 실적 성장을 주도했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_offshore_plants",
+      "to": "industry_shipbuilding",
+      "evidence": "실적 개선에는 친환경 선박 비중 확대와 생산성 향상, 해양 부문 수익성 개선 효과가 반영됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_floating_wind_power",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양은 부유식 해상풍력 상업화가 예상보다 지연되고 있지만 국내외 실증 사업 참여를 추진 중이라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_smr",
+      "to": "industry_shipbuilding",
+      "evidence": "미국 테라파워의 SMR(소형모듈원전) 실증 프로젝트도 수행하며 관련 기술 역량 확보에 나서고 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_lng_carrier",
+      "to": "business_area_shipbuilding",
+      "evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_gas_ship",
+      "to": "business_area_shipbuilding",
+      "evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_environmental_engines",
+      "to": "business_area_marine_engines",
+      "evidence": "친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.",
+      "date": "",
+      "evidence_source_id": "news_329180_94655efc2c96225e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver",
+      "evidence_published_at": "2026-05-07T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_power_generating_engines",
+      "to": "business_area_marine_engines",
+      "evidence": "인공지능(AI) 데이터센터 확대에 따른 발전용 엔진 수요 증가에도 주목하고 있다.",
       "date": "",
       "evidence_source_id": "news_329180_94655efc2c96225e",
       "evidence_source_type": "news",

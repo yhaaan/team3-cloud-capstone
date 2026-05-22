@@ -1,83 +1,75 @@
-// node: company_삼성바이오로직스
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "바이오사업 중심으로 R&D축소 및 파업 사태까지 겪는 삼성바이오로직스"}
 
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: person_존림
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_존림", "type": "Person", "name": "존림", "role_raw": "삼성바이오로직스 대표", "role": "CEO", "role_label": "대표이사"}
-
-// node: person_이재용
+// node: industry_bio
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Industry`
 
-:params {"id": "person_이재용", "type": "Person", "name": "이재용", "role_raw": "삼성전자 회장", "role": "CHAIRMAN", "role_label": "회장"}
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
 
-// node: person_민호성
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_민호성", "type": "Person", "name": "민호성", "role_raw": "삼성바이오로직스 부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
-
-// node: person_김태한
+// node: business_area_biopharma
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_김태한", "type": "Person", "name": "김태한", "role_raw": "삼성바이오로직스 대표", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_biopharma", "type": "BusinessArea", "name": "바이오사업"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_rd
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
 
-:params {"from_id": "person_존림", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "존림 삼성바이오로직스 대표가 왜 이렇게 신뢰를 잃었는지에 대한 관심 역시 부각된다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
+:params {"id": "business_area_rd", "type": "BusinessArea", "name": "연구개발"}
 
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_이재용", "to_id": "company_삼성전자", "properties": {"evidence": "에스 1(S1, 이재용 삼성전자 회장)마저 조연격으로 자기 발언에 끼워넣으면서 해외 공장 건립 및 인수 이슈를 감쪽같이 속인 '보스턴 간담회' 때문에 신뢰를 잃었다는 분석도 나온다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
-
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_민호성", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "노조 측, 록빌 인수 때에도 간담회 거짓말 후 처리, 강한 불신감 피어올라 AI 절대로 못 받고 경영 참여 꼭 해야 반발에 R&D 소중한 모르나 우려 겹쳐 삼성그룹이 15년 세월 묵묵히 공을 들인 바이오사업이 엉뚱한 방향으로 흐르고 있다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
+:params {"from_id": "company_207940", "to_id": "business_area_biopharma", "properties": {"evidence": "삼성그룹이 15년 세월 묵묵히 공을 들인 바이오사업이 엉뚱한 방향으로 흐르고 있다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_김태한", "to_id": "company_삼성바이오로직스", "properties": {"evidence": "김태한 전 삼성바이오로직스 대표와 합을 잘 맞춰 회사 기틀을 닦은 인사로 꼽혔다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
+:params {"from_id": "company_207940", "to_id": "business_area_rd", "properties": {"evidence": "삼성바이오로직스가 연구개발 부서인 'MSAT' 규모를 대폭 축소한 것을 기억한다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharma", "to_id": "industry_bio", "properties": {"evidence": "삼성그룹이 15년 세월 묵묵히 공을 들인 바이오사업이 엉뚱한 방향으로 흐르고 있다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rd", "to_id": "business_area_biopharma", "properties": {"evidence": "삼성바이오로직스가 연구개발 부서인 'MSAT' 규모를 대폭 축소한 것을 기억한다.", "date": "", "evidence_source_id": "news_207940_11eb4d2622d8ccaf", "evidence_source_type": "news", "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258115", "evidence_published_at": "2026-05-07T17:36:00+09:00"}}

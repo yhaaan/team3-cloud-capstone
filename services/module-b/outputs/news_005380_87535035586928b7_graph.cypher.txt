@@ -1,24 +1,93 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "전기차 브랜드 아이오닉과 신차 출시를 통한 중국 시장 재도약 목표를 갖춘 자동차 기업"}
 
-// node: person_정의선
+// node: business_area_electric_vehicle
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "현대차그룹 회장", "role": "CHAIRMAN", "role_label": "회장"}
+:params {"id": "business_area_electric_vehicle", "type": "BusinessArea", "name": "전기차"}
 
-// relation: AFFILIATED_WITH
+// node: product_service_ioniq_v
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ioniq_v", "type": "ProductService", "name": "아이오닉 V"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_정의선", "to_id": "company_현대차", "properties": {"evidence": "정의선 현대차그룹 회장이 8년 만에 베이징 국제 모터쇼를 방문했습니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+:params {"from_id": "company_005380", "to_id": "business_area_electric_vehicle", "properties": {"evidence": "현대차는 전기차 브랜드 '아이오닉'의 첫 번째 중국 전략형 모델인 '아이오닉 V'를 베이징 모터쇼에서 세계 최초로 공개했는데, 정 회장은 아이오닉 V 출시를 맞아 중국 시장 전략을 점검했을 것으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_ioniq_v", "properties": {"evidence": "현대차는 전기차 브랜드 '아이오닉'의 첫 번째 중국 전략형 모델인 '아이오닉 V'를 베이징 모터쇼에서 세계 최초로 공개했는데, 정 회장은 아이오닉 V 출시를 맞아 중국 시장 전략을 점검했을 것으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "앞서 현대차는 이번 베이징 국제 모터쇼에 참가하며 중국 시장에서의 재도약 의지를 표명했습니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_vehicle", "to_id": "business_area_automotive", "properties": {"evidence": "현대차는 전기차 브랜드 '아이오닉'의 첫 번째 중국 전략형 모델인 '아이오닉 V'를 베이징 모터쇼에서 세계 최초로 공개했는데, 정 회장은 아이오닉 V 출시를 맞아 중국 시장 전략을 점검했을 것으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ioniq_v", "to_id": "business_area_electric_vehicle", "properties": {"evidence": "현대차는 전기차 브랜드 '아이오닉'의 첫 번째 중국 전략형 모델인 '아이오닉 V'를 베이징 모터쇼에서 세계 최초로 공개했는데, 정 회장은 아이오닉 V 출시를 맞아 중국 시장 전략을 점검했을 것으로 풀이됩니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "앞서 현대차는 이번 베이징 국제 모터쇼에 참가하며 중국 시장에서의 재도약 의지를 표명했습니다.", "date": "", "evidence_source_id": "news_005380_87535035586928b7", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429180250g87", "evidence_published_at": "2026-04-29T18:03:00+09:00"}}

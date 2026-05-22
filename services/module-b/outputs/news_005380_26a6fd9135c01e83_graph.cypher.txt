@@ -1,63 +1,109 @@
-// node: company_hyundai_motor
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "대규모 국내 투자와 미래 모빌리티 기술 확보를 통한 전동화 및 첨단 생산 거점 확대를 추진"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_samsung_electronics
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: person_jang_jae_hoon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_jae_hoon", "type": "Person", "name": "장재훈", "role": "VICE_CHAIRMAN", "affiliated_company": "company_hyundai_motor", "role_raw": "부회장", "role_label": "부회장"}
-
-// node: person_lee_jae_min
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_jae_min", "type": "Person", "name": "이재민", "role": "OTHER", "affiliated_company": "company_hyundai_motor", "role_raw": "전무", "role_label": "전무"}
-
-// node: person_lee_jong_ha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_lee_jong_ha", "type": "Person", "name": "이종하", "role": "OTHER", "affiliated_company": "company_hyundai_mobis", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_jang_su_hang
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jang_su_hang", "type": "Person", "name": "장수항", "role": "OTHER", "affiliated_company": "company_kia", "role_raw": "전무", "role_label": "전무"}
-
-// node: company_hyundai_mobis
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility", "type": "BusinessArea", "name": "미래 모빌리티"}
+
+// node: business_area_ev_production
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ev_production", "type": "BusinessArea", "name": "EV 전용공장 생산"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_mobility", "properties": {"evidence": "장 부회장은 대규모 국내 투자와 핵심 기술 확보를 통해 미래 모빌리티 패러다임 전환을 주도하고", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_ev_production", "properties": {"evidence": "울산 EV 전용공장 신설 등 국내 첨단 생산 거점 확대", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "현대자동차그룹 장재훈 부회장이 국가 산업 발전에 기여한 공로를 인정받아 대한민국 산업계 최고 훈격인 금탑산업훈장을 수훈했다.", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility", "to_id": "industry_automotive", "properties": {"evidence": "미래 모빌리티 패러다임 전환", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ev_production", "to_id": "industry_automotive", "properties": {"evidence": "울산 EV 전용공장 신설 등 국내 첨단 생산 거점 확대", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "대한민국 자동차 산업 발전 여정을 함께 만들어온 업계 모든 분들께도 깊이 감사드린다", "date": "", "evidence_source_id": "news_005380_26a6fd9135c01e83", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515555?utm_source=naver&utm_medium=article&utm_campaign=20260512095007", "evidence_published_at": "2026-05-12T09:51:00+09:00"}}

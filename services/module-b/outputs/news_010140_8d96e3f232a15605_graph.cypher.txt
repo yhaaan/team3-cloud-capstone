@@ -1,39 +1,109 @@
-// node: company_samsung_heavy_industries
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "조선 및 해양플랜트 사업을 주력으로 하는 기업"}
 
-// node: company_hd_korea_shipbuilding_maritime
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_korea_shipbuilding_maritime", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
-
-// node: company_hd_hyundai_heavy_industries
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: company_329180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_shipbuilding", "properties": {"evidence": "삼성중공업 주가가 장중 오르고 있다. ... 같은시각 HD한국조선해양(5.75%) 한화오션(4.12%) HD현대중공업(4.1%) 등 다른 조선주 주가도 오르고 있다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "같은시각 HD한국조선해양(5.75%) 한화오션(4.12%) HD현대중공업(4.1%) 등 다른 조선주 주가도 오르고 있다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "같은시각 HD한국조선해양(5.75%) 한화오션(4.12%) HD현대중공업(4.1%) 등 다른 조선주 주가도 오르고 있다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "같은시각 HD한국조선해양(5.75%) 한화오션(4.12%) HD현대중공업(4.1%) 등 다른 조선주 주가도 오르고 있다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_shipbuilding", "properties": {"evidence": "같은시각 HD한국조선해양(5.75%) 한화오션(4.12%) HD현대중공업(4.1%) 등 다른 조선주 주가도 오르고 있다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "한국과 미국의 조선 협력 강화 소식에 조선주 투자심리가 개선된 것으로 보인다.", "date": "", "evidence_source_id": "news_010140_8d96e3f232a15605", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=437468", "evidence_published_at": "2026-05-11T11:14:00+09:00"}}

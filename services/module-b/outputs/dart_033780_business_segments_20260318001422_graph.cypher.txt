@@ -1,0 +1,48 @@
+// node: company_033780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033780", "type": "Company", "name": "KT&G", "stock_code": "033780"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_065770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_065770", "type": "Company", "name": "CS", "stock_code": "065770"}
+
+// node: company_352820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_352820", "type": "Company", "name": "하이브", "stock_code": "352820"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_033780", "to_id": "industry_it", "properties": {"evidence": "주요 제품 등의 가격변동추이 (단위 : 원) 사업부문 품목 제39기 제38기 제37기 담배 에쎄 체인지 1mg 4,500 4,500 4,500 에쎄 체인지 히말라야 4,500 4,500 4,500 Fiit 체인지업 4,300 4,500 4,500 Miix 믹스 4,500 4,500 4,500 그래뉼라 트와이스 4,800 4,800 - 건강기능식품 에브리타임(10ml*30포) 97,273 92,727 92,727 홍삼정(240g) 200,000 191,818 191,818 에브리타임(10ml*100포) 300,909 287,273 287,273 홍삼정로얄(240g) 244,545 244,545 232,727 에브리타임리미티드(10ml*30포) 126,364 120,909 120,909 기타 제약 데노간주 13,909 13,909 13,909 오마론연질캡슐 13,745 13,745 13,745 오파스트정 24,360 24,360 24,360 파이브로정 200mg 175,909 175,909 175,909 화장품 꽃을든남자 우유 바디 샤워(750ml) 9,900 9,900 9,900 꽃을든남자 우유 바디 로션(500ml) 9,900 9,900 9,900 꽃을든남자 CS먹물 염모제 10,000 10,000 10,000 다나한 본연진 수액(160ml) 50,000 50,000 50,000 다나한 본연진 유액(160ml) 50,000 50,000 50,000 ※ 산출기준 ㅇ 담배 : 국내소비자가(갑) - Fiit 제품군 : 소비자 선택 폭 확대 및 제품 만족도 증대를 위해 2025.5.1 가격 인하 ㅇ 건강기능 : 국내 권장 소비자가 기준(부가세 별도) - 에브리타임(10ml*30포) : 원가 및 경비 상승으로 2025.10.13 가격 인상 - 홍삼정(240g) : 원가 및 경비 상승으로 2025.10.13 가격 인상 - 에브리타임(10ml*100포) : 원가 및 경비상승으로 2025.10.13 가격 인상 - 에브리타임리미티드(10ml*30포) : 원가 및 경비 상승으로 2025.10.13 가격 인상 - 홍삼정로얄(240g) : 원가 및 경비 상승으로 2024.10.1 가격 인상 ㅇ 제약 - 데노간주 : 10바이알당 출하가 기준(부가세 별도) - 오마론연질캡슐 : 60캡슐당 출하가 기준(부가세 별도) - 오파스트정 : 84정당 출하가 기준(부가세 별도) - 파이브로정 200mg : 90정당 출하가 기준(부가세 별도) * 의약품 가격은 정부의 정책(사용량 약가연동제, 기등재의약품 약가조정, 실거래가 약가인하 등)에 따라 통제됨 ㅇ 화장품 : 국내 소비자가", "date": "2026-03-18", "evidence_source_id": "dart_033780_business_segments_20260318001422", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422", "evidence_published_at": "2026-03-18"}}

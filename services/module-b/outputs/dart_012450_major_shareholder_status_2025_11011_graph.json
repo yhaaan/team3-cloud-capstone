@@ -2,17 +2,30 @@
   "source_id": "dart_012450_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
-      "stock_code": "000880"
+      "stock_code": "000880",
+      "description": "한화에어로스페이스의 최대주주 본인으로서 보유지분 32.18%를 포함한 한화 그룹 계열사들 지분 보유"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_000880",
+      "to": "company_012450",
+      "evidence": "한화에어로스페이스의 최대주주 관련 인물/법인은 ㈜한화, 관계는 최대주주 본인, 당기말 보유주식수는 16,595,161주, 지분율은 32.18%, 비고는 주주배정 유상증자 참여.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
 }

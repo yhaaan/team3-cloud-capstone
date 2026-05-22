@@ -1,151 +1,24 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660"}
 
-// node: company_hanwha_system
+// node: company_272210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_system", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
 
-// node: person_jo_sung_won
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jo_sung_won", "type": "Person", "name": "조성원", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_yoon_chan_woong
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_yoon_chan_woong", "type": "Person", "name": "윤찬웅", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_kim_chang_soo
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_chang_soo", "type": "Person", "name": "김창수", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_kim_gi_hwan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_gi_hwan", "type": "Person", "name": "김기환", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_jung_hae_jin
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_jung_hae_jin", "type": "Person", "name": "정해진", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_kim_bum_sung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_bum_sung", "type": "Person", "name": "김범성", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_park_jae_sung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "상무", "role_label": "상무"}
-
-// node: person_kim_hyung_seok
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_hyung_seok", "type": "Person", "name": "김형석", "role": "OTHER", "affiliated_company": "company_hanwha_ocean", "role_raw": "전무", "role_label": "전무"}
-
-// relation: AFFILIATED_WITH
+// relation: INVESTS_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jo_sung_won", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 조성원, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 2주, 주식수 증감은 -100, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_yoon_chan_woong", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 윤찬웅, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 5,312주, 주식수 증감은 5,312, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_kim_chang_soo", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 김창수, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 30주, 주식수 증감은 30, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_kim_gi_hwan", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 김기환, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,500주, 주식수 증감은 1,500, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_jung_hae_jin", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 정해진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 13주, 주식수 증감은 13, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_kim_bum_sung", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 김범성, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 24주, 주식수 증감은 24, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_park_jae_sung", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 박재성, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,375주, 주식수 증감은 1,375, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_kim_hyung_seok", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 김형석, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 5,000주, 주식수 증감은 5,000, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}
+:params {"from_id": "company_272210", "to_id": "company_042660", "properties": {"evidence": "한화오션의 임원·주요주주 소유상황 보고자는 한화시스템, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 22,169,660주", "date": "2026-04-08", "evidence_source_id": "dart_042660_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251021000281", "evidence_published_at": "2026-04-08"}}

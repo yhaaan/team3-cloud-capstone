@@ -1,0 +1,101 @@
+// node: company_010140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "삼성중공업은 LNG 운반선, 해양플랜트 등 조선업 중심 사업을 영위한다."}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_lng_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_lng_shipbuilding", "type": "BusinessArea", "name": "LNG 선박 건조"}
+
+// node: business_area_offshore_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_plant", "type": "BusinessArea", "name": "해양플랜트"}
+
+// node: product_service_flng
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_flng", "type": "ProductService", "name": "부유식 액화천연가스 생산설비"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_lng_shipbuilding", "properties": {"evidence": "상선 내 LNG 운반선 비중이 70% 안팎에 달한다. 전체 매출의 절반가량을 LNG선이 받쳐주는 구조다.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_offshore_plant", "properties": {"evidence": "해양 부문도 매출 증가세에 힘을 보탰다.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_flng", "properties": {"evidence": "액화천연가스(LNG)선과 부유식 액화천연가스 생산설비(FLNG) '양날개'를 달고 1분기에 이어 2분기도 실적이 점프할 것으로 기대된다.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_lng_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "삼성중공업이 LNG 운반선 건조 등에 주력해 조선업계에 속함.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "삼성중공업의 해양플랜트 부문이 조선업 관련 사업임.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_flng", "to_id": "business_area_offshore_plant", "properties": {"evidence": "부유식 액화천연가스 생산설비(FLNG)가 해양플랜트 부문에 포함됨.", "date": "", "evidence_source_id": "news_010140_cc50b7fbae5f7192", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203340", "evidence_published_at": "2026-05-15T16:30:00+09:00"}}

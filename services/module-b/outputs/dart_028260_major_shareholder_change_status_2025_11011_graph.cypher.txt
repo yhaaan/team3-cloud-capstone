@@ -1,10 +1,10 @@
-// node: company_삼성물산
+// node: company_028260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성물산", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
 
 // node: person_이재용
 
@@ -13,3 +13,30 @@ SET n += $properties
 SET n:`Person`
 
 :params {"id": "person_이재용", "type": "Person", "name": "이재용"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_028260", "properties": {"evidence": "삼성물산의 최대주주 변동 대상은 이재용, 보유주식수는 61,745,892주, 지분율은 36.02%.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_028260", "properties": {"evidence": "삼성물산의 최대주주 변동 대상은 이재용, 보유주식수는 61,752,585주, 지분율은 34.45%.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_028260", "properties": {"evidence": "삼성물산의 최대주주 변동 대상은 이재용, 보유주식수는 62,965,731주, 지분율은 33.63%.", "date": "2026-03-12", "evidence_source_id": "dart_028260_major_shareholder_change_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}

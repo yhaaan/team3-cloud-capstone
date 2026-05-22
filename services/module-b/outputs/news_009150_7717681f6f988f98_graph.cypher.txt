@@ -1,57 +1,221 @@
-// node: company_samsung_sdi
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_sdi", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "AI, 전장, 서버 등 고부가 제품 중심으로 사업 구조 체질 개선에 주력하는 반도체 부품 기업"}
 
-// node: company_samsung_electrics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
-
-// node: company_samsung_electronics
+// node: company_006400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
 
-// node: person_choi_ju_seon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_ju_seon", "type": "Person", "name": "최주선", "role_raw": "삼성SDI 사장", "affiliated_company": "company_samsung_sdi", "role": "PRESIDENT", "role_label": "사장"}
-
-// node: person_jang_deok_hyeon
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_jang_deok_hyeon", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "affiliated_company": "company_samsung_electrics", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_ai_components
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_components", "type": "BusinessArea", "name": "AI 부품"}
+
+// node: business_area_electronic_components
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electronic_components", "type": "BusinessArea", "name": "전자부품"}
+
+// node: business_area_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery", "type": "BusinessArea", "name": "배터리"}
+
+// node: product_service_mlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mlcc", "type": "ProductService", "name": "MLCC"}
+
+// node: product_service_fc_bga
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_fc_bga", "type": "ProductService", "name": "FC-BGA"}
+
+// node: product_service_ev_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ev_battery", "type": "ProductService", "name": "전기차 배터리"}
+
+// node: product_service_solid_state_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_solid_state_battery", "type": "ProductService", "name": "전고체 배터리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_choi_ju_seon", "to_id": "company_samsung_sdi", "properties": {"evidence": "최주선 삼성SDI 사장은 메모리반도체 연구개발(R&D)에 20년 넘게 종사한 자타공인 반도체 전문가다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+:params {"from_id": "company_009150", "to_id": "business_area_ai_components", "properties": {"evidence": "장 사장은 2021년 말 삼성전기 CEO 부임 이후 기존 모바일 중심의 사업 구조를 AI, 전장, 서버 등 고부가 제품 중심으로 체질 개선하는 데 주력해 왔다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jang_deok_hyeon", "to_id": "company_samsung_electrics", "properties": {"evidence": "장덕현 삼성전기 사장 역시 삼성전자 메모리사업부 솔루션개발실장 등을 역임하며 반도체 개발의 최전선을 지킨 인물이다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+:params {"from_id": "company_009150", "to_id": "business_area_electronic_components", "properties": {"evidence": "삼성전기는 AI 서버와 전력 인프라 등 범 AI로의 부품 수급 상황이 여전히 타이트한 모습을 보이고 있고 MLCC는 제품 믹스 개선 효과로 시장 기대치를 웃도는 실적 개선 속도를 보일 것이라고 분석했다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "product_service_mlcc", "properties": {"evidence": "AI 서버 한 대에 들어가는 MLCC 물량이 스마트폰의 20배에 달하는 만큼, 장 사장이 닦아놓은 포트폴리오 다변화가 실적 퀀텀점프로 이어지고 있다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "product_service_fc_bga", "properties": {"evidence": "그의 전략은 최근 엔비디아의 차세대 AI 가속기인 '그록3' LPU용 FC-BGA 공급사 낙점이라는 결과로 이어졌다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_battery", "properties": {"evidence": "최 사장은 반도체식 '선제 투자' 철학을 배터리 사업에도 투영하고 있다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "product_service_ev_battery", "properties": {"evidence": "올해 4월 메르세데스벤츠와 10조원대 배터리 공급 계약 '잭팟'의 밑거름이 됐다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "product_service_solid_state_battery", "properties": {"evidence": "전고체 배터리와 46파이 원통형 배터리 등 차세대 게임 체인저 개발도 업계 선두권에서 순항 중이다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_components", "to_id": "industry_semiconductor", "properties": {"evidence": "장 사장은 2021년 말 삼성전기 CEO 부임 이후 기존 모바일 중심의 사업 구조를 AI, 전장, 서버 등 고부가 제품 중심으로 체질 개선하는 데 주력해 왔다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electronic_components", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전기는 AI 서버와 전력 인프라 등 범 AI로의 부품 수급 상황이 여전히 타이트한 모습을 보이고 있고 MLCC는 제품 믹스 개선 효과로 시장 기대치를 웃도는 실적 개선 속도를 보일 것이라고 분석했다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery", "to_id": "industry_battery", "properties": {"evidence": "최 사장은 반도체식 '선제 투자' 철학을 배터리 사업에도 투영하고 있다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_mlcc", "to_id": "business_area_electronic_components", "properties": {"evidence": "AI 서버 한 대에 들어가는 MLCC 물량이 스마트폰의 20배에 달하는 만큼, 장 사장이 닦아놓은 포트폴리오 다변화가 실적 퀀텀점프로 이어지고 있다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_fc_bga", "to_id": "business_area_ai_components", "properties": {"evidence": "그의 전략은 최근 엔비디아의 차세대 AI 가속기인 '그록3' LPU용 FC-BGA 공급사 낙점이라는 결과로 이어졌다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ev_battery", "to_id": "business_area_battery", "properties": {"evidence": "올해 4월 메르세데스벤츠와 10조원대 배터리 공급 계약 '잭팟'의 밑거름이 됐다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_solid_state_battery", "to_id": "business_area_battery", "properties": {"evidence": "전고체 배터리와 46파이 원통형 배터리 등 차세대 게임 체인저 개발도 업계 선두권에서 순항 중이다.", "date": "", "evidence_source_id": "news_009150_7717681f6f988f98", "evidence_source_type": "news", "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161154", "evidence_published_at": "2026-04-29T06:02:00+09:00"}}

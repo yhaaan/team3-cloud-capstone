@@ -1,55 +1,41 @@
-// node: company_samsung_sdi
+// node: company_006400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_sdi", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400", "description": "전기차 배터리 및 에너지 저장장치 등 전지 제조 중심 기업"}
 
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_samsung_life_insurance
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_life_insurance", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: person_choi_yun_ho
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_yun_ho", "type": "Person", "name": "최윤호", "role_raw": "계열회사 (SDI) 임원", "affiliated_company": "company_samsung_sdi", "role": "OTHER", "role_label": "계열회사 임원"}
-
-// node: person_choi_ju_sun
+// node: company_032830
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_choi_ju_sun", "type": "Person", "name": "최주선", "role_raw": "계열회사 (SDI) 임원", "affiliated_company": "company_samsung_sdi", "role": "OTHER", "role_label": "계열회사 임원"}
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
 
-// node: person_kim_jong_sung
+// relation: INVESTS_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
 
-:params {"id": "person_kim_jong_sung", "type": "Person", "name": "김종성", "role_raw": "계열회사 (SDI) 임원", "affiliated_company": "company_samsung_sdi", "role": "OTHER", "role_label": "계열회사 임원"}
+:params {"from_id": "company_005930", "to_id": "company_006400", "properties": {"evidence": "삼성SDI의 최대주주 관련 인물/법인은 삼성전자(주), 관계는 최대주주 본인, 당기말 보유주식수는 15,663,968주, 지분율은 19.44%, 비고는 - 유상증자 참여.", "date": "2026-03-10", "evidence_source_id": "dart_006400_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002954", "evidence_published_at": "2026-03-10"}}
 
-// node: person_park_jin
+// relation: INVESTS_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
 
-:params {"id": "person_park_jin", "type": "Person", "name": "박진", "role_raw": "계열회사 (SDI) 임원", "affiliated_company": "company_samsung_sdi", "role": "OTHER", "role_label": "계열회사 임원"}
+:params {"from_id": "company_032830", "to_id": "company_006400", "properties": {"evidence": "삼성SDI의 최대주주 관련 인물/법인은 삼성생명(특별계정), 관계는 계열회사, 당기말 보유주식수는 51,615주, 지분율은 0.06%, 비고는 - 장내매매 및 유상증자 참여.", "date": "2026-03-10", "evidence_source_id": "dart_006400_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002954", "evidence_published_at": "2026-03-10"}}

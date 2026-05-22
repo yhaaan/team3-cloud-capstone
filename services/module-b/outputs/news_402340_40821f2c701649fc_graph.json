@@ -2,48 +2,53 @@
   "source_id": "news_402340_40821f2c701649fc",
   "entities": [
     {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "메모리 반도체를 중심으로 한 반도체 제품 생산 업체"
     },
     {
-      "id": "company_sk_square",
+      "id": "company_402340",
       "type": "Company",
       "name": "SK스퀘어",
-      "stock_code": "402340"
+      "stock_code": "402340",
+      "description": "SK하이닉스 지분 보유하는 SK그룹 중간지주사"
     },
     {
-      "id": "company_hd_hyundai_heavy_industries",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
       "stock_code": "329180"
     },
     {
-      "id": "company_daishin_securities",
-      "type": "Company",
-      "name": "대신증권",
-      "stock_code": "003540"
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "Memory"
     },
     {
-      "id": "company_sk_securities",
-      "type": "Company",
-      "name": "SK증권",
-      "stock_code": "001510"
-    },
-    {
-      "id": "company_mirae_asset_securities",
-      "type": "Company",
-      "name": "미래에셋증권",
-      "stock_code": "006800"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_daishin_securities",
-      "to": "company_sk_square",
-      "evidence": "김회재 대신증권 연구원은 \"SK하이닉스 편입 비중과 시가총액 사이의 괴리로 SK스퀘어의 대안 매력이 커지고 있다\"며 \"SK하이닉스 실적 전망 상향에 따른 주가 급등이 지속되는 동안 SK스퀘어의 투자 매력도 높아지고 있다\"고 분석했다.",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스가 130만원선을 돌파한 가운데",
+      "date": "",
+      "evidence_source_id": "news_402340_40821f2c701649fc",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029749739&code=61141111&cp=nv",
+      "evidence_published_at": "2026-04-29T10:01:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스가 130만원선을 돌파한 가운데",
       "date": "",
       "evidence_source_id": "news_402340_40821f2c701649fc",
       "evidence_source_type": "news",
@@ -52,9 +57,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk_securities",
-      "to": "company_sk_square",
-      "evidence": "최관순 SK증권 연구원도 \"단일종목 편입한도 10% 룰에 따라 기관투자자가 SK하이닉스의 대안으로 SK스퀘어 매수를 이어갈 가능성이 높다\"고 설명했다.",
+      "from": "company_402340",
+      "to": "company_000660",
+      "evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다.",
       "date": "",
       "evidence_source_id": "news_402340_40821f2c701649fc",
       "evidence_source_type": "news",
@@ -62,10 +67,10 @@
       "evidence_published_at": "2026-04-29T10:01:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_mirae_asset_securities",
-      "to": "company_sk_hynix",
-      "evidence": "미래에셋증권 역시 같은 날 SK하이닉스 목표가를 기존 166만원에서 200만원으로 높여잡았다.",
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스가 130만원선을 돌파한 가운데",
       "date": "",
       "evidence_source_id": "news_402340_40821f2c701649fc",
       "evidence_source_type": "news",

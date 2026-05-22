@@ -1,0 +1,186 @@
+// node: company_068270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_068270", "type": "Company", "name": "셀트리온", "stock_code": "068270", "description": "바이오 의약품 연구개발 및 글로벌 의약품 제조, 판매, 임상 투자 등을 주요 사업으로 함"}
+
+// node: company_068760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_068760", "type": "Company", "name": "셀트리온제약", "stock_code": "068760", "description": "의약품 제조 및 판매 중심의 제약 사업을 영위함"}
+
+// node: company_086040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086040", "type": "Company", "name": "바이오톡스텍", "stock_code": "086040"}
+
+// node: company_086820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086820", "type": "Company", "name": "바이오솔루션", "stock_code": "086820"}
+
+// node: company_099220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_099220", "type": "Company", "name": "SDN", "stock_code": "099220"}
+
+// node: company_089790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_089790", "type": "Company", "name": "제이티", "stock_code": "089790"}
+
+// node: company_033830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033830", "type": "Company", "name": "티비씨", "stock_code": "033830"}
+
+// node: company_033790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033790", "type": "Company", "name": "피노", "stock_code": "033790"}
+
+// node: business_area_biopharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharmaceuticals", "type": "BusinessArea", "name": "바이오 의약품"}
+
+// node: business_area_pharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_pharmaceuticals", "type": "BusinessArea", "name": "의약품 제조 및 판매"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_086040", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 바이오톡스텍, 출자 목적은 투자수익", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_089790", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 제이티비씨, 출자 목적은 투자수익", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_033830", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 티비씨", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_033790", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 피노바이오, 출자 목적은 신약 파이프라인 강화", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_086820", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 셀트리온바이오솔루션스, 출자 목적은 의약품 도소매업", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "company_068760", "properties": {"evidence": "셀트리온의 타법인 출자 대상은 셀트리온제약, 출자 목적은 경영참가 등", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "business_area_biopharmaceuticals", "properties": {"evidence": "셀트리온의 여러 출자 목적은 신약 파이프라인 강화, 유망 바이오 벤처기업투자, 글로벌 의약품 안전성 데이터 관리", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068760", "to_id": "business_area_pharmaceuticals", "properties": {"evidence": "셀트리온제약은 의약품 제조 및 판매 중심 사업을 영위함", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharmaceuticals", "to_id": "industry_bio", "properties": {"evidence": "바이오 의약품 관련 투자 및 신약 개발 사업은 bio 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_pharmaceuticals", "to_id": "industry_bio", "properties": {"evidence": "의약품 제조 및 판매 사업은 bio 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "industry_bio", "properties": {"evidence": "셀트리온은 바이오 의약품 연구개발 및 관련 글로벌 사업 등을 주요 사업으로 함", "date": "2026-03-16", "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415", "evidence_published_at": "2026-03-16"}}

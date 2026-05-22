@@ -1,82 +1,230 @@
-// node: company_hd_korea_shipbuilding
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_korea_shipbuilding", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "친환경 고수익 선박, 해양플랜트, 엔진기계, 에너지솔루션 사업 중심의 조선회사"}
 
-// node: company_hd_hyundai_heavy_industries
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_samsung_heavy_industries
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선 및 해양플랜트 부문 중심의 선박 제작 및 프로젝트 진행"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_hanwha_ocean
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "LNG 운반선 및 부유식 LNG 생산설비 등 고부가가치 선박 중심 조선"}
 
-// node: company_hd_hyundai_marine_engine
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_hyundai_marine_engine", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
-
-// node: company_hd_hyundai_energy_solution
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_energy_solution", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// relation: AFFILIATED_WITH
+// node: company_042660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "주요 선박 건조 및 조선 관련 사업 영위"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: business_area_maritime_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_maritime_plant", "type": "BusinessArea", "name": "Ocean plant"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "Engine machinery"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "Energy solution"}
+
+// node: product_service_lng_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_carrier", "type": "ProductService", "name": "LNG carrier"}
+
+// node: product_service_flng
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_flng", "type": "ProductService", "name": "Floating LNG production unit"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd_hyundai_marine_engine", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "HD현대마린엔진은 엔진 판가 상승과 인도 물량 증가 효과로 매출과 영업이익이 각각 60.8%, 216.5% 뛰었고", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "계절적 요인으로 조업일수가 줄었음에도 불구하고 친환경 고수익 선박의 매출 비중 확대, 생산성 향상, 해양플랜트 부문 수익 회복 등이 맞물려 전 사업 부문에서 실적이 개선됐다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd_hyundai_energy_solution", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "HD현대에너지솔루션은 모듈 판매 확대와 판가 인상에 힘입어 매출이 87.6% 증가하며 흑자로 돌아섰다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+:params {"from_id": "company_009540", "to_id": "business_area_maritime_plant", "properties": {"evidence": "계절적 요인으로 조업일수가 줄었음에도 불구하고 친환경 고수익 선박의 매출 비중 확대, 생산성 향상, 해양플랜트 부문 수익 회복 등이 맞물려 전 사업 부문에서 실적이 개선됐다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hd_korea_shipbuilding", "properties": {"evidence": "자회사별로는 지난해 12월 HD현대미포와의 합병으로 몸집을 키운 통합 HD현대중공업이 매출 5조9163억원, 영업이익 9054억원을 달성하며 성장을 이끌었다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+:params {"from_id": "company_009540", "to_id": "business_area_engine", "properties": {"evidence": "HD현대마린엔진은 엔진 판가 상승과 인도 물량 증가 효과로 매출과 영업이익이 각각 60.8%, 216.5% 뛰었고", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_energy_solution", "properties": {"evidence": "HD현대에너지솔루션은 모듈 판매 확대와 판가 인상에 힘입어 매출이 87.6% 증가하며 흑자로 돌아섰다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "자회사별로는 지난해 12월 HD현대미포와의 합병으로 몸집을 키운 통합 HD현대중공업이 매출 5조9163억원, 영업이익 9054억원을 달성하며 성장을 이끌었다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_shipbuilding", "properties": {"evidence": "삼성중공업도 1분기 매출 2조9023억원, 영업이익 2731억원을 올려 전년 대비 각각 16%, 122% 증가했다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_lng_carrier", "properties": {"evidence": "LNG 운반선 등 고수익 선종과 부유식 LNG 생산설비(FLNG) 프로젝트 공정 진척이 동시에 기여했다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "product_service_flng", "properties": {"evidence": "LNG 운반선 등 고수익 선종과 부유식 LNG 생산설비(FLNG) 프로젝트 공정 진척이 동시에 기여했다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "앞서 실적을 발표한 한화오션은 1분기 영업이익 4411억원을 기록해 전년 대비 70.6% 증가했으며, 매출은 3조2099억원으로 늘었다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD한국조선해양, 분기 영업익 1.3조 LNG선 등 고부가선박 효과 본격화", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_maritime_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "해양플랜트 부문의 약진이 두드러졌다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진기계 부문도 글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 증가로 영업이익이 41.3% 늘었다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD현대에너지솔루션은 모듈 판매 확대와 판가 인상에 힘입어 매출이 87.6% 증가하며 흑자로 돌아섰다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_carrier", "to_id": "business_area_shipbuilding", "properties": {"evidence": "LNG 운반선 등 고수익 선종과 부유식 LNG 생산설비(FLNG) 프로젝트 공정 진척이 동시에 기여했다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_flng", "to_id": "business_area_shipbuilding", "properties": {"evidence": "LNG 운반선 등 고수익 선종과 부유식 LNG 생산설비(FLNG) 프로젝트 공정 진척이 동시에 기여했다.", "date": "", "evidence_source_id": "news_010140_e6561971025357e1", "evidence_source_type": "news", "evidence_source_url": "https://www.bigtanews.co.kr/article/view/big202605070015", "evidence_published_at": "2026-05-07T18:06:00+09:00"}}

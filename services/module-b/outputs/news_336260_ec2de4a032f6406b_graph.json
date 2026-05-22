@@ -2,17 +2,159 @@
   "source_id": "news_336260_ec2de4a032f6406b",
   "entities": [
     {
-      "id": "company_두산퓨얼셀",
+      "id": "company_336260",
       "type": "Company",
       "name": "두산퓨얼셀",
-      "stock_code": "336260"
+      "stock_code": "336260",
+      "description": "발전용 연료전지 기자재 공급과 장기 유지보수 서비스를 주력으로 하는 기업"
     },
     {
-      "id": "company_두산",
+      "id": "company_000150",
       "type": "Company",
-      "name": "두산",
+      "name": "페스카로",
       "stock_code": "000150"
+    },
+    {
+      "id": "business_area_연료전지사업",
+      "type": "BusinessArea",
+      "name": "연료전지 사업"
+    },
+    {
+      "id": "product_service_연료전지기자재",
+      "type": "ProductService",
+      "name": "연료전지 기자재"
+    },
+    {
+      "id": "product_service_연료전지유지보수서비스",
+      "type": "ProductService",
+      "name": "연료전지 유지보수 서비스"
+    },
+    {
+      "id": "product_service_PAFC",
+      "type": "ProductService",
+      "name": "PAFC"
+    },
+    {
+      "id": "product_service_SOFC",
+      "type": "ProductService",
+      "name": "SOFC"
+    },
+    {
+      "id": "industry_에너지",
+      "type": "Industry",
+      "name": "에너지"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_336260",
+      "to": "business_area_연료전지사업",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_연료전지기자재",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_연료전지유지보수서비스",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_PAFC",
+      "evidence": "국내 시장 점유율 1위를 기록 중이며, PAFC(인산형 연료전지)를 기반으로 다양한 연료 활용 제품 라인업을 보유하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_SOFC",
+      "evidence": "회사는 지난해 SOFC(고체산화물 연료전지) 양산을 통해 기술 포트폴리오를 다각화하고 시장 지배력 강화를 추진할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_연료전지사업",
+      "to": "industry_에너지",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_연료전지기자재",
+      "to": "business_area_연료전지사업",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_연료전지유지보수서비스",
+      "to": "business_area_연료전지사업",
+      "evidence": "두산퓨얼셀은 지난 2019년 연료전지 사업부 인적분할로 설립된 회사로, 발전용 연료전지 기자재 공급과 장기 유지보수 서비스 사업을 영위하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_PAFC",
+      "to": "business_area_연료전지사업",
+      "evidence": "국내 시장 점유율 1위를 기록 중이며, PAFC(인산형 연료전지)를 기반으로 다양한 연료 활용 제품 라인업을 보유하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_SOFC",
+      "to": "business_area_연료전지사업",
+      "evidence": "회사는 지난해 SOFC(고체산화물 연료전지) 양산을 통해 기술 포트폴리오를 다각화하고 시장 지배력 강화를 추진할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_336260_ec2de4a032f6406b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1156225",
+      "evidence_published_at": "2026-05-06T10:28:00+09:00"
+    }
+  ]
 }

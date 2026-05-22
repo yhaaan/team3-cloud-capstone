@@ -1,7 +1,41 @@
-// node: company_lg_energy_solution
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220", "description": "배터리 산업 핵심 기업으로 금융지원, 기술보호, 인력채용, ESG 대응 등 상생협력 사업을 수행함"}
+
+// node: business_area_배터리산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_배터리산업", "type": "BusinessArea", "name": "배터리 산업"}
+
+// node: industry_미래산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_미래산업", "type": "Industry", "name": "미래산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_배터리산업", "properties": {"evidence": "송재봉 더불어민주당 의원은 \"LG에너지솔루션 오창 에너지플랜트는 충북을 대표하는 미래산업 현장이자 대한민국 배터리 산업의 경쟁력을 뒷받침하는 핵심 거점\"이라며 말했다.", "date": "", "evidence_source_id": "news_373220_864bf3b7ffd3ee4a", "evidence_source_type": "news", "evidence_source_url": "https://www.inews365.com/news/article.html?no=918421", "evidence_published_at": "2026-05-07T16:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_배터리산업", "to_id": "industry_미래산업", "properties": {"evidence": "송재봉 더불어민주당 의원은 \"LG에너지솔루션 오창 에너지플랜트는 충북을 대표하는 미래산업 현장이자 대한민국 배터리 산업의 경쟁력을 뒷받침하는 핵심 거점\"이라며 말했다.", "date": "", "evidence_source_id": "news_373220_864bf3b7ffd3ee4a", "evidence_source_type": "news", "evidence_source_url": "https://www.inews365.com/news/article.html?no=918421", "evidence_published_at": "2026-05-07T16:40:00+09:00"}}

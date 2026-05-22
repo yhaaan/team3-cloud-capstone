@@ -1,47 +1,210 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "AI, 자율주행, 로보틱스, 스마트 제조, 배터리, 수소·에너지 등 미래 모빌리티 핵심 기술을 중심으로 사업을 전개"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_samsung_electronics
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_qrocell
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_qrocell", "type": "Company", "name": "큐로셀", "stock_code": "372320"}
-
-// node: company_samsungsdi
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsungsdi", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_ls
+// node: industry_automotive
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_ls", "type": "Company", "name": "LS", "stock_code": "006260"}
+:params {"id": "industry_automotive", "type": "Industry", "name": "automotive"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: business_area_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai", "type": "BusinessArea", "name": "AI"}
+
+// node: business_area_autonomous_driving
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_autonomous_driving", "type": "BusinessArea", "name": "자율주행"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: business_area_smart_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smart_manufacturing", "type": "BusinessArea", "name": "스마트 제조"}
+
+// node: business_area_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery", "type": "BusinessArea", "name": "배터리"}
+
+// node: business_area_hydrogen_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hydrogen_energy", "type": "BusinessArea", "name": "수소·에너지"}
+
+// node: product_service_robottaxi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_robottaxi", "type": "ProductService", "name": "로보택시"}
+
+// node: product_service_sdv
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_sdv", "type": "ProductService", "name": "소프트웨어 중심 자동차"}
+
+// node: product_service_humanoid_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_humanoid_robot", "type": "ProductService", "name": "휴머노이드 로봇"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_ai", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_autonomous_driving", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_smart_manufacturing", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_battery", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_hydrogen_energy", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_robottaxi", "properties": {"evidence": "올해 모셔널의 로보택시, 포티투닷(42dot)의 소프트웨어 중심 자동차(SDV), 보스턴다이나믹스의 휴머노이드 로봇 아틀라스 등 주요 계열사의 기술 상용화가 분기점을 맞고 있는 가운데 피지컬 AI 시대 주도권 확보를 위한 인재 전쟁에도 속도를 내고 있다는 분석이다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_sdv", "properties": {"evidence": "올해 모셔널의 로보택시, 포티투닷(42dot)의 소프트웨어 중심 자동차(SDV), 보스턴다이나믹스의 휴머노이드 로봇 아틀라스 등 주요 계열사의 기술 상용화가 분기점을 맞고 있는 가운데 피지컬 AI 시대 주도권 확보를 위한 인재 전쟁에도 속도를 내고 있다는 분석이다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_humanoid_robot", "properties": {"evidence": "올해 모셔널의 로보택시, 포티투닷(42dot)의 소프트웨어 중심 자동차(SDV), 보스턴다이나믹스의 휴머노이드 로봇 아틀라스 등 주요 계열사의 기술 상용화가 분기점을 맞고 있는 가운데 피지컬 AI 시대 주도권 확보를 위한 인재 전쟁에도 속도를 내고 있다는 분석이다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "현대자동차그룹이 미래 모빌리티 핵심 기술 인재 확보를 위해 미국 서부 대학가를 돌고 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai", "to_id": "industry_ai", "properties": {"evidence": "모집 분야 역시 AI, 로보틱스, 자율주행, 스마트 제조, 소프트웨어·IT, 배터리, 수소·에너지 등으로 그룹이 추진 중인 피지컬 AI 전략 전반과 맞닿아 있다.", "date": "", "evidence_source_id": "news_005380_3afa0f4c91021a58", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060246?ref=naver", "evidence_published_at": "2026-04-29T17:33:00+09:00"}}

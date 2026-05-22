@@ -1,0 +1,64 @@
+{
+  "source_id": "dart_030200_consolidated_subsidiary_status_20260323001553",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "통신서비스 및 정보통신 관련 서비스업무를 영위하는 기업"
+    },
+    {
+      "id": "company_036030",
+      "type": "Company",
+      "name": "케이티알파",
+      "stock_code": "036030",
+      "description": "정보통신 관련 서비스업무를 하는 기업"
+    },
+    {
+      "id": "business_area_information_communication_service",
+      "type": "BusinessArea",
+      "name": "정보통신 관련 서비스업무"
+    },
+    {
+      "id": "industry_telecommunication",
+      "type": "Industry",
+      "name": "통신"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_information_communication_service",
+      "evidence": "KT의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_036030",
+      "to": "business_area_information_communication_service",
+      "evidence": "㈜케이티알파 | 1991-12-12 | 서울특별시 동작구 보라매로5길 23 | 정보통신 관련 서비스업무 | 495,896 | 지분 50% 초과보유 | 주요",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_information_communication_service",
+      "to": "industry_telecommunication",
+      "evidence": "정보통신 관련 서비스업무",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

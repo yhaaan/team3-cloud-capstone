@@ -1,7 +1,67 @@
-// node: company_쎄트렉아이
+// node: company_099320
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_쎄트렉아이", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320", "country": "KR"}
+:params {"id": "company_099320", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320", "description": "위성 영상 서비스와 초고해상도 상용 지구관측 위성 사업을 하는 우주산업 전문 기업"}
+
+// node: business_area_satellite_imaging
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_satellite_imaging", "type": "BusinessArea", "name": "위성 영상 서비스"}
+
+// node: product_service_spaceeye_t
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_spaceeye_t", "type": "ProductService", "name": "초고해상도 상용 지구관측 위성 SpaceEye-T"}
+
+// node: industry_space_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_space_industry", "type": "Industry", "name": "우주산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_satellite_imaging", "properties": {"evidence": "자회사 SIIS의 위성 영상 서비스 매출 본격화가 맞물리며 올해 하반기로 갈수록 실적 모멘텀이 가팔라질 것이라며", "date": "", "evidence_source_id": "news_099320_a761d305b8b4c4ba", "evidence_source_type": "news", "evidence_source_url": "http://www.newsprime.co.kr/news/article.html?no=731705", "evidence_published_at": "2026-04-28T08:12:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_spaceeye_t", "properties": {"evidence": "초고해상도 상용 지구관측 위성 '스페이스아이-티(SpaceEye-T)'의 실적이 1분기부터 온기 반영되며 외형성장 및 연결 기준 수익성 개선에 기여할 것", "date": "", "evidence_source_id": "news_099320_a761d305b8b4c4ba", "evidence_source_type": "news", "evidence_source_url": "http://www.newsprime.co.kr/news/article.html?no=731705", "evidence_published_at": "2026-04-28T08:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_spaceeye_t", "to_id": "business_area_satellite_imaging", "properties": {"evidence": "초고해상도 상용 지구관측 위성 '스페이스아이-티(SpaceEye-T)'", "date": "", "evidence_source_id": "news_099320_a761d305b8b4c4ba", "evidence_source_type": "news", "evidence_source_url": "http://www.newsprime.co.kr/news/article.html?no=731705", "evidence_published_at": "2026-04-28T08:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_satellite_imaging", "to_id": "industry_space_industry", "properties": {"evidence": "위성 영상 서비스 매출 본격화", "date": "", "evidence_source_id": "news_099320_a761d305b8b4c4ba", "evidence_source_type": "news", "evidence_source_url": "http://www.newsprime.co.kr/news/article.html?no=731705", "evidence_published_at": "2026-04-28T08:12:00+09:00"}}

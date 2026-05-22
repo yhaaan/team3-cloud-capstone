@@ -1,0 +1,109 @@
+// node: company_047040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047040", "type": "Company", "name": "대우건설", "stock_code": "047040", "description": "건설 부문에서 다양한 공사와 프로젝트를 수행하는 회사입니다."}
+
+// node: person_장재경
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_장재경", "type": "Person", "name": "장재경", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_배전기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_배전기", "type": "Person", "name": "배전기", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_하태출
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_하태출", "type": "Person", "name": "하태출", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_권순재
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_권순재", "type": "Person", "name": "권순재", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_정상호
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정상호", "type": "Person", "name": "정상호", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_김무성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김무성", "type": "Person", "name": "김무성", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_장재경", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 장재경, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_배전기", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 배전기, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_하태출", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 하태출, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_권순재", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 권순재, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정상호", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 정상호, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김무성", "to_id": "company_047040", "properties": {"evidence": "대우건설의 임원·주요주주 소유상황 보고자는 김무성, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-15", "evidence_source_id": "dart_047040_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000506", "evidence_published_at": "2026-05-15"}}

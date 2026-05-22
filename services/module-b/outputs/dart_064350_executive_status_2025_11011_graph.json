@@ -2,99 +2,95 @@
   "source_id": "dart_064350_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_hyundai_rotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
-      "stock_code": "064350"
+      "stock_code": "064350",
+      "description": "경영총괄, 재경본부, 레일솔루션 사업을 주요 영업 부문으로 하는 종합기계 기업"
     },
     {
-      "id": "company_hyundai_wia",
-      "type": "Company",
-      "name": "현대위아",
-      "stock_code": "011210"
-    },
-    {
-      "id": "company_hyundai_motor_securities",
-      "type": "Company",
-      "name": "현대차증권",
-      "stock_code": "001500"
-    },
-    {
-      "id": "company_yulchon",
-      "type": "Company",
-      "name": "율촌",
-      "stock_code": "146060"
-    },
-    {
-      "id": "person_lee_yong_bae",
+      "id": "person_이용배",
       "type": "Person",
       "name": "이용배",
       "role_raw": "사장",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "PRESIDENT",
       "role_label": "사장"
     },
     {
-      "id": "person_kim_du_hong",
+      "id": "person_김두홍",
       "type": "Person",
       "name": "김두홍",
       "role_raw": "전무",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "OTHER",
       "role_label": "전무"
     },
     {
-      "id": "person_kim_jung_hun",
+      "id": "person_김정훈",
       "type": "Person",
       "name": "김정훈",
       "role_raw": "전무",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "OTHER",
       "role_label": "전무"
     },
     {
-      "id": "person_yoon_ji_won",
+      "id": "person_윤지원",
       "type": "Person",
       "name": "윤지원",
       "role_raw": "이사",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "DIRECTOR",
       "role_label": "이사"
     },
     {
-      "id": "person_kwak_se_bung",
+      "id": "person_곽세붕",
       "type": "Person",
       "name": "곽세붕",
       "role_raw": "이사",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "DIRECTOR",
       "role_label": "이사"
     },
     {
-      "id": "person_baek_seung_geun",
+      "id": "person_백승근",
       "type": "Person",
       "name": "백승근",
       "role_raw": "이사",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "DIRECTOR",
       "role_label": "이사"
     },
     {
-      "id": "person_kim_tae_yeon",
+      "id": "person_김태연",
       "type": "Person",
       "name": "김태연",
       "role_raw": "이사",
-      "affiliated_company": "company_hyundai_rotem",
       "role": "DIRECTOR",
       "role_label": "이사"
+    },
+    {
+      "id": "business_area_경영",
+      "type": "BusinessArea",
+      "name": "경영총괄"
+    },
+    {
+      "id": "business_area_재경",
+      "type": "BusinessArea",
+      "name": "재경본부"
+    },
+    {
+      "id": "business_area_레일솔루션",
+      "type": "BusinessArea",
+      "name": "레일솔루션 사업"
+    },
+    {
+      "id": "industry_기계",
+      "type": "Industry",
+      "name": "기계"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_yong_bae",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 이용배, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 경영총괄, 최대주주와의 관계는 계열회사임원, 주요경력은 경희대학교 경영학(석) '06 ~ '07 현대자동차㈜ 경영관리실장 이사 '08 ~ '11 현대자동차㈜ 경영기획담당 상무/전무/부사장 '12 ~ '13 현대자동차㈜ 기획조정3실장 부사장 '13 ~ '15 현대위아㈜ 경영지원본부/재경본부/구매본부/ 기획실 담당 부사장 '16 ~ '16 HMC투자증권㈜ 영업총괄 부사장 '17 ~ '19 현대차증권㈜ 대표이사 '20 ~ 현재 현대로템㈜ 대표이사.",
+      "type": "APPOINTED_TO",
+      "from": "person_이용배",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 이용배, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 경영총괄",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -102,10 +98,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_du_hong",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 김두홍, 직위는 전무, 이사회상 역할은 사내이사, 담당업무는 재경본부장, 최대주주와의 관계는 계열회사임원, 주요경력은 연세대학교 경영학 연세대학교 대학원 경영학(석) '13 ~ '17 현대자동차㈜ 기획조정3실 경영기획1팀장 '18 ~ '18 현대파워텍㈜ 재경실장 '18 ~ '18 현대다이모스㈜ 재경본부장 '18 ~ 현재 현대로템㈜ 재경본부장.",
+      "type": "APPOINTED_TO",
+      "from": "person_김두홍",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 김두홍, 직위는 전무, 이사회상 역할는 사내이사, 담당업무는 재경본부장",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -113,10 +109,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_jung_hun",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 김정훈, 직위는 전무, 이사회상 역할은 사내이사, 담당업무는 레일솔루션 사업본부장, 최대주주와의 관계는 계열회사임원, 주요경력은 인하대학교 기계공학 '16 ~ '17 현대로템㈜ 해외영업팀장 '17 ~ '20 현대로템㈜ 해외사업실장 '21 ~ 현재 현대로템㈜ 레일솔루션사업본부장.",
+      "type": "APPOINTED_TO",
+      "from": "person_김정훈",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 김정훈, 직위는 전무, 이사회상 역할은 사내이사, 담당업무는 레일솔루션 사업본부장",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -124,10 +120,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_yoon_ji_won",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 윤지원, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천 위원장, 투명경영위원, 최대주주와의 관계는 계열회사임원, 주요경력은 이화여대학교 정치외교학과 영국 University of Aberdeen 국제관계학과(석) 영국 University of Glasgow 국제정치학(박) '05 ~ '19 평택대학교 외교안보전공 교수 '19 ~ 현재 상명대학교 국가안보학과 교수.",
+      "type": "APPOINTED_TO",
+      "from": "person_윤지원",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 윤지원, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천 위원장, 투명경영위원",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -135,10 +131,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kwak_se_bung",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 곽세붕, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원, 투명경영위원장, 사외이사후보추천 위원 보수위원, 최대주주와의 관계는 계열회사임원, 주요경력은 연세대학교 정치외교학 미국 University of San Diego 법학(석) '12 ~ '14 공정거래위원회 소비자정책국 국장 '15 ~ '17 공정거래위원회 경쟁정책국 국장 '17 ~ '19 공정거래위원회 상임위원 '20 ~ '22 연세대학교 경제학과 초빙교수 '07 ~ 현재 미국 뉴욕주 변호사 '23 ~ 현재 김ㆍ장 법률사무소 고문.",
+      "type": "APPOINTED_TO",
+      "from": "person_곽세붕",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 곽세붕, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원, 투명경영위원장",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -146,10 +142,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_baek_seung_geun",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 백승근, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 보수위원장, 감사위원, 투명경영위원, 최대주주와의 관계는 계열회사임원, 주요경력은 서울대학교 농경제학 서울대학교 행정학(석) 미국 Texas A&M대학교 도시계획학(박) '21 ~ '21 국토교통부 기획조정실장 '21 ~ '22 국토교통부 대도시권광역교통위원회 위원장 '23 ~ 현재 우송대학교 철도물류대학 교수(전문경력교원).",
+      "type": "APPOINTED_TO",
+      "from": "person_백승근",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 백승근, 직위는 이사, 이사회상 역할는 사외이사, 담당업무는 보수위원장, 감사위원, 투명경영위원",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -157,10 +153,76 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_tae_yeon",
-      "to": "company_hyundai_rotem",
-      "evidence": "현대로템의 임원은 김태연, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원장, 보수위원, 최대주주와의 관계는 계열회사임원, 주요경력은 연세대학교 법학과 고려대학교 법무대학원 금융법학과(석) 고려대학교 법학(상법전공)(박) '12 ~ '15 금융감독원 일반은행검사국 1팀/검사기획팀 '15 ~ '16 금융감독원 여신전문검사국 검사기획팀 '16 ~ '17 금융감독원 여신전문 검사국 팀장 '20 ~ '20 금융감독원 일반은행 검사국 팀장 '20 ~ 현재 법무법인(유) 율촌 변호사.",
+      "type": "APPOINTED_TO",
+      "from": "person_김태연",
+      "to": "company_064350",
+      "evidence": "현대로템의 임원은 김태연, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 감사위원장, 보수위원",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_경영",
+      "evidence": "현대로템의 임원은 이용배, ... 담당업무는 경영총괄",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_재경",
+      "evidence": "현대로템의 임원은 김두홍, ... 담당업무는 재경본부장",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_레일솔루션",
+      "evidence": "현대로템의 임원은 김정훈, ... 담당업무는 레일솔루션 사업본부장",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_경영",
+      "to": "industry_기계",
+      "evidence": "현대로템은 기계 분야 기업임",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_재경",
+      "to": "industry_기계",
+      "evidence": "현대로템은 기계 분야 기업임",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_레일솔루션",
+      "to": "industry_기계",
+      "evidence": "현대로템은 기계 분야 기업임",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_executive_status_2025_11011",
       "evidence_source_type": "dart",

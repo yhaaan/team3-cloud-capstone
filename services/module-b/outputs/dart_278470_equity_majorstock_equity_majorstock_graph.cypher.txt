@@ -1,0 +1,7 @@
+// node: company_278470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_278470", "type": "Company", "name": "에이피알", "stock_code": "278470"}

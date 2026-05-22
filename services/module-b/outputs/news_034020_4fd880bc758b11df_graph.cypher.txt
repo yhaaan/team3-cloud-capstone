@@ -1,41 +1,246 @@
-// node: company_dosan
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150", "country": "KR"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150", "description": "수익성 중심 포트폴리오 재편과 핵심 계열사 성장에 힘입어 AI 가속기, 메모리 반도체 제품 등 전자BG와 원전 사업을 영위"}
 
-// node: company_dosanenergy
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosanenergy", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "country": "KR"}
-
-// node: company_dosanbobcat
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosanbobcat", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "country": "KR"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "원자력과 가스터빈 사업의 경쟁력을 바탕으로 원전 기자재, 가스터빈 및 복합EPC 공정 영위"}
 
-// relation: AFFILIATED_WITH
+// node: company_241560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "description": "북미·유럽 시장 중심으로 소형 장비 판매 및 판가 인상 효과에 따른 매출 성장"}
+
+// node: business_area_ai_accelerator
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_accelerator", "type": "BusinessArea", "name": "AI 가속기"}
+
+// node: business_area_memory_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory_semiconductor", "type": "BusinessArea", "name": "메모리 반도체"}
+
+// node: business_area_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power", "type": "BusinessArea", "name": "원전 사업"}
+
+// node: business_area_gas_turbine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_gas_turbine", "type": "BusinessArea", "name": "가스터빈 사업"}
+
+// node: business_area_small_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_small_equipment", "type": "BusinessArea", "name": "소형 장비"}
+
+// node: product_service_high_end_ccl
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_high_end_ccl", "type": "ProductService", "name": "하이엔드 동박적층판"}
+
+// node: product_service_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dram", "type": "ProductService", "name": "D램"}
+
+// node: product_service_nand
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_nand", "type": "ProductService", "name": "낸드"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_heavy_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_heavy_equipment", "type": "Industry", "name": "중장비"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosanenergy", "to_id": "company_dosan", "properties": {"evidence": "계열사인 두산에너빌리티는 원자력과 가스터빈 사업의 경쟁력을 바탕으로 1분기 매출 4조2611억원, 영업이익 2335억원으로 전년 동기 대비 각각 13.7%, 63.9% 증가했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+:params {"from_id": "company_000150", "to_id": "business_area_ai_accelerator", "properties": {"evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosanbobcat", "to_id": "company_dosan", "properties": {"evidence": "두산밥캣 역시 북미와 유럽 시장의 견조한 수요에 힘입어 매출 2조2473억원, 영업이익 2070억원의 실적을 올렸다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+:params {"from_id": "company_000150", "to_id": "business_area_memory_semiconductor", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "product_service_high_end_ccl", "properties": {"evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "product_service_dram", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "product_service_nand", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_dram", "to_id": "business_area_memory_semiconductor", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_nand", "to_id": "business_area_memory_semiconductor", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_high_end_ccl", "to_id": "business_area_ai_accelerator", "properties": {"evidence": "AI 데이터센터 수요 강세로 AI 가속기 및 800G 네트워크용 하이엔드 동박적층판(CCL) 공급이 크게 늘었다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_nuclear_power", "properties": {"evidence": "두산에너빌리티의 원전 사업 호조가 실적을 견인했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_gas_turbine", "properties": {"evidence": "두산에너빌리티는 원자력과 가스터빈 사업의 경쟁력을 바탕으로 1분기 매출 4조2611억원, 영업이익 2335억원으로 전년 동기 대비 각각 13.7%, 63.9% 증가했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "industry_semiconductor", "properties": {"evidence": "D램 및 낸드(NAND) 등 고성능 메모리 반도체용 제품 수요가 실적 성장을 뒷받침하며 분기 기준 최대 매출을 경신했다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "industry_energy", "properties": {"evidence": "두산에너빌리티는 원자력과 가스터빈 사업의 경쟁력을 바탕으로 ... 매출 확대 및 핵심사업 매출 비중 증가에 따른 수익성 개선", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "business_area_small_equipment", "properties": {"evidence": "두산밥캣 역시 북미와 유럽 시장의 견조한 수요에 힘입어 매출 2조2473억원, 영업이익 2070억원의 실적을 올렸다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "industry_heavy_equipment", "properties": {"evidence": "두산밥캣 역시 북미와 유럽 시장의 견조한 수요에 힘입어 매출 2조2473억원, 영업이익 2070억원의 실적을 올렸다.", "date": "", "evidence_source_id": "news_034020_4fd880bc758b11df", "evidence_source_type": "news", "evidence_source_url": "https://www.businessplus.kr/news/articleView.html?idxno=111269", "evidence_published_at": "2026-04-29T16:50:00+09:00"}}

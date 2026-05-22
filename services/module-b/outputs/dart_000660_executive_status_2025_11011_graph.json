@@ -2,22 +2,148 @@
   "source_id": "dart_000660_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_sk하이닉스",
+      "id": "company_000660",
       "type": "Company",
-      "name": "SK하이닉스"
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "반도체 메모리 및 NAND 개발, 제조 기술 중심의 반도체 기업"
     },
     {
-      "id": "industry_it",
+      "id": "person_곽노정_196511",
+      "type": "Person",
+      "name": "곽노정",
+      "role_raw": "대표이사 사장",
+      "main_career": "고려대학교 대학원 박사SK하이닉스 미래기술연구원 상무SK하이닉스 청주 FAB담당 전무SK하이닉스 제조/기술 담당 부사장SK하이닉스 안전개발제조총괄 사장한국 반도체산업협회 13대 회장SK하이닉스 대표이사 사장 (現)",
+      "role": "CEO",
+      "role_label": "대표이사"
+    },
+    {
+      "id": "person_안현_196706",
+      "type": "Person",
+      "name": "안현",
+      "role_raw": "사장",
+      "main_career": "서울대 대학원 원자핵공학 박사 SK하이닉스 NAND개발사업전략 담당 SK하이닉스 미래연구추진단 담당 SK하이닉스 개발총괄 사장 (現)",
+      "role": "PRESIDENT",
+      "role_label": "사장"
+    },
+    {
+      "id": "person_장용호_196404",
+      "type": "Person",
+      "name": "장용호",
+      "role_raw": "이사",
+      "main_career": "서울대 경제학 학사 SK주식회사 PM2 부문장 SK머티리얼즈 대표이사 사장 SK실트론 대표이사 사장 SK주식회사 대표이사 사장 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_한명진_197310",
+      "type": "Person",
+      "name": "한명진",
+      "role_raw": "이사",
+      "main_career": "고려대 경영학 학사SK텔레콤 Global사업개발 본부장SK텔레콤 Global Alliance 실장SK텔레콤 Corporate Strategy 담당SK스퀘어 투자지원센터장SK스퀘어 대표이사 사장 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_한애라_197202",
+      "type": "Person",
+      "name": "한애라",
+      "role_raw": "이사",
+      "main_career": "하버드대 대학원 석사 대법원 재판연구관 김앤장 법률사무소 성균관대 법학전문대학원 교수 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_정덕균_195808",
+      "type": "Person",
+      "name": "정덕균",
+      "role_raw": "이사",
+      "main_career": "UC 버클리대 전기컴퓨터공학 박사 서울대 전기정보공학부 교수 서울대 반도체공동연구소장 서울대 전기정보공학부 명예교수 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_김정원_196811",
+      "type": "Person",
+      "name": "김정원",
+      "role_raw": "이사",
+      "main_career": "시카고대 경영학 석사 한국씨티은행 재무기획그룹 부행장 美 Citi은행 Treasury GPO/Managing Director 김앤장 법률사무소 고문 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_양동훈_195807",
+      "type": "Person",
+      "name": "양동훈",
+      "role_raw": "이사",
+      "main_career": "美 시라큐스대 회계학 박사한국회계학회 제36대 회장방송통신위원회 회계전문위원장한국회계학회ㆍ삼일회계법인 저명교수동국대학교 경영대 회계학과 명예교수 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "person_손현철_196103",
+      "type": "Person",
+      "name": "손현철",
+      "role_raw": "이사",
+      "main_career": "UC 버클리대 재료공학 박사하이닉스반도체 연구원연세대 공과대 신소재 공학과 교수 (現)",
+      "role": "DIRECTOR",
+      "role_label": "이사"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "Memory"
+    },
+    {
+      "id": "business_area_nand_development",
+      "type": "BusinessArea",
+      "name": "NAND 개발"
+    },
+    {
+      "id": "industry_semiconductor",
       "type": "Industry",
-      "name": "IT"
+      "name": "Semiconductor"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_sk하이닉스",
-      "to": "industry_it",
-      "evidence": "SK하이닉스의 임원은 김정원, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사감사위원회 위원 지속경영위원회 위원인사ㆍ보상위원회 위원, 주요경력은 시카고대 경영학 석사 한국씨티은행 재무기획그룹 부행장 美 Citi은행 Treasury GPO/Managing Director 김앤장 법률사무소 고문 (現).",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스 미래기술연구원 상무SK하이닉스 청주 FAB담당 전무SK하이닉스 제조/기술 담당 부사장SK하이닉스 안전개발제조총괄 사장",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_nand_development",
+      "evidence": "서울대 대학원 원자핵공학 박사 SK하이닉스 NAND개발사업전략 담당",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "한국 반도체산업협회 13대 회장",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_nand_development",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스 NAND개발사업전략 담당",
       "date": "2026-03-17",
       "evidence_source_id": "dart_000660_executive_status_2025_11011",
       "evidence_source_type": "dart",

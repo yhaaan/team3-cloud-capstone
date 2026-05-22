@@ -1,0 +1,194 @@
+// node: company_005830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005830", "type": "Company", "name": "DB손해보험", "stock_code": "005830", "description": "보험업을 영위하며 다양한 금융투자 및 경영참여를 통해 사업영역을 확장함"}
+
+// node: company_016610
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016610", "type": "Company", "name": "DB증권", "stock_code": "016610"}
+
+// node: company_030210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030210", "type": "Company", "name": "다올투자증권", "stock_code": "030210"}
+
+// node: company_244920
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_244920", "type": "Company", "name": "에이플러스에셋", "stock_code": "244920"}
+
+// node: company_211050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_211050", "type": "Company", "name": "인카금융서비스", "stock_code": "211050"}
+
+// node: company_058970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_058970", "type": "Company", "name": "엠로", "stock_code": "058970"}
+
+// node: company_100590
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_100590", "type": "Company", "name": "머큐리", "stock_code": "100590"}
+
+// node: company_101390
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_101390", "type": "Company", "name": "아이엠", "stock_code": "101390"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_044180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_044180", "type": "Company", "name": "KD", "stock_code": "044180"}
+
+// node: business_area_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_finance", "type": "BusinessArea", "name": "금융서비스"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_016610", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 DB증권, 출자 목적은 경영참여, 최초 취득일은 2006.03.31, 당기말 지분율은 26.83%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_030210", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 다올투자증권, 출자 목적은 일반투자, 최초 취득일은 2025.04.17, 당기말 지분율은 9.73%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_244920", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 에이플러스에셋, 출자 목적은 일반투자, 최초 취득일은 2025.12.23, 당기말 지분율은 1.00%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_211050", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 인카금융서비스, 출자 목적은 일반투자, 최초 취득일은 2022.03.24, 당기말 지분율은 4.29%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_058970", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 엠로, 출자 목적은 단순투자, 최초 취득일은 2015.07.07, 당기말 지분율은 1.94%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_100590", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 IMM머큐리1호코인베스트, 출자 목적은 단순투자, 최초 취득일은 2019.04.29, 당기말 지분율은 10.70%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_101390", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 아이엠, 출자 목적은 단순투자, 최초 취득일은 2015.07.07, 당기말 지분율은 1.94%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_034730", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 SK, 출자 목적은 단순투자, 최초 취득일은 2021.01.26, 당기말 지분율은 4.19%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "company_044180", "properties": {"evidence": "DB손해보험의 타법인 출자 대상은 KD, 출자 목적은 단순투자, 최초 취득일은 2016.01.06, 당기말 지분율은 10.71%.", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "business_area_finance", "properties": {"evidence": "DB손해보험은 다양한 금융투자와 경영참여를 통해 사업 영역을 확장하고 있음", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005830", "to_id": "industry_finance", "properties": {"evidence": "DB손해보험은 보험업 및 금융투자를 주요 사업으로 함", "date": "2026-03-31", "evidence_source_id": "dart_005830_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904", "evidence_published_at": "2026-03-31"}}

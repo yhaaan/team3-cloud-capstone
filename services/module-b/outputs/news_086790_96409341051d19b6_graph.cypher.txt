@@ -1,0 +1,162 @@
+// node: company_086790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086790", "type": "Company", "name": "하나금융지주", "stock_code": "086790", "description": "디지털자산 기반 금융 혁신과 블록체인, 외화송금, 스테이블코인 등 금융 서비스 제공"}
+
+// node: company_279570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_279570", "type": "Company", "name": "케이뱅크", "stock_code": "279570"}
+
+// node: business_area_디지털자산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_디지털자산", "type": "BusinessArea", "name": "디지털자산"}
+
+// node: business_area_블록체인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_블록체인", "type": "BusinessArea", "name": "블록체인"}
+
+// node: business_area_외화송금서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_외화송금서비스", "type": "BusinessArea", "name": "외화송금 서비스"}
+
+// node: business_area_종합자산관리서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_종합자산관리서비스", "type": "BusinessArea", "name": "종합자산관리서비스"}
+
+// node: product_service_스테이블코인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_스테이블코인", "type": "ProductService", "name": "스테이블코인"}
+
+// node: industry_금융
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_금융", "type": "Industry", "name": "금융"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_디지털자산", "properties": {"evidence": "하나금융지주가 두나무의 4대 주주로 오르면서 디지털자산 강화에 나선다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_블록체인", "properties": {"evidence": "하나금융은 두나무와 디지털자산 동맹을 맺고 블록체인, 스테이블코인 등 디지털자산 시장에서 선점 우위에 나설 것으로 보인다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_외화송금서비스", "properties": {"evidence": "하나금융은 블록체인 기반 외화송금 서비스 고도화를 통해 실시간 거래·정산이 가능하도록 고객 혜택을 강화해 국내 외국환 시장 내 선도사 지위를 공고히 한다는 전략이다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_종합자산관리서비스", "properties": {"evidence": "두나무가 운영 중인 국내 1위 디지털자산거래소 업비트와 그룹의 차별화된 디지털 플랫폼 간 협업을 통해 디지털자산과 금융이 연계된 새로운 종합자산관리서비스도 추진할 예정이다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "product_service_스테이블코인", "properties": {"evidence": "하나금융은 두나무와 함께 원화 스테이블코인 발행·유통·사용·환류로 이어지는 생태계 조성을 위해 안정적이고 확장 가능한 인프라를 구축하는데 협력한다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_디지털자산", "to_id": "industry_금융", "properties": {"evidence": "하나금융지주가 두나무의 4대 주주로 오르면서 디지털자산 강화에 나선다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_블록체인", "to_id": "industry_금융", "properties": {"evidence": "블록체인, 스테이블코인 등 디지털자산 시장에서 선점 우위에 나설 것으로 보인다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_외화송금서비스", "to_id": "industry_금융", "properties": {"evidence": "하나금융은 블록체인 기반 외화송금 서비스 고도화를 통해 실시간 거래·정산이 가능하도록 고객 혜택을 강화해 국내 외국환 시장 내 선도사 지위를 공고히 한다는 전략이다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_종합자산관리서비스", "to_id": "industry_금융", "properties": {"evidence": "디지털자산과 금융이 연계된 새로운 종합자산관리서비스도 추진할 예정이다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_스테이블코인", "to_id": "business_area_디지털자산", "properties": {"evidence": "원화 스테이블코인 발행·유통·사용·환류로 이어지는 생태계 조성을 위해 안정적이고 확장 가능한 인프라를 구축하는데 협력한다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_279570", "to_id": "business_area_디지털자산", "properties": {"evidence": "업비트와 케이뱅크는 2020년부터 실명계좌 제휴를 맺고 가상자산 거래를 진행하고 있다.", "date": "", "evidence_source_id": "news_086790_96409341051d19b6", "evidence_source_type": "news", "evidence_source_url": "https://daily.hankooki.com/news/articleView.html?idxno=1367828", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}

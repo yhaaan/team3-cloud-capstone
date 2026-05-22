@@ -1,58 +1,76 @@
-// node: company_삼성전기
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "삼성전기는 AI 산업과 자율주행 관련 핵심 기술을 중심으로 전기·전자 부품과 기술 협력 사업을 영위하고 있다."}
 
-// node: company_우성
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_우성", "type": "Company", "name": "우성"}
-
-// node: company_코스모신소재
+// node: business_area_ai_industry
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재"}
+:params {"id": "business_area_ai_industry", "type": "BusinessArea", "name": "AI 산업"}
 
-// node: person_장덕현
+// node: business_area_autonomous_driving
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role": "PRESIDENT", "affiliated_company": "company_삼성전기", "role_raw": "사장", "role_label": "사장"}
+:params {"id": "business_area_autonomous_driving", "type": "BusinessArea", "name": "자율주행 시스템"}
 
-// relation: AFFILIATED_WITH
+// node: industry_semiconductor
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
 
-:params {"from_id": "person_장덕현", "to_id": "company_삼성전기", "properties": {"evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\" 이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 말했다.", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
 
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_삼성전기", "to_id": "company_우성", "properties": {"evidence": "MLCC 설비를 공급하는 우성에스이는 설비 제작 및 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
-
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전기", "to_id": "company_코스모신소재", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을,", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+:params {"from_id": "company_009150", "to_id": "business_area_ai_industry", "properties": {"evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\" 이라며...", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_autonomous_driving", "properties": {"evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\" 이라며...", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_industry", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전기와 협력사가 견고한 신뢰를 바탕으로 동반성장 의지를 다지고, 지난 한 해 동안 혁신적인 성과를 거둔 우수 협력사를 격려하기 위해 마련됐다.", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_autonomous_driving", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전기는 AI 산업과 자율주행 시스템 고도화 등 집중 사업을 통해 협력사와 경쟁력 있는 제품 개발에 주력하고 있다.", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전기는 AI 산업과 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것.", "date": "", "evidence_source_id": "news_009150_e10cedbe64372b56", "evidence_source_type": "news", "evidence_source_url": "https://www.dizzotv.com/site/data/html_dir/2026/04/28/2026042880182.html", "evidence_published_at": "2026-04-28T18:06:00+09:00"}}

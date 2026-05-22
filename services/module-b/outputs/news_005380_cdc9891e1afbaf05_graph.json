@@ -2,60 +2,80 @@
   "source_id": "news_005380_cdc9891e1afbaf05",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "자동차 중심 전동화 기술과 미래 모빌리티·로봇 사업을 확장하는 종합 모빌리티 기업"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_현대위아",
+      "id": "company_011210",
       "type": "Company",
       "name": "현대위아",
       "stock_code": "011210"
     },
     {
-      "id": "company_현대무벡스",
-      "type": "Company",
-      "name": "현대무벡스",
-      "stock_code": "319400"
-    },
-    {
-      "id": "company_현대글로비스",
+      "id": "company_086280",
       "type": "Company",
       "name": "현대글로비스",
       "stock_code": "086280"
     },
     {
-      "id": "company_현대모비스",
+      "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
       "stock_code": "012330"
     },
     {
-      "id": "company_유진투자증권",
+      "id": "company_001200",
       "type": "Company",
       "name": "유진투자증권",
       "stock_code": "001200"
     },
     {
-      "id": "company_한국항공우주",
+      "id": "company_047810",
       "type": "Company",
       "name": "한국항공우주",
       "stock_code": "047810"
+    },
+    {
+      "id": "business_area_aam",
+      "type": "BusinessArea",
+      "name": "미래 항공 모빌리티"
+    },
+    {
+      "id": "business_area_robotics",
+      "type": "BusinessArea",
+      "name": "로봇 사업"
+    },
+    {
+      "id": "business_area_mobility_platform",
+      "type": "BusinessArea",
+      "name": "미래 모빌리티 플랫폼"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로봇"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_현대차",
-      "to": "company_유진투자증권",
-      "evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_aam",
+      "evidence": "현대차그룹은 지난 10일 한국항공우주산업(KAI)과 미래 항공 모빌리티(AAM) 개발을 위한 업무협약을 체결했다고 밝혔다.",
       "date": "",
       "evidence_source_id": "news_005380_cdc9891e1afbaf05",
       "evidence_source_type": "news",
@@ -63,10 +83,10 @@
       "evidence_published_at": "2026-05-12T09:58:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_기아",
-      "to": "company_유진투자증권",
-      "evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_robotics",
+      "evidence": "현대차그룹이 AAM 사업 확대에 속도를 내고 있는 데다 로봇 사업 경쟁력 강화 기대감까지 겹친 영향으로 해석된다.",
       "date": "",
       "evidence_source_id": "news_005380_cdc9891e1afbaf05",
       "evidence_source_type": "news",
@@ -74,10 +94,10 @@
       "evidence_published_at": "2026-05-12T09:58:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_유진투자증권",
-      "to": "company_현대차",
-      "evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_mobility_platform",
+      "evidence": "자동차를 넘어 항공·로봇으로 사업 영역을 넓히며 미래 모빌리티 플랫폼 기업으로 진화하고 있다는 평가가 투자심리를 자극한 것으로 풀이된다.",
       "date": "",
       "evidence_source_id": "news_005380_cdc9891e1afbaf05",
       "evidence_source_type": "news",
@@ -85,10 +105,10 @@
       "evidence_published_at": "2026-05-12T09:58:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_유진투자증권",
-      "to": "company_기아",
-      "evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"",
+      "type": "PART_OF",
+      "from": "business_area_aam",
+      "to": "industry_automotive",
+      "evidence": "이번 협약은 현대차그룹의 항공용 전동화 파워트레인 개발 역량과 KAI의 항공기체 개발 역량을 결합해 경쟁력 있는 AAM을 개발하고 양산하기 위한 것이 핵심이다.",
       "date": "",
       "evidence_source_id": "news_005380_cdc9891e1afbaf05",
       "evidence_source_type": "news",
@@ -96,54 +116,10 @@
       "evidence_published_at": "2026-05-12T09:58:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_현대차",
-      "to": "company_현대글로비스",
-      "evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"",
-      "date": "",
-      "evidence_source_id": "news_005380_cdc9891e1afbaf05",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.newspim.com/news/view/20260512000300",
-      "evidence_published_at": "2026-05-12T09:58:00+09:00"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_현대차",
-      "to": "company_현대위아",
-      "evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"",
-      "date": "",
-      "evidence_source_id": "news_005380_cdc9891e1afbaf05",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.newspim.com/news/view/20260512000300",
-      "evidence_published_at": "2026-05-12T09:58:00+09:00"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_현대차",
-      "to": "company_현대모비스",
-      "evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"",
-      "date": "",
-      "evidence_source_id": "news_005380_cdc9891e1afbaf05",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.newspim.com/news/view/20260512000300",
-      "evidence_published_at": "2026-05-12T09:58:00+09:00"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_현대차",
-      "to": "company_현대무벡스",
-      "evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"",
-      "date": "",
-      "evidence_source_id": "news_005380_cdc9891e1afbaf05",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.newspim.com/news/view/20260512000300",
-      "evidence_published_at": "2026-05-12T09:58:00+09:00"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_현대차",
-      "to": "company_한국항공우주",
-      "evidence": "\"현대차그룹은 지난 10일 한국항공우주산업(KAI)과 미래 항공 모빌리티(AAM) 개발을 위한 업무협약을 체결했다고 밝혔다.\"",
+      "type": "PART_OF",
+      "from": "business_area_robotics",
+      "to": "industry_robotics",
+      "evidence": "보스턴다이나믹스 아틀라스 시연 재조명…로봇 사업 기대 확대",
       "date": "",
       "evidence_source_id": "news_005380_cdc9891e1afbaf05",
       "evidence_source_type": "news",

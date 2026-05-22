@@ -1,18 +1,50 @@
-// node: company_sk_hynix
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "메모리 반도체 중심으로 AI 인프라용 서버 D램, 기업용 SSD 등 메모리 제품을 생산"}
 
-// node: company_sk
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: product_service_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dram", "type": "ProductService", "name": "DRAM"}
+
+// node: product_service_ssd
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ssd", "type": "ProductService", "name": "SSD"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
 
 // node: industry_ai
 
@@ -22,11 +54,56 @@ SET n:`Industry`
 
 :params {"id": "industry_ai", "type": "Industry", "name": "AI"}
 
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_hynix", "to_id": "industry_ai", "properties": {"evidence": "09:25 KB증권은 12일 SK하이닉스에 대해 인공지능(AI) 시장 확대로 인한 실적 호조를 예상하며 주가의 추가 상승 여력이 충분하다고 전망했다.", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "특히 메모리 가격 상승 기조와 AI 인프라 투자 확대에 따른 서버 D램(DRAM)과 기업용 SSD 수요 급증세는 2027년 이후에도 장기간 지속될 것", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_dram", "properties": {"evidence": "특히 메모리 가격 상승 기조와 AI 인프라 투자 확대에 따른 서버 D램(DRAM)과 기업용 SSD 수요 급증세는 2027년 이후에도 장기간 지속될 것", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_ssd", "properties": {"evidence": "특히 메모리 가격 상승 기조와 AI 인프라 투자 확대에 따른 서버 D램(DRAM)과 기업용 SSD 수요 급증세는 2027년 이후에도 장기간 지속될 것", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "시장이 성숙기로 진입해가면서 메모리 반도체가 단순 부품을 넘어 시장의 핵심 경쟁력으로 재평가될 가능성이 높다는 설명이다.", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_dram", "to_id": "business_area_memory", "properties": {"evidence": "특히 메모리 가격 상승 기조와 AI 인프라 투자 확대에 따른 서버 D램(DRAM)과 기업용 SSD 수요 급증세는 2027년 이후에도 장기간 지속될 것", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ssd", "to_id": "business_area_memory", "properties": {"evidence": "특히 메모리 가격 상승 기조와 AI 인프라 투자 확대에 따른 서버 D램(DRAM)과 기업용 SSD 수요 급증세는 2027년 이후에도 장기간 지속될 것", "date": "", "evidence_source_id": "news_000660_30562d69c64f7fd6", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293755", "evidence_published_at": "2026-05-12T09:26:00+09:00"}}

@@ -1,18 +1,90 @@
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "모바일, TV, 생활가전 중심 플랫폼 비즈니스와 네트워크 사업에 집중하며 AI·6G 등 기술투자 확대"}
 
-// node: person_이원진
+// node: person_eawonjin
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_이원진", "type": "Person", "name": "이원진", "role_raw": "사장", "affiliated_company": "company_삼성전자", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "person_eawonjin", "type": "Person", "name": "이원진 사장", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: business_area_mobile_experience
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobile_experience", "type": "BusinessArea", "name": "모바일 사업"}
+
+// node: business_area_network
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_network", "type": "BusinessArea", "name": "네트워크 사업"}
+
+// node: business_area_device_experience
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_device_experience", "type": "BusinessArea", "name": "디바이스경험 부문"}
+
+// node: business_area_tv
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_tv", "type": "BusinessArea", "name": "TV 사업"}
+
+// node: business_area_living_appliances
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_living_appliances", "type": "BusinessArea", "name": "생활가전"}
+
+// node: product_service_samsung_tv_plus
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_samsung_tv_plus", "type": "ProductService", "name": "삼성 TV 플러스"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// node: industry_consumer_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_consumer_electronics", "type": "Industry", "name": "가전"}
 
 // relation: APPOINTED_TO
 
@@ -21,13 +93,121 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이원진", "to_id": "company_삼성전자", "properties": {"evidence": "최근 영상디스플레이(VD) 사업부장에 이원진 글로벌 마케팅실장(사장)이 새롭게 선임됐다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+:params {"from_id": "person_eawonjin", "to_id": "company_005930", "properties": {"evidence": "최근 영상디스플레이(VD) 사업부장에 이원진 글로벌 마케팅실장(사장)이 새롭게 선임됐다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이원진", "to_id": "company_삼성전자", "properties": {"evidence": "이원진 사장은 광고 기반 무료 스트리밍 서비스인 '삼성 TV 플러스' 등 플랫폼 비즈니스를 성공시킨 인물이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_device_experience", "properties": {"evidence": "반도체 외 세트 사업을 맡고 있는 삼성전자 디바이스경험(DX) 부문이 실적 부진 탈피를 위한 활로 모색에 부심하고 있다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_mobile_experience", "properties": {"evidence": "그나마 선방 중인 모바일 사업 경쟁력 강화에 집중하는 한편 생활가전 등 반등이 여의치 않은 분야는 일정 부분 정리 작업에 착수하며 '선택과 집중'에 나섰다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_network", "properties": {"evidence": "삼성전자의 올해 1분기 모바일경험(MX)·네트워크(NW)사업부 합산 영업이익은 2조8000억원으로 집계됐다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_tv", "properties": {"evidence": "최근 영상디스플레이(VD) 사업부장에 이원진 글로벌 마케팅실장(사장)이 새롭게 선임됐다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_living_appliances", "properties": {"evidence": "생활가전 등 반등이 여의치 않은 분야는 일정 부분 정리 작업에 착수하며 '선택과 집중'에 나섰다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_samsung_tv_plus", "properties": {"evidence": "이원진 사장은 광고 기반 무료 스트리밍 서비스인 '삼성 TV 플러스' 등 플랫폼 비즈니스를 성공시킨 인물이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobile_experience", "to_id": "industry_semiconductor", "properties": {"evidence": "실적 악화의 최대 원인은 메모리 반도체 가격 급등이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_network", "to_id": "industry_semiconductor", "properties": {"evidence": "실적 악화의 최대 원인은 메모리 반도체 가격 급등이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_device_experience", "to_id": "industry_consumer_electronics", "properties": {"evidence": "TV·생활가전 판매 중단 공식화 등 세트 사업 관련 내용", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_tv", "to_id": "industry_consumer_electronics", "properties": {"evidence": "국내 TV 사업 조직도 변화의 바람이 불고 있다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_living_appliances", "to_id": "industry_consumer_electronics", "properties": {"evidence": "중국에서 TV·모니터·세탁기·청소기·냉장고 등 가전제품 판매를 중단하기로 결정했다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_samsung_tv_plus", "to_id": "business_area_tv", "properties": {"evidence": "'삼성 TV 플러스' 등 플랫폼 비즈니스를 성공시킨 인물이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_tv", "to_id": "industry_platform", "properties": {"evidence": "소프트웨어 기반 플랫폼 중심으로 수익 구조를 다변화하겠다는 전략이다.", "date": "", "evidence_source_id": "news_005930_f7527a6dcb0b6e45", "evidence_source_type": "news", "evidence_source_url": "https://www.ajunews.com/view/20260507151955926", "evidence_published_at": "2026-05-07T18:02:00+09:00"}}

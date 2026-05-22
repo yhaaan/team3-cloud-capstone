@@ -1,40 +1,152 @@
-// node: company_hd_한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "조선 및 해양 사업을 주력으로 하는 중간 지주사"}
 
-// node: company_hd_현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd_현대마린엔진
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선 부문과 해양 부문에서 고수익 친환경 선박 생산과 해양 사업 영위"}
 
-// node: company_hd_현대에너지솔루션
+// node: company_071970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 판매 및 부품 판매를 통한 매출과 이익 증대"}
 
-// relation: ACQUIRES
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000", "description": "국내외 모듈 판매 및 판가 인상을 통해 실적 성장"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: business_area_ocean
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ocean", "type": "BusinessArea", "name": "Ocean business"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "Engine business"}
+
+// node: business_area_module_sales
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_module_sales", "type": "BusinessArea", "name": "Module sales"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd_현대중공업", "to_id": "company_hd_한국조선해양", "properties": {"evidence": "지난해 12월 1일 HD현대미포와의 합병을 통해 출범한 통합 HD현대중공업은 매출 5조9,163억원, 영업이익 9,054억원을 달성하며 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD한국조선해양은 7일 공시를 통해 연결기준 1분기 매출 8조1,409억원, 영업이익 1조3,560억원을 기록했다고 밝혔다. [...] 전 사업 부문에서 매출과 수익성이 증대됐다.", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_ocean", "properties": {"evidence": "고수익 친환경 선박의 매출 비중 확대, 생산성 향상, 해양 부문 수익 개선 등이 맞물리며 전 사업 부문에서 매출과 수익성이 증대됐다.", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "지난해 12월 1일 HD현대미포와의 합병을 통해 출범한 통합 HD현대중공업은 [...] 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "HD현대마린엔진은 △엔진 판매단가 상승 △엔진 인도 물량 증가 △부품 판매 증가로 인한 매출과 이익이 동반 증대되며 [...]", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_322000", "to_id": "business_area_module_sales", "properties": {"evidence": "HD현대에너지솔루션은 △국내외 모듈 판매량 증대 △판가 인상 등으로 큰 폭으로 이익이 증가하며 [...]", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "문서 전체 내용", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ocean", "to_id": "industry_shipbuilding", "properties": {"evidence": "문서 전체 내용", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "문서 전체 내용", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_module_sales", "to_id": "industry_shipbuilding", "properties": {"evidence": "문서 전체 내용", "date": "", "evidence_source_id": "news_329180_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}

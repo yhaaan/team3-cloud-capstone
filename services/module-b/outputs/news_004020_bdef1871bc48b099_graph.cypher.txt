@@ -1,0 +1,83 @@
+// node: company_004020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020", "description": "대규모 제철소 건설과 자동차 강판 생산을 주력으로 하는 기업"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_steel_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_steel_manufacturing", "type": "BusinessArea", "name": "제철소"}
+
+// node: business_area_automotive_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive_steel", "type": "BusinessArea", "name": "자동차 강판"}
+
+// node: industry_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel", "type": "Industry", "name": "철강"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "business_area_steel_manufacturing", "properties": {"evidence": "현대제철은 루이지애나주 도날드슨빌 인근 리버플렉스 메가파크 내 1,700에이커 부지에 58억 달러를 투자해 연간 270만 톤 생산 규모의 제철소를 건설할 계획이다.", "date": "", "evidence_source_id": "news_004020_bdef1871bc48b099", "evidence_source_type": "news", "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187", "evidence_published_at": "2026-05-15T10:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "business_area_automotive_steel", "properties": {"evidence": "현대제철은 해당 공장이 2029년 완공되면 자동차 강판 생산의 핵심 거점이 될 것이라고 밝혔다.", "date": "", "evidence_source_id": "news_004020_bdef1871bc48b099", "evidence_source_type": "news", "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187", "evidence_published_at": "2026-05-15T10:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_steel_manufacturing", "to_id": "industry_steel", "properties": {"evidence": "대규모 제철소 건설 사업", "date": "", "evidence_source_id": "news_004020_bdef1871bc48b099", "evidence_source_type": "news", "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187", "evidence_published_at": "2026-05-15T10:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive_steel", "to_id": "industry_steel", "properties": {"evidence": "자동차 강판 생산", "date": "", "evidence_source_id": "news_004020_bdef1871bc48b099", "evidence_source_type": "news", "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187", "evidence_published_at": "2026-05-15T10:56:00+09:00"}}

@@ -1,0 +1,685 @@
+// node: company_000150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150", "description": "두산은 발전플랜트, 소형 건설기계, 연료전지, 전자소재, IT 서비스, 로봇 등 사업을 영위함"}
+
+// node: company_034020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_241560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+
+// node: company_336260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+
+// node: company_454910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
+
+// node: company_131970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_131970", "type": "Company", "name": "두산테스나", "stock_code": "131970"}
+
+// node: company_010470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010470", "type": "Company", "name": "오리콤", "stock_code": "010470"}
+
+// node: business_area_발전플랜트
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_발전플랜트", "type": "BusinessArea", "name": "발전플랜트"}
+
+// node: business_area_소형건설기계
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_소형건설기계", "type": "BusinessArea", "name": "소형 건설기계"}
+
+// node: business_area_연료전지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_연료전지", "type": "BusinessArea", "name": "연료전지"}
+
+// node: business_area_전자소재
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전자소재", "type": "BusinessArea", "name": "전자소재"}
+
+// node: business_area_IT서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_IT서비스", "type": "BusinessArea", "name": "IT 서비스"}
+
+// node: business_area_로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_로봇", "type": "BusinessArea", "name": "로봇"}
+
+// node: product_service_CCL
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_CCL", "type": "ProductService", "name": "CCL"}
+
+// node: product_service_IT시스템개발운영
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_IT시스템개발운영", "type": "ProductService", "name": "IT 시스템 개발 / 운영"}
+
+// node: product_service_NSSS
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_NSSS", "type": "ProductService", "name": "NSSS"}
+
+// node: product_service_BOP
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_BOP", "type": "ProductService", "name": "BOP"}
+
+// node: product_service_Turbine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_Turbine", "type": "ProductService", "name": "Turbine"}
+
+// node: product_service_담수수처리설비
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_담수수처리설비", "type": "ProductService", "name": "담수/수처리 설비"}
+
+// node: product_service_주단조품
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_주단조품", "type": "ProductService", "name": "주단조품"}
+
+// node: product_service_Compact건설기계
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_Compact건설기계", "type": "ProductService", "name": "Compact 건설기계"}
+
+// node: product_service_PortablePower
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_PortablePower", "type": "ProductService", "name": "Portable Power"}
+
+// node: product_service_MaterialHandling
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_MaterialHandling", "type": "ProductService", "name": "Material Handling"}
+
+// node: product_service_연료전지주기기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_연료전지주기기", "type": "ProductService", "name": "연료전지 주기기"}
+
+// node: product_service_장기유지보수서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_장기유지보수서비스", "type": "ProductService", "name": "장기유지보수 서비스"}
+
+// node: product_service_시스템반도체테스트
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_시스템반도체테스트", "type": "ProductService", "name": "시스템반도체 테스트"}
+
+// node: product_service_광고대행
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_광고대행", "type": "ProductService", "name": "광고대행"}
+
+// node: product_service_매거진출판
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_매거진출판", "type": "ProductService", "name": "매거진 출판"}
+
+// node: product_service_협동로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_협동로봇", "type": "ProductService", "name": "협동로봇"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// node: industry_건설
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_건설", "type": "Industry", "name": "건설"}
+
+// node: industry_전자
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_전자", "type": "Industry", "name": "전자"}
+
+// node: industry_IT
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_IT", "type": "Industry", "name": "IT"}
+
+// node: industry_로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_로봇", "type": "Industry", "name": "로봇"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "business_area_전자소재", "properties": {"evidence": "자체 사업으로서 전자소재 사업 (전자BG)...을 영위하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "business_area_IT서비스", "properties": {"evidence": "자체 사업으로서...통합IT 서비스 사업 (두산디지털 이노베이션BU) 등을 영위하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜...발전플랜트 EPC, 주요 발전 기자재 설계 및 제작과 서비스 사업", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "business_area_소형건설기계", "properties": {"evidence": "두산밥캣㈜, 소형 건설기계, Portable Power 장비 생산 및 판매", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_연료전지", "properties": {"evidence": "두산퓨얼셀㈜, 발전용 연료전지 기자재 공급 및 장기유지보수 서비스", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_131970", "to_id": "business_area_IT서비스", "properties": {"evidence": "시스템반도체 테스트(㈜두산테스나)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010470", "to_id": "business_area_IT서비스", "properties": {"evidence": "광고대행 및 매거진 출판업 (㈜오리콤)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "business_area_로봇", "properties": {"evidence": "협동로봇 제조 및 솔루션 제공(두산로보틱스㈜)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "product_service_CCL", "properties": {"evidence": "전자BG는...CCL(동박적층판, Copper Clad Laminate)을 생산 및 공급하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "product_service_IT시스템개발운영", "properties": {"evidence": "두산디지털이노베이션BU는 IT 인프라 구축 및 운영...토탈 IT 솔루션을 제공", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_NSSS", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS, BOP, Turbine, 담수/수처리 설비,주단조품, 플랜트설비 설치공사 등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_BOP", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS, BOP, Turbine, 담수/수처리 설비,주단조품, 플랜트설비 설치공사 등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_Turbine", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS, BOP, Turbine, 담수/수처리 설비,주단조품, 플랜트설비 설치공사 등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_담수수처리설비", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS, BOP, Turbine, 담수/수처리 설비,주단조품, 플랜트설비 설치공사 등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_주단조품", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS, BOP, Turbine, 담수/수처리 설비,주단조품, 플랜트설비 설치공사 등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "product_service_Compact건설기계", "properties": {"evidence": "두산밥캣㈜...Compact 건설기계, Portable Power, Material Handling등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "product_service_PortablePower", "properties": {"evidence": "두산밥캣㈜...Compact 건설기계, Portable Power, Material Handling등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "product_service_MaterialHandling", "properties": {"evidence": "두산밥캣㈜...Compact 건설기계, Portable Power, Material Handling등", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_연료전지주기기", "properties": {"evidence": "두산퓨얼셀㈜ 제품/상품, 용역 등 연료전지 주기기 및장기유지보수서비스", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_장기유지보수서비스", "properties": {"evidence": "두산퓨얼셀㈜ 제품/상품, 용역 등 연료전지 주기기 및장기유지보수서비스", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_131970", "to_id": "product_service_시스템반도체테스트", "properties": {"evidence": "시스템반도체 테스트(㈜두산테스나)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010470", "to_id": "product_service_광고대행", "properties": {"evidence": "광고대행 및 매거진 출판업 (㈜오리콤)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010470", "to_id": "product_service_매거진출판", "properties": {"evidence": "광고대행 및 매거진 출판업 (㈜오리콤)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "product_service_협동로봇", "properties": {"evidence": "협동로봇 제조 및 솔루션 제공(두산로보틱스㈜)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_발전플랜트", "to_id": "industry_에너지", "properties": {"evidence": "발전플랜트 EPC, 주요 발전 기자재 설계 및 제작과 서비스 사업", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_소형건설기계", "to_id": "industry_건설", "properties": {"evidence": "소형 건설기계, Portable Power 장비 생산 및 판매", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_연료전지", "to_id": "industry_에너지", "properties": {"evidence": "발전용 연료전지 기자재 공급 및 장기유지보수 서비스", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전자소재", "to_id": "industry_전자", "properties": {"evidence": "전자BG는 전자제품의 필수 부품으로 사용되는 PCB(인쇄회로기판)의 핵심 소재인 CCL(동박적층판) 생산", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_IT서비스", "to_id": "industry_IT", "properties": {"evidence": "통합IT 서비스 사업 (두산디지털 이노베이션BU)는 IT 인프라 구축 및 토탈 IT 솔루션 제공", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_로봇", "to_id": "industry_로봇", "properties": {"evidence": "협동로봇 제조 및 솔루션 제공", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_CCL", "to_id": "business_area_전자소재", "properties": {"evidence": "전자BG는...CCL을 생산 및 공급", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_IT시스템개발운영", "to_id": "business_area_IT서비스", "properties": {"evidence": "두산디지털이노베이션BU의 IT 시스템 개발 및 운영", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_NSSS", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 NSSS", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_BOP", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 BOP", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_Turbine", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 Turbine", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_담수수처리설비", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 담수/수처리 설비", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_주단조품", "to_id": "business_area_발전플랜트", "properties": {"evidence": "두산에너빌리티㈜ 제품,공사 주단조품", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_Compact건설기계", "to_id": "business_area_소형건설기계", "properties": {"evidence": "소형 건설기계 생산 및 판매", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_PortablePower", "to_id": "business_area_소형건설기계", "properties": {"evidence": "Portable Power 장비 생산 및 판매", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_MaterialHandling", "to_id": "business_area_소형건설기계", "properties": {"evidence": "Material Handling 등 관련 제품 제공", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_연료전지주기기", "to_id": "business_area_연료전지", "properties": {"evidence": "연료전지 주기기 공급", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_장기유지보수서비스", "to_id": "business_area_연료전지", "properties": {"evidence": "장기유지보수 서비스 제공", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_시스템반도체테스트", "to_id": "business_area_IT서비스", "properties": {"evidence": "시스템반도체 테스트(㈜두산테스나)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_광고대행", "to_id": "business_area_IT서비스", "properties": {"evidence": "광고대행 및 매거진 출판업 (㈜오리콤)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_매거진출판", "to_id": "business_area_IT서비스", "properties": {"evidence": "매거진 출판업 (㈜오리콤)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_협동로봇", "to_id": "business_area_로봇", "properties": {"evidence": "협동로봇 제조 및 솔루션 제공(두산로보틱스㈜)", "date": "2026-03-23", "evidence_source_id": "dart_000150_business_segments_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}

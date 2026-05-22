@@ -2,36 +2,89 @@
   "source_id": "news_402340_bcb3a43f422fd0ab",
   "entities": [
     {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "반도체 메모리 사업과 관련 기술 개발에 주력하는 기업"
     },
     {
-      "id": "company_sk_square",
+      "id": "company_402340",
       "type": "Company",
       "name": "SK스퀘어",
-      "stock_code": "402340"
+      "stock_code": "402340",
+      "description": "SK하이닉스 지분 약 20% 보유, 투자 중심의 사업을 전개"
     },
     {
-      "id": "company_hd_hyundai_heavy_industries",
+      "id": "company_267250",
+      "type": "Company",
+      "name": "HD현대",
+      "stock_code": "267250"
+    },
+    {
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "조선 및 해양플랜트 사업 중심"
     },
     {
-      "id": "company_mirae_asset_securities",
+      "id": "company_006800",
       "type": "Company",
       "name": "미래에셋증권",
-      "stock_code": "006800"
+      "stock_code": "006800",
+      "description": "금융투자 및 증권업을 영위하는 기업"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "memory"
     }
   ],
   "relations": [
     {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스가 반도체 훈풍을 타고 130만원선을 돌파한 가운데",
+      "date": "",
+      "evidence_source_id": "news_402340_bcb3a43f422fd0ab",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12030694",
+      "evidence_published_at": "2026-04-29T13:27:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스가 반도체 훈풍을 타고 130만원선을 돌파한 가운데",
+      "date": "",
+      "evidence_source_id": "news_402340_bcb3a43f422fd0ab",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12030694",
+      "evidence_published_at": "2026-04-29T13:27:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스가 반도체 훈풍을 타고 130만원선을 돌파한 가운데",
+      "date": "",
+      "evidence_source_id": "news_402340_bcb3a43f422fd0ab",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12030694",
+      "evidence_published_at": "2026-04-29T13:27:00+09:00"
+    },
+    {
       "type": "INVESTS_IN",
-      "from": "company_mirae_asset_securities",
-      "to": "company_sk_hynix",
-      "evidence": "미래에셋증권은 SK하이닉스 목표가를 기존 166만원에서 200만원으로 끌어올렸다.",
+      "from": "company_402340",
+      "to": "company_000660",
+      "evidence": "SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주로",
       "date": "",
       "evidence_source_id": "news_402340_bcb3a43f422fd0ab",
       "evidence_source_type": "news",

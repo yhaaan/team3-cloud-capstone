@@ -2,23 +2,88 @@
   "source_id": "dart_011210_other_corp_investment_status_2025_11011",
   "entities": [
     {
-      "id": "company_현대위아",
+      "id": "company_011210",
       "type": "Company",
       "name": "현대위아",
-      "stock_code": "011210"
+      "stock_code": "011210",
+      "description": "자동차부품, 공작기계 등 제조 및 판매 사업을 영위하는 기업입니다."
     },
     {
-      "id": "company_케이씨",
+      "id": "company_029460",
       "type": "Company",
       "name": "케이씨",
       "stock_code": "029460"
+    },
+    {
+      "id": "business_area_automotive_parts",
+      "type": "BusinessArea",
+      "name": "자동차 부품"
+    },
+    {
+      "id": "business_area_machine_tools",
+      "type": "BusinessArea",
+      "name": "공작기계"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계"
     }
   ],
   "relations": [
     {
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "business_area_automotive_parts",
+      "evidence": "현대위아의 타법인 출자 대상은 위아마그나파워트레인, 출자 목적은 경영참여...",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "business_area_machine_tools",
+      "evidence": "현대위아는 자동차부품과 공작기계 등 제조 및 판매 사업을 영위하는 기업입니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_automotive_parts",
+      "to": "industry_automotive",
+      "evidence": "자동차 부품은 자동차 산업에 속합니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_machine_tools",
+      "to": "industry_machinery",
+      "evidence": "공작기계는 기계 산업에 속합니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
       "type": "INVESTS_IN",
-      "from": "company_현대위아",
-      "to": "company_케이씨",
+      "from": "company_011210",
+      "to": "company_029460",
       "evidence": "현대위아의 타법인 출자 대상은 케이씨엔씨(*), 출자 목적은 경영참여, 최초 취득일은 2022.06.23, 당기말 보유수량은 1,589,000.",
       "date": "2026-03-17",
       "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011",

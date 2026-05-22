@@ -2,17 +2,47 @@
   "source_id": "news_005930_8186b416fcb54536",
   "entities": [
     {
-      "id": "company_samsung전자",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "단일종목 레버리지 상품을 기초자산으로 하는 ETF 투자 수요를 반영하는 국내 우량주식"
     },
     {
-      "id": "company_sk하이닉스",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "단일종목 레버리지 상품을 기초자산으로 하는 ETF 투자 수요를 반영하는 국내 우량주식"
+    },
+    {
+      "id": "business_area_etf_investment",
+      "type": "BusinessArea",
+      "name": "ETF 투자"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_etf_investment",
+      "evidence": "국내 우량주식을 기초자산으로 하는 ETF 투자 수요를 반영하기 위해서다. 현재로는 삼성전자와 SK하이닉스만이 해당한다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8186b416fcb54536",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202604295841b",
+      "evidence_published_at": "2026-04-29T17:47:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_etf_investment",
+      "evidence": "국내 우량주식을 기초자산으로 하는 ETF 투자 수요를 반영하기 위해서다. 현재로는 삼성전자와 SK하이닉스만이 해당한다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8186b416fcb54536",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202604295841b",
+      "evidence_published_at": "2026-04-29T17:47:00+09:00"
+    }
+  ]
 }

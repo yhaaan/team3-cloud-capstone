@@ -1,0 +1,171 @@
+// node: company_278470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_278470", "type": "Company", "name": "에이피알", "stock_code": "278470", "description": "화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하며 다양한 브랜드와 제품을 판매합니다."}
+
+// node: business_area_cosmetics_beauty
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cosmetics_beauty", "type": "BusinessArea", "name": "화장품 및 뷰티"}
+
+// node: business_area_home_beauty_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_home_beauty_device", "type": "BusinessArea", "name": "홈 뷰티 디바이스"}
+
+// node: product_service_dermocosmetics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dermocosmetics", "type": "ProductService", "name": "더마 코스메틱"}
+
+// node: product_service_basic_makeup_cosmetics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_basic_makeup_cosmetics", "type": "ProductService", "name": "기초 화장품 및 색조 화장품"}
+
+// node: product_service_perfume
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_perfume", "type": "ProductService", "name": "향수 등"}
+
+// node: product_service_home_beauty_device_booster_pro
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_home_beauty_device_booster_pro", "type": "ProductService", "name": "부스터프로"}
+
+// node: industry_beauty
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_beauty", "type": "Industry", "name": "뷰티"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_cosmetics_beauty", "properties": {"evidence": "당사는 화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_home_beauty_device", "properties": {"evidence": "당사는 화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "product_service_dermocosmetics", "properties": {"evidence": "화장품은 메디큐브(더마 코스메틱)... 브랜드가 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "product_service_basic_makeup_cosmetics", "properties": {"evidence": "에이프릴스킨(고기능 저자극 피부솔루션)... 브랜드가 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "product_service_perfume", "properties": {"evidence": "포맨트(라이프스타일 뷰티)... 향수, 바디워시 등의 제품을 운영하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "product_service_home_beauty_device_booster_pro", "properties": {"evidence": "홈 뷰티 디바이스는 브랜드 메디큐브 에이지알이 있으며 주요 제품은 부스터프로입니다.", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cosmetics_beauty", "to_id": "industry_beauty", "properties": {"evidence": "에이피알의 사업보고서에서 화장품 및 뷰티 사업부문 표기", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_home_beauty_device", "to_id": "industry_beauty", "properties": {"evidence": "에이피알의 사업보고서에서 홈 뷰티 디바이스 사업부문은 뷰티 영역에 포함", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_dermocosmetics", "to_id": "business_area_cosmetics_beauty", "properties": {"evidence": "메디큐브는 화장품/뷰티 사업부문에 속함", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_basic_makeup_cosmetics", "to_id": "business_area_cosmetics_beauty", "properties": {"evidence": "에이프릴스킨은 화장품/뷰티 사업부문에 속함", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_perfume", "to_id": "business_area_cosmetics_beauty", "properties": {"evidence": "포맨트는 화장품/뷰티 사업부문에 속함", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_home_beauty_device_booster_pro", "to_id": "business_area_home_beauty_device", "properties": {"evidence": "부스터프로는 홈 뷰티 디바이스 사업부문 주요 제품임", "date": "2026-03-23", "evidence_source_id": "dart_278470_business_segments_20260323001257", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257", "evidence_published_at": "2026-03-23"}}

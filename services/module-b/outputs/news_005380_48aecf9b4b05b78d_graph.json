@@ -2,27 +2,45 @@
   "source_id": "news_005380_48aecf9b4b05b78d",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "현대차는 새만금 9조원 투자 계획을 중심으로 지방 투자 및 균형 발전 정책에 동참하고 있음"
     },
     {
-      "id": "person_kim_yun_deok",
-      "type": "Person",
-      "name": "김윤덕",
-      "role_raw": "국토교통부 장관",
-      "role": "MINISTER",
-      "role_label": "장관"
+      "id": "business_area_jeonbuk_investment",
+      "type": "BusinessArea",
+      "name": "지방 투자"
     },
     {
-      "id": "person_jeong_ju_young",
-      "type": "Person",
-      "name": "정주영",
-      "role_raw": "회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "business_area_balanced_development",
+      "type": "BusinessArea",
+      "name": "균형 발전"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_jeonbuk_investment",
+      "evidence": "현대차그룹의 새만금 9조원 투자 계획과 관련하여 지방 투자 및 균형 발전 정책에 참여하고 있음",
+      "date": "",
+      "evidence_source_id": "news_005380_48aecf9b4b05b78d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.jmbc.co.kr/news/view/64326",
+      "evidence_published_at": "2026-04-29T19:51:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_balanced_development",
+      "evidence": "현대차의 요구는 다 되는 걸 원칙으로 하겠다\"고 밝히며 균형 발전 정책 시험대인 새만금을 추진하겠다는 의미라고 언급됨",
+      "date": "",
+      "evidence_source_id": "news_005380_48aecf9b4b05b78d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.jmbc.co.kr/news/view/64326",
+      "evidence_published_at": "2026-04-29T19:51:00+09:00"
+    }
+  ]
 }

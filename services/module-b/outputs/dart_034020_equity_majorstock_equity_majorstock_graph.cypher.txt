@@ -1,18 +1,18 @@
-// node: company_dosan_energybility
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energybility", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
 
-// node: company_dosan
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
 
 // relation: INVESTS_IN
 
@@ -21,58 +21,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-05-14, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0, 계약보유주식수는 84,282,066주, 계약보유지분율은 13.16%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-05-26, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0.00, 계약보유주식수는 90,840,081주, 계약보유지분율은 14.18%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-06-10, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0, 계약보유주식수는 86,900,597주, 계약보유지분율은 13.57%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-06-25, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0, 계약보유주식수는 95,900,597주, 계약보유지분율은 14.97%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-11-24, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0, 계약보유주식수는 92,270,920주, 계약보유지분율은 14.40%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-12-05, 보유주식수는 196,488,145주, 지분율은 30.67%, 주식수 증감은 0, 지분율 증감은 0.00, 계약보유주식수는 92,270,920주, 계약보유지분율은 14.40%, 보고사유는 계약 내용의 변경.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
-
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_dosan", "to_id": "company_dosan_energybility", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2026-03-05, 보유주식수는 196,506,795주, 지분율은 30.68%, 주식수 증감은 18,650, 지분율 증감은 0.01, 계약보유주식수는 92,270,920주, 계약보유지분율은 14.40%, 보고사유는 단순취득.", "date": "2026-03-05", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250514001078", "evidence_published_at": "2026-03-05"}}
+:params {"from_id": "company_000150", "to_id": "company_034020", "properties": {"evidence": "두산에너빌리티의 대량보유 보고자는 두산, 보고 유형은 일반, 접수일은 2025-05-26, 보유주식수는 196,488,145주, 지분율은 30.67%", "date": "2026-05-11", "evidence_source_id": "dart_034020_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250526000405", "evidence_published_at": "2026-05-11"}}

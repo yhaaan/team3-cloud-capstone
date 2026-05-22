@@ -1,0 +1,126 @@
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260", "description": "HVDC 해저케이블 및 전선 제조·시공 일괄 수행, 북미·유럽 데이터센터 전력 인프라 집중"}
+
+// node: company_060370
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_060370", "type": "Company", "name": "LS마린솔루션", "stock_code": "060370", "description": "LS전선 자회사로 해저케이블 제조부터 시공까지 일괄 체계 구축"}
+
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_hvdc_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hvdc_cable", "type": "BusinessArea", "name": "HVDC 해저케이블"}
+
+// node: business_area_power_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_cable", "type": "BusinessArea", "name": "전선 제조"}
+
+// node: business_area_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_infrastructure", "type": "BusinessArea", "name": "전력 인프라"}
+
+// node: industry_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_power_infrastructure", "type": "Industry", "name": "energy"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_hvdc_cable", "properties": {"evidence": "LS전선은 북미와 유럽 시장을 중심으로 대규모 수주를 잇달아 확보하며 존재감을 키우고 있다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_power_cable", "properties": {"evidence": "LS전선은 2000년대 후반부터 해저케이블 전용 생산시설과 연구개발에 대규모 투자를 단행했다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_power_infrastructure", "properties": {"evidence": "LS 전선의 과거 해저케이블 분야에 대한 선제적 투자와 제조·시공 일괄 수행 체계를 바탕으로 AI 시대 전력 인프라 시장의 독보적 핵심 플레이어로 자리를 굳히고 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060370", "to_id": "business_area_power_cable", "properties": {"evidence": "자회사 LS마린솔루션을 통해 제조부터 시공까지 아우르는 일괄 수행 체계를 구축하며 경쟁력을 강화하고 있다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_hvdc_cable", "to_id": "industry_power_infrastructure", "properties": {"evidence": "초고압직류송전(HVDC) 해저케이블이 차세대 전력망 핵심 인프라로 떠오르고 있다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_cable", "to_id": "industry_power_infrastructure", "properties": {"evidence": "LS전선은 2000년대 후반부터 해저케이블 전용 생산시설과 연구개발에 대규모 투자를 단행했다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_infrastructure", "to_id": "industry_power_infrastructure", "properties": {"evidence": "LS 전선의 과거 해저케이블 분야에 대한 선제적 투자와 제조·시공 일괄 수행 체계를 바탕으로 AI 시대 전력 인프라 시장의 독보적 핵심 플레이어로 자리를 굳히고 있다는 분석이 나온다.", "date": "", "evidence_source_id": "news_006260_b6659d160967a065", "evidence_source_type": "news", "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605140104", "evidence_published_at": "2026-05-16T07:02:00+09:00"}}

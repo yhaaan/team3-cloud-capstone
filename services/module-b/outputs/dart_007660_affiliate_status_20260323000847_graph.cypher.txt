@@ -1,0 +1,58 @@
+// node: company_007660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_007660", "type": "Company", "name": "이수페타시스", "stock_code": "007660"}
+
+// node: company_005950
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005950", "type": "Company", "name": "이수화학", "stock_code": "005950"}
+
+// node: company_457190
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_457190", "type": "Company", "name": "이수스페셜티케미컬", "stock_code": "457190"}
+
+// node: company_086890
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086890", "type": "Company", "name": "이수앱지스", "stock_code": "086890"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_007660", "to_id": "company_005950", "properties": {"evidence": "이수화학 | 34.7 | - | - | - | - | 0.1", "date": "2026-03-23", "evidence_source_id": "dart_007660_affiliate_status_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_007660", "to_id": "company_457190", "properties": {"evidence": "이수스페셜티케미컬 | 25.0 | - | - | - | - | 0.1", "date": "2026-03-23", "evidence_source_id": "dart_007660_affiliate_status_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005950", "to_id": "company_086890", "properties": {"evidence": "(주)이수앱지스 | - | 32.2 | - | - | - | -", "date": "2026-03-23", "evidence_source_id": "dart_007660_affiliate_status_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}

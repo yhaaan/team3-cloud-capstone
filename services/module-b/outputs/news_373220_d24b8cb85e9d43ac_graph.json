@@ -2,17 +2,116 @@
   "source_id": "news_373220_d24b8cb85e9d43ac",
   "entities": [
     {
-      "id": "company_lg에너지솔루션",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "ESS와 EV 배터리 생산으로 북미 ESS 사업을 중심으로 한다."
     },
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "business_area_ess",
+      "type": "BusinessArea",
+      "name": "ESS"
+    },
+    {
+      "id": "business_area_ev_battery",
+      "type": "BusinessArea",
+      "name": "EV 배터리"
+    },
+    {
+      "id": "product_service_ess_lfp_battery",
+      "type": "ProductService",
+      "name": "ESS용 LFP 배터리"
+    },
+    {
+      "id": "industry_battery",
+      "type": "Industry",
+      "name": "배터리"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_ess",
+      "evidence": "LG에너지솔루션이 ESS(에너지저장장치)를 통해 올해 흑자전환을 이뤄낼 방침이다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_ev_battery",
+      "evidence": "LG에너지솔루션이 올해 1분기 연결 기준 매출 6조5550억원, 영업손실 2078억원을 기록했다. ... EV 물량 감소 속 영업손실이 발생했지만",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_373220",
+      "to": "product_service_ess_lfp_battery",
+      "evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_373220",
+      "to": "company_000880",
+      "evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ess",
+      "to": "industry_battery",
+      "evidence": "LG에너지솔루션이 ESS(에너지저장장치)를 통해 올해 흑자전환을 이뤄낼 방침이다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ev_battery",
+      "to": "industry_battery",
+      "evidence": "1분기 EV 물량 감소 속 영업손실이 발생했지만 북미 ESS 사업 확대를 바탕으로 연간 흑자전환을 목표했다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_ess_lfp_battery",
+      "to": "business_area_ess",
+      "evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_373220_d24b8cb85e9d43ac",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    }
+  ]
 }

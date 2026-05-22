@@ -2,19 +2,132 @@
   "source_id": "news_051910_390b5f95c00ccd93",
   "entities": [
     {
-      "id": "company_lg_chem",
+      "id": "company_051910",
       "type": "Company",
       "name": "LG화학",
       "stock_code": "051910",
-      "country": "KR"
+      "description": "첨단소재와 IT소재사업부, 편광필름소재 및 수처리 필터 등 사업구조 조정 중"
     },
     {
-      "id": "company_lg_energy_solution",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220",
-      "country": "KR"
+      "stock_code": "373220"
+    },
+    {
+      "id": "business_area_첨단소재사업본부",
+      "type": "BusinessArea",
+      "name": "첨단소재사업본부"
+    },
+    {
+      "id": "business_area_IT소재사업부",
+      "type": "BusinessArea",
+      "name": "IT소재사업부"
+    },
+    {
+      "id": "product_service_편광필름소재",
+      "type": "ProductService",
+      "name": "편광필름소재"
+    },
+    {
+      "id": "product_service_수처리필터",
+      "type": "ProductService",
+      "name": "수처리 필터"
+    },
+    {
+      "id": "industry_화학",
+      "type": "Industry",
+      "name": "화학"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_첨단소재사업본부",
+      "evidence": "LG화학 청주공장은 첨단소재사업본부 내 편광필름소재와 수처리 필터 등 사업이 종료된 일부 조직을 대상으로 사업 구조 변화 과정에서 발생한 일시적인 인력 운영 공백을 조정하기 위한 한시적 조치라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_IT소재사업부",
+      "evidence": "LG화학은 2023년 9월 양극재 등 신사업 투자에 속도를 내기 위해 수익성이 떨어지던 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국 기업에 매각했다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051910",
+      "to": "product_service_편광필름소재",
+      "evidence": "LG화학 청주공장은 첨단소재사업본부 내 편광필름소재와 수처리 필터 등 사업이 종료된 일부 조직을 대상으로 사업 구조 변화 과정에서 발생한 일시적인 인력 운영 공백을 조정하기 위한 한시적 조치라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051910",
+      "to": "product_service_수처리필터",
+      "evidence": "LG화학 청주공장은 첨단소재사업본부 내 편광필름소재와 수처리 필터 등 사업이 종료된 일부 조직을 대상으로 사업 구조 변화 과정에서 발생한 일시적인 인력 운영 공백을 조정하기 위한 한시적 조치라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_첨단소재사업본부",
+      "to": "industry_화학",
+      "evidence": "LG화학 청주공장은 첨단소재사업본부 내 편광필름소재와 수처리 필터 등 사업이 종료된 일부 조직을 대상으로 사업 구조 변화 과정에서 발생한 일시적인 인력 운영 공백을 조정하기 위한 한시적 조치라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_IT소재사업부",
+      "to": "industry_화학",
+      "evidence": "LG화학은 2023년 9월 양극재 등 신사업 투자에 속도를 내기 위해 수익성이 떨어지던 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국 기업에 매각했다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_편광필름소재",
+      "to": "business_area_IT소재사업부",
+      "evidence": "LG화학은 2023년 9월 양극재 등 신사업 투자에 속도를 내기 위해 수익성이 떨어지던 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국 기업에 매각했다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_수처리필터",
+      "to": "business_area_첨단소재사업본부",
+      "evidence": "LG화학 청주공장은 첨단소재사업본부 내 편광필름소재와 수처리 필터 등 사업이 종료된 일부 조직을 대상으로 사업 구조 변화 과정에서 발생한 일시적인 인력 운영 공백을 조정하기 위한 한시적 조치라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_051910_390b5f95c00ccd93",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.inews365.com/news/article.html?no=918811",
+      "evidence_published_at": "2026-05-11T17:36:00+09:00"
+    }
+  ]
 }

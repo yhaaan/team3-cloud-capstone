@@ -1,0 +1,261 @@
+// node: company_011070
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011070", "type": "Company", "name": "LG이노텍", "stock_code": "011070", "description": "북미 고객사 증산과 기판 업황 호조로 실적 개선 기대"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "인공지능 서버용 적층세라믹콘덴서(MLCC) 수요 급증 기대"}
+
+// node: company_402340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK하이닉스 최대주주로 반도체 업황 호조 영향 수혜"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_079550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_079550", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550", "description": "미사일(천궁-II) 수요 급증으로 증권가 목표가 상향"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "로보틱스 사업과 하이브리드차 수요 성장 기대"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "반도체"}
+
+// node: business_area_mlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mlcc", "type": "BusinessArea", "name": "적층세라믹콘덴서"}
+
+// node: business_area_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense", "type": "BusinessArea", "name": "방위산업"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: productservice_mlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_mlcc", "type": "ProductService", "name": "적층세라믹콘덴서(MLCC)"}
+
+// node: productservice_missile
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_missile", "type": "ProductService", "name": "미사일"}
+
+// node: productservice_hybrid_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_hybrid_vehicle", "type": "ProductService", "name": "하이브리드차"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방위산업"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_mlcc", "properties": {"evidence": "삼성전기는 인공지능(AI) 서버용 적층세라믹콘덴서(MLCC) 수요 급증 전망에 힘입어 지난 13일 102만9000원으로 안착했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "productservice_mlcc", "properties": {"evidence": "삼성전기는 인공지능(AI) 서버용 적층세라믹콘덴서(MLCC) 수요 급증 전망에 힘입어 지난 13일 102만9000원으로 안착했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mlcc", "to_id": "business_area_semiconductor", "properties": {"evidence": "삼성전기는 인공지능(AI) 서버용 적층세라믹콘덴서(MLCC) 수요 급증 전망에 힘입어 지난 13일 102만9000원으로 안착했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전기는 인공지능(AI) 서버용 적층세라믹콘덴서(MLCC) 수요 급증 전망에 힘입어 지난 13일 102만9000원으로 안착했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK하이닉스 최대주주인 SK스퀘어 역시 반도체 업황 호조에 따른 낙수효과로 이달 6일 108만9000원에 거래를 마치며 황제주 반열에 올랐다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "SK하이닉스 최대주주인 SK스퀘어 역시 반도체 업황 호조에 따른 낙수효과로 이달 6일 108만9000원에 거래를 마치며 황제주 반열에 올랐다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "business_area_defense", "properties": {"evidence": "최근 이란발 지정학적 리스크로 미사일(천궁-II) 수요가 급증하면서 증권가 평균 목표주가는 기존 83만원 선에서 107만8824원으로 29% 상향됐다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "productservice_missile", "properties": {"evidence": "최근 이란발 지정학적 리스크로 미사일(천궁-II) 수요가 급증하면서 증권가 평균 목표주가는 기존 83만원 선에서 107만8824원으로 29% 상향됐다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense", "to_id": "industry_defense", "properties": {"evidence": "최근 이란발 지정학적 리스크로 미사일(천궁-II) 수요가 급증하면서 증권가 평균 목표주가는 기존 83만원 선에서 107만8824원으로 29% 상향됐다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "business_area_semiconductor", "properties": {"evidence": "증권가에서는 북미 고객사 증산에 따른 실적 개선이 기대감으로 LG이노텍의 목표가를 최대 100만원까지 올려잡은 상태다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "현대차도 로보틱스 사업 기대감에 지난 15일 장중 사상 처음 77만원을 돌파했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "현대차도 로보틱스 사업 기대감에 지난 15일 장중 사상 처음 77만원을 돌파했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "productservice_hybrid_vehicle", "properties": {"evidence": "고유가에 따른 하이브리드차(HEV) 수요 진작이 맞물린 결과다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "현대차도 로보틱스 사업 기대감에 지난 15일 장중 사상 처음 77만원을 돌파했다.", "date": "", "evidence_source_id": "news_011070_0b18afd9d6d80474", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12050159", "evidence_published_at": "2026-05-17T10:26:00+09:00"}}

@@ -2,17 +2,89 @@
   "source_id": "news_012450_e9db26e8f10a2376",
   "entities": [
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
-      "stock_code": "012450"
+      "stock_code": "012450",
+      "description": "다연장로켓 천무 등 방산 무기체계를 생산·공급하는 기업"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "product_service_cheonmu",
+      "type": "ProductService",
+      "name": "다연장로켓 천무"
+    },
+    {
+      "id": "business_area_defense",
+      "type": "BusinessArea",
+      "name": "방산"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방산"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "product_service_cheonmu",
+      "evidence": "한화에어로스페이스의 다연장로켓 '천무'가 시험 발사되고 있다.",
+      "date": "",
+      "evidence_source_id": "news_012450_e9db26e8f10a2376",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://nownews.seoul.co.kr/news/newsView.php?id=20260511601026&wlog_tag3=naver",
+      "evidence_published_at": "2026-05-11T20:01:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_defense",
+      "evidence": "한화에어로스페이스는 이번 계약에 따라 천무 발사대 3문과 부대 장비를 2027년 말까지 에스토니아에 공급한다.",
+      "date": "",
+      "evidence_source_id": "news_012450_e9db26e8f10a2376",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://nownews.seoul.co.kr/news/newsView.php?id=20260511601026&wlog_tag3=naver",
+      "evidence_published_at": "2026-05-11T20:01:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense",
+      "to": "industry_defense",
+      "evidence": "한국 방산에 대한 에스토니아 정부의 깊은 신뢰가 뒷받침된 결과",
+      "date": "",
+      "evidence_source_id": "news_012450_e9db26e8f10a2376",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://nownews.seoul.co.kr/news/newsView.php?id=20260511601026&wlog_tag3=naver",
+      "evidence_published_at": "2026-05-11T20:01:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cheonmu",
+      "to": "business_area_defense",
+      "evidence": "한화에어로스페이스의 다연장로켓 '천무'가 시험 발사되고 있다.",
+      "date": "",
+      "evidence_source_id": "news_012450_e9db26e8f10a2376",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://nownews.seoul.co.kr/news/newsView.php?id=20260511601026&wlog_tag3=naver",
+      "evidence_published_at": "2026-05-11T20:01:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_defense",
+      "evidence": "한국 방산에 대한 에스토니아 정부의 깊은 신뢰가 뒷받침된 결과",
+      "date": "",
+      "evidence_source_id": "news_012450_e9db26e8f10a2376",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://nownews.seoul.co.kr/news/newsView.php?id=20260511601026&wlog_tag3=naver",
+      "evidence_published_at": "2026-05-11T20:01:00+09:00"
+    }
+  ]
 }

@@ -2,41 +2,183 @@
   "source_id": "news_000150_f8450335eca87320",
   "entities": [
     {
-      "id": "company_dosan",
+      "id": "company_000150",
       "type": "Company",
-      "name": "두산",
-      "stock_code": "000150"
+      "name": "페스카로",
+      "stock_code": "000150",
+      "description": "중후장대 산업 중심으로 미래 성장 가치가 큰 기업"
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "034730",
+      "description": "반도체 중심 IT와 중후장대 산업에서 성장 가치 향상"
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체 사업 중심으로 시가총액 및 시장 가치 급증"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
-    },
-    {
-      "id": "company_hyosung",
+      "id": "company_004800",
       "type": "Company",
       "name": "효성",
-      "stock_code": "004800"
+      "stock_code": "004800",
+      "description": "중후장대 제조업과 계열사 상장 효과로 시장 프리미엄 확보"
     },
     {
-      "id": "company_hd_hyundai",
+      "id": "company_267250",
       "type": "Company",
       "name": "HD현대",
-      "stock_code": "267250"
+      "stock_code": "267250",
+      "description": "조선업 호황과 계열사 상장 효과로 시장 가치 상승"
+    },
+    {
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "반도체 사업이 주력인 IT 산업 기업"
+    },
+    {
+      "id": "business_area_mid_and_heavy_industries",
+      "type": "BusinessArea",
+      "name": "중후장대 산업"
+    },
+    {
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "반도체"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선업"
+    },
+    {
+      "id": "industry_it_platform",
+      "type": "Industry",
+      "name": "IT·플랫폼"
+    },
+    {
+      "id": "industry_manufacturing",
+      "type": "Industry",
+      "name": "중후장대 제조 기업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000150",
+      "to": "business_area_mid_and_heavy_industries",
+      "evidence": "특히 두산과 효성, HD현대 등 중후장대 산업이 과거 IT·플랫폼이 누리던 시장 프리미엄을 탈환했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004800",
+      "to": "business_area_mid_and_heavy_industries",
+      "evidence": "특히 두산과 효성, HD현대 등 중후장대 산업이 과거 IT·플랫폼이 누리던 시장 프리미엄을 탈환했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_267250",
+      "to": "business_area_mid_and_heavy_industries",
+      "evidence": "특히 두산과 효성, HD현대 등 중후장대 산업이 과거 IT·플랫폼이 누리던 시장 프리미엄을 탈환했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_semiconductor",
+      "evidence": "SK(3.33배)와 삼성(3.07배) 역시 SK하이닉스와 삼성전자 등 반도체 랠리에 힘입어 시가총액 증가율이 크게 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_semiconductor",
+      "evidence": "SK(3.33배)와 삼성(3.07배) 역시 SK하이닉스와 삼성전자 등 반도체 랠리에 힘입어 시가총액 증가율이 크게 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor",
+      "evidence": "SK(3.33배)와 삼성(3.07배) 역시 SK하이닉스와 삼성전자 등 반도체 랠리에 힘입어 시가총액 증가율이 크게 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_267250",
+      "to": "business_area_shipbuilding",
+      "evidence": "효성(2.30배)과 HD현대(2.23배) 또한 조선업 호황과 계열사 상장 효과로 시장 프리미엄을 이끌었다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_mid_and_heavy_industries",
+      "to": "industry_manufacturing",
+      "evidence": "산업 지형의 중심축은 IT·플랫폼에서 중후장대 제조 기업으로 이동한 것으로 나타났다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_it_platform",
+      "evidence": "SK(3.33배)와 삼성(3.07배) 역시 SK하이닉스와 삼성전자 등 반도체 랠리에 힘입어 시가총액 증가율이 크게 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_manufacturing",
+      "evidence": "효성(2.30배)과 HD현대(2.23배) 또한 조선업 호황과 계열사 상장 효과로 시장 프리미엄을 이끌었다.",
+      "date": "",
+      "evidence_source_id": "news_000150_f8450335eca87320",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258690",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    }
+  ]
 }

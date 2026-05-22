@@ -2,17 +2,46 @@
   "source_id": "dart_005930_consolidated_subsidiary_status_20260310002820",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "로봇 및 로봇 부품 생산 판매 사업 관련 자회사 보유"
     },
     {
-      "id": "company_rainbow_robotics",
+      "id": "company_277810",
       "type": "Company",
       "name": "레인보우로보틱스",
       "stock_code": "277810"
+    },
+    {
+      "id": "business_area_robot",
+      "type": "BusinessArea",
+      "name": "로봇"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_005930",
+      "to": "company_277810",
+      "evidence": "삼성전자의 연결대상 종속회사 후보로 레인보우로보틱스 등이 탐지되었다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_consolidated_subsidiary_status_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_277810",
+      "to": "business_area_robot",
+      "evidence": "로봇ㆍ로봇 부품 생산 및 판매",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_consolidated_subsidiary_status_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    }
+  ]
 }

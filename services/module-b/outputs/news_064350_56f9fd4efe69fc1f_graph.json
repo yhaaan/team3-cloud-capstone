@@ -2,35 +2,114 @@
   "source_id": "news_064350_56f9fd4efe69fc1f",
   "entities": [
     {
-      "id": "company_hyundai_rotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
-      "stock_code": "064350"
+      "stock_code": "064350",
+      "description": "AI 기반 유·무인 복합 통합 지휘통제체계와 무인 플랫폼 개발 및 방산 사업을 영위"
     },
     {
-      "id": "company_korean_air",
-      "type": "Company",
-      "name": "대한항공",
-      "stock_code": "003490"
-    },
-    {
-      "id": "company_hd_hyundai",
-      "type": "Company",
-      "name": "HD현대",
-      "stock_code": "267250"
-    },
-    {
-      "id": "company_hd_hyundai_heavy_industries",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "무인수상정 및 자율 무인 수상함 개발과 AI 솔루션 공급 등 방산 조선 사업을 영위"
+    },
+    {
+      "id": "company_003490",
+      "type": "Company",
+      "name": "대한항공",
+      "stock_code": "003490",
+      "description": "임무 자율화 소프트웨어 성능 검증을 통한 방산 협력을 진행"
+    },
+    {
+      "id": "company_267250",
+      "type": "Company",
+      "name": "HD현대",
+      "stock_code": "267250",
+      "description": "무인수상정 개발 MOU 체결과 자율 무인 수상함 설계·건조 및 AI 솔루션 공급 계약 보유"
+    },
+    {
+      "id": "business_area_unmanned_platform",
+      "type": "BusinessArea",
+      "name": "무인 플랫폼"
+    },
+    {
+      "id": "business_area_command_control_system",
+      "type": "BusinessArea",
+      "name": "통합 지휘통제체계"
+    },
+    {
+      "id": "business_area_defense",
+      "type": "BusinessArea",
+      "name": "방산"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방산"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_hd_hyundai",
-      "to": "company_hd_hyundai_heavy_industries",
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_unmanned_platform",
+      "evidence": "안두릴의 '래티스'를 현대로템의 무인 플랫폼과 주요 지상 무기체계에 적용해 실시간 상황 인지와 자율 임무 수행이 가능한 통합 지휘통제 역량을 강화하는 것이 목표다.",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_command_control_system",
+      "evidence": "현대로템과 AI 기반 유·무인 복합(MUM-T) 통합 지휘통제체계 구축을 위한 양해각서(MOU)를 체결했다고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_defense",
+      "evidence": "7일 현대로템과 MOU 체결 대한항공, HD현대 등 한국 방산기업과 협력 가속화",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_defense",
+      "evidence": "7일 현대로템과 MOU 체결 대한항공, HD현대 등 한국 방산기업과 협력 가속화",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_defense",
+      "evidence": "현재 시제함은 HD현대중공업 울산 조선소에서 건조 중이며, ... 자율 무인 수상함 시제함 설계·건조 및 AI 솔루션 공급 계약을 체결했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_defense",
       "evidence": "HD현대와는 2025년 4월 무인수상정(USV) 개발을 위한 MOU를 체결한 데 이어, 같은 해 11월 자율 무인 수상함 시제함 설계·건조 및 AI 솔루션 공급 계약을 체결했다.",
       "date": "",
       "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
@@ -39,10 +118,43 @@
       "evidence_published_at": "2026-05-07T17:17:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_hd_hyundai_heavy_industries",
-      "to": "company_hd_hyundai",
-      "evidence": "현재 시제함은 HD현대중공업 울산 조선소에서 건조 중이며, 이르면 올해 10월 진수 후 미국 연안에서 시험 운항에 투입될 예정이다.",
+      "type": "OPERATES_IN",
+      "from": "company_267250",
+      "to": "business_area_defense",
+      "evidence": "HD현대와는 2025년 4월 무인수상정(USV) 개발을 위한 MOU를 체결한 데 이어, 같은 해 11월 자율 무인 수상함 시제함 설계·건조 및 AI 솔루션 공급 계약을 체결했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267250",
+      "to": "industry_defense",
+      "evidence": "대한항공과 HD현대 등 한국 방산기업과 협력 가속화",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_003490",
+      "to": "business_area_defense",
+      "evidence": "지난 달 30일에는 대한항공과 한국 시험장에서 3개 플랫폼을 활용한 시연을 통해 임무 자율화 소프트웨어의 성능을 성공적으로 검증한 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6513700?utm_source=naver&utm_medium=article&utm_campaign=20260507051607",
+      "evidence_published_at": "2026-05-07T17:17:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003490",
+      "to": "industry_defense",
+      "evidence": "대한항공, HD현대 등 한국 방산기업과 협력 가속화",
       "date": "",
       "evidence_source_id": "news_064350_56f9fd4efe69fc1f",
       "evidence_source_type": "news",

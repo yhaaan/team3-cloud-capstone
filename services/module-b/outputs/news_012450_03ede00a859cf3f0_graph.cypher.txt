@@ -1,23 +1,75 @@
-// node: company_한화에어로스페이스
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화에어로스페이스", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "다연장 정밀유도무기 등 방위산업 무기체계 개발·생산 및 수출을 주요 사업으로 함"}
 
-// node: company_한화
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: person_손재일
+// node: product_service_cheonmu
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`ProductService`
 
-:params {"id": "person_손재일", "type": "Person", "name": "손재일", "role": "CEO", "affiliated_company": "company_한화에어로스페이스", "role_raw": "대표이사", "role_label": "대표이사"}
+:params {"id": "product_service_cheonmu", "type": "ProductService", "name": "천무"}
+
+// node: business_area_defense_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_industry", "type": "BusinessArea", "name": "방위산업"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방위산업"}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_cheonmu", "properties": {"evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.", "date": "", "evidence_source_id": "news_012450_03ede00a859cf3f0", "evidence_source_type": "news", "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv", "evidence_published_at": "2026-05-12T00:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_defense_industry", "properties": {"evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.", "date": "", "evidence_source_id": "news_012450_03ede00a859cf3f0", "evidence_source_type": "news", "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv", "evidence_published_at": "2026-05-12T00:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_industry", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.", "date": "", "evidence_source_id": "news_012450_03ede00a859cf3f0", "evidence_source_type": "news", "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv", "evidence_published_at": "2026-05-12T00:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cheonmu", "to_id": "business_area_defense_industry", "properties": {"evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.", "date": "", "evidence_source_id": "news_012450_03ede00a859cf3f0", "evidence_source_type": "news", "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv", "evidence_published_at": "2026-05-12T00:46:00+09:00"}}

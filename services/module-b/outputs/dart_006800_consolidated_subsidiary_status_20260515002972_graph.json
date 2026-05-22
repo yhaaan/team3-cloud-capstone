@@ -1,0 +1,59 @@
+{
+  "source_id": "dart_006800_consolidated_subsidiary_status_20260515002972",
+  "entities": [
+    {
+      "id": "company_006800",
+      "type": "Company",
+      "name": "미래에셋증권",
+      "stock_code": "006800",
+      "description": "중소기업 창업투자 및 창업투자조합 관리 사업을 영위하는 미래에셋벤처투자 연결대상 종속회사 보유"
+    },
+    {
+      "id": "company_100790",
+      "type": "Company",
+      "name": "미래에셋벤처투자",
+      "stock_code": "100790",
+      "description": "중소기업 창업투자 및 창업투자조합 관리 사업을 영위"
+    },
+    {
+      "id": "business_area_venture_investment",
+      "type": "BusinessArea",
+      "name": "창업투자"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006800",
+      "to": "business_area_venture_investment",
+      "evidence": "미래에셋벤처투자㈜ | ... | 중소기업 창업투자 및 창업투자조합 관리",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_006800_consolidated_subsidiary_status_20260515002972",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_100790",
+      "to": "business_area_venture_investment",
+      "evidence": "미래에셋벤처투자㈜ | ... | 중소기업 창업투자 및 창업투자조합 관리",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_006800_consolidated_subsidiary_status_20260515002972",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_006800",
+      "to": "company_100790",
+      "evidence": "미래에셋증권의 연결대상 종속회사 후보로 미래에셋벤처투자 등이 탐지되었다.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_006800_consolidated_subsidiary_status_20260515002972",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
+      "evidence_published_at": "2026-05-15"
+    }
+  ]
+}

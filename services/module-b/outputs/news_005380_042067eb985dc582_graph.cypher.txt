@@ -1,31 +1,136 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "자동차, 로보틱스 등 미래산업 추진과 지배구조 개편을 진행하는 그룹사"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hyundai_mobis
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270", "description": "자동차 제조 및 판매를 주력으로 하는 현대차그룹 계열사"}
 
-// node: company_hyundai_glovis
+// node: company_012330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_glovis", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330", "description": "현대차그룹 내 자동차 부품 제조 및 지배구조 핵심 계열사"}
+
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280", "description": "현대차그룹 물류 및 해외 유통 사업을 담당하는 계열사"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "현대자동차그룹의 로봇 제조 계열사인 보스턴다이나믹스의 미국 나스닥 상장 추진 여부에 관심이 집중되고 있는 것은 미래사업 추진 동력 확보와 지배구조 개편 등과 연관되는 중요 사안이기 때문이다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_robotics", "properties": {"evidence": "현대차· 기아 · 현대모비스 가 출자한 HMG글로벌이 보스턴다이나믹스 지분의 50% 이상을 보유", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "business_area_robotics", "properties": {"evidence": "현대차· 기아 · 현대모비스 가 출자한 HMG글로벌이 보스턴다이나믹스 지분의 50% 이상을, 정의선 현대차그룹 회장이 약 20%, 현대글로비스 가 약 10%를 각각 보유한 것으로 보고 있다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086280", "to_id": "business_area_robotics", "properties": {"evidence": "현대차· 기아 · 현대모비스 가 출자한 HMG글로벌이 보스턴다이나믹스 지분의 50% 이상을, 정의선 현대차그룹 회장이 약 20%, 현대글로비스 가 약 10%를 각각 보유한 것으로 보고 있다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_robotics", "properties": {"evidence": "현대자동차그룹의 로봇 제조 계열사인 보스턴다이나믹스의 미국 나스닥 상장 추진 여부에 관심이 집중되고 있는 것은 미래사업 추진 동력 확보와 지배구조 개편 등과 연관되는 중요 사안이다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "현대차· 기아 · 현대모비스 등 현대차그룹은 자동차 산업을 주력으로 하고 있다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "industry_automotive", "properties": {"evidence": "현대차· 기아 · 현대모비스 등 현대차그룹은 자동차 산업을 주력으로 하고 있다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "industry_automotive", "properties": {"evidence": "현대차· 기아 · 현대모비스 등 현대차그룹은 자동차 산업을 주력으로 하고 있다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086280", "to_id": "industry_automotive", "properties": {"evidence": "현대글로비스는 현대차그룹의 계열사로 물류와 유통 분야에서 자동차 산업을 지원한다.", "date": "", "evidence_source_id": "news_005380_042067eb985dc582", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/industry/2026/05/07/2026050717140866059", "evidence_published_at": "2026-05-07T18:10:00+09:00"}}

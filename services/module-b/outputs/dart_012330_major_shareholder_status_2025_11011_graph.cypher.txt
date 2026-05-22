@@ -1,0 +1,177 @@
+// node: company_012330
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_004020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020"}
+
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+
+// node: person_김도형
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김도형", "type": "Person", "name": "김도형", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_정몽구
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정몽구", "type": "Person", "name": "정몽구", "role_raw": "기타", "role": "OTHER", "role_label": "기타"}
+
+// node: person_정의선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "임원", "role": "OTHER", "role_label": "임원"}
+
+// node: person_이규석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이규석", "type": "Person", "name": "이규석", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_배형근
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_배형근", "type": "Person", "name": "배형근", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_박기태
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박기태", "type": "Person", "name": "박기태", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_고영석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_고영석", "type": "Person", "name": "고영석", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 기아(주), 관계는 최대주주, 당기말 보유주식수는 16,427,074주, 지분율은 18.10%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_004020", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 현대제철(주), 관계는 계열회사, 당기말 보유주식수는 5,504,846주, 지분율은 6.07%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086280", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 현대글로비스(주), 관계는 계열회사, 당기말 보유주식수는 656,293주, 지분율은 0.72%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김도형", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 김도형, 관계는 계열회사 임원, 당기말 보유주식수는 100주, 지분율은 0.00%, 비고는 장내매수.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정몽구", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 정몽구, 관계는 기타, 당기말 보유주식수는 6,778,966주, 지분율은 7.47%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정의선", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 정의선, 관계는 임원, 당기말 보유주식수는 303,759주, 지분율은 0.33%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이규석", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 이규석, 관계는 계열회사 임원, 당기말 보유주식수는 440주, 지분율은 0.00%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_배형근", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 배형근, 관계는 계열회사 임원, 당기말 보유주식수는 460주, 지분율은 0.00%.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박기태", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 박기태, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 퇴임.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_고영석", "to_id": "company_012330", "properties": {"evidence": "현대모비스의 최대주주 관련 인물/법인은 고영석, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 퇴임.", "date": "2026-03-09", "evidence_source_id": "dart_012330_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878", "evidence_published_at": "2026-03-09"}}

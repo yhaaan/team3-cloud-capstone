@@ -1,0 +1,291 @@
+// node: company_099320
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_099320", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320", "description": "지구관측 위성시스템 개발 및 생산, 위성 탑재체·부분품 제조, 관제 및 영상처리 소프트웨어 개발과 군사용 위성·지상체 개발"}
+
+// node: business_area_satellite_systems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_satellite_systems", "type": "BusinessArea", "name": "위성시스템"}
+
+// node: business_area_satellite_payloads_parts
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_satellite_payloads_parts", "type": "BusinessArea", "name": "위성 탑재체·부분품"}
+
+// node: business_area_satellite_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_satellite_software", "type": "BusinessArea", "name": "위성관제 소프트웨어"}
+
+// node: business_area_image_processing_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_image_processing_software", "type": "BusinessArea", "name": "영상처리 소프트웨어"}
+
+// node: business_area_military_satellites_ground_units
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_military_satellites_ground_units", "type": "BusinessArea", "name": "군사용 위성 및 이동형 지상체"}
+
+// node: product_service_satellite_systems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_satellite_systems", "type": "ProductService", "name": "위성시스템"}
+
+// node: product_service_electro_optical_cameras
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_electro_optical_cameras", "type": "ProductService", "name": "전자광학카메라"}
+
+// node: product_service_satellite_ground_stations
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_satellite_ground_stations", "type": "ProductService", "name": "위성지상국"}
+
+// node: product_service_satellite_image_reception_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_satellite_image_reception_system", "type": "ProductService", "name": "위성영상수신처리시스템"}
+
+// node: product_service_mobile_ground_units
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mobile_ground_units", "type": "ProductService", "name": "이동형 지상체"}
+
+// node: industry_space_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_space_industry", "type": "Industry", "name": "우주산업"}
+
+// node: company_038880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_038880", "type": "Company", "name": "아이에이", "stock_code": "038880"}
+
+// node: company_000950
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000950", "type": "Company", "name": "전방", "stock_code": "000950"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_satellite_systems", "properties": {"evidence": "당사는 지구관측 위성시스템의 개발 및 생산을 핵심사업으로 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_satellite_payloads_parts", "properties": {"evidence": "특히 중ㆍ소형위성시스템, 위성의 탑재체와 부분품 개발 및 제조를 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_satellite_software", "properties": {"evidence": "위성의 관제 소프트웨어를 개발하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_image_processing_software", "properties": {"evidence": "위성으로부터 취득된 정보를 수신처리하기 위한 영상처리 소프트웨어 등을 개발하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_military_satellites_ground_units", "properties": {"evidence": "군사 목적으로 활용할 수 있는 군사위성과 이동형 지상체 개발을 주요사업으로 하는 방위사업을 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_satellite_systems", "properties": {"evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_electro_optical_cameras", "properties": {"evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_satellite_ground_stations", "properties": {"evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_satellite_image_reception_system", "properties": {"evidence": "위성영상 수신처리 및 위성관제, W위성영상수신처리시스템", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "product_service_mobile_ground_units", "properties": {"evidence": "이동형 지상체", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_satellite_systems", "to_id": "industry_space_industry", "properties": {"evidence": "당사는 지구관측 위성시스템의 개발 및 생산을 핵심사업으로 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_satellite_payloads_parts", "to_id": "industry_space_industry", "properties": {"evidence": "특히 중ㆍ소형위성시스템, 위성의 탑재체와 부분품 개발 및 제조를 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_satellite_software", "to_id": "industry_space_industry", "properties": {"evidence": "위성의 관제 소프트웨어를 개발하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_image_processing_software", "to_id": "industry_space_industry", "properties": {"evidence": "위성으로부터 취득된 정보를 수신처리하기 위한 영상처리 소프트웨어 등을 개발하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_military_satellites_ground_units", "to_id": "industry_space_industry", "properties": {"evidence": "군사 목적으로 활용할 수 있는 군사위성과 이동형 지상체 개발을 주요사업으로 하는 방위사업을 영위하고 있습니다.", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_satellite_systems", "to_id": "business_area_satellite_systems", "properties": {"evidence": "위성사업 제품용역 위성시스템", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_electro_optical_cameras", "to_id": "business_area_satellite_systems", "properties": {"evidence": "위성사업 제품용역 전자광학카메라", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_satellite_ground_stations", "to_id": "business_area_satellite_systems", "properties": {"evidence": "위성사업 제품용역 위성지상국", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_satellite_image_reception_system", "to_id": "business_area_image_processing_software", "properties": {"evidence": "위성영상수신처리시스템", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_mobile_ground_units", "to_id": "business_area_military_satellites_ground_units", "properties": {"evidence": "이동형 지상체", "date": "2026-04-06", "evidence_source_id": "dart_099320_business_segments_20260406004277", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277", "evidence_published_at": "2026-04-06"}}

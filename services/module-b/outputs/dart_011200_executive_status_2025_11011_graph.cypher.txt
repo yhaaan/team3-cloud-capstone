@@ -1,0 +1,41 @@
+// node: company_011200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011200", "type": "Company", "name": "HMM", "stock_code": "011200"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "industry_ai", "properties": {"evidence": "이사 (現) HMM(Australia) PTY LIMITED (現) HMM(Thailand) Co., Ltd.", "date": "2026-03-18", "evidence_source_id": "dart_011200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "industry_it", "properties": {"evidence": "이사 (現) HMM(Australia) PTY LIMITED (現) HMM(Thailand) Co., Ltd.", "date": "2026-03-18", "evidence_source_id": "dart_011200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}

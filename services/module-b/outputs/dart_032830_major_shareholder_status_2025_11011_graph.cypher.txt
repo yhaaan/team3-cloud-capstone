@@ -1,0 +1,143 @@
+// node: company_032830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: person_이재용
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이재용", "type": "Person", "name": "이재용"}
+
+// node: person_이부진
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이부진", "type": "Person", "name": "이부진"}
+
+// node: person_이서현
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이서현", "type": "Person", "name": "이서현"}
+
+// node: person_이주경
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이주경", "type": "Person", "name": "이주경"}
+
+// node: person_홍원학
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_홍원학", "type": "Person", "name": "홍원학"}
+
+// node: person_이완삼
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이완삼", "type": "Person", "name": "이완삼"}
+
+// node: person_박준규
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박준규", "type": "Person", "name": "박준규"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 삼성물산(주), 관계는 최대주주 본인, 당기말 보유주식수는 38,688,000주, 지분율은 19.34%.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 이재용, 관계는 최대주주의 특수관계인, 당기말 보유주식수는 20,879,591주, 지분율은 10.44%.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이부진", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 이부진, 관계는 계열회사 등기임원, 당기말 보유주식수는 11,524,174주, 지분율은 5.76%.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이서현", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 이서현, 관계는 최대주주의 특수관계인, 당기말 보유주식수는 2,305,923주, 지분율은 1.15%, 비고는 시간외 매매.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이주경", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 이주경, 관계는 계열회사 등기임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 사임.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_홍원학", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 홍원학, 관계는 계열회사 등기임원, 당기말 보유주식수는 1,650주, 지분율은 0.00%, 비고는 장내매수.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이완삼", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 이완삼, 관계는 계열회사 등기임원, 당기말 보유주식수는 500주, 지분율은 0.00%, 비고는 등기임원 선임, 장내매수.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박준규", "to_id": "company_032830", "properties": {"evidence": "삼성생명의 최대주주 관련 인물/법인은 박준규, 관계는 계열회사 등기임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 사임.", "date": "2026-03-31", "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244", "evidence_published_at": "2026-03-31"}}

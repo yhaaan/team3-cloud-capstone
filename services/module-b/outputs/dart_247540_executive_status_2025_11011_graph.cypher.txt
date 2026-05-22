@@ -1,0 +1,160 @@
+// node: company_247540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_247540", "type": "Company", "name": "에코프로비엠", "stock_code": "247540", "description": "이차전지용 핵심소재를 생산하는 첨단소재 전문기업"}
+
+// node: company_006400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+
+// node: company_051910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770"}
+
+// node: company_003470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003470", "type": "Company", "name": "유안타증권", "stock_code": "003470"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "battery"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: business_area_battery_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery_materials", "type": "BusinessArea", "name": "battery materials"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "business_area_battery_materials", "properties": {"evidence": "에코프로비엠의 임원들은 대부분 삼성SDI, LG화학, 삼성전자, SK온, SK이노베이션, 유안타증권 등에서 경력을 쌓았으며, 이는 배터리 및 관련 소재 산업에 집중됨.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery_materials", "to_id": "industry_battery", "properties": {"evidence": "에코프로비엠은 이차전지 핵심소재 제조 기업으로 배터리 소재 산업에 포함됨.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "industry_battery", "properties": {"evidence": "에코프로비엠은 이차전지용 핵심소재를 생산하는 첨단소재 전문기업임.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_006400", "properties": {"evidence": "임원 주요경력에 삼성SDI가 다수 포함되어 에코프로비엠과 삼성SDI가 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_051910", "properties": {"evidence": "임원 주요경력에 LG화학이 포함되어 에코프로비엠과 LG화학이 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_005930", "properties": {"evidence": "임원 주요경력에 삼성전자가 포함되어 에코프로비엠과 삼성전자가 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_034730", "properties": {"evidence": "임원 주요경력에 SK온(=SK) 경력이 포함되어 에코프로비엠과 SK가 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_096770", "properties": {"evidence": "임원 주요경력에 SK이노베이션 재무실장 경력이 포함되어 에코프로비엠과 SK이노베이션이 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "company_003470", "properties": {"evidence": "임원 주요경력에 유안타증권 경력이 포함되어 에코프로비엠과 유안타증권이 관계 있음.", "date": "2026-03-18", "evidence_source_id": "dart_247540_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}

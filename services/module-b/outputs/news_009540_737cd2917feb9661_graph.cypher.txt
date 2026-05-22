@@ -1,31 +1,186 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "선박 엔진과 발전용 엔진을 중심으로 엔진사업부가 데이터센터 전력시장 진출을 추진"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_삼성중공업
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
 
-// node: company_hd현대마린엔진
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+
+// node: company_071970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "중형 엔진 전문 자회사로 엔진 판매와 생산 효율 개선에 주력"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "engine"}
+
+// node: business_area_power_generation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_generation", "type": "BusinessArea", "name": "power generation"}
+
+// node: business_area_data_center_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_data_center_infrastructure", "type": "BusinessArea", "name": "data center infrastructure"}
+
+// node: product_service_df_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_df_engine", "type": "ProductService", "name": "DF engine"}
+
+// node: product_service_power_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_power_ship", "type": "ProductService", "name": "power ship"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_engine", "properties": {"evidence": "HD한국조선해양의 1분기 실적 주인공은 엔진사업부였다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_power_generation", "properties": {"evidence": "최근 데이터센터향 수주를 따내면서 선박용 엔진이 육상 발전 시장으로 확장될 수 있다는 기대가 커졌기 때문이다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_df_engine", "properties": {"evidence": "힘센엔진 등을 공급하는 엔진사업부는 전체 매출에서 이중연료(DF)엔진이 차지하는 비중이 크게 확대된 것으로 나타났다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_df_engine", "to_id": "business_area_engine", "properties": {"evidence": "힘센엔진 등을 공급하는 엔진사업부는 전체 매출에서 이중연료(DF)엔진이 차지하는 비중이 크게 확대된 것으로 나타났다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD한국조선해양은 선박용 엔진 중심의 사업을 영위한다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_generation", "to_id": "industry_energy", "properties": {"evidence": "최근 데이터센터향 수주를 따내면서 선박용 엔진이 육상 발전 시장으로 확장될 가능성이 커졌다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "중형 엔진에 특화된 자회사 HD현대마린엔진 실적까지 합산하면 엔진사업 전체 영업이익은 약 2500억원 수준으로 추산된다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "product_service_df_engine", "properties": {"evidence": "힘센엔진 등을 공급하는 엔진사업부는 전체 매출에서 이중연료(DF)엔진이 차지하는 비중이 크게 확대된 것으로 나타났다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_data_center_infrastructure", "properties": {"evidence": "최근 삼성중공업 역시 해당 시장 진출을 검토 중인 것으로 알려졌다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_power_ship", "properties": {"evidence": "플로팅 데이터센터를 운영하려면 파워십이 필요한데, 힘센엔진의 대출력 엔진을 기반으로 전력을 공급할 수 있는 기반이 마련돼 있다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_power_ship", "to_id": "business_area_data_center_infrastructure", "properties": {"evidence": "플로팅 데이터센터를 운영하려면 파워십이 필요한데, 힘센엔진의 대출력 엔진을 기반으로 전력을 공급할 수 있는 기반이 마련돼 있다.", "date": "", "evidence_source_id": "news_009540_737cd2917feb9661", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=661577", "evidence_published_at": "2026-05-07T18:00:00+09:00"}}

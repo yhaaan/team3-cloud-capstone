@@ -1,31 +1,101 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "전기차 제조와 충전 인프라 운영을 통한 미래 모빌리티 밸류체인 내재화에 주력"}
 
-// node: company_기아
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_LG에너지솔루션
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_LG에너지솔루션", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: person_정의선
+// node: company_066670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "회장", "affiliated_company": "company_현대차", "role": "CHAIRMAN", "role_label": "회장"}
+:params {"id": "company_066670", "type": "Company", "name": "디티씨", "stock_code": "066670"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "automotive"}
+
+// node: business_area_electric_vehicle_charging_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_vehicle_charging_infrastructure", "type": "BusinessArea", "name": "electric vehicle charging infrastructure"}
+
+// node: business_area_electric_vehicle_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_vehicle_manufacturing", "type": "BusinessArea", "name": "electric vehicle manufacturing"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_electric_vehicle_manufacturing", "properties": {"evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_electric_vehicle_charging_infrastructure", "properties": {"evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_electric_vehicle_manufacturing", "properties": {"evidence": "한국전기차충전서비스는 현대자동차(43.51%)와 기아(29.01%)가 주요 주주로 참여한 전기차 충전사업자(CPO)다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "industry_automotive", "properties": {"evidence": "한국전기차충전서비스는 현대자동차(43.51%)와 기아(29.01%)가 주요 주주로 참여한 전기차 충전사업자(CPO)다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "company_066670", "properties": {"evidence": "디티씨(19.91%)가 나머지 지분을 보유하고 있으며 과거 주주였던 한국전력과 KT는 지분을 모두 정리한 상태다.", "date": "", "evidence_source_id": "news_005380_65b599bf3a4945c5", "evidence_source_type": "news", "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}

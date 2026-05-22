@@ -1,0 +1,75 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130"}
+
+// node: company_000670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000670", "type": "Company", "name": "영풍", "stock_code": "000670"}
+
+// node: company_007810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_007810", "type": "Company", "name": "코리아써키트", "stock_code": "007810"}
+
+// node: company_033170
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033170", "type": "Company", "name": "시그네틱스", "stock_code": "033170"}
+
+// node: company_317120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_317120", "type": "Company", "name": "라닉스", "stock_code": "317120"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "company_000670", "properties": {"evidence": "고려아연의 최대주주 관련 인물/법인은 ㈜영풍, 관계는 계열회사, 당기말 보유주식수는 10주, 지분율은 0.00%, 비고는 최대주주 변경 및 장내매수.", "date": "2026-03-25", "evidence_source_id": "dart_010130_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "company_007810", "properties": {"evidence": "고려아연의 최대주주 관련 인물/법인은 ㈜코리아써키트, 관계는 계열회사, 당기말 보유주식수는 124,757주, 지분율은 0.60%.", "date": "2026-03-25", "evidence_source_id": "dart_010130_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "company_033170", "properties": {"evidence": "고려아연의 최대주주 관련 인물/법인은 시그네틱스㈜, 관계는 계열회사, 당기말 보유주식수는 11,679주, 지분율은 0.06%.", "date": "2026-03-25", "evidence_source_id": "dart_010130_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "company_317120", "properties": {"evidence": "고려아연의 최대주주 관련 인물/법인은 ㈜테라닉스, 관계는 계열회사, 당기말 보유주식수는 104,111주, 지분율은 0.50%.", "date": "2026-03-25", "evidence_source_id": "dart_010130_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008", "evidence_published_at": "2026-03-25"}}

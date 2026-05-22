@@ -1,47 +1,89 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "주요 사업은 메모리 반도체 생산과 첨단 전자제품 제조"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// node: company_rainbow_robotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_rainbow_robotics", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
-
-// node: company_samsung_electronics_component
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics_component", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_hyundai_motor
+// node: company_039840
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_039840", "type": "Company", "name": "디오", "stock_code": "039840"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_277810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_277810", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "암참은 \"글로벌 기업들의 공급망 다변화 움직임이 빨라질 수 있다\"며 메모리 등 주요 부품 공급처 재조정 가능성을 언급했다.", "date": "", "evidence_source_id": "news_005930_40d8850121cd8ea7", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042885?ref=naver", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "암참은 \"글로벌 기업들의 공급망 다변화 움직임이 빨라질 수 있다\"며 메모리 등 주요 부품 공급처 재조정 가능성을 언급했다.", "date": "", "evidence_source_id": "news_005930_40d8850121cd8ea7", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042885?ref=naver", "evidence_published_at": "2026-05-12T09:52:00+09:00"}}

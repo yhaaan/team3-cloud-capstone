@@ -2,26 +2,113 @@
   "source_id": "news_329180_f823235c8fa868e4",
   "entities": [
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "친환경 선박 핵심 소재·부품·장비 국산화와 공급망 안정화 주도"
     },
     {
-      "id": "person_geum_seok_ho",
+      "id": "business_area_shipbuilding_materials_components",
+      "type": "BusinessArea",
+      "name": "선박용 소재·부품·장비"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선산업"
+    },
+    {
+      "id": "product_service_liquefied_gas_pump",
+      "type": "ProductService",
+      "name": "선박용 액화가스 펌프"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "person_geum_seokho",
       "type": "Person",
       "name": "금석호",
       "role_raw": "대표이사",
-      "affiliated_company": "company_hd현대중공업",
+      "affiliated_company": "company_329180",
       "role": "CEO",
       "role_label": "대표이사"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_geum_seok_ho",
-      "to": "company_hd현대중공업",
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding_materials_components",
+      "evidence": "울산시가 친환경 선박 핵심 소재·부품·장비의 국산화와 공급망 안정화를 위해 '소부장 특화단지' 유치에 착수했다.",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding",
+      "evidence": "울산 조선산업의 핵심 부품 자립과 안정적인 공급망 구축을 위한 전략적 협력 차원에서 마련됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_liquefied_gas_pump",
+      "evidence": "울산시가 구상 중인 '친환경 선박 기자재 소부장 특화단지'는 LNG선 등 친환경 선박의 핵심 장비인 선박용 액화가스 펌프를 중심으로 한 전략 품목 육성에 초점을 맞추고 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding_materials_components",
+      "to": "business_area_shipbuilding",
+      "evidence": "울산 조선산업의 핵심 부품 자립과 안정적인 공급망 구축을 위한 전략적 협력 차원에서 마련됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "김두겸 시장은 \"이번 협약은 울산이 조선산업 소재·부품 자립을 선도하는 핵심 거점으로 도약하겠다는 의지를 보여주는 것\"",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_liquefied_gas_pump",
+      "to": "business_area_shipbuilding_materials_components",
+      "evidence": "울산시가 구상 중인 '친환경 선박 기자재 소부장 특화단지'는 LNG선 등 친환경 선박의 핵심 장비인 선박용 액화가스 펌프를 중심으로 한 전략 품목 육성에 초점을 맞추고 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_f823235c8fa868e4",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.iusm.co.kr/news/articleView.html?idxno=1062271",
+      "evidence_published_at": "2026-04-28T19:10:00+09:00"
+    },
+    {
+      "type": "APPOINTED_TO",
+      "from": "person_geum_seokho",
+      "to": "company_329180",
       "evidence": "울산시는 28일 시장실에서 김두겸 시장과 HD현대중공업 금석호 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생협력 업무협약'을 체결했다.",
       "date": "",
       "evidence_source_id": "news_329180_f823235c8fa868e4",

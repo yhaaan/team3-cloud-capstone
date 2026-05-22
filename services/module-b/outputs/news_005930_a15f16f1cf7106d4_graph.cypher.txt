@@ -1,39 +1,75 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "비반도체 부문을 포함한 다양한 사업부를 운영하는 전자 기업"}
 
-// node: company_harim
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_harim", "type": "Company", "name": "하림", "stock_code": "136480"}
-
-// node: company_sangbo
+// node: business_area_ds
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sangbo", "type": "Company", "name": "상보", "stock_code": "027580"}
+:params {"id": "business_area_ds", "type": "BusinessArea", "name": "DS 부문"}
 
-// node: company_april
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_april", "type": "Company", "name": "에이피알", "stock_code": "278470"}
-
-// node: company_kakao
+// node: business_area_dx
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_kakao", "type": "Company", "name": "카카오", "stock_code": "035720"}
+:params {"id": "business_area_dx", "type": "BusinessArea", "name": "DX 부문"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_technology
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_technology", "type": "Industry", "name": "기술"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_ds", "properties": {"evidence": "최근 DX노조가 DS부문을 최우선으로 하는 임금교섭 요구안에 대해 반발하며 공동투쟁본부에서 탈퇴하는 등 노노갈등이 극에 달한 상황에서 전삼노가 입장을 표명한 것으로 풀이된다.", "date": "", "evidence_source_id": "news_005930_a15f16f1cf7106d4", "evidence_source_type": "news", "evidence_source_url": "https://www.sidae.com/article/2026050720445779859", "evidence_published_at": "2026-05-07T20:47:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_dx", "properties": {"evidence": "최근 DX노조가 DS부문을 최우선으로 하는 임금교섭 요구안에 대해 반발하며 공동투쟁본부에서 탈퇴하는 등 노노갈등이 극에 달한 상황에서 전삼노가 입장을 표명한 것으로 풀이된다.", "date": "", "evidence_source_id": "news_005930_a15f16f1cf7106d4", "evidence_source_type": "news", "evidence_source_url": "https://www.sidae.com/article/2026050720445779859", "evidence_published_at": "2026-05-07T20:47:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ds", "to_id": "industry_semiconductor", "properties": {"evidence": "최근 DX노조가 DS부문을 최우선으로 하는 임금교섭 요구안에 대해 반발하며 공동투쟁본부에서 탈퇴하는 등 노노갈등이 극에 달한 상황에서 전삼노가 입장을 표명한 것으로 풀이된다.", "date": "", "evidence_source_id": "news_005930_a15f16f1cf7106d4", "evidence_source_type": "news", "evidence_source_url": "https://www.sidae.com/article/2026050720445779859", "evidence_published_at": "2026-05-07T20:47:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_dx", "to_id": "industry_technology", "properties": {"evidence": "최근 DX노조가 DS부문을 최우선으로 하는 임금교섭 요구안에 대해 반발하며 공동투쟁본부에서 탈퇴하는 등 노노갈등이 극에 달한 상황에서 전삼노가 입장을 표명한 것으로 풀이된다.", "date": "", "evidence_source_id": "news_005930_a15f16f1cf7106d4", "evidence_source_type": "news", "evidence_source_url": "https://www.sidae.com/article/2026050720445779859", "evidence_published_at": "2026-05-07T20:47:00+09:00"}}

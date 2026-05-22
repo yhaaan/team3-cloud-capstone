@@ -2,35 +2,213 @@
   "source_id": "news_017670_da479e2f352b8840",
   "entities": [
     {
-      "id": "company_sk_telecom",
+      "id": "company_017670",
       "type": "Company",
       "name": "SK텔레콤",
-      "stock_code": "017670"
+      "stock_code": "017670",
+      "description": "이동통신, 초고속인터넷, 시내전화, IPTV 등 통신 서비스를 제공하는 기업"
     },
     {
-      "id": "company_kt",
+      "id": "company_030200",
       "type": "Company",
       "name": "KT",
-      "stock_code": "030200"
+      "stock_code": "030200",
+      "description": "유무선 통신과 비통신 계열사 부동산 일회성 이익을 포함한 통신 서비스 제공 기업"
     },
     {
-      "id": "company_lguplus",
+      "id": "company_032640",
       "type": "Company",
       "name": "LG유플러스",
-      "stock_code": "032640"
+      "stock_code": "032640",
+      "description": "이동통신, 초고속인터넷 등의 통신 서비스 제공과 가입자 기반 성장 기업"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
-    },
-    {
-      "id": "company_hyundai_autoever",
+      "id": "company_307950",
       "type": "Company",
       "name": "현대오토에버",
-      "stock_code": "307950"
+      "stock_code": "307950",
+      "description": "IT 계열사로 이음5G 주파수 할당받은 기간통신사업자"
+    },
+    {
+      "id": "business_area_mobile_telecommunication",
+      "type": "BusinessArea",
+      "name": "이동통신"
+    },
+    {
+      "id": "business_area_internet_service",
+      "type": "BusinessArea",
+      "name": "초고속인터넷"
+    },
+    {
+      "id": "business_area_ip_tv",
+      "type": "BusinessArea",
+      "name": "IPTV"
+    },
+    {
+      "id": "business_area_5g_network",
+      "type": "BusinessArea",
+      "name": "5G 네트워크"
+    },
+    {
+      "id": "industry_telecommunication",
+      "type": "Industry",
+      "name": "통신"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_mobile_telecommunication",
+      "evidence": "통신사는 초고속인터넷, 시내전화, IPTV, 이동통신 등 다양한 서비스에서 가입자 수를 핵심 지표로 관리한다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_internet_service",
+      "evidence": "통신사는 초고속인터넷, 시내전화, IPTV, 이동통신 등 다양한 서비스에서 가입자 수를 핵심 지표로 관리한다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_ip_tv",
+      "evidence": "통신사는 초고속인터넷, 시내전화, IPTV, 이동통신 등 다양한 서비스에서 가입자 수를 핵심 지표로 관리한다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_mobile_telecommunication",
+      "evidence": "우리나라 통신업계는 KT, SK텔레콤, LG유플러스 3개 회사로 과점 형태다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032640",
+      "to": "business_area_mobile_telecommunication",
+      "evidence": "우리나라 통신업계는 KT, SK텔레콤, LG유플러스 3개 회사로 과점 형태다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_307950",
+      "to": "business_area_5g_network",
+      "evidence": "현대자동차그룹의 IT 계열사 현대오토에버는 2023년 과학기술정보통신부로부터 4.7GHz 대역의 이음5G(5G 특화망) 주파수를 직접 할당받아 기간통신사업자로 등록했다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_mobile_telecommunication",
+      "to": "industry_telecommunication",
+      "evidence": "통신업계 시장을 설명하며 이동통신은 통신 산업의 대표 사업 분야임이 드러남.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_internet_service",
+      "to": "industry_telecommunication",
+      "evidence": "통신사는 초고속인터넷, 시내전화, IPTV, 이동통신 등 다양한 서비스에서 가입자 수를 핵심 지표로 관리한다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ip_tv",
+      "to": "industry_telecommunication",
+      "evidence": "통신사는 초고속인터넷, 시내전화, IPTV, 이동통신 등 다양한 서비스에서 가입자 수를 핵심 지표로 관리한다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_5g_network",
+      "to": "industry_telecommunication",
+      "evidence": "현대자동차그룹의 IT 계열사 현대오토에버는 2023년 과학기술정보통신부로부터 4.7GHz 대역의 이음5G(5G 특화망) 주파수를 직접 할당받아 기간통신사업자로 등록했다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_telecommunication",
+      "evidence": "우리나라 통신업계는 KT, SK텔레콤, LG유플러스 3개 회사로 과점 형태다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_telecommunication",
+      "evidence": "우리나라 통신업계는 KT, SK텔레콤, LG유플러스 3개 회사로 과점 형태다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_032640",
+      "to": "industry_telecommunication",
+      "evidence": "우리나라 통신업계는 KT, SK텔레콤, LG유플러스 3개 회사로 과점 형태다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_307950",
+      "to": "industry_telecommunication",
+      "evidence": "현대자동차그룹의 IT 계열사 현대오토에버는 2023년 과학기술정보통신부로부터 4.7GHz 대역의 이음5G(5G 특화망) 주파수를 직접 할당받아 기간통신사업자로 등록했다.",
+      "date": "",
+      "evidence_source_id": "news_017670_da479e2f352b8840",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605069252b",
+      "evidence_published_at": "2026-05-12T08:36:00+09:00"
+    }
+  ]
 }

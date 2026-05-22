@@ -2,72 +2,101 @@
   "source_id": "news_402340_7f62e224f72bfd49",
   "entities": [
     {
-      "id": "company_sk스퀘어",
+      "id": "company_402340",
       "type": "Company",
       "name": "SK스퀘어",
-      "stock_code": "402340"
+      "stock_code": "402340",
+      "description": "SK하이닉스 지분 투자 중심의 대안 투자처로, 배당수입과 자산가치 중심의 경영"
     },
     {
-      "id": "company_kd",
-      "type": "Company",
-      "name": "KD",
-      "stock_code": "044180"
-    },
-    {
-      "id": "company_lg이노텍",
-      "type": "Company",
-      "name": "LG이노텍",
-      "stock_code": "011070"
-    },
-    {
-      "id": "company_한화오션",
-      "type": "Company",
-      "name": "한화오션",
-      "stock_code": "042660"
-    },
-    {
-      "id": "company_에이비엘바이오",
-      "type": "Company",
-      "name": "에이비엘바이오",
-      "stock_code": "298380"
-    },
-    {
-      "id": "company_sk하이닉스",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
       "stock_code": "000660"
     },
     {
-      "id": "company_삼성전자",
+      "id": "company_011070",
       "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
+      "name": "LG이노텍",
+      "stock_code": "011070",
+      "description": "아이폰 카메라모듈과 AI 서버용 고밀도 반도체 기판 생산, 패키지솔루션 사업 확장"
     },
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_042660",
       "type": "Company",
-      "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "name": "한화오션",
+      "stock_code": "042660",
+      "description": "상선 및 특수선 건조, 원가 절감과 수주 경쟁력 강화로 수익성 개선 중"
     },
     {
-      "id": "company_현대차",
+      "id": "company_298380",
       "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
+      "name": "에이비엘바이오",
+      "stock_code": "298380",
+      "description": "바이오 신약 개발 중심, BBB 셔틀 및 면역 활성화 항체 플랫폼 핵심 기술 보유"
     },
     {
-      "id": "company_대신증권",
-      "type": "Company",
-      "name": "대신증권",
-      "stock_code": "003540"
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "Memory"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_foundry",
+      "type": "BusinessArea",
+      "name": "Foundry"
+    },
+    {
+      "id": "product_service_dram",
+      "type": "ProductService",
+      "name": "DRAM"
+    },
+    {
+      "id": "product_service_hbm",
+      "type": "ProductService",
+      "name": "HBM"
+    },
+    {
+      "id": "business_area_camera_module",
+      "type": "BusinessArea",
+      "name": "Camera module"
+    },
+    {
+      "id": "business_area_ai_server_component",
+      "type": "BusinessArea",
+      "name": "AI server components"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "Shipbuilding"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_biopharma",
+      "type": "BusinessArea",
+      "name": "Biopharma"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
   "relations": [
     {
       "type": "INVESTS_IN",
-      "from": "company_sk스퀘어",
-      "to": "company_sk하이닉스",
-      "evidence": "펀드의 단일 종목 편입 한도(10%) 규제로 인해 SK하이닉스에 직접 투자하기 어려운 기관들에게 SK스퀘어는 하이닉스를 20.1% 보유한 사실상의 대안 투자처로 기능하고 있다.",
+      "from": "company_402340",
+      "to": "company_000660",
+      "evidence": "SK스퀘어는 하이닉스를 20.1% 보유한 사실상의 대안 투자처로 기능하고 있다.",
       "date": "",
       "evidence_source_id": "news_402340_7f62e224f72bfd49",
       "evidence_source_type": "news",
@@ -75,10 +104,10 @@
       "evidence_published_at": "2026-04-28T18:02:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_대신증권",
-      "to": "company_sk스퀘어",
-      "evidence": "대신증권은 투자의견 매수(Buy)를 유지하면서 목표주가를 기존 76만원에서 100만원으로 32% 상향했다.",
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_memory",
+      "evidence": "NAV의 97%를 차지하는 SK하이닉스의 실적·주가 상승 전망이 반영된 결과다.",
       "date": "",
       "evidence_source_id": "news_402340_7f62e224f72bfd49",
       "evidence_source_type": "news",
@@ -86,10 +115,10 @@
       "evidence_published_at": "2026-04-28T18:02:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_대신증권",
-      "to": "company_lg이노텍",
-      "evidence": "DS투자증권은 투자의견 매수(Buy)를 유지하며 목표주가를 39만원에서 66만원으로 대폭 상향했다.",
+      "type": "BELONGS_TO",
+      "from": "company_402340",
+      "to": "industry_semiconductor",
+      "evidence": "SK스퀘어는 SK하이닉스 지분 보유를 중심으로 반도체 산업에 속한다.",
       "date": "",
       "evidence_source_id": "news_402340_7f62e224f72bfd49",
       "evidence_source_type": "news",
@@ -97,10 +126,164 @@
       "evidence_published_at": "2026-04-28T18:02:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_대신증권",
-      "to": "company_한화오션",
-      "evidence": "DS투자증권은 투자의견 매수(Buy)를 유지하며 목표주가를 16만원에서 17만원으로 상향했다.",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "NAV의 97%를 차지하는 SK하이닉스의 실적·주가 상승 전망이 반영된 결과다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스는 반도체 업계 대표 기업이다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011070",
+      "to": "business_area_camera_module",
+      "evidence": "LG이노텍은 카메라 모듈의 전방 시장 다변화를 추진한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011070",
+      "to": "business_area_ai_server_component",
+      "evidence": "AI 서버용 FC-BGA 공급확대로 턴어라운드가 예상된다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011070",
+      "to": "industry_semiconductor",
+      "evidence": "LG이노텍은 고밀도 반도체 기판과 패키지솔루션 사업을 영위한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_shipbuilding",
+      "evidence": "한화오션은 상선, 특수선, 해양플랜트 부문에서 선가 상승 효과와 수익성 개선을 이룬다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042660",
+      "to": "industry_shipbuilding",
+      "evidence": "한화오션은 선박 건조 산업인 조선업에 종사한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_298380",
+      "to": "business_area_biopharma",
+      "evidence": "에이비엘바이오는 핵심 플랫폼인 BBB 셔틀, 면역 활성화 항체 기술로 신약 개발을 진행한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298380",
+      "to": "industry_bio",
+      "evidence": "에이비엘바이오는 바이오 신약 개발 업계에 속한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "메모리 사업은 반도체 산업의 세부 영역이다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_foundry",
+      "to": "industry_semiconductor",
+      "evidence": "파운드리 사업은 반도체 산업의 한 분야이다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_camera_module",
+      "to": "industry_semiconductor",
+      "evidence": "카메라 모듈 사업은 반도체 산업 내 부품 분야다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_server_component",
+      "to": "industry_semiconductor",
+      "evidence": "AI 서버 부품은 반도체 산업 내 고부가가치 부문이다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "조선 사업 부문은 조선 산업에 속한다.",
+      "date": "",
+      "evidence_source_id": "news_402340_7f62e224f72bfd49",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112345",
+      "evidence_published_at": "2026-04-28T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biopharma",
+      "to": "industry_bio",
+      "evidence": "바이오 신약 개발 사업은 바이오 산업 내 세부 분야다.",
       "date": "",
       "evidence_source_id": "news_402340_7f62e224f72bfd49",
       "evidence_source_type": "news",

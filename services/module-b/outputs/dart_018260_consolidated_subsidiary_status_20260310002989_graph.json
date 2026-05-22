@@ -1,0 +1,48 @@
+{
+  "source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+  "entities": [
+    {
+      "id": "company_018260",
+      "type": "Company",
+      "name": "삼성에스디에스",
+      "stock_code": "018260",
+      "description": "삼성에스디에스는 IT 서비스와 솔루션 분야에서 사업을 영위한다."
+    },
+    {
+      "id": "company_067280",
+      "type": "Company",
+      "name": "멀티캠퍼스",
+      "stock_code": "067280",
+      "description": "멀티캠퍼스는 교육서비스 분야에서 사업을 영위한다."
+    },
+    {
+      "id": "business_area_교육서비스",
+      "type": "BusinessArea",
+      "name": "교육서비스"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_018260",
+      "to": "company_067280",
+      "evidence": "삼성에스디에스의 연결대상 종속회사 후보로 멀티캠퍼스 등이 탐지되었다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_067280",
+      "to": "business_area_교육서비스",
+      "evidence": "(주)멀티캠퍼스 | 2000.05.04 | 서울시 강남구 | 교육서비스 | 296,325 | 기업의결권의 과반수 | 해당",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    }
+  ]
+}

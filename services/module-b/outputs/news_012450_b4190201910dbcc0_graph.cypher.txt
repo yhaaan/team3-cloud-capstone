@@ -1,47 +1,92 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "에스토니아에 다연장 정밀 유도무기 천무 공급 등 방산 사업을 영위"}
 
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_hanwha
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_korea_aerospace_industries
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_korea_aerospace_industries", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
-
-// node: company_hanwha_solution
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_solution", "type": "Company", "name": "한화솔루션", "stock_code": "009830"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: person_son_jae_il
+// node: industry_defense
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Industry`
 
-:params {"id": "person_son_jae_il", "type": "Person", "name": "손재일", "role_raw": "한화에어로스페이스 사장", "affiliated_company": "company_hanwha_aerospace", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "industry_defense", "type": "Industry", "name": "defense"}
+
+// node: business_area_multilaunch_rocket_weapon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_multilaunch_rocket_weapon", "type": "BusinessArea", "name": "multilaunch rocket weapon"}
+
+// node: product_service_cheonmu_weapon_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cheonmu_weapon_system", "type": "ProductService", "name": "cheonmu weapon system"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_multilaunch_rocket_weapon", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀 유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_b4190201910dbcc0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051190411", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_cheonmu_weapon_system", "properties": {"evidence": "한화에어로스페이스는 천무 발사대 6문과 미사일 3종, 운용·교육 지원 등을 포함한 계약을 맺었다.", "date": "", "evidence_source_id": "news_012450_b4190201910dbcc0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051190411", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_multilaunch_rocket_weapon", "to_id": "industry_defense", "properties": {"evidence": "에스토니아는 다연장로켓 전력화 및 현대화를 추진 중이다.", "date": "", "evidence_source_id": "news_012450_b4190201910dbcc0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051190411", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cheonmu_weapon_system", "to_id": "business_area_multilaunch_rocket_weapon", "properties": {"evidence": "천무 다연장 정밀 유도무기 발사대와 미사일은 다연장로켓무기라는 분야에 속한다.", "date": "", "evidence_source_id": "news_012450_b4190201910dbcc0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051190411", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스는 방산 생태계 강화에 기여한다.", "date": "", "evidence_source_id": "news_012450_b4190201910dbcc0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051190411", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}

@@ -1,0 +1,187 @@
+// node: company_003670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003670", "type": "Company", "name": "포스코퓨처엠", "stock_code": "003670", "description": "양극재·음극재 배터리 소재 공급과 장기 계약을 통해 글로벌 완성차에 배터리 핵심 소재 제공"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_006400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940"}
+
+// node: business_area_battery_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery_materials", "type": "BusinessArea", "name": "배터리 소재"}
+
+// node: business_area_next_generation_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_next_generation_battery", "type": "BusinessArea", "name": "차세대 배터리"}
+
+// node: business_area_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery", "type": "BusinessArea", "name": "배터리"}
+
+// node: product_service_cathode_material
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cathode_material", "type": "ProductService", "name": "양극재"}
+
+// node: product_service_anode_material
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_anode_material", "type": "ProductService", "name": "음극재"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠이 양극재·음극재 공급 능력을 바탕으로 수주를 늘려가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "business_area_next_generation_battery", "properties": {"evidence": "포스코퓨처엠은 현대차그룹과도 차세대 배터리 분야에서 협력을 이어가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "product_service_cathode_material", "properties": {"evidence": "포스코퓨처엠은 지난 2024년 4월 혼다가 북미에서 제조하는 전기차용 배터리에 자사의 양극재를 독점 공급하는 내용을 담은 MOU를 맺었다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "product_service_anode_material", "properties": {"evidence": "포스코퓨처엠은 인조흑연 음극재 대규모 장기 공급계약을 체결하며 공급처를 늘렸다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "business_area_battery", "properties": {"evidence": "포스코퓨처엠은 양·음극재를 모두 공급할 수 있는 배터리 소재 기업으로 음극재의 경우 글로벌 공급망을 확보한 중국 외 기업으로는 자사가 유일하다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery_materials", "to_id": "industry_battery", "properties": {"evidence": "포스코퓨처엠이 양극재·음극재 공급 능력을 바탕으로 수주를 늘려가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_next_generation_battery", "to_id": "industry_battery", "properties": {"evidence": "포스코퓨처엠은 현대차그룹과도 차세대 배터리 분야에서 협력을 이어가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery", "to_id": "industry_battery", "properties": {"evidence": "포스코퓨처엠은 양·음극재를 모두 공급할 수 있는 배터리 소재 기업이다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cathode_material", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠이 양극재·음극재 공급 능력을 바탕으로 수주를 늘려가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_anode_material", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠이 양극재·음극재 공급 능력을 바탕으로 수주를 늘려가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_next_generation_battery", "properties": {"evidence": "포스코퓨처엠은 현대차그룹과도 차세대 배터리 분야에서 협력을 이어가고 있다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_battery", "properties": {"evidence": "NH투자증권은 포스코퓨처엠으로부터 소재를 공급받는 삼성SDI의 전동공구와 배터리백업유닛 이원화 진입이 예상된다.", "date": "", "evidence_source_id": "news_003670_88d5055aa215f692", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=203165", "evidence_published_at": "2026-05-13T18:46:00+09:00"}}

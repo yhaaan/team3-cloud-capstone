@@ -1,15 +1,101 @@
-// node: company_두산퓨얼셀
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260", "description": "연료전지 주요 기업으로 SOFC, PAFC 주기기 매출 및 해외 수주 확대에 집중"}
 
-// node: company_두산
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_fuel_cell
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_fuel_cell", "type": "BusinessArea", "name": "연료전지"}
+
+// node: product_service_sofc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_sofc", "type": "ProductService", "name": "SOFC"}
+
+// node: product_service_pafc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_pafc", "type": "ProductService", "name": "PAFC"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_fuel_cell", "properties": {"evidence": "유 연구원은 \"SOFC 매출 발생과 PAFC 납품 증가로 주기기 매출이 62.1% 성장했다\"고 설명했다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_sofc", "properties": {"evidence": "유 연구원은 \"SOFC 매출 발생과 PAFC 납품 증가로 주기기 매출이 62.1% 성장했다\"고 설명했다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "product_service_pafc", "properties": {"evidence": "유 연구원은 \"SOFC 매출 발생과 PAFC 납품 증가로 주기기 매출이 62.1% 성장했다\"고 설명했다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_fuel_cell", "to_id": "industry_energy", "properties": {"evidence": "두산퓨얼셀은 연료전지 산업에 속한 기업으로 해외 수주 확대를 계획하고 있다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_sofc", "to_id": "business_area_fuel_cell", "properties": {"evidence": "SOFC 수율은 약 80% 수준으로 개선됐고 독일, 미국, 싱가포르 등 해외 고객사와 공급 협의가 진행 중이다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_pafc", "to_id": "business_area_fuel_cell", "properties": {"evidence": "PAFC 납품 증가로 주기기 매출이 62.1% 성장했다.", "date": "", "evidence_source_id": "news_336260_ded6d372b3900ffd", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=02837206645421368", "evidence_published_at": "2026-04-30T07:43:00+09:00"}}

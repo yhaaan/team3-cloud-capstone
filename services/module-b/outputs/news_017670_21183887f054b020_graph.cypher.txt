@@ -1,101 +1,228 @@
-// node: company_sk_square
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "지주사로서 주요 자회사들의 지분 가치를 보유하며 기업가치 성장에 기여"}
 
-// node: company_sk_telecom
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
-
-// node: company_skc
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_skc", "type": "Company", "name": "SKC", "stock_code": "011790"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "지분법 이익 증가에 따른 실적 개선 기대되는 투자회사"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: company_017670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "안정적 현금흐름을 바탕으로 통신사업 실적 개선에 기여"}
 
-// node: company_sk_innovation
+// node: company_011790
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_innovation", "type": "Company", "name": "SK이노베이션", "stock_code": "096770"}
+:params {"id": "company_011790", "type": "Company", "name": "SKC", "stock_code": "011790", "description": "주가 상승과 실적 개선 기대"}
 
-// relation: ACQUIRES
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 실적 개선과 현금창출력 급증 기대"}
+
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "석유, 윤활유, E&P, E&S 부문에서 견조한 실적 전망"}
+
+// node: business_area_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_investment", "type": "BusinessArea", "name": "Investment"}
+
+// node: business_area_telecommunications
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_telecommunications", "type": "BusinessArea", "name": "Telecommunications"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "Semiconductor"}
+
+// node: business_area_chemical_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_chemical_energy", "type": "BusinessArea", "name": "Chemical and Energy"}
+
+// node: industry_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_investment", "type": "Industry", "name": "Investment"}
+
+// node: industry_telecom
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom", "type": "Industry", "name": "Telecommunications"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "Energy"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "business_area_investment", "properties": {"evidence": "SK스퀘어에 대해선 SK하이닉스 실적 개선에 따른 지분법 이익 증가로 큰 폭의 이익 증가를 예상했다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
 
-// relation: ACQUIRES
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "company_sk_telecom", "properties": {"evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_017670", "to_id": "business_area_telecommunications", "properties": {"evidence": "SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
 
-// relation: ACQUIRES
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "company_skc", "properties": {"evidence": "SK스퀘어 와 SK텔레콤, SKC 등 주요 자회사 주가 상승이 지주사 SK 의 주가를 끌어올릴 수 있다는 증권가 분석이 나왔다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_000660", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK하이닉스 실적 급증으로 현금창출력 회복 전망", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "먼저 SK스퀘어에 대해선 SK하이닉스 실적 개선에 따른 지분법 이익 증가로 큰 폭의 이익 증가를 예상했다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_096770", "to_id": "business_area_chemical_energy", "properties": {"evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: BELONGS_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "company_sk_innovation", "properties": {"evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며, SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_034730", "to_id": "industry_investment", "properties": {"evidence": "SK의 지주사 역할과 자회사 지분 가치를 통한 기업가치 상승", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: BELONGS_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "company_sk_telecom", "properties": {"evidence": "SK이노베이션은 석유, 윤활유, E&P, E&S 부문이 견조한 실적을 낼 것으로 전망했으며, SK텔레콤도 안정적인 현금흐름을 바탕으로 실적 개선에 기여할 것으로 봤다.", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "industry_investment", "properties": {"evidence": "SK스퀘어 지분법 이익 예상 근거", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "industry_telecom", "properties": {"evidence": "SK텔레콤 안정적 현금흐름 및 실적 개선", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "SK하이닉스 실적 개선", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "industry_energy", "properties": {"evidence": "SK이노베이션 석유, 윤활유, E&P, E&S 부문 실적", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_investment", "to_id": "industry_investment", "properties": {"evidence": "Investment industry classification", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_telecommunications", "to_id": "industry_telecom", "properties": {"evidence": "Telecommunications industry classification", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "Semiconductor industry classification", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_chemical_energy", "to_id": "industry_energy", "properties": {"evidence": "Energy industry classification", "date": "", "evidence_source_id": "news_017670_21183887f054b020", "evidence_source_type": "news", "evidence_source_url": "https://news.bizwatch.co.kr/article/market/2026/05/12/0011", "evidence_published_at": "2026-05-12T09:40:00+09:00"}}

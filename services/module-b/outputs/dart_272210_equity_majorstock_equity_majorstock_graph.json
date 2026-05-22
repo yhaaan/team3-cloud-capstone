@@ -2,17 +2,40 @@
   "source_id": "dart_272210_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_hanwha_system",
+      "id": "company_272210",
       "type": "Company",
       "name": "한화시스템",
       "stock_code": "272210"
     },
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_012450",
+      "to": "company_272210",
+      "evidence": "한화시스템의 대량보유 보고자는 한화에어로스페이스, 보고 유형은 일반, 접수일은 2025-07-02, 보유주식수는 112,478,153주, 지분율은 59.54%",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_272210_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000537",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_012450",
+      "to": "company_272210",
+      "evidence": "한화시스템의 대량보유 보고자는 한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-03-30, 보유주식수는 112,478,353주, 지분율은 59.54%",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_272210_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000537",
+      "evidence_published_at": "2026-03-30"
+    }
+  ]
 }

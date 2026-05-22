@@ -2,23 +2,153 @@
   "source_id": "news_034020_9818cd5fcf60d7fd",
   "entities": [
     {
-      "id": "company_두산에너빌리티",
+      "id": "company_034020",
       "type": "Company",
       "name": "두산에너빌리티",
-      "stock_code": "034020"
+      "stock_code": "034020",
+      "description": "가스터빈, 스팀터빈, 원전 기자재를 중심으로 국내외 에너지 사업을 영위"
     },
     {
-      "id": "company_두산밥캣",
-      "type": "Company",
-      "name": "두산밥캣",
-      "stock_code": "241560"
+      "id": "business_area_gasturbine",
+      "type": "BusinessArea",
+      "name": "가스터빈"
     },
     {
-      "id": "company_두산퓨얼셀",
-      "type": "Company",
-      "name": "두산퓨얼셀",
-      "stock_code": "336260"
+      "id": "business_area_steamturbine",
+      "type": "BusinessArea",
+      "name": "스팀터빈"
+    },
+    {
+      "id": "business_area_nuclear_power_equipment",
+      "type": "BusinessArea",
+      "name": "원전 기자재"
+    },
+    {
+      "id": "business_area_smr",
+      "type": "BusinessArea",
+      "name": "소형모듈원자로"
+    },
+    {
+      "id": "business_area_offshore_wind_power",
+      "type": "BusinessArea",
+      "name": "해상풍력"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "에너지"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_gasturbine",
+      "evidence": "두산에너빌리티는 국내외에서 가스터빈과 스팀터빈 중심의 수주 호조세도 이어갔다.",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_steamturbine",
+      "evidence": "두산에너빌리티는 국내외에서 가스터빈과 스팀터빈 중심의 수주 호조세도 이어갔다.",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_nuclear_power_equipment",
+      "evidence": "두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다.",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_smr",
+      "evidence": "두산에너빌리티는 연말까지 소형모듈원자로(SMR) 주기기 공급 계약을 포함해 총 13조 3000억 원의 수주를 달성한 것으로 보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_offshore_wind_power",
+      "evidence": "두산에너빌리티는 해외 가스복합 설계·조달·시공(EPC), 해상풍력 등을 포함해 총 13조 3000억 원의 수주를 달성한 것으로 보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_gasturbine",
+      "to": "industry_energy",
+      "evidence": "가스터빈은 에너지 산업의 한 분야임",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_steamturbine",
+      "to": "industry_energy",
+      "evidence": "스팀터빈은 에너지 산업의 한 분야임",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_nuclear_power_equipment",
+      "to": "industry_energy",
+      "evidence": "원전 기자재 분야가 에너지 산업에 속함",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_smr",
+      "to": "industry_energy",
+      "evidence": "소형모듈원자로(SMR) 사업이 에너지 산업에 포함됨",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_offshore_wind_power",
+      "to": "industry_energy",
+      "evidence": "해상풍력 사업이 에너지 산업에 포함됨",
+      "date": "",
+      "evidence_source_id": "news_034020_9818cd5fcf60d7fd",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver",
+      "evidence_published_at": "2026-04-29T16:08:00+09:00"
+    }
+  ]
 }

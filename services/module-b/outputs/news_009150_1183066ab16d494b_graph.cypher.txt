@@ -1,39 +1,125 @@
-// node: company_삼성전기
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "인공지능과 자율주행 등 미래 성장 시장 대응 중심의 전자부품 소재 사업 영위"}
 
-// node: company_우성
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
-
-// node: company_코스모신소재
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: company_현대차
+// node: company_006980
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_006980", "type": "Company", "name": "우성", "stock_code": "006980"}
 
-// node: person_장덕현
+// node: company_005070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_장덕현", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "affiliated_company": "company_삼성전기", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "company_005070", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+
+// node: business_area_ai_technology
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_technology", "type": "BusinessArea", "name": "인공지능 기술"}
+
+// node: business_area_autonomous_driving
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_autonomous_driving", "type": "BusinessArea", "name": "자율주행 기술"}
+
+// node: business_area_electronic_components
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electronic_components", "type": "BusinessArea", "name": "전자부품"}
+
+// node: product_service_mlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mlcc", "type": "ProductService", "name": "MLCC"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_ai_technology", "properties": {"evidence": "삼성전기가 협력사와의 기술 협력과 상생 지원을 확대하며 인공지능(AI)·자율주행 등 미래 성장 시장 대응력을 강화한다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_autonomous_driving", "properties": {"evidence": "삼성전기가 협력사와의 기술 협력과 상생 지원을 확대하며 인공지능(AI)·자율주행 등 미래 성장 시장 대응력을 강화한다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_electronic_components", "properties": {"evidence": "삼성전기가 협력사와의 기술 협력과 상생 지원을 확대하며 인공지능(AI)·자율주행 등 미래 성장 시장 대응력을 강화한다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "product_service_mlcc", "properties": {"evidence": "적층세라믹콘덴서(MLCC) 설비를 공급하는 우성에스이는 설비 제작과 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_mlcc", "to_id": "business_area_electronic_components", "properties": {"evidence": "적층세라믹콘덴서(MLCC) 설비를 공급하는 우성에스이는 설비 제작과 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electronic_components", "to_id": "industry_semiconductor", "properties": {"evidence": "적층세라믹콘덴서(MLCC) 설비를 공급하는 우성에스이는 설비 제작과 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_1183066ab16d494b", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026042811391344836ed0c62d49_1", "evidence_published_at": "2026-04-28T17:32:00+09:00"}}

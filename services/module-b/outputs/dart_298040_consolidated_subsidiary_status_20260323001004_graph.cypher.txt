@@ -1,0 +1,67 @@
+// node: company_298040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298040", "type": "Company", "name": "효성중공업", "stock_code": "298040", "description": "효성중공업은 종속회사 진흥기업 등과 함께 건설 사업을 영위한다."}
+
+// node: company_002780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002780", "type": "Company", "name": "진흥기업", "stock_code": "002780"}
+
+// node: business_area_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "건설"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "construction"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "company_002780", "properties": {"evidence": "효성중공업의 연결대상 종속회사 후보로 진흥기업 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_construction", "properties": {"evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)", "date": "2026-03-23", "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002780", "to_id": "business_area_construction", "properties": {"evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)", "date": "2026-03-23", "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction", "to_id": "industry_construction", "properties": {"evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)", "date": "2026-03-23", "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004", "evidence_published_at": "2026-03-23"}}

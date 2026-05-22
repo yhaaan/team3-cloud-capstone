@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_011200_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_011200",
+      "type": "Company",
+      "name": "HMM",
+      "stock_code": "011200",
+      "description": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다."
+    },
+    {
+      "id": "business_area_shipping",
+      "type": "BusinessArea",
+      "name": "해운"
+    },
+    {
+      "id": "industry_maritime",
+      "type": "Industry",
+      "name": "shipbuilding"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011200",
+      "to": "business_area_shipping",
+      "evidence": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipping",
+      "to": "industry_maritime",
+      "evidence": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

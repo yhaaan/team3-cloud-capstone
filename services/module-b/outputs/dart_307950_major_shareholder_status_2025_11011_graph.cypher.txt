@@ -1,0 +1,67 @@
+// node: company_307950
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_307950", "type": "Company", "name": "현대오토에버", "stock_code": "307950"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_012330
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: person_정의선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "임원", "role": "OTHER", "role_label": "임원"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "company_307950", "properties": {"evidence": "현대오토에버의 최대주주 관련 인물/법인은 기아, 관계는 계열회사, 당기말 보유주식수는 4,453,927주, 지분율은 16.24%.", "date": "2026-03-18", "evidence_source_id": "dart_307950_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "company_307950", "properties": {"evidence": "현대오토에버의 최대주주 관련 인물/법인은 현대모비스, 관계는 계열회사, 당기말 보유주식수는 5,520,277주, 지분율은 20.13%.", "date": "2026-03-18", "evidence_source_id": "dart_307950_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "company_307950", "properties": {"evidence": "현대오토에버의 최대주주 관련 인물/법인은 현대자동차, 관계는 본인, 당기말 보유주식수는 8,664,334주, 지분율은 31.59%.", "date": "2026-03-18", "evidence_source_id": "dart_307950_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정의선", "to_id": "company_307950", "properties": {"evidence": "현대오토에버의 최대주주 관련 인물/법인은 정의선, 관계는 임원, 당기말 보유주식수는 2,010,000주, 지분율은 7.33%.", "date": "2026-03-18", "evidence_source_id": "dart_307950_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}

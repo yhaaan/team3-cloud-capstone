@@ -1,0 +1,119 @@
+// node: company_000810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000810", "type": "Company", "name": "삼성화재", "stock_code": "000810", "description": "손해보험업 중심의 일반보험, 장기보험, 디지털 혁신 및 자산운용 사업을 영위하는 기업입니다."}
+
+// node: business_area_일반보험
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_일반보험", "type": "BusinessArea", "name": "일반보험"}
+
+// node: business_area_장기보험
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_장기보험", "type": "BusinessArea", "name": "장기보험"}
+
+// node: business_area_디지털혁신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_디지털혁신", "type": "BusinessArea", "name": "디지털 혁신"}
+
+// node: business_area_자산운용
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_자산운용", "type": "BusinessArea", "name": "자산운용"}
+
+// node: industry_보험
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_보험", "type": "Industry", "name": "보험"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_일반보험", "properties": {"evidence": "삼성화재 임원 고기호, 권종우 등이 일반보험부문장, 일반보험전략팀장 등 일반보험 관련 부문 담당임원이 확인됨", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_장기보험", "properties": {"evidence": "삼성화재 임원 고기호, 김범중, 조은영 등이 장기보험부문장, 장기보험보상팀장, 장기보험전략팀장 등 장기보험 관련 부문 담당임원이 확인됨", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_디지털혁신", "properties": {"evidence": "삼성화재 임원 조성옥, 한호규 등이 디지털혁신팀장, 디지털마케팅팀장 등 디지털 혁신 관련 부문 담당임원이 확인됨", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000810", "to_id": "business_area_자산운용", "properties": {"evidence": "삼성화재 임원 박민재, 송하영 등이 자산운용본부장, 투자사업부장 등 자산운용 관련 업무 담당임원임", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_일반보험", "to_id": "industry_보험", "properties": {"evidence": "일반보험은 보험 산업에 속하는 세부 사업 영역임", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_장기보험", "to_id": "industry_보험", "properties": {"evidence": "장기보험은 보험 산업에 속하는 세부 사업 영역임", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_디지털혁신", "to_id": "industry_보험", "properties": {"evidence": "보험사에서 진행하는 디지털 혁신은 보험 산업의 핵심 사업 구조임", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_자산운용", "to_id": "industry_보험", "properties": {"evidence": "보험회사의 자산운용은 보험 산업 내 중요한 업무 영역임", "date": "2026-03-12", "evidence_source_id": "dart_000810_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399", "evidence_published_at": "2026-03-12"}}

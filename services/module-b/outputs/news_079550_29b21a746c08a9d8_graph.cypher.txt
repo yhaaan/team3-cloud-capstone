@@ -1,0 +1,379 @@
+// node: company_079550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_079550", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550", "description": "유도무기와 다층 방어체계 중심의 방산 제품 및 군수지원 전문기업이다."}
+
+// node: business_area_defense_systems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_systems", "type": "BusinessArea", "name": "대공방어체계"}
+
+// node: business_area_missile_technology
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_missile_technology", "type": "BusinessArea", "name": "유도무기"}
+
+// node: product_service_shingung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_shingung", "type": "ProductService", "name": "신궁"}
+
+// node: product_service_haegung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_haegung", "type": "ProductService", "name": "해궁"}
+
+// node: product_service_cheongung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cheongung", "type": "ProductService", "name": "천궁"}
+
+// node: product_service_lsman
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lsman", "type": "ProductService", "name": "장거리 지대공 유도무기"}
+
+// node: product_service_bigung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_bigung", "type": "ProductService", "name": "비궁"}
+
+// node: product_service_ciws_ii
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ciws_ii", "type": "ProductService", "name": "근접방어무기체계(CIWS)-II"}
+
+// node: product_service_anti_drone_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_anti_drone_system", "type": "ProductService", "name": "기동형 대드론 통합체계"}
+
+// node: product_service_laser_launcher
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_laser_launcher", "type": "ProductService", "name": "레이저 발사장치"}
+
+// node: product_service_anti_tank_missile
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_anti_tank_missile", "type": "ProductService", "name": "대전차 유도무기"}
+
+// node: product_service_haegeom_2
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_haegeom_2", "type": "ProductService", "name": "해검-2"}
+
+// node: product_service_haegeom_5
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_haegeom_5", "type": "ProductService", "name": "해검-5"}
+
+// node: product_service_autonomous_underwater_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_autonomous_underwater_vehicle", "type": "ProductService", "name": "자율무인 잠수정"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방산"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "business_area_defense_systems", "properties": {"evidence": "LIG D&A는 북대서양조약기구(NATO)와 유럽연합(EU) 국가를 대상으로 한국 유도무기의 우수성을 알릴 계획이다. 또 통합 대공망 중심의 유럽 시장 진출을 위한 본격적인 마케팅 활동을 전개한다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "business_area_missile_technology", "properties": {"evidence": "정밀 유도무기·다층 방어체계 앞세워 NATO 및 EU 시장 수출 외연 확대", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_shingung", "properties": {"evidence": "루마니아와 신궁 추가 도입을 비롯해 다층방어체계 구축 등 후속 협력 방안을 심도 있게 논의할 예정이다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_haegung", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_cheongung", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_lsman", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_bigung", "properties": {"evidence": "2.75인치 유도로켓 비궁 등 대공방어체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_ciws_ii", "properties": {"evidence": "근접방어무기체계(CIWS)-II 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_anti_drone_system", "properties": {"evidence": "기동형 대드론 통합체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_laser_launcher", "properties": {"evidence": "레이저 발사장치 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_anti_tank_missile", "properties": {"evidence": "대전차 유도무기까지 드론과 미래전에 대비한 정밀타격체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_haegeom_2", "properties": {"evidence": "해검-2 등 무인수상정과 자율무인 잠수정 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_haegeom_5", "properties": {"evidence": "해검-5 등 무인수상정과 자율무인 잠수정 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_079550", "to_id": "product_service_autonomous_underwater_vehicle", "properties": {"evidence": "자율무인 잠수정(AUV) 등 해상 무인화 전력 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_systems", "to_id": "industry_defense", "properties": {"evidence": "한국의 대공방어체계가 NATO 시장에 진출한 첫 사례로, 한국 방산의 신뢰도를 한 단계 끌어올린 성과로 평가된다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_missile_technology", "to_id": "industry_defense", "properties": {"evidence": "정밀 유도무기·다층 방어체계 앞세워 NATO 및 EU 시장 수출 외연 확대", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_shingung", "to_id": "business_area_defense_systems", "properties": {"evidence": "루마니아와 신궁 추가 도입을 비롯해 다층방어체계 구축 등 후속 협력 방안을 심도 있게 논의할 예정이다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_haegung", "to_id": "business_area_defense_systems", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cheongung", "to_id": "business_area_defense_systems", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lsman", "to_id": "business_area_defense_systems", "properties": {"evidence": "신궁부터 해궁(K-SAAM)과 천궁(M-SAM-II), 장거리 지대공 유도무기(L-SAM) 등 대공방어체계 선보인다.", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_bigung", "to_id": "business_area_defense_systems", "properties": {"evidence": "2.75인치 유도로켓 비궁 등 대공방어체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ciws_ii", "to_id": "business_area_defense_systems", "properties": {"evidence": "근접방어무기체계(CIWS)-II 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_anti_drone_system", "to_id": "business_area_defense_systems", "properties": {"evidence": "기동형 대드론 통합체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_laser_launcher", "to_id": "business_area_defense_systems", "properties": {"evidence": "레이저 발사장치 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_anti_tank_missile", "to_id": "business_area_defense_systems", "properties": {"evidence": "대전차 유도무기까지 드론과 미래전에 대비한 정밀타격체계 공개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_haegeom_2", "to_id": "business_area_defense_systems", "properties": {"evidence": "해검-2 등 무인수상정과 자율무인 잠수정 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_haegeom_5", "to_id": "business_area_defense_systems", "properties": {"evidence": "해검-5 등 무인수상정과 자율무인 잠수정 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_autonomous_underwater_vehicle", "to_id": "business_area_defense_systems", "properties": {"evidence": "자율무인 잠수정(AUV) 등 해상 무인화 전력 소개", "date": "", "evidence_source_id": "news_079550_29b21a746c08a9d8", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044057?ref=naver", "evidence_published_at": "2026-05-14T13:55:00+09:00"}}

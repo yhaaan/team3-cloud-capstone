@@ -1,0 +1,64 @@
+{
+  "source_id": "news_042700_31a37d36d7144f3e",
+  "entities": [
+    {
+      "id": "company_042700",
+      "type": "Company",
+      "name": "한미반도체",
+      "stock_code": "042700",
+      "description": "반도체 장비 제조 및 판매하는 기업"
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "메모리 등 반도체 사업과 다양한 전자제품 사업 영위"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_memory",
+      "evidence": "[단독] 삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안",
+      "date": "",
+      "evidence_source_id": "news_042700_31a37d36d7144f3e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver",
+      "evidence_published_at": "2026-05-15T17:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "[단독] 삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안",
+      "date": "",
+      "evidence_source_id": "news_042700_31a37d36d7144f3e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver",
+      "evidence_published_at": "2026-05-15T17:04:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042700",
+      "to": "industry_semiconductor",
+      "evidence": "한미반도체",
+      "date": "",
+      "evidence_source_id": "news_042700_31a37d36d7144f3e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver",
+      "evidence_published_at": "2026-05-15T17:04:00+09:00"
+    }
+  ]
+}

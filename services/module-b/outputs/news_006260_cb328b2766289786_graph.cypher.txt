@@ -1,0 +1,144 @@
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260", "description": "LS에코에너지를 통해 고부가가치 전력케이블, 초고압 및 희토류 금속 등 글로벌 에너지 솔루션 사업을 추진"}
+
+// node: business_area_electric_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_power_infrastructure", "type": "BusinessArea", "name": "전력 인프라"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "에너지 솔루션"}
+
+// node: business_area_high_voltage_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_high_voltage_cable", "type": "BusinessArea", "name": "초고압 케이블"}
+
+// node: business_area_HVDC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_HVDC", "type": "BusinessArea", "name": "HVDC"}
+
+// node: business_area_rare_earth_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_rare_earth_metal", "type": "BusinessArea", "name": "희토류 금속"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_strategic_material
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_strategic_material", "type": "Industry", "name": "전략 소재"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_energy_solution", "properties": {"evidence": "LS에코에너지가 전력·통신 케이블을 넘어 '글로벌 에너지 솔루션 기업'으로 거듭나고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_high_voltage_cable", "properties": {"evidence": "최근에는 북미·유럽 중심의 초고압(HV) 및 고부가 제품 비중이 빠르게 확대되고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_HVDC", "properties": {"evidence": "LS에코에너지도 기존 HV 제품에서 UHV 및 HVDC 영역으로 제품군을 확대하는 단계다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_rare_earth_metal", "properties": {"evidence": "LS에코에너지는 전선 전문 기업에서 '희토류 영구자석 밸류체인' 구축을 통해 사업 영역을 공격적으로 확장하고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "industry_energy", "properties": {"evidence": "LS에코에너지가 전력·통신 케이블을 넘어 '글로벌 에너지 솔루션 기업'으로 거듭나고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_high_voltage_cable", "to_id": "business_area_energy_solution", "properties": {"evidence": "최근에는 북미·유럽 중심의 초고압(HV) 및 고부가 제품 비중이 빠르게 확대되고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_HVDC", "to_id": "business_area_energy_solution", "properties": {"evidence": "LS에코에너지도 기존 HV 제품에서 UHV 및 HVDC 영역으로 제품군을 확대하는 단계다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rare_earth_metal", "to_id": "industry_strategic_material", "properties": {"evidence": "희토류 사업은 LS에코에너지의 미래 성장축이다. 전략 소재 사업 확대를 추진하고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "industry_energy", "properties": {"evidence": "LS에코에너지가 전력·통신 케이블을 넘어 '글로벌 에너지 솔루션 기업'으로 거듭나고 있다.", "date": "", "evidence_source_id": "news_006260_cb328b2766289786", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367991", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}

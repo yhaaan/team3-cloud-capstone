@@ -1,0 +1,344 @@
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "국내 주요 사업회사를 통합 관리하는 지주회사"}
+
+// node: company_009830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009830", "type": "Company", "name": "한화솔루션", "stock_code": "009830", "description": "화학, 태양광, 소재 사업을 영위하는 종합 에너지·소재 기업"}
+
+// node: company_452260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_452260", "type": "Company", "name": "한화갤러리아", "stock_code": "452260", "description": "백화점 및 유통사업을 운영하는 기업"}
+
+// node: company_000370
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000370", "type": "Company", "name": "한화손해보험", "stock_code": "000370", "description": "종합손해보험 및 관련 금융상품을 제공하는 보험사"}
+
+// node: company_003530
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003530", "type": "Company", "name": "한화투자증권", "stock_code": "003530", "description": "증권 중개 및 금융투자 서비스를 제공하는 증권사"}
+
+// node: company_012450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "항공우주 및 방위산업 분야의 주요 사업을 수행"}
+
+// node: company_272210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210", "description": "방위산업 및 첨단 IT 시스템 개발 기업"}
+
+// node: company_042660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "조선업 및 해양 플랜트 관련 사업을 영위"}
+
+// node: company_082740
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_082740", "type": "Company", "name": "한화엔진", "stock_code": "082740", "description": "항공기 엔진 및 관련 부품 개발 전문기업"}
+
+// node: business_area_solar_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_solar_power", "type": "BusinessArea", "name": "태양광"}
+
+// node: business_area_chemicals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_chemicals", "type": "BusinessArea", "name": "화학"}
+
+// node: business_area_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_distribution", "type": "BusinessArea", "name": "유통"}
+
+// node: business_area_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_insurance", "type": "BusinessArea", "name": "보험"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "금융투자"}
+
+// node: business_area_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense", "type": "BusinessArea", "name": "방위산업"}
+
+// node: business_area_aerospace
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_aerospace", "type": "BusinessArea", "name": "항공우주"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_distribution", "type": "Industry", "name": "유통"}
+
+// node: industry_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_insurance", "type": "Industry", "name": "보험"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방위산업"}
+
+// node: industry_aerospace
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_aerospace", "type": "Industry", "name": "항공우주"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "조선"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009830", "to_id": "business_area_solar_power", "properties": {"evidence": "한화솔루션㈜는 태양광 사업을 영위함.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009830", "to_id": "business_area_chemicals", "properties": {"evidence": "한화솔루션㈜는 화학 사업을 영위함.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_452260", "to_id": "business_area_distribution", "properties": {"evidence": "한화갤러리아 주식회사는 유통 사업을 진행함.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000370", "to_id": "business_area_insurance", "properties": {"evidence": "한화손해보험㈜는 종합손해보험 사업을 영위.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003530", "to_id": "business_area_financial_services", "properties": {"evidence": "한화투자증권㈜는 증권 및 금융투자 서비스를 제공.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_aerospace", "properties": {"evidence": "한화에어로스페이스㈜는 항공우주 사업을 수행.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_272210", "to_id": "business_area_defense", "properties": {"evidence": "한화시스템㈜는 방위산업 및 첨단 IT 시스템 사업을 영위.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션 주식회사는 조선 사업에 참여.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_082740", "to_id": "business_area_aerospace", "properties": {"evidence": "한화엔진 주식회사는 항공기 엔진 개발 전문.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_solar_power", "to_id": "industry_energy", "properties": {"evidence": "태양광 사업은 에너지 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_chemicals", "to_id": "industry_energy", "properties": {"evidence": "화학 사업은 에너지 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_distribution", "to_id": "industry_distribution", "properties": {"evidence": "유통 사업은 유통 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_insurance", "to_id": "industry_insurance", "properties": {"evidence": "보험 사업은 보험 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_financial_services", "to_id": "industry_finance", "properties": {"evidence": "금융투자 사업은 금융 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense", "to_id": "industry_defense", "properties": {"evidence": "방위산업은 방위산업 분야에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_aerospace", "to_id": "industry_aerospace", "properties": {"evidence": "항공우주 사업은 항공우주 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선 사업은 조선 산업에 포함됨.", "date": "2026-03-31", "evidence_source_id": "dart_000880_affiliate_status_20260331003871", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003871", "evidence_published_at": "2026-03-31"}}

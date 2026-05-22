@@ -1,15 +1,84 @@
-// node: company_dosan_energy_ability
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energy_ability", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "에너지·중공업 분야에서 원자력 발전 및 플랜트 설비를 개발·운영합니다."}
 
-// node: company_dosan
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: business_area_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power", "type": "BusinessArea", "name": "원자력"}
+
+// node: business_area_plants
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_plants", "type": "BusinessArea", "name": "플랜트"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_nuclear_power", "properties": {"evidence": "두산에너빌리티는 원자력 발전 설비 개발 및 운영을 주요 사업으로 영위합니다.", "date": "", "evidence_source_id": "news_034020_d89a0f9899ceffb8", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573762", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_plants", "properties": {"evidence": "두산에너빌리티는 플랜트 설비 관련 사업을 영위합니다.", "date": "", "evidence_source_id": "news_034020_d89a0f9899ceffb8", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573762", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power", "to_id": "industry_energy", "properties": {"evidence": "원자력은 에너지 산업의 한 부분입니다.", "date": "", "evidence_source_id": "news_034020_d89a0f9899ceffb8", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573762", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_plants", "to_id": "industry_energy", "properties": {"evidence": "플랜트 산업도 에너지 산업의 한 부문입니다.", "date": "", "evidence_source_id": "news_034020_d89a0f9899ceffb8", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573762", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "industry_energy", "properties": {"evidence": "두산은 에너지 산업에 속한 기업입니다.", "date": "", "evidence_source_id": "news_034020_d89a0f9899ceffb8", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573762", "evidence_published_at": "2026-05-12T06:00:00+09:00"}}

@@ -1,0 +1,58 @@
+// node: company_000250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000250", "type": "Company", "name": "삼천당제약", "stock_code": "000250"}
+
+// node: person_윤대인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤대인", "type": "Person", "name": "윤대인", "role_raw": "최대주주의 특수관계인", "role": "OTHER", "role_label": "최대주주의 특수관계인"}
+
+// node: person_전인석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_전인석", "type": "Person", "name": "전인석", "role_raw": "특수관계인", "role": "OTHER", "role_label": "특수관계인"}
+
+// node: person_윤은화
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤은화", "type": "Person", "name": "윤은화", "role_raw": "특수관계인", "role": "OTHER", "role_label": "특수관계인"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤대인", "to_id": "company_000250", "properties": {"evidence": "삼천당제약의 최대주주 관련 인물/법인은 윤대인, 관계는 최대주주의 특수관계인, 당기말 보유주식수는 23,000주, 지분율은 0.10%, 비고는 수증자 : 전인석, 윤은화.", "date": "2026-03-20", "evidence_source_id": "dart_000250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_전인석", "to_id": "company_000250", "properties": {"evidence": "삼천당제약의 최대주주 관련 인물/법인은 전인석, 관계는 특수관계인, 당기말 보유주식수는 799,700주, 지분율은 3.40%, 비고는 증여자 : 윤대인.", "date": "2026-03-20", "evidence_source_id": "dart_000250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤은화", "to_id": "company_000250", "properties": {"evidence": "삼천당제약의 최대주주 관련 인물/법인은 윤은화, 관계는 특수관계인, 당기말 보유주식수는 799,700주, 지분율은 3.40%, 비고는 증여자 : 윤대인.", "date": "2026-03-20", "evidence_source_id": "dart_000250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096", "evidence_published_at": "2026-03-20"}}

@@ -1,0 +1,23 @@
+// node: company_316140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_316140", "type": "Company", "name": "우리금융지주", "stock_code": "316140", "description": "우리금융지주는 금융그룹 지주회사로 주요 금융서비스를 제공합니다."}
+
+// node: person_ourstockassociation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_ourstockassociation", "type": "Person", "name": "(주)우리금융지주 우리사주조합"}
+
+// node: person_blackrockfundadvisors
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_blackrockfundadvisors", "type": "Person", "name": "BlackRockFundAdvisors"}

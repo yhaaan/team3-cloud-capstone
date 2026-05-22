@@ -1,0 +1,58 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "지주사 출범 후 ESG 경영 강화, 자회사 삼성바이오에피스와 함께 바이오산업 관련 활동을 전개"}
+
+// node: person_kimgyeonga
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kimgyeonga", "type": "Person", "name": "김경아", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: business_area_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio", "type": "BusinessArea", "name": "바이오산업"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kimgyeonga", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스 김경아 사장은 \"첫 글로벌 ESG 평가 인증에서 리더 등급을 획득한 것은 단기적인 성과가 아닌 설립 초기부터 ESG 경영을 핵심 가치로 삼아 체계적으로 준비해 온 결과\"라고 말했다.", "date": "", "evidence_source_id": "news_0126Z0_22e691cf51cb7347", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051416100121061", "evidence_published_at": "2026-05-14T16:11:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio", "properties": {"evidence": "자회사 삼성바이오에피스의 ESG 활동을 바탕으로 글로벌 ESG 평가에 처음으로 참여했다.", "date": "", "evidence_source_id": "news_0126Z0_22e691cf51cb7347", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051416100121061", "evidence_published_at": "2026-05-14T16:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio", "to_id": "industry_bio", "properties": {"evidence": "바이오산업 관련 ESG 평가 및 활동 내용", "date": "", "evidence_source_id": "news_0126Z0_22e691cf51cb7347", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051416100121061", "evidence_published_at": "2026-05-14T16:11:00+09:00"}}

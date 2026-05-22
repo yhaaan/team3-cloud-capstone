@@ -2,35 +2,84 @@
   "source_id": "news_207940_bdb4f1c6cd5ca81b",
   "entities": [
     {
-      "id": "company_samsung_biologics",
-      "type": "Company",
-      "name": "삼성바이오로직스",
-      "stock_code": "207940"
-    },
-    {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체와 전자제품 등 다양한 첨단 기술 제품을 생산하는 글로벌 기업"
     },
     {
-      "id": "person_choi_seung_ho",
-      "type": "Person",
-      "name": "최승호",
-      "role_raw": "초기업노조 삼성전자지부 위원장",
-      "affiliated_company": "company_samsung_electronics",
-      "role": "OTHER",
-      "role_label": "초기업노조 위원장"
+      "id": "company_207940",
+      "type": "Company",
+      "name": "삼성바이오로직스",
+      "stock_code": "207940",
+      "description": "바이오의약품 위탁생산과 관련된 바이오 산업 분야에서 활동"
     },
     {
-      "id": "person_park_jae_sung",
-      "type": "Person",
-      "name": "박재성",
-      "role_raw": "삼성바이오로직스 노조위원장",
-      "affiliated_company": "company_samsung_biologics",
-      "role": "OTHER",
-      "role_label": "노조위원장"
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "바이오"
+    },
+    {
+      "id": "business_area_bio_pharmaceuticals",
+      "type": "BusinessArea",
+      "name": "바이오의약품"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_semiconductor",
+      "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494",
+      "evidence_published_at": "2026-04-28T18:05:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_bio_pharmaceuticals",
+      "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494",
+      "evidence_published_at": "2026-04-28T18:05:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494",
+      "evidence_published_at": "2026-04-28T18:05:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_bio_pharmaceuticals",
+      "to": "industry_bio",
+      "evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494",
+      "evidence_published_at": "2026-04-28T18:05:00+09:00"
+    }
+  ]
 }

@@ -1,83 +1,108 @@
-// node: company_sk_hynix
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "country": "KR"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK그룹 중간지주사로 SK하이닉스 지분 약 20% 보유와 투자 및 자산운용을 주력"}
 
-// node: company_sk_square
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "country": "KR"}
-
-// node: company_hd_hyundai_heavy
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_heavy", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "country": "KR"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "인공지능 반도체 등 메모리 사업 중심 글로벌 반도체 기업"}
 
-// node: company_daishin_securities
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_daishin_securities", "type": "Company", "name": "대신증권", "stock_code": "003540", "country": "KR"}
-
-// node: company_sk_securities
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_securities", "type": "Company", "name": "SK증권", "stock_code": "001510", "country": "KR"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선해양플랜트 중심의 선박 및 중공업 설비 제조"}
 
-// node: company_mirae_asset_securities
+// node: business_area_investment
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_mirae_asset_securities", "type": "Company", "name": "미래에셋증권", "stock_code": "006800", "country": "KR"}
+:params {"id": "business_area_investment", "type": "BusinessArea", "name": "투자사업"}
 
-// relation: INVESTS_IN
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "조선"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_sk_hynix", "properties": {"evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
+:params {"from_id": "company_402340", "to_id": "business_area_investment", "properties": {"evidence": "SK그룹의 중간 지주사인 SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_daishin_securities", "to_id": "company_sk_square", "properties": {"evidence": "김회재 대신증권 연구원은 \"SK하이닉스 편입 비중과 시가총액 사이의 괴리로 SK스퀘어의 대안 매력이 커지고 있다\"며 \"SK하이닉스 실적 전망 상향에 따른 주가 급등이 지속되는 동안 SK스퀘어의 투자 매력도 높아지고 있다\"고 분석했다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "11:09 인공지능(AI) 반도체 슈퍼사이클을 타고 SK하이닉스가 130만원선을 돌파한 가운데", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_securities", "to_id": "company_sk_square", "properties": {"evidence": "최관순 SK증권 연구원도 \"단일종목 편입한도 10% 룰에 따라 기관투자자가 SK하이닉스의 대안으로 SK스퀘어 매수를 이어갈 가능성이 높다\"고 설명했다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "11:09 인공지능(AI) 반도체 슈퍼사이클을 타고 SK하이닉스가 130만원선을 돌파한 가운데", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_mirae_asset_securities", "to_id": "company_sk_hynix", "properties": {"evidence": "미래에셋증권 역시 같은 날 SK하이닉스 목표가를 기존 166만원에서 200만원으로 높여잡았다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "이 기간 순매수 규모가 989억원으로, HD현대중공업(2221억원)에 이어 2위였다.", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD현대중공업는 조선해양플랜트 중심의 선박 및 중공업 설비 제조업체임", "date": "", "evidence_source_id": "news_402340_858f0ca456fa9ea0", "evidence_source_type": "news", "evidence_source_url": "https://www.widedaily.com/news/articleView.html?idxno=293213", "evidence_published_at": "2026-04-29T11:10:00+09:00"}}

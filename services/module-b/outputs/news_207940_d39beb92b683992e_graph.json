@@ -2,17 +2,187 @@
   "source_id": "news_207940_d39beb92b683992e",
   "entities": [
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동을 확대하며 바이오 위탁생산 서비스를 제공"
     },
     {
-      "id": "company_셀트리온",
+      "id": "company_068270",
       "type": "Company",
       "name": "셀트리온",
-      "stock_code": "068270"
+      "stock_code": "068270",
+      "description": "바이오시밀러 및 자가면역질환 치료제 등 고수익 제품군을 중심으로 바이오 의약품 사업을 영위"
+    },
+    {
+      "id": "business_area_cmo",
+      "type": "BusinessArea",
+      "name": "위탁생산"
+    },
+    {
+      "id": "business_area_cdo",
+      "type": "BusinessArea",
+      "name": "위탁개발"
+    },
+    {
+      "id": "business_area_biosimilar",
+      "type": "BusinessArea",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "product_service_omriclo",
+      "type": "ProductService",
+      "name": "옴리클로"
+    },
+    {
+      "id": "product_service_jimpentra",
+      "type": "ProductService",
+      "name": "짐펜트라"
+    },
+    {
+      "id": "product_service_stekima",
+      "type": "ProductService",
+      "name": "스테키마"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_cmo",
+      "evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_cdo",
+      "evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cmo",
+      "to": "industry_bio",
+      "evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cdo",
+      "to": "industry_bio",
+      "evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_biosimilar",
+      "evidence": "회사가 주력하고 있는 바이오시밀러 산업의 유럽 주요국 입찰이 보통 2~3분기에 집중되고",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_omriclo",
+      "evidence": "만성 특발성 두드러기 치료제 '옴리클로'는 유럽 주요 시장에서 70~90%대 점유율 확보란 성과를 냈고",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_omriclo",
+      "to": "business_area_biosimilar",
+      "evidence": "만성 특발성 두드러기 치료제 '옴리클로'는 유럽 주요 시장에서 70~90%대 점유율 확보란 성과를 냈고",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_jimpentra",
+      "evidence": "인플릭시맙 피하주사(SC) 제형 치료제 '짐펜트라' 역시 미국 내 역대 최대 월간 처방량을 경신했다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_jimpentra",
+      "to": "business_area_biosimilar",
+      "evidence": "인플릭시맙 피하주사(SC) 제형 치료제 '짐펜트라' 역시 미국 내 역대 최대 월간 처방량을 경신했다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_stekima",
+      "evidence": "자가면역질환 치료제 '스테키마'도 올해 3월 기준 10%가 넘는 점유율을 기록했다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_stekima",
+      "to": "business_area_biosimilar",
+      "evidence": "자가면역질환 치료제 '스테키마'도 올해 3월 기준 10%가 넘는 점유율을 기록했다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biosimilar",
+      "to": "industry_bio",
+      "evidence": "회사가 주력하고 있는 바이오시밀러 산업의 유럽 주요국 입찰이 보통 2~3분기에 집중되고",
+      "date": "",
+      "evidence_source_id": "news_207940_d39beb92b683992e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500454",
+      "evidence_published_at": "2026-05-12T06:44:00+09:00"
+    }
+  ]
 }

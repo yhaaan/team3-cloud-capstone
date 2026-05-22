@@ -1,0 +1,145 @@
+// node: company_060570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_060570", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570", "description": "음악서비스, 음반 및 디지털 콘텐츠 유통, MD 및 공연 기획과 굿즈 판매 사업을 영위"}
+
+// node: business_area_music_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_music_service", "type": "BusinessArea", "name": "음악서비스"}
+
+// node: business_area_music_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_music_distribution", "type": "BusinessArea", "name": "음반 및 디지털 콘텐츠 유통"}
+
+// node: business_area_md_performance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_md_performance", "type": "BusinessArea", "name": "MD 및 공연"}
+
+// node: productservice_musicservice_flo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_musicservice_flo", "type": "ProductService", "name": "음악서비스(FLO)"}
+
+// node: productservice_led_cheering_stick
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_led_cheering_stick", "type": "ProductService", "name": "무선제어 LED 응원봉"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "business_area_music_service", "properties": {"evidence": "음악서비스 부문 온라인 음악 서비스, 오디오 콘텐츠 기획 및 제작음반 및 디지털 콘텐츠 유통", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "business_area_music_distribution", "properties": {"evidence": "음악서비스 부문 온라인 음악 서비스, 오디오 콘텐츠 기획 및 제작음반 및 디지털 콘텐츠 유통", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "business_area_md_performance", "properties": {"evidence": "MD, 공연 부문 아티스트 MD공연사업", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "productservice_musicservice_flo", "properties": {"evidence": "음악서비스 부문 주요 제품 및 서비스 음악서비스(FLO)음반 및 디지털 콘텐츠 유통", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "productservice_led_cheering_stick", "properties": {"evidence": "MD, 공연 부문 무선제어 LED 응원봉, 굿즈공연 기획 및 제작", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_musicservice_flo", "to_id": "business_area_music_distribution", "properties": {"evidence": "음악서비스(FLO)음반 및 디지털 콘텐츠 유통", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_led_cheering_stick", "to_id": "business_area_md_performance", "properties": {"evidence": "무선제어 LED 응원봉, 굿즈공연 기획 및 제작", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_music_service", "to_id": "industry_platform", "properties": {"evidence": "드림어스컴퍼니의 음악서비스 부문 온라인 음악 서비스, 오디오 콘텐츠 기획 및 제작", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_music_distribution", "to_id": "industry_platform", "properties": {"evidence": "음악서비스 부문 음반 및 디지털 콘텐츠 유통", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_md_performance", "to_id": "industry_platform", "properties": {"evidence": "MD, 공연 부문 아티스트 MD공연사업", "date": "2026-03-19", "evidence_source_id": "dart_060570_business_segments_20260319000743", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743", "evidence_published_at": "2026-03-19"}}

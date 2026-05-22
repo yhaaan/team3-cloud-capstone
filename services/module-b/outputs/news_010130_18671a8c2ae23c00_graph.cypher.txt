@@ -1,0 +1,48 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130", "description": "주요 사업은 아연 제련 및 관련 사업이다."}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720"}
+
+// node: company_323410
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_323410", "type": "Company", "name": "카카오뱅크", "stock_code": "323410"}
+
+// node: industry_mining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mining", "type": "Industry", "name": "채굴"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "industry_mining", "properties": {"evidence": "기사 최근 활동중인 ' 고려아연 소액주주' 단체를 두고 시장 안팎에서 다양한 해석이 나오고 있습니다.", "date": "", "evidence_source_id": "news_010130_18671a8c2ae23c00", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005836036", "evidence_published_at": "2026-05-15T10:26:00+09:00"}}

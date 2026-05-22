@@ -1,18 +1,86 @@
-// node: company_현대위아
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대위아", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210", "description": "자동차부품, 공작기계 등 제조 및 판매 사업을 영위하는 기업입니다."}
 
-// node: company_케이씨
+// node: company_029460
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_케이씨", "type": "Company", "name": "케이씨", "stock_code": "029460"}
+:params {"id": "company_029460", "type": "Company", "name": "케이씨", "stock_code": "029460"}
+
+// node: business_area_automotive_parts
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive_parts", "type": "BusinessArea", "name": "자동차 부품"}
+
+// node: business_area_machine_tools
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_machine_tools", "type": "BusinessArea", "name": "공작기계"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "기계"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_automotive_parts", "properties": {"evidence": "현대위아의 타법인 출자 대상은 위아마그나파워트레인, 출자 목적은 경영참여...", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_machine_tools", "properties": {"evidence": "현대위아는 자동차부품과 공작기계 등 제조 및 판매 사업을 영위하는 기업입니다.", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive_parts", "to_id": "industry_automotive", "properties": {"evidence": "자동차 부품은 자동차 산업에 속합니다.", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_machine_tools", "to_id": "industry_machinery", "properties": {"evidence": "공작기계는 기계 산업에 속합니다.", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}
 
 // relation: INVESTS_IN
 
@@ -21,4 +89,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대위아", "to_id": "company_케이씨", "properties": {"evidence": "현대위아의 타법인 출자 대상은 케이씨엔씨(*), 출자 목적은 경영참여, 최초 취득일은 2022.06.23, 당기말 보유수량은 1,589,000.", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_011210", "to_id": "company_029460", "properties": {"evidence": "현대위아의 타법인 출자 대상은 케이씨엔씨(*), 출자 목적은 경영참여, 최초 취득일은 2022.06.23, 당기말 보유수량은 1,589,000.", "date": "2026-03-17", "evidence_source_id": "dart_011210_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785", "evidence_published_at": "2026-03-17"}}

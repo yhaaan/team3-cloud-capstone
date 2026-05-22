@@ -1,39 +1,248 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "친환경 고부가 선박 중심 수주와 조선·엔진·해양플랜트 전 부문 성장으로 실적 성장세 유지"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd현대마린엔진
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선 부문 생산성 확대, 제품 믹스 개선 기반 매출과 영업이익 성장"}
 
-// node: company_hd현대에너지솔루션
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
-
-// node: company_hd현대
+// node: company_071970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 판매단가 상승과 판매량 증가로 매출과 영업이익 고속 성장"}
+
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000", "description": "모듈 판매량 증대와 판가 인상으로 매출 대폭 증가 및 흑자 전환"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "엔진기계"}
+
+// node: business_area_ocean_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ocean_plant", "type": "BusinessArea", "name": "해양플랜트"}
+
+// node: product_service_lng_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_carrier", "type": "ProductService", "name": "LNG선"}
+
+// node: product_service_tanker
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_tanker", "type": "ProductService", "name": "대형 탱커선"}
+
+// node: product_service_gas_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_gas_ship", "type": "ProductService", "name": "가스선"}
+
+// node: product_service_container_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_container_ship", "type": "ProductService", "name": "컨테이너선"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "조선"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "글로벌 LNG선·대형 탱커선 발주 확대 흐름 속에서 조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_engine", "properties": {"evidence": "글로벌 LNG선·대형 탱커선 발주 확대 흐름 속에서 조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_ocean_plant", "properties": {"evidence": "글로벌 LNG선·대형 탱커선 발주 확대 흐름 속에서 조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_lng_carrier", "properties": {"evidence": "친환경 고부가 선박 중심의 수주 전략과 생산성 개선 효과를 앞세워 올해 1분기 시장 기대치를 웃도는 실적을 기록했다. 글로벌 LNG선·대형 탱커선 발주 확대 흐름 속에서 ...", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_tanker", "properties": {"evidence": "대형 탱커선을 중심으로 신조 발주가 이어지는 가운데, 가스선과 컨테이너선의 발주도 지속되고 있다", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_gas_ship", "properties": {"evidence": "대형 탱커선을 중심으로 신조 발주가 이어지는 가운데, 가스선과 컨테이너선의 발주도 지속되고 있다", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_container_ship", "properties": {"evidence": "대형 탱커선을 중심으로 신조 발주가 이어지는 가운데, 가스선과 컨테이너선의 발주도 지속되고 있다", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "조선 부문이 생산성 확대와 제품 믹스 개선 효과에 힘입어 매출 6조6963억 원, 영업이익 1조1107억 원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "HD현대마린엔진은 엔진 판매단가 상승, 엔진 인도 물량 증가, 부품 판매 증가로 매출과 영업이익이 크게 증가했다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_322000", "to_id": "business_area_engine", "properties": {"evidence": "HD현대에너지솔루션은 국내외 모듈 판매량 증대와 판가 인상으로 매출과 영업이익이 크게 증가했다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ocean_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선·엔진·해양플랜트 전 부문이 고르게 성장하며 '슈퍼사이클' 수혜가 본격화되고 있다는 평가", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_carrier", "to_id": "business_area_shipbuilding", "properties": {"evidence": "글로벌 LNG선·대형 탱커선 발주 확대 흐름 속에서 조선 부문이 성장했다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_tanker", "to_id": "business_area_shipbuilding", "properties": {"evidence": "대형 탱커선 발주 중심으로 조선 부문 성장.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_gas_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "가스선 발주도 지속되고 있다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_container_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "컨테이너선의 발주도 지속되고 있다.", "date": "", "evidence_source_id": "news_009540_4f22401960c8a93b", "evidence_source_type": "news", "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065606024434915", "evidence_published_at": "2026-05-07T19:02:00+09:00"}}

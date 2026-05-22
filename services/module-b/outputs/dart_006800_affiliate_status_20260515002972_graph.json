@@ -1,0 +1,32 @@
+{
+  "source_id": "dart_006800_affiliate_status_20260515002972",
+  "entities": [
+    {
+      "id": "company_006800",
+      "type": "Company",
+      "name": "미래에셋증권",
+      "stock_code": "006800",
+      "description": "금융투자 및 증권 중개, 자산운용, 보험 등 금융 서비스를 제공"
+    },
+    {
+      "id": "company_100790",
+      "type": "Company",
+      "name": "미래에셋벤처투자",
+      "stock_code": "100790",
+      "description": "벤처투자 및 투자 관리 전문 금융 서비스 제공"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_006800",
+      "to": "company_100790",
+      "evidence": "미래에셋증권의 상장 계열회사 후보로 미래에셋벤처투자 등이 탐지되었다.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_006800_affiliate_status_20260515002972",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
+      "evidence_published_at": "2026-05-15"
+    }
+  ]
+}

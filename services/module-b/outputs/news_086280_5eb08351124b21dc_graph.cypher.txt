@@ -1,0 +1,185 @@
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체 생산량 축소 웜다운 돌입, 반도체 부문 인력 65% 파업 참가"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720", "description": "모빌리티 지배구조 재편, 미국 증시 상장 검토 및 글로벌 모빌리티 생태계 진출"}
+
+// node: business_area_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility", "type": "BusinessArea", "name": "mobility"}
+
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280", "description": "물류 및 조선·방산 관련 사업을 영위"}
+
+// node: company_329180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선·방산 관련 사업을 영위"}
+
+// node: company_267250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250", "description": "조선·방산 관련 사업을 영위"}
+
+// node: company_009540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "조선·방산 관련 사업을 영위"}
+
+// node: company_298040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298040", "type": "Company", "name": "효성중공업", "stock_code": "298040", "description": "전력 인프라 관련 사업을 영위"}
+
+// node: company_034020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "전력 인프라 관련 사업을 영위"}
+
+// node: company_010120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010120", "type": "Company", "name": "LS ELECTRIC", "stock_code": "010120", "description": "전력 인프라 관련 사업을 영위"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 사업을 영위"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자가 21일 총파업을 앞두고 반도체 생산량을 축소하는 웜다운에 돌입했으며, 반도체 업계는 팹 셧다운 시 하루 2조 6000억 원의 생산 손실을 포함해 직간접 피해가 100조 원에 이를 것으로 분석했다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자는 파업 관련 불확실성에도 3.26% 상승해 장중 한때 29만 9500원까지 치솟으며 SK하이닉스(000660) 대비 상대적 부진을 되돌리는 모습을 보였다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035720", "to_id": "business_area_mobility", "properties": {"evidence": "카카오가 카카오모빌리티의 2대 주주 교체를 포함한 지배구조 재편을 위해 '주주가치제고위원회'를 신설하고, 우버·TPG와의 3각 빅딜 구체화에 속도를 내고 있다는 IB 업계 분위기다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086280", "to_id": "industry_semiconductor", "properties": {"evidence": "중동 긴장 완화 기대감이 확산되면서 방산·조선·물류·전력기기 관련주가 일제히 급락했다. 현대글로비스(086280)가 6.69% 떨어졌다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "industry_semiconductor", "properties": {"evidence": "HD현대중공업(329180)(-7.78%) 등 조선·방산 그룹주가 파란불을 켰다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267250", "to_id": "industry_semiconductor", "properties": {"evidence": "HD현대(267250)(-7.04%) 등 조선·방산 그룹주가 파란불을 켰다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "industry_semiconductor", "properties": {"evidence": "HD한국조선해양(009540)(-3.80%) 등 조선·방산 그룹주가 파란불을 켰다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "industry_semiconductor", "properties": {"evidence": "효성중공업(298040)(-4.69%) 전력 인프라 수혜주도 약세권으로 밀렸다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "industry_semiconductor", "properties": {"evidence": "두산에너빌리티(034020)(-3.08%) 전력 인프라 수혜주도 약세권으로 밀렸다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "industry_semiconductor", "properties": {"evidence": "LS ELECTRIC(010120)(-2.81%) 전력 인프라 수혜주도 약세권으로 밀렸다.", "date": "", "evidence_source_id": "news_086280_5eb08351124b21dc", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044366?ref=naver", "evidence_published_at": "2026-05-15T07:32:00+09:00"}}

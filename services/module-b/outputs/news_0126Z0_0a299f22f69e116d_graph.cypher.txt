@@ -1,0 +1,66 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "자회사 삼성바이오에피스 중심의 바이오 사업을 주력으로 하는 기업"}
+
+// node: company_068270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_068270", "type": "Company", "name": "셀트리온", "stock_code": "068270"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: business_area_바이오
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_바이오", "type": "BusinessArea", "name": "바이오"}
+
+// node: industry_바이오
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_바이오", "type": "Industry", "name": "바이오"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_바이오", "properties": {"evidence": "지난해 11월 분할 상장한 삼성에피스홀딩스는 자회사 삼성바이오에피스의 ESG 활동을 바탕으로 세계적인 평가 기관인 MSCI로부터 높은 수준의 등급을 받게 됐다고 설명했다.", "date": "", "evidence_source_id": "news_0126Z0_0a299f22f69e116d", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20043922?ref=naver", "evidence_published_at": "2026-05-14T10:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_바이오", "to_id": "industry_바이오", "properties": {"evidence": "자회사 삼성바이오에피스의 ESG 활동을 바탕으로...", "date": "", "evidence_source_id": "news_0126Z0_0a299f22f69e116d", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20043922?ref=naver", "evidence_published_at": "2026-05-14T10:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "industry_바이오", "properties": {"evidence": "지난해 11월 분할 상장한 삼성에피스홀딩스는 자회사 삼성바이오에피스의 ESG 활동을 바탕으로 세계적인 평가 기관인 MSCI로부터 높은 수준의 등급을 받게 됐다고 설명했다.", "date": "", "evidence_source_id": "news_0126Z0_0a299f22f69e116d", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20043922?ref=naver", "evidence_published_at": "2026-05-14T10:02:00+09:00"}}

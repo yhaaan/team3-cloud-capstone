@@ -1,82 +1,271 @@
-// node: company_samsung_heavy_industries
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_heavy_industries", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "조선 및 부유식 데이터센터(FDC) 사업을 영위하며 AI 인프라용 선박과 인증을 획득"}
 
-// node: company_hd_hyundai_heavy_industries
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd_hyundai_heavy_industries", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hanwha_ocean
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선업과 데이터센터용 엔진 개발, 미국 에너지 인프라 기업과 발전설비 공급계약 체결"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_dahol_investment_securities
+// node: company_030210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dahol_investment_securities", "type": "Company", "name": "다올투자증권", "stock_code": "030210"}
+:params {"id": "company_030210", "type": "Company", "name": "다올투자증권", "stock_code": "030210"}
 
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_sangsangin_securities
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sangsangin_securities", "type": "Company", "name": "상상인증권", "stock_code": "001290"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// relation: INVESTS_IN
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_042660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "LNG 및 암모니아 운반선 수주 전문 조선업체"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: business_area_ai_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_infrastructure", "type": "BusinessArea", "name": "AI 인프라"}
+
+// node: business_area_power_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_engine", "type": "BusinessArea", "name": "발전용 엔진"}
+
+// node: business_area_floating_data_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_floating_data_center", "type": "BusinessArea", "name": "부유식 데이터센터"}
+
+// node: product_service_power_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_power_engine", "type": "ProductService", "name": "힘센엔진"}
+
+// node: product_service_lng_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_carrier", "type": "ProductService", "name": "LNG 운반선"}
+
+// node: product_service_ammonia_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ammonia_carrier", "type": "ProductService", "name": "암모니아 운반선"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dahol_investment_securities", "to_id": "company_hd_hyundai_heavy_industries", "properties": {"evidence": "다올투자증권은 최근 HD현대중공업에 대해 \"미국 데이터센터용 힘센엔진 진출은 향후 후속 계약, 생산능력 확충과 실적 상향으로 이어지는 게 당연하다\"며 목표주가를 기존 91만원에서 104만원으로 상향 조정했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+:params {"from_id": "company_010140", "to_id": "business_area_shipbuilding", "properties": {"evidence": "지난 11일 삼성중공업 6%대 급등 마감 ... 조선주가 강세를 보이고 있다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd_hyundai_heavy_industries", "to_id": "company_hanwha_ocean", "properties": {"evidence": "HD현대중공업은 지난 22일 미국 에너지 인프라 개발 기업인 아페리온 에너지 그룹(AEG)과 20메가와트(MW)급 힘센엔진 기반의 발전설비 공급계약을 맺었다고 밝히기도 했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+:params {"from_id": "company_010140", "to_id": "business_area_floating_data_center", "properties": {"evidence": "삼성중공업은 ... 50MW급 FDC 개념설계 인증(AIP)을 획득했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sangsangin_securities", "to_id": "company_samsung_heavy_industries", "properties": {"evidence": "상상인증권은 최근 삼성중공업에 대해 \"향후 풍부한 수요가 예상되는 FDC시장 등 신규 사업 진출에 적극적인 의지를 보이고 있으며 그에 따른 중장기 수주 성장 기대감은 멀티플 할증 요인으로 적용이 가능하다고 판단한다\"며 목표주가를 기존 3만9000원에서 4만3000원으로 상향 조정했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+:params {"from_id": "company_010140", "to_id": "business_area_ai_infrastructure", "properties": {"evidence": "조선주가 인공지능(AI) 인프라 수혜주로 부상할 것이란 증권가의 전망이 투자 심리에 긍정적인 영향을 미치고 있다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD현대중공업도 3~4%대 강세... 조선주도 큰 폭으로 뛰었다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_power_engine", "properties": {"evidence": "HD현대중공업은 ... 20메가와트(MW)급 힘센엔진 기반의 발전설비 공급계약을 맺었다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "product_service_power_engine", "properties": {"evidence": "HD현대중공업은 ... 20메가와트(MW)급 힘센엔진 기반의 발전설비 공급계약을 맺었다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션은 ... LNG운반선과 암모니아 운반선 수주 공시.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "product_service_lng_carrier", "properties": {"evidence": "한화오션은 유럽 지역 선주로부터 3632억원 규모의 액화천연가스운반선(LNGC) 1척에 대한 공사를 수주했다고 11일 공시했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "product_service_ammonia_carrier", "properties": {"evidence": "한화오션은 아프리카 지역 선주로부터 5074억원 규모의 암모니아 운반선(VLAC) 총 3척에 대한 공사를 수주했다고 4일 공시했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "한국과 미국 간 조선 협력 기대감에 조선주가 강세를 보이고 있다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_floating_data_center", "to_id": "industry_ai", "properties": {"evidence": "FDC는 육상 데이터센터의 문제를 해결할 대안으로 꼽히며 AI 인프라 수혜 기대.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_power_engine", "to_id": "business_area_power_engine", "properties": {"evidence": "20메가와트(MW)급 힘센엔진 기반의 발전설비 공급계약.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_engine", "to_id": "industry_energy", "properties": {"evidence": "발전설비 공급계약 등 에너지 분야 인프라 사업.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_carrier", "to_id": "business_area_shipbuilding", "properties": {"evidence": "LNG운반선 수주 공시.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ammonia_carrier", "to_id": "business_area_shipbuilding", "properties": {"evidence": "암모니아 운반선 수주 공시.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030210", "to_id": "business_area_power_engine", "properties": {"evidence": "다올투자증권은 HD현대중공업의 미국 데이터센터용 힘센엔진 진출을 강조했다.", "date": "", "evidence_source_id": "news_010140_ca873be6f2ece2c0", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051294246", "evidence_published_at": "2026-05-12T07:42:00+09:00"}}

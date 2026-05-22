@@ -1,0 +1,231 @@
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "HVAC 및 히트펌프, AI 데이터센터용 냉각 솔루션 사업을 육성 중이다."}
+
+// node: company_066570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_066570", "type": "Company", "name": "LG전자", "stock_code": "066570", "description": "HVAC 히트펌프와 AI 데이터센터 냉각기술 중심으로 냉난방 사업을 확장 중이다."}
+
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: business_area_HVAC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_HVAC", "type": "BusinessArea", "name": "HVAC"}
+
+// node: business_area_heat_pump
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_heat_pump", "type": "BusinessArea", "name": "히트펌프"}
+
+// node: business_area_AI_data_center_cooling
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_AI_data_center_cooling", "type": "BusinessArea", "name": "AI 데이터센터 냉각"}
+
+// node: product_service_EHS_heat_pump_boiler
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_EHS_heat_pump_boiler", "type": "ProductService", "name": "EHS 히트펌프 보일러"}
+
+// node: product_service_integrated_heat_pump_boiler
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_integrated_heat_pump_boiler", "type": "ProductService", "name": "일체형 히트펌프 시스템 보일러"}
+
+// node: product_service_cooling_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cooling_solution", "type": "ProductService", "name": "냉각 솔루션"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_AI
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_AI", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_HVAC", "properties": {"evidence": "삼성전자와 LG전자가 냉난방공조(HVAC) 시장 공략에 나선다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_HVAC", "properties": {"evidence": "삼성전자와 LG전자가 냉난방공조(HVAC) 시장 공략에 나선다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_heat_pump", "properties": {"evidence": "삼성전자는 최근 한국형 'EHS 히트펌프 보일러'를 출시하며 시장 공략에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_heat_pump", "properties": {"evidence": "LG전자도 일체형 히트펌프 시스템 보일러를 앞세워 시장 확대에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_AI_data_center_cooling", "properties": {"evidence": "삼성전자는 지난해 유럽 공조기업 플랙트그룹을 인수하며 데이터센터 공조 시장 공략에 본격 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_AI_data_center_cooling", "properties": {"evidence": "LG전자는 칠러와 액체냉각 기술을 중심으로 AI 데이터센터 시장 공략을 강화하고 있다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_EHS_heat_pump_boiler", "properties": {"evidence": "삼성전자는 최근 한국형 'EHS 히트펌프 보일러'를 출시하며 시장 공략에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "product_service_integrated_heat_pump_boiler", "properties": {"evidence": "LG전자도 일체형 히트펌프 시스템 보일러를 앞세워 시장 확대에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_cooling_solution", "properties": {"evidence": "삼성전자와 LG전자가 히트펌프와 인공지능(AI) 데이터센터용 냉각 솔루션을 미래 성장동력으로 키우고 있다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "product_service_cooling_solution", "properties": {"evidence": "삼성전자와 LG전자가 히트펌프와 인공지능(AI) 데이터센터용 냉각 솔루션을 미래 성장동력으로 키우고 있다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_HVAC", "to_id": "industry_energy", "properties": {"evidence": "가전 수요 둔화·중국 저가 공세에 삼성·LG, HVAC 미래 성장축 육성", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_heat_pump", "to_id": "business_area_HVAC", "properties": {"evidence": "히트펌프는 공기나 물, 지열 등을 활용해 난방과 온수를 공급하는 고효율 친환경 설비다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_AI_data_center_cooling", "to_id": "industry_AI", "properties": {"evidence": "생성형 AI 확산으로 GPU 기반 초대형 데이터센터 구축이 늘어나면서 서버 발열을 제어하는 냉각 기술 중요성도 커지고 있다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_EHS_heat_pump_boiler", "to_id": "business_area_heat_pump", "properties": {"evidence": "삼성전자는 최근 한국형 'EHS 히트펌프 보일러'를 출시하며 시장 공략에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_integrated_heat_pump_boiler", "to_id": "business_area_heat_pump", "properties": {"evidence": "LG전자도 일체형 히트펌프 시스템 보일러를 앞세워 시장 확대에 나섰다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cooling_solution", "to_id": "business_area_AI_data_center_cooling", "properties": {"evidence": "삼성전자와 LG전자가 히트펌프와 인공지능(AI) 데이터센터용 냉각 솔루션을 미래 성장동력으로 키우고 있다.", "date": "", "evidence_source_id": "news_003550_423921348223928c", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1373314", "evidence_published_at": "2026-05-17T13:00:00+09:00"}}

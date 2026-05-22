@@ -1,0 +1,67 @@
+// node: company_047810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047810", "type": "Company", "name": "한국항공우주", "stock_code": "047810", "description": "항공우주 및 방산, 딥테크 분야의 연구 개발과 시장 진출을 지원하는 한국 기업"}
+
+// node: business_area_aviation_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_aviation_defense", "type": "BusinessArea", "name": "항공우주·방산"}
+
+// node: business_area_dip_tech
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_dip_tech", "type": "BusinessArea", "name": "딥테크"}
+
+// node: industry_aerospace_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_aerospace_defense", "type": "Industry", "name": "항공우주·방산"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047810", "to_id": "business_area_aviation_defense", "properties": {"evidence": "한국항공우주연구원(KARI)이 선정한 항공우주·방산·딥테크 기업을 대상으로 싱가포르 및 APAC 시장 진출을 공동 지원한다.", "date": "", "evidence_source_id": "news_047810_b6152d71e8af5528", "evidence_source_type": "news", "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260516002223427", "evidence_published_at": "2026-05-16T22:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047810", "to_id": "business_area_dip_tech", "properties": {"evidence": "한국항공우주연구원(KARI)이 선정한 항공우주·방산·딥테크 기업을 대상으로 싱가포르 및 APAC 시장 진출을 공동 지원한다.", "date": "", "evidence_source_id": "news_047810_b6152d71e8af5528", "evidence_source_type": "news", "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260516002223427", "evidence_published_at": "2026-05-16T22:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_aviation_defense", "to_id": "industry_aerospace_defense", "properties": {"evidence": "한국항공우주연구원(KARI)이 선정한 항공우주·방산·딥테크 기업을 대상으로 싱가포르 및 APAC 시장 진출을 공동 지원한다.", "date": "", "evidence_source_id": "news_047810_b6152d71e8af5528", "evidence_source_type": "news", "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260516002223427", "evidence_published_at": "2026-05-16T22:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_dip_tech", "to_id": "industry_aerospace_defense", "properties": {"evidence": "한국항공우주연구원(KARI)이 선정한 항공우주·방산·딥테크 기업을 대상으로 싱가포르 및 APAC 시장 진출을 공동 지원한다.", "date": "", "evidence_source_id": "news_047810_b6152d71e8af5528", "evidence_source_type": "news", "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260516002223427", "evidence_published_at": "2026-05-16T22:30:00+09:00"}}

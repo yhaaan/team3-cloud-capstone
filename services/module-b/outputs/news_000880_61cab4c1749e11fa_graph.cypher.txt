@@ -1,39 +1,316 @@
-// node: company_hanwha_aerospace
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "한화에어로스페이스, 한화시스템, 쎄트렉아이와 연계한 우주, 방산 사업 및 사업적 협력 추진"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_saetrek_eye
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_saetrek_eye", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "우주발사체 및 방산 수출 사업 중심, 스페인, 미국 등 글로벌 대규모 사업 확대 진행"}
 
-// node: company_hanwha_systems
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha_systems", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
-
-// node: company_yuanta_securities
+// node: company_272210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_yuanta_securities", "type": "Company", "name": "유안타증권", "stock_code": "003470"}
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+
+// node: company_099320
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_099320", "type": "Company", "name": "쎄트렉아이", "stock_code": "099320"}
+
+// node: company_003470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003470", "type": "Company", "name": "유안타증권", "stock_code": "003470"}
+
+// node: business_area_우주발사체
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_우주발사체", "type": "BusinessArea", "name": "우주발사체"}
+
+// node: business_area_위성체계종합
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_위성체계종합", "type": "BusinessArea", "name": "위성체계종합"}
+
+// node: business_area_탑재체
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_탑재체", "type": "BusinessArea", "name": "탑재체"}
+
+// node: business_area_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_방산", "type": "BusinessArea", "name": "방산"}
+
+// node: product_service_천궁_II
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_천궁_II", "type": "ProductService", "name": "천궁-II"}
+
+// node: product_service_L-SAM
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_L-SAM", "type": "ProductService", "name": "L-SAM"}
+
+// node: product_service_K9
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_K9", "type": "ProductService", "name": "K9"}
+
+// node: product_service_MNG
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_MNG", "type": "ProductService", "name": "MNG"}
+
+// node: product_service_K9_EC3
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_K9_EC3", "type": "ProductService", "name": "K9 EC3"}
+
+// node: business_area_지상무기체계
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_지상무기체계", "type": "BusinessArea", "name": "지상무기체계"}
+
+// node: industry_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_방산", "type": "Industry", "name": "방산"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_우주발사체", "properties": {"evidence": "한화에어로스페이스는 오는 6 월부터 스페인, 미국, 사우디 등 대규모 사업의 논의가 본격화", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_우주발사체", "properties": {"evidence": "특히 KAI 지분 취득은 우주발사체 ( 한화에어로스페이스 )+ 위성체계종합 (KAI)+ 탑재체 ( 한화시스템 + 쎄트렉아이 등 ) 사업적 시너지와 협력 강화 목적이 최우선이다.", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_272210", "to_id": "business_area_탑재체", "properties": {"evidence": "특히 KAI 지분 취득은 우주발사체 ( 한화에어로스페이스 )+ 위성체계종합 (KAI)+ 탑재체 ( 한화시스템 + 쎄트렉아이 등 ) 사업적 시너지와 협력 강화 목적이 최우선이다.", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_099320", "to_id": "business_area_탑재체", "properties": {"evidence": "특히 KAI 지분 취득은 우주발사체 ( 한화에어로스페이스 )+ 위성체계종합 (KAI)+ 탑재체 ( 한화시스템 + 쎄트렉아이 등 ) 사업적 시너지와 협력 강화 목적이 최우선이다.", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_방산", "properties": {"evidence": "Tag #한화에어로 #방산", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_방산", "properties": {"evidence": "이란사태에 방공시스템 수요 대응 천궁 -II 및 L-SAM 관련 조기 인도 문의가 존재하며", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_천궁_II", "properties": {"evidence": "이란사태에 방공시스템 수요 대응 천궁 -II 및 L-SAM 관련 조기 인도 문의가 존재하며", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_L-SAM", "properties": {"evidence": "L-SAM 의 경우, 고객사의 선택에 따라 동사의 수출 체계종합 가능성과 빠르면 연말 계약 체결 가능성을 언급했다.", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_K9", "properties": {"evidence": "주요 수출 파이프라인으로 스페인 K9(6 월 중 프레임워크 계약 체결 목표 ), 미국 K9(7 월 우선협상대상자 선정 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_MNG", "properties": {"evidence": "주요 수출 파이프라인으로 ... 사우디 MNG(6~8 월 중 진전 예상 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_K9_EC3", "properties": {"evidence": "주요 수출 파이프라인으로 ... 폴란드 K9 EC3( 연말 계약 체결 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_지상무기체계", "properties": {"evidence": "또 캐나다 CPSP 관련 지상무기체계 협업 가능성", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_우주발사체", "to_id": "industry_방산", "properties": {"evidence": "Tag #한화에어로 #방산", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_위성체계종합", "to_id": "industry_방산", "properties": {"evidence": "Tag #한화에어로 #방산", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_탑재체", "to_id": "industry_방산", "properties": {"evidence": "Tag #한화에어로 #방산", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_방산", "to_id": "industry_방산", "properties": {"evidence": "Tag #한화에어로 #방산", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_천궁_II", "to_id": "business_area_방산", "properties": {"evidence": "이란사태에 방공시스템 수요 대응 천궁 -II 및 L-SAM 관련 조기 인도 문의가 존재하며", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_L-SAM", "to_id": "business_area_방산", "properties": {"evidence": "L-SAM 의 경우, 고객사의 선택에 따라 동사의 수출 체계종합 가능성과 빠르면 연말 계약 체결 가능성을 언급했다.", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_K9", "to_id": "business_area_지상무기체계", "properties": {"evidence": "주요 수출 파이프라인으로 스페인 K9(6 월 중 프레임워크 계약 체결 목표 ), 미국 K9(7 월 우선협상대상자 선정 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_MNG", "to_id": "business_area_지상무기체계", "properties": {"evidence": "주요 수출 파이프라인으로 ... 사우디 MNG(6~8 월 중 진전 예상 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_K9_EC3", "to_id": "business_area_지상무기체계", "properties": {"evidence": "주요 수출 파이프라인으로 ... 폴란드 K9 EC3( 연말 계약 체결 )", "date": "", "evidence_source_id": "news_000880_61cab4c1749e11fa", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78612", "evidence_published_at": "2026-05-12T10:00:00+09:00"}}

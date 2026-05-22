@@ -2,80 +2,86 @@
   "source_id": "news_402340_1ff3c81907dc7fb3",
   "entities": [
     {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "인공지능 중심 반도체 수요 확대에 따른 메모리 사업 중심 기업"
     },
     {
-      "id": "company_sk_square",
+      "id": "company_402340",
       "type": "Company",
       "name": "SK스퀘어",
-      "stock_code": "402340"
+      "stock_code": "402340",
+      "description": "SK하이닉스 지분 보유 통한 투자 중심 사업 운영"
     },
     {
-      "id": "company_hd_hyundai_heavy_industries",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
       "stock_code": "329180"
     },
     {
-      "id": "company_daishin_securities",
+      "id": "company_003540",
       "type": "Company",
       "name": "대신증권",
       "stock_code": "003540"
     },
     {
-      "id": "company_sk_securities",
+      "id": "company_001510",
       "type": "Company",
       "name": "SK증권",
       "stock_code": "001510"
     },
     {
-      "id": "company_mirae_asset_securities",
+      "id": "company_006800",
       "type": "Company",
       "name": "미래에셋증권",
       "stock_code": "006800"
     },
     {
-      "id": "company_medipost",
-      "type": "Company",
-      "name": "메디포스트",
-      "stock_code": "078160"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
     },
     {
-      "id": "company_samsung_biologics",
-      "type": "Company",
-      "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "memory"
     },
     {
-      "id": "company_f_and_f",
-      "type": "Company",
-      "name": "F&F",
-      "stock_code": "383220"
-    },
-    {
-      "id": "company_kolon",
-      "type": "Company",
-      "name": "코오롱",
-      "stock_code": "002020"
-    },
-    {
-      "id": "person_lee_gyu_ho",
-      "type": "Person",
-      "name": "이규호",
-      "role_raw": "부회장",
-      "affiliated_company": "company_kolon",
-      "role": "VICE_CHAIRMAN",
-      "role_label": "부회장"
+      "id": "business_area_investment",
+      "type": "BusinessArea",
+      "name": "investment"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk_square",
-      "to": "company_sk_hynix",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "다만 중장기적으로는 인공지능(AI) 중심의 반도체 수요 확대 기대가 여전히 유효하다는 평가가 우세하다.",
+      "date": "",
+      "evidence_source_id": "news_402340_1ff3c81907dc7fb3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://economist.co.kr/article/view/ecn202604290020",
+      "evidence_published_at": "2026-04-29T10:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "다만 중장기적으로는 인공지능(AI) 중심의 반도체 수요 확대 기대가 여전히 유효하다는 평가가 우세하다.",
+      "date": "",
+      "evidence_source_id": "news_402340_1ff3c81907dc7fb3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://economist.co.kr/article/view/ecn202604290020",
+      "evidence_published_at": "2026-04-29T10:37:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_investment",
       "evidence": "SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주로, 두 종목 간 주가 상관관계가 98%에 달한다.",
       "date": "",
       "evidence_source_id": "news_402340_1ff3c81907dc7fb3",
@@ -84,10 +90,21 @@
       "evidence_published_at": "2026-04-29T10:37:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_gyu_ho",
-      "to": "company_kolon",
-      "evidence": "'코오롱의 넷째 자식' TG-C 부활하나…오너 4세 이규호 부회장 등판",
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "중장기적으로는 인공지능(AI) 중심의 반도체 수요 확대 기대가 여전히 유효하다는 평가가 우세하다.",
+      "date": "",
+      "evidence_source_id": "news_402340_1ff3c81907dc7fb3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://economist.co.kr/article/view/ecn202604290020",
+      "evidence_published_at": "2026-04-29T10:37:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_402340",
+      "to": "industry_semiconductor",
+      "evidence": "SK스퀘어는 SK하이닉스 지분 약 20%를 보유한 최대주주로, 두 종목 간 주가 상관관계가 98%에 달한다.",
       "date": "",
       "evidence_source_id": "news_402340_1ff3c81907dc7fb3",
       "evidence_source_type": "news",

@@ -1,0 +1,154 @@
+{
+  "source_id": "dart_000270_business_segments_20260312001224",
+  "entities": [
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270",
+      "description": "완성차 및 부분품 제조·판매, 렌트·정비용역 사업을 주력으로 영위"
+    },
+    {
+      "id": "business_area_완성차",
+      "type": "BusinessArea",
+      "name": "완성차"
+    },
+    {
+      "id": "business_area_렌트_정비용역",
+      "type": "BusinessArea",
+      "name": "렌트 및 정비용역"
+    },
+    {
+      "id": "product_service_승용차",
+      "type": "ProductService",
+      "name": "승용차"
+    },
+    {
+      "id": "product_service_RV차량",
+      "type": "ProductService",
+      "name": "RV 차량"
+    },
+    {
+      "id": "product_service_상용차",
+      "type": "ProductService",
+      "name": "상용차"
+    },
+    {
+      "id": "industry_자동차",
+      "type": "Industry",
+      "name": "자동차"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000270",
+      "to": "business_area_완성차",
+      "evidence": "당사와 연결 종속회사는 보고서 작성 기준일 현재 완성차 및 부분품의 제조ㆍ판매, 렌트 및 정비용역을 사업으로 영위하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000270",
+      "to": "business_area_렌트_정비용역",
+      "evidence": "당사와 연결 종속회사는 보고서 작성 기준일 현재 완성차 및 부분품의 제조ㆍ판매, 렌트 및 정비용역을 사업으로 영위하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000270",
+      "to": "product_service_승용차",
+      "evidence": "주요 제품은 완성차로 승용, RV, 상용 등으로 구분하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000270",
+      "to": "product_service_RV차량",
+      "evidence": "주요 제품은 완성차로 승용, RV, 상용 등으로 구분하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000270",
+      "to": "product_service_상용차",
+      "evidence": "주요 제품은 완성차로 승용, RV, 상용 등으로 구분하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_완성차",
+      "to": "industry_자동차",
+      "evidence": "완성차 및 부분품의 제조ㆍ판매 사업 내용으로 자동차 산업과 연관됨.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_렌트_정비용역",
+      "to": "industry_자동차",
+      "evidence": "렌트 및 정비용역 부문 역시 자동차 산업과 관련됨.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_승용차",
+      "to": "business_area_완성차",
+      "evidence": "완성차를 승용, RV, 상용 등으로 구분하고 있음.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_RV차량",
+      "to": "business_area_완성차",
+      "evidence": "완성차를 승용, RV, 상용 등으로 구분하고 있음.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_상용차",
+      "to": "business_area_완성차",
+      "evidence": "완성차를 승용, RV, 상용 등으로 구분하고 있음.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000270_business_segments_20260312001224",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

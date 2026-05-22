@@ -1,10 +1,10 @@
-// node: company_삼성중공업
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
 
 // node: industry_energy
 
@@ -29,7 +29,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성중공업", "to_id": "industry_energy", "properties": {"evidence": "of Sheffield 안전공학 석사 Petrofac사 HSE VP Kizer Energy사 HSE Advisor 안전경영본부장.", "date": "2026-03-12", "evidence_source_id": "dart_010140_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+:params {"from_id": "company_010140", "to_id": "industry_energy", "properties": {"evidence": "of Sheffield 안전공학 석사 Petrofac사 HSE VP Kizer Energy사 HSE Advisor 안전경영본부장.", "date": "2026-03-12", "evidence_source_id": "dart_010140_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
 
 // relation: BELONGS_TO
 
@@ -38,4 +38,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성중공업", "to_id": "industry_it", "properties": {"evidence": "삼성중공업의 임원은 김현조, 직위는 상 무, 이사회상 역할은 미등기, 담당업무는 조선해양연구소장, 최대주주와의 관계는 없음, 주요경력은 MIT 해양공학 박사 선장설계팀장.", "date": "2026-03-12", "evidence_source_id": "dart_010140_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}
+:params {"from_id": "company_010140", "to_id": "industry_it", "properties": {"evidence": "삼성중공업의 임원은 김현조, 직위는 상 무, 이사회상 역할은 미등기, 담당업무는 조선해양연구소장, 최대주주와의 관계는 없음, 주요경력은 MIT 해양공학 박사 선장설계팀장.", "date": "2026-03-12", "evidence_source_id": "dart_010140_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037", "evidence_published_at": "2026-03-12"}}

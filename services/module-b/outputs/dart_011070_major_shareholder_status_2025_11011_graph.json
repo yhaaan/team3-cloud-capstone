@@ -1,0 +1,50 @@
+{
+  "source_id": "dart_011070_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_011070",
+      "type": "Company",
+      "name": "LG이노텍",
+      "stock_code": "011070"
+    },
+    {
+      "id": "company_066570",
+      "type": "Company",
+      "name": "LG전자",
+      "stock_code": "066570"
+    },
+    {
+      "id": "person_문혁수",
+      "type": "Person",
+      "name": "문혁수",
+      "role_raw": "계열회사 임원",
+      "affiliated_company": "company_011070",
+      "role": "OTHER",
+      "role_label": "계열회사 임원"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_066570",
+      "to": "company_011070",
+      "evidence": "LG이노텍의 최대주주 관련 인물/법인은 LG전자(주), 관계는 최대주주 본인, 당기말 보유주식수는 9,653,181주, 지분율은 40.79%.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011070_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_문혁수",
+      "to": "company_011070",
+      "evidence": "LG이노텍의 최대주주 관련 인물/법인은 문혁수, 관계는 계열회사 임원, 당기말 보유주식수는 1,800주, 지분율은 0.01%.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011070_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

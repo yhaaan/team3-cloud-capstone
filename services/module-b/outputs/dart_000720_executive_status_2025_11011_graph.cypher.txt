@@ -1,10 +1,10 @@
-// node: company_현대건설
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대건설", "type": "Company", "name": "현대건설"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720"}
 
 // node: industry_ai
 
@@ -37,7 +37,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대건설", "to_id": "industry_ai", "properties": {"evidence": "현대건설의 임원은 조혜경, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 경영감사, 최대주주와의 관계는 계열회사 임원, 주요경력은 서울대 제어계측공학 박사 (현)한성대학교 AI응용학과 교수 (현)삼성전자㈜ 사외이사 (전)한국로봇산업진흥원 이사(의장).", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_000720", "to_id": "industry_ai", "properties": {"evidence": "현대건설의 임원은 조혜경, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 경영감사, 최대주주와의 관계는 계열회사 임원, 주요경력은 서울대 제어계측공학 박사 (현)한성대학교 AI응용학과 교수 (현)삼성전자㈜ 사외이사 (전)한국로봇산업진흥원 이사(의장).", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -46,7 +46,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대건설", "to_id": "industry_energy", "properties": {"evidence": "현대건설의 임원은 최영, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 NewEnergy사업부장, 주요경력은 경희대 기계공학 학사.", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_000720", "to_id": "industry_energy", "properties": {"evidence": "현대건설의 임원은 최영, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 NewEnergy사업부장, 주요경력은 경희대 기계공학 학사.", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -55,4 +55,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대건설", "to_id": "industry_it", "properties": {"evidence": "현대건설의 임원은 박병규, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 경영기획실장, 주요경력은 London South Bank University 품질경영학 석사.", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_000720", "to_id": "industry_it", "properties": {"evidence": "현대건설의 임원은 박병규, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 경영기획실장, 주요경력은 London South Bank University 품질경영학 석사.", "date": "2026-03-18", "evidence_source_id": "dart_000720_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395", "evidence_published_at": "2026-03-18"}}

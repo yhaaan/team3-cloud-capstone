@@ -1,0 +1,209 @@
+{
+  "source_id": "dart_012330_business_segments_20260309001878",
+  "entities": [
+    {
+      "id": "company_012330",
+      "type": "Company",
+      "name": "현대모비스",
+      "stock_code": "012330",
+      "description": "자동차 모듈 및 부품제조와 A/S용 부품사업을 영위하며, 샤시모듈, 칵핏모듈, FEM 등 핵심제품을 생산"
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270"
+    },
+    {
+      "id": "business_area_자동차_모듈_부품제조",
+      "type": "BusinessArea",
+      "name": "자동차 모듈 부품제조"
+    },
+    {
+      "id": "business_area_AS_부품사업",
+      "type": "BusinessArea",
+      "name": "A/S 부품사업"
+    },
+    {
+      "id": "product_service_샤시모듈",
+      "type": "ProductService",
+      "name": "샤시모듈"
+    },
+    {
+      "id": "product_service_칵핏모듈",
+      "type": "ProductService",
+      "name": "칵핏모듈"
+    },
+    {
+      "id": "product_service_FEM",
+      "type": "ProductService",
+      "name": "프론트엔드모듈"
+    },
+    {
+      "id": "product_service_AS_보수용품",
+      "type": "ProductService",
+      "name": "A/S 보수용품"
+    },
+    {
+      "id": "industry_자동차",
+      "type": "Industry",
+      "name": "자동차"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "business_area_자동차_모듈_부품제조",
+      "evidence": "현대모비스는 자동차 모듈 및 부품제조사업과 A/S용 부품사업을 영위하고 있으며",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "business_area_AS_부품사업",
+      "evidence": "현대모비스는 자동차 모듈 및 부품제조사업과 A/S용 부품사업을 영위하고 있으며",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_샤시모듈",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_칵핏모듈",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_FEM",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_AS_보수용품",
+      "evidence": "A/S용 부품사업을 영위하고 있으며 ... 보수용 A/S부품에 대한 수요 발생 시 신속하고 정확한 부품 공급을 통해",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_자동차_모듈_부품제조",
+      "to": "industry_자동차",
+      "evidence": "현대모비스는 자동차 모듈 및 부품제조사업과 A/S용 부품사업을 영위하고 있으며",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_AS_부품사업",
+      "to": "industry_자동차",
+      "evidence": "현대모비스는 자동차 모듈 및 부품제조사업과 A/S용 부품사업을 영위하고 있으며",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_샤시모듈",
+      "to": "business_area_자동차_모듈_부품제조",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_칵핏모듈",
+      "to": "business_area_자동차_모듈_부품제조",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_FEM",
+      "to": "business_area_자동차_모듈_부품제조",
+      "evidence": "자동차 3대 핵심모듈인 샤시모듈, 칵핏모듈, 프론트엔드모듈(이하 \"FEM\")을 조립ㆍ생산",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_AS_보수용품",
+      "to": "business_area_AS_부품사업",
+      "evidence": "A/S용 부품사업을 영위하고 있으며 ... 보수용 A/S부품에 대한 수요 발생 시 신속하고 정확한 부품 공급을 통해",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "business_area_자동차_모듈_부품제조",
+      "evidence": "2025년 매출액 대비 매출비중은 자동차 모듈 및 부품제조사업이 78.2% , A/S용 부품사업이 21.8% 입니다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "business_area_AS_부품사업",
+      "evidence": "2025년 매출액 대비 매출비중은 자동차 모듈 및 부품제조사업이 78.2% , A/S용 부품사업이 21.8% 입니다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_business_segments_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    }
+  ]
+}

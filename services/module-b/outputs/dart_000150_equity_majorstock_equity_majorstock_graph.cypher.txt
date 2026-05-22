@@ -1,10 +1,10 @@
-// node: company_두산
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
 
 // node: person_박정원
 
@@ -13,39 +13,3 @@ SET n += $properties
 SET n:`Person`
 
 :params {"id": "person_박정원", "type": "Person", "name": "박정원"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_박정원", "to_id": "company_두산", "properties": {"evidence": "두산의 대량보유 보고자는 박정원, 보고 유형은 일반, 접수일은 2025-11-28, 보유주식수는 6,623,457주, 지분율은 40.90%, 주식수 증감은 0, 지분율 증감은 0.82, 계약보유주식수는 496,235주, 계약보유지분율은 3.06%, 보고사유는 계약내용의 변경.", "date": "2026-05-07", "evidence_source_id": "dart_000150_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000289", "evidence_published_at": "2026-05-07"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_박정원", "to_id": "company_두산", "properties": {"evidence": "두산의 대량보유 보고자는 박정원, 보고 유형은 일반, 접수일은 2026-01-08, 보유주식수는 6,669,724주, 지분율은 41.19%, 주식수 증감은 46,267, 지분율 증감은 0.29, 계약보유주식수는 542,502주, 계약보유지분율은 3.35%, 보고사유는 양도제한조건부주식(RSU)의 가득조건 달성에 따른 권리 확정 (소유에 준하는 보유).", "date": "2026-05-07", "evidence_source_id": "dart_000150_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000289", "evidence_published_at": "2026-05-07"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_박정원", "to_id": "company_두산", "properties": {"evidence": "두산의 대량보유 보고자는 박정원, 보고 유형은 일반, 접수일은 2026-03-05, 보유주식수는 6,646,591주, 지분율은 41.04%, 주식수 증감은 -23,133, 지분율 증감은 -0.15, 계약보유주식수는 505,170주, 계약보유지분율은 3.12%, 보고사유는 가득조건 달성된 RSU에 기한 주식 지급 등.", "date": "2026-05-07", "evidence_source_id": "dart_000150_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000289", "evidence_published_at": "2026-05-07"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_박정원", "to_id": "company_두산", "properties": {"evidence": "두산의 대량보유 보고자는 박정원, 보고 유형은 일반, 접수일은 2026-05-07, 보유주식수는 6,646,591주, 지분율은 41.04%, 주식수 증감은 0, 지분율 증감은 0.00, 계약보유주식수는 484,935주, 계약보유지분율은 2.99%, 보고사유는 계약 내용의 변경.", "date": "2026-05-07", "evidence_source_id": "dart_000150_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000289", "evidence_published_at": "2026-05-07"}}

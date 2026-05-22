@@ -1,0 +1,151 @@
+// node: company_298040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298040", "type": "Company", "name": "효성중공업", "stock_code": "298040", "description": "초고압 변압기, 송·변전 설비 등 전력기기와 플랜트·건설 분야를 주력으로 하는 전력기기 전문 기업"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_power_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_equipment", "type": "BusinessArea", "name": "전력기기"}
+
+// node: business_area_plant_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_plant_construction", "type": "BusinessArea", "name": "플랜트·건설"}
+
+// node: product_service_high_voltage_transformer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_high_voltage_transformer", "type": "ProductService", "name": "초고압 변압기"}
+
+// node: product_service_power_transmission_facility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_power_transmission_facility", "type": "ProductService", "name": "초고압 송전설비"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "건설"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_power_equipment", "properties": {"evidence": "효성중공업의 주력 사업은 초고압 변압기, 송·변전 설비 등 전력기기와 플랜트·건설이다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_plant_construction", "properties": {"evidence": "효성중공업의 주력 사업은 초고압 변압기, 송·변전 설비 등 전력기기와 플랜트·건설이다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "product_service_high_voltage_transformer", "properties": {"evidence": "효성의 고효율·대용량 변압기, 초고압 송전설비 등 기술력이 있었기에 가능했다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "product_service_power_transmission_facility", "properties": {"evidence": "효성의 고효율·대용량 변압기, 초고압 송전설비 등 기술력이 있었기에 가능했다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_equipment", "to_id": "industry_energy", "properties": {"evidence": "효성중공업의 주력 사업은 초고압 변압기, 송·변전 설비 등 전력기기와 플랜트·건설이다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_plant_construction", "to_id": "industry_construction", "properties": {"evidence": "효성중공업의 주력 사업은 초고압 변압기, 송·변전 설비 등 전력기기와 플랜트·건설이다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_high_voltage_transformer", "to_id": "business_area_power_equipment", "properties": {"evidence": "효성의 고효율·대용량 변압기, 초고압 송전설비 등 기술력이 있었기에 가능했다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_power_transmission_facility", "to_id": "business_area_power_equipment", "properties": {"evidence": "효성의 고효율·대용량 변압기, 초고압 송전설비 등 기술력이 있었기에 가능했다.", "date": "", "evidence_source_id": "news_298040_78206416028e4996", "evidence_source_type": "news", "evidence_source_url": "https://www.sisajournal.com/news/articleView.html?idxno=372771", "evidence_published_at": "2026-05-17T15:00:00+09:00"}}

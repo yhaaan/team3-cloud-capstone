@@ -1,41 +1,41 @@
-// node: company_아이마켓코리아
+// node: company_122900
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_아이마켓코리아", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+:params {"id": "company_122900", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900", "description": "상품 종합 도매업체로 B2B 구매서비스를 제공하는 기업"}
 
-// node: person_이호준
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이호준", "type": "Person", "name": "이호준", "role_raw": "사외이사", "affiliated_company": "company_아이마켓코리아", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
-
-// node: person_김주형
+// node: business_area_상품종합도매업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_김주형", "type": "Person", "name": "김주형", "role_raw": "사외이사", "affiliated_company": "company_아이마켓코리아", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+:params {"id": "business_area_상품종합도매업", "type": "BusinessArea", "name": "상품 종합 도매업"}
 
-// relation: APPOINTED_TO
+// node: industry_도매업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_도매업", "type": "Industry", "name": "도매업"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이호준", "to_id": "company_아이마켓코리아", "properties": {"evidence": "회사는 사외이사이호준을 신규 선임하고, 김주형이 임기만료 전에 자진사임했다고 밝혔다.", "date": "", "evidence_source_id": "news_122900_e4e36731a1b07151", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=648064", "evidence_published_at": "2026-03-27T20:56:00+09:00"}}
+:params {"from_id": "company_122900", "to_id": "business_area_상품종합도매업", "properties": {"evidence": "아이마켓코리아는 2010년 7월 30일 코스피 시장에 상장된 상품 종합 도매업체다.", "date": "", "evidence_source_id": "news_122900_e4e36731a1b07151", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=648064", "evidence_published_at": "2026-03-27T20:56:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "person_김주형", "to_id": "company_아이마켓코리아", "properties": {"evidence": "회사는 사외이사이호준을 신규 선임하고, 김주형이 임기만료 전에 자진사임했다고 밝혔다.", "date": "", "evidence_source_id": "news_122900_e4e36731a1b07151", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=648064", "evidence_published_at": "2026-03-27T20:56:00+09:00"}}
+:params {"from_id": "business_area_상품종합도매업", "to_id": "industry_도매업", "properties": {"evidence": "아이마켓코리아는 2010년 7월 30일 코스피 시장에 상장된 상품 종합 도매업체다.", "date": "", "evidence_source_id": "news_122900_e4e36731a1b07151", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=648064", "evidence_published_at": "2026-03-27T20:56:00+09:00"}}

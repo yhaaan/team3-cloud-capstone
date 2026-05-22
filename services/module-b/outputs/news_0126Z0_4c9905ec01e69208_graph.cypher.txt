@@ -1,0 +1,128 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "바이오 투자 지주회사로 바이오시밀러, 바이오 신약과 기술 플랫폼 신사업 확대 추진"}
+
+// node: business_area_bio_investment_holding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_investment_holding", "type": "BusinessArea", "name": "바이오 투자 지주회사"}
+
+// node: business_area_biosimilar
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biosimilar", "type": "BusinessArea", "name": "바이오시밀러"}
+
+// node: business_area_biopharmaceutical_new_drugs
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharmaceutical_new_drugs", "type": "BusinessArea", "name": "바이오 신약"}
+
+// node: business_area_technology_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_technology_platform", "type": "BusinessArea", "name": "기술 플랫폼"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio_investment_holding", "properties": {"evidence": "삼성에피스홀딩스는 지난해 바이오 투자 지주회사 체제로 출범한 이후", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biosimilar", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biopharmaceutical_new_drugs", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_technology_platform", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_investment_holding", "to_id": "industry_bio", "properties": {"evidence": "바이오 투자 지주회사 체제로 출범", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biosimilar", "to_id": "industry_bio", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharmaceutical_new_drugs", "to_id": "industry_bio", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_technology_platform", "to_id": "industry_bio", "properties": {"evidence": "바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "industry_bio", "properties": {"evidence": "바이오 투자 지주회사 체제로 출범한 이후 바이오시밀러를 넘어 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_4c9905ec01e69208", "evidence_source_type": "news", "evidence_source_url": "https://www.ziksir.com/news/articleView.html?idxno=133957", "evidence_published_at": "2026-05-14T18:24:00+09:00"}}

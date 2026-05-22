@@ -1,32 +1,119 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "에스토니아에 천무 다연장 로켓 등 방위산업 제품을 공급하는 방산 전문기업"}
 
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: person_son_jae_il
+// node: business_area_rocket_systems
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_son_jae_il", "type": "Person", "name": "손재일", "role_raw": "한화에어로스페이스 대표이사", "affiliated_company": "company_hanwha_aerospace", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_rocket_systems", "type": "BusinessArea", "name": "다연장로켓"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_defense_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_equipment", "type": "BusinessArea", "name": "방위산업"}
+
+// node: product_service_cheonmu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cheonmu", "type": "ProductService", "name": "천무 다연장 정밀유도무기"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방산"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_son_jae_il", "to_id": "company_hanwha_aerospace", "properties": {"evidence": "손재일 한화에어로스페이스 대표이사는 \"이번 추가 공급을 통해 에스토니아의 국방력 및 방산 생태계 강화에 더욱 기여할 수 있게 된 것을 뜻깊게 생각한다\"며 \"앞으로도 발틱 지역에 한화의 방위 솔루션을 적극적으로 소개하며 에스토니아의 신뢰받는 전략적 파트너로 위상을 강화해 나가겠다\"고 말했다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+:params {"from_id": "company_012450", "to_id": "business_area_rocket_systems", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_defense_equipment", "properties": {"evidence": "에스토니아군에 천무 3문을 추가 공급한다고 밝혔다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_cheonmu", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rocket_systems", "to_id": "industry_defense", "properties": {"evidence": "천무 다연장로켓.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_equipment", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cheonmu", "to_id": "business_area_rocket_systems", "properties": {"evidence": "천무 다연장로켓.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "industry_defense", "properties": {"evidence": "앞으로도 발틱 지역에 한화의 방위 솔루션을 적극적으로 소개하며 에스토니아의 신뢰받는 전략적 파트너로 위상을 강화해 나가겠다.", "date": "", "evidence_source_id": "news_012450_78500d6740fe1186", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358", "evidence_published_at": "2026-05-11T18:54:00+09:00"}}

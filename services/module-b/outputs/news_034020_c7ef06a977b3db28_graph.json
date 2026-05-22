@@ -2,42 +2,69 @@
   "source_id": "news_034020_c7ef06a977b3db28",
   "entities": [
     {
-      "id": "company_두산에너빌리티",
+      "id": "company_034020",
       "type": "Company",
-      "name": "두산에너빌리티"
+      "name": "두산에너빌리티",
+      "stock_code": "034020",
+      "description": "중전기 및 에너지솔루션 중심의 중화학 산업 전문 기업"
     },
     {
-      "id": "company_sk하이닉스",
+      "id": "company_066570",
       "type": "Company",
-      "name": "SK하이닉스"
+      "name": "LG전자",
+      "stock_code": "066570",
+      "description": "가전제품 및 전자기기 제조, 글로벌 가전 사업 운영"
     },
     {
-      "id": "company_삼성전자",
+      "id": "company_028260",
       "type": "Company",
-      "name": "삼성전자"
+      "name": "삼성물산",
+      "stock_code": "028260",
+      "description": "건설과 상사 부문 중심의 종합기업"
     },
     {
-      "id": "person_증권_이사",
-      "type": "Person",
-      "name": "증권 이사"
+      "id": "business_area_energy_solution",
+      "type": "BusinessArea",
+      "name": "에너지솔루션"
     },
     {
-      "id": "industry_ai",
+      "id": "industry_heavy_industry",
       "type": "Industry",
-      "name": "AI"
+      "name": "중화학"
     },
     {
-      "id": "industry_it",
+      "id": "business_area_home_appliance",
+      "type": "BusinessArea",
+      "name": "가전사업"
+    },
+    {
+      "id": "industry_electronics",
       "type": "Industry",
-      "name": "IT"
+      "name": "전자"
+    },
+    {
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "건설"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_두산에너빌리티",
-      "to": "company_sk하이닉스",
-      "evidence": "속보창 신문/PDF 구독 RSS 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 마켓 시황 [오늘의 주요공시] 삼성물산·두산에너빌리티·LG전자 등 김범근 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_energy_solution",
+      "evidence": "두산에너빌리티, 1분기 영업이익 2335억원…전년 대비 63.9% 증가",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_energy_solution",
+      "to": "industry_heavy_industry",
+      "evidence": "두산에너빌리티, 1분기 영업이익 2335억원…전년 대비 63.9% 증가",
       "date": "",
       "evidence_source_id": "news_034020_c7ef06a977b3db28",
       "evidence_source_type": "news",
@@ -46,9 +73,31 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_두산에너빌리티",
-      "to": "industry_ai",
-      "evidence": "속보창 신문/PDF 구독 RSS 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 마켓 시황 [오늘의 주요공시] 삼성물산·두산에너빌리티·LG전자 등 김범근 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "from": "company_034020",
+      "to": "industry_heavy_industry",
+      "evidence": "두산에너빌리티는 중전기 및 에너지솔루션 중심의 중화학 산업 전문 기업",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_066570",
+      "to": "business_area_home_appliance",
+      "evidence": "LG전자, 1분기 영업이익 1조7000억원…전년 대비 33% 증가; LG전자, 1분기 매출 23조7000억원…동분기 최대 매출",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_home_appliance",
+      "to": "industry_electronics",
+      "evidence": "LG전자, 1분기 영업이익 1조7000억원…전년 대비 33% 증가",
       "date": "",
       "evidence_source_id": "news_034020_c7ef06a977b3db28",
       "evidence_source_type": "news",
@@ -57,9 +106,42 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_두산에너빌리티",
-      "to": "industry_it",
-      "evidence": "속보창 신문/PDF 구독 RSS 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 마켓 시황 [오늘의 주요공시] 삼성물산·두산에너빌리티·LG전자 등 김범근 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "from": "company_066570",
+      "to": "industry_electronics",
+      "evidence": "가전제품 및 전자기기 제조, 글로벌 가전 사업 운영",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_028260",
+      "to": "business_area_construction",
+      "evidence": "삼성물산 건설부문, 1분기 영업이익 1110억원…전년比 30% 감소",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction",
+      "to": "industry_heavy_industry",
+      "evidence": "삼성물산 건설부문, 1분기 영업이익 1110억원…전년比 30% 감소",
+      "date": "",
+      "evidence_source_id": "news_034020_c7ef06a977b3db28",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2580499",
+      "evidence_published_at": "2026-04-29T16:22:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_028260",
+      "to": "industry_heavy_industry",
+      "evidence": "건설과 상사 부문 중심의 종합기업",
       "date": "",
       "evidence_source_id": "news_034020_c7ef06a977b3db28",
       "evidence_source_type": "news",

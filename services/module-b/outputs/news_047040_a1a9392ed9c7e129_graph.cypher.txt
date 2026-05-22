@@ -1,0 +1,93 @@
+// node: company_047040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047040", "type": "Company", "name": "대우건설", "stock_code": "047040", "description": "체코 신규 원전 사업 수행과 현지 지역사회 협력, 소방 인프라 확충 등 건설과 상생활동에 주력"}
+
+// node: industry_nuclear
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_nuclear", "type": "Industry", "name": "nuclear"}
+
+// node: business_area_nuclear_power_plant_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power_plant_construction", "type": "BusinessArea", "name": "nuclear power plant construction"}
+
+// node: business_area_community_engagement
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_community_engagement", "type": "BusinessArea", "name": "community engagement"}
+
+// node: product_service_fire_truck
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_fire_truck", "type": "ProductService", "name": "fire truck"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047040", "to_id": "business_area_nuclear_power_plant_construction", "properties": {"evidence": "대우건설이 체코 신규 원전 사업의 성공적인 수행을 위해 현지 지역사회와의 신뢰 구축에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047040", "to_id": "business_area_community_engagement", "properties": {"evidence": "단순한 인프라 건설을 넘어, 현지 맞춤형 상생 활동을 통해 해외 사업 경쟁력을 한층 끌어올린다는 전략이다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047040", "to_id": "product_service_fire_truck", "properties": {"evidence": "대우건설 합동시공단이 현지 주민들과 소통하는 과정에서 소방 인프라 확충이 필요하다는 점에 공감해 2024년 9월부터 추진됐다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power_plant_construction", "to_id": "industry_nuclear", "properties": {"evidence": "대우건설이 체코 신규 원전 사업의 성공적인 수행을 위해 현지 지역사회와의 신뢰 구축에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_community_engagement", "to_id": "industry_nuclear", "properties": {"evidence": "단순한 인프라 건설을 넘어, 현지 맞춤형 상생 활동을 통해 해외 사업 경쟁력을 한층 끌어올린다는 전략이다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_fire_truck", "to_id": "business_area_community_engagement", "properties": {"evidence": "기증된 소방차는 즉시 실전에 배치돼 주민 안전과 주요 전략 인프라 관리에 투입된다.", "date": "", "evidence_source_id": "news_047040_a1a9392ed9c7e129", "evidence_source_type": "news", "evidence_source_url": "http://www.breaknews.com/1207448", "evidence_published_at": "2026-05-15T17:42:00+09:00"}}

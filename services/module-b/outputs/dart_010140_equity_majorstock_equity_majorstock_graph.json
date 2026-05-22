@@ -2,11 +2,45 @@
   "source_id": "dart_010140_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_삼성중공업",
+      "id": "company_010140",
       "type": "Company",
       "name": "삼성중공업",
-      "stock_code": "010140"
+      "stock_code": "010140",
+      "description": "조선해양 분야에서 선박 및 해양플랜트 건조 사업을 영위합니다."
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "shipbuilding"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_shipbuilding",
+      "evidence": "조선해양 분야에서 선박 및 해양플랜트 건조 사업을 영위합니다.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_010140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331002572",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "조선해양 분야에서 선박 및 해양플랜트 건조 사업을 영위합니다.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_010140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331002572",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
 }

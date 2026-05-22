@@ -1,0 +1,112 @@
+{
+  "source_id": "dart_011200_business_segments_20260318001444",
+  "entities": [
+    {
+      "id": "company_011200",
+      "type": "Company",
+      "name": "HMM",
+      "stock_code": "011200",
+      "description": "종합해운물류기업으로 컨테이너 운송, 벌크화물 운송, 터미널운영 등 물류서비스를 제공합니다."
+    },
+    {
+      "id": "company_078930",
+      "type": "Company",
+      "name": "GS",
+      "stock_code": "078930"
+    },
+    {
+      "id": "company_086280",
+      "type": "Company",
+      "name": "현대글로비스",
+      "stock_code": "086280"
+    },
+    {
+      "id": "business_area_container_shipping",
+      "type": "BusinessArea",
+      "name": "컨테이너 운송"
+    },
+    {
+      "id": "business_area_bulk_shipping",
+      "type": "BusinessArea",
+      "name": "벌크화물 운송"
+    },
+    {
+      "id": "business_area_terminal_operations",
+      "type": "BusinessArea",
+      "name": "터미널 운영"
+    },
+    {
+      "id": "industry_shipping",
+      "type": "Industry",
+      "name": "shipbuilding"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011200",
+      "to": "business_area_container_shipping",
+      "evidence": "당사는 컨테이너, 벌크(유조선/건화물선), 기타(터미널 등)의 사업부문을 영위하고 있으며, 2026년 누적 기준, 컨테이너 585만 TEU 및 벌크 4,569만 MT 등의 생산능력을 보유하였습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011200",
+      "to": "business_area_bulk_shipping",
+      "evidence": "당사는 컨테이너, 벌크(유조선/건화물선), 기타(터미널 등)의 사업부문을 영위하고 있으며, 2026년 누적 기준, 컨테이너 585만 TEU 및 벌크 4,569만 MT 등의 생산능력을 보유하였습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011200",
+      "to": "business_area_terminal_operations",
+      "evidence": "터미널 등 터미널운영 등 201,027 1.8% 매출",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_container_shipping",
+      "to": "industry_shipping",
+      "evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_bulk_shipping",
+      "to": "industry_shipping",
+      "evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_terminal_operations",
+      "to": "industry_shipping",
+      "evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_011200_business_segments_20260318001444",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

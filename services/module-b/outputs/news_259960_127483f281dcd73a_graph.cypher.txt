@@ -1,0 +1,41 @@
+// node: company_259960
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_259960", "type": "Company", "name": "크래프톤", "stock_code": "259960", "description": "게임 퍼블리싱과 개발 자회사 통한 게임 개발 및 글로벌 서비스"}
+
+// node: business_area_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_game", "type": "BusinessArea", "name": "게임"}
+
+// node: industry_IT
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_IT", "type": "Industry", "name": "게임·인터넷"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_259960", "to_id": "business_area_game", "properties": {"evidence": "크래프톤이 퍼블리싱하고 산하 개발 자회사 언노운월즈 엔터테인먼트(이하 언노운월즈)가 개발한 '서브노티카 2'가 글로벌 얼리 액세스를 시작했다.", "date": "", "evidence_source_id": "news_259960_127483f281dcd73a", "evidence_source_type": "news", "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051515133379766", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_game", "to_id": "industry_IT", "properties": {"evidence": "게임·인터넷", "date": "", "evidence_source_id": "news_259960_127483f281dcd73a", "evidence_source_type": "news", "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051515133379766", "evidence_published_at": "2026-05-16T07:00:00+09:00"}}

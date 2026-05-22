@@ -2,35 +2,228 @@
   "source_id": "news_000720_e237c436daa61a94",
   "entities": [
     {
-      "id": "company_hyundai_construction",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
-      "stock_code": "000720"
+      "stock_code": "000720",
+      "description": "건설과 에너지 사업에 주력하며 원전과 태양열로 북미지역 해외 수주 확대 중"
     },
     {
-      "id": "company_samsung_c_steel",
+      "id": "company_028260",
       "type": "Company",
       "name": "삼성물산",
-      "stock_code": "028260"
+      "stock_code": "028260",
+      "description": "건설부문에서 신재생에너지, 원전 등 전략상품 위주 수주 추진"
     },
     {
-      "id": "company_sk",
+      "id": "company_047040",
       "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "name": "대우건설",
+      "stock_code": "047040"
     },
     {
-      "id": "company_sk_hynix",
+      "id": "company_375500",
       "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "name": "DL이앤씨",
+      "stock_code": "375500"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_006360",
       "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "name": "GS건설",
+      "stock_code": "006360"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "energy"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "BusinessArea",
+      "name": "신재생에너지"
+    },
+    {
+      "id": "industry_nuclear_energy",
+      "type": "BusinessArea",
+      "name": "원전"
+    },
+    {
+      "id": "product_service_SMR",
+      "type": "ProductService",
+      "name": "소형모듈원전"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "industry_construction",
+      "evidence": "현대건설은 건설사이며 1분기 수주액이 급감했다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "industry_energy",
+      "evidence": "현대건설은 원전과 태양열 등 에너지 사업을 중심으로 북미지역에서 해외 수주를 확대한다는 전략이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_028260",
+      "to": "industry_construction",
+      "evidence": "삼성물산 건설부문은 기존 사업 연계를 통해 수주 물량을 확보하고 동남아 등 전략지역에서는 신재생, 원전 등 전략상품 위주의 수주를 추진하겠다는 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_028260",
+      "to": "industry_renewable_energy",
+      "evidence": "삼성물산 건설부문은 신재생 발전 사업 수주에 속도를 내고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_028260",
+      "to": "industry_nuclear_energy",
+      "evidence": "삼성물산 건설부문은 원전을 포함한 전략상품 위주의 수주를 추진하겠다는 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_028260",
+      "to": "product_service_SMR",
+      "evidence": "삼성물산 건설부문은 소형모듈원전(SMR) 시장에 글로벌 파트너와 공동으로 참여할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000720",
+      "to": "product_service_SMR",
+      "evidence": "현대건설의 주요 프로젝트로 미국 홀텍과 소형모듈원전(SMR) 공사가 있다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy",
+      "evidence": "신재생과 원전 등은 에너지 산업 내 사업 분야이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_nuclear_energy",
+      "to": "industry_energy",
+      "evidence": "신재생과 원전 등은 에너지 산업 내 사업 분야이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_SMR",
+      "to": "industry_nuclear_energy",
+      "evidence": "소형모듈원전(SMR)은 원전 사업 영역에 속한다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000720",
+      "to": "industry_construction",
+      "evidence": "현대건설은 건설사이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_028260",
+      "to": "industry_construction",
+      "evidence": "삼성물산 건설부문은 건설사이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_construction",
+      "evidence": "대우건설도 건설사이며 1분기 해외건설 수주액은 1357억원이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_375500",
+      "to": "industry_construction",
+      "evidence": "DL이앤씨는 건설사이며 1분기 해외 수주액은 206억원이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_construction",
+      "evidence": "GS건설은 건설사이며 1분기 해외 수주액이 약 237억원이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_e237c436daa61a94",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.ceoscoredaily.com/page/view/2026051115234342542",
+      "evidence_published_at": "2026-05-12T07:00:00+09:00"
+    }
+  ]
 }

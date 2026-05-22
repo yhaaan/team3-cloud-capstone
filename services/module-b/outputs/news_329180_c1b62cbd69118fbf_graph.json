@@ -2,27 +2,110 @@
   "source_id": "news_329180_c1b62cbd69118fbf",
   "entities": [
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "조선 산업 핵심 소재·부품 국산화와 친환경 선박 기자재 공급망 구축 주도"
     },
     {
-      "id": "person_geum_seok_ho",
-      "type": "Person",
-      "name": "금석호",
-      "role_raw": "HD현대중공업 대표이사",
-      "affiliated_company": "company_hd현대중공업",
-      "role": "CEO",
-      "role_label": "대표이사"
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선 산업"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_ship_component",
+      "type": "BusinessArea",
+      "name": "선박 소재·부품"
+    },
+    {
+      "id": "business_area_environmental_ship",
+      "type": "BusinessArea",
+      "name": "친환경 선박"
+    },
+    {
+      "id": "product_service_liquefied_gas_pump",
+      "type": "ProductService",
+      "name": "선박용 액화가스 펌프"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_geum_seok_ho",
-      "to": "company_hd현대중공업",
-      "evidence": "시는 28일 시청 본관 7층 시장실에서 김두겸 울산시장과 금석호 HD현대중공업 대표이사 등이 참석한 가운데 '친환경 선박 생태계 구축을 위한 상생 협력 업무 협약'을 체결한다고 밝혔다.",
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_ship_component",
+      "evidence": "울산시가 조선 산업 핵심 소재·부품 국산화를 위해 HD현대중공업과 손잡고 소부장 특화단지 유치에 나선다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_environmental_ship",
+      "evidence": "'친환경 선박 기자재 소부장 특화단지'는 LNG선 등 친환경 선박의 핵심 장비인 '선박용 액화가스 펌프' 등을 전략 품목으로 육성하는 데 초점이 맞춰져 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_liquefied_gas_pump",
+      "evidence": "LNG선 등 친환경 선박의 핵심 장비인 '선박용 액화가스 펌프' 등을 전략 품목으로 육성하는 데 초점이 맞춰져 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ship_component",
+      "to": "business_area_shipbuilding",
+      "evidence": "울산 주력 산업인 조선 산업 핵심 소재·부품의 국산화와 안정적인 공급망 구축을 위해 마련됐다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_environmental_ship",
+      "to": "business_area_shipbuilding",
+      "evidence": "'친환경 선박 기자재 소부장 특화단지'는 LNG선 등 친환경 선박의 핵심 장비인 '선박용 액화가스 펌프' 등을 전략 품목으로 육성하는 데 초점이 맞춰져 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_liquefied_gas_pump",
+      "to": "business_area_environmental_ship",
+      "evidence": "'친환경 선박 기자재 소부장 특화단지'는 LNG선 등 친환경 선박의 핵심 장비인 '선박용 액화가스 펌프' 등을 전략 품목으로 육성하는 데 초점이 맞춰져 있다.",
+      "date": "",
+      "evidence_source_id": "news_329180_c1b62cbd69118fbf",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.metroseoul.co.kr/article/20260428500641",
+      "evidence_published_at": "2026-04-29T10:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "울산 주력 산업인 조선 산업 핵심 소재·부품의 국산화와 안정적인 공급망 구축을 위해 마련됐다.",
       "date": "",
       "evidence_source_id": "news_329180_c1b62cbd69118fbf",
       "evidence_source_type": "news",

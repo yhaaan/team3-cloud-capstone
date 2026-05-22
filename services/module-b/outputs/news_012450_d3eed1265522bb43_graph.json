@@ -2,17 +2,72 @@
   "source_id": "news_012450_d3eed1265522bb43",
   "entities": [
     {
-      "id": "company_한화에어로스페이스",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
-      "stock_code": "012450"
+      "stock_code": "012450",
+      "description": "천무 다연장로켓 발사대 및 부대장비 공급을 주력으로 하는 방산업체"
     },
     {
-      "id": "company_한화",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "id": "business_area_rocket_system",
+      "type": "BusinessArea",
+      "name": "다연장로켓 시스템"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방산"
+    },
+    {
+      "id": "product_service_천무_다연장로켓_발사대",
+      "type": "ProductService",
+      "name": "천무 발사대"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_rocket_system",
+      "evidence": "한화에어로스페이스는 천무 다연장로켓 시스템 추가 공급을 위한 정부 간(G2G) 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_d3eed1265522bb43",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605112137005",
+      "evidence_published_at": "2026-05-11T21:37:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "product_service_천무_다연장로켓_발사대",
+      "evidence": "이번 계약을 통해 한화에어로스페이스는 천무 발사대 3문과 관련 부대 장비를 2027년 말까지 에스토니아에 공급할 예정이다.",
+      "date": "",
+      "evidence_source_id": "news_012450_d3eed1265522bb43",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605112137005",
+      "evidence_published_at": "2026-05-11T21:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_천무_다연장로켓_발사대",
+      "to": "business_area_rocket_system",
+      "evidence": "한화에어로스페이스는 천무 다연장로켓 시스템 추가 공급을 위한 정부 간(G2G) 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_d3eed1265522bb43",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605112137005",
+      "evidence_published_at": "2026-05-11T21:37:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_rocket_system",
+      "to": "industry_defense",
+      "evidence": "한화에어로스페이스는 천무 다연장로켓 시스템 추가 공급을 위한 정부 간(G2G) 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_d3eed1265522bb43",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605112137005",
+      "evidence_published_at": "2026-05-11T21:37:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,63 @@
+{
+  "source_id": "dart_010130_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_010130",
+      "type": "Company",
+      "name": "고려아연",
+      "stock_code": "010130",
+      "description": "아연 제련 및 관련 투자 사업을 영위하는 기업입니다."
+    },
+    {
+      "id": "company_000880",
+      "type": "Company",
+      "name": "한화",
+      "stock_code": "000880"
+    },
+    {
+      "id": "business_area_배터리",
+      "type": "BusinessArea",
+      "name": "배터리"
+    },
+    {
+      "id": "industry_에너지",
+      "type": "Industry",
+      "name": "에너지"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_010130",
+      "to": "company_000880",
+      "evidence": "고려아연의 타법인 출자 대상은 한화신한테라와트아워㈜, 출자 목적은 경영참여, 최초 취득일은 2025.07.07, 당기말 보유수량은 50,000, 당기말 지분율은 33.33%, 장부가액은 5,530,000,000.",
+      "date": "2026-03-25",
+      "evidence_source_id": "dart_010130_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008",
+      "evidence_published_at": "2026-03-25"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010130",
+      "to": "business_area_배터리",
+      "evidence": "고려아연의 타법인 출자 대상 중 글로벌 배터리 제1호 등 배터리 관련 단순투자 포트폴리오가 포함됨.",
+      "date": "2026-03-25",
+      "evidence_source_id": "dart_010130_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008",
+      "evidence_published_at": "2026-03-25"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_배터리",
+      "to": "industry_에너지",
+      "evidence": "고려아연은 배터리 관련 투자 및 사업을 영위하며 배터리는 에너지 산업의 하위 분야로 분류됨.",
+      "date": "2026-03-25",
+      "evidence_source_id": "dart_010130_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260325000008",
+      "evidence_published_at": "2026-03-25"
+    }
+  ]
+}

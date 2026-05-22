@@ -1,0 +1,58 @@
+// node: company_267260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267260", "type": "Company", "name": "HD현대일렉트릭", "stock_code": "267260"}
+
+// node: company_267250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+
+// node: person_정기선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정기선", "type": "Person", "name": "정기선"}
+
+// node: person_조석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_조석", "type": "Person", "name": "조 석"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267250", "to_id": "company_267260", "properties": {"evidence": "HD현대일렉트릭의 최대주주 관련 인물/법인은 HD현대㈜, 관계는 최대주주, 당기말 보유주식수는 12,883,087주, 지분율은 35.74%.", "date": "2026-03-16", "evidence_source_id": "dart_267260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정기선", "to_id": "company_267260", "properties": {"evidence": "HD현대일렉트릭의 최대주주 관련 인물/법인은 정기선, 관계는 특수관계인, 당기말 보유주식수는 156주, 지분율은 0.00%.", "date": "2026-03-16", "evidence_source_id": "dart_267260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_조석", "to_id": "company_267260", "properties": {"evidence": "HD현대일렉트릭의 최대주주 관련 인물/법인은 조 석, 관계는 특수관계인, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 이사 중도사임.", "date": "2026-03-16", "evidence_source_id": "dart_267260_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}

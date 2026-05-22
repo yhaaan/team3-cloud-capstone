@@ -2,35 +2,177 @@
   "source_id": "news_064350_873c67649f0f3995",
   "entities": [
     {
-      "id": "company_hyundai_rotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
-      "stock_code": "064350"
+      "stock_code": "064350",
+      "description": "군사용 로봇 및 다목적 무인차량 개발·납품, 방산 부문 중심의 매출과 영업이익 성장 전망"
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380"
+    },
+    {
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
     },
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450"
     },
     {
-      "id": "company_hyundai_motor",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
+      "id": "business_area_military_robotics",
+      "type": "BusinessArea",
+      "name": "군사용 로봇"
+    },
+    {
+      "id": "product_service_multipurpose_unmanned_vehicle",
+      "type": "ProductService",
+      "name": "다목적 무인차량"
+    },
+    {
+      "id": "product_service_legged_robot",
+      "type": "ProductService",
+      "name": "다족보행로봇"
+    },
+    {
+      "id": "product_service_unmanned_firefighting_robot",
+      "type": "ProductService",
+      "name": "무인 소방로봇"
+    },
+    {
+      "id": "business_area_defense_solution",
+      "type": "BusinessArea",
+      "name": "방산 부문"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방위산업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_military_robotics",
+      "evidence": "\"군사용 로봇은 그룹 내에서 현대로템이 담당하는 구조로 이원화됐다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_legged_robot",
+      "evidence": "\"현대로템은 지난 2024년 8월 대테러작전용 다족보행로봇을 한국 육군에 납품했다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_multipurpose_unmanned_vehicle",
+      "evidence": "\"현대로템은 다목적 무인차량 신속 시범획득사업을 수주해 'HR-셰르파' 성능 강화 모델과 시범운용 지원 체계를 공급했다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_unmanned_firefighting_robot",
+      "evidence": "\"현대로템은 군용 다목적 무인차량 HR-셰르파를 기반으로 소방청과 함께 무인 소방로봇 개발에도 성공했다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_defense_solution",
+      "evidence": "\"한화투자증권은 27일 현대로템에 대해 '연내 방산부문(디펜스솔루션) 수출·이익 모멘텀(상승동력)이 지속될 것으로 기대한다'며...\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_military_robotics",
+      "to": "business_area_defense_solution",
+      "evidence": "\"군사용 로봇은 그룹 내에서 현대로템이 담당하는 구조로 이원화됐다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense_solution",
+      "to": "industry_defense",
+      "evidence": "\"방산부문(디펜스솔루션) 수출·이익 모멘텀(상승동력)이 지속될 것으로 기대한다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_legged_robot",
+      "to": "business_area_military_robotics",
+      "evidence": "\"다족보행로봇이 한국군 납품에 성공한 최초의 사례\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_multipurpose_unmanned_vehicle",
+      "to": "business_area_military_robotics",
+      "evidence": "\"군용 다목적 무인차량 HR-셰르파\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_unmanned_firefighting_robot",
+      "to": "business_area_military_robotics",
+      "evidence": "\"무인 소방로봇 개발에도 성공했다\"",
+      "date": "",
+      "evidence_source_id": "news_064350_873c67649f0f3995",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026051296256",
+      "evidence_published_at": "2026-05-12T08:11:00+09:00"
+    }
+  ]
 }

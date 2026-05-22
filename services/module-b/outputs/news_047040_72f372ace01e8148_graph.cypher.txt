@@ -1,0 +1,215 @@
+// node: company_047040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047040", "type": "Company", "name": "대우건설", "stock_code": "047040", "description": "해외 플랜트, LNG 플랜트, 토목, 도시정비 등 건설사업을 영위하는 건설사"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260", "description": "반도체 공장, 바이오 플랜트, 데이터센터 등 하이테크 건설 프로젝트 수행"}
+
+// node: company_000720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "원전, 해외 플랜트, 토목, 도시정비 등 균형 잡힌 건설 포트폴리오 보유"}
+
+// node: company_375500
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_375500", "type": "Company", "name": "DL이앤씨", "stock_code": "375500", "description": "재무 우수하고 수익성 중심, 도시정비 수주 중심의 건설 사업 영위"}
+
+// node: company_006360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006360", "type": "Company", "name": "GS건설", "stock_code": "006360", "description": "자이 브랜드, 도시정비, 주택 시공 실적이 강점인 건설사"}
+
+// node: company_078930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078930", "type": "Company", "name": "GS", "stock_code": "078930"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "환경, 폐기물, 에너지, 데이터센터 사업 중심의 건설 및 환경 에너지 사업"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_294870
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_294870", "type": "Company", "name": "IPARK현대산업개발", "stock_code": "294870", "description": "수도권 주택 및 자체사업 중심의 건설사"}
+
+// node: business_area_overseas_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_overseas_plant", "type": "BusinessArea", "name": "Overseas Plant"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "Construction"}
+
+// node: business_area_LNG_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_LNG_plant", "type": "BusinessArea", "name": "LNG Plant"}
+
+// node: business_area_civil_engineering
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_civil_engineering", "type": "BusinessArea", "name": "Civil Engineering"}
+
+// node: business_area_urban_redevelopment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_urban_redevelopment", "type": "BusinessArea", "name": "Urban Redevelopment"}
+
+// node: business_area_high_tech_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_high_tech_construction", "type": "BusinessArea", "name": "High Tech Construction"}
+
+// node: business_area_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power", "type": "BusinessArea", "name": "Nuclear Power"}
+
+// node: business_area_residential_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_residential_construction", "type": "BusinessArea", "name": "Residential Construction"}
+
+// node: business_area_environmental_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_environmental_energy", "type": "BusinessArea", "name": "Environmental Energy"}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_overseas_plant", "to_id": "industry_construction", "properties": {"evidence": "해외 플랜트는 건설 산업의 일부분이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_LNG_plant", "to_id": "business_area_overseas_plant", "properties": {"evidence": "LNG 플랜트는 해외 플랜트 사업의 세부 영역이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_civil_engineering", "to_id": "industry_construction", "properties": {"evidence": "토목은 건설 산업의 주요 분야이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_urban_redevelopment", "to_id": "industry_construction", "properties": {"evidence": "도시정비는 건설 산업의 세부 분야이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_high_tech_construction", "to_id": "industry_construction", "properties": {"evidence": "하이테크 건설은 건설 산업 내 첨단 건설 프로젝트를 가리킨다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power", "to_id": "business_area_overseas_plant", "properties": {"evidence": "원자력 발전은 해외 플랜트 사업 일부이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_residential_construction", "to_id": "industry_construction", "properties": {"evidence": "주택 건설은 건설 산업 주요 분야이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_environmental_energy", "to_id": "industry_construction", "properties": {"evidence": "환경·에너지 사업은 건설 산업과 밀접히 연관된 분야이다", "date": "", "evidence_source_id": "news_047040_72f372ace01e8148", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000850", "evidence_published_at": "2026-05-16T06:00:00+09:00"}}
