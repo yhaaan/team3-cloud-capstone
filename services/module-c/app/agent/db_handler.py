@@ -277,7 +277,7 @@ class Neo4jHandler():
 
 
     # 해당 타입 모든 노드 이름 가져오기 함수
-    # Neo4j 노드 type - 'Company', 'Person', 'Event', 'Industry'
+    # Neo4j 노드 type - 'Company', 'Person', 'Event', 'Industry', 'ProductService'
     def get_node_names_by_type(self, entity_type: str):
         # 내부의 driver를 직접 사용
         try:

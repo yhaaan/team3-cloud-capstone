@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import json
 import os
@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from jsonschema import validate
 
 from company_whitelist import load_default_company_whitelist
+from industry_taxonomy import load_default_industry_taxonomy
 from role_normalizer import normalize_graph_roles
 
 
@@ -35,6 +36,12 @@ def build_extraction_prompt(doc: dict[str, Any]) -> str:
     ontology = load_text_file(ONTOLOGY_PATH)
     graph_schema = json.dumps(load_json_file(GRAPH_SCHEMA_PATH), ensure_ascii=False, indent=2)
     company_whitelist = load_default_company_whitelist()
+    industry_taxonomy = load_default_industry_taxonomy()
+    industry_taxonomy_text = "\n".join(
+        f"- {entry.name} ({entry.id})"
+        + (f" aliases: {', '.join(entry.aliases[:6])}" if entry.aliases else "")
+        for entry in industry_taxonomy.entries
+    )
     allowed_companies = company_whitelist.allowed_companies_for_doc(doc)
     allowed_company_text = "\n".join(
         f"- {company.company_name} ({company.stock_code}, {company.market})"
@@ -43,28 +50,29 @@ def build_extraction_prompt(doc: dict[str, Any]) -> str:
 
     business_inference_rules = """
 Business inference extraction rules:
-- Entity.type may include Company, Person, Event, Industry, BusinessArea, and ProductService.
-- Relation.type may include ACQUIRES, INVESTS_IN, APPOINTED_TO, AFFILIATED_WITH, BELONGS_TO, OPERATES_IN, PRODUCES, and PART_OF.
-- Extract specific BusinessArea entities when explicitly supported by text_blocks/content, normalized_records, or content.
+- Entity.type may include Company, Person, Event, Industry, and ProductService.
+- Relation.type may include ACQUIRES, INVESTS_IN, APPOINTED_TO, AFFILIATED_WITH, BELONGS_TO, PRODUCES, PART_OF, and RELATED_TO.
+- Extract Industry entities for broad sectors, narrow sectors, markets, themes, business lines, and operating areas when explicitly supported by text_blocks/content, normalized_records, or content.
 - Extract ProductService entities for concrete products or services when explicitly supported by text_blocks/content, normalized_records, or content.
-- BusinessArea and ProductService names must be concise noun phrases, not full sentences.
-- OPERATES_IN must use Company -> BusinessArea.
+- Industry and ProductService names must be concise noun phrases, not full sentences.
+- BELONGS_TO must use Company -> Industry for broad or narrow industry/business-area classification.
 - PRODUCES must use Company -> ProductService.
-- PART_OF must use BusinessArea -> Industry or ProductService -> BusinessArea.
-- Use BELONGS_TO only for broad Company -> Industry links. Use OPERATES_IN/PRODUCES for business-segment details.
+- PART_OF must use Industry -> Industry or ProductService -> Industry. Use it only for narrower -> broader hierarchy.
+- RELATED_TO must use Industry -> Industry for non-hierarchical industry associations.
+- Use BELONGS_TO for all Company -> Industry links, including broad categories and specific business areas.
 - Prefer creating useful industry discovery paths:
-  Company -> BusinessArea -> Industry
-  Company -> ProductService -> BusinessArea -> Industry
-  Company -> Industry when only broad industry evidence exists.
+  Company -> Industry
+  Company -> ProductService -> Industry
+  Industry -> Industry when a narrower category belongs to a broader category.
 """.strip()
 
     authoritative_schema_rules = """
 Authoritative schema priority:
 - The JSON schema and Business inference extraction rules above are authoritative.
 - If any later natural-language instruction conflicts with the schema, follow the schema.
-- You may create BusinessArea and ProductService entities when evidence exists.
-- You may create OPERATES_IN, PRODUCES, and PART_OF relations when evidence exists.
-- For industry discovery, prefer extracting paths that connect Company -> BusinessArea/ProductService -> Industry, or Company -> Industry when only broad evidence exists.
+- You may create Industry and ProductService entities when evidence exists.
+- You may create BELONGS_TO, PRODUCES, PART_OF, and RELATED_TO relations when evidence exists.
+- For industry discovery, prefer extracting direct Company -> Industry links and optional Industry -> Industry hierarchy.
 """.strip()
 
     output_rules = """
@@ -85,27 +93,29 @@ Entity rules:
 - Company.id should be consistent with the company name; Module B will canonicalize listed companies by stock_code.
 - Create Person entities only for DART executive_status documents. Do not create Person entities from news documents or non-executive DART documents.
 - Person.name must contain only the person's name, not titles, company names, or modifiers.
-- Person.role should contain the raw title string from the source text, not a standardized role code.
-- For DART executive_status records, preserve birth_ym, gender, main_career, executive_type, full_time_status, responsibility, tenure, tenure_end_on, and major_shareholder_relation when present in the input.
+- Do not put title, board role, responsibility, tenure, or company-specific role data on Person entities.
+- For DART executive_status records, put company-specific role fields on the Person -> Company relation, not the Person entity.
+- For DART executive_status records, preserve birth_ym, gender, and main_career on Person entities when present in the input.
 - For DART executive_status records, use name plus birth_ym as the stable person identity when birth_ym is available.
-- Industry is a broad sector or market category, such as semiconductor, battery, cloud, shipbuilding, insurance, construction, bio, energy, AI, or platform.
-- BusinessArea is a company's business segment or operating area, such as memory, foundry, financial services, shipbuilding, construction, insurance, logistics, cloud, or platform business.
+- Industry is any sector, market, thematic category, business line, or operating area, broad or narrow, such as IT, cloud service, web, semiconductor, memory, foundry, insurance, logistics, construction, bio, energy, AI, or platform business.
 - ProductService is a concrete product, service, or offering, such as DRAM, HBM, OLED, EV battery, LNG carrier, brokerage service, cloud service, smartphone, or display panel.
-- Industry, BusinessArea, and ProductService names must be short noun phrases.
-- If a relation uses an Industry, BusinessArea, or ProductService endpoint, the endpoint entity must also appear in entities.
+- Industry and ProductService names must be short noun phrases.
+- If a relation uses an Industry or ProductService endpoint, the endpoint entity must also appear in entities.
 """.strip()
 
     relation_rules = """
 Relation rules:
 - ACQUIRES and INVESTS_IN are Company -> Company only.
 - APPOINTED_TO and AFFILIATED_WITH are Person -> Company only.
-- BELONGS_TO is Company -> Industry only and should be used for broad industry classification.
-- OPERATES_IN is Company -> BusinessArea only.
+- For APPOINTED_TO and AFFILIATED_WITH, put source-backed role_raw, board_role, responsibility, full_time_status, tenure, tenure_end_on, and major_shareholder_relation on the relation when available.
+- BELONGS_TO is Company -> Industry only and should be used for broad or narrow industry/business-area classification.
 - PRODUCES is Company -> ProductService only.
-- PART_OF is BusinessArea -> Industry or ProductService -> BusinessArea only.
-- Do not combine company names and titles into a role string. Use Company entities and relations for companies, and Person.role for titles.
+- PART_OF is Industry -> Industry or ProductService -> Industry only. Use narrower -> broader direction.
+- RELATED_TO is Industry -> Industry only. Use it for same-level or non-hierarchical industry associations.
+- Do not combine company names and titles into a role string. Use Company entities for companies and relation properties for person-company titles.
 - Do not create a relation if either endpoint is uncertain or empty.
 - Create Event entities only when the event itself is important; never use a literal type name like "Event" as a relation endpoint.
+- In DART executive_status documents, do not create Company -> Company relations from main_career or concurrent-position text unless the source explicitly states an investment, acquisition, ownership, customer, supplier, or business relationship between the companies.
 """.strip()
 
     return f"""
@@ -124,6 +134,15 @@ Listed-company whitelist rules:
 
 Allowed listed companies detected for this document:
 {allowed_company_text}
+
+Canonical Industry taxonomy:
+{industry_taxonomy_text}
+
+Industry taxonomy rules:
+- Prefer the canonical Industry.name and Industry.id from the taxonomy list when the document uses the same meaning or an alias.
+- If an Industry is narrower than another Industry, use PART_OF in narrower -> broader direction.
+- Use RELATED_TO only for non-hierarchical Industry -> Industry associations.
+- Module B normalizes Industry aliases to canonical ids after extraction, so avoid creating multiple Industry nodes for synonyms.
 
 {output_rules}
 
@@ -198,3 +217,4 @@ def extract_output_text(response_json: dict[str, Any]) -> str:
                 return text
 
     raise RuntimeError("OpenAI 응답에서 텍스트 출력을 찾지 못했습니다.")
+

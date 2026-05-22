@@ -1,4 +1,4 @@
-# Module B DB ER Diagram
+﻿# Module B DB ER Diagram
 
 Module B stores data in two different databases:
 
@@ -83,11 +83,22 @@ erDiagram
         string description
     }
 
+    ENTITY_PRODUCT_SERVICE {
+        string id
+        string type
+        string name
+        string description
+    }
+
     ENTITY_COMPANY ||--o{ ENTITY_COMPANY : acquires
     ENTITY_COMPANY ||--o{ ENTITY_COMPANY : invests_in
     ENTITY_PERSON ||--o{ ENTITY_COMPANY : appointed_to
     ENTITY_PERSON ||--o{ ENTITY_COMPANY : affiliated_with
     ENTITY_COMPANY }o--|| ENTITY_INDUSTRY : belongs_to
+    ENTITY_COMPANY ||--o{ ENTITY_PRODUCT_SERVICE : produces
+    ENTITY_PRODUCT_SERVICE }o--|| ENTITY_INDUSTRY : part_of
+    ENTITY_INDUSTRY }o--|| ENTITY_INDUSTRY : part_of
+    ENTITY_INDUSTRY }o--o{ ENTITY_INDUSTRY : related_to
 ```
 
 ## 3. Actual graph interpretation in Neo4j
@@ -95,13 +106,16 @@ erDiagram
 Internally, Module B loads Neo4j with:
 
 - one shared base label: `Entity`
-- one subtype label: `Company`, `Person`, `Event`, or `Industry`
+- one subtype label: `Company`, `Person`, `Event`, `Industry`, or `ProductService`
 - typed relationships:
   - `ACQUIRES`
   - `INVESTS_IN`
   - `APPOINTED_TO`
   - `AFFILIATED_WITH`
   - `BELONGS_TO`
+  - `PRODUCES`
+  - `PART_OF`
+  - `RELATED_TO`
 
 Equivalent graph view:
 
@@ -111,13 +125,22 @@ flowchart LR
     Person[Entity:Person]
     Event[Entity:Event]
     Industry[Entity:Industry]
+    ProductService[Entity:ProductService]
 
     Company -- ACQUIRES --> Company
     Company -- INVESTS_IN --> Company
     Person -- APPOINTED_TO --> Company
     Person -- AFFILIATED_WITH --> Company
     Company -- BELONGS_TO --> Industry
+    Company -- PRODUCES --> ProductService
+    ProductService -- PART_OF --> Industry
+    Industry -- PART_OF --> Industry
+    Industry -- RELATED_TO --> Industry
 ```
+
+Person role context is stored on the `APPOINTED_TO` or `AFFILIATED_WITH`
+relationship. Person nodes store identity fields only, so the same person can
+have different roles at different companies without node-level overwrites.
 
 ## 4. Implementation-based field summary
 
@@ -146,9 +169,10 @@ Neo4j entity fields:
 
 - common: `id`, `type`, `name`
 - company: `stock_code`, `country`, `industry`
-- person: `role`, `affiliated_company`
+- person: `birth_ym`, `gender`, `main_career`
 - event: `event_type`, `date`, `description`
-- industry: `description`
+- industry: canonical ids/names are normalized through `schemas/industry_taxonomy.json`; hierarchy remains Industry -> Industry via `PART_OF`
+- product_service: `description`
 
 Neo4j relation fields:
 
@@ -156,7 +180,18 @@ Neo4j relation fields:
 - `from`
 - `to`
 - `evidence`
+- role context fields for `APPOINTED_TO` and `AFFILIATED_WITH`
+- evidence source fields attached during normalization
 
 ## 5. Design note
 
 `source_id` exists in the graph JSON root, but the current Neo4j loader does not persist document-to-entity or document-to-relation provenance as a separate node/table. If you want, I can extend this into a v2 ERD that adds `Document`, `Chunk`, `Entity`, and `RelationEvidence` linkage for traceability.
+
+
+## FTC affiliate groups
+
+Module B also loads FTC affiliate-group reference data from `docs/ftc_affiliates.jsonl` without LLM extraction.
+
+- node: `AffiliateGroup`
+- relation: `Company -[:MEMBER_OF]-> AffiliateGroup`
+- meaning: listed-company membership in an FTC designated business group, not ownership or parent/subsidiary structure

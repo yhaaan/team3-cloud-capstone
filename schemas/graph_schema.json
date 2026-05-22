@@ -32,8 +32,8 @@
               "Person",
               "Event",
               "Industry",
-              "BusinessArea",
-              "ProductService"
+              "ProductService",
+              "AffiliateGroup"
             ]
           },
           "name": {
@@ -48,29 +48,6 @@
           "industry": {
             "type": "string"
           },
-          "role": {
-            "type": "string",
-            "enum": [
-              "CHAIRMAN",
-              "VICE_CHAIRMAN",
-              "CEO",
-              "PRESIDENT",
-              "VICE_PRESIDENT",
-              "BOARD_CHAIR",
-              "OUTSIDE_DIRECTOR",
-              "DIRECTOR",
-              "MAYOR",
-              "MINISTER",
-              "RESEARCHER",
-              "OTHER"
-            ]
-          },
-          "role_raw": {
-            "type": "string"
-          },
-          "role_label": {
-            "type": "string"
-          },
           "birth_ym": {
             "type": "string"
           },
@@ -80,27 +57,6 @@
           "main_career": {
             "type": "string"
           },
-          "executive_type": {
-            "type": "string"
-          },
-          "full_time_status": {
-            "type": "string"
-          },
-          "responsibility": {
-            "type": "string"
-          },
-          "tenure": {
-            "type": "string"
-          },
-          "tenure_end_on": {
-            "type": "string"
-          },
-          "major_shareholder_relation": {
-            "type": "string"
-          },
-          "affiliated_company": {
-            "type": "string"
-          },
           "event_type": {
             "type": "string"
           },
@@ -108,6 +64,15 @@
             "type": "string"
           },
           "description": {
+            "type": "string"
+          },
+          "presentn_year": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "unity_group_code": {
             "type": "string"
           }
         },
@@ -133,9 +98,10 @@
               "APPOINTED_TO",
               "AFFILIATED_WITH",
               "BELONGS_TO",
-              "OPERATES_IN",
               "PRODUCES",
-              "PART_OF"
+              "PART_OF",
+              "RELATED_TO",
+              "MEMBER_OF"
             ]
           },
           "from": {
@@ -151,6 +117,47 @@
           "date": {
             "type": "string"
           },
+          "role": {
+            "type": "string",
+            "enum": [
+              "CHAIRMAN",
+              "VICE_CHAIRMAN",
+              "CEO",
+              "PRESIDENT",
+              "VICE_PRESIDENT",
+              "BOARD_CHAIR",
+              "OUTSIDE_DIRECTOR",
+              "DIRECTOR",
+              "MAYOR",
+              "MINISTER",
+              "RESEARCHER",
+              "OTHER"
+            ]
+          },
+          "role_raw": {
+            "type": "string"
+          },
+          "role_label": {
+            "type": "string"
+          },
+          "board_role": {
+            "type": "string"
+          },
+          "full_time_status": {
+            "type": "string"
+          },
+          "responsibility": {
+            "type": "string"
+          },
+          "tenure": {
+            "type": "string"
+          },
+          "tenure_end_on": {
+            "type": "string"
+          },
+          "major_shareholder_relation": {
+            "type": "string"
+          },
           "evidence_source_id": {
             "type": "string"
           },
@@ -161,6 +168,27 @@
             "type": "string"
           },
           "evidence_published_at": {
+            "type": "string"
+          },
+          "presentn_year": {
+            "type": "string"
+          },
+          "jurirno": {
+            "type": "string"
+          },
+          "bizrno": {
+            "type": "string"
+          },
+          "representative_name": {
+            "type": "string"
+          },
+          "founded_on": {
+            "type": "string"
+          },
+          "joined_on": {
+            "type": "string"
+          },
+          "source": {
             "type": "string"
           }
         },

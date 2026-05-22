@@ -1,10 +1,10 @@
-# Module B Ontology
+﻿# Module B Ontology
 
 ## Purpose
 
 Module B extracts a compact graph from financial and company documents for Graph RAG.
 The graph should prioritize relations that help users discover listed companies from
-industry, business-area, product, service, investment, acquisition, executive, or event
+industry, product, service, investment, acquisition, executive, or event
 questions.
 
 The ontology is intentionally small. Extract only entities and relations supported by
@@ -48,25 +48,15 @@ Required fields:
 - name
 
 Optional fields:
-- role
-- role_raw
-- role_label
 - birth_ym
 - gender
 - main_career
-- executive_type
-- full_time_status
-- responsibility
-- tenure
-- tenure_end_on
-- major_shareholder_relation
-- affiliated_company
 
 Rules:
 - Create Person entities only from DART executive_status documents.
 - Do not create Person entities from news documents or non-executive DART documents.
 - Put only the person's name in name.
-- Put source title text in role when present. Module B normalizes roles after extraction.
+- Put source title, board role, responsibility, tenure, and company-specific role text on the Person -> Company relation, not the Person entity.
 - Do not merge company names or title phrases into Person.name.
 - For DART executive_status records, use name plus birth_ym as the stable person identity when birth_ym is available.
 - Preserve main_career as source-backed career text for later human-network analysis.
@@ -96,7 +86,9 @@ Examples:
 
 ### Industry
 
-A broad sector, market, or thematic industry category.
+A sector, market, thematic category, business line, or operating area. Industry
+can be broad or narrow; use `PART_OF` to connect narrower Industry nodes to
+broader Industry nodes when hierarchy is useful.
 
 Required fields:
 - id
@@ -107,8 +99,10 @@ Optional fields:
 - description
 
 Rules:
-- Use Industry for broad categories that users are likely to ask about.
-- Prefer concise names such as semiconductor, battery, cloud, shipbuilding, insurance, construction, bio, energy, AI, platform, automotive, finance, or display.
+- Use Industry for both broad categories and narrower business-area categories that users are likely to ask about.
+- Prefer canonical Industry names and ids from `schemas/industry_taxonomy.json` when a source term matches an alias.
+- Keep all Industry hierarchy inside the Industry type; do not reintroduce BusinessArea.
+- Prefer concise names such as IT, cloud service, web, semiconductor, memory, foundry, battery, shipbuilding, insurance, construction, logistics, bio, energy, AI, platform, automotive, finance, or display.
 
 Examples:
 - Semiconductor
@@ -116,32 +110,9 @@ Examples:
 - Cloud
 - Shipbuilding
 - Insurance
-
-### BusinessArea
-
-A company's operating segment, business line, or business area.
-
-Required fields:
-- id
-- type
-- name
-
-Optional fields:
-- description
-
-Rules:
-- Use BusinessArea for segment-level concepts that connect a company to a broader Industry.
-- Names must be concise noun phrases, not full sentences.
-- BusinessArea should usually connect upward to Industry with PART_OF.
-
-Examples:
 - Memory
 - Foundry
-- Financial services
-- Shipbuilding
-- Construction
-- Logistics
-- Cloud business
+- Cloud service
 
 ### ProductService
 
@@ -158,7 +129,7 @@ Optional fields:
 Rules:
 - Use ProductService for specific products and services supported by source text.
 - Names must be concise noun phrases, not full sentences.
-- ProductService should usually connect upward to BusinessArea with PART_OF.
+- ProductService should usually connect upward to Industry with PART_OF.
 
 Examples:
 - DRAM
@@ -196,6 +167,17 @@ A person is appointed to a position at a company.
 Direction:
 Person -> Company
 
+Relation fields:
+- role
+- role_raw
+- role_label
+- board_role
+- full_time_status
+- responsibility
+- tenure
+- tenure_end_on
+- major_shareholder_relation
+
 ### AFFILIATED_WITH
 
 Meaning:
@@ -204,29 +186,28 @@ A person is affiliated with or belongs to a company.
 Direction:
 Person -> Company
 
+Relation fields:
+- role
+- role_raw
+- role_label
+- board_role
+- full_time_status
+- responsibility
+- tenure
+- tenure_end_on
+- major_shareholder_relation
+
 ### BELONGS_TO
 
 Meaning:
-A listed company belongs to a broad industry category.
+A listed company belongs to a broad or narrow industry category.
 
 Direction:
 Company -> Industry
 
 Use when:
-- The source text supports only broad industry classification.
-- There is not enough evidence for a more specific BusinessArea or ProductService path.
-
-### OPERATES_IN
-
-Meaning:
-A listed company operates in a business area or segment.
-
-Direction:
-Company -> BusinessArea
-
-Examples:
-- Samsung Electronics -> Memory
-- Hyundai Heavy Industries -> Shipbuilding
+- The source text supports an industry, market, operating area, or business-line classification.
+- Create direct Company -> Industry links for both broad and narrow Industry nodes when evidence supports them.
 
 ### PRODUCES
 
@@ -247,24 +228,41 @@ Meaning:
 A narrower concept belongs to a broader business area or industry.
 
 Allowed directions:
-- BusinessArea -> Industry
-- ProductService -> BusinessArea
+- Industry -> Industry
+- ProductService -> Industry
 
 Examples:
 - Memory -> Semiconductor
-- HBM -> Memory
+- HBM -> Semiconductor
 - LNG carrier -> Shipbuilding
+
+### RELATED_TO
+
+Meaning:
+Two Industry nodes are associated but neither is clearly part of the other.
+
+Direction:
+Industry -> Industry
+
+Use when:
+- The source text or clear general industry knowledge supports an association.
+- The relationship is not a narrower -> broader hierarchy.
+
+Examples:
+- Semiconductor -> Display
+- Cloud service -> Web
+- Battery -> Automotive
 
 ## Preferred Industry Discovery Paths
 
 When evidence allows, prefer paths that make industry questions resolve to companies:
 
-- Company -> BusinessArea -> Industry
-- Company -> ProductService -> BusinessArea -> Industry
 - Company -> Industry
+- Company -> ProductService -> Industry
+- Industry -> Industry
 
-Use Company -> Industry only when the document gives broad industry evidence without
-specific business areas or products/services.
+Use Company -> Industry for both broad categories and specific business-area categories.
+Module B normalizes Industry aliases to canonical ids with `industry_taxonomy.json`, then injects taxonomy-backed `PART_OF` ancestors and `RELATED_TO` associations.
 
 ## Common Rules
 
@@ -283,7 +281,6 @@ Recommended id prefixes:
 - person_{normalized_name}
 - event_{normalized_event_name}
 - industry_{normalized_name}
-- business_area_{normalized_name}
 - product_service_{normalized_name}
 
 Module B canonicalizes listed Company ids to stock_code-based ids during normalization.
@@ -296,18 +293,52 @@ for the semiconductor market.
 
 Expected entities:
 - Company: Samsung Electronics
-- BusinessArea: Memory
-- BusinessArea: Foundry
+- Industry: Memory
+- Industry: Foundry
 - ProductService: DRAM
 - ProductService: HBM
 - Industry: Semiconductor
 
 Expected relations:
-- Samsung Electronics OPERATES_IN Memory
-- Samsung Electronics OPERATES_IN Foundry
+- Samsung Electronics BELONGS_TO Memory
+- Samsung Electronics BELONGS_TO Foundry
+- Samsung Electronics BELONGS_TO Semiconductor
 - Samsung Electronics PRODUCES DRAM
 - Samsung Electronics PRODUCES HBM
-- DRAM PART_OF Memory
-- HBM PART_OF Memory
+- DRAM PART_OF Semiconductor
+- HBM PART_OF Semiconductor
 - Memory PART_OF Semiconductor
 - Foundry PART_OF Semiconductor
+
+
+### AffiliateGroup
+
+A Fair Trade Commission designated business group. This is not a parent company or subsidiary node; it represents group membership scope for affiliate-based search.
+
+Required fields:
+- id
+- type
+- name
+
+Optional fields:
+- presentn_year
+- unity_group_code
+- source
+
+Rules:
+- Create AffiliateGroup nodes only from `docs/ftc_affiliates.jsonl` reference data.
+- Do not infer AffiliateGroup nodes from DART/news extraction.
+
+### MEMBER_OF
+
+Meaning:
+A listed company belongs to an FTC designated business group.
+
+Direction:
+Company -> AffiliateGroup
+
+Use when:
+- Loading `docs/ftc_affiliates.jsonl` reference data.
+- Answering affiliate-group scoped questions such as “삼성 계열 상장사” or “현대자동차그룹 소속 상장사”.
+
+Do not use MEMBER_OF as ownership, parent-company, subsidiary, or equity evidence.

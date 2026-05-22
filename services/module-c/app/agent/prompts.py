@@ -99,7 +99,7 @@ ENTITY_EXTRACTION_PROMPT = """
     3) ownership_structure: 지분 관계, 순환 출자, 계열사 구조 분석
     4) unknown: 기업 분석과 무관한 일반 대화 또는 의미 없는 문장
 2. named_entities: 질문에 나타난 기업명은 companies에, 인물명은 people에 분리하여 추가한다. 원문 형태 그대로 적어라.
-3. relation_filters: [ACQUIRES, INVESTS_IN, APPOINTED_TO, AFFILIATED_WITH, BELONGS_TO] 중 명시된 관계만 추출한다. 명확한 관계 표현이 없으면 빈 리스트([])를 반환한다. subject와 object는 named_entity이므로 반드시 named_entities 리스트에 포함된 문자열과 완벽히 일치해야 한다.(똑같은 것을 가리키는데 표현이 다르면 안된다.)
+3. relation_filters: [ACQUIRES, INVESTS_IN, APPOINTED_TO, AFFILIATED_WITH, BELONGS_TO, PRODUCES, PART_OF, RELATED_TO] 중 명시된 관계만 추출한다. 명확한 관계 표현이 없으면 빈 리스트([])를 반환한다. subject와 object는 named_entity이므로 반드시 named_entities 리스트에 포함된 문자열과 완벽히 일치해야 한다.(똑같은 것을 가리키는데 표현이 다르면 안된다.)
 4. time_info: "작년", "2023년" 등 구체적인 시점이 명시된 경우만 추출하고, 없으면 null 처리한다.
 
 [예외 처리 우선순위] - 아래 순서를 엄격히 준수하여 검사한다.
@@ -134,10 +134,13 @@ CYPHER_GENERATION_PROMPT = """
     - (Company)-[:ACQUIRES]->(Company): 기업 인수 합병
     - (Person)-[:AFFILIATED_WITH]->(Company): 인물의 소속, 재직, 밀접한 관련
     - (Person)-[:APPOINTED_TO]->(Company): 인물의 특정 직책(이사, 회장 등) 선임
-    - (Company)-[:BELONGS_TO]->(Industry): 기업이 속한 산업군 분류
+    - (Company)-[:BELONGS_TO]->(Industry): 기업이 속한 산업군 또는 사업영역 분류
+    - (Company)-[:PRODUCES]->(ProductService): 기업이 생산/판매/제공하는 제품 또는 서비스
+    - (Industry/ProductService)-[:PART_OF]->(Industry): 하위 산업/제품이 상위 산업에 속함
+    - (Industry)-[:RELATED_TO]->(Industry): 산업 간 비계층 연관
 2. 주요 노드 및 속성:
    - 사용할 수 있는 속성: name(이름), role(직책/배역), industry(업종), type(노드 분류) (※ 무조건 해당 속성만 쿼리에 사용. 이외 date 등을 쿼리에 사용할 수 없음.)
-   - 노드 type: Company, Person, Event, Industry
+   - 노드 type: Company, Person, Event, Industry, ProductService
 
 [조회 규칙 - 하위 질문 최적화]
 1. **단일 엔티티 하위 질문**: 해당 엔티티의 1~2홉 주변 노드를 탐색하라.
