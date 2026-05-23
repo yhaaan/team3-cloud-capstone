@@ -1,31 +1,83 @@
-// node: company_samsung_biologics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체와 전자제품 등 다양한 첨단 기술 제품을 생산하는 글로벌 기업"}
 
-// node: company_samsung_electronics
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "바이오의약품 위탁생산과 관련된 바이오 산업 분야에서 활동"}
 
-// node: person_choi_seung_ho
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_choi_seung_ho", "type": "Person", "name": "최승호", "role_raw": "초기업노조 삼성전자지부 위원장", "affiliated_company": "company_samsung_electronics", "role": "OTHER", "role_label": "초기업노조 위원장"}
-
-// node: person_park_jae_sung
+// node: business_area_semiconductor
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_park_jae_sung", "type": "Person", "name": "박재성", "role_raw": "삼성바이오로직스 노조위원장", "affiliated_company": "company_samsung_biologics", "role": "OTHER", "role_label": "노조위원장"}
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "반도체"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "바이오"}
+
+// node: business_area_bio_pharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_pharmaceuticals", "type": "BusinessArea", "name": "바이오의약품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_semiconductor", "properties": {"evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.", "date": "", "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494", "evidence_published_at": "2026-04-28T18:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_bio_pharmaceuticals", "properties": {"evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.", "date": "", "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494", "evidence_published_at": "2026-04-28T18:05:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.", "date": "", "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494", "evidence_published_at": "2026-04-28T18:05:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_pharmaceuticals", "to_id": "industry_bio", "properties": {"evidence": "특히 반도체와 바이오의약품 생산은 공정 연속성과 품질 관리가 중요한 산업이다.", "date": "", "evidence_source_id": "news_207940_bdb4f1c6cd5ca81b", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=294494", "evidence_published_at": "2026-04-28T18:05:00+09:00"}}

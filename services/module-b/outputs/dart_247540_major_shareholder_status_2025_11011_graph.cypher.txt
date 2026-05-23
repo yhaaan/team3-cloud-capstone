@@ -1,0 +1,24 @@
+// node: company_247540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_247540", "type": "Company", "name": "에코프로비엠", "stock_code": "247540"}
+
+// node: company_086520
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086520", "type": "Company", "name": "에코프로", "stock_code": "086520"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086520", "to_id": "company_247540", "properties": {"evidence": "에코프로비엠의 최대주주 관련 인물/법인은 ㈜에코프로, 관계는 최대주주, 당기말 보유주식수는 39,943,167주, 지분율은 40.84%.", "date": "2026-03-18", "evidence_source_id": "dart_247540_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001622", "evidence_published_at": "2026-03-18"}}

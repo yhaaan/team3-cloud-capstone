@@ -1,0 +1,80 @@
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640", "description": "항공·물류 지주사로 실적 불확실성이 존재함"}
+
+// node: company_443060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_443060", "type": "Company", "name": "HD현대마린솔루션", "stock_code": "443060"}
+
+// node: company_326030
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_326030", "type": "Company", "name": "SK바이오팜", "stock_code": "326030"}
+
+// node: company_277810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_277810", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
+
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 사업 중심의 기업"}
+
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체주 투자심리가 되살아졌다.", "date": "", "evidence_source_id": "news_180640_316b77d03d6c39d0", "evidence_source_type": "news", "evidence_source_url": "https://www.seoul.co.kr/news/economy/securities/2026/05/14/20260514030003?wlog_tag3=naver", "evidence_published_at": "2026-05-14T05:04:00+09:00"}}

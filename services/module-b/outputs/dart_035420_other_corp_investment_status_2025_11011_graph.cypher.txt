@@ -1,0 +1,139 @@
+// node: company_035420
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035420", "type": "Company", "name": "NAVER", "stock_code": "035420"}
+
+// node: company_486990
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_486990", "type": "Company", "name": "노타", "stock_code": "486990"}
+
+// node: company_006800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006800", "type": "Company", "name": "미래에셋증권", "stock_code": "006800"}
+
+// node: company_253450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_253450", "type": "Company", "name": "스튜디오드래곤", "stock_code": "253450"}
+
+// node: company_031430
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_031430", "type": "Company", "name": "신세계인터내셔날", "stock_code": "031430"}
+
+// node: company_139480
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_139480", "type": "Company", "name": "이마트", "stock_code": "139480"}
+
+// node: company_289220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_289220", "type": "Company", "name": "자이언트스텝", "stock_code": "289220"}
+
+// node: company_042000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042000", "type": "Company", "name": "카페24", "stock_code": "042000"}
+
+// node: company_355390
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_355390", "type": "Company", "name": "크라우드웍스", "stock_code": "355390"}
+
+// node: company_466100
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_466100", "type": "Company", "name": "클로봇", "stock_code": "466100"}
+
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "company_486990", "properties": {"evidence": "NAVER의 타법인 출자 대상은 PROTON PARENT, INC., 출자 목적은 기업 인수 목적, 최초 취득일은 2022.10.03, 당기말 보유수량은 76,136,561, 당기말 지분율은 99.27%, 장부가액은 1,735,304,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_035420_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001021", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "company_486990", "properties": {"evidence": "NAVER의 타법인 출자 대상은 미래에셋증권, 출자 목적은 사업관련 전략적 파트너쉽, 최초 취득일은 2017.06.26, 당기말 보유수량은 47,393,364, 당기말 지분율은 8.15%, 장부가액은 1,106,635,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_035420_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001021", "evidence_published_at": "2026-03-13"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "industry_ai", "properties": {"evidence": "NAVER의 타법인 출자 대상은 SBI AI&Blockchain Investment LPS, 출자 목적은 AI 및 블록체인 관련 스타트업 간접투자, 최초 취득일은 2018.06.28, 당기말 지분율은 0.33%, 장부가액은 1,173,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_035420_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001021", "evidence_published_at": "2026-03-13"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "industry_it", "properties": {"evidence": "NAVER의 타법인 출자 대상은 NAVER VIETNAM COMPANY LIMITED, 출자 목적은 베트남 V 사업, 최초 취득일은 2019.03.26, 당기말 지분율은 99.96%, 장부가액은 50,849,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_035420_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001021", "evidence_published_at": "2026-03-13"}}

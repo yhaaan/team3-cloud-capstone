@@ -2,20 +2,135 @@
   "source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
   "entities": [
     {
-      "id": "company_삼성물산",
+      "id": "company_028260",
       "type": "Company",
-      "name": "삼성물산"
+      "name": "삼성물산",
+      "stock_code": "028260",
+      "description": "삼성물산은 건설, 상사, 패션 등 다양한 사업을 영위하는 종합 상사 기업이다."
     },
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_207940",
       "type": "Company",
-      "name": "삼성바이오로직스"
+      "name": "삼성바이오로직스",
+      "stock_code": "207940",
+      "description": "생물학적제제 제조업을 영위하는 바이오 기업이다."
     },
     {
-      "id": "company_삼성에피스홀딩스",
+      "id": "company_001260",
       "type": "Company",
-      "name": "삼성에피스홀딩스"
+      "name": "삼성에피스홀딩스",
+      "stock_code": "001260",
+      "description": "지주회사로서 바이오시밀러 개발 및 상업화를 담당한다."
+    },
+    {
+      "id": "business_area_biological_drug_manufacturing",
+      "type": "BusinessArea",
+      "name": "생물학적제제 제조업"
+    },
+    {
+      "id": "business_area_biosimilar_development",
+      "type": "BusinessArea",
+      "name": "바이오시밀러 개발"
+    },
+    {
+      "id": "business_area_biosimilar_commercialization",
+      "type": "BusinessArea",
+      "name": "바이오시밀러 상업화"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_028260",
+      "to": "company_207940",
+      "evidence": "삼성물산의 연결대상 종속회사 후보로 삼성바이오로직스 등이 탐지되었다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_028260",
+      "to": "company_001260",
+      "evidence": "삼성물산의 연결대상 종속회사 후보로 삼성에피스홀딩스 등이 탐지되었다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_biological_drug_manufacturing",
+      "evidence": "삼성바이오로직스㈜ | ... | 생물학적제제 제조업 ...",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_001260",
+      "to": "business_area_biosimilar_development",
+      "evidence": "삼성에피스홀딩스㈜ | ... | 지주회사, 바이오시밀러 개발 및 상업화 ...",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_001260",
+      "to": "business_area_biosimilar_commercialization",
+      "evidence": "삼성에피스홀딩스㈜ | ... | 지주회사, 바이오시밀러 개발 및 상업화 ...",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biological_drug_manufacturing",
+      "to": "industry_bio",
+      "evidence": "생물학적제제 제조업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biosimilar_development",
+      "to": "industry_bio",
+      "evidence": "바이오시밀러 개발",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biosimilar_commercialization",
+      "to": "industry_bio",
+      "evidence": "바이오시밀러 상업화",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
 }

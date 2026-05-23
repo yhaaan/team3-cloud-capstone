@@ -1,0 +1,128 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "바이오 투자 지주회사로 바이오시밀러, 바이오 신약, 기술 플랫폼 등 신사업 확대 중"}
+
+// node: business_area_bio_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_investment", "type": "BusinessArea", "name": "바이오 투자"}
+
+// node: business_area_biosimilar
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biosimilar", "type": "BusinessArea", "name": "바이오시밀러"}
+
+// node: business_area_bio_new_drug
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_new_drug", "type": "BusinessArea", "name": "바이오 신약"}
+
+// node: business_area_technology_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_technology_platform", "type": "BusinessArea", "name": "기술 플랫폼"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio_investment", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 공식 출범한 이후...", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biosimilar", "properties": {"evidence": "한편 삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 공식 출범한 이후 바이오시밀러를 넘어...", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio_new_drug", "properties": {"evidence": "한편 삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 공식 출범한 이후 ... 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다.", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_technology_platform", "properties": {"evidence": "한편 삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 공식 출범한 이후 ... 바이오 신약과 기술 플랫폼 등 신사업 확대를 추진하고 있다.", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_investment", "to_id": "industry_bio", "properties": {"evidence": "바이오 투자 지주회사 체제로 공식 출범", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biosimilar", "to_id": "industry_bio", "properties": {"evidence": "바이오시밀러", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_new_drug", "to_id": "industry_bio", "properties": {"evidence": "바이오 신약", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_technology_platform", "to_id": "industry_bio", "properties": {"evidence": "기술 플랫폼", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "industry_bio", "properties": {"evidence": "바이오 산업 특성상 연구개발 인력 운영과 품질관리 체계가 기업 신뢰도와 직결된다는 점...", "date": "", "evidence_source_id": "news_0126Z0_e9bc7b0d0ebd3589", "evidence_source_type": "news", "evidence_source_url": "http://www.hansbiz.co.kr/news/articleView.html?idxno=838716", "evidence_published_at": "2026-05-14T09:00:00+09:00"}}

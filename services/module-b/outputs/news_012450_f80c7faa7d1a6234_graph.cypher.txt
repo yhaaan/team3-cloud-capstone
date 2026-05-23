@@ -1,57 +1,109 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "천무 다연장 정밀유도무기 및 K9 자주포 등 무기체계 공급과 MRO 기술지원 제공"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_hyundai_motor
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: person_son_jae_il
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_son_jae_il", "type": "Person", "name": "손재일", "role_raw": "대표이사", "affiliated_company": "company_hanwha_aerospace", "role": "CEO", "role_label": "대표이사"}
-
-// node: person_jang_jae_hun
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_jang_jae_hun", "type": "Person", "name": "장재훈", "role_raw": "부회장", "affiliated_company": "company_hyundai_motor", "role": "VICE_CHAIRMAN", "role_label": "부회장"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_military_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_military_defense", "type": "BusinessArea", "name": "방산"}
+
+// node: product_service_천무_다연장_정밀유도무기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_천무_다연장_정밀유도무기", "type": "ProductService", "name": "천무 다연장 정밀유도무기"}
+
+// node: product_service_K9_자주포
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_K9_자주포", "type": "ProductService", "name": "K9 자주포"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "국방"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_son_jae_il", "to_id": "company_hanwha_aerospace", "properties": {"evidence": "손재일 한화에어로스페이스 대표이사는 \"이번 추가 공급을 통해 에스토니아의 국방력 및 방산 생태계 강화에 더욱 기여할 수 있게 된 것을 뜻깊게 생각한다\"며 \"앞으로도 발틱 지역에 한화의 방위 솔루션을 적극적으로 소개하며 에스토니아의 신뢰받는 전략적 파트너로 위상을 강화해 나가겠다\"고 말했다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+:params {"from_id": "company_012450", "to_id": "business_area_military_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: PRODUCES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PRODUCES]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jang_jae_hun", "to_id": "company_hyundai_motor", "properties": {"evidence": "현대자동차그룹 장재훈 부회장, 금탑산업훈장 수훈", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+:params {"from_id": "company_012450", "to_id": "product_service_천무_다연장_정밀유도무기", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_K9_자주포", "properties": {"evidence": "지난해 12월 첫 공급 계약 이후 5개월 만에 성사된 이번 후속 도입은 K9 자주포 수출로 시작된 양국의 방산 파트너십과 누적된 신뢰가 단기간에 가시적 성과로 이어진 사례다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_military_defense", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_천무_다연장_정밀유도무기", "to_id": "business_area_military_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_K9_자주포", "to_id": "business_area_military_defense", "properties": {"evidence": "지난해 12월 첫 공급 계약 이후 5개월 만에 성사된 이번 후속 도입은 K9 자주포 수출로 시작된 양국의 방산 파트너십과 누적된 신뢰가 단기간에 가시적 성과로 이어진 사례다.", "date": "", "evidence_source_id": "news_012450_f80c7faa7d1a6234", "evidence_source_type": "news", "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530", "evidence_published_at": "2026-05-12T09:36:00+09:00"}}

@@ -2,14 +2,40 @@
   "source_id": "news_277810_5d40e3f7e1428127",
   "entities": [
     {
-      "id": "company_레인보우로보틱스",
+      "id": "company_277810",
       "type": "Company",
-      "name": "레인보우로보틱스"
+      "name": "레인보우로보틱스",
+      "stock_code": "277810",
+      "description": "로봇 기술을 주력으로 하는 회사로 MSCI 지수 편입 기대감으로 주가 상승 중"
     },
     {
-      "id": "person_활용되는_대표",
-      "type": "Person",
-      "name": "활용되는 대표"
+      "id": "company_180640",
+      "type": "Company",
+      "name": "한진칼",
+      "stock_code": "180640"
+    },
+    {
+      "id": "company_039490",
+      "type": "Company",
+      "name": "키움증권",
+      "stock_code": "039490"
+    },
+    {
+      "id": "company_001200",
+      "type": "Company",
+      "name": "유진투자증권",
+      "stock_code": "001200"
+    },
+    {
+      "id": "company_016360",
+      "type": "Company",
+      "name": "삼성증권",
+      "stock_code": "016360"
+    },
+    {
+      "id": "business_area_robotics",
+      "type": "BusinessArea",
+      "name": "로봇 기술"
     },
     {
       "id": "industry_ai",
@@ -19,10 +45,10 @@
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_레인보우로보틱스",
-      "to": "industry_ai",
-      "evidence": "사입력: 2026년05월12일 06:00 최종수정: 2026년05월12일 06:00 트위터 밴드 ※ 본문 글자 크기 조정 더 작게 작게 보통 크게 더 크게 ※ 번역할 언어 선택 -- 선택 -- AI 핵심 요약 beta 분석 중...",
+      "type": "OPERATES_IN",
+      "from": "company_277810",
+      "to": "business_area_robotics",
+      "evidence": "레인보우로보틱스는 로봇 기술을 주력으로 하는 회사로 MSCI 지수 편입 기대감으로 주가 상승 중",
       "date": "",
       "evidence_source_id": "news_277810_5d40e3f7e1428127",
       "evidence_source_type": "news",
@@ -30,10 +56,54 @@
       "evidence_published_at": "2026-05-12T06:00:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_활용되는_대표",
-      "to": "company_레인보우로보틱스",
-      "evidence": "MSCI 지수는 글로벌 패시브 자금의 주요 벤치마크로 활용되는 대표 지수다.",
+      "type": "PART_OF",
+      "from": "business_area_robotics",
+      "to": "industry_ai",
+      "evidence": "문서 전반에서 레인보우로보틱스가 AI 핵심 기술 분야임을 시사함",
+      "date": "",
+      "evidence_source_id": "news_277810_5d40e3f7e1428127",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newspim.com/news/view/20260511001217",
+      "evidence_published_at": "2026-05-12T06:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_180640",
+      "to": "industry_ai",
+      "evidence": "한진칼은 AI 등 첨단 산업과 관련된 회사로 보이나 구체적 사업 부문 명시는 없음",
+      "date": "",
+      "evidence_source_id": "news_277810_5d40e3f7e1428127",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newspim.com/news/view/20260511001217",
+      "evidence_published_at": "2026-05-12T06:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_039490",
+      "to": "industry_ai",
+      "evidence": "키움증권은 증권업으로 산업 구분됐으나 문맥상 AI 포함 첨단 금융 서비스간접 시사",
+      "date": "",
+      "evidence_source_id": "news_277810_5d40e3f7e1428127",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newspim.com/news/view/20260511001217",
+      "evidence_published_at": "2026-05-12T06:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001200",
+      "to": "industry_ai",
+      "evidence": "유진투자증권은 증권업으로 명시, AI 관련 직접 사업 언급 없음",
+      "date": "",
+      "evidence_source_id": "news_277810_5d40e3f7e1428127",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newspim.com/news/view/20260511001217",
+      "evidence_published_at": "2026-05-12T06:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_016360",
+      "to": "industry_ai",
+      "evidence": "삼성증권 연구원이 MSCI 편입 관련 투자 의견을 낸 것으로 봐 AI 등 첨단산업 포함 가능",
       "date": "",
       "evidence_source_id": "news_277810_5d40e3f7e1428127",
       "evidence_source_type": "news",

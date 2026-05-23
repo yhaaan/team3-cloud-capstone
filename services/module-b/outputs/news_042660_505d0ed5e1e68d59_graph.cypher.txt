@@ -1,99 +1,41 @@
-// node: company_한화오션
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화오션", "type": "Company", "name": "한화오션"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "선박 제조 및 조선소 운영, 안전경영에 중점 둔 글로벌 조선회사"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK"}
-
-// node: company_sk텔레콤
+// node: business_area_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk텔레콤", "type": "Company", "name": "SK텔레콤"}
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선소"}
 
-// node: company_삼성전자
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자"}
-
-// node: company_한화
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_한화", "type": "Company", "name": "한화"}
-
-// node: person_문대학원_교수
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_문대학원_교수", "type": "Person", "name": "문대학원 교수"}
-
-// node: industry_ai
+// node: industry_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
 
-// node: industry_it
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
-
-// relation: ACQUIRES
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화오션", "to_id": "company_sk", "properties": {"evidence": "한화오션 \"노조의 안전사고 유발 직원 징계 철회 요구, 절대 수용 불가\" 이재용 자택서 \"DX는 소외됐다\"…삼성전자 동행노조, 1인 시위 석유 최고가격 '또 동결'…휘발유 '1934원' 키르기스스탄에 'K-나라장터' 심는다…조달행정 디지털화 구현 하림 NS홈쇼핑, 홈플러스 익스프레스 영업권 인수 계약 체결 2026년 5월 07일 (목) 로그인 회원가입 마이페이지 로그아웃 IT바이오 과학 금융·증권 부동산 경제 산업 정치 사회 국제 피플 오피니언 문화 운세 심리테스트 \"韓선박 공격, 강력 메시지\"→\"공격 안했다\" 두말하는 이란 관가…대내선전 탓?", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "ESG경영이 강조되는 글로벌 경영 환경에서 안전하지 않은 조선소는 글로벌 고객들로부터 선박 수주를 더 이상 받을 수 없게 된다. 조선소의 존립 자체가 흔들릴 수 있다", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}
 
-// relation: BELONGS_TO
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화오션", "to_id": "industry_ai", "properties": {"evidence": "# 삼성전자 '노-노갈등' 격화…DX측 \"교섭정보 공유·비하 금지\" 법적대응 예고 # AMD, AI 추론 수요 올라탔다…\"2030년 CPU 시장 168조원\" # 중동 긴장 완화에 환율 또 '급락'…장중 1440원대 등락 # 포털 '다음' 새주인 업스테이지…카카오 'AXZ 지분' 취득 # Arm, 엔비디아와 본격 경쟁…자체 AI 칩 승부수 # \"어차피 죽을거\"…광주 대학가 살해범, 이틀 전부터 흉기들고 배회 # 왕사남 유해진 \"1위로 타\"…HSAD, 키움증권 광고 4000만회 돌파 # 반도체주 또 질주…SK하닉·삼전, 프리마켓서 5%대 강세 \"우리도 성과급 달라\" 폭발한 중국인들…삼전·하닉, 중국 공장 '시끌' '나 혼자 사는' 서울 중년…40~50대 5명 중 1명은 미혼 \"우산으로 눈 찌르고 도어록 녹이고\"…70대 친부 학대한 40대 아들, 결국 구속 검색창 닫기 IT바이오 일반 통신·뉴미디어 모바일 컴퓨터 중기·스타트업 바이오·헬스케어 게임·리뷰 보안·해킹 인터넷·SNS IT·소프트웨어 과학 금융·증권 일반 증권 경제 부동산 일반 분양 경제 일반 산업 일반 유통·생활경제 자동차·시승기 재계 중기·벤처 정치 일반 국회·정당 북한·안보 국방·외교 행정 청와대 사회 일반 교육 사건·사고 검찰·법조 환경 행정 지방 건강 노동 국제 일반 아시아·호주 유럽 미국·중남미 국제경제 중동·아프리카 국제금융 피플 일반 인사 부음 국내인물 국외인물 오피니언 일반 사설 칼럼 데스크 칼럼 시론 포럼 기고 문화 일반 방송·연예 여행·레저 책 영화OTT 공연·전시 스포츠·e스포츠 음식·맛집 패션·뷰티 날씨 최신뉴스 대학소식 동영상 칼럼니스트 PDF 지면보기 디따 뉴스구독 My디따뉴스 이슈NOW 연재 기자 투표 운세 심리테스트 회사소개 고충처리 신문구독 콘텐츠제휴 광고안내 개인정보취급방침 청소년보호정책 마이페이지 한화오션 \"노조의 안전사고 유발 직원 징계 철회 요구, 절대 수용 불가\" \"중대재해 될뻔한 안전사고 관련 징계인데…노조가 철회 요구\" 노조 징계철회 요구에 공식입장 이례적…회사 의지 반영됐단 해석 한화오션은 금속노조 한화오션지회가 안전사고를 유발한 직원에 대한 징계 철회를 요구하는 것과 관련해 \"현장의 안전 원칙을 훼손할 우려가 있는 그 어떠한 요구도 절대 수용할 수 없다\"고 7일 밝혔다.", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}
-
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r += $properties
-
-:params {"from_id": "company_한화오션", "to_id": "industry_it", "properties": {"evidence": "한화오션 \"노조의 안전사고 유발 직원 징계 철회 요구, 절대 수용 불가\" 이재용 자택서 \"DX는 소외됐다\"…삼성전자 동행노조, 1인 시위 석유 최고가격 '또 동결'…휘발유 '1934원' 키르기스스탄에 'K-나라장터' 심는다…조달행정 디지털화 구현 하림 NS홈쇼핑, 홈플러스 익스프레스 영업권 인수 계약 체결 2026년 5월 07일 (목) 로그인 회원가입 마이페이지 로그아웃 IT바이오 과학 금융·증권 부동산 경제 산업 정치 사회 국제 피플 오피니언 문화 운세 심리테스트 \"韓선박 공격, 강력 메시지\"→\"공격 안했다\" 두말하는 이란 관가…대내선전 탓?", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_문대학원_교수", "to_id": "company_한화오션", "properties": {"evidence": "지난달 28일에는 제조를 총괄하는 임원 집무실에 들어와 노트북·태블릿PC·전화기·의자 등 집기류를 모조리 가져가는 등의 행동으로 현재 경찰 수사가 진행 중이라고도 했다.", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "ESG경영이 강조되는 글로벌 경영 환경에서 안전하지 않은 조선소는 글로벌 고객들로부터 선박 수주를 더 이상 받을 수 없게 된다. 조선소의 존립 자체가 흔들릴 수 있다", "date": "", "evidence_source_id": "news_042660_505d0ed5e1e68d59", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12061363?ref=naver", "evidence_published_at": "2026-05-07T19:15:00+09:00"}}

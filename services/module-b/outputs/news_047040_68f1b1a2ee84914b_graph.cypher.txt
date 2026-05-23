@@ -1,0 +1,67 @@
+// node: company_047040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047040", "type": "Company", "name": "대우건설", "stock_code": "047040", "description": "글로벌 원전 및 에너지 인프라 사업과 지역사회 상생활동을 하는 건설업체"}
+
+// node: business_area_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power", "type": "BusinessArea", "name": "원전 사업"}
+
+// node: business_area_energy_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_infrastructure", "type": "BusinessArea", "name": "에너지 인프라"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "건설"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047040", "to_id": "business_area_nuclear_power", "properties": {"evidence": "대우건설이 글로벌 원전 시장 공략을 가속화하기 위해 파트너십 강화에 집중하는 모습이다.", "date": "", "evidence_source_id": "news_047040_68f1b1a2ee84914b", "evidence_source_type": "news", "evidence_source_url": "http://www.bizwnews.com/news/articleView.html?idxno=136666", "evidence_published_at": "2026-05-16T16:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047040", "to_id": "business_area_energy_infrastructure", "properties": {"evidence": "대우건설 측은 체코 신규 원전 사업 참여를 계기로 원전·에너지 인프라 분야의 글로벌 경쟁력을 높이고 앞으로 해외사업 추진 과정에서도 지역사회와의 상생 활동을 확대해 나간다는 전략이다.", "date": "", "evidence_source_id": "news_047040_68f1b1a2ee84914b", "evidence_source_type": "news", "evidence_source_url": "http://www.bizwnews.com/news/articleView.html?idxno=136666", "evidence_published_at": "2026-05-16T16:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power", "to_id": "industry_construction", "properties": {"evidence": "대우건설이 글로벌 원전 시장 공략을 가속화하기 위해 파트너십 강화에 집중하는 모습이다.", "date": "", "evidence_source_id": "news_047040_68f1b1a2ee84914b", "evidence_source_type": "news", "evidence_source_url": "http://www.bizwnews.com/news/articleView.html?idxno=136666", "evidence_published_at": "2026-05-16T16:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_infrastructure", "to_id": "industry_construction", "properties": {"evidence": "대우건설 측은 체코 신규 원전 사업 참여를 계기로 원전·에너지 인프라 분야의 글로벌 경쟁력을 높이고 앞으로 해외사업 추진 과정에서도 지역사회와의 상생 활동을 확대해 나간다는 전략이다.", "date": "", "evidence_source_id": "news_047040_68f1b1a2ee84914b", "evidence_source_type": "news", "evidence_source_url": "http://www.bizwnews.com/news/articleView.html?idxno=136666", "evidence_published_at": "2026-05-16T16:42:00+09:00"}}

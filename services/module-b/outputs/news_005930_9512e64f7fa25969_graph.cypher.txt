@@ -1,40 +1,177 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체 설계·제조·패키징과 AI 하드웨어 플랫폼 사업을 하는 기업"}
 
-// node: company_samsung_cotsan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_cotsan", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
-
-// node: company_samsung_biologics
+// node: company_028260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260", "description": "견고한 현금 창출 능력을 보유한 종합상사"}
 
-// node: person_lee_jae_yong
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_lee_jae_yong", "type": "Person", "name": "이재용", "role_raw": "삼성전자 회장", "role": "CHAIRMAN", "role_label": "회장"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "바이오 의약품 위탁개발생산(CDMO) 분야 세계 1위 기업"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_foundry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_foundry", "type": "BusinessArea", "name": "파운드리"}
+
+// node: product_hbm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_hbm", "type": "ProductService", "name": "고대역폭메모리(HBM)"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: business_area_biopharma
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharma", "type": "BusinessArea", "name": "바이오 의약품 CDMO"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "바이오"}
+
+// node: business_area_energy_infra
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_infra", "type": "BusinessArea", "name": "친환경 에너지 인프라"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_lee_jae_yong", "to_id": "company_samsung_electronics", "properties": {"evidence": "이재용 삼성전자 회장의 개인 상장 주식 가치가 50조원 고지를 넘어섰다.", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_foundry", "properties": {"evidence": "삼성전자가 파운드리 시장에서 판도를 뒤집고, TSMC와의 격차를 줄일 수 있는 마지막 퍼즐로 꼽힌다.", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "최근 삼성전자가 보여준 HBM(고대역폭메모리) 시장에서의 압도적 지배력과 2나노미터(nm) 공정을 향한 공격적인 로드맵은 글로벌 헤지펀드들의 투자 문법을 바꾸어 놓았다.", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_hbm", "properties": {"evidence": "삼성전자가 보여준 HBM(고대역폭메모리) 시장에서의 압도적 지배력과 2나노미터(nm) 공정을 향한 공격적인 로드맵은 글로벌 헤지펀드들의 투자 문법을 바꾸어 놓았다.", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_foundry", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 설계·제조·패키징 수직 계열화 경쟁력이라는 문맥에서", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 설계·제조·패키징 수직 계열화 경쟁력이라는 문맥에서", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_hbm", "to_id": "business_area_memory", "properties": {"evidence": "HBM(고대역폭메모리) 시장에서의 압도적 지배력", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_biopharma", "properties": {"evidence": "바이오 의약품 위탁개발생산(CDMO) 분야에서의 세계 1위 수성과", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharma", "to_id": "industry_bio", "properties": {"evidence": "바이오 의약품 위탁개발생산(CDMO) 분야", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_energy_infra", "properties": {"evidence": "삼성물산이 보여주는 친환경 에너지 인프라 구축은 그룹 전체의 복합 체력을 입증한다.", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_infra", "to_id": "industry_energy", "properties": {"evidence": "친환경 에너지 인프라 구축", "date": "", "evidence_source_id": "news_005930_9512e64f7fa25969", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286850", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}

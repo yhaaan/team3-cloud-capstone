@@ -1,15 +1,110 @@
-// node: company_lg에너지솔루션
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg에너지솔루션", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220", "description": "ESS와 EV 배터리 생산으로 북미 ESS 사업을 중심으로 한다."}
 
-// node: company_한화
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_ess
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ess", "type": "BusinessArea", "name": "ESS"}
+
+// node: business_area_ev_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ev_battery", "type": "BusinessArea", "name": "EV 배터리"}
+
+// node: product_service_ess_lfp_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ess_lfp_battery", "type": "ProductService", "name": "ESS용 LFP 배터리"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_ess", "properties": {"evidence": "LG에너지솔루션이 ESS(에너지저장장치)를 통해 올해 흑자전환을 이뤄낼 방침이다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_ev_battery", "properties": {"evidence": "LG에너지솔루션이 올해 1분기 연결 기준 매출 6조5550억원, 영업손실 2078억원을 기록했다. ... EV 물량 감소 속 영업손실이 발생했지만", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "product_service_ess_lfp_battery", "properties": {"evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "company_000880", "properties": {"evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ess", "to_id": "industry_battery", "properties": {"evidence": "LG에너지솔루션이 ESS(에너지저장장치)를 통해 올해 흑자전환을 이뤄낼 방침이다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ev_battery", "to_id": "industry_battery", "properties": {"evidence": "1분기 EV 물량 감소 속 영업손실이 발생했지만 북미 ESS 사업 확대를 바탕으로 연간 흑자전환을 목표했다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ess_lfp_battery", "to_id": "business_area_ess", "properties": {"evidence": "지난 2월 한화큐셀 USA와 2028년부터 2030년까지 ESS용 LFP 배터리 5GWh 공급 계약을 체결하는 등 신규 수주를 지속하고 있다.", "date": "", "evidence_source_id": "news_373220_d24b8cb85e9d43ac", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=302124", "evidence_published_at": "2026-05-12T07:00:00+09:00"}}

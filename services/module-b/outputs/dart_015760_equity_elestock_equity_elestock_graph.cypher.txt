@@ -1,0 +1,100 @@
+// node: company_015760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_015760", "type": "Company", "name": "한국전력", "stock_code": "015760", "description": "발전, 송배전 등 전력 공급과 전력계통 운영을 주 사업으로 하는 에너지 기업"}
+
+// node: person_jeongchigyo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeongchigyo", "type": "Person", "name": "정치교", "role_raw": "안전&영업배전 부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_kimdongcheol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kimdongcheol", "type": "Person", "name": "김동철", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: person_kimjaegun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kimjaegun", "type": "Person", "name": "김재군", "role_raw": "전력계통본부장", "role": "OTHER", "role_label": "전력계통본부장"}
+
+// node: business_area_power_system_operations
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_system_operations", "type": "BusinessArea", "name": "전력계통 운영"}
+
+// node: business_area_power_transmission
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_transmission", "type": "BusinessArea", "name": "송배전"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeongchigyo", "to_id": "company_015760", "properties": {"evidence": "정치교, 등기 여부는 등기임원, 직위는 안전&영업배전 부사장", "date": "2026-04-28", "evidence_source_id": "dart_015760_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530000992", "evidence_published_at": "2026-04-28"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kimdongcheol", "to_id": "company_015760", "properties": {"evidence": "김동철, 등기 여부는 등기임원, 직위는 사장", "date": "2026-04-28", "evidence_source_id": "dart_015760_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530000992", "evidence_published_at": "2026-04-28"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kimjaegun", "to_id": "company_015760", "properties": {"evidence": "김재군, 등기 여부는 등기임원, 직위는 전력계통본부장", "date": "2026-04-28", "evidence_source_id": "dart_015760_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530000992", "evidence_published_at": "2026-04-28"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "business_area_power_transmission", "properties": {"evidence": "안전&영업배전 부사장", "date": "2026-04-28", "evidence_source_id": "dart_015760_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530000992", "evidence_published_at": "2026-04-28"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "business_area_power_system_operations", "properties": {"evidence": "전력계통본부장", "date": "2026-04-28", "evidence_source_id": "dart_015760_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530000992", "evidence_published_at": "2026-04-28"}}

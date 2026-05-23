@@ -2,70 +2,120 @@
   "source_id": "news_004020_2c8724009e7fc403",
   "entities": [
     {
-      "id": "company_hyundai_steel",
+      "id": "company_004020",
       "type": "Company",
       "name": "현대제철",
-      "stock_code": "004020"
+      "stock_code": "004020",
+      "description": "현대제철은 건설 산업 현장 중심의 제품과 데이터센터 및 전력 인프라 솔루션을 제공한다."
     },
     {
-      "id": "company_hd_korean_shipbuilding",
-      "type": "Company",
-      "name": "HD한국조선해양"
+      "id": "business_area_건설산업",
+      "type": "BusinessArea",
+      "name": "건설산업"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "id": "business_area_데이터센터_전력인프라",
+      "type": "BusinessArea",
+      "name": "데이터센터 및 전력 인프라"
     },
     {
-      "id": "company_sk_telecom",
-      "type": "Company",
-      "name": "SK텔레콤",
-      "stock_code": "017670"
+      "id": "product_service_철강제품",
+      "type": "ProductService",
+      "name": "철강 제품"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "id": "product_service_에너지저장장치",
+      "type": "ProductService",
+      "name": "에너지저장장치"
     },
     {
-      "id": "company_samsung_sdi",
-      "type": "Company",
-      "name": "삼성SDI",
-      "stock_code": "006400"
+      "id": "product_service_배전변전설비",
+      "type": "ProductService",
+      "name": "배전·변전 설비"
     },
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_samsung_heavy_industries",
-      "type": "Company",
-      "name": "삼성중공업",
-      "stock_code": "010140"
-    },
-    {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
-    },
-    {
-      "id": "company_hyundai_rotem",
-      "type": "Company",
-      "name": "현대로템",
-      "stock_code": "064350"
-    },
-    {
-      "id": "company_hyundai_motor",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
+      "id": "industry_중화학",
+      "type": "Industry",
+      "name": "중화학"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_건설산업",
+      "evidence": "제품 개발 위주였던 1·2차와 달리 올해는 건설 산업 현장 중심으로 개편됐다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_데이터센터_전력인프라",
+      "evidence": "공모 분야도 기존 건축, 토목 부문을 비롯해 구조기술, 서버랙 및 IT 장비, 인테리어, 냉각·공조 설비, 에너지저장장치(ESS), 배전·변전 설비 등 데이터센터 및 전력 인프라까지 대폭 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004020",
+      "to": "product_service_철강제품",
+      "evidence": "참여 자격은 철강 제품을 사용하는 모든 기업과 현장의 문제를 제안할 수 있는 건설산업 유관 학·협회 및 연구기관이며, 컨소시엄 형태로도 참여할 수 있다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004020",
+      "to": "product_service_에너지저장장치",
+      "evidence": "공모 분야도 기존 건축, 토목 부문을 비롯해 구조기술, 서버랙 및 IT 장비, 인테리어, 냉각·공조 설비, 에너지저장장치(ESS), 배전·변전 설비 등 데이터센터 및 전력 인프라까지 대폭 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004020",
+      "to": "product_service_배전변전설비",
+      "evidence": "공모 분야도 기존 건축, 토목 부문을 비롯해 구조기술, 서버랙 및 IT 장비, 인테리어, 냉각·공조 설비, 에너지저장장치(ESS), 배전·변전 설비 등 데이터센터 및 전력 인프라까지 대폭 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_건설산업",
+      "to": "industry_중화학",
+      "evidence": "현대제철은 중화학 산업에서 건설산업 현장 중심의 솔루션을 제공한다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_데이터센터_전력인프라",
+      "to": "industry_중화학",
+      "evidence": "현대제철은 중화학 산업에서 데이터센터 및 전력 인프라 분야까지 사업을 확장했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_2c8724009e7fc403",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583516",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    }
+  ]
 }

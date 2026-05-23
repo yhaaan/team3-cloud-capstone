@@ -1,0 +1,178 @@
+// node: company_006800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006800", "type": "Company", "name": "미래에셋증권", "stock_code": "006800", "description": "자산관리, 투자은행, 자기자본투자 부문에서 실적을 올린 대형 증권사"}
+
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490", "description": "개인 주식거래 비중이 높고 위탁매매 수수료 수익 급증한 증권사"}
+
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360", "description": "자산관리 부문 성장으로 역대 최대 실적을 기록한 증권사"}
+
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940", "description": "브로커리지 부문 최대 수혜 입으며 사상 최대 분기 실적 달성"}
+
+// node: company_071050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071050", "type": "Company", "name": "한국금융지주", "stock_code": "071050", "description": "한국투자증권을 포함한 금융지주회사"}
+
+// node: business_area_asset_management
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_asset_management", "type": "BusinessArea", "name": "자산관리"}
+
+// node: business_area_investment_banking
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_investment_banking", "type": "BusinessArea", "name": "투자은행"}
+
+// node: business_area_proprietary_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_proprietary_investment", "type": "BusinessArea", "name": "자기자본투자"}
+
+// node: business_area_brokerage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_brokerage", "type": "BusinessArea", "name": "브로커리지"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006800", "to_id": "business_area_asset_management", "properties": {"evidence": "국내 증시 거래대금이 크게 늘고, 자산관리(WM)·투자은행(IB)·자기자본투자(PI) 부문까지 전방위로 실적이 개선된 결과다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006800", "to_id": "business_area_investment_banking", "properties": {"evidence": "국내 증시 거래대금이 크게 늘고, 자산관리(WM)·투자은행(IB)·자기자본투자(PI) 부문까지 전방위로 실적이 개선된 결과다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006800", "to_id": "business_area_proprietary_investment", "properties": {"evidence": "국내 증시 거래대금이 크게 늘고, 자산관리(WM)·투자은행(IB)·자기자본투자(PI) 부문까지 전방위로 실적이 개선된 결과다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "business_area_brokerage", "properties": {"evidence": "특히 국내 증시 거래대금이 급증하면서 브로커리지(위탁매매) 부문이 최대 수혜를 입었다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "business_area_brokerage", "properties": {"evidence": "키움증권의 위탁매매 수수료 수익은 120.8% 급증한 3115억원을 기록했다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "business_area_asset_management", "properties": {"evidence": "삼성증권은 \"자산관리 부문 고객자산 순유입 및 금융상품 판매수익 증가 등 자산관리 기반 비즈니스 성장이 지속했다\"고 강조했다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006800", "to_id": "industry_finance", "properties": {"evidence": "미래에셋증권은 1조 19억원의 순이익을 기록하며 증권사 최초로 분기 순이익 1조원 시대를 열었다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "industry_finance", "properties": {"evidence": "키움증권은 순이익 기준으로 기존 대형사들과 어깨를 나란히 하며 판도 변화를 예고했다는 평가를 받고 있다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "industry_finance", "properties": {"evidence": "NH투자증권이 사상 최대 분기 실적을 달성했다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_016360", "to_id": "industry_finance", "properties": {"evidence": "삼성증권도 '어닝 서프라이즈'를 기록했다.", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071050", "to_id": "industry_finance", "properties": {"evidence": "한국투자증권 포함 금융지주회사 실적 호조", "date": "", "evidence_source_id": "news_006800_46db759f34e77e0b", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=01738406645449904", "evidence_published_at": "2026-05-17T13:05:00+09:00"}}

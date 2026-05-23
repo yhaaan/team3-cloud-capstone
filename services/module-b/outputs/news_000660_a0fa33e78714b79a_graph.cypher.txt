@@ -1,0 +1,144 @@
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "메모리 중심 AI 데이터센터 수요에 대응하는 반도체 사업을 운영"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "메모리 반도체 및 고대역폭메모리(HBM) 생산 중심의 반도체 사업 운영"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: business_area_data_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_data_center", "type": "BusinessArea", "name": "Data center"}
+
+// node: product_hbm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_hbm", "type": "ProductService", "name": "HBM"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자와 SK하이닉스 목표주가를 각각 59만 원, 400만 원까지 대폭 상향했다. 인공지능(AI) 메모리 산업의 구조적 성장 가능성은 여전히 유효하다는 판단이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자와 SK하이닉스 목표주가를 각각 59만 원, 400만 원까지 대폭 상향했다. 인공지능(AI) 메모리 산업의 구조적 성장 가능성은 여전히 유효하다는 판단이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_data_center", "properties": {"evidence": "AI 데이터센터 투자와 AI 추론 서비스 확대가 메모리 수요를 장기 성장 영역으로 끌어올리고 있다는 설명이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_data_center", "properties": {"evidence": "AI 데이터센터 투자와 AI 추론 서비스 확대가 메모리 수요를 장기 성장 영역으로 끌어올리고 있다는 설명이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_hbm", "properties": {"evidence": "특히 에이전틱 AI 확산 과정에서 고대역폭메모리(HBM) 수요가 폭발적으로 증가할 것으로 전망했다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_hbm", "properties": {"evidence": "특히 에이전틱 AI 확산 과정에서 고대역폭메모리(HBM) 수요가 폭발적으로 증가할 것으로 전망했다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "인공지능(AI) 메모리 산업의 구조적 성장 가능성은 여전히 유효하다는 판단이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_hbm", "to_id": "business_area_memory", "properties": {"evidence": "특히 에이전틱 AI 확산 과정에서 고대역폭메모리(HBM) 수요가 폭발적으로 증가할 것으로 전망했다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_data_center", "to_id": "industry_semiconductor", "properties": {"evidence": "AI 데이터센터 투자와 AI 추론 서비스 확대가 메모리 수요를 장기 성장 영역으로 끌어올리고 있다는 설명이다.", "date": "", "evidence_source_id": "news_000660_a0fa33e78714b79a", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044949?ref=naver", "evidence_published_at": "2026-05-17T14:49:00+09:00"}}

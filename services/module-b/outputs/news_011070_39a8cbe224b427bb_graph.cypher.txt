@@ -1,0 +1,274 @@
+// node: company_011070
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011070", "type": "Company", "name": "LG이노텍", "stock_code": "011070", "description": "로봇 비전센싱 시스템과 전장 부품, 카메라 모듈 기술 기반 센싱 부품 사업을 담당"}
+
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550", "description": "지주회사로 LG전자 지분 약 35% 보유하며 그룹 내 주가 상승에 영향"}
+
+// node: company_066570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_066570", "type": "Company", "name": "LG전자", "stock_code": "066570", "description": "로봇 액추에이터 부품과 완제품, 가전제품 및 로봇 완제품 사업 영위"}
+
+// node: company_064400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064400", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400", "description": "로봇 소프트웨어 통합 플랫폼과 이기종 로봇 학습 및 운영 통합 솔루션 제공"}
+
+// node: business_area_robot_actuators
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robot_actuators", "type": "BusinessArea", "name": "로봇 액추에이터"}
+
+// node: business_area_robot_hardware
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robot_hardware", "type": "BusinessArea", "name": "로봇 하드웨어"}
+
+// node: business_area_robot_sensing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robot_sensing", "type": "BusinessArea", "name": "로봇 센싱"}
+
+// node: business_area_robot_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robot_software", "type": "BusinessArea", "name": "로봇 소프트웨어"}
+
+// node: product_service_actuators
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_actuators", "type": "ProductService", "name": "액추에이터"}
+
+// node: product_service_vision_sensing_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_vision_sensing_system", "type": "ProductService", "name": "비전센싱 시스템"}
+
+// node: product_service_integrated_robot_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_integrated_robot_platform", "type": "ProductService", "name": "로봇 통합 관리 플랫폼"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로봇"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_robot_actuators", "properties": {"evidence": "LG전자는 액추에이터 악시움 기반 로봇 부품·완제품 사업을 본격화했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "product_service_actuators", "properties": {"evidence": "LG전자는 올해 1월 미국 라스베이거스에서 열린 CES 2026에서 로봇용 액추에이터 브랜드 'LG 액추에이터 악시움'을 공개했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_robot_hardware", "properties": {"evidence": "LG전자가 액추에이터와 로봇 하드웨어를 맡고", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "business_area_robot_sensing", "properties": {"evidence": "LG이노텍은 로봇의 눈 역할을 하는 비전센싱 시스템을 담당할 수 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "product_service_vision_sensing_system", "properties": {"evidence": "LG이노텍은 기존 전장 부품과 카메라 모듈 기술을 바탕으로 휴머노이드 로봇용 센싱 부품 확대를 준비하고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064400", "to_id": "business_area_robot_software", "properties": {"evidence": "LG씨엔에스는 로봇 소프트웨어 영역에서 주목받고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064400", "to_id": "product_service_integrated_robot_platform", "properties": {"evidence": "LG씨엔에스는 이기종 로봇 학습·운영 통합 플랫폼 '피지컬 웍스'를 공개했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robot_actuators", "to_id": "industry_robotics", "properties": {"evidence": "LG전자는 액추에이터 악시움 기반 로봇 부품·완제품 사업을 본격화했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robot_hardware", "to_id": "industry_robotics", "properties": {"evidence": "LG전자가 액추에이터와 로봇 하드웨어를 맡고", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robot_sensing", "to_id": "industry_robotics", "properties": {"evidence": "LG이노텍은 로봇의 눈 역할을 하는 비전센싱 시스템을 담당할 수 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robot_software", "to_id": "industry_robotics", "properties": {"evidence": "LG씨엔에스는 로봇 소프트웨어 영역에서 주목받고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_actuators", "to_id": "business_area_robot_actuators", "properties": {"evidence": "LG전자는 올해 1월 미국 라스베이거스에서 열린 CES 2026에서 로봇용 액추에이터 브랜드 'LG 액추에이터 악시움'을 공개했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_vision_sensing_system", "to_id": "business_area_robot_sensing", "properties": {"evidence": "LG이노텍은 기존 전장 부품과 카메라 모듈 기술을 바탕으로 휴머노이드 로봇용 센싱 부품 확대를 준비하고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_integrated_robot_platform", "to_id": "business_area_robot_software", "properties": {"evidence": "LG씨엔에스는 이기종 로봇 학습·운영 통합 플랫폼 '피지컬 웍스'를 공개했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "industry_ai", "properties": {"evidence": "LG그룹주가 로봇·피지컬 인공지능(AI) 기대감을 타고 상승세를 이어가고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "industry_robotics", "properties": {"evidence": "LG이노텍은 로봇의 눈 역할을 하는 비전센싱 시스템을 담당할 수 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "industry_robotics", "properties": {"evidence": "LG전자는 액추에이터 악시움 기반 로봇 부품·완제품 사업을 본격화했다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064400", "to_id": "industry_robotics", "properties": {"evidence": "LG씨엔에스는 로봇 소프트웨어 영역에서 주목받고 있다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "company_066570", "properties": {"evidence": "LG는 LG전자 지분 약 35%를 보유하고 있어 LG전자 기업가치 상승 기대감이 지주사 주가에도 반영되는 모습이다", "date": "", "evidence_source_id": "news_011070_39a8cbe224b427bb", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260515000564", "evidence_published_at": "2026-05-15T13:15:00+09:00"}}

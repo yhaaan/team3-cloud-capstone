@@ -1,0 +1,177 @@
+// node: company_267250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250", "description": "HD현대는 조선, 해운, 건설 등 다양한 산업 분야에 사업을 운영하는 대기업입니다."}
+
+// node: person_jeong_mong_jun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_mong_jun", "type": "Person", "name": "정몽준", "role_raw": "최대주주 본인", "role": "OTHER", "role_label": "최대주주 본인"}
+
+// node: person_kim_junghyuk
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_junghyuk", "type": "Person", "name": "김정혁", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_jeong_giseon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeong_giseon", "type": "Person", "name": "정기선", "role_raw": "최대주주의 친인척", "role": "OTHER", "role_label": "최대주주의 친인척"}
+
+// node: person_gwon_ogap
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_gwon_ogap", "type": "Person", "name": "권오갑", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_no_jin_yul
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_no_jin_yul", "type": "Person", "name": "노진율", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_geum_seokho
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_geum_seokho", "type": "Person", "name": "금석호", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_song_myeongjun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_song_myeongjun", "type": "Person", "name": "송명준", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_kim_jongcheol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_jongcheol", "type": "Person", "name": "김종철", "role_raw": "계열회사 임원", "role": "OTHER", "role_label": "계열회사 임원"}
+
+// node: person_asan_social_welfare_foundation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_asan_social_welfare_foundation", "type": "Person", "name": "(재)아산사회복지재단", "role_raw": "계열비영리법인", "role": "OTHER", "role_label": "계열비영리법인"}
+
+// node: person_asan_nanum_foundation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_asan_nanum_foundation", "type": "Person", "name": "(재)아산나눔재단", "role_raw": "계열비영리법인", "role": "OTHER", "role_label": "계열비영리법인"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeong_mong_jun", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 정몽준, 관계는 최대주주 본인", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_junghyuk", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 김정혁, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeong_giseon", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 정기선, 관계는 최대주주의 친인척", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_gwon_ogap", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 권오갑, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_no_jin_yul", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 노진율, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_geum_seokho", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 금석호, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_song_myeongjun", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 송명준, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_jongcheol", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 김종철, 관계는 계열회사 임원", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_asan_social_welfare_foundation", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 (재)아산사회복지재단, 관계는 계열비영리법인", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_asan_nanum_foundation", "to_id": "company_267250", "properties": {"evidence": "HD현대의 최대주주 관련 인물/법인은 (재)아산나눔재단, 관계는 계열비영리법인", "date": "2026-03-20", "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872", "evidence_published_at": "2026-03-20"}}

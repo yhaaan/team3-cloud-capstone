@@ -1,0 +1,127 @@
+// node: company_298040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298040", "type": "Company", "name": "효성중공업", "stock_code": "298040", "description": "HVDC·스태콤·SST 등 전력반도체 기반 전력전자 솔루션과 초고압변압기 사업을 영위"}
+
+// node: business_area_hvdc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hvdc", "type": "BusinessArea", "name": "HVDC"}
+
+// node: business_area_스태콤
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_스태콤", "type": "BusinessArea", "name": "스태콤"}
+
+// node: business_area_sst
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_sst", "type": "BusinessArea", "name": "SST"}
+
+// node: industry_전력
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_전력", "type": "Industry", "name": "전력"}
+
+// node: industry_전력반도체
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_전력반도체", "type": "Industry", "name": "전력반도체"}
+
+// node: business_area_전력전자솔루션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전력전자솔루션", "type": "BusinessArea", "name": "전력전자 솔루션"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_hvdc", "properties": {"evidence": "효성중공업은 송전용량을 3배 이상 대폭 높이면서 동시에 전력망을 정밀하게 제어하는 HVDC를 차세대 송전인프라 사업으로 육성하고 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_스태콤", "properties": {"evidence": "무효전력보상 설비인 스태콤 기술은 재생에너지로 변동성이 높아지는 약계통 문제를 해결하는 핵심 설비로 부상하고 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_sst", "properties": {"evidence": "효성중공업은 미래 전력기술 중 하나로 AI 데이터센터 전력 공급과 능동적 송·배전망을 구현하는 반도체 변압기(SST, Solid State Transformer) 기술 개발에 박차를 가하고 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298040", "to_id": "business_area_전력전자솔루션", "properties": {"evidence": "그 중심에는 재생에너지, 데이터센터 등과의 계통 연계성과 대응력을 높일 수 있는 전력반도체 기반 전력전자 솔루션들이 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_hvdc", "to_id": "industry_전력", "properties": {"evidence": "효성중공업은 초고압변압기 사업 외에 메가트렌드 변화와 밀접한 유망 제품들을 선제적으로 준비하며 미래 시장에 대비하고 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_스태콤", "to_id": "industry_전력", "properties": {"evidence": "스태콤은 무효전력 제어를 통해 전압을 정상 범위로 유지하는 계통안정화 설비로, 전력 계통에서 재생에너지로 인해 전압 급변동이 빈번해지면서 갈수록 전압안정화 역할은 중요해지고 있다는 게 전문가들의 설명이다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_sst", "to_id": "industry_전력", "properties": {"evidence": "SST는 계통 연계 시 전력반도체를 사용해 다수의 변압기와 컨버터 및 전기설비들을 단일시스템으로 통합하는 차세대 전력변환설비다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전력전자솔루션", "to_id": "industry_전력반도체", "properties": {"evidence": "그 중심에는 재생에너지, 데이터센터 등과의 계통 연계성과 대응력을 높일 수 있는 전력반도체 기반 전력전자 솔루션들이 있다.", "date": "", "evidence_source_id": "news_298040_2a20680f45bb3d3a", "evidence_source_type": "news", "evidence_source_url": "https://www.electimes.com/news/articleView.html?idxno=367979", "evidence_published_at": "2026-05-16T16:30:00+09:00"}}

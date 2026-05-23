@@ -1,15 +1,170 @@
-// node: company_sk_telecom
+// node: company_017670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "무선통신, AI 데이터센터 및 AI B2B 시장을 중심으로 성장하는 통신기업"}
 
-// node: company_sk
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "통신, 에너지, 화학 등 다각화 사업을 영위하는 지주회사"}
+
+// node: business_area_wireless_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_wireless_telecommunication", "type": "BusinessArea", "name": "무선통신"}
+
+// node: business_area_ai_data_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_data_center", "type": "BusinessArea", "name": "AI 데이터센터"}
+
+// node: business_area_ai_b2b_market
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_b2b_market", "type": "BusinessArea", "name": "AI B2B 시장"}
+
+// node: business_area_fixed_line_communication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_fixed_line_communication", "type": "BusinessArea", "name": "유선통신"}
+
+// node: product_service_gpu_as_a_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_gpu_as_a_service", "type": "ProductService", "name": "GPUaaS"}
+
+// node: industry_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecommunication", "type": "Industry", "name": "통신"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_wireless_telecommunication", "properties": {"evidence": "SKT는 매출의 경우 무선 사업 회복, AI 데이터센터 사업 성장 등을 바탕으로 직전 분기 대비 1.5% 증가했다고 전했다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_ai_data_center", "properties": {"evidence": "SKT는 AI 데이터 센터 사업은 1분기 매출 1314억원을 기록해 전년 동기 대비 89.3% 증가했다고 밝혔다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_ai_b2b_market", "properties": {"evidence": "SKT는 AI B2B 시장도 본격 공략한다는 계획이다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_fixed_line_communication", "properties": {"evidence": "유선 사업을 담당하는SK브로드밴드는 초고속 인터넷 성장 등에 힘입어 매출 1조1498억원과 영업이익 1166억원을 기록해 전년 동기 대비 각각 3.2%, 21.4% 증가했다고 밝혔다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "product_service_gpu_as_a_service", "properties": {"evidence": "가산 AI 데이터센터 가동률 상승과 GPUaaS 매출 확대가 실적 성장을 이끌었다는 설명이다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_wireless_telecommunication", "to_id": "industry_telecommunication", "properties": {"evidence": "SKT는 매출의 경우 무선 사업 회복, AI 데이터센터 사업 성장 등을 바탕으로 직전 분기 대비 1.5% 증가했다고 전했다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_data_center", "to_id": "industry_ai", "properties": {"evidence": "SKT는 AI 데이터 센터 사업은 1분기 매출 1314억원을 기록해 전년 동기 대비 89.3% 증가했다고 밝혔다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_b2b_market", "to_id": "industry_ai", "properties": {"evidence": "SKT는 AI B2B 시장도 본격 공략한다는 계획이다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_fixed_line_communication", "to_id": "industry_telecommunication", "properties": {"evidence": "유선 사업을 담당하는SK브로드밴드는 초고속 인터넷 성장 등에 힘입어 매출 1조1498억원과 영업이익 1166억원을 기록해 전년 동기 대비 각각 3.2%, 21.4% 증가했다고 밝혔다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "industry_telecommunication", "properties": {"evidence": "SKT가 2026년 1분기 연결 기준 매출 4조3923억원을 기록했다고 7일 밝혔다.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "industry_telecommunication", "properties": {"evidence": "SK와 SK텔레콤이 통신 관련 사업을 영위함.", "date": "", "evidence_source_id": "news_017670_7aab74aaad52867d", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301914", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}

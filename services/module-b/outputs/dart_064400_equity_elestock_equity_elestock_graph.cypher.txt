@@ -1,0 +1,31 @@
+// node: company_064400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064400", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400", "description": "LG씨엔에스는 IT 서비스와 스마트 빌딩 솔루션 분야를 중심으로 사업을 영위함"}
+
+// node: person_ahn_hyun_jung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_ahn_hyun_jung", "type": "Person", "name": "안현정", "role_raw": "상무", "affiliated_company": "company_064400", "role": "OTHER", "role_label": "상무"}
+
+// node: person_goo_yun_su
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_goo_yun_su", "type": "Person", "name": "구연수"}
+
+// node: person_hyun_sin_kyun
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hyun_sin_kyun", "type": "Person", "name": "현신균", "role_raw": "사장", "affiliated_company": "company_064400", "role": "PRESIDENT", "role_label": "사장"}

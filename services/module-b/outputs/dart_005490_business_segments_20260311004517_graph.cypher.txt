@@ -1,0 +1,401 @@
+// node: company_005490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005490", "type": "Company", "name": "POSCO홀딩스", "stock_code": "005490", "description": "지주회사로 철강, 인프라, 이차전지소재 등 6개 사업부문을 운영하며 그룹 성장 전략과 신사업 추진 역할 수행"}
+
+// node: company_058430
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_058430", "type": "Company", "name": "포스코스틸리온", "stock_code": "058430"}
+
+// node: company_047050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047050", "type": "Company", "name": "포스코인터내셔널", "stock_code": "047050", "description": "무역, 자원개발, 생산 가공, 인프라 개발 운영, 발전시설 및 LNG 터미널 운영 사업 영위"}
+
+// node: company_003670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003670", "type": "Company", "name": "포스코퓨처엠", "stock_code": "003670", "description": "음극재·양극재 동시 생산 및 납품, 내화물 제조·판매·시공·보수, 석회제품 제조·판매"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_080530
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_080530", "type": "Company", "name": "코디", "stock_code": "080530"}
+
+// node: business_area_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_steel", "type": "BusinessArea", "name": "철강부문"}
+
+// node: business_area_infrastructure_trade
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_infrastructure_trade", "type": "BusinessArea", "name": "인프라 무역부문"}
+
+// node: business_area_infrastructure_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_infrastructure_construction", "type": "BusinessArea", "name": "인프라 건설부문"}
+
+// node: business_area_infrastructure_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_infrastructure_logistics", "type": "BusinessArea", "name": "인프라 물류부문"}
+
+// node: business_area_battery_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery_materials", "type": "BusinessArea", "name": "이차전지소재부문"}
+
+// node: business_area_other
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_other", "type": "BusinessArea", "name": "기타부문"}
+
+// node: productservice_hot_rolled
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_hot_rolled", "type": "ProductService", "name": "열연"}
+
+// node: productservice_cold_rolled
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_cold_rolled", "type": "ProductService", "name": "냉연"}
+
+// node: productservice_stainless_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_stainless_steel", "type": "ProductService", "name": "스테인레스"}
+
+// node: productservice_other_steel_products
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_other_steel_products", "type": "ProductService", "name": "기타 철강제품"}
+
+// node: productservice_refractory_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_refractory_materials", "type": "ProductService", "name": "내화물"}
+
+// node: productservice_limestone
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_limestone", "type": "ProductService", "name": "생석회"}
+
+// node: industry_steel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel", "type": "Industry", "name": "철강"}
+
+// node: industry_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_infrastructure", "type": "Industry", "name": "인프라"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_steel", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_infrastructure_trade", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_infrastructure_construction", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_infrastructure_logistics", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_battery_materials", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "business_area_other", "properties": {"evidence": "회사의 연결대상 회사는 2025년말 기준 포스코홀딩스를 제외한 총 198개사로 사업의 성격에 따라 철강부문, 인프라(무역부문, 건설부문, 물류 등 부문), 이차전지소재부문, 기타부문까지 총 6개의 사업부문으로 구분되어 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_058430", "to_id": "business_area_steel", "properties": {"evidence": "철강부문은 국내 포스코,포스코스틸리온을 비롯하여 ... 86개사의 연결대상 종속회사가 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047050", "to_id": "business_area_infrastructure_trade", "properties": {"evidence": "포스코인터내셔널은 무역, 자원개발, 생산 가공, 인프라 개발ㆍ운용, 발전시설 및 LNG 터미널 운영 등의 사업을 영위하고 있고", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003670", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠은 국내 유일 음/양극재 소재를 동시 생산 및 납품하며 내화물의 제조, 판매, 시공 및 보수, 석회제품 등의 제조 및 판매 등도 영위하고 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_hot_rolled", "properties": {"evidence": "철강부문 열연 강관,조선 등 122,271 20.6% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_cold_rolled", "properties": {"evidence": "냉연 자동차,가전 등 190,715 32.1% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_stainless_steel", "properties": {"evidence": "스테인레스 양식기,강관 등 97,478 16.4% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_other_steel_products", "properties": {"evidence": "기타제품 등 후판,선재 등 183,668 30.9% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_refractory_materials", "properties": {"evidence": "이차전지소재부문 내화물 천원/톤 973 1,001 991", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005490", "to_id": "productservice_limestone", "properties": {"evidence": "이차전지소재부문 생석회 천원/톤 158 142 147", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_steel", "to_id": "industry_steel", "properties": {"evidence": "철강부문은 자동차, 조선, 가전 등 산업에 철강제품을 공급하고 있으며", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_infrastructure_trade", "to_id": "industry_infrastructure", "properties": {"evidence": "인프라부문(무역)은 포스코인터내셔널 포함 총 38개사의 연결대상 종속회사가 있으며", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_infrastructure_construction", "to_id": "industry_infrastructure", "properties": {"evidence": "인프라부문(건설)은 포스코이앤씨 포함 총 21개사", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_infrastructure_logistics", "to_id": "industry_infrastructure", "properties": {"evidence": "인프라부문(물류 등)은 포스코플로우, 포스코디엑스 포함 총 15개사의 연결대상 종속회사가 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery_materials", "to_id": "industry_battery", "properties": {"evidence": "이차전지소재부문은 리튬, 니켈, 양극재, 음극재, 리사이클링 등 EV 배터리 소재 등의 사업을 영위하고 있으며", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_hot_rolled", "to_id": "business_area_steel", "properties": {"evidence": "철강부문 열연 강관,조선 등 122,271 20.6% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_cold_rolled", "to_id": "business_area_steel", "properties": {"evidence": "냉연 자동차,가전 등 190,715 32.1% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_stainless_steel", "to_id": "business_area_steel", "properties": {"evidence": "스테인레스 양식기,강관 등 97,478 16.4% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_other_steel_products", "to_id": "business_area_steel", "properties": {"evidence": "기타제품 등 후판,선재 등 183,668 30.9% ...", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_refractory_materials", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠은 국내 유일 음/양극재 소재를 동시 생산 및 납품하며 내화물의 제조, 판매, 시공 및 보수", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_limestone", "to_id": "business_area_battery_materials", "properties": {"evidence": "포스코퓨처엠은 국내 유일 음/양극재 소재를 동시 생산 및 납품하며 ... 석회제품 등의 제조 및 판매 등도 영위하고 있습니다.", "date": "2026-03-11", "evidence_source_id": "dart_005490_business_segments_20260311004517", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517", "evidence_published_at": "2026-03-11"}}

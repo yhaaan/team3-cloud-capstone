@@ -1,7 +1,144 @@
-// node: company_현대건설
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대건설", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "미국 텍사스 대형원전 설계·조달·시공과 소형모듈원전(SMR) EPC 사업을 주도"}
+
+// node: business_area_원전
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_원전", "type": "BusinessArea", "name": "원전"}
+
+// node: business_area_소형모듈원전
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_소형모듈원전", "type": "BusinessArea", "name": "소형모듈원전"}
+
+// node: business_area_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_에너지", "type": "BusinessArea", "name": "에너지"}
+
+// node: product_service_EPC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_EPC", "type": "ProductService", "name": "EPC"}
+
+// node: product_service_SMART_전력망
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_SMART_전력망", "type": "ProductService", "name": "독립형 전력망"}
+
+// node: industry_건설
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_건설", "type": "Industry", "name": "건설"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_원전", "properties": {"evidence": "현대건설이 미국 텍사스 대형원전 설계·조달·시공(EPC) 본계약을 올해 하반기 체결하는 것을 목표로 협상 마무리 단계에 들어갔다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_소형모듈원전", "properties": {"evidence": "홀텍(Holtec International)과 공동 추진 중인 미시건주 팰리세이즈 소형모듈원전(SMR)도 이번 2분기 내 본계약 체결을 목표로 막바지 협의를 진행 중이다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_에너지", "properties": {"evidence": "대규모 에너지 사업을 완수할 수 있는 산업적 규모와 실행력을 갖춘 기업\"이라고 밝혔다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "product_service_EPC", "properties": {"evidence": "현대건설은 단순 시공을 넘어 설계·인허가·시공 등 EPC 전 과정에 주도적으로 참여하는 구조를 지향하고 있다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "product_service_SMART_전력망", "properties": {"evidence": "웨스팅하우스 AP1000 원전 4기(4GW)를 중심으로 SMR(2GW), 가스복합화력(4GW), 태양광·배터리에너지저장시스템(1GW)을 결합한 총 11GW 규모의 독립형 전력망(HyperGrid™)으로 설계됐다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_원전", "to_id": "industry_에너지", "properties": {"evidence": "현대건설이 미국 텍사스 대형원전 설계·조달·시공(EPC) 본계약을 올해 하반기 체결하는 것을 목표로 협상 마무리 단계에 들어갔다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_소형모듈원전", "to_id": "business_area_원전", "properties": {"evidence": "홀텍(Holtec International)과 공동 추진 중인 미시건주 팰리세이즈 소형모듈원전(SMR)도 이번 2분기 내 본계약 체결을 목표로 막바지 협의를 진행 중이다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_에너지", "to_id": "industry_에너지", "properties": {"evidence": "대규모 에너지 사업을 완수할 수 있는 산업적 규모와 실행력을 갖춘 기업\"이라고 밝혔다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "industry_건설", "properties": {"evidence": "현대건설이 미국 텍사스 대형원전 설계·조달·시공(EPC) 본계약을 올해 하반기 체결하는 것을 목표로 협상 마무리 단계에 들어갔다.", "date": "", "evidence_source_id": "news_000720_20a697c33eb9d911", "evidence_source_type": "news", "evidence_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=202789", "evidence_published_at": "2026-05-07T18:34:00+09:00"}}

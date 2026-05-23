@@ -1,0 +1,41 @@
+// node: company_086520
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086520", "type": "Company", "name": "에코프로", "stock_code": "086520", "description": "에코프로의 사업보고서 (2025.12)에 따르면 에코프로는 주요 상장 계열회사로 에코프로에이치엔과 에코프로비엠을 포함함."}
+
+// node: company_383310
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_383310", "type": "Company", "name": "에코프로에이치엔", "stock_code": "383310"}
+
+// node: company_247540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_247540", "type": "Company", "name": "에코프로비엠", "stock_code": "247540"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086520", "to_id": "company_383310", "properties": {"evidence": "에코프로의 상장 계열회사 후보로 에코프로에이치엔, 에코프로비엠 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_086520_affiliate_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086520", "to_id": "company_247540", "properties": {"evidence": "에코프로의 상장 계열회사 후보로 에코프로에이치엔, 에코프로비엠 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_086520_affiliate_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}

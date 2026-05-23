@@ -2,29 +2,223 @@
   "source_id": "news_034730_43cd6a7c6e0eb87a",
   "entities": [
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "034730",
+      "description": "데이터센터 사업 확장과 AI 인프라를 통한 신성장 동력 확보에 주력"
     },
     {
-      "id": "company_sk_텔레콤",
+      "id": "company_017670",
       "type": "Company",
       "name": "SK텔레콤",
-      "stock_code": "017670"
+      "stock_code": "017670",
+      "description": "데이터센터 사업과 AI 인프라 중심의 이동통신 서비스 제공"
     },
     {
-      "id": "company_kt",
+      "id": "company_030200",
       "type": "Company",
       "name": "KT",
-      "stock_code": "030200"
+      "stock_code": "030200",
+      "description": "이동통신과 보안 체계 구조개편을 통한 사업 운영"
     },
     {
-      "id": "company_lg유플러스",
+      "id": "company_032640",
       "type": "Company",
       "name": "LG유플러스",
-      "stock_code": "032640"
+      "stock_code": "032640",
+      "description": "유무선 통신과 기업용 인프라(AIDC) 중심의 성장"
+    },
+    {
+      "id": "business_area_data_center",
+      "type": "BusinessArea",
+      "name": "데이터센터 사업"
+    },
+    {
+      "id": "business_area_ai_infrastructure",
+      "type": "BusinessArea",
+      "name": "AI 인프라"
+    },
+    {
+      "id": "business_area_telecommunications",
+      "type": "BusinessArea",
+      "name": "이동통신"
+    },
+    {
+      "id": "business_area_security",
+      "type": "BusinessArea",
+      "name": "보안"
+    },
+    {
+      "id": "business_area_enterprise_infrastructure",
+      "type": "BusinessArea",
+      "name": "기업 인프라"
+    },
+    {
+      "id": "industry_platform",
+      "type": "Industry",
+      "name": "플랫폼"
+    },
+    {
+      "id": "industry_cloud",
+      "type": "Industry",
+      "name": "클라우드"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_data_center",
+      "evidence": "판교 데이터센터 인수와 기존 센터 상면 증설로 데이터센터 사업의 외형 성장이 기대되고",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_ai_infrastructure",
+      "evidence": "판교 데이터센터 인수와 기존 센터 상면 증설로 데이터센터 사업의 외형 성장이 기대되고, 투자 지분 가치 상승도 거론된다.",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_data_center",
+      "evidence": "SK텔레콤은 데이터센터 확장으로,",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_ai_infrastructure",
+      "evidence": "SK텔레콤은 데이터센터 확장으로,",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_telecommunications",
+      "evidence": "지난해 해킹 이후 무선 가입자 기반이 약해진 영향이 이동전화 수익에 남아 있고,",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_security",
+      "evidence": "KT는 보안 체계의 구조개편으로,",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_telecommunications",
+      "evidence": "단행한 위약금 면제 기간 동안 약 23만명이 이탈했고, 보상과 '고객 감사' 패키지, 마케팅비 확대가 겹쳤다.",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032640",
+      "to": "business_area_enterprise_infrastructure",
+      "evidence": "유무선 가입자 순증과 기업 인프라(AIDC) 고성장이 실적을 받쳤고,",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032640",
+      "to": "business_area_telecommunications",
+      "evidence": "LG유플러스는 매출 3.9조원, 영업이익 2761억원으로 각각 성장세가 전망된다",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_data_center",
+      "to": "industry_cloud",
+      "evidence": "데이터센터 사업의 외형 성장이 기대되고",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_infrastructure",
+      "to": "industry_platform",
+      "evidence": "AI 인프라로 무게중심을 옮겼다",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_telecommunications",
+      "to": "industry_platform",
+      "evidence": "국내 이동통신 3사의 1분기 성적표는 같은 사건에서 다른 결론이 나오는 과정을 보여준다.",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_security",
+      "to": "industry_platform",
+      "evidence": "보안 신뢰",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_enterprise_infrastructure",
+      "to": "industry_platform",
+      "evidence": "기업 인프라(AIDC) 고성장이 실적을 받쳤고",
+      "date": "",
+      "evidence_source_id": "news_034730_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    }
+  ]
 }

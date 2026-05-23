@@ -1,0 +1,342 @@
+{
+  "source_id": "dart_003490_business_segments_20260318001125",
+  "entities": [
+    {
+      "id": "company_003490",
+      "type": "Company",
+      "name": "대한항공",
+      "stock_code": "003490",
+      "description": "여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하며 항공운송과 항공기 제조판매 및 정비 서비스를 제공합니다."
+    },
+    {
+      "id": "company_020560",
+      "type": "Company",
+      "name": "아시아나항공",
+      "stock_code": "020560"
+    },
+    {
+      "id": "company_038880",
+      "type": "Company",
+      "name": "아이에이",
+      "stock_code": "038880"
+    },
+    {
+      "id": "company_298690",
+      "type": "Company",
+      "name": "에어부산",
+      "stock_code": "298690"
+    },
+    {
+      "id": "company_272450",
+      "type": "Company",
+      "name": "진에어",
+      "stock_code": "272450"
+    },
+    {
+      "id": "company_005430",
+      "type": "Company",
+      "name": "한국공항",
+      "stock_code": "005430"
+    },
+    {
+      "id": "company_002320",
+      "type": "Company",
+      "name": "한진",
+      "stock_code": "002320"
+    },
+    {
+      "id": "business_area_passenger_transportation",
+      "type": "BusinessArea",
+      "name": "여객사업"
+    },
+    {
+      "id": "business_area_cargo_transportation",
+      "type": "BusinessArea",
+      "name": "화물사업"
+    },
+    {
+      "id": "business_area_aerospace",
+      "type": "BusinessArea",
+      "name": "항공우주사업"
+    },
+    {
+      "id": "product_domestic_passenger_route",
+      "type": "ProductService",
+      "name": "여객노선(국내)"
+    },
+    {
+      "id": "product_international_passenger_route",
+      "type": "ProductService",
+      "name": "여객노선(국제)"
+    },
+    {
+      "id": "product_cargo_route",
+      "type": "ProductService",
+      "name": "화물노선"
+    },
+    {
+      "id": "product_aircraft_manufacturing_and_maintenance",
+      "type": "ProductService",
+      "name": "항공기 제조판매 및 정비"
+    },
+    {
+      "id": "industry_air_transportation",
+      "type": "Industry",
+      "name": "항공"
+    },
+    {
+      "id": "industry_aerospace",
+      "type": "Industry",
+      "name": "우주"
+    },
+    {
+      "id": "industry_it_service",
+      "type": "Industry",
+      "name": "IT 서비스"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_003490",
+      "to": "business_area_passenger_transportation",
+      "evidence": "[1. 사업의 개요] 당사는 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_003490",
+      "to": "business_area_cargo_transportation",
+      "evidence": "[1. 사업의 개요] 당사는 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_003490",
+      "to": "business_area_aerospace",
+      "evidence": "[1. 사업의 개요] 당사는 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_003490",
+      "to": "product_domestic_passenger_route",
+      "evidence": "대한항공 | 항공운송 | 여객노선(국내) | 4,703 | 2.9%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_003490",
+      "to": "product_international_passenger_route",
+      "evidence": "대한항공 | 항공운송 | 여객노선(국제) | 93,744 | 56.8%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_003490",
+      "to": "product_cargo_route",
+      "evidence": "대한항공 | 항공운송 | 화물노선 | 44,093 | 26.7%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_003490",
+      "to": "product_aircraft_manufacturing_and_maintenance",
+      "evidence": "항공우주 | 항공기 제조판매 및 정비 | 7,796 | 4.7%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_passenger_transportation",
+      "to": "industry_air_transportation",
+      "evidence": "[1. 사업의 개요] 당사는 여객사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cargo_transportation",
+      "to": "industry_air_transportation",
+      "evidence": "[1. 사업의 개요] 당사는 화물사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_aerospace",
+      "to": "industry_aerospace",
+      "evidence": "[1. 사업의 개요] 항공우주사업본부는 항공기 제조 및 정비 사업을 수행하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_domestic_passenger_route",
+      "to": "business_area_passenger_transportation",
+      "evidence": "대한항공 | 항공운송 | 여객노선(국내)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_international_passenger_route",
+      "to": "business_area_passenger_transportation",
+      "evidence": "대한항공 | 항공운송 | 여객노선(국제)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_cargo_route",
+      "to": "business_area_cargo_transportation",
+      "evidence": "대한항공 | 항공운송 | 화물노선",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_aircraft_manufacturing_and_maintenance",
+      "to": "business_area_aerospace",
+      "evidence": "항공우주 | 항공기 제조판매 및 정비",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003490",
+      "to": "industry_air_transportation",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 항공이다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003490",
+      "to": "industry_aerospace",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 우주이다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_020560",
+      "to": "industry_air_transportation",
+      "evidence": "아시아나항공은 항공운송업에 속합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_038880",
+      "to": "industry_air_transportation",
+      "evidence": "아이에이티는 항공기 엔진 수리 및 개조 사업을 수행합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298690",
+      "to": "industry_air_transportation",
+      "evidence": "에어부산은 항공운송업에 속합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_272450",
+      "to": "industry_air_transportation",
+      "evidence": "진에어는 항공운송업에 속합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005430",
+      "to": "industry_air_transportation",
+      "evidence": "한국공항은 항공운수보조 서비스를 제공합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002320",
+      "to": "industry_it_service",
+      "evidence": "한진정보통신은 IT 서비스 및 전산 관련 사업을 수행합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_business_segments_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

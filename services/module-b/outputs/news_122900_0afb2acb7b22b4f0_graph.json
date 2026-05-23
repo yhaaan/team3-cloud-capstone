@@ -2,26 +2,94 @@
   "source_id": "news_122900_0afb2acb7b22b4f0",
   "entities": [
     {
-      "id": "company_아이마켓코리아",
+      "id": "company_122900",
       "type": "Company",
       "name": "아이마켓코리아",
-      "stock_code": "122900"
+      "stock_code": "122900",
+      "description": "산업자재 유통 및 베트남 산업단지 개발, 제조기업 유치, 물류 인프라 구축 사업을 영위"
     },
     {
-      "id": "person_김학재",
-      "type": "Person",
-      "name": "김학재",
-      "role": "CEO",
-      "role_raw": "대표",
-      "role_label": "대표이사"
+      "id": "business_area_industrial_material_distribution",
+      "type": "BusinessArea",
+      "name": "산업자재 유통"
+    },
+    {
+      "id": "business_area_industrial_park_development",
+      "type": "BusinessArea",
+      "name": "산업단지 개발"
+    },
+    {
+      "id": "business_area_logistics_infrastructure",
+      "type": "BusinessArea",
+      "name": "물류 인프라"
+    },
+    {
+      "id": "industry_industrial",
+      "type": "Industry",
+      "name": "산업"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_김학재",
-      "to": "company_아이마켓코리아",
-      "evidence": "산업자재 유통 기업 아이마켓코리아(대표 김학재)가 베트남 푸토성 인민위원회 및 베트남 투자개발은행(Bank for Investment and Development of Vietnam, 이하 BIDV)과 양해각서(MOU)를 체결했다고 27일 밝혔다.",
+      "type": "OPERATES_IN",
+      "from": "company_122900",
+      "to": "business_area_industrial_material_distribution",
+      "evidence": "산업자재 유통 기업 아이마켓코리아(대표 김학재)가...",
+      "date": "",
+      "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604279601O",
+      "evidence_published_at": "2026-04-27T15:43:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_122900",
+      "to": "business_area_industrial_park_development",
+      "evidence": "아이마켓코리아는 협약을 통해 푸토성 내 국가산업단지 개발을 추진하고...",
+      "date": "",
+      "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604279601O",
+      "evidence_published_at": "2026-04-27T15:43:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_122900",
+      "to": "business_area_logistics_infrastructure",
+      "evidence": "아이마켓코리아는 산업단지 물류 경쟁력 강화를 위해 내륙 컨테이너 기지(Inland Container Depot, ICD) 구축도 함께 추진한다.",
+      "date": "",
+      "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604279601O",
+      "evidence_published_at": "2026-04-27T15:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_industrial_material_distribution",
+      "to": "industry_industrial",
+      "evidence": "산업자재 유통 기업 아이마켓코리아...",
+      "date": "",
+      "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604279601O",
+      "evidence_published_at": "2026-04-27T15:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_industrial_park_development",
+      "to": "industry_industrial",
+      "evidence": "산업단지 개발 및 제조기업 유치 관련 문장 전체",
+      "date": "",
+      "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604279601O",
+      "evidence_published_at": "2026-04-27T15:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_logistics_infrastructure",
+      "to": "industry_industrial",
+      "evidence": "산업단지 물류 경쟁력 확보 설명 부분",
       "date": "",
       "evidence_source_id": "news_122900_0afb2acb7b22b4f0",
       "evidence_source_type": "news",

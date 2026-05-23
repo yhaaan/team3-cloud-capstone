@@ -1,0 +1,160 @@
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "네트워크 및 통신서비스 제공, 대표이사가 회사 대표 역할 수행"}
+
+// node: person_김영섭
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김영섭", "type": "Person", "name": "김영섭", "role_raw": "사장, 사내이사, 대표이사", "affiliated_company": "company_030200", "role": "CEO", "role_label": "대표이사"}
+
+// node: person_서창석
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_서창석", "type": "Person", "name": "서창석", "role_raw": "부사장, 사내이사, 네트워크부문장, ESG위원회 위원, 미래투자위원회 위원", "affiliated_company": "company_030200", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_김용헌
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김용헌", "type": "Person", "name": "김용헌", "role_raw": "이사 (감사위원), 사외이사, 이사회 의장, 이사후보추천위원회 위원장, 지배구조위원회 위원, 감사위원회 위원, ESG위원회 위원", "affiliated_company": "company_030200", "role": "BOARD_CHAIR", "role_label": "이사회 의장"}
+
+// node: person_최양희
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_최양희", "type": "Person", "name": "최양희", "role_raw": "이사, 사외이사, 미래투자위원회 위원장, 지배구조위원회 위원, 이사후보추천위원회 위원, ESG위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_곽우영
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽우영", "type": "Person", "name": "곽우영", "role_raw": "이사, 사외이사, 지배구조위원회 위원장, 이사후보추천위원회 위원, ESG위원회 위원, 미래투자위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_윤종수
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤종수", "type": "Person", "name": "윤종수", "role_raw": "이사, 사외이사, ESG위원회 위원장, 지배구조위원회 위원, 이사후보추천위원회 위원, 미래투자위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_안영균
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_안영균", "type": "Person", "name": "안영균", "role_raw": "이사 (감사위원), 사외이사, 감사위원회 위원장, 이사후보추천위원회 위원, 평가및보상위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_이승훈
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이승훈", "type": "Person", "name": "이승훈", "role_raw": "이사 (감사위원), 사외이사, 평가및보상위위원회 위원장, 이사후보추천위원회 위원, 감사위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_김성철
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김성철", "type": "Person", "name": "김성철", "role_raw": "이사 (감사위원), 사외이사, 감사위원회 위원, 이사후보추천위원회 위원, 평가및보상위원회 위원", "affiliated_company": "company_030200", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김영섭", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 김영섭, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_서창석", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 서창석, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 네트워크부문장, ESG위원회 위원,미래투자위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김용헌", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 김용헌, 직위는 이사 (감사위원), 이사회상 역할은 사외이사, 담당업무는 이사회 의장, 이사후보추천위원회 위원장,지배구조위원회 위원, 감사위원회 위원, ESG위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_최양희", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 최양희, 직위는 이사, 이사회상 역할는 사외이사, 담당업무는 미래투자위원회 위원장, 지배구조위원회 위원, 이사후보추천위원회 위원, ESG위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽우영", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 곽우영, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 지배구조위원회 위원장,이사후보추천위원회 위원,ESG위원회 위원, 미래투자위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤종수", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 윤종수, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ESG위원회 위원장, 지배구조위원회 위원, 이사후보추천위원회 위원, 미래투자위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_안영균", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 안영균, 직위는 이사 (감사위원), 이사회상 역할는 사외이사, 담당업무는 감사위원회 위원장, 이사후보추천위원회 위원, 평가및보상위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이승훈", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 이승훈, 직위는 이사 (감사위원), 이사회상 역할는 사외이사, 담당업무는 평가및보상위위원회 위원장, 이사후보추천위원회 위원, 감사위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김성철", "to_id": "company_030200", "properties": {"evidence": "KT의 임원은 김성철, 직위는 이사 (감사위원), 이사회상 역할는 사외이사, 담당업무는 감사위원회 위원,이사후보추천위원회 위원, 평가및보상위원회 위원", "date": "2026-03-23", "evidence_source_id": "dart_030200_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}

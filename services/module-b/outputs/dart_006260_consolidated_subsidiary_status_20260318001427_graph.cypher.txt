@@ -1,0 +1,58 @@
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260", "description": "LS는 전선 및 케이블 제조업 중심의 사업을 영위한다."}
+
+// node: company_000500
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000500", "type": "Company", "name": "가온전선", "stock_code": "000500", "description": "가온전선은 절연선 및 케이블 제조업을 주요 사업으로 한다."}
+
+// node: business_area_케이블_제조업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_케이블_제조업", "type": "BusinessArea", "name": "케이블 제조업"}
+
+// node: industry_전기전자
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_전기전자", "type": "Industry", "name": "전기전자"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006260", "to_id": "business_area_케이블_제조업", "properties": {"evidence": "LS의 연결대상 종속회사 후보로 가온전선 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_006260_consolidated_subsidiary_status_20260318001427", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001427", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000500", "to_id": "business_area_케이블_제조업", "properties": {"evidence": "가온전선㈜(*1) | 1947.09 | 경기도 군포시 엘에스로 45번길 120 | 절연선 및케이블 제조업 | 1,292,970 | 실질지배력보유 | 주요 종속회사(자산총액 750억 이상)", "date": "2026-03-18", "evidence_source_id": "dart_006260_consolidated_subsidiary_status_20260318001427", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001427", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_케이블_제조업", "to_id": "industry_전기전자", "properties": {"evidence": "가온전선㈜(*1) | 절연선 및케이블 제조업", "date": "2026-03-18", "evidence_source_id": "dart_006260_consolidated_subsidiary_status_20260318001427", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001427", "evidence_published_at": "2026-03-18"}}

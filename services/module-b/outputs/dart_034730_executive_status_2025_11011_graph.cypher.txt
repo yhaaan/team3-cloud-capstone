@@ -1,50 +1,341 @@
-// node: company_sk
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "에너지, 화학, 반도체, 통신 등 다양한 산업에서 사업을 운영하는 기업"}
 
-// node: industry_ai
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "에너지 및 화학 관련 사업 운영"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 사업 운영"}
+
+// node: company_017670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "통신 및 플랫폼 사업 운영"}
+
+// node: company_011790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011790", "type": "Company", "name": "SKC", "stock_code": "011790"}
+
+// node: company_001740
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001740", "type": "Company", "name": "SK네트웍스", "stock_code": "001740"}
+
+// node: company_285130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_285130", "type": "Company", "name": "SK케미칼", "stock_code": "285130", "description": "화학 및 바이오 사업 운영"}
+
+// node: company_267980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267980", "type": "Company", "name": "매일유업", "stock_code": "267980", "description": "유제품 및 식품 제조"}
+
+// node: company_402340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+
+// node: company_041510
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_041510", "type": "Company", "name": "에스엠", "stock_code": "041510"}
+
+// node: company_326030
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_326030", "type": "Company", "name": "SK바이오팜", "stock_code": "326030"}
+
+// node: company_002020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002020", "type": "Company", "name": "코오롱", "stock_code": "002020"}
+
+// node: company_120110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_120110", "type": "Company", "name": "코오롱인더", "stock_code": "120110"}
+
+// node: company_004170
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004170", "type": "Company", "name": "신세계", "stock_code": "004170"}
+
+// node: company_065770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_065770", "type": "Company", "name": "CS", "stock_code": "065770"}
+
+// node: company_067170
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_067170", "type": "Company", "name": "오텍", "stock_code": "067170"}
+
+// node: company_006980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006980", "type": "Company", "name": "우성", "stock_code": "006980"}
+
+// node: company_452400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_452400", "type": "Company", "name": "이닉스", "stock_code": "452400"}
+
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지"}
+
+// node: business_area_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_chemical", "type": "BusinessArea", "name": "화학"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "반도체"}
+
+// node: business_area_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_telecommunication", "type": "BusinessArea", "name": "통신"}
+
+// node: business_area_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_platform", "type": "BusinessArea", "name": "플랫폼"}
+
+// node: business_area_dairy_products
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_dairy_products", "type": "BusinessArea", "name": "유제품"}
+
+// node: industry_energy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
 
-// node: industry_cloud
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_cloud", "type": "Industry", "name": "cloud"}
-
-// node: industry_battery
+// node: industry_chemical
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_battery", "type": "Industry", "name": "battery"}
+:params {"id": "industry_chemical", "type": "Industry", "name": "화학"}
 
-// node: industry_bio
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
-
-// node: industry_it
+// node: industry_semiconductor
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecommunication", "type": "Industry", "name": "통신"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// node: industry_food
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_food", "type": "Industry", "name": "식품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "business_area_energy", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사 ... (겸) SK이노베이션 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "business_area_chemical", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사 ... (겸) SK이노베이션 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사 ... (겸) SK하이닉스 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "business_area_telecommunication", "properties": {"evidence": "SK의 임원은 최태원, ... (겸) SK텔레콤 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "business_area_platform", "properties": {"evidence": "SK의 임원은 최태원, ... 대한상공회의소 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_energy", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_chemical", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사 ... (겸) SK하이닉스 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_telecommunication", "properties": {"evidence": "SK의 임원은 최태원, ... (겸) SK텔레콤 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "business_area_chemical", "properties": {"evidence": "SK의 임원은 김기동, ... SK케미칼 경영지원본부장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267980", "to_id": "business_area_dairy_products", "properties": {"evidence": "SK의 임원은 김선희, ... 매일유업㈜ 대표이사 사장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -53,7 +344,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "industry_ai", "properties": {"evidence": "Chairperson of the Board of Directors - (겸) SK Hynix America 회장.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_034730", "to_id": "industry_energy", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -62,7 +353,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "industry_cloud", "properties": {"evidence": "SK의 임원은 신장수, 직위는 부문장, 이사회상 역할은 미등기, 담당업무는 Cloud부문장 겸) SHE 추진단장 겸) SUPEX 추구협의회 임원, 주요경력은 - New York State Univ.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_034730", "to_id": "industry_chemical", "properties": {"evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -71,7 +362,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "industry_battery", "properties": {"evidence": "SK의 임원은 김유석, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 업무지원실 임원, 주요경력은 - Yale University 석사 - SK온 Battery 전략기획본부장 - (겸) 최종현학술원 상임이사 - (겸) 한국고등교육재단 상임이사.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_034730", "to_id": "industry_semiconductor", "properties": {"evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -80,7 +371,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "industry_bio", "properties": {"evidence": "SK의 임원은 김연태, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 PM4담당 겸) 혁신신약TF 임원, 최대주주와의 관계는 계열회사 임원, 주요경력은 - University College London 석사 - SK㈜ Bio 투자센터 임원 - (겸) SK바이오팜 기타비상무이사.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_034730", "to_id": "industry_telecommunication", "properties": {"evidence": "SK의 임원은 최태원, ... SK텔레콤 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
 
 // relation: BELONGS_TO
 
@@ -89,4 +380,40 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:BELONGS_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk", "to_id": "industry_it", "properties": {"evidence": "SK의 임원은 유정준, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 부회장 겸) 미주총괄, 최대주주와의 관계는 계열회사 임원, 주요경력은 - Illinois State University 석사 - SK온 부회장 겸) SK Americas, Inc.", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_034730", "to_id": "industry_platform", "properties": {"evidence": "SK의 임원은 최태원, ... 대한상공회의소 회장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "industry_chemical", "properties": {"evidence": "SK의 임원은 김기동, ... SK케미칼 경영지원본부장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267980", "to_id": "industry_food", "properties": {"evidence": "SK의 임원은 김선희, ... 매일유업㈜ 대표이사 사장", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011790", "to_id": "business_area_chemical", "properties": {"evidence": "SK의 임원은 김기동, ... (겸) SKC 기타비상무이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001740", "to_id": "business_area_chemical", "properties": {"evidence": "SK의 임원은 김기동, ... (겸) SK네트웍스 기타비상무이사", "date": "2026-03-18", "evidence_source_id": "dart_034730_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157", "evidence_published_at": "2026-03-18"}}

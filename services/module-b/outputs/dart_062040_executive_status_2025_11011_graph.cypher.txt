@@ -1,0 +1,288 @@
+// node: company_062040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_062040", "type": "Company", "name": "산일전기", "stock_code": "062040", "description": "전기사업과 해외영업, 기술연구, 제조, 품질경영, 전략기획, 신사업, DX 총괄 등 사업을 영위함"}
+
+// node: company_267260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267260", "type": "Company", "name": "HD현대일렉트릭", "stock_code": "267260"}
+
+// node: company_032750
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032750", "type": "Company", "name": "삼진", "stock_code": "032750"}
+
+// node: company_008490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_008490", "type": "Company", "name": "서흥", "stock_code": "008490"}
+
+// node: company_347860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_347860", "type": "Company", "name": "알체라", "stock_code": "347860"}
+
+// node: company_108670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_108670", "type": "Company", "name": "LX하우시스", "stock_code": "108670"}
+
+// node: company_358570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_358570", "type": "Company", "name": "지아이이노베이션", "stock_code": "358570"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: business_area_electrical_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electrical_equipment", "type": "BusinessArea", "name": "electrical equipment"}
+
+// node: business_area_overseas_sales
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_overseas_sales", "type": "BusinessArea", "name": "overseas sales"}
+
+// node: business_area_research_and_development
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_research_and_development", "type": "BusinessArea", "name": "research and development"}
+
+// node: business_area_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_manufacturing", "type": "BusinessArea", "name": "manufacturing"}
+
+// node: business_area_quality_management
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_quality_management", "type": "BusinessArea", "name": "quality management"}
+
+// node: business_area_strategic_planning
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_strategic_planning", "type": "BusinessArea", "name": "strategic planning"}
+
+// node: business_area_new_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_new_business", "type": "BusinessArea", "name": "new business"}
+
+// node: business_area_digital_transformation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_digital_transformation", "type": "BusinessArea", "name": "digital transformation"}
+
+// node: business_area_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_finance", "type": "BusinessArea", "name": "Finance"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_electrical_equipment", "properties": {"evidence": "산일전기의 임원은 박동석, 직위는 공동대표이사, 이사회상 역할은 사내이사, 담당업무는 사업총괄", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_overseas_sales", "properties": {"evidence": "산일전기의 임원은 최동헌, 담당업무는 전기 해외영업", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_research_and_development", "properties": {"evidence": "산일전기의 임원은 최명준, 담당업무는 기술연구소 총괄", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_manufacturing", "properties": {"evidence": "산일전기의 임원은 이정수, 담당업무는 제조부문 총괄", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_quality_management", "properties": {"evidence": "산일전기의 임원은 심재용, 담당업무는 품질경영 부문", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_strategic_planning", "properties": {"evidence": "산일전기의 임원은 오창희, 담당업무는 전략기획", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_new_business", "properties": {"evidence": "산일전기의 임원은 류영태, 담당업무는 신사업부문 총괄", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_digital_transformation", "properties": {"evidence": "산일전기의 임원은 장학선, 담당업무는 DX총괄", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_overseas_sales", "properties": {"evidence": "최동헌 주요경력은 전) HD현대일렉트릭㈜ 해외영업 상무", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_research_and_development", "properties": {"evidence": "최명준 주요경력은 전) HD현대일렉트릭 전력기기연구실 실장", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_manufacturing", "properties": {"evidence": "이정수 주요경력은 전) HD현대일렉트릭 전력설계생산 부문장/최고안전책임자", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032750", "to_id": "business_area_research_and_development", "properties": {"evidence": "박성일 주요경력은 전) ㈜삼진전기", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_008490", "to_id": "business_area_finance", "properties": {"evidence": "김상준 주요경력은 전) ㈜서흥알이에프 팀장", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_347860", "to_id": "business_area_finance", "properties": {"evidence": "오창희 주요경력은 전) ㈜알체라 재무전략본부 CFO", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_108670", "to_id": "business_area_finance", "properties": {"evidence": "김영익 주요경력은 전) LX하우시스 사외이사", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_358570", "to_id": "business_area_finance", "properties": {"evidence": "김현철 주요경력은 현) ㈜지아이이노베이션 사외이사", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "industry_energy", "properties": {"evidence": "산일전기㈜ 주요업무는 전기 및 전기사업임을 임원 직위 및 담당업무에서 확인", "date": "2026-04-03", "evidence_source_id": "dart_062040_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697", "evidence_published_at": "2026-04-03"}}

@@ -1,23 +1,41 @@
-// node: company_hyundai_geonseol
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_geonseol", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "현대건설은 배구단 운영과 선수 영입으로 스포츠 사업에 참여하고 있으며 전통적 강팀으로 알려짐."}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hanwha
+// node: business_area_volleyball_team
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "business_area_volleyball_team", "type": "BusinessArea", "name": "배구단"}
+
+// node: industry_sports
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_sports", "type": "Industry", "name": "스포츠"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_volleyball_team", "properties": {"evidence": "현대건설은 11일 메가와 아시아 쿼터 계약을 체결했다고 밝혔다.", "date": "", "evidence_source_id": "news_000720_12b0bdb3dc256575", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2147515", "evidence_published_at": "2026-05-11T19:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_volleyball_team", "to_id": "industry_sports", "properties": {"evidence": "현대건설 배구단의 화력을 한층 끌어올릴 핵심 카드가 될 것으로 보인다.", "date": "", "evidence_source_id": "news_000720_12b0bdb3dc256575", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2147515", "evidence_published_at": "2026-05-11T19:28:00+09:00"}}

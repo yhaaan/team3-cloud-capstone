@@ -1,319 +1,119 @@
-// node: company_hd현대중공업
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선, 해양에너지, 엔진기계, 함정 등 사업을 영위하는 중공업 전문기업"}
 
-// node: company_hd한국조선해양
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
-
-// node: company_hd현대마린엔진
+// node: business_area_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
 
-// node: company_hd현대
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대", "type": "Company", "name": "HD현대", "stock_code": "267250"}
-
-// node: company_유안타증권
+// node: business_area_ocean_energy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_유안타증권", "type": "Company", "name": "유안타증권", "stock_code": "003470"}
+:params {"id": "business_area_ocean_energy", "type": "BusinessArea", "name": "해양에너지"}
 
-// node: company_고영
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_고영", "type": "Company", "name": "고영", "stock_code": "098460"}
-
-// node: person_현정미
+// node: business_area_engine_mechanics
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_현정미", "type": "Person", "name": "현정미"}
+:params {"id": "business_area_engine_mechanics", "type": "BusinessArea", "name": "엔진기계"}
 
-// node: person_서일원
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_서일원", "type": "Person", "name": "서일원"}
-
-// node: person_류홍렬
+// node: business_area_marine_defense
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_류홍렬", "type": "Person", "name": "류홍렬"}
+:params {"id": "business_area_marine_defense", "type": "BusinessArea", "name": "함정"}
 
-// node: person_이경섭
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이경섭", "type": "Person", "name": "이경섭"}
-
-// node: person_여용화
+// node: industry_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Industry`
 
-:params {"id": "person_여용화", "type": "Person", "name": "여용화"}
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
 
-// node: person_이용화
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이용화", "type": "Person", "name": "이용화"}
-
-// node: person_이태홍
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이태홍", "type": "Person", "name": "이태홍"}
-
-// node: person_장혁진
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_장혁진", "type": "Person", "name": "장혁진"}
-
-// node: person_김태정
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_김태정", "type": "Person", "name": "김태정"}
-
-// node: person_최헌
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_최헌", "type": "Person", "name": "최헌"}
-
-// node: person_이태진
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이태진", "type": "Person", "name": "이태진"}
-
-// node: person_김명식
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_김명식", "type": "Person", "name": "김명식"}
-
-// node: person_서현수
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_서현수", "type": "Person", "name": "서현수"}
-
-// node: person_금석호
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_금석호", "type": "Person", "name": "금석호"}
-
-// node: person_채준
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_채준", "type": "Person", "name": "채준"}
-
-// node: person_고영대
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_고영대", "type": "Person", "name": "고영대"}
-
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_현정미", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 현정미, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 엔진기계DX 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 영남대 前)HD한국조선해양㈜ DX혁신II 담당.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "담당업무는 조선사업부 사업대표", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_서일원", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 서일원, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 IP 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 고려대(박) 兼)HD한국조선해양㈜ IP담당.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_329180", "to_id": "business_area_ocean_energy", "properties": {"evidence": "담당업무는 해양에너지영업 담당, 해양에너지사업본부장, 해양에너지설계부문장 등", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_류홍렬", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 류홍렬, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 기술본부장, 최대주주와의 관계는 계열회사 임원, 주요경력은 울산대(석).", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_329180", "to_id": "business_area_engine_mechanics", "properties": {"evidence": "담당업무는 엔진기계DX 담당, 엔진개발/개발시험/ 힘센엔진 담당, 엔진기계사업부, 엔진기계설계부문장", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이경섭", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 이경섭, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 HEV경영지원 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 울산대.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_329180", "to_id": "business_area_marine_defense", "properties": {"evidence": "담당업무는 함정해외영업1, 함정법무보안, 함정설계, 함정사업본부장, 함정생산2 담당", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "person_여용화", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 여용화, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 선박영업본부장, 최대주주와의 관계는 계열회사 임원, 주요경력은 부산대 兼)HD한국조선해양㈜ 전략마케팅본부장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD현대중공업은 조선사업부 등 조선 관련 사업을 운영함", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이용화", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 이용화, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 엔진성과/예산 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 연세대 兼)HD현대마린엔진㈜ 경영지원 담당.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "business_area_ocean_energy", "to_id": "industry_shipbuilding", "properties": {"evidence": "해양에너지 사업은 조선 및 해양 플랜트 산업과 관련됨", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이태홍", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 이태홍, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 회계 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 서울대.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "business_area_engine_mechanics", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진기계 사업은 선박 조선 산업에 포함됨", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "person_장혁진", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 장혁진, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 동반성장실장, 최대주주와의 관계는 계열회사 임원, 주요경력은 중앙대 兼)HD현대㈜ HR지원부문장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_김태정", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 김태정, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 법무 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 서울대 兼)HD한국조선해양㈜ 국제법무부문장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_최헌", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 최헌, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 경영지원본부장 및 총무/법무/보안부문장, 주요경력은 부산대.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_이태진", "to_id": "company_hd현대중공업", "properties": {"evidence": "HD현대중공업의 임원은 이태진, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 DX혁신 부문장, 최대주주와의 관계는 계열회사 임원, 주요경력은 고려대(석) 兼)HD한국조선해양㈜ DX Center 부문장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_김명식", "to_id": "company_hd한국조선해양", "properties": {"evidence": "HD현대중공업의 임원은 박명식, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 HR부문장, 최대주주와의 관계는 계열회사 임원, 주요경력은 영남대 兼) HD한국조선해양㈜ HR부문장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_서현수", "to_id": "company_hd한국조선해양", "properties": {"evidence": "HD현대중공업의 임원은 서현수, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 안전1 담당, 최대주주와의 관계는 계열회사 임원, 주요경력은 한양대(석) 兼) HD한국조선해양㈜ 안전 담당.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_금석호", "to_id": "company_hd현대", "properties": {"evidence": "HD현대중공업의 임원은 금석호, 직위는 사장, 이사회상 역할은 미등기, 담당업무는 대표이사(내정), 최대주주와의 관계는 계열회사 임원, 주요경력은 고려대 現)HD현대㈜ HR지원실장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_채준", "to_id": "company_유안타증권", "properties": {"evidence": "HD현대중공업의 임원은 채준, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사, 주요경력은 MIT(박) 現)유안타증권㈜ 사외이사 現)서울대 경영대학 학장.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_고영대", "to_id": "company_고영", "properties": {"evidence": "HD현대중공업의 임원은 고영대, 직위는 상무, 이사회상 역할은 미등기, 담당업무는 의장설계1 담당, 주요경력은 부산대.", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "business_area_marine_defense", "to_id": "industry_shipbuilding", "properties": {"evidence": "함정 사업부문은 조선 및 군수산업으로 분류됨", "date": "2026-03-20", "evidence_source_id": "dart_329180_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}

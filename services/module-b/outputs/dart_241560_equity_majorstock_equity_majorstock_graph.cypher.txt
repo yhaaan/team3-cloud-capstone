@@ -1,23 +1,83 @@
-// node: company_두산밥캣
+// node: company_241560
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산밥캣", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "description": "건설기계 제조 및 판매를 주력으로 하는 기업"}
 
-// node: company_두산에너빌리티
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_두산에너빌리티", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
-
-// node: company_키움증권
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_키움증권", "type": "Company", "name": "키움증권", "stock_code": "039490"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "에너지 및 산업 설비 관련 사업을 영위하는 기업"}
+
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490", "description": "온라인 증권 중개 및 금융서비스를 제공하는 기업"}
+
+// node: industry_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction", "type": "Industry", "name": "construction"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "finance"}
+
+// node: business_area_construction_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction_machinery", "type": "BusinessArea", "name": "construction machinery"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "business_area_construction_machinery", "properties": {"evidence": "두산밥캣은 건설기계 제조 및 판매를 주력으로 하는 기업", "date": "2026-05-08", "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100", "evidence_published_at": "2026-05-08"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction_machinery", "to_id": "industry_construction", "properties": {"evidence": "건설기계 제조 및 판매는 건설 산업과 연관 있음", "date": "2026-05-08", "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100", "evidence_published_at": "2026-05-08"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "industry_construction", "properties": {"evidence": "두산에너빌리티는 에너지 및 산업 설비 관련 사업을 영위하는 기업", "date": "2026-05-08", "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100", "evidence_published_at": "2026-05-08"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "industry_finance", "properties": {"evidence": "키움증권은 온라인 증권 중개 및 금융서비스를 제공하는 기업", "date": "2026-05-08", "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100", "evidence_published_at": "2026-05-08"}}

@@ -1,15 +1,84 @@
-// node: company_kia
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270", "description": "자동차 판매 및 정비 서비스 네트워크 운영"}
 
-// node: company_hyundai_motor
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_자동차판매네트워크
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_자동차판매네트워크", "type": "BusinessArea", "name": "자동차 판매 네트워크"}
+
+// node: business_area_자동차정비서비스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_자동차정비서비스", "type": "BusinessArea", "name": "자동차 정비 서비스"}
+
+// node: industry_자동차산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_자동차산업", "type": "Industry", "name": "자동차산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_자동차판매네트워크", "properties": {"evidence": "자동차 판매와 정비 네트워크는 고객 접점의 핵심이지만, 사업장 확장이나 시설 개선에는 적지 않은 초기 자금이 필요하다.", "date": "", "evidence_source_id": "news_000270_55b71801b087f929", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1643084/?sc=Naver", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_자동차정비서비스", "properties": {"evidence": "기아가 정비와 판매 현장의 자금 부담을 낮추기 위해 신한은행과 손을 잡았다.", "date": "", "evidence_source_id": "news_000270_55b71801b087f929", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1643084/?sc=Naver", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_자동차판매네트워크", "to_id": "industry_자동차산업", "properties": {"evidence": "자동차 판매와 정비 네트워크는 고객 접점의 핵심이지만, 사업장 확장이나 시설 개선에는 적지 않은 초기 자금이 필요하다.", "date": "", "evidence_source_id": "news_000270_55b71801b087f929", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1643084/?sc=Naver", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_자동차정비서비스", "to_id": "industry_자동차산업", "properties": {"evidence": "기아가 정비와 판매 현장의 자금 부담을 낮추기 위해 신한은행과 손을 잡았다.", "date": "", "evidence_source_id": "news_000270_55b71801b087f929", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1643084/?sc=Naver", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_자동차산업", "properties": {"evidence": "'포니 수출 50년' 맞은 車산업…장재훈 현대차 부회장, 20년 만의 금탑산업훈장", "date": "", "evidence_source_id": "news_000270_55b71801b087f929", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1643084/?sc=Naver", "evidence_published_at": "2026-05-12T08:52:00+09:00"}}

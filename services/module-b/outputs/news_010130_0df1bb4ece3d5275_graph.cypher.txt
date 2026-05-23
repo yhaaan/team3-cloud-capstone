@@ -1,0 +1,75 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130", "description": "핵심광물 관련 사업과 미국 테네시주 제련소 건설 프로젝트를 운영하는 기업"}
+
+// node: company_000670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000670", "type": "Company", "name": "영풍", "stock_code": "000670"}
+
+// node: business_area_core_minerals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_core_minerals", "type": "BusinessArea", "name": "핵심광물"}
+
+// node: business_area_metals_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_metals_refining", "type": "BusinessArea", "name": "제련소 사업"}
+
+// node: industry_mineral_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mineral_industry", "type": "Industry", "name": "광물산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_core_minerals", "properties": {"evidence": "MBK의 포트폴리오 기업 중 핵심광물과 관련된 대표적인 기업이 고려아연이다.", "date": "", "evidence_source_id": "news_010130_0df1bb4ece3d5275", "evidence_source_type": "news", "evidence_source_url": "https://www.munhwa.com/article/11589313?ref=naver", "evidence_published_at": "2026-05-16T10:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_metals_refining", "properties": {"evidence": "고려아연의 미국 테네시주 통합 제련소 건설 사업 '프로젝트 크루서블(Project Crucible)'을 겨냥했을 가능성이 크다.", "date": "", "evidence_source_id": "news_010130_0df1bb4ece3d5275", "evidence_source_type": "news", "evidence_source_url": "https://www.munhwa.com/article/11589313?ref=naver", "evidence_published_at": "2026-05-16T10:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_core_minerals", "to_id": "industry_mineral_industry", "properties": {"evidence": "'핵심광물'은 광물산업에 속하는 사업 분야임이 문서 내 사업 설명으로 추론됨.", "date": "", "evidence_source_id": "news_010130_0df1bb4ece3d5275", "evidence_source_type": "news", "evidence_source_url": "https://www.munhwa.com/article/11589313?ref=naver", "evidence_published_at": "2026-05-16T10:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_metals_refining", "to_id": "industry_mineral_industry", "properties": {"evidence": "'제련소 사업'은 광물산업의 세부 사업 영역임이 문서 내 사업 설명으로 추론됨.", "date": "", "evidence_source_id": "news_010130_0df1bb4ece3d5275", "evidence_source_type": "news", "evidence_source_url": "https://www.munhwa.com/article/11589313?ref=naver", "evidence_published_at": "2026-05-16T10:36:00+09:00"}}

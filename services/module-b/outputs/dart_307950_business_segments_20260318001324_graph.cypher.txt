@@ -1,0 +1,213 @@
+// node: company_307950
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_307950", "type": "Company", "name": "현대오토에버", "stock_code": "307950", "description": "IT 컨설팅, IT 아웃소싱 운영 및 관리, 차량용 SW 플랫폼과 내비게이션 SW 개발과 판매"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_it_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_it_service", "type": "BusinessArea", "name": "IT 서비스"}
+
+// node: business_area_si
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_si", "type": "BusinessArea", "name": "시스템 통합"}
+
+// node: business_area_ito
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ito", "type": "BusinessArea", "name": "IT 아웃소싱"}
+
+// node: business_area_vehicle_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_vehicle_software", "type": "BusinessArea", "name": "차량용 소프트웨어"}
+
+// node: productservice_navigation_sw
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_navigation_sw", "type": "ProductService", "name": "내비게이션 소프트웨어"}
+
+// node: productservice_vehicle_sw_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_vehicle_sw_platform", "type": "ProductService", "name": "차량 소프트웨어 플랫폼"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "business_area_it_service", "properties": {"evidence": "IT 서비스는 크게 SI와 ITO부문으로 나뉩니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "business_area_si", "properties": {"evidence": "SI(System Integration)부문은 기업이 비즈니스를 수행하기 위해 필요한 정보화 시스템을 구축하는 사업이다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "business_area_ito", "properties": {"evidence": "ITO(IT Outsourcing)는 고객의 IT 아웃소싱을 통하여 고객의 전산시스템을 운영 및 관리, 유지보수하는 사업이다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "business_area_vehicle_software", "properties": {"evidence": "당사는 내비게이션 SW, 차량 SW 플랫폼 등을 포함한 차량용 SW 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "productservice_navigation_sw", "properties": {"evidence": "내비게이션 SW는 2013년 순정 내비게이션 첫 탑재를 시작으로 OEM 방식 혹은 PIO 방식으로 공급되고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "productservice_vehicle_sw_platform", "properties": {"evidence": "차량 SW 플랫폼 사업은 자율주행 및 커넥티비티 등 미래 자동차분야에 적용되는 차세대 고성능 SW 플랫폼과 통신 제어 기능 관련 SW를 개발 및 판매하는 사업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_si", "to_id": "business_area_it_service", "properties": {"evidence": "IT 서비스는 크게 SI와 ITO부문으로 나뉩니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ito", "to_id": "business_area_it_service", "properties": {"evidence": "IT 서비스는 크게 SI와 ITO부문으로 나뉩니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_navigation_sw", "to_id": "business_area_vehicle_software", "properties": {"evidence": "내비게이션 SW는 차량용 SW 사업의 구성품이다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_vehicle_sw_platform", "to_id": "business_area_vehicle_software", "properties": {"evidence": "차량 SW 플랫폼 사업은 차량용 SW 사업에 포함된다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_vehicle_software", "to_id": "industry_automotive", "properties": {"evidence": "차량용 SW 사업은 미래 자동차분야에 적용되는 사업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_it_service", "to_id": "industry_it", "properties": {"evidence": "당사는 IT 서비스업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_si", "to_id": "industry_it", "properties": {"evidence": "SI 부문은 정보화 시스템 구축 사업이다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ito", "to_id": "industry_it", "properties": {"evidence": "ITO 부문은 IT 아웃소싱 사업이다.", "date": "2026-03-18", "evidence_source_id": "dart_307950_business_segments_20260318001324", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001324", "evidence_published_at": "2026-03-18"}}

@@ -1,0 +1,116 @@
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "대형 반도체 기업으로 MSCI 지수 내 비중 확대"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "대형 반도체 기업으로 MSCI 지수 내 비중 확대"}
+
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640"}
+
+// node: company_443060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_443060", "type": "Company", "name": "HD현대마린솔루션", "stock_code": "443060"}
+
+// node: company_326030
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_326030", "type": "Company", "name": "SK바이오팜", "stock_code": "326030"}
+
+// node: company_016360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_016360", "type": "Company", "name": "삼성증권", "stock_code": "016360", "description": "증권사로 MSCI 지수 패시브 자금 관련 전망 제공"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "염동찬 한국투자증권 연구원은 \"신규 편입은 부재했지만, 한국 시가총액 1, 2위 기업의 MSCI 비중 확대로 패시브 자금 역시 대형 반도체로 유입될 수 있는 상황\"이라고 평가했다.", "date": "", "evidence_source_id": "news_180640_77a32c6b0082aca4", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414609", "evidence_published_at": "2026-05-13T14:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "염동찬 한국투자증권 연구원은 \"신규 편입은 부재했지만, 한국 시가총액 1, 2위 기업의 MSCI 비중 확대로 패시브 자금 역시 대형 반도체로 유입될 수 있는 상황\"이라고 평가했다.", "date": "", "evidence_source_id": "news_180640_77a32c6b0082aca4", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414609", "evidence_published_at": "2026-05-13T14:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "염동찬 한국투자증권 연구원은 \"신규 편입은 부재했지만, 한국 시가총액 1, 2위 기업의 MSCI 비중 확대로 패시브 자금 역시 대형 반도체로 유입될 수 있는 상황\"이라고 평가했다.", "date": "", "evidence_source_id": "news_180640_77a32c6b0082aca4", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414609", "evidence_published_at": "2026-05-13T14:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "염동찬 한국투자증권 연구원은 \"신규 편입은 부재했지만, 한국 시가총액 1, 2위 기업의 MSCI 비중 확대로 패시브 자금 역시 대형 반도체로 유입될 수 있는 상황\"이라고 평가했다.", "date": "", "evidence_source_id": "news_180640_77a32c6b0082aca4", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414609", "evidence_published_at": "2026-05-13T14:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "염동찬 한국투자증권 연구원은 \"신규 편입은 부재했지만, 한국 시가총액 1, 2위 기업의 MSCI 비중 확대로 패시브 자금 역시 대형 반도체로 유입될 수 있는 상황\"이라고 평가했다.", "date": "", "evidence_source_id": "news_180640_77a32c6b0082aca4", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414609", "evidence_published_at": "2026-05-13T14:32:00+09:00"}}

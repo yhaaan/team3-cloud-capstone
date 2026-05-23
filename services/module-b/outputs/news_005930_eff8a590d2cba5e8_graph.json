@@ -2,77 +2,50 @@
   "source_id": "news_005930_eff8a590d2cba5e8",
   "entities": [
     {
-      "id": "company_삼성전자",
+      "id": "company_005930",
       "type": "Company",
-      "name": "삼성전자"
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "메모리 반도체와 파운드리 기술을 기반으로 AI 인프라용 낸드 플래시, HBM 분야에서 경쟁력을 보유"
     },
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_000660",
       "type": "Company",
-      "name": "HD한국조선해양"
+      "name": "SK하이닉스",
+      "stock_code": "000660"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK"
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
     },
     {
-      "id": "company_sk텔레콤",
-      "type": "Company",
-      "name": "SK텔레콤"
+      "id": "business_area_foundry",
+      "type": "BusinessArea",
+      "name": "파운드리"
     },
     {
-      "id": "company_sk하이닉스",
-      "type": "Company",
-      "name": "SK하이닉스"
+      "id": "product_service_nand_flash",
+      "type": "ProductService",
+      "name": "낸드 플래시"
     },
     {
-      "id": "company_삼성sdi",
-      "type": "Company",
-      "name": "삼성SDI"
+      "id": "product_service_hbm",
+      "type": "ProductService",
+      "name": "HBM"
     },
     {
-      "id": "company_삼성중공업",
-      "type": "Company",
-      "name": "삼성중공업"
-    },
-    {
-      "id": "company_한화",
-      "type": "Company",
-      "name": "한화"
-    },
-    {
-      "id": "company_현대차",
-      "type": "Company",
-      "name": "현대차"
-    },
-    {
-      "id": "person_자공학부_교수",
-      "type": "Person",
-      "name": "자공학부 교수"
-    },
-    {
-      "id": "industry_ai",
+      "id": "industry_semiconductor",
       "type": "Industry",
-      "name": "AI"
-    },
-    {
-      "id": "industry_bio",
-      "type": "Industry",
-      "name": "bio"
-    },
-    {
-      "id": "industry_it",
-      "type": "Industry",
-      "name": "IT"
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
-      "from": "company_삼성전자",
-      "to": "company_hd한국조선해양",
-      "evidence": "07 삼성전자 노사 11시간 마라톤 협상에도 빈손⋯오늘 마지막 조정 돌입 08 속보 코스피 장중 7900선 첫 돌파⋯팔천피 코앞 09 NH투자증권 \"동화기업, 삼성SDI·EVE ESS 동반 성장…목표가 22% 상향\" 10 전국 대부분 비...돌풍·천둥·우박까지 동반 [날씨] 최신 영상 정원오표 부동산 \"역시나 박원순 시즌2\" 서울 집값 시뮬레이션 돌려봅니다 I 집땅지성 I 김인만, 한문도, 두성규 산업 최신 뉴스 아모레퍼시픽, 차세대 나노 화장품 전달체 기술 개발 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" [BioS]동아 메타비아, 'GLP-1/GCG' 1상 유럽간학회 발표 셀트리온, 프랑스 지프레 인수…'대체조제 시대 대비' 약국 영업망 확보 '사회 문제 해결자' 모여라, SOVAC 2026 참가 기업 모집 CJ제일제당, 1분기 영업익 1485억원⋯전년比 26%↓ 차세대 인증 설루션 'SK텔레콤 패스키'…국가 공인 인증 1등급 획득 [BioS]씨어스, 1Q 매출 325억·영업익 139억 \"역대최대\" 효성굿스프링스, 전력 효율 높인 펌프 솔루션 첫선 LG유플, AI 비서 '익시오' SaaS형 수출 첫발…말레이시아 통신사와 상용화 논의 뉴스발전소 김구라 웃고 이경실 울었다...삼성전자 투자 성공 비결은?",
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_memory",
+      "evidence": "\"AI 본질은 메모리\"라며 \"결국 AI의 게임은 메모리에서 결정되는 걸로 가고 있다\"",
       "date": "",
       "evidence_source_id": "news_005930_eff8a590d2cba5e8",
       "evidence_source_type": "news",
@@ -80,10 +53,10 @@
       "evidence_published_at": "2026-05-12T09:24:00+09:00"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_삼성전자",
-      "to": "company_hd한국조선해양",
-      "evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_foundry",
+      "evidence": "삼성전자의 경우 메모리와 파운드리 역량을 함께 보유했다는 점도 강점으로 거론됐다.",
       "date": "",
       "evidence_source_id": "news_005930_eff8a590d2cba5e8",
       "evidence_source_type": "news",
@@ -91,10 +64,10 @@
       "evidence_published_at": "2026-05-12T09:24:00+09:00"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_삼성전자",
-      "to": "industry_ai",
-      "evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_nand_flash",
+      "evidence": "\"요즘 그런 역할을 하는 쪽에 낸드 플래시 메모리가 많이 필요해서 삼성, 하이닉스, 샌디스크 주가가 하늘을 올라가고 있다\"",
       "date": "",
       "evidence_source_id": "news_005930_eff8a590d2cba5e8",
       "evidence_source_type": "news",
@@ -102,10 +75,10 @@
       "evidence_published_at": "2026-05-12T09:24:00+09:00"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_삼성전자",
-      "to": "industry_bio",
-      "evidence": "07 삼성전자 노사 11시간 마라톤 협상에도 빈손⋯오늘 마지막 조정 돌입 08 속보 코스피 장중 7900선 첫 돌파⋯팔천피 코앞 09 NH투자증권 \"동화기업, 삼성SDI·EVE ESS 동반 성장…목표가 22% 상향\" 10 전국 대부분 비...돌풍·천둥·우박까지 동반 [날씨] 최신 영상 정원오표 부동산 \"역시나 박원순 시즌2\" 서울 집값 시뮬레이션 돌려봅니다 I 집땅지성 I 김인만, 한문도, 두성규 산업 최신 뉴스 아모레퍼시픽, 차세대 나노 화장품 전달체 기술 개발 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" [BioS]동아 메타비아, 'GLP-1/GCG' 1상 유럽간학회 발표 셀트리온, 프랑스 지프레 인수…'대체조제 시대 대비' 약국 영업망 확보 '사회 문제 해결자' 모여라, SOVAC 2026 참가 기업 모집 CJ제일제당, 1분기 영업익 1485억원⋯전년比 26%↓ 차세대 인증 설루션 'SK텔레콤 패스키'…국가 공인 인증 1등급 획득 [BioS]씨어스, 1Q 매출 325억·영업익 139억 \"역대최대\" 효성굿스프링스, 전력 효율 높인 펌프 솔루션 첫선 LG유플, AI 비서 '익시오' SaaS형 수출 첫발…말레이시아 통신사와 상용화 논의 뉴스발전소 김구라 웃고 이경실 울었다...삼성전자 투자 성공 비결은?",
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_hbm",
+      "evidence": "\"GPU하고 HBM 사이에 데이터를 엄청 빠른 속도로 주고받아야 된다\"며 \"낸드 플래시와 HBM이 둘 다 필요한 시대가 됐다\"고 말했다.",
       "date": "",
       "evidence_source_id": "news_005930_eff8a590d2cba5e8",
       "evidence_source_type": "news",
@@ -113,10 +86,32 @@
       "evidence_published_at": "2026-05-12T09:24:00+09:00"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_삼성전자",
-      "to": "industry_it",
-      "evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!",
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "\"우리 삼성전자, SK하이닉스는 둘 다 하잖아요. 완전히 양손에 떡을 들고 있는 거죠\"",
+      "date": "",
+      "evidence_source_id": "news_005930_eff8a590d2cba5e8",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531",
+      "evidence_published_at": "2026-05-12T09:24:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_nand_flash",
+      "evidence": "\"요즘 그런 역할을 하는 쪽에 낸드 플래시 메모리가 많이 필요해서 삼성, 하이닉스, 샌디스크 주가가 하늘을 올라가고 있다\"",
+      "date": "",
+      "evidence_source_id": "news_005930_eff8a590d2cba5e8",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531",
+      "evidence_published_at": "2026-05-12T09:24:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_hbm",
+      "evidence": "\"우리 삼성전자, SK하이닉스는 둘 다 하잖아요. 완전히 양손에 떡을 들고 있는 거죠\"",
       "date": "",
       "evidence_source_id": "news_005930_eff8a590d2cba5e8",
       "evidence_source_type": "news",

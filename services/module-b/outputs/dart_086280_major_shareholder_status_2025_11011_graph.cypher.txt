@@ -1,0 +1,41 @@
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: person_정의선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_정의선", "type": "Person", "name": "정의선"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "company_086280", "properties": {"evidence": "현대글로비스의 최대주주 관련 인물/법인은 현대자동차, 관계는 계열회사, 당기말 보유주식수는 3,661,878주, 지분율은 4.88%.", "date": "2026-03-18", "evidence_source_id": "dart_086280_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001205", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "person_정의선", "to_id": "company_086280", "properties": {"evidence": "현대글로비스의 최대주주 관련 인물/법인은 정의선, 관계는 최대주주, 당기말 보유주식수는 14,999,982주, 지분율은 20.00%.", "date": "2026-03-18", "evidence_source_id": "dart_086280_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001205", "evidence_published_at": "2026-03-18"}}

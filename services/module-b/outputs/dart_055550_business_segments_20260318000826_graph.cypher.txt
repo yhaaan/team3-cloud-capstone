@@ -1,0 +1,162 @@
+// node: company_055550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_055550", "type": "Company", "name": "신한지주", "stock_code": "055550", "description": "금융업을 영위하는 금융지주회사로 은행, 신용카드, 증권, 보험 등 다양한 금융 사업부문을 보유"}
+
+// node: company_006220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006220", "type": "Company", "name": "제주은행", "stock_code": "006220"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "금융서비스"}
+
+// node: business_area_banking
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_banking", "type": "BusinessArea", "name": "은행업"}
+
+// node: business_area_credit_card
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_credit_card", "type": "BusinessArea", "name": "신용카드업"}
+
+// node: business_area_securities
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_securities", "type": "BusinessArea", "name": "증권업"}
+
+// node: business_area_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_insurance", "type": "BusinessArea", "name": "보험업"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_055550", "to_id": "business_area_financial_services", "properties": {"evidence": "당사는 상기 자회사를 통하여 다음과 같은 사업부문을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_055550", "to_id": "business_area_banking", "properties": {"evidence": "사업부문 내 용 계열회사 은행업 부문 고객에 대한 여신, 수신취급 및 이에 수반되는 업무 신한은행,제주은행", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_055550", "to_id": "business_area_credit_card", "properties": {"evidence": "신용카드업 부문 신용카드, 장단기 카드대출, 할부금융, 리스 등의 영업 및 이에 수반되는 업무 신한카드,신한은행", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_055550", "to_id": "business_area_securities", "properties": {"evidence": "증권업 부문 유가증권의 매매, 위탁매매, 인수 및 이에 수반되는 업무 신한투자증권", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_055550", "to_id": "business_area_insurance", "properties": {"evidence": "보험업 부문 생명보험사업, 손해보험사업과 이에 수반되는 업무 신한라이프생명보험, 신한EZ손해보험", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006220", "to_id": "business_area_banking", "properties": {"evidence": "사업부문 내 용 계열회사 은행업 부문 고객에 대한 여신, 수신취급 및 이에 수반되는 업무 신한은행,제주은행", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_financial_services", "to_id": "industry_finance", "properties": {"evidence": "당사는 금융업을 영위하는 회사 등에 대한 지배ㆍ경영관리", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_banking", "to_id": "business_area_financial_services", "properties": {"evidence": "사업부문 내 용 계열회사 은행업 부문 고객에 대한 여신, 수신취급 및 이에 수반되는 업무", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_credit_card", "to_id": "business_area_financial_services", "properties": {"evidence": "신용카드업 부문 신용카드, 장단기 카드대출, 할부금융, 리스 등의 영업 및 이에 수반되는 업무", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_securities", "to_id": "business_area_financial_services", "properties": {"evidence": "증권업 부문 유가증권의 매매, 위탁매매, 인수 및 이에 수반되는 업무", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_insurance", "to_id": "business_area_financial_services", "properties": {"evidence": "보험업 부문 생명보험사업, 손해보험사업과 이에 수반되는 업무", "date": "2026-03-18", "evidence_source_id": "dart_055550_business_segments_20260318000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826", "evidence_published_at": "2026-03-18"}}

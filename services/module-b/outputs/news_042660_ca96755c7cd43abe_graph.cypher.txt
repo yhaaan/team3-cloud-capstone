@@ -1,15 +1,49 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "조선소 안전 시스템 강화와 선박 수주를 위한 ESG 경영 및 대규모 안전 투자 진행"}
 
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선업"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션의 이번 입장은 단순한 노사 갈등을 넘어, 조선업 전반의 ESG(환경·사회·지배구조) 경영 흐름과도 맞닿아 있다.", "date": "", "evidence_source_id": "news_042660_ca96755c7cd43abe", "evidence_source_type": "news", "evidence_source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=84400", "evidence_published_at": "2026-05-07T18:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "한화오션의 이번 입장은 단순한 노사 갈등을 넘어, 조선업 전반의 ESG(환경·사회·지배구조) 경영 흐름과도 맞닿아 있다.", "date": "", "evidence_source_id": "news_042660_ca96755c7cd43abe", "evidence_source_type": "news", "evidence_source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=84400", "evidence_published_at": "2026-05-07T18:26:00+09:00"}}

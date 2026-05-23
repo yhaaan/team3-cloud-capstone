@@ -1,0 +1,432 @@
+// node: company_010120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010120", "type": "Company", "name": "LS ELECTRIC", "stock_code": "010120", "description": "전력, 자동화, 금속, IT 부문에서 전력기기, 자동화시스템, 금속제품, IT설비 및 서비스 제공"}
+
+// node: business_area_electric_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_power", "type": "BusinessArea", "name": "전력사업"}
+
+// node: business_area_automation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automation", "type": "BusinessArea", "name": "자동화사업"}
+
+// node: business_area_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_metal", "type": "BusinessArea", "name": "금속사업"}
+
+// node: business_area_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_it", "type": "BusinessArea", "name": "IT사업"}
+
+// node: productservice_low_voltage_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_low_voltage_device", "type": "ProductService", "name": "저압기기"}
+
+// node: productservice_high_voltage_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_high_voltage_device", "type": "ProductService", "name": "고압기기"}
+
+// node: productservice_meter
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_meter", "type": "ProductService", "name": "계량기"}
+
+// node: productservice_relay
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_relay", "type": "ProductService", "name": "계전기"}
+
+// node: productservice_ultra_high_voltage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_ultra_high_voltage", "type": "ProductService", "name": "초고압기기"}
+
+// node: productservice_distribution_board
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_distribution_board", "type": "ProductService", "name": "배전반"}
+
+// node: productservice_railway_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_railway_system", "type": "ProductService", "name": "철도시스템"}
+
+// node: productservice_ev_relay
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_ev_relay", "type": "ProductService", "name": "EV-Relay"}
+
+// node: productservice_PLC
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_PLC", "type": "ProductService", "name": "PLC"}
+
+// node: productservice_inverter
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_inverter", "type": "ProductService", "name": "INVERTER"}
+
+// node: productservice_automation_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_automation_system", "type": "ProductService", "name": "자동화시스템"}
+
+// node: productservice_building_automation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_building_automation", "type": "ProductService", "name": "빌딩자동화"}
+
+// node: productservice_copper_pipe
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_copper_pipe", "type": "ProductService", "name": "동관"}
+
+// node: productservice_STS_pipe
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_STS_pipe", "type": "ProductService", "name": "STS관"}
+
+// node: productservice_IT_facilities
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_IT_facilities", "type": "ProductService", "name": "IT설비"}
+
+// node: productservice_ERP_maintenance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_ERP_maintenance", "type": "ProductService", "name": "ERP 유지보수"}
+
+// node: business_area_renewable_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_renewable_energy", "type": "BusinessArea", "name": "신재생 에너지"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: industry_automation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automation", "type": "Industry", "name": "자동화"}
+
+// node: industry_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_metal", "type": "Industry", "name": "금속"}
+
+// node: industry_IT
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_IT", "type": "Industry", "name": "IT"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_electric_power", "properties": {"evidence": "당사는 사업구분을 전력, 자동화, 금속, IT부문으로 세분하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_automation", "properties": {"evidence": "당사는 사업구분을 전력, 자동화, 금속, IT부문으로 세분하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_metal", "properties": {"evidence": "당사는 사업구분을 전력, 자동화, 금속, IT부문으로 세분하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_it", "properties": {"evidence": "당사는 사업구분을 전력, 자동화, 금속, IT부문으로 세분하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_low_voltage_device", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_high_voltage_device", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_meter", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_relay", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_ultra_high_voltage", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_distribution_board", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_railway_system", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_ev_relay", "properties": {"evidence": "전력사업은 저압기기, 고압기기, 계량기, 계전기, 초고압, 배전반, 철도시스템, EV-Relay가 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_PLC", "properties": {"evidence": "자동화사업은 PLC, INVERTER, 자동화시스템, 빌딩자동화 등이 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_inverter", "properties": {"evidence": "자동화사업은 PLC, INVERTER, 자동화시스템, 빌딩자동화 등이 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_automation_system", "properties": {"evidence": "자동화사업은 PLC, INVERTER, 자동화시스템, 빌딩자동화 등이 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_building_automation", "properties": {"evidence": "자동화사업은 PLC, INVERTER, 자동화시스템, 빌딩자동화 등이 주요 제품입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_copper_pipe", "properties": {"evidence": "금속사업은 동관 및 STS관의 제조 및 판매를 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_STS_pipe", "properties": {"evidence": "금속사업은 동관 및 STS관의 제조 및 판매를 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_IT_facilities", "properties": {"evidence": "IT사업은 IT설비 및 유지보수, ERP 유지보수, 데이터센터, 스마트 팩토리 등을 제공합니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "productservice_ERP_maintenance", "properties": {"evidence": "IT사업은 IT설비 및 유지보수, ERP 유지보수, 데이터센터, 스마트 팩토리 등을 제공합니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_renewable_energy", "properties": {"evidence": "태양광 발전시스템을 위한 EPC 사업과 ESS 관련 시스템 구축 EPC 사업 등 신재생 에너지 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_power", "to_id": "industry_energy", "properties": {"evidence": "전력사업은 전력기기/시스템 사업과 전력IT사업 등 에너지 관련 사업을 포함하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automation", "to_id": "industry_automation", "properties": {"evidence": "자동화사업은 산업자동화 및 에너지 절약 기기 및 시스템을 주력으로 합니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_metal", "to_id": "industry_metal", "properties": {"evidence": "금속사업은 전기전자 산업과 건설, 조선산업 등에 사용되는 금속 소재를 제조 및 판매합니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_it", "to_id": "industry_IT", "properties": {"evidence": "IT사업은 컴퓨터시스템 통합 자문 및 구축 서비스업을 영위합니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_business_segments_20260318001243", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}

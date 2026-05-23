@@ -2,29 +2,84 @@
   "source_id": "news_009150_726ee0dd7a8f9e70",
   "entities": [
     {
-      "id": "company_samsung_electrical",
+      "id": "company_009150",
       "type": "Company",
       "name": "삼성전기",
-      "stock_code": "009150"
+      "stock_code": "009150",
+      "description": "MLCC, AI 서버용 필름 등 전자부품 중심의 기술개발과 협력사 지원에 주력하는 기업"
     },
     {
-      "id": "company_sg",
-      "type": "Company",
-      "name": "SG",
-      "stock_code": "255220"
-    },
-    {
-      "id": "company_usung",
+      "id": "company_006980",
       "type": "Company",
       "name": "우성",
       "stock_code": "006980"
     },
     {
-      "id": "company_cosmosynthetic_materials",
+      "id": "company_005070",
       "type": "Company",
       "name": "코스모신소재",
       "stock_code": "005070"
+    },
+    {
+      "id": "business_area_ai_industry",
+      "type": "BusinessArea",
+      "name": "AI 산업"
+    },
+    {
+      "id": "business_area_mlcc",
+      "type": "BusinessArea",
+      "name": "MLCC"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "electronics"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_mlcc",
+      "evidence": "적층세라믹콘덴서(MLCC) 설비 업체 우성에스이는 설비 제작·셋업 일정 단축 성과로 생산성 혁신 부문 우수상을 받았다.",
+      "date": "",
+      "evidence_source_id": "news_009150_726ee0dd7a8f9e70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thelec.kr/news/articleView.html?idxno=55738",
+      "evidence_published_at": "2026-04-28T17:42:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_ai_industry",
+      "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장과 자율주행 시스템 고도화는 삼성전기가 집중하는 핵심 기회 요인\"이라며 ...",
+      "date": "",
+      "evidence_source_id": "news_009150_726ee0dd7a8f9e70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thelec.kr/news/articleView.html?idxno=55738",
+      "evidence_published_at": "2026-04-28T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_mlcc",
+      "to": "industry_electronics",
+      "evidence": "적층세라믹콘덴서(MLCC) 설비 업체 우성에스이는 설비 제작·셋업 일정 단축 성과로 생산성 혁신 부문 우수상을 받았다.",
+      "date": "",
+      "evidence_source_id": "news_009150_726ee0dd7a8f9e70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thelec.kr/news/articleView.html?idxno=55738",
+      "evidence_published_at": "2026-04-28T17:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_industry",
+      "to": "industry_electronics",
+      "evidence": "장덕현 삼성전기 사장은 \"AI 산업의 고성장과 자율주행 시스템 고도화는 삼성전기가 집중하는 핵심 기회 요인\"이라며 ...",
+      "date": "",
+      "evidence_source_id": "news_009150_726ee0dd7a8f9e70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.thelec.kr/news/articleView.html?idxno=55738",
+      "evidence_published_at": "2026-04-28T17:42:00+09:00"
+    }
+  ]
 }

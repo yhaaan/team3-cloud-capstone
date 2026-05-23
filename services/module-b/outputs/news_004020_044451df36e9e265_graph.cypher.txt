@@ -1,31 +1,83 @@
-// node: company_hyundai_steel
+// node: company_004020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_steel", "type": "Company", "name": "현대제철", "stock_code": "004020"}
+:params {"id": "company_004020", "type": "Company", "name": "현대제철", "stock_code": "004020", "description": "건설산업 현장 문제 해결을 위한 HCORE 설루션 파트너십을 추진"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_samsung_electronics
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// node: company_sk_hynix
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "[단독] 삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안 [헤럴드경제=박지영·김용훈 기자] 삼성전자 노사 갈등이 창사 이래 최대 규모 총파업 위기로 치닫는 가운데 사측이 교착상태를 깨기 위해 먼저 손을 내미는 모양새다.", "date": "", "evidence_source_id": "news_004020_044451df36e9e265", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10735677?ref=naver", "evidence_published_at": "2026-05-12T08:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "초기업노조에 따르면 사측은 경쟁사인 SK하이닉스 수준의 성과급 기준과 노조가 주장하는 '제도화'도 일부 수용하겠다는 입장을 다시 밝힌 것으로 알려졌다.", "date": "", "evidence_source_id": "news_004020_044451df36e9e265", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10735677?ref=naver", "evidence_published_at": "2026-05-12T08:58:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안", "date": "", "evidence_source_id": "news_004020_044451df36e9e265", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10735677?ref=naver", "evidence_published_at": "2026-05-12T08:58:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "초기업노조에 따르면 사측은 경쟁사인 SK하이닉스 수준의 성과급 기준과 노조가 주장하는 '제도화'도 일부 수용하겠다는 입장을 다시 밝힌 것으로 알려졌다.", "date": "", "evidence_source_id": "news_004020_044451df36e9e265", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10735677?ref=naver", "evidence_published_at": "2026-05-12T08:58:00+09:00"}}

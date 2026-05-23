@@ -1,15 +1,257 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "고부가가치 선박과 친환경 엔진 중심의 조선 및 해양플랜트 사업을 영위"}
 
-// node: company_hd현대중공업
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선 부문 매출과 영업이익 중심으로 HD한국조선해양 실적 성장 주도"}
+
+// node: company_071970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 판매와 생산 캐파 증설 중이며 발전용 엔진 및 AI 데이터센터용 엔진 수요 확대"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "Engine machinery"}
+
+// node: business_area_marine_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_marine_plant", "type": "BusinessArea", "name": "Marine plant"}
+
+// node: business_area_clean_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_clean_energy", "type": "BusinessArea", "name": "Clean energy"}
+
+// node: product_service_lng_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_ship", "type": "ProductService", "name": "LNG carrier"}
+
+// node: product_service_gas_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_gas_ship", "type": "ProductService", "name": "Gas carrier"}
+
+// node: product_service_ecofriendly_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ecofriendly_engine", "type": "ProductService", "name": "Eco-friendly engine"}
+
+// node: product_service_power_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_power_engine", "type": "ProductService", "name": "Power generator engine"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD한국조선해양이 고부가가치 선박 중심으로 수익성 방어에 성공했다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_engine", "properties": {"evidence": "엔진기계·해양플랜트 부문 사업 확대", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_marine_plant", "properties": {"evidence": "엔진기계·해양플랜트 부문 사업 확대", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_clean_energy", "properties": {"evidence": "부유식 해상풍력 발전 사업, SMR 사업을 균형있게 추진 중", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD현대중공업은 올해 1분기 매출 5조9163억원, 영업이익 9054억원을 기록하며 HD한국조선해양의 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "HD현대마린엔진은 엔진 판매 단가 상승과 인도 물량 증가에 힘입어 영업이익이 전년 동기 대비 200% 넘게 증가했다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_lng_ship", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_gas_ship", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "product_service_ecofriendly_engine", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "product_service_power_engine", "properties": {"evidence": "인공지능(AI) 데이터센터 확대에 따른 발전용 엔진 수요 증가에도 주목하고 있다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "조선 부문", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진기계·해양플랜트 부문 사업 확대", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_marine_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진기계·해양플랜트 부문 사업 확대", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_clean_energy", "to_id": "industry_shipbuilding", "properties": {"evidence": "해상풍력 발전 사업, SMR 사업을 균형있게 추진 중", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_gas_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ecofriendly_engine", "to_id": "business_area_engine", "properties": {"evidence": "LNG선과 가스선, 친환경 엔진 중심의 선별 수주 전략이 실적 개선으로 이어졌다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_power_engine", "to_id": "business_area_engine", "properties": {"evidence": "인공지능(AI) 데이터센터 확대에 따른 발전용 엔진 수요 증가에도 주목하고 있다.", "date": "", "evidence_source_id": "news_009540_94655efc2c96225e", "evidence_source_type": "news", "evidence_source_url": "https://www.dailian.co.kr/news/view/1641792/?sc=Naver", "evidence_published_at": "2026-05-07T17:42:00+09:00"}}

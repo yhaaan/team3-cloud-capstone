@@ -1,31 +1,65 @@
-// node: company_hyundaicha
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundaicha", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "임베디드 AI 분야에 참여하는 대기업입니다."}
 
-// node: company_sk
+// node: business_area_embedded_AI
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_embedded_AI", "type": "BusinessArea", "name": "임베디드 AI"}
+
+// node: industry_AI
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_AI", "type": "Industry", "name": "AI"}
+
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// node: company_lg
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lg", "type": "Company", "name": "LG", "stock_code": "003550"}
-
-// node: company_hanwha
+// node: company_003550
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_embedded_AI", "properties": {"evidence": "현대차는 임베디드 AI 분야에 참여를 희망했습니다.", "date": "", "evidence_source_id": "news_005380_c0b9d91ba9cef750", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429181624s8h", "evidence_published_at": "2026-04-29T18:17:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_embedded_AI", "to_id": "industry_AI", "properties": {"evidence": "현대차는 임베디드 AI 분야에 참여를 희망했습니다.", "date": "", "evidence_source_id": "news_005380_c0b9d91ba9cef750", "evidence_source_type": "news", "evidence_source_url": "http://www.yonhapnewstv.co.kr/AKR20260429181624s8h", "evidence_published_at": "2026-04-29T18:17:00+09:00"}}

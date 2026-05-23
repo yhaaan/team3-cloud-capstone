@@ -1,0 +1,101 @@
+// node: company_207940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "바이오의약품 위탁생산(CDMO) 및 세포주·공정개발 서비스를 제공하는 글로벌 바이오 위탁개발생산 기업"}
+
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "바이오의약품 개발 및 상업화 사업 부문으로 분리된 순수 지주회사"}
+
+// node: business_area_cdmo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cdmo", "type": "BusinessArea", "name": "CDMO"}
+
+// node: business_area_biopharmaceutical_development_and_commercialization
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharmaceutical_development_and_commercialization", "type": "BusinessArea", "name": "바이오의약품 개발 및 상업화"}
+
+// node: productservice_biopharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_biopharmaceuticals", "type": "ProductService", "name": "항체의약품"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_cdmo", "properties": {"evidence": "삼성바이오로직스는 바이오의약품 위탁생산 및 세포주ㆍ공정 개발 서비스를 제공하는 CDMO(Contract Development and Manufacturing Organization) 사업을 영위하고 있습니다.", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biopharmaceutical_development_and_commercialization", "properties": {"evidence": "삼성에피스홀딩스 ㈜ 를 설립하기 위한 인적 분할 절차를 완료하여, 바이오의약품 개발 및 상업화 사업 부문을 분리하였습니다.", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "productservice_biopharmaceuticals", "properties": {"evidence": "주요 제품 등의 현황 ... CDMO 제품 등 항체의약품 등 43,583억 원", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cdmo", "to_id": "industry_bio", "properties": {"evidence": "삼성바이오로직스는 바이오의약품 위탁생산 및 세포주ㆍ공정 개발 서비스를 제공하는 CDMO 사업을 영위하고 있습니다.", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharmaceutical_development_and_commercialization", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스 ㈜ 를 설립하기 위한 인적 분할 절차를 완료하여, 바이오의약품 개발 및 상업화 사업 부문을 분리하였습니다.", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_biopharmaceuticals", "to_id": "business_area_cdmo", "properties": {"evidence": "주요 제품 등의 현황 ... CDMO 제품 등 항체의약품 등 43,583억 원", "date": "2026-05-15", "evidence_source_id": "dart_207940_business_segments_20260515001658", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658", "evidence_published_at": "2026-05-15"}}

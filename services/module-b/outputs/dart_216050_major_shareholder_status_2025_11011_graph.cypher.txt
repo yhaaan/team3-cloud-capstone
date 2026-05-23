@@ -1,34 +1,34 @@
-// node: company_incross
+// node: company_216050
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_incross", "type": "Company", "name": "인크로스", "stock_code": "216050"}
+:params {"id": "company_216050", "type": "Company", "name": "인크로스", "stock_code": "216050"}
 
-// node: company_sk_square
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
 
-// node: person_son_yun_jung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_son_yun_jung", "type": "Person", "name": "손윤정", "role_raw": "계열회사 임원", "affiliated_company": "company_incross", "role": "OTHER", "role_label": "계열회사 임원"}
-
-// node: person_park_hee_young
+// node: person_sonyunjung
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_hee_young", "type": "Person", "name": "박희영", "role_raw": "계열회사 임원", "affiliated_company": "company_incross", "role": "OTHER", "role_label": "계열회사 임원"}
+:params {"id": "person_sonyunjung", "type": "Person", "name": "손윤정"}
+
+// node: person_pakhiyoung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_pakhiyoung", "type": "Person", "name": "박희영"}
 
 // relation: INVESTS_IN
 
@@ -37,7 +37,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_incross", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 SK스퀘어, 관계는 본인, 당기말 보유주식수는 4,631,251주, 지분율은 36.06%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_402340", "to_id": "company_216050", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 SK스퀘어, 관계는 본인, 당기말 보유주식수는 4,631,251주, 지분율은 36.06%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}
 
 // relation: AFFILIATED_WITH
 
@@ -46,7 +46,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_son_yun_jung", "to_id": "company_incross", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 손윤정, 관계는 계열회사 임원, 당기말 보유주식수는 50,061주, 지분율은 0.39%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "person_sonyunjung", "to_id": "company_216050", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 손윤정, 관계는 계열회사 임원, 당기말 보유주식수는 50,061주, 지분율은 0.39%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}
 
 // relation: AFFILIATED_WITH
 
@@ -55,4 +55,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_park_hee_young", "to_id": "company_incross", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 박희영, 관계는 계열회사 임원, 당기말 보유주식수는 40,316주, 지분율은 0.31%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "person_pakhiyoung", "to_id": "company_216050", "properties": {"evidence": "인크로스의 최대주주 관련 인물/법인은 박희영, 관계는 계열회사 임원, 당기말 보유주식수는 40,316주, 지분율은 0.31%.", "date": "2026-03-18", "evidence_source_id": "dart_216050_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000011", "evidence_published_at": "2026-03-18"}}

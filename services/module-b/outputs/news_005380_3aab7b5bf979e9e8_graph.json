@@ -2,26 +2,29 @@
   "source_id": "news_005380_3aab7b5bf979e9e8",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "대규모 국내 투자와 미래 모빌리티 패러다임 전환을 주도하며 자동차 산업 생태계 안정화에 기여"
     },
     {
-      "id": "person_장재훈",
-      "type": "Person",
-      "name": "장재훈",
-      "role_raw": "현대차 부회장",
-      "role": "VICE_CHAIRMAN",
-      "role_label": "부회장"
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "자동차"
+    },
+    {
+      "id": "business_area_mobility",
+      "type": "BusinessArea",
+      "name": "미래 모빌리티"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_장재훈",
-      "to": "company_현대차",
-      "evidence": "12일 업계에 따르면 장재훈 현대차 부회장이 금탑산업훈장을 받고, 황기영 KGM 대표가 동탑산업훈장을 받는다.",
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_mobility",
+      "evidence": "장재훈 부회장은 대규모 국내 투자와 함께 미래 모빌리티 패러다임 전환을 주도해 국가 경제 발전에 기여한 공로를 인정받았다.",
       "date": "",
       "evidence_source_id": "news_005380_3aab7b5bf979e9e8",
       "evidence_source_type": "news",
@@ -29,10 +32,21 @@
       "evidence_published_at": "2026-05-12T09:46:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_장재훈",
-      "to": "company_현대차",
+      "type": "PART_OF",
+      "from": "business_area_mobility",
+      "to": "industry_automotive",
       "evidence": "장재훈 부회장은 대규모 국내 투자와 함께 미래 모빌리티 패러다임 전환을 주도해 국가 경제 발전에 기여한 공로를 인정받았다.",
+      "date": "",
+      "evidence_source_id": "news_005380_3aab7b5bf979e9e8",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=201967",
+      "evidence_published_at": "2026-05-12T09:46:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_automotive",
+      "evidence": "이 행사는 자동차산업과 국가 경제에 공헌한 유공자를 대상으로 포상이 진행된다.",
       "date": "",
       "evidence_source_id": "news_005380_3aab7b5bf979e9e8",
       "evidence_source_type": "news",

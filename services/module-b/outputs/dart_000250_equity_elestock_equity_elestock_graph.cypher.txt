@@ -1,0 +1,41 @@
+// node: company_000250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000250", "type": "Company", "name": "삼천당제약", "stock_code": "000250", "description": "삼천당제약의 임원은 대표이사, 회장 등이며 주요주주 및 지분 변동 현황이 보고됨."}
+
+// node: person_jeon_in_seok
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_jeon_in_seok", "type": "Person", "name": "전인석", "role_raw": "대표이사", "role": "CEO", "role_label": "대표이사"}
+
+// node: person_yun_dae_in
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_yun_dae_in", "type": "Person", "name": "윤대인", "role_raw": "회장", "role": "CHAIRMAN", "role_label": "회장"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_jeon_in_seok", "to_id": "company_000250", "properties": {"evidence": "삼천당제약의 임원·주요주주 소유상황 보고자는 전인석, 등기 여부는 등기임원, 직위는 대표이사", "date": "2025-07-24", "evidence_source_id": "dart_000250_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250724000208", "evidence_published_at": "2025-07-24"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_yun_dae_in", "to_id": "company_000250", "properties": {"evidence": "삼천당제약의 임원·주요주주 소유상황 보고자는 윤대인, 등기 여부는 비등기임원, 직위는 회장", "date": "2025-07-24", "evidence_source_id": "dart_000250_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250724000208", "evidence_published_at": "2025-07-24"}}

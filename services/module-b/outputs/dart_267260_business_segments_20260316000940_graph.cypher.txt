@@ -1,0 +1,290 @@
+// node: company_267260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267260", "type": "Company", "name": "HD현대일렉트릭", "stock_code": "267260", "description": "전력기기, 회전기기, 배전기기 등 전력공급 전 단계 기기와 에너지 솔루션을 제작·공급하는 토털 에너지솔루션 기업"}
+
+// node: business_area_electric_power_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_power_equipment", "type": "BusinessArea", "name": "전력기기"}
+
+// node: business_area_rotating_equipments
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_rotating_equipments", "type": "BusinessArea", "name": "회전기기"}
+
+// node: business_area_distribution_equipments
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_distribution_equipments", "type": "BusinessArea", "name": "배전기기"}
+
+// node: product_transformer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_transformer", "type": "ProductService", "name": "변압기"}
+
+// node: product_high_voltage_circuit_breaker
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_high_voltage_circuit_breaker", "type": "ProductService", "name": "고압차단기"}
+
+// node: product_rotating_machines
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_rotating_machines", "type": "ProductService", "name": "회전기"}
+
+// node: product_low_voltage_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_low_voltage_motor", "type": "ProductService", "name": "저압전동기"}
+
+// node: product_distribution_board
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_distribution_board", "type": "ProductService", "name": "배전반"}
+
+// node: product_power_control
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_power_control", "type": "ProductService", "name": "전력제어"}
+
+// node: product_medium_low_voltage_circuit_breaker
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_medium_low_voltage_circuit_breaker", "type": "ProductService", "name": "중저압차단기"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "에너지 솔루션"}
+
+// node: business_area_energy_storage_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_storage_system", "type": "BusinessArea", "name": "에너지저장시스템"}
+
+// node: business_area_solar_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_solar_power", "type": "BusinessArea", "name": "태양광"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_electric_power_equipment", "properties": {"evidence": "25년 누적 연결기준 매출은 4,079,498백만원으로 제품 품목별 비중은 전력기기(변압기, 고압차단기 등) 70%", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_rotating_equipments", "properties": {"evidence": "25년 누적 연결기준 매출은 4,079,498백만원으로 제품 품목별 비중은 ... 회전기기(회전기, 저압전동기 등) 14%", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_distribution_equipments", "properties": {"evidence": "25년 누적 연결기준 매출은 4,079,498백만원으로 제품 품목별 비중은 ... 배전기기등(배전반, 저압차단기, 전력제어, ICT 外) 16%", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_energy_solution", "properties": {"evidence": "시스템을 구축하는 솔루션 사업 및 신ㆍ재생에너지를 활용해 마이크로그리드 단위의 탄소중립을 실현하는융복합사업을 에너지 신사업으로 추진하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_energy_storage_system", "properties": {"evidence": "당사는 2025년 12월말 기준 누적 약 1.6GWh이상의 에너지저장시스템(ESS)을 설치, 운영해 온 우수한 실적을 보유하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_solar_power", "properties": {"evidence": "기존 에너지저장시스템(ESS), 태양광 시장용 전력변환기기 판매 확대", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_transformer", "properties": {"evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 전력변압기, 고압차단기 등이 있으며", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_high_voltage_circuit_breaker", "properties": {"evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 전력변압기, 고압차단기 등이 있으며", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_rotating_machines", "properties": {"evidence": "부하로써 전기에너지를 이용하여 운동에너지를 발생시키는 전동기등의 회전기기가 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_low_voltage_motor", "properties": {"evidence": "부하로써 전기에너지를 이용하여 운동에너지를 발생시키는 전동기등의 회전기기가 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_distribution_board", "properties": {"evidence": "배전 단계(1kV~50kV 중압, 1kV미만 저압)에서 적용되는 배전반, 중저압차단기 등의 배전기기", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_power_control", "properties": {"evidence": "배전 단계(1kV~50kV 중압, 1kV미만 저압)에서 적용되는 배전반, 중저압차단기 등의 배전기기", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "product_medium_low_voltage_circuit_breaker", "properties": {"evidence": "배전 단계(1kV~50kV 중압, 1kV미만 저압)에서 적용되는 배전반, 중저압차단기 등의 배전기기", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_power_equipment", "to_id": "industry_energy", "properties": {"evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rotating_equipments", "to_id": "industry_energy", "properties": {"evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_distribution_equipments", "to_id": "industry_energy", "properties": {"evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "industry_energy", "properties": {"evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_storage_system", "to_id": "business_area_energy_solution", "properties": {"evidence": "기존 에너지저장시스템(ESS), 태양광 시장용 전력변환기기 판매 확대", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_solar_power", "to_id": "business_area_energy_solution", "properties": {"evidence": "기존 에너지저장시스템(ESS), 태양광 시장용 전력변환기기 판매 확대", "date": "2026-03-16", "evidence_source_id": "dart_267260_business_segments_20260316000940", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940", "evidence_published_at": "2026-03-16"}}

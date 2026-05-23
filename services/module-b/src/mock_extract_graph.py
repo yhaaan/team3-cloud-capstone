@@ -17,7 +17,7 @@ MODULE_B_DIR = BASE_DIR.parent
 ROOT_DIR = MODULE_B_DIR.parent.parent
 GRAPH_SCHEMA_PATH = ROOT_DIR / "schemas" / "graph_schema.json"
 
-BUSINESS_AREA_KEYWORDS = [
+INDUSTRY_KEYWORDS = [
     "HBM",
     "cloud",
     "battery",
@@ -64,7 +64,6 @@ def normalize_name(value: str) -> str:
 
 def build_entity_id(entity_type: str, name: str) -> str:
     prefixes = {
-        "business_area": "business_area",
         "product_service": "product_service",
     }
     prefix = prefixes.get(entity_type.lower(), entity_type.lower())
@@ -83,8 +82,7 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
         if company_whitelist.is_allowed_name(company)
     ]
     people = collect_people(doc, content)
-    industries = collect_industries(content)
-    business_areas = collect_business_areas(doc, content)
+    industries = collect_industries(doc, content)
     product_services = collect_product_services(doc, content)
 
     entities: list[dict[str, Any]] = []
@@ -108,15 +106,6 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
     for industry in industries:
         entities.append(
             {"id": build_entity_id("industry", industry), "type": "Industry", "name": industry}
-        )
-
-    for business_area in business_areas:
-        entities.append(
-            {
-                "id": build_entity_id("business_area", business_area),
-                "type": "BusinessArea",
-                "name": business_area,
-            }
         )
 
     for product_service in product_services:
@@ -144,19 +133,6 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
                 build_relation("BELONGS_TO", "company", companies[0], "industry", industry, content)
             )
 
-    if companies and business_areas:
-        for business_area in business_areas:
-            relations.append(
-                build_relation(
-                    "OPERATES_IN",
-                    "company",
-                    companies[0],
-                    "business_area",
-                    business_area,
-                    content,
-                )
-            )
-
     if companies and product_services:
         for product_service in product_services:
             relations.append(
@@ -170,28 +146,15 @@ def extract_graph(doc: dict[str, Any]) -> dict[str, Any]:
                 )
             )
 
-    if business_areas and industries:
-        for business_area in business_areas:
-            relations.append(
-                build_relation(
-                    "PART_OF",
-                    "business_area",
-                    business_area,
-                    "industry",
-                    industries[0],
-                    content,
-                )
-            )
-
-    if product_services and business_areas:
+    if product_services and industries:
         for product_service in product_services:
             relations.append(
                 build_relation(
                     "PART_OF",
                     "product_service",
                     product_service,
-                    "business_area",
-                    business_areas[0],
+                    "industry",
+                    industries[0],
                     content,
                 )
             )
@@ -251,22 +214,12 @@ def collect_people(doc: dict[str, Any], content: str) -> list[dict[str, str]]:
     return deduplicate_people(people)
 
 
-def collect_industries(content: str) -> list[str]:
+def collect_industries(doc: dict[str, Any], content: str) -> list[str]:
     industries = ["AI", "cloud", "semiconductor", "battery", "bio", "shipbuilding", "energy", "IT"]
+    if doc.get("dataset") == "business_segments":
+        industries = deduplicate_strings([*industries, *INDUSTRY_KEYWORDS])
     lower_content = content.lower()
     return [industry for industry in industries if industry.lower() in lower_content]
-
-
-def collect_business_areas(doc: dict[str, Any], content: str) -> list[str]:
-    if doc.get("dataset") != "business_segments":
-        return []
-
-    lower_content = content.lower()
-    return [
-        keyword
-        for keyword in BUSINESS_AREA_KEYWORDS
-        if keyword.lower() in lower_content
-    ]
 
 
 def collect_product_services(doc: dict[str, Any], content: str) -> list[str]:

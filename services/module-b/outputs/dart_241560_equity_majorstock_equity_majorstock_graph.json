@@ -2,23 +2,86 @@
   "source_id": "dart_241560_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_두산밥캣",
+      "id": "company_241560",
       "type": "Company",
       "name": "두산밥캣",
-      "stock_code": "241560"
+      "stock_code": "241560",
+      "description": "건설기계 제조 및 판매를 주력으로 하는 기업"
     },
     {
-      "id": "company_두산에너빌리티",
+      "id": "company_034020",
       "type": "Company",
       "name": "두산에너빌리티",
-      "stock_code": "034020"
+      "stock_code": "034020",
+      "description": "에너지 및 산업 설비 관련 사업을 영위하는 기업"
     },
     {
-      "id": "company_키움증권",
+      "id": "company_039490",
       "type": "Company",
       "name": "키움증권",
-      "stock_code": "039490"
+      "stock_code": "039490",
+      "description": "온라인 증권 중개 및 금융서비스를 제공하는 기업"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "finance"
+    },
+    {
+      "id": "business_area_construction_machinery",
+      "type": "BusinessArea",
+      "name": "construction machinery"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_241560",
+      "to": "business_area_construction_machinery",
+      "evidence": "두산밥캣은 건설기계 제조 및 판매를 주력으로 하는 기업",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction_machinery",
+      "to": "industry_construction",
+      "evidence": "건설기계 제조 및 판매는 건설 산업과 연관 있음",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034020",
+      "to": "industry_construction",
+      "evidence": "두산에너빌리티는 에너지 및 산업 설비 관련 사업을 영위하는 기업",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_039490",
+      "to": "industry_finance",
+      "evidence": "키움증권은 온라인 증권 중개 및 금융서비스를 제공하는 기업",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_241560_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000100",
+      "evidence_published_at": "2026-05-08"
+    }
+  ]
 }

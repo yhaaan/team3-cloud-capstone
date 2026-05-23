@@ -1,0 +1,85 @@
+{
+  "source_id": "news_004020_bdef1871bc48b099",
+  "entities": [
+    {
+      "id": "company_004020",
+      "type": "Company",
+      "name": "현대제철",
+      "stock_code": "004020",
+      "description": "대규모 제철소 건설과 자동차 강판 생산을 주력으로 하는 기업"
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270"
+    },
+    {
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380"
+    },
+    {
+      "id": "business_area_steel_manufacturing",
+      "type": "BusinessArea",
+      "name": "제철소"
+    },
+    {
+      "id": "business_area_automotive_steel",
+      "type": "BusinessArea",
+      "name": "자동차 강판"
+    },
+    {
+      "id": "industry_steel",
+      "type": "Industry",
+      "name": "철강"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_steel_manufacturing",
+      "evidence": "현대제철은 루이지애나주 도날드슨빌 인근 리버플렉스 메가파크 내 1,700에이커 부지에 58억 달러를 투자해 연간 270만 톤 생산 규모의 제철소를 건설할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_004020_bdef1871bc48b099",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187",
+      "evidence_published_at": "2026-05-15T10:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_automotive_steel",
+      "evidence": "현대제철은 해당 공장이 2029년 완공되면 자동차 강판 생산의 핵심 거점이 될 것이라고 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_004020_bdef1871bc48b099",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187",
+      "evidence_published_at": "2026-05-15T10:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_steel_manufacturing",
+      "to": "industry_steel",
+      "evidence": "대규모 제철소 건설 사업",
+      "date": "",
+      "evidence_source_id": "news_004020_bdef1871bc48b099",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187",
+      "evidence_published_at": "2026-05-15T10:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_automotive_steel",
+      "to": "industry_steel",
+      "evidence": "자동차 강판 생산",
+      "date": "",
+      "evidence_source_id": "news_004020_bdef1871bc48b099",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065575690195187",
+      "evidence_published_at": "2026-05-15T10:56:00+09:00"
+    }
+  ]
+}

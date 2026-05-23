@@ -1,7 +1,128 @@
-// node: company_samsung_biologics
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_biologics", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "바이오의약품 위탁생산 공장 운영과 대규모 생산 시설 투자로 글로벌 위탁생산 시장을 선도"}
+
+// node: business_area_biopharmaceutical_cmo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharmaceutical_cmo", "type": "BusinessArea", "name": "바이오의약품 위탁생산"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// node: product_service_biopharmaceutical_cultivation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_biopharmaceutical_cultivation", "type": "ProductService", "name": "바이오의약품 배양"}
+
+// node: product_service_biopharmaceutical_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_biopharmaceutical_manufacturing", "type": "ProductService", "name": "바이오의약품 제조"}
+
+// node: product_service_antibody_drugs
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_antibody_drugs", "type": "ProductService", "name": "항체 의약품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_biopharmaceutical_cmo", "properties": {"evidence": "삼성바이오로직스는 2023년 6월 인천 송도에 위치한 제1바이오캠퍼스 내 마지막 생산 시설인 제4공장의 전체 가동을 공식적으로 개시했다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "industry_bio", "properties": {"evidence": "국내 제약 바이오 업계 최초로 영업이익 1조원 규모를 넘어섰다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "product_service_biopharmaceutical_cultivation", "properties": {"evidence": "제4공장은 단일 공장 기준 세계 최대 규모인 24만리터의 바이오의약품 배양 능력을 갖춘 제조 인프라다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "product_service_biopharmaceutical_manufacturing", "properties": {"evidence": "제4공장은 배양 용량의 확대를 넘어 세포 배양부터 최종 정제까지 전 공정에 자동화 기술을 전면 도입했다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "product_service_antibody_drugs", "properties": {"evidence": "제5공장은 항체 의약품 중심의 기존 생산을 넘어 다양한 모달리티를 취급할 수 있는 유연한 구조로 설계됐다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharmaceutical_cmo", "to_id": "industry_bio", "properties": {"evidence": "국내 제약 바이오 업계 최초로 영업이익 1조원 규모를 넘어섰다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_biopharmaceutical_cultivation", "to_id": "business_area_biopharmaceutical_cmo", "properties": {"evidence": "제4공장은 단일 공장 기준 세계 최대 규모인 24만리터의 바이오의약품 배양 능력을 갖춘 제조 인프라다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_biopharmaceutical_manufacturing", "to_id": "business_area_biopharmaceutical_cmo", "properties": {"evidence": "제4공장은 배양 용량의 확대를 넘어 세포 배양부터 최종 정제까지 전 공정에 자동화 기술을 전면 도입했다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_antibody_drugs", "to_id": "business_area_biopharmaceutical_cmo", "properties": {"evidence": "제5공장은 항체 의약품 중심의 기존 생산을 넘어 다양한 모달리티를 취급할 수 있는 유연한 구조로 설계됐다.", "date": "", "evidence_source_id": "news_207940_25e028517d8264a4", "evidence_source_type": "news", "evidence_source_url": "https://www.smarttoday.co.kr/ko-kr/articles/106975", "evidence_published_at": "2026-04-29T08:02:00+09:00"}}

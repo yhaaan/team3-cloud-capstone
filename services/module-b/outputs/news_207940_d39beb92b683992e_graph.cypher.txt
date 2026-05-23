@@ -1,15 +1,179 @@
-// node: company_삼성바이오로직스
+// node: company_207940
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성바이오로직스", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940"}
+:params {"id": "company_207940", "type": "Company", "name": "삼성바이오로직스", "stock_code": "207940", "description": "위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동을 확대하며 바이오 위탁생산 서비스를 제공"}
 
-// node: company_셀트리온
+// node: company_068270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_셀트리온", "type": "Company", "name": "셀트리온", "stock_code": "068270"}
+:params {"id": "company_068270", "type": "Company", "name": "셀트리온", "stock_code": "068270", "description": "바이오시밀러 및 자가면역질환 치료제 등 고수익 제품군을 중심으로 바이오 의약품 사업을 영위"}
+
+// node: business_area_cmo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cmo", "type": "BusinessArea", "name": "위탁생산"}
+
+// node: business_area_cdo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cdo", "type": "BusinessArea", "name": "위탁개발"}
+
+// node: business_area_biosimilar
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biosimilar", "type": "BusinessArea", "name": "바이오시밀러"}
+
+// node: product_service_omriclo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_omriclo", "type": "ProductService", "name": "옴리클로"}
+
+// node: product_service_jimpentra
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_jimpentra", "type": "ProductService", "name": "짐펜트라"}
+
+// node: product_service_stekima
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_stekima", "type": "ProductService", "name": "스테키마"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_cmo", "properties": {"evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_207940", "to_id": "business_area_cdo", "properties": {"evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cmo", "to_id": "industry_bio", "properties": {"evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cdo", "to_id": "industry_bio", "properties": {"evidence": "현재 삼성바이오로직스는 위탁생산(CMO)과 위탁개발(CDO) 전 분야에서 수주 활동의 보폭을 넓히고 있다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "business_area_biosimilar", "properties": {"evidence": "회사가 주력하고 있는 바이오시밀러 산업의 유럽 주요국 입찰이 보통 2~3분기에 집중되고", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "product_service_omriclo", "properties": {"evidence": "만성 특발성 두드러기 치료제 '옴리클로'는 유럽 주요 시장에서 70~90%대 점유율 확보란 성과를 냈고", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_omriclo", "to_id": "business_area_biosimilar", "properties": {"evidence": "만성 특발성 두드러기 치료제 '옴리클로'는 유럽 주요 시장에서 70~90%대 점유율 확보란 성과를 냈고", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "product_service_jimpentra", "properties": {"evidence": "인플릭시맙 피하주사(SC) 제형 치료제 '짐펜트라' 역시 미국 내 역대 최대 월간 처방량을 경신했다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_jimpentra", "to_id": "business_area_biosimilar", "properties": {"evidence": "인플릭시맙 피하주사(SC) 제형 치료제 '짐펜트라' 역시 미국 내 역대 최대 월간 처방량을 경신했다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_068270", "to_id": "product_service_stekima", "properties": {"evidence": "자가면역질환 치료제 '스테키마'도 올해 3월 기준 10%가 넘는 점유율을 기록했다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_stekima", "to_id": "business_area_biosimilar", "properties": {"evidence": "자가면역질환 치료제 '스테키마'도 올해 3월 기준 10%가 넘는 점유율을 기록했다.", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biosimilar", "to_id": "industry_bio", "properties": {"evidence": "회사가 주력하고 있는 바이오시밀러 산업의 유럽 주요국 입찰이 보통 2~3분기에 집중되고", "date": "", "evidence_source_id": "news_207940_d39beb92b683992e", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260511500454", "evidence_published_at": "2026-05-12T06:44:00+09:00"}}

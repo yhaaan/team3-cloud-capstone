@@ -2,11 +2,72 @@
   "source_id": "news_207940_0c34e1df6e29aa57",
   "entities": [
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "세계 최대 바이오의약품 생산능력을 갖추고 글로벌 CDMO 시장에서 활동하는 기업"
+    },
+    {
+      "id": "business_area_biopharmaceutical_manufacturing",
+      "type": "BusinessArea",
+      "name": "바이오의약품 생산"
+    },
+    {
+      "id": "business_area_cdmo",
+      "type": "BusinessArea",
+      "name": "CDMO"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_biopharmaceutical_manufacturing",
+      "evidence": "특히 회사는 세계 최대 수준의 바이오의약품 생산능력을 기반으로 글로벌 CDMO 시장에서 존재감을 확대하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_0c34e1df6e29aa57",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198550",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_cdmo",
+      "evidence": "특히 회사는 세계 최대 수준의 바이오의약품 생산능력을 기반으로 글로벌 CDMO 시장에서 존재감을 확대하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_0c34e1df6e29aa57",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198550",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biopharmaceutical_manufacturing",
+      "to": "industry_bio",
+      "evidence": "국내 제약·바이오 기업 가운데 연간 영업이익 2조원을 돌파한 사례는 삼성바이오로직스가 처음이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_0c34e1df6e29aa57",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198550",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cdmo",
+      "to": "industry_bio",
+      "evidence": "특히 회사는 세계 최대 수준의 바이오의약품 생산능력을 기반으로 글로벌 CDMO 시장에서 존재감을 확대하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_0c34e1df6e29aa57",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thevaluenews.co.kr/news/view.php?idx=198550",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    }
+  ]
 }

@@ -1,32 +1,93 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "아프리카 모빌리티, 에너지, 건설 신사업 기회를 발굴하는 자동차 기업"}
 
-// node: person_sung_gim
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_sung_gim", "type": "Person", "name": "성 김", "role_raw": "현대차 사장", "affiliated_company": "company_hyundai", "role": "PRESIDENT", "role_label": "사장"}
-
-// node: person_jang_hajun
+// node: business_area_mobility
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_jang_hajun", "type": "Person", "name": "장하준", "role_raw": "런던대 교수", "role": "OTHER", "role_label": "런던대 교수"}
+:params {"id": "business_area_mobility", "type": "BusinessArea", "name": "모빌리티"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지"}
+
+// node: business_area_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "건설"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_sung_gim", "to_id": "company_hyundai", "properties": {"evidence": "성 김 현대차 사장 등 학계와 그룹 핵심 관계자들이 참석해 △그린수소 △핵심 광물 공급망 △인프라 개발 등 아프리카 산업 구조 전환을 위한 핵심 의제를 논의했다.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+:params {"from_id": "company_005380", "to_id": "business_area_mobility", "properties": {"evidence": "아프리카의 방대한 핵심 광물과 성장 잠재력을 바탕으로 모빌리티·에너지·건설을 아우르는 신사업 기회를 발굴하겠다는 구상이다.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_energy", "properties": {"evidence": "아프리카의 방대한 핵심 광물과 성장 잠재력을 바탕으로 모빌리티·에너지·건설을 아우르는 신사업 기회를 발굴하겠다는 구상이다.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_construction", "properties": {"evidence": "아프리카의 방대한 핵심 광물과 성장 잠재력을 바탕으로 모빌리티·에너지·건설을 아우르는 신사업 기회를 발굴하겠다는 구상이다.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility", "to_id": "industry_automotive", "properties": {"evidence": "현대차그룹, 英 런던대학교 SOAS와 아프리카 모빌리티 산업 연구 성과 공유.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy", "to_id": "industry_automotive", "properties": {"evidence": "현대차그룹, 英 런던대학교 SOAS와 아프리카 모빌리티 산업 연구 성과 공유.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_construction", "to_id": "industry_automotive", "properties": {"evidence": "현대차그룹, 英 런던대학교 SOAS와 아프리카 모빌리티 산업 연구 성과 공유.", "date": "", "evidence_source_id": "news_005380_2d86fa1e531dc05a", "evidence_source_type": "news", "evidence_source_url": "https://www.nocutnews.co.kr/news/6510357?utm_source=naver&utm_medium=article&utm_campaign=20260429043532", "evidence_published_at": "2026-04-29T16:36:00+09:00"}}

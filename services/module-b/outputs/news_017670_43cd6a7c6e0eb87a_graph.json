@@ -2,23 +2,157 @@
   "source_id": "news_017670_43cd6a7c6e0eb87a",
   "entities": [
     {
-      "id": "company_sk_telecom",
+      "id": "company_017670",
       "type": "Company",
       "name": "SK텔레콤",
-      "stock_code": "017670"
+      "stock_code": "017670",
+      "description": "데이터센터 사업 확장과 AI 인프라 중심의 통신 서비스 제공"
     },
     {
-      "id": "company_kt",
+      "id": "company_030200",
       "type": "Company",
       "name": "KT",
-      "stock_code": "030200"
+      "stock_code": "030200",
+      "description": "보안 체계 구조개편과 이동전화 서비스를 주력으로 하는 통신 기업"
     },
     {
-      "id": "company_lguplus",
+      "id": "company_032640",
       "type": "Company",
       "name": "LG유플러스",
-      "stock_code": "032640"
+      "stock_code": "032640",
+      "description": "유무선 가입자 기반과 기업 인프라(AIDC) 중심 통신 서비스 제공"
+    },
+    {
+      "id": "business_area_data_center",
+      "type": "BusinessArea",
+      "name": "데이터센터"
+    },
+    {
+      "id": "business_area_ai_infrastructure",
+      "type": "BusinessArea",
+      "name": "AI 인프라"
+    },
+    {
+      "id": "business_area_security",
+      "type": "BusinessArea",
+      "name": "보안"
+    },
+    {
+      "id": "industry_telecommunication",
+      "type": "Industry",
+      "name": "이동통신"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_data_center",
+      "evidence": "판교 데이터센터 인수와 기존 센터 상면 증설로 데이터센터 사업의 외형 성장이 기대되고",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_ai_infrastructure",
+      "evidence": "'AI 인프라'로 무게중심을 옮겼는지가 실적의 방향을 갈랐다.",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_security",
+      "evidence": "KT는 보안 체계의 구조개편으로 서로 다른 해법을 택했다.",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032640",
+      "to": "business_area_ai_infrastructure",
+      "evidence": "LG유플러스는 비용 효율화와 AIDC 확대로 서로 다른 해법을 택했다.",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "industry_telecommunication",
+      "evidence": "국내 이동통신 3사의 1분기 성적표",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "industry_telecommunication",
+      "evidence": "국내 이동통신 3사의 1분기 성적표",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032640",
+      "to": "industry_telecommunication",
+      "evidence": "국내 이동통신 3사의 1분기 성적표",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_data_center",
+      "to": "industry_telecommunication",
+      "evidence": "데이터센터 사업의 외형 성장이 기대되고",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_infrastructure",
+      "to": "industry_telecommunication",
+      "evidence": "'AI 인프라'로 무게중심을 옮겼는지가 실적의 방향을 갈랐다.",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_security",
+      "to": "industry_telecommunication",
+      "evidence": "보안·보상 비용이 단기 이익을 잠식하는 동안",
+      "date": "",
+      "evidence_source_id": "news_017670_43cd6a7c6e0eb87a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.weeklytoday.com/news/articleView.html?idxno=774635",
+      "evidence_published_at": "2026-05-07T20:20:00+09:00"
+    }
+  ]
 }

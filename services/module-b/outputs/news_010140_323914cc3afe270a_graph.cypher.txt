@@ -1,0 +1,49 @@
+// node: company_010140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "조선 및 해양 플랜트 사업, 강재 구매와 조경공사 관련 상품·용역 거래 진행"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260", "description": "건설 및 상사 부문 등 다양한 사업 영역 보유"}
+
+// node: business_area_steel_purchase
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_steel_purchase", "type": "BusinessArea", "name": "강재 구매"}
+
+// node: business_area_landscaping_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_landscaping_construction", "type": "BusinessArea", "name": "조경공사"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_steel_purchase", "properties": {"evidence": "해당 거래는 강재구매와 조경공사 등을 목적으로 진행됐다.", "date": "", "evidence_source_id": "news_010140_323914cc3afe270a", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=662524", "evidence_published_at": "2026-05-15T16:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010140", "to_id": "business_area_landscaping_construction", "properties": {"evidence": "해당 거래는 강재구매와 조경공사 등을 목적으로 진행됐다.", "date": "", "evidence_source_id": "news_010140_323914cc3afe270a", "evidence_source_type": "news", "evidence_source_url": "https://www.bloter.net/news/articleView.html?idxno=662524", "evidence_published_at": "2026-05-15T16:02:00+09:00"}}

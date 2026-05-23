@@ -1,0 +1,92 @@
+// node: company_323410
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_323410", "type": "Company", "name": "카카오뱅크", "stock_code": "323410", "description": "카카오뱅크의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다."}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720"}
+
+// node: company_293490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_293490", "type": "Company", "name": "카카오게임즈", "stock_code": "293490"}
+
+// node: company_376300
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_376300", "type": "Company", "name": "디어유", "stock_code": "376300"}
+
+// node: company_377300
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_377300", "type": "Company", "name": "카카오페이", "stock_code": "377300"}
+
+// node: company_054780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_054780", "type": "Company", "name": "키이스트", "stock_code": "054780"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_323410", "to_id": "company_035720", "properties": {"evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_323410_affiliate_status_20260318000884", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_323410", "to_id": "company_293490", "properties": {"evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_323410_affiliate_status_20260318000884", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_323410", "to_id": "company_376300", "properties": {"evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_323410_affiliate_status_20260318000884", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_323410", "to_id": "company_377300", "properties": {"evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_323410_affiliate_status_20260318000884", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884", "evidence_published_at": "2026-03-18"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_323410", "to_id": "company_054780", "properties": {"evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_323410_affiliate_status_20260318000884", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884", "evidence_published_at": "2026-03-18"}}

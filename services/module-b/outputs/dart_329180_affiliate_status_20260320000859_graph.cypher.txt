@@ -1,0 +1,263 @@
+// node: company_329180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "HD현대중공업의 사업보고서 (2025.12)에서 상장 계열회사 후보로 HD현대 등 다수를 포함"}
+
+// node: company_267250
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250", "description": "HD현대 사업보고서에서 HR지원, 안전책임 등 경영지원 부문 핵심 역할"}
+
+// node: company_009540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "HD한국조선해양은 전략마케팅, 국제법무, SCM 등 조선사업 관련 부문 운영"}
+
+// node: company_071970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "HD현대마린엔진은 경영지원 담당 임원 상근"}
+
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+
+// node: company_267260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_267260", "type": "Company", "name": "HD현대일렉트릭", "stock_code": "267260"}
+
+// node: company_443060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_443060", "type": "Company", "name": "HD현대마린솔루션", "stock_code": "443060"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "machinery"}
+
+// node: business_area_chshipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_chshipbuilding", "type": "BusinessArea", "name": "shipbuilding"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "energy solution"}
+
+// node: business_area_marine_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_marine_engine", "type": "BusinessArea", "name": "marine engine"}
+
+// node: business_area_electric
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric", "type": "BusinessArea", "name": "electric equipment"}
+
+// node: business_area_marine_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_marine_solution", "type": "BusinessArea", "name": "marine solution"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_267250", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 HD현대 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_009540", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 ... HD한국조선해양 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_071970", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 ... HD현대마린엔진 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_322000", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 ... HD현대에너지솔루션 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_267260", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 ... HD현대일렉트릭 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "company_443060", "properties": {"evidence": "HD현대중공업의 상장 계열회사 후보로 ... HD현대마린솔루션 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_chshipbuilding", "properties": {"evidence": "HD한국조선해양은 전략마케팅 본부장, SCM 부문장 등 조선 관련 부문 인력 구성", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267250", "to_id": "business_area_energy_solution", "properties": {"evidence": "HD현대 사업보고서에서 HR지원, 안전책임 등 경영지원 부문 핵심 역할", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_marine_engine", "properties": {"evidence": "HD현대마린엔진은 경영지원 담당 임원 상근", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267260", "to_id": "business_area_electric", "properties": {"evidence": "HD현대일렉트릭이 상장 계열회사 후보로 탐지됨", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_443060", "to_id": "business_area_marine_solution", "properties": {"evidence": "HD현대마린솔루션이 상장 계열회사 후보로 탐지됨", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_chshipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD한국조선해양은 조선 관련 부문 운영", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "industry_energy", "properties": {"evidence": "HD현대 경영지원 등 핵심 역할 내용에서 에너지솔루션 관련 정황", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_marine_engine", "to_id": "industry_machinery", "properties": {"evidence": "HD현대마린엔진은 기계/엔진 관련 사업", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric", "to_id": "industry_machinery", "properties": {"evidence": "HD현대일렉트릭은 전기 관련 사업", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_marine_solution", "to_id": "industry_machinery", "properties": {"evidence": "HD현대마린솔루션이 해양 솔루션 사업에 종사", "date": "2026-03-20", "evidence_source_id": "dart_329180_affiliate_status_20260320000859", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859", "evidence_published_at": "2026-03-20"}}

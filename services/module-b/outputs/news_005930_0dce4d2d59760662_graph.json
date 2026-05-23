@@ -1,0 +1,62 @@
+{
+  "source_id": "news_005930_0dce4d2d59760662",
+  "entities": [
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "삼성전자는 반도체, 가전, 모바일 등 다양한 디바이스 경험 사업을 영위합니다."
+    },
+    {
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "반도체"
+    },
+    {
+      "id": "business_area_device_experience",
+      "type": "BusinessArea",
+      "name": "디바이스경험"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_semiconductor",
+      "evidence": "파업이 현실화하면 반도체 라인 가동 차질에 따른 직간접 손실이 최대 100조 원에 달할 것이라는 관측까지 나온다.",
+      "date": "",
+      "evidence_source_id": "news_005930_0dce4d2d59760662",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051713371257693",
+      "evidence_published_at": "2026-05-17T15:04:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_device_experience",
+      "evidence": "가전·모바일 등 디바이스경험 부문 조합원 4000여 명이 최대 노조 초기업노동조합 삼성전자지부 탈퇴를 신청해 7만 1750명 조합원 수가 과반 유지선(6만 4000명)에 바짝 다가섰다.",
+      "date": "",
+      "evidence_source_id": "news_005930_0dce4d2d59760662",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051713371257693",
+      "evidence_published_at": "2026-05-17T15:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "파업이 현실화하면 반도체 라인 가동 차질에 따른 직간접 손실이 최대 100조 원에 달할 것이라는 관측까지 나온다.",
+      "date": "",
+      "evidence_source_id": "news_005930_0dce4d2d59760662",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051713371257693",
+      "evidence_published_at": "2026-05-17T15:04:00+09:00"
+    }
+  ]
+}

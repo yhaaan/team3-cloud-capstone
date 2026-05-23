@@ -1,24 +1,67 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "전기차 등 자동차 생산과 판매, 중국 전기차 현지모델 아이오닉V 출시로 시장 재공략 중"}
 
-// node: person_정의선
+// node: business_area_electric_vehicle
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_정의선", "type": "Person", "name": "정의선", "role_raw": "현대차 회장", "affiliated_company": "company_현대차", "role": "CHAIRMAN", "role_label": "회장"}
+:params {"id": "business_area_electric_vehicle", "type": "BusinessArea", "name": "전기차"}
 
-// relation: AFFILIATED_WITH
+// node: product_service_ionicv
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ionicv", "type": "ProductService", "name": "아이오닉V"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_정의선", "to_id": "company_현대차", "properties": {"evidence": "정의선 현대차그룹 회장이 8년 만에 세계 최대 자동차 전시회인 베이징 모터쇼를 찾았다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}
+:params {"from_id": "company_005380", "to_id": "business_area_electric_vehicle", "properties": {"evidence": "정 회장은 이날 현대차 전시부스를 찾아 현지 전용 전기차 모델인 '아이오닉V' 등을 둘러본 것으로 전해졌다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_ionicv", "properties": {"evidence": "현대차는 이번 베이징 모터쇼에서 중국 내수 시장만을 겨냥한 아이오닉V를 처음 선보이며 중국 시장 재공략을 준비하고 있다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ionicv", "to_id": "business_area_electric_vehicle", "properties": {"evidence": "현대차는 이번 베이징 모터쇼에서 중국 내수 시장만을 겨냥한 아이오닉V를 처음 선보이며 중국 시장 재공략을 준비하고 있다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_vehicle", "to_id": "industry_automotive", "properties": {"evidence": "정의선 현대차그룹 회장이 8년 만에 세계 최대 자동차 전시회인 베이징 모터쇼를 찾았다.", "date": "", "evidence_source_id": "news_005380_b81466ee52e4104b", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038788?ref=naver", "evidence_published_at": "2026-04-29T18:30:00+09:00"}}

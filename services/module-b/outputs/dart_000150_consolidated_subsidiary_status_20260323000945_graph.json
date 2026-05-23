@@ -2,54 +2,115 @@
   "source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
   "entities": [
     {
-      "id": "company_dusan",
+      "id": "company_000150",
       "type": "Company",
-      "name": "두산",
-      "stock_code": "000150"
+      "name": "페스카로",
+      "stock_code": "000150",
+      "description": "두산은 반도체, 산업용 로봇, 터빈 제조, 지주회사 및 제조업 분야를 주요 사업으로 함."
     },
     {
-      "id": "company_oricom",
+      "id": "company_010470",
       "type": "Company",
       "name": "오리콤",
       "stock_code": "010470"
     },
     {
-      "id": "company_dusantasna",
+      "id": "company_131970",
       "type": "Company",
       "name": "두산테스나",
       "stock_code": "131970"
     },
     {
-      "id": "company_dusanrobotics",
+      "id": "company_454910",
       "type": "Company",
       "name": "두산로보틱스",
       "stock_code": "454910"
     },
     {
-      "id": "company_dusanenerbility",
+      "id": "company_034020",
       "type": "Company",
       "name": "두산에너빌리티",
       "stock_code": "034020"
     },
     {
-      "id": "company_dusanbobcat",
+      "id": "company_241560",
       "type": "Company",
       "name": "두산밥캣",
       "stock_code": "241560"
     },
     {
-      "id": "company_dusanfuelcell",
+      "id": "company_336260",
       "type": "Company",
       "name": "두산퓨얼셀",
       "stock_code": "336260"
+    },
+    {
+      "id": "business_area_advertising",
+      "type": "BusinessArea",
+      "name": "광고업"
+    },
+    {
+      "id": "business_area_semiconductor_test_engineering",
+      "type": "BusinessArea",
+      "name": "반도체 테스트 및 엔지니어링"
+    },
+    {
+      "id": "business_area_industrial_robot",
+      "type": "BusinessArea",
+      "name": "산업용 로봇 제조업"
+    },
+    {
+      "id": "business_area_turbine_manufacturing",
+      "type": "BusinessArea",
+      "name": "터빈 제조업"
+    },
+    {
+      "id": "business_area_holding",
+      "type": "BusinessArea",
+      "name": "지주회사"
+    },
+    {
+      "id": "business_area_manufacturing",
+      "type": "BusinessArea",
+      "name": "제조업"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "robotics"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "energy"
+    },
+    {
+      "id": "industry_advertising",
+      "type": "Industry",
+      "name": "advertising"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "finance"
+    },
+    {
+      "id": "industry_manufacturing",
+      "type": "Industry",
+      "name": "manufacturing"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_oricom",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_010470",
+      "evidence": "두산의 연결대상 종속회사 후보로 오리콤 ... 의결권의 과반수 소유",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -57,10 +118,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusantasna",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_131970",
+      "evidence": "두산의 연결대상 종속회사 후보로 ... 두산테스나 ... 실질지배력(주2)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -68,10 +129,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanrobotics",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_454910",
+      "evidence": "두산로보틱스㈜ ... 의결권의 과반수 소유",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -79,10 +140,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanenerbility",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_034020",
+      "evidence": "두산에너빌리티㈜ ... 실질지배력(주2)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -90,10 +151,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanbobcat",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_241560",
+      "evidence": "두산밥캣 주식회사 ... 실질지배력(주2)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -101,10 +162,142 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanfuelcell",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_336260",
+      "evidence": "두산퓨얼셀㈜ ... 실질지배력(주2)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010470",
+      "to": "business_area_advertising",
+      "evidence": "㈜오리콤 ... 광고업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_advertising",
+      "to": "industry_advertising",
+      "evidence": "㈜오리콤 ... 광고업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_131970",
+      "to": "business_area_semiconductor_test_engineering",
+      "evidence": "㈜두산테스나 ... 반도체 제조관련 테스트 및 엔지니어링",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor_test_engineering",
+      "to": "industry_semiconductor",
+      "evidence": "㈜두산테스나 ... 반도체 제조관련 테스트 및 엔지니어링",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_454910",
+      "to": "business_area_industrial_robot",
+      "evidence": "두산로보틱스㈜ ... 산업용 로봇 제조업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_industrial_robot",
+      "to": "industry_robotics",
+      "evidence": "두산로보틱스㈜ ... 산업용 로봇 제조업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034020",
+      "to": "business_area_turbine_manufacturing",
+      "evidence": "두산에너빌리티㈜ ... 기타기관 및 터빈제조업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_turbine_manufacturing",
+      "to": "industry_energy",
+      "evidence": "두산에너빌리티㈜ ... 기타기관 및 터빈제조업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_241560",
+      "to": "business_area_holding",
+      "evidence": "두산밥캣 주식회사 ... 지주회사",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_holding",
+      "to": "industry_finance",
+      "evidence": "두산밥캣 주식회사 ... 지주회사",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_336260",
+      "to": "business_area_manufacturing",
+      "evidence": "두산퓨얼셀㈜ ... 제조업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_manufacturing",
+      "to": "industry_manufacturing",
+      "evidence": "두산퓨얼셀㈜ ... 제조업",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",

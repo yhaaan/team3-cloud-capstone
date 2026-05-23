@@ -1,0 +1,74 @@
+{
+  "source_id": "dart_298040_consolidated_subsidiary_status_20260323001004",
+  "entities": [
+    {
+      "id": "company_298040",
+      "type": "Company",
+      "name": "효성중공업",
+      "stock_code": "298040",
+      "description": "효성중공업은 종속회사 진흥기업 등과 함께 건설 사업을 영위한다."
+    },
+    {
+      "id": "company_002780",
+      "type": "Company",
+      "name": "진흥기업",
+      "stock_code": "002780"
+    },
+    {
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "건설"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_298040",
+      "to": "company_002780",
+      "evidence": "효성중공업의 연결대상 종속회사 후보로 진흥기업 등이 탐지되었다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_298040",
+      "to": "business_area_construction",
+      "evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_002780",
+      "to": "business_area_construction",
+      "evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction",
+      "to": "industry_construction",
+      "evidence": "진흥기업㈜ | 1959.09.03 | 인천광역시 연수구 | 건설 | 543,585 | 실질지배력 행사기준 (기업회계기준서 제1110호) | 해당 (직전연도말 자산총액 750억원 이상)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_consolidated_subsidiary_status_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

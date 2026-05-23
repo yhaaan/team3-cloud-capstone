@@ -1,7 +1,153 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "자동차 및 인공지능 기반 로보틱스와 자율주행 기술 제조와 운영을 주요 사업으로 함"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차"}
+
+// node: business_area_ai_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_robotics", "type": "BusinessArea", "name": "인공지능 로보틱스"}
+
+// node: business_area_autonomous_driving
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_autonomous_driving", "type": "BusinessArea", "name": "자율주행"}
+
+// node: product_service_humanoid_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_humanoid_robot", "type": "ProductService", "name": "휴머노이드"}
+
+// node: product_service_robottaxi_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_robottaxi_service", "type": "ProductService", "name": "로보택시"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "현대차는 자동차를 제조 및 운영한다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_ai_robotics", "properties": {"evidence": "현대차는 미국 자회사 보스턴다이나믹스를 통해 인공지능에 기반한 인간형 2족보행 로봇(휴머노이드) 아틀라스를 제조 및 운영한다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_autonomous_driving", "properties": {"evidence": "현대차그룹의 기술 자회사 모셔널은... 인공지능 자율주행 무인 차량호출 서비스인 로보택시를 시범 운영하고 있다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_humanoid_robot", "properties": {"evidence": "현대차는 인공지능에 기반한 인간형 2족보행 로봇(휴머노이드) 아틀라스를 제조 및 운영한다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "product_service_robottaxi_service", "properties": {"evidence": "모셔널은 인공지능 자율주행 무인 차량호출 서비스인 로보택시를 시범 운영하고 있다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "자동차·부품", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_robotics", "to_id": "industry_ai", "properties": {"evidence": "현대차는 인공지능에 기반한 인간형 2족보행 로봇(휴머노이드) 아틀라스를 제조 및 운영한다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_autonomous_driving", "to_id": "industry_ai", "properties": {"evidence": "현대차그룹의 기술 자회사 모셔널은 인공지능 자율주행 무인 차량호출 서비스인 로보택시를 시범 운영하고 있다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_humanoid_robot", "to_id": "business_area_ai_robotics", "properties": {"evidence": "인공지능에 기반한 인간형 2족보행 로봇(휴머노이드) 아틀라스를 제조 및 운영한다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_robottaxi_service", "to_id": "business_area_autonomous_driving", "properties": {"evidence": "인공지능 자율주행 무인 차량호출 서비스인 로보택시를 시범 운영하고 있다.", "date": "", "evidence_source_id": "news_005380_56de347796f40771", "evidence_source_type": "news", "evidence_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=436832", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}

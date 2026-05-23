@@ -2,32 +2,47 @@
   "source_id": "news_005930_7c11fa9405aaeb6c",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체, 디스플레이, 바이오 등 다양한 사업 영역을 운영하는 글로벌 전자 기업"
     },
     {
-      "id": "company_samsung_biologics",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "바이오의약품 위탁생산 및 바이오 사업을 영위하는 삼성 계열사"
     },
     {
-      "id": "person_unknown_representative",
-      "type": "Person",
-      "name": "박재성",
-      "role_raw": "지부장",
-      "role": "OTHER",
-      "role_label": "지부장"
+      "id": "business_area_bio",
+      "type": "BusinessArea",
+      "name": "바이오"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_unknown_representative",
-      "to": "company_samsung_biologics",
-      "evidence": "삼성바이오로직스지부가 다음달 1일부터 파업을 선언한 가운데 박재성 지부장이 현재 해외에서 휴가를 보내고 있는 것이 대표적이다.",
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_bio",
+      "evidence": "삼성바이오로직스 상생노조가 연합해 2024년 출범한 조직으로 양대 노총 가입을 반대하는 MZ 세대(1981~2011년생)가 주축을 이루고 있다.",
+      "date": "",
+      "evidence_source_id": "news_005930_7c11fa9405aaeb6c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.segyebiz.com/newsView/20260429518326?OutUrl=naver",
+      "evidence_published_at": "2026-04-29T18:54:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_bio",
+      "to": "industry_bio",
+      "evidence": "바이오의약품 위탁생산 및 바이오 사업을 영위하는 삼성 계열사",
       "date": "",
       "evidence_source_id": "news_005930_7c11fa9405aaeb6c",
       "evidence_source_type": "news",

@@ -1,114 +1,122 @@
-// node: company_sk_square
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "SK스퀘어의 임원 소유상황 보고서에 따르면 비등기임원 및 등기임원들이 보유주식을 소유하고 있음"}
 
-// node: person_gi_eun_sun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_gi_eun_sun", "type": "Person", "name": "기은선", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
-
-// node: person_park_seung_gu
+// node: person_김재린
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_park_seung_gu", "type": "Person", "name": "박승구", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
+:params {"id": "person_김재린", "type": "Person", "name": "김재린", "role_raw": "MD", "role": "OTHER", "role_label": "MD"}
 
-// node: person_kang_ho_in
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kang_ho_in", "type": "Person", "name": "강호인", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
-
-// node: person_hong_ji_hoon
+// node: person_소영환
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_hong_ji_hoon", "type": "Person", "name": "HONGJIHOON", "role": "OUTSIDE_DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "사외이사", "role_label": "사외이사"}
+:params {"id": "person_소영환", "type": "Person", "name": "소영환", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
 
-// node: person_so_young_hwan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_so_young_hwan", "type": "Person", "name": "소영환", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
-
-// node: person_kim_jae_rin
+// node: person_김용훈
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_jae_rin", "type": "Person", "name": "김재린", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "MD", "role_label": "MD"}
+:params {"id": "person_김용훈", "type": "Person", "name": "김용훈", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
 
-// node: person_yoo_young_sang
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_yoo_young_sang", "type": "Person", "name": "유영상", "role": "DIRECTOR", "affiliated_company": "company_sk_square", "role_raw": "기타비상무이사", "role_label": "이사"}
-
-// node: person_kim_yong_hun
+// node: person_유영상
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_kim_yong_hun", "type": "Person", "name": "김용훈", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
+:params {"id": "person_유영상", "type": "Person", "name": "유영상", "role_raw": "기타비상무이사", "role": "DIRECTOR", "role_label": "이사"}
 
-// node: person_kim_byung_yoon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_byung_yoon", "type": "Person", "name": "김병윤", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
-
-// node: person_oh_jung_seok
+// node: person_오중석
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_oh_jung_seok", "type": "Person", "name": "오중석", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
+:params {"id": "person_오중석", "type": "Person", "name": "오중석", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
 
-// node: person_kim_dong_hyun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_kim_dong_hyun", "type": "Person", "name": "김동현", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
-
-// node: person_koo_ja_sung
+// node: person_김동현
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_koo_ja_sung", "type": "Person", "name": "구자성", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "담당", "role_label": "담당"}
+:params {"id": "person_김동현", "type": "Person", "name": "김동현", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
 
-// node: person_song_jae_seung
+// node: person_송재승
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_song_jae_seung", "type": "Person", "name": "송재승", "role": "OTHER", "affiliated_company": "company_sk_square", "role_raw": "CIO", "role_label": "CIO"}
+:params {"id": "person_송재승", "type": "Person", "name": "송재승", "role_raw": "CIO", "role": "OTHER", "role_label": "CIO"}
+
+// node: person_김병윤
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김병윤", "type": "Person", "name": "김병윤", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
+
+// node: person_구자성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_구자성", "type": "Person", "name": "구자성", "role_raw": "담당", "role": "OTHER", "role_label": "담당"}
+
+// node: person_강호인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_강호인", "type": "Person", "name": "강호인", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_박승구
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박승구", "type": "Person", "name": "박승구", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_기은선
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_기은선", "type": "Person", "name": "기은선", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_HONGJIHOON
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_HONGJIHOON", "type": "Person", "name": "HONGJIHOON", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_서영호
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_서영호", "type": "Person", "name": "서영호", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
 
 // relation: AFFILIATED_WITH
 
@@ -117,7 +125,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_gi_eun_sun", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 기은선, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 3,837주, 주식수 증감은 584, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_김재린", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김재린, 등기 여부는 비등기임원, 직위는 MD, 보유주식수는 111주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -126,7 +134,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_park_seung_gu", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 박승구, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 7,837주, 주식수 증감은 584, 지분율은 0.01%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_소영환", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 소영환, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 400주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -135,7 +143,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kang_ho_in", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 강호인, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 3,797주, 주식수 증감은 584, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_김용훈", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김용훈, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 200주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -144,7 +152,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_hong_ji_hoon", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 HONGJIHOON, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 584주, 주식수 증감은 584, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_유영상", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 유영상, 등기 여부는 등기임원, 직위는 기타비상무이사, 보유주식수는 9,938주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -153,7 +161,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_so_young_hwan", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 소영환, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 400주, 주식수 증감은 400, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_오중석", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 오중석, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 4,651주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -162,7 +170,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kim_jae_rin", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김재린, 등기 여부는 비등기임원, 직위는 MD, 보유주식수는 111주, 주식수 증감은 111, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_김동현", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김동현, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 6,313주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -171,7 +179,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_yoo_young_sang", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 유영상, 등기 여부는 등기임원, 직위는 기타비상무이사, 보유주식수는 9,938주, 주식수 증감은 9,938, 지분율은 0.01%, 지분율 증감은 0.01.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_송재승", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 송재승, 등기 여부는 비등기임원, 직위는 CIO, 보유주식수는 17,018주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -180,7 +188,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kim_yong_hun", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김용훈, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 200주, 주식수 증감은 200, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_김병윤", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김병윤, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 3,061주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -189,7 +197,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kim_byung_yoon", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김병윤, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 3,061주, 주식수 증감은 1,561, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_구자성", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 구자성, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 2,683주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -198,7 +206,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_oh_jung_seok", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 오중석, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 4,651주, 주식수 증감은 -1,000, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_강호인", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 강호인, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 3,893주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -207,7 +215,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_kim_dong_hyun", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 김동현, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 6,313주, 주식수 증감은 2,921, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_박승구", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 박승구, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 7,897주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -216,7 +224,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_koo_ja_sung", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 구자성, 등기 여부는 비등기임원, 직위는 담당, 보유주식수는 2,683주, 주식수 증감은 582, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_기은선", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 기은선, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 3,897주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
 
 // relation: AFFILIATED_WITH
 
@@ -225,4 +233,13 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_song_jae_seung", "to_id": "company_sk_square", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 송재승, 등기 여부는 비등기임원, 직위는 CIO, 보유주식수는 17,018주, 주식수 증감은 12,018, 지분율은 0.01%, 지분율 증감은 0.01.", "date": "2026-04-07", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000855", "evidence_published_at": "2026-04-07"}}
+:params {"from_id": "person_HONGJIHOON", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 HONGJIHOON, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 644주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_서영호", "to_id": "company_402340", "properties": {"evidence": "SK스퀘어의 임원·주요주주 소유상황 보고자는 서영호, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 60주", "date": "2026-05-13", "evidence_source_id": "dart_402340_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260107000453", "evidence_published_at": "2026-05-13"}}

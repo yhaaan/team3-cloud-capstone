@@ -1,71 +1,41 @@
-// node: company_dosanjbobket
+// node: company_241560
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosanjbobket", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560", "description": "두산밥캣은 북미 자재 취급(Materiel Handling) 부문을 중심으로 물류장비 시장에서 사업을 영위한다."}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_skhyunics
+// node: business_area_material_handling
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_skhyunics", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "business_area_material_handling", "type": "BusinessArea", "name": "자재 취급"}
 
-// node: company_dosan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
-
-// node: company_samsung_electronics
+// node: industry_logistics
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "industry_logistics", "type": "Industry", "name": "물류장비"}
 
-// node: company_hanwha
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"from_id": "company_241560", "to_id": "business_area_material_handling", "properties": {"evidence": "두산밥캣(Bobcat Company)이 북미 자재 취급(Material Handling) 부문의 성장을 견인해 온 최우수 딜러 파트너들을 선정하며 시장 지배력 강화에 나섰다.", "date": "", "evidence_source_id": "news_241560_c75d832f692cfec9", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026050108291022760c8c1c064d_1", "evidence_published_at": "2026-05-01T08:32:00+09:00"}}
 
-// node: company_hanwha_ocean
+// relation: PART_OF
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
-
-// node: person_mike_ballweber
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_mike_ballweber", "type": "Person", "name": "Mike Ballweber", "role": "PRESIDENT", "affiliated_company": "company_dosanjbobket", "role_raw": "북미 사장", "role_label": "사장"}
-
-// node: person_no_taemun
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_no_taemun", "type": "Person", "name": "노태문", "role": "CEO", "affiliated_company": "company_samsung_electronics", "role_raw": "대표", "role_label": "대표이사"}
+:params {"from_id": "business_area_material_handling", "to_id": "industry_logistics", "properties": {"evidence": "자재 취급 장비가 전동화 및 자율주행으로 진화함에 따라, 현장의 피드백을 즉각 제품 개발에 투입하는 피드백 루프(Feedback Loop)를 강화하여 기술 우위를 점해야 할 것이다.", "date": "", "evidence_source_id": "news_241560_c75d832f692cfec9", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=2026050108291022760c8c1c064d_1", "evidence_published_at": "2026-05-01T08:32:00+09:00"}}

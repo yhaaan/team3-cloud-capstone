@@ -1,26 +1,26 @@
-// node: company_dosan_energybility
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energybility", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "연결대상 종속회사로 두산밥캣, 두산퓨얼셀을 보유한 회사"}
 
-// node: company_dosan_bobcat
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosan_bobcat", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
-
-// node: company_dosan_fuelcell
+// node: company_241560
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_fuelcell", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+
+// node: company_336260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
 
 // relation: ACQUIRES
 
@@ -29,7 +29,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosan_energybility", "to_id": "company_dosan_bobcat", "properties": {"evidence": "두산에너빌리티의 연결대상 종속회사 후보로 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_034020_consolidated_subsidiary_status_20260320001246", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001246", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_034020", "to_id": "company_241560", "properties": {"evidence": "두산에너빌리티의 연결대상 종속회사 후보로 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_034020_consolidated_subsidiary_status_20260320001246", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001246", "evidence_published_at": "2026-03-20"}}
 
 // relation: ACQUIRES
 
@@ -38,4 +38,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dosan_energybility", "to_id": "company_dosan_fuelcell", "properties": {"evidence": "두산에너빌리티의 연결대상 종속회사 후보로 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_034020_consolidated_subsidiary_status_20260320001246", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001246", "evidence_published_at": "2026-03-20"}}
+:params {"from_id": "company_034020", "to_id": "company_336260", "properties": {"evidence": "두산에너빌리티의 연결대상 종속회사 후보로 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-20", "evidence_source_id": "dart_034020_consolidated_subsidiary_status_20260320001246", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001246", "evidence_published_at": "2026-03-20"}}

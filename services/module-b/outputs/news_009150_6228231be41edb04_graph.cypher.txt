@@ -1,40 +1,84 @@
-// node: company_samsung_electrics
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electrics", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "MLCC, 패키지기판 등 전자부품을 생산하며 AI 산업 성장에 주력하는 기업"}
 
-// node: company_woosung
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_woosung", "type": "Company", "name": "우성", "stock_code": "006980"}
-
-// node: company_cosmos_hysco
+// node: business_area_mlcc
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_cosmos_hysco", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+:params {"id": "business_area_mlcc", "type": "BusinessArea", "name": "MLCC"}
 
-// node: person_jang_deok_hyun
+// node: business_area_package_board
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_jang_deok_hyun", "type": "Person", "name": "장덕현", "role_raw": "삼성전기 사장", "affiliated_company": "company_samsung_electrics", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "business_area_package_board", "type": "BusinessArea", "name": "패키지기판"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_ai_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_industry", "type": "BusinessArea", "name": "AI 산업"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jang_deok_hyun", "to_id": "company_samsung_electrics", "properties": {"evidence": "장덕현 삼성전기 사장, 이달곤 동반성장위원장, 권혁석 협부회장(엠케이켐앤텍 대표) 등 관계자 200여 명이 참석했다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}
+:params {"from_id": "company_009150", "to_id": "business_area_mlcc", "properties": {"evidence": "MLCC(적층형 세라믹 콘덴서) 설비를 공급하는 우성에스이는 설비 제작 및 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_package_board", "properties": {"evidence": "패키지기판 적층을 수행하는 아비코테크는 적층 품질 개선 성과를 각각 인정받아 품질 혁신 부문 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_ai_industry", "properties": {"evidence": "장 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\"이라며 \"모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자\"고 말했다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mlcc", "to_id": "industry_semiconductor", "properties": {"evidence": "MLCC(적층형 세라믹 콘덴서) 관련 사업은 반도체 산업의 중요한 부문이다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_package_board", "to_id": "industry_semiconductor", "properties": {"evidence": "패키지기판 적층 사업은 반도체 산업에 포함된다.", "date": "", "evidence_source_id": "news_009150_6228231be41edb04", "evidence_source_type": "news", "evidence_source_url": "https://view.asiae.co.kr/article/2026042810255314289", "evidence_published_at": "2026-04-28T17:30:00+09:00"}}

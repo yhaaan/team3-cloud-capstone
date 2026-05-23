@@ -1,0 +1,119 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "바이오 투자 지주회사로서 바이오시밀러, 바이오 신약, 기술 플랫폼 등 신규 바이오 사업 추진"}
+
+// node: business_area_bio_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bio_investment", "type": "BusinessArea", "name": "바이오 투자"}
+
+// node: business_area_biosimilar
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biosimilar", "type": "BusinessArea", "name": "바이오시밀러"}
+
+// node: business_area_biopharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_biopharmaceuticals", "type": "BusinessArea", "name": "바이오 신약"}
+
+// node: business_area_technology_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_technology_platform", "type": "BusinessArea", "name": "기술 플랫폼"}
+
+// node: industry_bio
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_bio_investment", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범했으며", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biosimilar", "properties": {"evidence": "바이오시밀러 사업 외에도 바이오 신약과 기술 플랫폼 등 신규 바이오 사업을 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_biopharmaceuticals", "properties": {"evidence": "바이오시밀러 사업 외에도 바이오 신약과 기술 플랫폼 등 신규 바이오 사업을 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_technology_platform", "properties": {"evidence": "바이오시밀러 사업 외에도 바이오 신약과 기술 플랫폼 등 신규 바이오 사업을 추진하고 있다", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bio_investment", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범했으며", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biosimilar", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범했으며", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_biopharmaceuticals", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범했으며", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_technology_platform", "to_id": "industry_bio", "properties": {"evidence": "삼성에피스홀딩스는 지난해 11월 바이오 투자 지주회사 체제로 출범했으며", "date": "", "evidence_source_id": "news_0126Z0_86d9f0de36e1dee5", "evidence_source_type": "news", "evidence_source_url": "http://www.lawissue.co.kr/view.php?ud=202605141508594138f4ab64559d_12", "evidence_published_at": "2026-05-14T15:10:00+09:00"}}

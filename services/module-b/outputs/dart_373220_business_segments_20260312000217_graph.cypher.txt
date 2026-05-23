@@ -1,0 +1,136 @@
+// node: company_373220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220", "description": "지속가능한 미래 위한 배터리 기술 개발 중심, EV·ESS 등 전지 연구개발·제조·판매 사업 영위"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "에너지솔루션"}
+
+// node: product_service_ev_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ev_battery", "type": "ProductService", "name": "EV용 배터리"}
+
+// node: product_service_ess_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ess_battery", "type": "ProductService", "name": "ESS용 배터리"}
+
+// node: product_service_small_application_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_small_application_battery", "type": "ProductService", "name": "소형 Application 배터리"}
+
+// node: business_area_secondary_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_secondary_battery", "type": "BusinessArea", "name": "2차전지"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_energy_solution", "properties": {"evidence": "당사는 지속 가능한 미래를 위한 배터리 기술 개발을 핵심 전략으로 삼고 ... 에너지솔루션 단일 사업부문으로 구성되어 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "product_service_ev_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "product_service_ess_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "product_service_small_application_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "business_area_secondary_battery", "properties": {"evidence": "2. 주요 제품 등의 현황 ... 에너지솔루션 ... 2차전지", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ev_battery", "to_id": "business_area_secondary_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등 2차전지", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ess_battery", "to_id": "business_area_secondary_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등 2차전지", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_small_application_battery", "to_id": "business_area_secondary_battery", "properties": {"evidence": "2. 주요 제품 및 서비스 ... EV용 배터리, ESS용 배터리,소형 Application용 배터리 등 2차전지", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_secondary_battery", "to_id": "industry_battery", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 배터리 ... 배터리 기술 개발을 핵심 전략으로 삼고", "date": "2026-03-12", "evidence_source_id": "dart_373220_business_segments_20260312000217", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}

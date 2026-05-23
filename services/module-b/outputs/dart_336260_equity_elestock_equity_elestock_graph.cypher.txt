@@ -1,10 +1,10 @@
-// node: company_두산퓨얼셀
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
 
 // node: person_이두순
 
@@ -12,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_이두순", "type": "Person", "name": "이두순", "role_raw": "사장", "affiliated_company": "company_두산퓨얼셀", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "person_이두순", "type": "Person", "name": "이두순", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
 
 // node: person_박준영
 
@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_박준영", "type": "Person", "name": "박준영", "role_raw": "전무", "affiliated_company": "company_두산퓨얼셀", "role": "OTHER", "role_label": "전무"}
+:params {"id": "person_박준영", "type": "Person", "name": "박준영", "role_raw": "전무", "role": "OTHER", "role_label": "전무"}
 
 // node: person_이승준
 
@@ -28,31 +28,31 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_이승준", "type": "Person", "name": "이승준", "role_raw": "상무", "affiliated_company": "company_두산퓨얼셀", "role": "OTHER", "role_label": "상무"}
+:params {"id": "person_이승준", "type": "Person", "name": "이승준", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
 
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_이두순", "to_id": "company_두산퓨얼셀", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 이두순, 등기 여부는 등기임원, 직위는 사장, 보유주식수는 6,624주, 주식수 증감은 470, 지분율은 0.01%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}
-
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_박준영", "to_id": "company_두산퓨얼셀", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 박준영, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 2,901주, 주식수 증감은 322, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}
+:params {"from_id": "person_이두순", "to_id": "company_336260", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 이두순, 등기 여부는 등기임원, 직위는 사장, 보유주식수는 6,624주, 주식수 증감은 470, 지분율은 0.01%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}
 
-// relation: AFFILIATED_WITH
+// relation: APPOINTED_TO
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:APPOINTED_TO]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이승준", "to_id": "company_두산퓨얼셀", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 이승준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 2,301주, 주식수 증감은 270, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}
+:params {"from_id": "person_박준영", "to_id": "company_336260", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 박준영, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 2,901주, 주식수 증감은 322, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이승준", "to_id": "company_336260", "properties": {"evidence": "두산퓨얼셀의 임원·주요주주 소유상황 보고자는 이승준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 2,301주, 주식수 증감은 270, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-03-05", "evidence_source_id": "dart_336260_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305000135", "evidence_published_at": "2026-03-05"}}

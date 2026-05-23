@@ -1,0 +1,109 @@
+// node: company_001260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001260", "type": "Company", "name": "삼성에피스홀딩스", "stock_code": "001260", "description": "임원은 대표이사, 사내외이사로 구성, 계열회사 임원 출신들로 경영 및 ESG위원회 운영"}
+
+// node: person_kim_gyeong_a
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_gyeong_a", "type": "Person", "name": "김경아", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: person_hong_seong_won
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_hong_seong_won", "type": "Person", "name": "홍성원", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_kim_ui_hyung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kim_ui_hyung", "type": "Person", "name": "김의형", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: person_lee_jin_man
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_lee_jin_man", "type": "Person", "name": "이진만", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: person_choi_hee_jung
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_choi_hee_jung", "type": "Person", "name": "최희정", "role_raw": "이사", "role": "DIRECTOR", "role_label": "이사"}
+
+// node: business_area_management
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_management", "type": "BusinessArea", "name": "경영관리"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_gyeong_a", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스의 임원은 김경아, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사 / 이사회의장 / 경영위원장", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_hong_seong_won", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스의 임원은 홍성원, 직위는 부사장, 이사회상 역할은 기타비상무이사, 담당업무는 -", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_kim_ui_hyung", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스의 임원은 김의형, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 내부거래위원장 / 감사위원장", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_lee_jin_man", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스의 임원은 이진만, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천위원장 / 보상위원장", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_choi_hee_jung", "to_id": "company_001260", "properties": {"evidence": "삼성에피스홀딩스의 임원은 최희정, 직위는 이사, 이사회상 역할은 사외이사, 담당업무는 ESG위원장", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001260", "to_id": "business_area_management", "properties": {"evidence": "삼성에피스홀딩스의 임원은 김경아, 담당업무는 대표이사 / 이사회의장 / 경영위원장, ...최희정, 담당업무는 ESG위원장", "date": "2026-05-15", "evidence_source_id": "dart_0126Z0_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119", "evidence_published_at": "2026-05-15"}}

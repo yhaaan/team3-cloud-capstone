@@ -2,17 +2,29 @@
   "source_id": "dart_122900_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_아이마켓코리아",
+      "id": "company_122900",
       "type": "Company",
       "name": "아이마켓코리아",
       "stock_code": "122900"
     },
     {
-      "id": "company_그래디언트",
+      "id": "company_035080",
       "type": "Company",
       "name": "그래디언트",
       "stock_code": "035080"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_035080",
+      "to": "company_122900",
+      "evidence": "아이마켓코리아의 대량보유 보고자는 그래디언트, 보고 유형은 일반, 접수일은 2025-12-19, 보유주식수는 14,412,000주, 지분율은 43.11%.",
+      "date": "2025-12-19",
+      "evidence_source_id": "dart_122900_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251219000328",
+      "evidence_published_at": "2025-12-19"
+    }
+  ]
 }

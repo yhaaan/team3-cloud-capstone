@@ -1,215 +1,133 @@
-// node: company_doosan_fuels_cell
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_doosan_fuels_cell", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260", "description": "연료전지 시스템 공급과 연료전지 분야 매출 중심의 에너지 사업을 영위한다."}
 
-// node: company_namsun_aluminum
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_namsun_aluminum", "type": "Company", "name": "남선알미늄", "stock_code": "008350"}
-
-// node: company_samsung_c_&_s
+// node: company_008350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_c_&_s", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+:params {"id": "company_008350", "type": "Company", "name": "남선알미늄", "stock_code": "008350"}
 
-// node: company_hyundai_corporation
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_corporation", "type": "Company", "name": "현대코퍼레이션", "stock_code": "011760"}
-
-// node: company_hs_hyosung
+// node: company_028260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hs_hyosung", "type": "Company", "name": "HS효성", "stock_code": "487570"}
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260", "description": "패션과 건설 사업부문을 중심으로 한 대형 건설 및 패션 기업이다."}
 
-// node: company_daehan_yuhwa
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_daehan_yuhwa", "type": "Company", "name": "대한유화", "stock_code": "006650"}
-
-// node: company_kyungbo_pharmaceutical
+// node: company_352820
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_kyungbo_pharmaceutical", "type": "Company", "name": "경보제약", "stock_code": "214390"}
+:params {"id": "company_352820", "type": "Company", "name": "하이브", "stock_code": "352820"}
 
-// node: company_rae
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_rae", "type": "Company", "name": "레이", "stock_code": "228670"}
-
-// node: company_d_a_technology
+// node: business_area_fuel_cell_system
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_d_a_technology", "type": "Company", "name": "디에이테크놀로지", "stock_code": "196490"}
+:params {"id": "business_area_fuel_cell_system", "type": "BusinessArea", "name": "연료전지 시스템"}
 
-// node: company_miko
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_miko", "type": "Company", "name": "미코", "stock_code": "059090"}
-
-// node: company_ccs
+// node: business_area_fashion
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_ccs", "type": "Company", "name": "씨씨에스", "stock_code": "066790"}
+:params {"id": "business_area_fashion", "type": "BusinessArea", "name": "패션"}
 
-// node: company_emgen_solution
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_emgen_solution", "type": "Company", "name": "엠젠솔루션", "stock_code": "032790"}
-
-// node: company_solus_advanced_materials
+// node: business_area_construction
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_solus_advanced_materials", "type": "Company", "name": "솔루스첨단소재", "stock_code": "336370"}
+:params {"id": "business_area_construction", "type": "BusinessArea", "name": "건설"}
 
-// node: company_an_robotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_an_robotics", "type": "Company", "name": "앤로보틱스", "stock_code": "138360"}
-
-// node: company_sv_investment
+// node: industry_energy
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_sv_investment", "type": "Company", "name": "SV인베스트먼트", "stock_code": "289080"}
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
 
-// node: company_ino_instrument
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_ino_instrument", "type": "Company", "name": "이노인스트루먼트", "stock_code": "215790"}
-
-// node: company_hib
+// node: industry_construction
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_hib", "type": "Company", "name": "하이브", "stock_code": "352820"}
+:params {"id": "industry_construction", "type": "Industry", "name": "건설"}
 
-// node: company_chamisenineering
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_chamisenineering", "type": "Company", "name": "참엔지니어링", "stock_code": "009310"}
-
-// node: company_kbi_metal
+// node: industry_fashion
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_kbi_metal", "type": "Company", "name": "KBI메탈", "stock_code": "024840"}
+:params {"id": "industry_fashion", "type": "Industry", "name": "패션"}
 
-// node: company_pan_star_enterprise
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_pan_star_enterprise", "type": "Company", "name": "팬스타엔터프라이즈", "stock_code": "054300"}
+:params {"from_id": "company_336260", "to_id": "business_area_fuel_cell_system", "properties": {"evidence": "두산퓨얼셀 (KOSPI, 336260)은 안산그린파워와 608억원 규모 연료전지 시스템 공급계약을 체결했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}
 
-// node: company_jaeyoung_sollutek
+// relation: PART_OF
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
 
-:params {"id": "company_jaeyoung_sollutek", "type": "Company", "name": "재영솔루텍", "stock_code": "049630"}
+:params {"from_id": "business_area_fuel_cell_system", "to_id": "industry_energy", "properties": {"evidence": "두산퓨얼셀 (KOSPI, 336260)은 안산그린파워와 608억원 규모 연료전지 시스템 공급계약을 체결했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}
 
-// node: company_amosense
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_amosense", "type": "Company", "name": "아모센스", "stock_code": "357580"}
+:params {"from_id": "company_028260", "to_id": "business_area_fashion", "properties": {"evidence": "삼성물산 (KOSPI, 028260)... 사업부문별로는 패션부문이 매출 5730억원, 영업이익 380억원으로 각각 13.7%, 10.5% 증가했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}
 
-// node: company_cheonbo
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_cheonbo", "type": "Company", "name": "천보", "stock_code": "278280"}
+:params {"from_id": "company_028260", "to_id": "business_area_construction", "properties": {"evidence": "삼성물산 (KOSPI, 028260)... 건설부문은 매출 3조4130억원, 영업이익 1110억원으로 각각 5.7%, 30.2% 감소했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}
 
-// node: company_iljin_holdings
+// relation: PART_OF
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
 
-:params {"id": "company_iljin_holdings", "type": "Company", "name": "일진홀딩스", "stock_code": "015860"}
+:params {"from_id": "business_area_fashion", "to_id": "industry_fashion", "properties": {"evidence": "삼성물산 (KOSPI, 028260)... 사업부문별로는 패션부문이 매출 5730억원, 영업이익 380억원으로 각각 13.7%, 10.5% 증가했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}
 
-// node: company_hanchang
+// relation: PART_OF
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
 
-:params {"id": "company_hanchang", "type": "Company", "name": "한창", "stock_code": "005110"}
-
-// node: company_hanchang_paper
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanchang_paper", "type": "Company", "name": "한창제지", "stock_code": "009460"}
-
-// node: company_doosan
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_doosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"from_id": "business_area_construction", "to_id": "industry_construction", "properties": {"evidence": "삼성물산 (KOSPI, 028260)... 건설부문은 매출 3조4130억원, 영업이익 1110억원으로 각각 5.7%, 30.2% 감소했다.", "date": "", "evidence_source_id": "news_336260_d132b3e938dbf77a", "evidence_source_type": "news", "evidence_source_url": "https://www.kdpress.co.kr/news/articleView.html?idxno=204835", "evidence_published_at": "2026-04-29T22:50:00+09:00"}}

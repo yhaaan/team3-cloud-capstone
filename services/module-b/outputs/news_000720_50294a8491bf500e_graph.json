@@ -2,35 +2,45 @@
   "source_id": "news_000720_50294a8491bf500e",
   "entities": [
     {
-      "id": "company_현대건설",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
-      "stock_code": "000720"
+      "stock_code": "000720",
+      "description": "현대건설은 건설사업을 주력으로 하는 기업입니다."
     },
     {
-      "id": "company_아시아경제",
-      "type": "Company",
-      "name": "아시아경제",
-      "stock_code": "127710"
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
     },
     {
-      "id": "company_SBS",
-      "type": "Company",
-      "name": "SBS",
-      "stock_code": "034120"
-    },
-    {
-      "id": "company_대웅제약",
-      "type": "Company",
-      "name": "대웅제약",
-      "stock_code": "069620"
-    },
-    {
-      "id": "company_YTN",
-      "type": "Company",
-      "name": "YTN",
-      "stock_code": "040300"
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "construction"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "business_area_construction",
+      "evidence": "현대건설은 건설사업을 주력으로 하는 기업입니다.",
+      "date": "",
+      "evidence_source_id": "news_000720_50294a8491bf500e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32243",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction",
+      "to": "industry_construction",
+      "evidence": "현대건설은 건설사업을 주력으로 하는 기업입니다.",
+      "date": "",
+      "evidence_source_id": "news_000720_50294a8491bf500e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32243",
+      "evidence_published_at": "2026-05-07T16:10:00+09:00"
+    }
+  ]
 }

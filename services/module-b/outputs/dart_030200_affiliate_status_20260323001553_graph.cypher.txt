@@ -1,0 +1,31 @@
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "KT의 사업보고서에 따르면 케이뱅크, KTis, KTcs가 상장 계열회사 후보로 탐지되었다."}
+
+// node: company_279570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_279570", "type": "Company", "name": "케이뱅크", "stock_code": "279570"}
+
+// node: company_058860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_058860", "type": "Company", "name": "KTis", "stock_code": "058860"}
+
+// node: company_058850
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_058850", "type": "Company", "name": "KTcs", "stock_code": "058850"}

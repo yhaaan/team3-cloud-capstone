@@ -9,6 +9,7 @@ from typing import Any
 from dotenv import load_dotenv
 
 from company_whitelist import load_default_company_whitelist
+from ftc_affiliates import DEFAULT_FTC_AFFILIATES_PATH, build_ftc_affiliates_graph
 from role_normalizer import normalize_graph_roles
 
 try:
@@ -128,12 +129,37 @@ def build_argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Cypher ?뚯씪留??앹꽦?섍퀬 ?ㅼ젣 ?곸옱???섏? ?딆쓬",
     )
+    parser.add_argument(
+        "--ftc-affiliates",
+        action="store_true",
+        help="Load FTC listed affiliate-group membership graph from docs/ftc_affiliates.jsonl.",
+    )
+    parser.add_argument(
+        "--ftc-input",
+        type=Path,
+        default=DEFAULT_FTC_AFFILIATES_PATH,
+        help="FTC affiliates jsonl path. Defaults to docs/ftc_affiliates.jsonl.",
+    )
     return parser
 
 
 if __name__ == "__main__":
     args = build_argument_parser().parse_args()
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    if args.ftc_affiliates:
+        graph_data = build_ftc_affiliates_graph(args.ftc_input)
+        cypher_path = OUTPUT_DIR / f"{graph_data['source_id']}.cypher.txt"
+        export_cypher_payload(graph_data, cypher_path)
+        print(f"[OK] FTC affiliate Cypher export complete: {cypher_path}")
+
+        if not args.export_only:
+            if not args.uri or not args.password:
+                print("[SKIP] NEO4J_URI 또는 NEO4J_PASSWORD가 없어 실제 적재는 건너뜁니다")
+            else:
+                load_graph_to_neo4j(graph_data, args.uri, args.user, args.password)
+                print(f"[OK] FTC affiliate graph loaded: {graph_data['source_id']}")
+        raise SystemExit(0)
 
     if args.input.is_dir():
         file_paths = sorted(args.input.glob("*_graph.json"))

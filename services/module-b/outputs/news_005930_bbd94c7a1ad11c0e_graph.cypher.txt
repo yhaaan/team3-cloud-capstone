@@ -1,23 +1,136 @@
-// node: company_samsung전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "HBM 공급 본격화와 파운드리 실적 개선 기대감에 힘입은 반도체 사업 중심"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk하이닉스
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 사업을 중심으로 성장 중인 기업"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730", "description": "반도체 관련 사업에 참여하는 기업"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: business_area_foundry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_foundry", "type": "BusinessArea", "name": "Foundry"}
+
+// node: product_service_hbm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hbm", "type": "ProductService", "name": "HBM"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자는 HBM(고대역폭메모리) 공급 본격화와 파운드리 실적 개선 기대감에 힘입어 주가가 이전에는 상상하기 어려웠던 수준까지 올라섰다.", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_foundry", "properties": {"evidence": "삼성전자는 HBM(고대역폭메모리) 공급 본격화와 파운드리 실적 개선 기대감에 힘입어 주가가 이전에는 상상하기 어려웠던 수준까지 올라섰다.", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_hbm", "properties": {"evidence": "삼성전자는 HBM(고대역폭메모리) 공급 본격화와 파운드리 실적 개선 기대감에 힘입어 주가가 이전에는 상상하기 어려웠던 수준까지 올라섰다.", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 슈퍼 사이클의 도래로 삼성전자와 SK하이닉스 등 주요 종목이 연일 신고가를 경신하는 가운데", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_foundry", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 슈퍼 사이클의 도래로 삼성전자와 SK하이닉스 등 주요 종목이 연일 신고가를 경신하는 가운데", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_hbm", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자는 HBM(고대역폭메모리) 공급 본격화와 파운드리 실적 개선 기대감에 힘입어 주가가 이전에는 상상하기 어려웠던 수준까지 올라섰다.", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 슈퍼 사이클의 도래로 삼성전자와 SK하이닉스 등 주요 종목이 연일 신고가를 경신하는 가운데", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 슈퍼 사이클의 도래로 삼성전자와 SK하이닉스 등 주요 종목이 연일 신고가를 경신하는 가운데", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034730", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자와 SK하이닉스 등 주요 종목이 연일 신고가를 경신하는 가운데", "date": "", "evidence_source_id": "news_005930_bbd94c7a1ad11c0e", "evidence_source_type": "news", "evidence_source_url": "https://www.wikitree.co.kr/articles/1135408", "evidence_published_at": "2026-05-07T18:18:00+09:00"}}

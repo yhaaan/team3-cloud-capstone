@@ -1,0 +1,84 @@
+{
+  "source_id": "dart_024110_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_024110",
+      "type": "Company",
+      "name": "기업은행",
+      "stock_code": "024110",
+      "description": "기업은행은 금융서비스를 제공하는 국내 은행입니다."
+    },
+    {
+      "id": "person_yuninji",
+      "type": "Person",
+      "name": "윤인지",
+      "role_raw": "집행간부",
+      "role": "OTHER",
+      "role_label": "집행간부"
+    },
+    {
+      "id": "person_jangminyoung",
+      "type": "Person",
+      "name": "장민영",
+      "role_raw": "은행장",
+      "role": "OTHER",
+      "role_label": "은행장"
+    },
+    {
+      "id": "business_area_financial_services",
+      "type": "BusinessArea",
+      "name": "금융서비스"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "finance"
+    }
+  ],
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_yuninji",
+      "to": "company_024110",
+      "evidence": "기업은행의 임원·주요주주 소유상황 보고자는 윤인지, 등기 여부는 비등기임원, 직위는 집행간부",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_jangminyoung",
+      "to": "company_024110",
+      "evidence": "기업은행의 임원·주요주주 소유상황 보고자는 장민영, 등기 여부는 등기임원, 직위는 은행장",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_024110",
+      "to": "business_area_financial_services",
+      "evidence": "기업은행은 금융서비스를 제공하는 국내 은행입니다.",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_financial_services",
+      "to": "industry_finance",
+      "evidence": "기업은행은 금융서비스를 제공하는 국내 은행입니다.",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    }
+  ]
+}

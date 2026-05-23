@@ -1,0 +1,66 @@
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550", "description": "KBO리그 프로야구 구단 LG 트윈스와 스포츠관련 사업"}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: industry_sports
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_sports", "type": "Industry", "name": "sports"}
+
+// node: business_area_professional_baseball
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_professional_baseball", "type": "BusinessArea", "name": "professional baseball"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "business_area_professional_baseball", "properties": {"evidence": "LG 트윈스와의 정규시즌 6차전에서 5번타자 겸 좌익수로 선발 출전했다.", "date": "", "evidence_source_id": "news_003550_ea02139487e20e22", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150038", "evidence_published_at": "2026-05-17T14:39:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_professional_baseball", "to_id": "industry_sports", "properties": {"evidence": "LG 트윈스와의 정규시즌 6차전에서 5번타자 겸 좌익수로 선발 출전했다.", "date": "", "evidence_source_id": "news_003550_ea02139487e20e22", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150038", "evidence_published_at": "2026-05-17T14:39:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "industry_sports", "properties": {"evidence": "LG 트윈스와의 정규시즌 6차전에서 5번타자 겸 좌익수로 선발 출전했다.", "date": "", "evidence_source_id": "news_003550_ea02139487e20e22", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150038", "evidence_published_at": "2026-05-17T14:39:00+09:00"}}

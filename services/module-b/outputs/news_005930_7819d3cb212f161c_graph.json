@@ -2,41 +2,89 @@
   "source_id": "news_005930_7819d3cb212f161c",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체, 디바이스솔루션(DS) 및 디바이스경험(DX) 부문 중심 사업"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
-    },
-    {
-      "id": "company_sktelcom",
-      "type": "Company",
-      "name": "SK텔레콤",
-      "stock_code": "017670"
-    },
-    {
-      "id": "company_sk_hynix",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
       "stock_code": "000660"
     },
     {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "id": "business_area_devicesolution",
+      "type": "BusinessArea",
+      "name": "디바이스솔루션"
     },
     {
-      "id": "company_hanwha_ocean",
-      "type": "Company",
-      "name": "한화오션",
-      "stock_code": "042660"
+      "id": "business_area_deviceexperience",
+      "type": "BusinessArea",
+      "name": "디바이스경험"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_devicesolution",
+      "evidence": "전영현 삼성전자 디바이스솔루션(DS)부문장 부회장과 노태문 디바이스경험(DX)부문장 사장은 7일 사내게시판에 \"회사는 열린 자세로 협의를 이어가겠다.\"",
+      "date": "",
+      "evidence_source_id": "news_005930_7819d3cb212f161c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12061348?ref=naver",
+      "evidence_published_at": "2026-05-07T18:14:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_deviceexperience",
+      "evidence": "전영현 삼성전자 디바이스솔루션(DS)부문장 부회장과 노태문 디바이스경험(DX)부문장 사장은 7일 사내게시판에 \"회사는 열린 자세로 협의를 이어가겠다.\"",
+      "date": "",
+      "evidence_source_id": "news_005930_7819d3cb212f161c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12061348?ref=naver",
+      "evidence_published_at": "2026-05-07T18:14:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_devicesolution",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자가 반도체 업계 1위 달성 시 경쟁사를 뛰어 넘는 '최고 대우'의 성과를 제시",
+      "date": "",
+      "evidence_source_id": "news_005930_7819d3cb212f161c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12061348?ref=naver",
+      "evidence_published_at": "2026-05-07T18:14:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_deviceexperience",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자가 반도체 업계 1위 달성 시 경쟁사를 뛰어 넘는 '최고 대우'의 성과를 제시",
+      "date": "",
+      "evidence_source_id": "news_005930_7819d3cb212f161c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12061348?ref=naver",
+      "evidence_published_at": "2026-05-07T18:14:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자와 SK하이닉스 중국 공장 노조가 '성과급을 더 달라'고 주장",
+      "date": "",
+      "evidence_source_id": "news_005930_7819d3cb212f161c",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.dt.co.kr/article/12061348?ref=naver",
+      "evidence_published_at": "2026-05-07T18:14:00+09:00"
+    }
+  ]
 }

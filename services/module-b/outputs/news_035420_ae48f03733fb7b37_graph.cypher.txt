@@ -1,0 +1,237 @@
+// node: company_035420
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035420", "type": "Company", "name": "NAVER", "stock_code": "035420", "description": "디지털 트윈 기술 기반 공간 플랫폼과 3D 지도, AR 내비게이션 등 공간지능 서비스를 제공"}
+
+// node: company_001440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001440", "type": "Company", "name": "대한전선", "stock_code": "001440"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720"}
+
+// node: business_area_spatial_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_spatial_platform", "type": "BusinessArea", "name": "공간 플랫폼"}
+
+// node: business_area_digital_twin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_digital_twin", "type": "BusinessArea", "name": "디지털 트윈"}
+
+// node: business_area_map_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_map_service", "type": "BusinessArea", "name": "지도 서비스"}
+
+// node: business_area_spatial_intelligence
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_spatial_intelligence", "type": "BusinessArea", "name": "공간지능"}
+
+// node: product_service_flying_view_3d
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_flying_view_3d", "type": "ProductService", "name": "플라잉뷰 3D"}
+
+// node: product_service_street_view_3d
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_street_view_3d", "type": "ProductService", "name": "거리뷰 3D"}
+
+// node: product_service_indoor_ar_navigation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_indoor_ar_navigation", "type": "ProductService", "name": "실내 AR 내비게이션"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "platform"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_spatial_platform", "properties": {"evidence": "네이버지도를 단순한 위치 정보 서비스에서 '공간 경험 플랫폼'으로 확장시키고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_digital_twin", "properties": {"evidence": "네이버가 디지털 트윈 기술을 기반으로 지도 서비스를 고도화하며 현실 공간과 온라인을 연결하는 새로운 공간 플랫폼 실험에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_map_service", "properties": {"evidence": "기존 지도 서비스가 길 찾기와 장소 검색에 머물렀다면, 네이버지도는 실제 도시와 랜드마크를 3차원으로 구현해 이용자가 하늘에서 공간을 둘러보듯 탐색할 수 있는 '플라잉뷰 3D'를 앞세워 지도 서비스의 활용 범위를 넓히고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_spatial_intelligence", "properties": {"evidence": "네이버지도는 플라잉뷰 3D 외에도 거리뷰 3D와 실내 증강현실(AR) 내비게이션 등 공간지능 기반 서비스를 확대하고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "product_service_flying_view_3d", "properties": {"evidence": "네이버지도는 실제 도시와 랜드마크를 3차원으로 구현해 이용자가 하늘에서 공간을 둘러보듯 탐색할 수 있는 '플라잉뷰 3D'를 앞세워 지도 서비스의 활용 범위를 넓히고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "product_service_street_view_3d", "properties": {"evidence": "네이버지도는 플라잉뷰 3D 외에도 거리뷰 3D와 실내 증강현실(AR) 내비게이션 등 공간지능 기반 서비스를 확대하고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "product_service_indoor_ar_navigation", "properties": {"evidence": "실내 AR 내비게이션은 GPS 신호가 닿지 않는 복합 쇼핑몰이나 대형 실내 공간에서 스마트폰 카메라만으로 이용자의 위치와 방향을 인식해 AR로 길을 안내하는 서비스다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_spatial_platform", "to_id": "industry_platform", "properties": {"evidence": "네이버지도를 단순한 위치 정보 서비스에서 '공간 경험 플랫폼'으로 확장시키고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_digital_twin", "to_id": "industry_ai", "properties": {"evidence": "어라이크는 항공사진과 인공지능(AI), 모바일 매핑 시스템 등을 결합해 고정밀 디지털 트윈을 구축하는 네이버랩스의 핵심 솔루션이다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_map_service", "to_id": "industry_platform", "properties": {"evidence": "기존 지도 서비스가 길 찾기와 장소 검색에 머물렀다면, 네이버지도는 실제 도시와 랜드마크를 3차원으로 구현해 이용자가 하늘에서 공간을 둘러보듯 탐색할 수 있는 '플라잉뷰 3D'를 앞세워 지도 서비스의 활용 범위를 넓히고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_spatial_intelligence", "to_id": "industry_ai", "properties": {"evidence": "네이버지도는 플라잉뷰 3D 외에도 거리뷰 3D와 실내 증강현실(AR) 내비게이션 등 공간지능 기반 서비스를 확대하고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_flying_view_3d", "to_id": "business_area_spatial_platform", "properties": {"evidence": "'플라잉뷰 3D'를 앞세워 지도 서비스의 활용 범위를 넓히고 있다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_street_view_3d", "to_id": "business_area_spatial_intelligence", "properties": {"evidence": "거리뷰 3D는 오프라인 공간감을 실제 눈으로 확인하는 수준에 가깝게 3차원 환경으로 구현한 서비스다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_indoor_ar_navigation", "to_id": "business_area_spatial_intelligence", "properties": {"evidence": "실내 AR 내비게이션은 스마트폰 카메라만으로 이용자의 위치와 방향을 인식해 AR로 길을 안내하는 서비스다.", "date": "", "evidence_source_id": "news_035420_ae48f03733fb7b37", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044797?ref=naver", "evidence_published_at": "2026-05-16T18:06:00+09:00"}}

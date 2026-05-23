@@ -1,0 +1,24 @@
+// node: company_033780
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_033780", "type": "Company", "name": "KT&G", "stock_code": "033780"}
+
+// node: company_024110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_024110", "type": "Company", "name": "기업은행", "stock_code": "024110"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_024110", "to_id": "company_033780", "properties": {"evidence": "KT&G의 최대주주 관련 인물/법인은 중소기업은행, 관계는 본인, 당기말 보유주식수는 9,510,485주, 지분율은 8.06%.", "date": "2026-03-18", "evidence_source_id": "dart_033780_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422", "evidence_published_at": "2026-03-18"}}

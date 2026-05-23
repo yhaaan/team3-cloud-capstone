@@ -2,22 +2,56 @@
   "source_id": "dart_099320_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_setrecai",
+      "id": "company_099320",
       "type": "Company",
       "name": "쎄트렉아이",
       "stock_code": "099320"
     },
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450"
     },
     {
-      "id": "person_park_sung_dong",
+      "id": "person_박성동",
       "type": "Person",
       "name": "박성동"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_박성동",
+      "to": "company_099320",
+      "evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-01-08, 보유주식수는 823,760주, 지분율은 7.52%",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_박성동",
+      "to": "company_099320",
+      "evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-03-05, 보유주식수는 707,061주, 지분율은 6.46%",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_012450",
+      "to": "company_099320",
+      "evidence": "쎄트렉아이의 대량보유 보고자는 한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-01-23, 보유주식수는 4,094,464주, 지분율은 37.39%",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    }
+  ]
 }

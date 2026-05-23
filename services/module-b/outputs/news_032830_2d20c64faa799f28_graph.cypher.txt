@@ -1,0 +1,116 @@
+// node: company_032830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830", "description": "국내 주식 비중 확대하며 국내 주식투자와 외화증권 투자 전략 조정하는 생명보험사"}
+
+// node: company_088350
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_088350", "type": "Company", "name": "한화생명", "stock_code": "088350", "description": "외화증권 비중 꾸준히 확대하며 시나리오별 환헤지 전략을 시행하는 생명보험사"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: company_352820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_352820", "type": "Company", "name": "하이브", "stock_code": "352820"}
+
+// node: business_area_domestic_stock
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_domestic_stock", "type": "BusinessArea", "name": "국내 주식"}
+
+// node: business_area_foreign_currency_bonds_stocks
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_foreign_currency_bonds_stocks", "type": "BusinessArea", "name": "외화증권"}
+
+// node: industry_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_insurance", "type": "Industry", "name": "보험"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "business_area_domestic_stock", "properties": {"evidence": "삼성생명의 지난해 말 국내 주식 잔액은 70조2041억원으로 전체 유가증권 포트폴리오의 30.31%를 차지한다.", "date": "", "evidence_source_id": "news_032830_2d20c64faa799f28", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605151745001422a6e8311f64_1", "evidence_published_at": "2026-05-17T05:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "business_area_foreign_currency_bonds_stocks", "properties": {"evidence": "업계 1위인 삼성생명은 외화증권이 포트폴리오에서 차지하는 비중을 줄였다.", "date": "", "evidence_source_id": "news_032830_2d20c64faa799f28", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605151745001422a6e8311f64_1", "evidence_published_at": "2026-05-17T05:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_088350", "to_id": "business_area_foreign_currency_bonds_stocks", "properties": {"evidence": "대형 생보사인 한화생명은 전통적인 투자 흐름을 이어갔다. 지난해 말 외화증권 잔액은 16조5136억원으로 전년 말보다 2조3284억원 증가했다. 전체 유가증권에서 해외 외화증권이 차지하는 비중도 꾸준히 커졌다.", "date": "", "evidence_source_id": "news_032830_2d20c64faa799f28", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605151745001422a6e8311f64_1", "evidence_published_at": "2026-05-17T05:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "industry_insurance", "properties": {"evidence": "보험사 당기순이익에 투자손익이 차지하는 비중이 커졌다. IFRS17이 도입되며 건전성 규제를 맞추고 금리 상승기 돌입 전 채권평가이익을 노리는 보험사 전략이 강화되는 것이다.", "date": "", "evidence_source_id": "news_032830_2d20c64faa799f28", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605151745001422a6e8311f64_1", "evidence_published_at": "2026-05-17T05:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_088350", "to_id": "industry_insurance", "properties": {"evidence": "생명보험사 한화생명은 외화증권 비중 3년 연속 커지고 환헤지 전략을 시행하고 있다.", "date": "", "evidence_source_id": "news_032830_2d20c64faa799f28", "evidence_source_type": "news", "evidence_source_url": "https://www.g-enews.com/view.php?ud=202605151745001422a6e8311f64_1", "evidence_published_at": "2026-05-17T05:02:00+09:00"}}

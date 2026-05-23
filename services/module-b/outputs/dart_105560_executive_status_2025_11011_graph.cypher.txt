@@ -1,0 +1,41 @@
+// node: company_105560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_105560", "type": "Company", "name": "KB금융", "stock_code": "105560"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_105560", "to_id": "industry_ai", "properties": {"evidence": "KB금융의 임원은 이재근, 직위는 부문장, 이사회상 역할은 미등기, 담당업무는 글로벌사업부문장, 주요경력은 [학력] - 서강대 수학 - 서강대학원 경제 - KAIST대학원 금융공학MBA [경력] - 국민은행 영업그룹대표 이사부행장('20.1~'21.12) - KB금융지주 기타비상무이사('22.3~'24.12) (겸)국민은행 은행장('22.1~'24.12) - KB금융지주 글로벌사업부문장('25.1~현재).", "date": "2026-03-24", "evidence_source_id": "dart_105560_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835", "evidence_published_at": "2026-03-24"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_105560", "to_id": "industry_it", "properties": {"evidence": "KB금융의 임원은 양종희, 직위는 회장, 이사회상 역할은 사내이사, 담당업무는 대표이사 계열사대표이사 후보추천위원장 ESG위원, 주요경력은 [학력] - 서울대 국사 [경력] - KB금융지주 보험부문/글로벌부문/CHO/CPRO 관할 부회장('21.1~'21.12) - KB금융지주 디지털부문장, IT부문장 부회장 ('22.1~'22.12) - KB금융지주 개인고객부문장, WM/연금부문장, SME부문장 부회장('23.1~'23.11) - KB금융지주 회장('23.11~현재).", "date": "2026-03-24", "evidence_source_id": "dart_105560_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835", "evidence_published_at": "2026-03-24"}}

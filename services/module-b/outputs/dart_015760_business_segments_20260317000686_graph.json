@@ -1,0 +1,178 @@
+{
+  "source_id": "dart_015760_business_segments_20260317000686",
+  "entities": [
+    {
+      "id": "company_015760",
+      "type": "Company",
+      "name": "한국전력",
+      "stock_code": "015760",
+      "description": "국내 전력판매 및 발전자회사와 종속회사 통해 전력생산, 발전설비 유지, IT서비스 제공"
+    },
+    {
+      "id": "company_026960",
+      "type": "Company",
+      "name": "동서",
+      "stock_code": "026960"
+    },
+    {
+      "id": "company_051600",
+      "type": "Company",
+      "name": "한전KPS",
+      "stock_code": "051600"
+    },
+    {
+      "id": "company_044180",
+      "type": "Company",
+      "name": "KD",
+      "stock_code": "044180"
+    },
+    {
+      "id": "company_307750",
+      "type": "Company",
+      "name": "국전",
+      "stock_code": "307750"
+    },
+    {
+      "id": "business_area_전기판매",
+      "type": "BusinessArea",
+      "name": "전기판매"
+    },
+    {
+      "id": "business_area_원자력발전",
+      "type": "BusinessArea",
+      "name": "원자력발전"
+    },
+    {
+      "id": "business_area_화력발전",
+      "type": "BusinessArea",
+      "name": "화력발전"
+    },
+    {
+      "id": "business_area_전력설비정비",
+      "type": "BusinessArea",
+      "name": "전력설비정비"
+    },
+    {
+      "id": "industry_에너지",
+      "type": "Industry",
+      "name": "에너지"
+    },
+    {
+      "id": "product_service_전기",
+      "type": "ProductService",
+      "name": "전기"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_015760",
+      "to": "business_area_전기판매",
+      "evidence": "① 전기판매부문[한국전력공사(주)]에서는 구역전기사업자 판매지역을 제외하고 국내 전역에 소비되는 전력량의 대부분을 판매하고 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_026960",
+      "to": "business_area_화력발전",
+      "evidence": "화력발전사업부문 ... 한국동서발전(주)에서 생산된 전기는 전력거래소를 통해 한국전력공사에 판매되고 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_051600",
+      "to": "business_area_전력설비정비",
+      "evidence": "기타사업부문 ... 전력설비정비[한전KPS(주)]",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_015760",
+      "to": "business_area_전력설비정비",
+      "evidence": "기타사업부문으로 ... 전력설비정비[한전KPS(주)]가 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_015760",
+      "to": "product_service_전기",
+      "evidence": "전기판매 사업부분 ... 전기판매,용역 ... 전 기 판매용 한국전력공사",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_026960",
+      "to": "product_service_전기",
+      "evidence": "화력발전 사업부문 ... 전 기 화력발전용 한국동서발전(주)",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_전기판매",
+      "to": "industry_에너지",
+      "evidence": "사업의 개요 현재 국내 전력 산업의 체계는 전력생산, 수송, 판매 체계로 이뤄지고 있으며",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_원자력발전",
+      "to": "industry_에너지",
+      "evidence": "사업의 개요 현재 국내 전력 산업의 체계는 전력생산, 수송, 판매 체계로 이뤄지고 있으며",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_화력발전",
+      "to": "industry_에너지",
+      "evidence": "사업의 개요 현재 국내 전력 산업의 체계는 전력생산, 수송, 판매 체계로 이뤄지고 있으며",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_전력설비정비",
+      "to": "industry_에너지",
+      "evidence": "기타사업부문으로 ... 전력설비정비[한전KPS(주)]",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_015760_business_segments_20260317000686",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686",
+      "evidence_published_at": "2026-03-17"
+    }
+  ]
+}

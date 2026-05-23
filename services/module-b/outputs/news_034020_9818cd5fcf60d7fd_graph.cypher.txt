@@ -1,23 +1,145 @@
-// node: company_두산에너빌리티
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산에너빌리티", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "가스터빈, 스팀터빈, 원전 기자재를 중심으로 국내외 에너지 사업을 영위"}
 
-// node: company_두산밥캣
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_두산밥캣", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
-
-// node: company_두산퓨얼셀
+// node: business_area_gasturbine
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "business_area_gasturbine", "type": "BusinessArea", "name": "가스터빈"}
+
+// node: business_area_steamturbine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_steamturbine", "type": "BusinessArea", "name": "스팀터빈"}
+
+// node: business_area_nuclear_power_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power_equipment", "type": "BusinessArea", "name": "원전 기자재"}
+
+// node: business_area_smr
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smr", "type": "BusinessArea", "name": "소형모듈원자로"}
+
+// node: business_area_offshore_wind_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_wind_power", "type": "BusinessArea", "name": "해상풍력"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_gasturbine", "properties": {"evidence": "두산에너빌리티는 국내외에서 가스터빈과 스팀터빈 중심의 수주 호조세도 이어갔다.", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_steamturbine", "properties": {"evidence": "두산에너빌리티는 국내외에서 가스터빈과 스팀터빈 중심의 수주 호조세도 이어갔다.", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_nuclear_power_equipment", "properties": {"evidence": "두산에너빌리티의 원전 기자재 및 가스터빈 매출 증대가 수익성 개선을 이끌었다고 두산에너빌리티 측은 설명했다.", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_smr", "properties": {"evidence": "두산에너빌리티는 연말까지 소형모듈원자로(SMR) 주기기 공급 계약을 포함해 총 13조 3000억 원의 수주를 달성한 것으로 보고 있다.", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_offshore_wind_power", "properties": {"evidence": "두산에너빌리티는 해외 가스복합 설계·조달·시공(EPC), 해상풍력 등을 포함해 총 13조 3000억 원의 수주를 달성한 것으로 보고 있다.", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_gasturbine", "to_id": "industry_energy", "properties": {"evidence": "가스터빈은 에너지 산업의 한 분야임", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_steamturbine", "to_id": "industry_energy", "properties": {"evidence": "스팀터빈은 에너지 산업의 한 분야임", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power_equipment", "to_id": "industry_energy", "properties": {"evidence": "원전 기자재 분야가 에너지 산업에 속함", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smr", "to_id": "industry_energy", "properties": {"evidence": "소형모듈원자로(SMR) 사업이 에너지 산업에 포함됨", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_wind_power", "to_id": "industry_energy", "properties": {"evidence": "해상풍력 사업이 에너지 산업에 포함됨", "date": "", "evidence_source_id": "news_034020_9818cd5fcf60d7fd", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038652?ref=naver", "evidence_published_at": "2026-04-29T16:08:00+09:00"}}

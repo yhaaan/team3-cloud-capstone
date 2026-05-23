@@ -1,32 +1,119 @@
-// node: company_sk_telecom
+// node: company_017670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_telecom", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "이동통신, AI 데이터센터(AIDC), 유선인터넷 등 ICT 전 영역 성장"}
 
-// node: company_lguplus
+// node: company_032640
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lguplus", "type": "Company", "name": "LG유플러스", "stock_code": "032640"}
+:params {"id": "company_032640", "type": "Company", "name": "LG유플러스", "stock_code": "032640", "description": "모바일, 스마트홈, AI 인프라, AIDC 등 전 사업 영역 고른 성장"}
 
-// node: person_jeong_jae_heon
+// node: business_area_idc
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_jeong_jae_heon", "type": "Person", "name": "정재헌", "role_raw": "대표", "affiliated_company": "company_sk_telecom", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_idc", "type": "BusinessArea", "name": "인공지능 데이터센터"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_mobile
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobile", "type": "BusinessArea", "name": "모바일"}
+
+// node: business_area_smart_home
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smart_home", "type": "BusinessArea", "name": "스마트홈"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_jeong_jae_heon", "to_id": "company_sk_telecom", "properties": {"evidence": "SK텔레콤은 최근 신설한 정재헌 대표 직속 엔터프라이즈 통합 추진 조직을 앞세워 AI 기업간 거래(B2B) 시장 공략에도 속도를 낼 방침이다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+:params {"from_id": "company_017670", "to_id": "business_area_mobile", "properties": {"evidence": "SK텔레콤은 올해 1·4분기 휴대전화 가입 고객이 약 21만명 순증했다고 설명했다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_idc", "properties": {"evidence": "SK텔레콤 AIDC 사업의 올해 1·4분기 매출은 1314억원으로, 지난해 같은 기간보다 89.3% 성장했다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032640", "to_id": "business_area_mobile", "properties": {"evidence": "LG유플러스는 모바일·스마트홈·AI 인프라 등 전 사업에서 고른 성과를 내며 영업이익이 전년 동기 대비 성장했다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032640", "to_id": "business_area_smart_home", "properties": {"evidence": "LG유플러스는 모바일·스마트홈·AI 인프라 등 전 사업에서 고른 성과를 내며 영업이익이 전년 동기 대비 성장했다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032640", "to_id": "business_area_idc", "properties": {"evidence": "성장이 가장 크게 두드러진 것은 기업 인프라 부문이다. AIDC, 솔루션, 기업 회선 등이 포함된 기업 인프라 부문 수익은 4356억원으로 지난해 같은 기간 대비 6.3% 증가했다.", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobile", "to_id": "industry_platform", "properties": {"evidence": "모바일 부문은 플랫폼 산업 내 주요 사업 영역임을 종합적 해석", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smart_home", "to_id": "industry_platform", "properties": {"evidence": "스마트홈 부문은 플랫폼 산업 내 주요 사업 영역임을 종합적 해석", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_idc", "to_id": "industry_platform", "properties": {"evidence": "AIDC 사업은 클라우드 및 플랫폼 인프라 관련 사업임을 종합적 해석", "date": "", "evidence_source_id": "news_017670_b3715c6538c1de83", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605071826408821", "evidence_published_at": "2026-05-07T18:28:00+09:00"}}

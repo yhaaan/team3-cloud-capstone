@@ -1,0 +1,132 @@
+// node: company_086790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086790", "type": "Company", "name": "하나금융지주", "stock_code": "086790", "description": "전통 금융을 넘어 가상자산 등 신금융 사업 영역을 확장하는 금융지주회사"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720", "description": "디지털 플랫폼 및 투자 사업을 하는 IT 기업"}
+
+// node: company_032820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032820", "type": "Company", "name": "우리기술", "stock_code": "032820"}
+
+// node: company_041190
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_041190", "type": "Company", "name": "우리기술투자", "stock_code": "041190"}
+
+// node: company_003530
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003530", "type": "Company", "name": "한화투자증권", "stock_code": "003530"}
+
+// node: company_017670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_가상자산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_가상자산", "type": "BusinessArea", "name": "가상자산"}
+
+// node: business_area_디지털자산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_디지털자산", "type": "BusinessArea", "name": "디지털자산"}
+
+// node: product_service_스테이블코인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_스테이블코인", "type": "ProductService", "name": "스테이블코인"}
+
+// node: industry_금융
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_금융", "type": "Industry", "name": "금융"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_가상자산", "properties": {"evidence": "하나금융지주의 자회사 하나은행이 국내 최대 가상자산 거래소 업비트를 운영하는 두나무에 지분 1조원을 투자했다. 전통적인 금융영역에서 벗어나 미래 먹거리 사업인 가상자산까지 본격적으로 사업영역을 확장하겠다는 취지다.", "date": "", "evidence_source_id": "news_086790_1f3af5c902a665e4", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260515507077?OutUrl=naver", "evidence_published_at": "2026-05-16T06:21:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_디지털자산", "properties": {"evidence": "이번 지분 취득은 하나금융지주 설명대로 기존 전통금융이 아닌 디지털자산이 금융 생태계를 주도하는 환경변화에 대응하기 위한 차원이다.", "date": "", "evidence_source_id": "news_086790_1f3af5c902a665e4", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260515507077?OutUrl=naver", "evidence_published_at": "2026-05-16T06:21:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "product_service_스테이블코인", "properties": {"evidence": "양사는 최근 '원화 기반 스테이블코인'을 공동사업으로 구축해 활발히 논의 중이었다.", "date": "", "evidence_source_id": "news_086790_1f3af5c902a665e4", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260515507077?OutUrl=naver", "evidence_published_at": "2026-05-16T06:21:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_가상자산", "to_id": "industry_금융", "properties": {"evidence": "전통적인 금융영역에서 벗어나 미래 먹거리 사업인 가상자산까지 본격적으로 사업영역을 확장하겠다는 취지다.", "date": "", "evidence_source_id": "news_086790_1f3af5c902a665e4", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260515507077?OutUrl=naver", "evidence_published_at": "2026-05-16T06:21:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_디지털자산", "to_id": "industry_금융", "properties": {"evidence": "이번 지분 취득은 하나금융지주 설명대로 기존 전통금융이 아닌 디지털자산이 금융 생태계를 주도하는 환경변화에 대응하기 위한 차원이다.", "date": "", "evidence_source_id": "news_086790_1f3af5c902a665e4", "evidence_source_type": "news", "evidence_source_url": "https://www.segye.com/newsView/20260515507077?OutUrl=naver", "evidence_published_at": "2026-05-16T06:21:00+09:00"}}

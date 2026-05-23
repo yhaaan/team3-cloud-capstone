@@ -1,7 +1,187 @@
-// node: company_HD현대중공업
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_HD현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "상선 중심 조선에서 방산·AI 인프라 복합 중공업으로 사업 확장"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: business_area_defense_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_industry", "type": "BusinessArea", "name": "방산"}
+
+// node: business_area_ai_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_infrastructure", "type": "BusinessArea", "name": "AI 인프라"}
+
+// node: product_service_lng_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lng_carrier", "type": "ProductService", "name": "LNG선"}
+
+// node: product_service_container_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_container_ship", "type": "ProductService", "name": "컨테이너선"}
+
+// node: product_service_mr_tanker
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mr_tanker", "type": "ProductService", "name": "MR탱커"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "defense"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_defense_industry", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_ai_infrastructure", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "product_service_lng_carrier", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "product_service_container_ship", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "product_service_mr_tanker", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_industry", "to_id": "industry_defense", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_infrastructure", "to_id": "industry_ai", "properties": {"evidence": "상선 중심 조선사에서 방산·AI 인프라를 아우르는 복합 중공업 기업으로 무게중심이 이동하는 변곡점에 서 있다는 평가가 나온다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lng_carrier", "to_id": "business_area_shipbuilding", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_container_ship", "to_id": "business_area_shipbuilding", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_mr_tanker", "to_id": "business_area_shipbuilding", "properties": {"evidence": "1분기에 LNG선 9척, 대형 컨테이너선 4척, MR탱커 10척 등 총 45척, 48억9600만 달러를 확보했다.", "date": "", "evidence_source_id": "news_329180_3b101d145bb6f8e8", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/161439", "evidence_published_at": "2026-05-07T18:08:00+09:00"}}

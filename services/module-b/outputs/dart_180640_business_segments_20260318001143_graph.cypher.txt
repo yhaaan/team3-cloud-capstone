@@ -1,0 +1,296 @@
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640", "description": "지주회사로 자회사 주식을 소유하며 배당수익과 브랜드수수료를 주요 수입원으로 확보"}
+
+// node: company_003490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003490", "type": "Company", "name": "대한항공", "stock_code": "003490", "description": "여객, 화물, 항공우주 사업을 주요 사업으로 영위"}
+
+// node: company_002320
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_002320", "type": "Company", "name": "한진", "stock_code": "002320", "description": "물류, 택배, 글로벌 운송, 에너지 사업을 영위"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_053620
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_053620", "type": "Company", "name": "태양", "stock_code": "053620"}
+
+// node: business_area_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_logistics", "type": "BusinessArea", "name": "물류"}
+
+// node: business_area_courier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_courier", "type": "BusinessArea", "name": "택배"}
+
+// node: business_area_global_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_global_transport", "type": "BusinessArea", "name": "글로벌 운송"}
+
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지"}
+
+// node: business_area_passenger_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_passenger_transport", "type": "BusinessArea", "name": "여객사업"}
+
+// node: business_area_cargo_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cargo_transport", "type": "BusinessArea", "name": "화물사업"}
+
+// node: business_area_aircraft_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_aircraft_manufacturing", "type": "BusinessArea", "name": "항공우주"}
+
+// node: productservice_brand_royalty
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_brand_royalty", "type": "ProductService", "name": "브랜드사용료"}
+
+// node: productservice_dividend_income
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_dividend_income", "type": "ProductService", "name": "배당금수익"}
+
+// node: productservice_it_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_it_services", "type": "ProductService", "name": "IT서비스"}
+
+// node: industry_transportation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_transportation", "type": "Industry", "name": "항공"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "물류"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002320", "to_id": "business_area_logistics", "properties": {"evidence": "㈜한진은 물류, 택배, 글로벌, 에너지 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002320", "to_id": "business_area_courier", "properties": {"evidence": "㈜한진은 물류, 택배, 글로벌, 에너지 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002320", "to_id": "business_area_global_transport", "properties": {"evidence": "㈜한진은 물류, 택배, 글로벌, 에너지 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_002320", "to_id": "business_area_energy", "properties": {"evidence": "㈜한진은 물류, 택배, 글로벌, 에너지 사업을 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_passenger_transport", "properties": {"evidence": "㈜대한항공은 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_cargo_transport", "properties": {"evidence": "㈜대한항공은 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_aircraft_manufacturing", "properties": {"evidence": "㈜대한항공은 여객사업, 화물사업, 항공우주사업을 주요 사업으로 영위하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_180640", "to_id": "productservice_brand_royalty", "properties": {"evidence": "지주사업 품목으로 상표권 브랜드사용료를 주요 수익원으로 확보하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_180640", "to_id": "productservice_dividend_income", "properties": {"evidence": "지주사업의 일반적인 수입 원천인 자회사 지분에 대한 배당수익을 확보하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_180640", "to_id": "productservice_it_services", "properties": {"evidence": "기타 사업부문으로 IT서비스 등을 제공하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_logistics", "to_id": "industry_logistics", "properties": {"evidence": "물류 사업부문은 공로/철도, 항만, 선박 운송 서비스를 포함합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_courier", "to_id": "industry_logistics", "properties": {"evidence": "택배 사업은 상품 및 서류에 대한 직접 배달 서비스입니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_global_transport", "to_id": "industry_logistics", "properties": {"evidence": "글로벌 사업은 화물 운송 계약의 중개 및 대리 서비스를 포함합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy", "to_id": "industry_energy", "properties": {"evidence": "에너지 사업은 유류 판매 및 전기차 충전사업을 포괄합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_passenger_transport", "to_id": "industry_transportation", "properties": {"evidence": "여객사업은 국내 및 국제선 여객 운송을 수행합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_cargo_transport", "to_id": "industry_transportation", "properties": {"evidence": "화물사업은 화물기 및 여객기 하단 Belly 공간에 화물을 탑재·수송합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_aircraft_manufacturing", "to_id": "industry_transportation", "properties": {"evidence": "항공우주 사업은 항공기 제조판매 및 정비를 포함합니다.", "date": "2026-03-18", "evidence_source_id": "dart_180640_business_segments_20260318001143", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143", "evidence_published_at": "2026-03-18"}}

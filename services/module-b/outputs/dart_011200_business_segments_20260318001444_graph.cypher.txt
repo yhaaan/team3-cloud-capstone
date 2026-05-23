@@ -1,0 +1,109 @@
+// node: company_011200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011200", "type": "Company", "name": "HMM", "stock_code": "011200", "description": "종합해운물류기업으로 컨테이너 운송, 벌크화물 운송, 터미널운영 등 물류서비스를 제공합니다."}
+
+// node: company_078930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078930", "type": "Company", "name": "GS", "stock_code": "078930"}
+
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+
+// node: business_area_container_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_container_shipping", "type": "BusinessArea", "name": "컨테이너 운송"}
+
+// node: business_area_bulk_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_bulk_shipping", "type": "BusinessArea", "name": "벌크화물 운송"}
+
+// node: business_area_terminal_operations
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_terminal_operations", "type": "BusinessArea", "name": "터미널 운영"}
+
+// node: industry_shipping
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipping", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_container_shipping", "properties": {"evidence": "당사는 컨테이너, 벌크(유조선/건화물선), 기타(터미널 등)의 사업부문을 영위하고 있으며, 2026년 누적 기준, 컨테이너 585만 TEU 및 벌크 4,569만 MT 등의 생산능력을 보유하였습니다.", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_bulk_shipping", "properties": {"evidence": "당사는 컨테이너, 벌크(유조선/건화물선), 기타(터미널 등)의 사업부문을 영위하고 있으며, 2026년 누적 기준, 컨테이너 585만 TEU 및 벌크 4,569만 MT 등의 생산능력을 보유하였습니다.", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011200", "to_id": "business_area_terminal_operations", "properties": {"evidence": "터미널 등 터미널운영 등 201,027 1.8% 매출", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_container_shipping", "to_id": "industry_shipping", "properties": {"evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_bulk_shipping", "to_id": "industry_shipping", "properties": {"evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_terminal_operations", "to_id": "industry_shipping", "properties": {"evidence": "HMM의 사업은 해운물류로서 조선, 선박, 플랜트 등과 관련된 산업에서 운영됨", "date": "2026-03-18", "evidence_source_id": "dart_011200_business_segments_20260318001444", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001444", "evidence_published_at": "2026-03-18"}}

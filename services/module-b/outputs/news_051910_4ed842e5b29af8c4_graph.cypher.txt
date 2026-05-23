@@ -1,58 +1,26 @@
-// node: company_lg화학
+// node: company_051910
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg화학", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910"}
 
-// node: company_롯데케미칼
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_롯데케미칼", "type": "Company", "name": "롯데케미칼", "stock_code": "011170"}
-
-// node: company_금호석유화학
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_금호석유화학", "type": "Company", "name": "금호석유화학", "stock_code": "011780"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
 
-// node: company_hd현대
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대", "type": "Company", "name": "HD현대", "stock_code": "267250"}
-
-// node: company_oci
+// node: industry_ai
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_oci", "type": "Company", "name": "OCI", "stock_code": "456040"}
-
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_롯데정밀화학
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_롯데정밀화학", "type": "Company", "name": "롯데정밀화학", "stock_code": "004000"}
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
 
 // relation: ACQUIRES
 
@@ -61,4 +29,22 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd현대", "to_id": "company_롯데케미칼", "properties": {"evidence": "대산 사업장은 HD현대케미칼과의 합병을 추진하고 있고, 여수 사업장도 재편안을 정부에 제출해 승인 절차를 밟고 있다.", "date": "", "evidence_source_id": "news_051910_4ed842e5b29af8c4", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1370576", "evidence_published_at": "2026-05-07T13:56:00+09:00"}}
+:params {"from_id": "company_051910", "to_id": "company_034730", "properties": {"evidence": "대산 사업장은 HD현대케미칼과의 합병을 추진하고 있고, 여수 사업장도 재편안을 정부에 제출해 승인 절차를 밟고 있다.", "date": "", "evidence_source_id": "news_051910_4ed842e5b29af8c4", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1370576", "evidence_published_at": "2026-05-07T13:56:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "company_034730", "properties": {"evidence": "범용 석유화학 사업의 수익성을 방어하면서 첨단소재 투자 여력을 확보하려는 전략이다.", "date": "", "evidence_source_id": "news_051910_4ed842e5b29af8c4", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1370576", "evidence_published_at": "2026-05-07T13:56:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "industry_ai", "properties": {"evidence": "유리기판을 고객사와 공동 개발하고 있으며, FC-BGA와 AI 반도체용 어드밴스드 패키징 소재 등으로 적용 범위를 넓힌다는 구상이다.", "date": "", "evidence_source_id": "news_051910_4ed842e5b29af8c4", "evidence_source_type": "news", "evidence_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1370576", "evidence_published_at": "2026-05-07T13:56:00+09:00"}}

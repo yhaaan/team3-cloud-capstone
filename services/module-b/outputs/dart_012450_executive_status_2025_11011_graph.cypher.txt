@@ -1,75 +1,502 @@
-// node: company_한화에어로스페이스
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화에어로스페이스", "type": "Company", "name": "한화에어로스페이스"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "항공우주 및 방산 분야의 전략기획, 연구개발, 제조, 구매, 품질보증 등 다각적 사업"}
 
-// node: person_carnegie_mellon
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_carnegie_mellon", "type": "Person", "name": "Carnegie Mellon", "role": "CEO", "role_raw": "CEO", "role_label": "대표이사"}
-
-// node: person_hanwha_futureproof
+// node: business_area_pgm사업부
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_hanwha_futureproof", "type": "Person", "name": "Hanwha Futureproof", "role": "CEO", "role_raw": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_pgm사업부", "type": "BusinessArea", "name": "PGM사업부"}
 
-// node: industry_ai
+// node: business_area_ls사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부", "type": "BusinessArea", "name": "LS사업부"}
+
+// node: business_area_mds사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mds사업부", "type": "BusinessArea", "name": "MDS사업부"}
+
+// node: business_area_항공사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_항공사업부", "type": "BusinessArea", "name": "항공사업부"}
+
+// node: business_area_우주사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_우주사업부", "type": "BusinessArea", "name": "우주사업부"}
+
+// node: business_area_전략부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전략부문", "type": "BusinessArea", "name": "전략부문"}
+
+// node: business_area_ls사업부_화력체계연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_화력체계연구센터", "type": "BusinessArea", "name": "화력체계연구센터"}
+
+// node: business_area_ls사업부_ips연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_ips연구센터", "type": "BusinessArea", "name": "IPS연구센터"}
+
+// node: business_area_ls사업부_기동체계연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_기동체계연구센터", "type": "BusinessArea", "name": "기동체계연구센터"}
+
+// node: business_area_ls사업부_유무인복합연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_유무인복합연구센터", "type": "BusinessArea", "name": "유무인복합연구센터"}
+
+// node: business_area_ls사업부_항법사업센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_항법사업센터", "type": "BusinessArea", "name": "항법사업센터"}
+
+// node: business_area_ls사업부_품질보증실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_품질보증실", "type": "BusinessArea", "name": "품질보증실"}
+
+// node: business_area_ls사업부_원가실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_원가실", "type": "BusinessArea", "name": "원가실"}
+
+// node: business_area_ls사업부_경영지원실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_경영지원실", "type": "BusinessArea", "name": "경영지원실"}
+
+// node: business_area_ls사업부_ls사업3팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_ls사업3팀", "type": "BusinessArea", "name": "LS사업3팀"}
+
+// node: business_area_ls사업부_ls사업2팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_ls사업2팀", "type": "BusinessArea", "name": "LS사업2팀"}
+
+// node: business_area_ls사업부_ls사업4팀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_ls사업4팀", "type": "BusinessArea", "name": "LS사업4팀"}
+
+// node: business_area_ls사업부_발사체계연구센터
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_발사체계연구센터", "type": "BusinessArea", "name": "발사체계연구센터"}
+
+// node: business_area_ls사업부_mro사업부
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ls사업부_mro사업부", "type": "BusinessArea", "name": "MRO사업부"}
+
+// node: business_area_support실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_support실", "type": "BusinessArea", "name": "지원실"}
+
+// node: business_area_strategic실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_strategic실", "type": "BusinessArea", "name": "전략실"}
+
+// node: business_area_재무실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_재무실", "type": "BusinessArea", "name": "재무실"}
+
+// node: business_area_cr실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_cr실", "type": "BusinessArea", "name": "CR실"}
+
+// node: business_area_hr실
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hr실", "type": "BusinessArea", "name": "HR실"}
+
+// node: business_area_communicaton위원회
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_communicaton위원회", "type": "BusinessArea", "name": "커뮤니케이션위원회"}
+
+// node: industry_방산
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_방산", "type": "Industry", "name": "방산"}
 
-// node: industry_it
+// node: industry_항공우주
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+:params {"id": "industry_항공우주", "type": "Industry", "name": "항공우주"}
 
-// relation: BELONGS_TO
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
-SET r += $properties
-
-:params {"from_id": "company_한화에어로스페이스", "to_id": "industry_ai", "properties": {"evidence": "한화에어로스페이스의 임원은 김명효, 직위는 담당임원, 이사회상 역할은 미등기, 담당업무는 항공사업부 CTO 한국연구소 기반기술연구센터, 주요경력은 KAIST 석사 민수엔진개발팀 수석연구원 제어시스템팀장 전기추진개발팀장 전기추진TF장.", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
-
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화에어로스페이스", "to_id": "industry_it", "properties": {"evidence": "한화에어로스페이스의 임원은 최성규, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 전략기획실 제조혁신담당, 주요경력은 한양대 학사 SAS Institute 제조산업 사업담당 SK온 Factory Automation 기술담당.", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+:params {"from_id": "company_012450", "to_id": "business_area_pgm사업부", "properties": {"evidence": "한화에어로스페이스 임원 채훈, 담당업무는 PGM사업부 PGM연구소장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
 
-// relation: APPOINTED_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_carnegie_mellon", "to_id": "company_한화에어로스페이스", "properties": {"evidence": "한화에어로스페이스의 임원은 전진구, 직위는 사외이사, 이사회상 역할은 사외이사, 담당업무는 사외이사후보추천위원회 위원장 감사위원회 위원 내부거래위원회 위원 보상위원회 위원 ESG위원회 위원, 최대주주와의 관계는 발행회사 임원, 주요경력은 해병대 사령부 사령관 국방연구원 자문위원 국방과학연구소 자문위원 現 서경대 석좌교수 現 합참 선임관찰관.", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부", "properties": {"evidence": "한화에어로스페이스 임원 다수가 LS사업부 관련 업무 담당", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_carnegie_mellon", "to_id": "company_한화에어로스페이스", "properties": {"evidence": "한화에어로스페이스의 임원은 김동관, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 전략부문 대표이사, 최대주주와의 관계는 최대주주 ㈜한화의 임원, 주요경력은 Harvard Univ.", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+:params {"from_id": "company_012450", "to_id": "business_area_mds사업부", "properties": {"evidence": "한화에어로스페이스 임원 김광섭, 손승현 등 MDS사업부 에너지시스템연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_항공사업부", "properties": {"evidence": "한화에어로스페이스 임원들이 항공사업부 무인기사업단, CTO 한국연구소, 아산사업장장 등 담당", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_우주사업부", "properties": {"evidence": "한화에어로스페이스 임원 오승호, 이준원 등 우주사업부 발사체연구센터장 및 사업부장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_전략부문", "properties": {"evidence": "한화에어로스페이스 임원 김동관, 안병철 등이 전략부문 대표이사, 전략총괄 담당", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_화력체계연구센터", "properties": {"evidence": "한화에어로스페이스 임원 허만정, 한화디펜스 LS사업부 화력체계연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_ips연구센터", "properties": {"evidence": "한화에어로스페이스 임원 최명환, LS사업부 IPS연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_기동체계연구센터", "properties": {"evidence": "한화에어로스페이스 임원 박광남, LS사업부 기동체계연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_유무인복합연구센터", "properties": {"evidence": "한화에어로스페이스 임원 박매훈, LS사업부 유무인복합연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_항법사업센터", "properties": {"evidence": "한화에어로스페이스 임원 김광진, LS사업부 항법사업센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_품질보증실", "properties": {"evidence": "한화에어로스페이스 임원 강민규, 장기영, 품질보증실장 및 품질보증실 운영", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_원가실", "properties": {"evidence": "한화에어로스페이스 임원 강세호, 원가실장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_경영지원실", "properties": {"evidence": "한화에어로스페이스 임원 김대동, 경영진단실 경영진단팀", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_ls사업3팀", "properties": {"evidence": "한화에어로스페이스 임원 박상원, LS사업3팀장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_ls사업2팀", "properties": {"evidence": "한화에어로스페이스 임원 강민규, LS사업2팀장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_ls사업4팀", "properties": {"evidence": "한화에어로스페이스 임원 박주용, LS사업4팀장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_발사체계연구센터", "properties": {"evidence": "한화에어로스페이스 임원 조상환, 발사체계연구센터장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ls사업부_mro사업부", "properties": {"evidence": "한화에어로스페이스 임원 안장혁, 장성원, MRO사업부장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_support실", "properties": {"evidence": "한화에어로스페이스 임원 김무영 실장, 지원실장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_strategic실", "properties": {"evidence": "한화에어로스페이스 임원 최성규, 정서영 등 전략기획실 담당", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_재무실", "properties": {"evidence": "한화에어로스페이스 임원 한상윤 IR팀장, 윤안식 재무실장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_cr실", "properties": {"evidence": "한화에어로스페이스 임원 문지훈 CR실장", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_hr실", "properties": {"evidence": "한화에어로스페이스 임원 여승주 부회장, 고상휘, 김경우, 고정호, 고상휘 등 HR기획팀", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_communicaton위원회", "properties": {"evidence": "한화에어로스페이스 임원 박장우, 박종국, 박지영, 이명건 커뮤니케이션위원회 관련 업무", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_pgm사업부", "to_id": "industry_방산", "properties": {"evidence": "PGM사업부는 한화에어로스페이스의 방산 사업부문임", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ls사업부", "to_id": "industry_방산", "properties": {"evidence": "LS사업부는 한화에어로스페이스의 방산 사업부문임", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mds사업부", "to_id": "industry_방산", "properties": {"evidence": "MDS사업부는 한화에어로스페이스의 방산 사업부문임", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_항공사업부", "to_id": "industry_항공우주", "properties": {"evidence": "항공사업부는 한화에어로스페이스의 항공우주 사업부문임", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_우주사업부", "to_id": "industry_항공우주", "properties": {"evidence": "우주사업부는 한화에어로스페이스의 항공우주 사업부문임", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전략부문", "to_id": "industry_방산", "properties": {"evidence": "전략부문은 한화에어로스페이스 방산부문 전략기획 담당", "date": "2026-03-16", "evidence_source_id": "dart_012450_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112", "evidence_published_at": "2026-03-16"}}

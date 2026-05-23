@@ -2,27 +2,44 @@
   "source_id": "dart_051910_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_lg화학",
+      "id": "company_051910",
       "type": "Company",
-      "name": "LG화학"
+      "name": "LG화학",
+      "stock_code": "051910",
+      "description": "석유화학, 생명과학 및 첨단소재 연구개발, 글로벌 생산 및 경영전략 담당 임원 보유"
     },
     {
-      "id": "industry_ai",
-      "type": "Industry",
-      "name": "AI"
+      "id": "business_area_석유화학",
+      "type": "BusinessArea",
+      "name": "석유화학"
     },
     {
-      "id": "industry_it",
+      "id": "business_area_첨단소재",
+      "type": "BusinessArea",
+      "name": "첨단소재"
+    },
+    {
+      "id": "business_area_생명과학",
+      "type": "BusinessArea",
+      "name": "생명과학"
+    },
+    {
+      "id": "business_area_경영전략",
+      "type": "BusinessArea",
+      "name": "경영전략"
+    },
+    {
+      "id": "industry_화학",
       "type": "Industry",
-      "name": "IT"
+      "name": "화학"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_lg화학",
-      "to": "industry_ai",
-      "evidence": "LG화학의 임원은 이종구, 직위는 부사장, 이사회상 역할은 미등기, 담당업무는 고문실, 최대주주와의 관계는 계열회사 미등기임원, 주요경력은 - KAIST 화학공학 박사 - 前 석유화학연구소장 - 前 CTO.",
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_석유화학",
+      "evidence": "임원들은 석유화학연구소장, 석유화학.Global생산.제조혁신그룹장, 석유화학사업본부장, 석유화학.Global생산센터장 등 석유화학 관련 담당업무를 맡고 있음",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -30,10 +47,65 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_lg화학",
-      "to": "industry_it",
-      "evidence": "LG화학의 임원은 이화영, 직위는 전무, 이사회상 역할은 미등기, 담당업무는 석유화학.미주사업그룹장, 최대주주와의 관계는 계열회사 미등기임원, 주요경력은 - 아주대 행정학 학사 - 前 PO사업부장 - 前 Sustainability사업부장.",
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_첨단소재",
+      "evidence": "임원들은 첨단소재연구소장, 첨단소재연구소.전지소재선행개발, 첨단소재.경영전략담당 등 첨단소재 관련 업무 보유",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_생명과학",
+      "evidence": "임원들 중 생명과학.바이오CMC연구소장, 생명과학.경영전략그룹장, 생명과학.임상개발그룹장, 생명과학사업본부장 등이 있음",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_051910",
+      "to": "business_area_경영전략",
+      "evidence": "임원들이 경영위원회 위원장, 경영전략그룹장, 경영전략담당 등 경영전략 관련 업무를 담당",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_석유화학",
+      "to": "industry_화학",
+      "evidence": "LG화학은 화학 산업 내 석유화학 분야를 운영함",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_첨단소재",
+      "to": "industry_화학",
+      "evidence": "첨단소재사업부서가 화학 산업 내 첨단소재 분야에 속함",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_생명과학",
+      "to": "industry_화학",
+      "evidence": "생명과학 분야가 화학 산업의 한 부문임",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_executive_status_2025_11011",
       "evidence_source_type": "dart",

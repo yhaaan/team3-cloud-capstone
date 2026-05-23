@@ -2,17 +2,99 @@
   "source_id": "news_000880_1b465cbfc83f5e21",
   "entities": [
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
-      "stock_code": "000880"
+      "stock_code": "000880",
+      "description": "고가치 보장성 상품과 여성·시니어 보험 시장 중심의 보험상품 판매에 주력하는 기업"
     },
     {
-      "id": "company_한화손해보험",
-      "type": "Company",
-      "name": "한화손해보험",
-      "stock_code": "000370"
+      "id": "business_area_장기보장성_보험",
+      "type": "BusinessArea",
+      "name": "장기보장성 보험"
+    },
+    {
+      "id": "business_area_여성_보험시장",
+      "type": "BusinessArea",
+      "name": "여성 보험시장"
+    },
+    {
+      "id": "product_service_시그니처_여성_건강보험_4.0",
+      "type": "ProductService",
+      "name": "시그니처 여성 건강보험 4.0"
+    },
+    {
+      "id": "industry_보험",
+      "type": "Industry",
+      "name": "보험"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000880",
+      "to": "business_area_장기보장성_보험",
+      "evidence": "1분기 월 평균 장기 보장성 신계약은 80억3000만원으로 전년 동기 64억9000만원 대비 23.6% 증가했다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000880",
+      "to": "business_area_여성_보험시장",
+      "evidence": "이는 여성 및 시니어 보험 시장을 겨냥한 고가치 상품 중심의 영업 전략과 채널 경쟁력 강화가 맞물린 결과로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000880",
+      "to": "product_service_시그니처_여성_건강보험_4.0",
+      "evidence": "특히 올해 1월 출시한 '시그니처 여성 건강보험 4.0'이 성장을 이끌었다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_장기보장성_보험",
+      "to": "industry_보험",
+      "evidence": "한화손해보험이 보험계약마진(CSM)과 보험시장 중심으로 성장하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_여성_보험시장",
+      "to": "industry_보험",
+      "evidence": "이는 여성 및 시니어 보험 시장을 겨냥한 고가치 상품 중심의 영업 전략과 채널 경쟁력 강화가 맞물린 결과로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_시그니처_여성_건강보험_4.0",
+      "to": "business_area_여성_보험시장",
+      "evidence": "특히 올해 1월 출시한 '시그니처 여성 건강보험 4.0'이 성장을 이끌었다.",
+      "date": "",
+      "evidence_source_id": "news_000880_1b465cbfc83f5e21",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.news2day.co.kr/article/20260512500075",
+      "evidence_published_at": "2026-05-12T10:04:00+09:00"
+    }
+  ]
 }

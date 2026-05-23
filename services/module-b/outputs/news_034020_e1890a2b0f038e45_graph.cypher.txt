@@ -1,15 +1,67 @@
-// node: company_dosan_energy
+// node: company_034020
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan_energy", "type": "Company", "name": "두산에너빌리티"}
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "두산에너빌리티는 에너지 및 원자력 산업 관련 사업을 영위하는 기업입니다."}
 
-// node: company_dosan
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan", "type": "Company", "name": "두산"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: business_area_nuclear_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_nuclear_power", "type": "BusinessArea", "name": "원자력"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_nuclear_power", "properties": {"evidence": "두산에너빌리티 ·오르비텍 등 일부 원전주 강세…일부 종목은 혼...", "date": "", "evidence_source_id": "news_034020_e1890a2b0f038e45", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573840", "evidence_published_at": "2026-05-12T09:22:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_nuclear_power", "to_id": "industry_energy", "properties": {"evidence": "두산에너빌리티 ·오르비텍 등 일부 원전주 강세…일부 종목은 혼...", "date": "", "evidence_source_id": "news_034020_e1890a2b0f038e45", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573840", "evidence_published_at": "2026-05-12T09:22:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "industry_energy", "properties": {"evidence": "두산에너빌리티 ·오르비텍 등 일부 원전주 강세…일부 종목은 혼...", "date": "", "evidence_source_id": "news_034020_e1890a2b0f038e45", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573840", "evidence_published_at": "2026-05-12T09:22:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000150", "to_id": "industry_energy", "properties": {"evidence": "두산에너빌리티 ·오르비텍 등 일부 원전주 강세…일부 종목은 혼...", "date": "", "evidence_source_id": "news_034020_e1890a2b0f038e45", "evidence_source_type": "news", "evidence_source_url": "https://www.cbci.co.kr/news/articleView.html?idxno=573840", "evidence_published_at": "2026-05-12T09:22:00+09:00"}}

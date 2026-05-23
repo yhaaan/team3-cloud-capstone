@@ -1,7 +1,92 @@
-// node: company_삼성전기
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "MLCC, AI서버용 필름 등 전자 부품과 기술개발 지원을 중심으로 하는 전자부품 기업"}
+
+// node: company_006980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006980", "type": "Company", "name": "우성", "stock_code": "006980"}
+
+// node: company_005070
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005070", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
+
+// node: business_area_mlcc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mlcc", "type": "BusinessArea", "name": "MLCC"}
+
+// node: business_area_ai_server_films
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_server_films", "type": "BusinessArea", "name": "AI 서버용 필름"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자부품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_mlcc", "properties": {"evidence": "삼성전기는 MLCC(적층세라믹콘덴서) 설비를 공급하는 우성에스이 등 협력사와 동반성장함", "date": "", "evidence_source_id": "news_009150_236dbf3d4c275f12", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695", "evidence_published_at": "2026-04-28T19:40:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_ai_server_films", "properties": {"evidence": "코스모신소재는 AI(인공지능)서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받음", "date": "", "evidence_source_id": "news_009150_236dbf3d4c275f12", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695", "evidence_published_at": "2026-04-28T19:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mlcc", "to_id": "industry_electronics", "properties": {"evidence": "MLCC(적층세라믹콘덴서) 는 전자부품의 한 분야임", "date": "", "evidence_source_id": "news_009150_236dbf3d4c275f12", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695", "evidence_published_at": "2026-04-28T19:40:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_server_films", "to_id": "industry_electronics", "properties": {"evidence": "AI 서버용 필름은 전자부품 분야에 해당함", "date": "", "evidence_source_id": "news_009150_236dbf3d4c275f12", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695", "evidence_published_at": "2026-04-28T19:40:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "industry_electronics", "properties": {"evidence": "삼성전기는 전자부품 및 기술개발과 동반성장 지원 기업임", "date": "", "evidence_source_id": "news_009150_236dbf3d4c275f12", "evidence_source_type": "news", "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695", "evidence_published_at": "2026-04-28T19:40:00+09:00"}}

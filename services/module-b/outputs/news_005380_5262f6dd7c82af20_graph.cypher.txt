@@ -1,55 +1,160 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "로봇 메타플랜트와 로보틱스 사업을 포함한 자동차 제조 전문 기업"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_hyundai_wia
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_wia", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_hyundai_muvex
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_muvex", "type": "Company", "name": "현대무벡스", "stock_code": "319400"}
-
-// node: company_hyundai_glovis
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_glovis", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210"}
 
-// node: company_hyundai_mobis
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
-
-// node: company_samsung_securities
+// node: company_319400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_securities", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+:params {"id": "company_319400", "type": "Company", "name": "현대무벡스", "stock_code": "319400"}
+
+// node: company_086280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+
+// node: company_012330
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차 제조"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "임은영 삼성증권 연구원은 현대차에 대해 \"올해 3분기 로봇 메타플랜트 애플리케이션 센터(RMAC) 운영과 로보틱스 아메리카 설립이 추가 모멘텀이 될 전망\"이라며", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "현대차(005380)는 전장 대비 3만5000원(5.42%) 오른 68만1000원에 거래되며 상승세를 이어가고 있다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_automotive", "properties": {"evidence": "임은영 삼성증권 연구원은 현대차에 대해 \"2027년 현대차·기아의 합산 시총은 토요타의 시가총액을 넘어설 것\"이라고 말했다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_319400", "to_id": "business_area_robotics", "properties": {"evidence": "현대무벡스(319400)는 전 거래일 대비 8400원(21.71%) 오른 4만7100원에 거래되고 있다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086280", "to_id": "business_area_automotive", "properties": {"evidence": "현대글로비스(086280)(9.76%), 현대위아(011210)(8.15%) 등이 일제히 상승세다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_automotive", "properties": {"evidence": "현대글로비스(086280)(9.76%), 현대위아(011210)(8.15%) 등이 일제히 상승세다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "business_area_automotive", "properties": {"evidence": "현대모비스(012330) 역시 3만5000원(6.33%) 상승한 58만8000원에 거래 중이다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_ai", "properties": {"evidence": "현대차그룹 계열사 보스턴다이내믹스가 휴머노이드 로봇 '아틀라스'의 양산형 모델을 공개한 뒤 피지컬 인공지능(AI) 사업에 대한 기대감이 커진 영향이다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "현대차(005380)는 전장 대비 3만5000원(5.42%) 오른 68만1000원에 거래되며 상승세를 이어가고 있다.", "date": "", "evidence_source_id": "news_005380_5262f6dd7c82af20", "evidence_source_type": "news", "evidence_source_url": "http://www.edaily.co.kr/news/newspath.asp?newsid=03873686645448264", "evidence_published_at": "2026-05-12T09:42:00+09:00"}}

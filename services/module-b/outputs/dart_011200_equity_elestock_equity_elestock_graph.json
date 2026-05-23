@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_011200_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_011200",
+      "type": "Company",
+      "name": "HMM",
+      "stock_code": "011200",
+      "description": "HMM은 해운 물류 서비스를 주력으로 하는 회사입니다."
+    },
+    {
+      "id": "business_area_shipping_logistics",
+      "type": "BusinessArea",
+      "name": "해운 물류"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011200",
+      "to": "business_area_shipping_logistics",
+      "evidence": "HMM은 해운 물류 서비스를 주력으로 하는 회사입니다.",
+      "date": "2025-09-18",
+      "evidence_source_id": "dart_011200_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250918000293",
+      "evidence_published_at": "2025-09-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipping_logistics",
+      "to": "industry_logistics",
+      "evidence": "HMM은 해운 물류 서비스를 주력으로 하는 회사입니다.",
+      "date": "2025-09-18",
+      "evidence_source_id": "dart_011200_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250918000293",
+      "evidence_published_at": "2025-09-18"
+    }
+  ]
+}

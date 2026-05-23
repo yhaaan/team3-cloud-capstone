@@ -1,0 +1,84 @@
+{
+  "source_id": "dart_086790_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_086790",
+      "type": "Company",
+      "name": "하나금융지주",
+      "stock_code": "086790",
+      "description": "금융 서비스 및 금융 자회사 경영 참여를 주요 사업으로 하는 금융지주회사"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "finance"
+    },
+    {
+      "id": "business_area_financial_services",
+      "type": "BusinessArea",
+      "name": "financial services"
+    },
+    {
+      "id": "business_area_insurance",
+      "type": "BusinessArea",
+      "name": "insurance"
+    },
+    {
+      "id": "business_area_fintech",
+      "type": "BusinessArea",
+      "name": "fintech"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086790",
+      "to": "industry_finance",
+      "evidence": "하나금융지주의 타법인 출자 대상은 하나은행 ... 출자 목적은 경영참여",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_086790",
+      "to": "business_area_financial_services",
+      "evidence": "하나금융지주의 타법인 출자 대상은 하나은행, 하나증권, 하나카드 등의 금융 자회사 출자로 금융 서비스를 운영",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_086790",
+      "to": "business_area_insurance",
+      "evidence": "하나금융지주의 타법인 출자 대상은 하나생명보험, 하나손해보험(주5) 등 보험 자회사 출자로 보험 사업 운영",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_086790",
+      "to": "business_area_fintech",
+      "evidence": "하나금융지주의 타법인 출자 대상은 핀크(주3) 등 핀테크 자회사 출자로 핀테크 사업도 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

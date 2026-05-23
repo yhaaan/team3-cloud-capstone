@@ -2,26 +2,67 @@
   "source_id": "news_000270_0dae412b27c361d1",
   "entities": [
     {
-      "id": "company_kia",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
-      "stock_code": "000270"
+      "stock_code": "000270",
+      "description": "기아는 자동차 제조 및 판매를 주력 사업으로 영위하는 기업입니다."
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
     },
     {
-      "id": "person_kim_seung_ho",
-      "type": "Person",
-      "name": "김승호",
-      "role_raw": "회장",
-      "affiliated_company": "company_kia",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "automotive"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_automobile_manufacturing",
+      "type": "BusinessArea",
+      "name": "automobile manufacturing"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000270",
+      "to": "business_area_automobile_manufacturing",
+      "evidence": "기아, 신한은행과 오토큐·대리점 금융지원 협약…전용 대출상품 운영",
+      "date": "",
+      "evidence_source_id": "news_000270_0dae412b27c361d1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12044249",
+      "evidence_published_at": "2026-05-12T09:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_automobile_manufacturing",
+      "to": "industry_automotive",
+      "evidence": "기아, 신한은행과 오토큐·대리점 금융지원 협약…전용 대출상품 운영",
+      "date": "",
+      "evidence_source_id": "news_000270_0dae412b27c361d1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12044249",
+      "evidence_published_at": "2026-05-12T09:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_semiconductor",
+      "evidence": "기업·경영 반도체·전자 중공업·화학 항공·해운 자동차 유통 중기·벤처",
+      "date": "",
+      "evidence_source_id": "news_000270_0dae412b27c361d1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.mk.co.kr/article/12044249",
+      "evidence_published_at": "2026-05-12T09:02:00+09:00"
+    }
+  ]
 }

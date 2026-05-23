@@ -1,109 +1,313 @@
-// node: company_dusan
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dusan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150", "description": "두산은 반도체, 산업용 로봇, 터빈 제조, 지주회사 및 제조업 분야를 주요 사업으로 함."}
 
-// node: company_oricom
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_oricom", "type": "Company", "name": "오리콤", "stock_code": "010470"}
-
-// node: company_dusantasna
+// node: company_010470
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dusantasna", "type": "Company", "name": "두산테스나", "stock_code": "131970"}
+:params {"id": "company_010470", "type": "Company", "name": "오리콤", "stock_code": "010470"}
 
-// node: company_dusanrobotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dusanrobotics", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
-
-// node: company_dusanenerbility
+// node: company_131970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dusanenerbility", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+:params {"id": "company_131970", "type": "Company", "name": "두산테스나", "stock_code": "131970"}
 
-// node: company_dusanbobcat
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dusanbobcat", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
-
-// node: company_dusanfuelcell
+// node: company_454910
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dusanfuelcell", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
 
-// relation: AFFILIATED_WITH
+// node: company_034020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020"}
+
+// node: company_241560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_241560", "type": "Company", "name": "두산밥캣", "stock_code": "241560"}
+
+// node: company_336260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+
+// node: business_area_advertising
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_advertising", "type": "BusinessArea", "name": "광고업"}
+
+// node: business_area_semiconductor_test_engineering
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor_test_engineering", "type": "BusinessArea", "name": "반도체 테스트 및 엔지니어링"}
+
+// node: business_area_industrial_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_industrial_robot", "type": "BusinessArea", "name": "산업용 로봇 제조업"}
+
+// node: business_area_turbine_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_turbine_manufacturing", "type": "BusinessArea", "name": "터빈 제조업"}
+
+// node: business_area_holding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_holding", "type": "BusinessArea", "name": "지주회사"}
+
+// node: business_area_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_manufacturing", "type": "BusinessArea", "name": "제조업"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "robotics"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// node: industry_advertising
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_advertising", "type": "Industry", "name": "advertising"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "finance"}
+
+// node: industry_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_manufacturing", "type": "Industry", "name": "manufacturing"}
+
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_oricom", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_010470", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤 ... 의결권의 과반수 소유", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
 
-// relation: AFFILIATED_WITH
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dusantasna", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_131970", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 ... 두산테스나 ... 실질지배력(주2)", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
 
-// relation: AFFILIATED_WITH
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dusanrobotics", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_454910", "properties": {"evidence": "두산로보틱스㈜ ... 의결권의 과반수 소유", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
 
-// relation: AFFILIATED_WITH
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dusanenerbility", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_034020", "properties": {"evidence": "두산에너빌리티㈜ ... 실질지배력(주2)", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
 
-// relation: AFFILIATED_WITH
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dusanbobcat", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_241560", "properties": {"evidence": "두산밥캣 주식회사 ... 실질지배력(주2)", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
 
-// relation: AFFILIATED_WITH
+// relation: ACQUIRES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_dusanfuelcell", "to_id": "company_dusan", "properties": {"evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+:params {"from_id": "company_000150", "to_id": "company_336260", "properties": {"evidence": "두산퓨얼셀㈜ ... 실질지배력(주2)", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010470", "to_id": "business_area_advertising", "properties": {"evidence": "㈜오리콤 ... 광고업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_advertising", "to_id": "industry_advertising", "properties": {"evidence": "㈜오리콤 ... 광고업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_131970", "to_id": "business_area_semiconductor_test_engineering", "properties": {"evidence": "㈜두산테스나 ... 반도체 제조관련 테스트 및 엔지니어링", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor_test_engineering", "to_id": "industry_semiconductor", "properties": {"evidence": "㈜두산테스나 ... 반도체 제조관련 테스트 및 엔지니어링", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "business_area_industrial_robot", "properties": {"evidence": "두산로보틱스㈜ ... 산업용 로봇 제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_industrial_robot", "to_id": "industry_robotics", "properties": {"evidence": "두산로보틱스㈜ ... 산업용 로봇 제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_turbine_manufacturing", "properties": {"evidence": "두산에너빌리티㈜ ... 기타기관 및 터빈제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_turbine_manufacturing", "to_id": "industry_energy", "properties": {"evidence": "두산에너빌리티㈜ ... 기타기관 및 터빈제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_241560", "to_id": "business_area_holding", "properties": {"evidence": "두산밥캣 주식회사 ... 지주회사", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_holding", "to_id": "industry_finance", "properties": {"evidence": "두산밥캣 주식회사 ... 지주회사", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_manufacturing", "properties": {"evidence": "두산퓨얼셀㈜ ... 제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_manufacturing", "to_id": "industry_manufacturing", "properties": {"evidence": "두산퓨얼셀㈜ ... 제조업", "date": "2026-03-23", "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945", "evidence_published_at": "2026-03-23"}}

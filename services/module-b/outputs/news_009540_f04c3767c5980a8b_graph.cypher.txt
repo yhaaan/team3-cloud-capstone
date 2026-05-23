@@ -1,31 +1,134 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "친환경 고부가 선박 중심 수주로 매출과 영업익 크게 성장"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd현대마린엔진
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "선박 및 해양 부문 사업 중심으로 매출과 영업익 성장 주도"}
 
-// node: company_hd현대에너지솔루션
+// node: company_071970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 단가 상승과 인도 물량 확대에 따른 매출 및 영업익 증가"}
+
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000", "description": "태양광 모듈 판매 증가와 판가 인상으로 흑자 전환"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "Engine"}
+
+// node: business_area_solar_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_solar_module", "type": "BusinessArea", "name": "Solar module"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "Energy"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD한국조선해양이 친환경 고부가 선박 중심의 수주 효과에 힘입어 올해 1분기 호실적을 거뒀다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "특히 지난해 말 HD현대중공업과 HD현대미포 합병으로 출범한 통합 HD현대중공업은 매출 5조9,163억원, 영업이익 9,054억원을 기록하며 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "엔진 계열사인 HD현대마린엔진은 엔진 단가 상승과 인도 물량 확대 영향으로 매출 1,335억원, 영업이익 326억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_322000", "to_id": "business_area_solar_module", "properties": {"evidence": "HD현대에너지솔루션도 태양광 모듈 판매 증가와 판가 인상 영향으로 매출 1,599억원, 영업이익 290억원을 기록하며 흑자 전환했다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "친환경 고부가 선박 중심의 수주 효과에 힘입어...", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진 계열사인 HD현대마린엔진은 엔진 단가 상승과 인도 물량 확대 영향으로 매출 1,335억원, 영업이익 326억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_solar_module", "to_id": "industry_energy", "properties": {"evidence": "HD현대에너지솔루션도 태양광 모듈 판매 증가와 판가 인상 영향으로 매출 1,599억원, 영업이익 290억원을 기록하며 흑자 전환했다.", "date": "", "evidence_source_id": "news_009540_f04c3767c5980a8b", "evidence_source_type": "news", "evidence_source_url": "https://www.webeconomy.co.kr/news/articleView.html?idxno=2165439", "evidence_published_at": "2026-05-07T19:56:00+09:00"}}

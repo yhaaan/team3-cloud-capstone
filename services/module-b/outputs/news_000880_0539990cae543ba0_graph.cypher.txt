@@ -1,23 +1,57 @@
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "야구단 한화 이글스를 운영하는 종합기업"}
 
-// node: company_kia
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_dosan
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_dosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_000150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_야구단_운영
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_야구단_운영", "type": "BusinessArea", "name": "야구단 운영"}
+
+// node: industry_스포츠
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_스포츠", "type": "Industry", "name": "스포츠"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_야구단_운영", "properties": {"evidence": "한화 이글스는 7일 광주기아챔피언스필드에서 열리는 2026 프로야구 KIA 타이거즈와 방문 경기를 앞두고 김서현을 엔트리 등록했다.", "date": "", "evidence_source_id": "news_000880_0539990cae543ba0", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=295266", "evidence_published_at": "2026-05-07T21:25:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_야구단_운영", "to_id": "industry_스포츠", "properties": {"evidence": "한화 이글스는 7일 광주기아챔피언스필드에서 열리는 2026 프로야구 KIA 타이거즈와 방문 경기를 앞두고 김서현을 엔트리 등록했다.", "date": "", "evidence_source_id": "news_000880_0539990cae543ba0", "evidence_source_type": "news", "evidence_source_url": "https://www.ppss.kr/news/articleView.html?idxno=295266", "evidence_published_at": "2026-05-07T21:25:00+09:00"}}

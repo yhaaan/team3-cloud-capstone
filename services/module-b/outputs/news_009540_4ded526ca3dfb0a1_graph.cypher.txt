@@ -1,40 +1,237 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "친환경 선박과 LNG선 수주를 중심으로 조선, 엔진기계, 해양플랜트 사업을 영위"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd현대마린엔진
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "초대형 LNG운반선 건조 등 조선 사업을 영위"}
 
-// node: company_hd현대에너지솔루션
+// node: company_071970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 판매 및 인도 사업을 수행"}
 
-// relation: AFFILIATED_WITH
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000", "description": "국내외 태양광 모듈 판매 및 생산"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선"}
+
+// node: business_area_engine_mechanics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine_mechanics", "type": "BusinessArea", "name": "엔진기계"}
+
+// node: business_area_offshore_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_plant", "type": "BusinessArea", "name": "해양플랜트"}
+
+// node: business_area_solar_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_solar_module", "type": "BusinessArea", "name": "태양광 모듈"}
+
+// node: productservice_lng_carrier
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_lng_carrier", "type": "ProductService", "name": "LNG 운반선"}
+
+// node: productservice_gas_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_gas_ship", "type": "ProductService", "name": "가스선"}
+
+// node: productservice_container_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_container_ship", "type": "ProductService", "name": "컨테이너선"}
+
+// node: productservice_dual_fuel_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_dual_fuel_engine", "type": "ProductService", "name": "이중연료 엔진"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "energy"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hd현대중공업", "to_id": "company_hd현대중공업", "properties": {"evidence": "지난해 12월 HD현대미포와 합병한 통합 HD현대중공업은 매출 5조9163억원, 영업이익 9054억원을 기록하며 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "HD한국조선해양은 최근 LNG선과 친환경 선박 중심의 수주 확대에도 속도를 내고 있다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_engine_mechanics", "properties": {"evidence": "엔진기계 부문은 이중연료 엔진 수요 확대와 판매단가 상승 영향으로 매출 7170억원, 영업이익 2181억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_offshore_plant", "properties": {"evidence": "해양플랜트 부문은 프로젝트 공정률 상승과 비용 절감 효과에 힘입어 매출 4578억원, 영업이익 866억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_solar_module", "properties": {"evidence": "HD현대에너지솔루션은 국내외 태양광 모듈 판매 증가와 판가 인상 영향으로 매출 1599억원, 영업이익 290억원을 기록하며 흑자 전환했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "통합 HD현대중공업은 매출 5조9163억원, 영업이익 9054억원을 기록하며 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine_mechanics", "properties": {"evidence": "HD현대마린엔진은 엔진 판매단가 상승과 인도 물량 증가 영향으로 매출 1335억원, 영업이익 326억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "productservice_lng_carrier", "properties": {"evidence": "HD현대중공업이 건조해 인도한 초대형 LNG 운반선", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "productservice_gas_ship", "properties": {"evidence": "가스선과 컨테이너선 발주도 지속되고 있다", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "productservice_container_ship", "properties": {"evidence": "가스선과 컨테이너선 발주도 지속되고 있다", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "productservice_dual_fuel_engine", "properties": {"evidence": "엔진기계 부문은 이중연료 엔진 수요 확대와 판매단가 상승 영향으로 매출 7170억원, 영업이익 2181억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "HD한국조선해양은 친환경 고수익 선박 비중 확대와 생산성 개선에 힘입어 1분기 호실적을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine_mechanics", "to_id": "industry_shipbuilding", "properties": {"evidence": "엔진기계 부문은 이중연료 엔진 수요 확대와 판매단가 상승 영향으로 매출 7170억원, 영업이익 2181억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "해양플랜트 부문은 프로젝트 공정률 상승과 비용 절감 효과에 힘입어 매출 4578억원, 영업이익 866억원을 기록했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_solar_module", "to_id": "industry_energy", "properties": {"evidence": "HD현대에너지솔루션은 국내외 태양광 모듈 판매 증가와 판가 인상 영향으로 매출 1599억원, 영업이익 290억원을 기록하며 흑자 전환했다.", "date": "", "evidence_source_id": "news_009540_4ded526ca3dfb0a1", "evidence_source_type": "news", "evidence_source_url": "https://www.socialvalue.kr/news/view/1065600146603752", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}

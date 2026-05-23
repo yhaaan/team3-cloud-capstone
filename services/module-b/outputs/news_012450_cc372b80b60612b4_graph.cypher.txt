@@ -1,15 +1,75 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "방위산업 정밀유도무기와 다연장로켓 공급 사업을 영위합니다"}
 
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: product_service_precision_guided_rocket
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_precision_guided_rocket", "type": "ProductService", "name": "천무 다연장 정밀유도무기"}
+
+// node: business_area_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense", "type": "BusinessArea", "name": "방위산업"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "product_service_precision_guided_rocket", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급합니다.", "date": "", "evidence_source_id": "news_012450_cc372b80b60612b4", "evidence_source_type": "news", "evidence_source_url": "https://news.mtn.co.kr/news-detail/2026051117081546911", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_defense", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급합니다.", "date": "", "evidence_source_id": "news_012450_cc372b80b60612b4", "evidence_source_type": "news", "evidence_source_url": "https://news.mtn.co.kr/news-detail/2026051117081546911", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense", "to_id": "industry_energy", "properties": {"evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급합니다.", "date": "", "evidence_source_id": "news_012450_cc372b80b60612b4", "evidence_source_type": "news", "evidence_source_url": "https://news.mtn.co.kr/news-detail/2026051117081546911", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "industry_energy", "properties": {"evidence": "한화와의 협력이 지속적으로 긴밀하게 이루어지고 있다", "date": "", "evidence_source_id": "news_012450_cc372b80b60612b4", "evidence_source_type": "news", "evidence_source_url": "https://news.mtn.co.kr/news-detail/2026051117081546911", "evidence_published_at": "2026-05-11T17:42:00+09:00"}}

@@ -1,0 +1,75 @@
+// node: company_001440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001440", "type": "Company", "name": "대한전선", "stock_code": "001440", "description": "해저케이블 설계, 생산부터 운송, 시공에 이르는 전력 인프라 수직계열화 체계를 완성"}
+
+// node: company_229640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_229640", "type": "Company", "name": "LS에코에너지", "stock_code": "229640", "description": "AI 데이터센터 전력망과 통신 인프라 솔루션을 동남아 초대형 프로젝트에 공급"}
+
+// node: business_area_submarine_cable_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_submarine_cable_construction", "type": "BusinessArea", "name": "해저케이블 시공"}
+
+// node: business_area_ai_data_center_power_supply
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_data_center_power_supply", "type": "BusinessArea", "name": "AI 데이터센터 전력망 공급"}
+
+// node: industry_power_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_power_infrastructure", "type": "Industry", "name": "전력 인프라"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_submarine_cable_construction", "properties": {"evidence": "대한전선과 LS에코에너지는 각각 해저케이블 시공 역량과 AI 데이터센터 전력망 공급 확대를 통해 글로벌 시장 선점에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_001440_9f82d1c2c8cd586b", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=202102", "evidence_published_at": "2026-05-14T15:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "business_area_ai_data_center_power_supply", "properties": {"evidence": "대한전선과 LS에코에너지는 각각 해저케이블 시공 역량과 AI 데이터센터 전력망 공급 확대를 통해 글로벌 시장 선점에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_001440_9f82d1c2c8cd586b", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=202102", "evidence_published_at": "2026-05-14T15:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_submarine_cable_construction", "to_id": "industry_power_infrastructure", "properties": {"evidence": "글로벌 전력 인프라 시장에서 해상풍력과 초고압 송전망, AI 데이터센터 전력 수요가 폭증하고 있다.", "date": "", "evidence_source_id": "news_001440_9f82d1c2c8cd586b", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=202102", "evidence_published_at": "2026-05-14T15:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_data_center_power_supply", "to_id": "industry_power_infrastructure", "properties": {"evidence": "글로벌 전력 인프라 시장에서 해상풍력과 초고압 송전망, AI 데이터센터 전력 수요가 폭증하고 있다.", "date": "", "evidence_source_id": "news_001440_9f82d1c2c8cd586b", "evidence_source_type": "news", "evidence_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=202102", "evidence_published_at": "2026-05-14T15:30:00+09:00"}}

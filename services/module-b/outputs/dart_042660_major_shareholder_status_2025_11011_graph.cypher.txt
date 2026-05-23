@@ -1,26 +1,34 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660"}
 
-// node: company_hanwha_aerospace
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
-
-// node: company_hanwha_systems
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_systems", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: company_272210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
 // relation: INVESTS_IN
 
@@ -29,7 +37,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hanwha_aerospace", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 최대주주 관련 인물/법인은 한화에어로스페이스(주), 관계는 최대주주, 당기말 보유주식수는 93,277,036주, 지분율은 30.44%", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_012450", "to_id": "company_042660", "properties": {"evidence": "한화에어로스페이스(주), 관계는 최대주주, 당기말 보유주식수는 93,277,036주, 지분율은 30.44%", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
 
 // relation: INVESTS_IN
 
@@ -38,4 +46,22 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hanwha_systems", "to_id": "company_hanwha_ocean", "properties": {"evidence": "한화오션의 최대주주 관련 인물/법인은 한화시스템(주), 관계는 최대주주의 특수관계인 (계열회사), 당기말 보유주식수는 35,450,910주, 지분율은 11.57%", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_272210", "to_id": "company_042660", "properties": {"evidence": "한화시스템(주), 관계는 최대주주의 특수관계인 (계열회사), 당기말 보유주식수는 35,450,910주, 지분율은 11.57%", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "company_042660", "properties": {"evidence": "한화에너지(주)(*), 관계는 최대주주의 특수관계인 (계열회사)", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "company_042660", "properties": {"evidence": "한화에어로스페이스(주) - 매수인: 한화에어로스페이스(주) - 매매대상 주식수: 22,375,216주 - 거래종결일: 2025년 3월 13일.", "date": "2026-03-17", "evidence_source_id": "dart_042660_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}

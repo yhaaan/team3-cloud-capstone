@@ -1,0 +1,171 @@
+// node: company_064350
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "글로벌 종합기계 기업으로 디펜스솔루션, 레일솔루션, 에코플랜트 사업을 영위함"}
+
+// node: business_area_defense_solutions
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_solutions", "type": "BusinessArea", "name": "디펜스솔루션"}
+
+// node: business_area_rail_solutions
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_rail_solutions", "type": "BusinessArea", "name": "레일솔루션"}
+
+// node: business_area_eco_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_eco_plant", "type": "BusinessArea", "name": "에코플랜트"}
+
+// node: product_service_defense_products
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_defense_products", "type": "ProductService", "name": "방산물자"}
+
+// node: product_service_rail_cars
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_rail_cars", "type": "ProductService", "name": "전동차"}
+
+// node: product_service_steel_press_transport_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_steel_press_transport_equipment", "type": "ProductService", "name": "제철프레스환경운반설비"}
+
+// node: industry_machine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machine", "type": "Industry", "name": "기계"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_defense_solutions", "properties": {"evidence": "현대로템은 ... 종합무기체계와 우주발사체, 미래무인체계 등을 수행하는 디펜스솔루션 사업", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_rail_solutions", "properties": {"evidence": "국가 기간산업인 고속철 등 종합철도차량 제조, 철도시스템 솔루션, 철도 운영 및 유지보수 등을 영위하고 있는 레일솔루션 사업", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_eco_plant", "properties": {"evidence": "수소인프라솔루션, 산업용 로보틱스 및 프레스, 에코 제철설비 등을 제조ㆍ판매하는 에코플랜트 사업으로 구성되어 있습니다", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_defense_products", "properties": {"evidence": "디펜스솔루션 부문 제품 방산물자 32,153억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_rail_cars", "properties": {"evidence": "레일솔루션 부문 상품 ·제품 전동차 20,896억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_steel_press_transport_equipment", "properties": {"evidence": "에코플랜트 부문 제품 제철프레스환경운반설비 5,341억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_solutions", "to_id": "industry_machine", "properties": {"evidence": "현대로템은 글로벌 종합기계 기업으로 ... 디펜스솔루션 사업", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rail_solutions", "to_id": "industry_machine", "properties": {"evidence": "현대로템은 글로벌 종합기계 기업으로 ... 레일솔루션 사업", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_eco_plant", "to_id": "industry_machine", "properties": {"evidence": "현대로템은 글로벌 종합기계 기업으로 ... 에코플랜트 사업", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_defense_products", "to_id": "business_area_defense_solutions", "properties": {"evidence": "디펜스솔루션 부문 제품 방산물자 32,153억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_rail_cars", "to_id": "business_area_rail_solutions", "properties": {"evidence": "레일솔루션 부문 상품 ·제품 전동차 20,896억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_steel_press_transport_equipment", "to_id": "business_area_eco_plant", "properties": {"evidence": "에코플랜트 부문 제품 제철프레스환경운반설비 5,341억원", "date": "2026-03-19", "evidence_source_id": "dart_064350_business_segments_20260319001275", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275", "evidence_published_at": "2026-03-19"}}

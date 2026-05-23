@@ -2,15 +2,94 @@
   "source_id": "dart_006400_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_삼성sdi",
+      "id": "company_006400",
       "type": "Company",
-      "name": "삼성SDI"
+      "name": "삼성SDI",
+      "stock_code": "006400",
+      "description": "2차전지와 전자재료 중심 사업을 영위하는 기업"
     },
     {
-      "id": "company_삼성전자",
+      "id": "company_005930",
       "type": "Company",
-      "name": "삼성전자"
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "industry_battery",
+      "type": "Industry",
+      "name": "배터리"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "business_area_ev_battery",
+      "type": "BusinessArea",
+      "name": "2차전지"
+    },
+    {
+      "id": "business_area_electronic_materials",
+      "type": "BusinessArea",
+      "name": "전자재료"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_ev_battery",
+      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고자",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006400",
+      "to": "business_area_electronic_materials",
+      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고자",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ev_battery",
+      "to": "industry_battery",
+      "evidence": "2차전지",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_electronic_materials",
+      "to": "industry_semiconductor",
+      "evidence": "전자재료",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자는 반도체 산업에 속함",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    }
+  ]
 }

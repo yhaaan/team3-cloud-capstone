@@ -1,0 +1,90 @@
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: company_373220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+
+// node: company_051910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+
+// node: person_국내_대표
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_국내_대표", "type": "Person", "name": "국내 대표"}
+
+// node: person_김동춘_사장
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김동춘_사장", "type": "Person", "name": "김동춘 사장"}
+
+// node: person_화학_대표이사
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_화학_대표이사", "type": "Person", "name": "화학 대표이사"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "industry_ai", "properties": {"evidence": "AI·반도체·전장 소재를 미래 성장축으로 키우며 기술 기반 고부가 소재 기업으로의 전환에 속도를 내고 있다.", "date": "", "evidence_source_id": "news_003550_6b552a21dabf1238", "evidence_source_type": "news", "evidence_source_url": "http://www.metroseoul.co.kr/article/20260517500155", "evidence_published_at": "2026-05-17T14:56:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "industry_it", "properties": {"evidence": "포럼＆컨퍼런스 지면PDF 메트로人 머니 산업 IT·과학 정치＆정책 생활경제 사회 에듀＆JOB 기획·연재 오피니언 라이프 CEO와칭 정정·반론보도 증권 은행 보험 카드 부동산 경제일반 재계 자동차 전기전자 물류항공 산업일반 인터넷 게임 방송통신 IT·과학일반 국회정당 청와대 정책 공기업 지방행정 국제 사회일반 기자수첩 칼럼 인사 동정 부음 문화 스포츠 운세 인물 메트로人 머니 산업 IT·과학 정치＆정책 생활경제 사회 에듀＆JOB 기획·연재 오피니언 라이프 CEO와칭 포럼＆컨퍼런스 지면PDF CEO와칭 > 인물 [CEO와칭] 석화 위기 속 '기술 LG화학' 전환 이끄는 김동춘 사장 메트로신문 원관희 기자 ㅣ2026-05-17 14:54:38 뉴스듣기 가 가 가 가 가 반도체·전장 소재 앞세워 고부가 전환 속도 범용 석화 한계 속 첨단소재 성장축 강화 AX·OKR 도입으로 기술 중심 조직 재편 김동춘 LG화학 대표이사 사장은 반도체·디스플레이 소재 사업을 거치며 첨단소재 분야에서 전문성을 쌓아온 '기술형 CEO'다.", "date": "", "evidence_source_id": "news_003550_6b552a21dabf1238", "evidence_source_type": "news", "evidence_source_url": "http://www.metroseoul.co.kr/article/20260517500155", "evidence_published_at": "2026-05-17T14:56:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_국내_대표", "to_id": "company_003550", "properties": {"evidence": "포럼＆컨퍼런스 지면PDF 메트로人 머니 산업 IT·과학 정치＆정책 생활경제 사회 에듀＆JOB 기획·연재 오피니언 라이프 CEO와칭 정정·반론보도 증권 은행 보험 카드 부동산 경제일반 재계 자동차 전기전자 물류항공 산업일반 인터넷 게임 방송통신 IT·과학일반 국회정당 청와대 정책 공기업 지방행정 국제 사회일반 기자수첩 칼럼 인사 동정 부음 문화 스포츠 운세 인물 메트로人 머니 산업 IT·과학 정치＆정책 생활경제 사회 에듀＆JOB 기획·연재 오피니언 라이프 CEO와칭 포럼＆컨퍼런스 지면PDF CEO와칭 > 인물 [CEO와칭] 석화 위기 속 '기술 LG화학' 전환 이끄는 김동춘 사장 메트로신문 원관희 기자 ㅣ2026-05-17 14:54:38 뉴스듣기 가 가 가 가 가 반도체·전장 소재 앞세워 고부가 전환 속도 범용 석화 한계 속 첨단소재 성장축 강화 AX·OKR 도입으로 기술 중심 조직 재편 김동춘 LG화학 대표이사 사장은 반도체·디스플레이 소재 사업을 거치며 첨단소재 분야에서 전문성을 쌓아온 '기술형 CEO'다.", "date": "", "evidence_source_id": "news_003550_6b552a21dabf1238", "evidence_source_type": "news", "evidence_source_url": "http://www.metroseoul.co.kr/article/20260517500155", "evidence_published_at": "2026-05-17T14:56:00+09:00"}}

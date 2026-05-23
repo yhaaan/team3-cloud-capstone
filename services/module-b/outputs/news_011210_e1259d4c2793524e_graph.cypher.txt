@@ -1,122 +1,98 @@
-// node: company_hyundai_wia
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_wia", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210", "description": "함선용 근접방어무기, AI 기반 원격사격통제 등 방위산업 부문 사업 운영"}
 
-// node: company_hyundai_rotem
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
-
-// node: company_hanwha
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "대구경 화포 등 방산 제품 생산 및 무기 체계 포트폴리오 육·해상 확대"}
 
-// node: company_hanwha_aerospace
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
-
-// node: company_pungsan
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_pungsan", "type": "Company", "name": "풍산", "stock_code": "103140"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "방산·우주항공 분야 주식 취득 및 협력 강화, 글로벌 수출 경쟁력 제고"}
 
-// node: company_korea_aerospace_industries
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_korea_aerospace_industries", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
-
-// node: company_hanwha_ocean
+// node: company_103140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_103140", "type": "Company", "name": "풍산", "stock_code": "103140"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: company_047810
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_047810", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
 
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_hyundai_motor
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: company_cj
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_cj", "type": "Company", "name": "CJ", "stock_code": "001040"}
-
-// node: company_cj_enm
+// node: business_area_proximity_defense_weapon
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_cj_enm", "type": "Company", "name": "CJ ENM", "stock_code": "035760"}
+:params {"id": "business_area_proximity_defense_weapon", "type": "BusinessArea", "name": "근접방어무기"}
 
-// node: company_rainbow_robotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_rainbow_robotics", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
-
-// node: company_enix
+// node: business_area_remote_firing_control
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_enix", "type": "Company", "name": "이닉스", "stock_code": "452400"}
+:params {"id": "business_area_remote_firing_control", "type": "BusinessArea", "name": "원격사격통제"}
+
+// node: business_area_large_caliber_artillery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_large_caliber_artillery", "type": "BusinessArea", "name": "대구경 화포"}
+
+// node: business_area_ammunition
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ammunition", "type": "BusinessArea", "name": "탄약"}
+
+// node: business_area_defense_industry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_industry", "type": "BusinessArea", "name": "방위산업"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방산"}
 
 // relation: ACQUIRES
 
@@ -125,22 +101,148 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hyundai_wia", "to_id": "company_hyundai_rotem", "properties": {"evidence": "지난달 15일 현대차그룹 계열사인 현대위아가 같은 계열사인 현대로템에 방위산업 부문 매각한다는 소식이 전해졌다.", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "company_011210", "properties": {"evidence": "지난달 15일 현대차그룹 계열사인 현대위아가 같은 계열사인 현대로템에 방위산업 부문 매각한다는 소식이 전해졌다.", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
 
-// relation: ACQUIRES
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
-SET r += $properties
-
-:params {"from_id": "company_hanwha_aerospace", "to_id": "company_pungsan", "properties": {"evidence": "앞서 지난 3월 말에는 한화에어로스페이스가 풍산의 탄약사업부 인수를 추진했다 양측 간 매각가 입장차가 커 무산된바 있다.", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
-
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_hanwha_aerospace", "to_id": "company_korea_aerospace_industries", "properties": {"evidence": "지난 5월 4일 또 다른 방산 분야 인수설 소식이 들려왔다. 한화에어로스페이스가 한국항공우주산업(KAI) 주식 10만주(0.1%)를 추가 취득해 관계사 포함 지분율을 5.09%로 확대했다고 밝혔다.", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+:params {"from_id": "company_011210", "to_id": "business_area_proximity_defense_weapon", "properties": {"evidence": "현대위아가 보유한 함선용 근접방어무기(CIWS-Ⅱ)... 사업 부문", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_remote_firing_control", "properties": {"evidence": "인공지능(AI) 기반 원격사격통제(RCWS) 등의 사업 부문", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_large_caliber_artillery", "properties": {"evidence": "K9 자주포의 포신, K2 전차의 주포 등 대구경 화포를 주력으로 생산", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_large_caliber_artillery", "properties": {"evidence": "이번 매각이 성사되면 현대로템은 현대위아의 대구경 화포 생산 핵심 기술 등 방산 역량을 흡수", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_proximity_defense_weapon", "to_id": "business_area_defense_industry", "properties": {"evidence": "함선용 근접방어무기(CIWS-Ⅱ)는 방위산업 부문에 속함", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_remote_firing_control", "to_id": "business_area_defense_industry", "properties": {"evidence": "인공지능(AI) 기반 원격사격통제 등은 방위산업 부문임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_large_caliber_artillery", "to_id": "business_area_defense_industry", "properties": {"evidence": "대구경 화포는 방산 부문에 속함", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_industry", "to_id": "industry_defense", "properties": {"evidence": "방산 부문은 1976년 설립 때부터 이어진 모태 사업이며 방산 산업임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_ammunition", "properties": {"evidence": "한화에어로스페이스가 풍산의 탄약사업부 인수를 추진", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_103140", "to_id": "business_area_ammunition", "properties": {"evidence": "풍산이 생산하는 탄약", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "industry_defense", "properties": {"evidence": "현대위아가 방위산업 부문 매각 관련 내용 등 방산업체임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "industry_defense", "properties": {"evidence": "현대로템이 방산 역량을 흡수해 경쟁력 강화 계획임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "industry_defense", "properties": {"evidence": "한화에어로스페이스가 방산·우주항공 분야 협력 강화 중임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_103140", "to_id": "industry_defense", "properties": {"evidence": "풍산의 탄약사업은 방산 부문 관련 사업임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047810", "to_id": "industry_defense", "properties": {"evidence": "한국항공우주가 방산·우주항공 분야임", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "industry_defense", "properties": {"evidence": "한화그룹 계열사 방산 부문 관련 M&A 추진", "date": "", "evidence_source_id": "news_011210_e1259d4c2793524e", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042797?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}

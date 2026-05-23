@@ -1,7 +1,67 @@
-// node: company_드림어스컴퍼니
+// node: company_060570
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_드림어스컴퍼니", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
+:params {"id": "company_060570", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570", "description": "음악 스트리밍 플랫폼 운영사다."}
+
+// node: business_area_music_streaming
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_music_streaming", "type": "BusinessArea", "name": "음악 스트리밍 플랫폼"}
+
+// node: product_service_FLO_이용권
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_FLO_이용권", "type": "ProductService", "name": "FLO 이용권"}
+
+// node: industry_영상_오디오물_제공_서비스업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_영상_오디오물_제공_서비스업", "type": "Industry", "name": "영상·오디오물 제공 서비스업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "business_area_music_streaming", "properties": {"evidence": "드림어스컴퍼니는 2003년 12월 19일 코스닥에 상장된 음악 스트리밍 플랫폼 운영사다.", "date": "", "evidence_source_id": "news_060570_a553de251e9eb056", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452", "evidence_published_at": "2026-03-27T14:10:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "product_service_FLO_이용권", "properties": {"evidence": "드림어스컴퍼니(060570)는 3월 27일 공시를 통해 에스케이텔레콤과 195억원 규모의 FLO 이용권 제공 계약을 체결했다고 밝혔다.", "date": "", "evidence_source_id": "news_060570_a553de251e9eb056", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452", "evidence_published_at": "2026-03-27T14:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_music_streaming", "to_id": "industry_영상_오디오물_제공_서비스업", "properties": {"evidence": "키워드 #드림어스컴퍼니 #영상·오디오물 제공 서비스업", "date": "", "evidence_source_id": "news_060570_a553de251e9eb056", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452", "evidence_published_at": "2026-03-27T14:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_FLO_이용권", "to_id": "business_area_music_streaming", "properties": {"evidence": "드림어스컴퍼니는 음악 스트리밍 플랫폼 운영사이며 FLO 이용권 제공 계약을 체결했다.", "date": "", "evidence_source_id": "news_060570_a553de251e9eb056", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=647452", "evidence_published_at": "2026-03-27T14:10:00+09:00"}}

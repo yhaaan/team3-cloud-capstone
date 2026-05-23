@@ -1,0 +1,127 @@
+{
+  "source_id": "dart_068270_business_segments_20260316001415",
+  "entities": [
+    {
+      "id": "company_068270",
+      "type": "Company",
+      "name": "셀트리온",
+      "stock_code": "068270",
+      "description": "자가면역질환, 종양 치료용 바이오의약품 개발 및 글로벌 생산과 직접판매망 운영하는 바이오기업"
+    },
+    {
+      "id": "business_area_bio_pharmaceuticals",
+      "type": "BusinessArea",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "business_area_chemical_pharmaceuticals",
+      "type": "BusinessArea",
+      "name": "케미컬의약품"
+    },
+    {
+      "id": "product_service_bio_pharmaceuticals",
+      "type": "ProductService",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "product_service_chemical_pharmaceuticals",
+      "type": "ProductService",
+      "name": "케미컬의약품"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_bio_pharmaceuticals",
+      "evidence": "당사는 생명공학기술을 기반으로 자가면역질환, 종양 등 질병의 치료에 사용되는 의약품을 개발 및 상업화하는 것을 주요 목적 사업으로 하는 글로벌 생명공학기업입니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_chemical_pharmaceuticals",
+      "evidence": "[2. 주요 제품 및 서비스] 케미컬의약품 제품 및 상품 등 272,156백만원, 6.54% 매출",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_bio_pharmaceuticals",
+      "evidence": "[2. 주요 제품 및 서비스] 바이오의약품 등 3,879,697백만원, 93.20% 매출",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_chemical_pharmaceuticals",
+      "evidence": "[2. 주요 제품 및 서비스] 케미컬의약품 등 272,156백만원, 6.54% 매출",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_bio_pharmaceuticals",
+      "to": "industry_bio",
+      "evidence": "당사는 생명공학기술을 기반으로 자가면역질환, 종양 등 질병의 치료에 사용되는 의약품을 개발 및 상업화하는 것을 주요 목적 사업으로 하는 글로벌 생명공학기업입니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_chemical_pharmaceuticals",
+      "to": "industry_bio",
+      "evidence": "케미컬의약품 사업은 바이오의약품과 함께 셀트리온 사업부문으로 보고됨.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_bio_pharmaceuticals",
+      "to": "business_area_bio_pharmaceuticals",
+      "evidence": "바이오의약품 등은 바이오의약품 사업부문 제품으로 보고됨.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_chemical_pharmaceuticals",
+      "to": "business_area_chemical_pharmaceuticals",
+      "evidence": "케미컬의약품 등은 케미컬의약품 사업부문 제품으로 보고됨.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_business_segments_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

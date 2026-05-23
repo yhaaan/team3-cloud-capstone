@@ -2,117 +2,68 @@
   "source_id": "news_207940_10cdd98fb5b630ff",
   "entities": [
     {
-      "id": "company_samsung_biologics",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "바이오 위탁개발생산 및 바이오 의약품 경쟁력 있는 가격과 적시 납품을 제공하는 기업"
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
     },
     {
-      "id": "company_daesang",
-      "type": "Company",
-      "name": "대상",
-      "stock_code": "001680"
-    },
-    {
-      "id": "company_samsung_c_t",
+      "id": "company_028260",
       "type": "Company",
       "name": "삼성물산",
-      "stock_code": "028260"
+      "stock_code": "028260",
+      "description": "건설과 패션·리조트 등 다양한 사업을 운영하며 삼성전자 지분을 보유한 기업"
     },
     {
-      "id": "company_samsung_life",
-      "type": "Company",
-      "name": "삼성생명",
-      "stock_code": "032830"
-    },
-    {
-      "id": "company_samsung_e_phs",
-      "type": "Company",
-      "name": "삼성에피스홀딩스",
-      "stock_code": "0126Z0"
-    },
-    {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "반도체, AI 등 미래 사업에 투자하는 글로벌 전자제품 제조 기업"
     },
     {
-      "id": "company_samsung_s",
-      "type": "Company",
-      "name": "삼성증권",
-      "stock_code": "016360"
-    },
-    {
-      "id": "company_samsung_fire",
-      "type": "Company",
-      "name": "삼성화재",
-      "stock_code": "000810"
-    },
-    {
-      "id": "company_shinyoung_s",
-      "type": "Company",
-      "name": "신영증권",
-      "stock_code": "001720"
-    },
-    {
-      "id": "company_sk_biopharm",
-      "type": "Company",
-      "name": "SK바이오팜",
-      "stock_code": "326030"
-    },
-    {
-      "id": "company_chaebi",
-      "type": "Company",
-      "name": "채비",
-      "stock_code": "0011T0"
-    },
-    {
-      "id": "company_hotel_shilla",
+      "id": "company_008770",
       "type": "Company",
       "name": "호텔신라",
-      "stock_code": "008770"
+      "stock_code": "008770",
+      "description": "호텔 및 리조트 사업을 운영하는 기업"
     },
     {
-      "id": "person_lee_jae_yong",
-      "type": "Person",
-      "name": "이재용",
-      "role": "CHAIRMAN",
-      "affiliated_company": "company_samsung_electronics",
-      "role_raw": "삼성전자 회장",
-      "role_label": "회장"
+      "id": "company_001260",
+      "type": "Company",
+      "name": "삼성에피스홀딩스",
+      "stock_code": "001260",
+      "description": "삼성바이오로직스 인적분할로 설립된 바이오 지주회사"
     },
     {
-      "id": "person_lee_bu_jin",
-      "type": "Person",
-      "name": "이부진",
-      "role": "PRESIDENT",
-      "affiliated_company": "company_hotel_shilla",
-      "role_raw": "사장",
-      "role_label": "사장"
+      "id": "business_area_biopharma",
+      "type": "BusinessArea",
+      "name": "바이오"
     },
     {
-      "id": "person_lee_seo_hyun",
-      "type": "Person",
-      "name": "이서현",
-      "role": "PRESIDENT",
-      "affiliated_company": "company_samsung_c_t",
-      "role_raw": "사장",
-      "role_label": "사장"
+      "id": "business_area_biotech_holdings",
+      "type": "BusinessArea",
+      "name": "바이오 지주회사"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "BIO"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_jae_yong",
-      "to": "company_samsung_electronics",
-      "evidence": "이재용 삼성전자 회장 등 오너 일가의 상속세 완납 소식은 4일 세간에 알려졌다.",
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_biopharma",
+      "evidence": "삼성바이오로직스가 그룹 전반에서 차지하는 미래 먹거리 의미가 큰데 이에 차질이 생길 수 있다는 우려가 제기된다.",
       "date": "",
       "evidence_source_id": "news_207940_10cdd98fb5b630ff",
       "evidence_source_type": "news",
@@ -120,10 +71,10 @@
       "evidence_published_at": "2026-05-07T16:36:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_bu_jin",
-      "to": "company_hotel_shilla",
-      "evidence": "장녀(이부진 사장)가 이끄는 호텔업(호텔신라)과 차녀(이서현 사장) 몫으로 생각돼 온 패션 등 영역(삼성물산 패션·리조트 부문)은 그룹 핵심 사업과의 연관성이나 연결성이 이미 상대적으로 낮다.",
+      "type": "OPERATES_IN",
+      "from": "company_001260",
+      "to": "business_area_biotech_holdings",
+      "evidence": "삼성에피스홀딩스는 지난해 11월 삼성바이오로직스의 인적분할로 신설된 바이오 지주사로, 삼성바이오에피스를 100% 자회사로 두고 있다.",
       "date": "",
       "evidence_source_id": "news_207940_10cdd98fb5b630ff",
       "evidence_source_type": "news",
@@ -131,10 +82,43 @@
       "evidence_published_at": "2026-05-07T16:36:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_seo_hyun",
-      "to": "company_samsung_c_t",
-      "evidence": "장녀(이부진 사장)가 이끄는 호텔업(호텔신라)과 차녀(이서현 사장) 몫으로 생각돼 온 패션 등 영역(삼성물산 패션·리조트 부문)은 그룹 핵심 사업과의 연관성이나 연결성이 이미 상대적으로 낮다.",
+      "type": "ACQUIRES",
+      "from": "company_028260",
+      "to": "company_001260",
+      "evidence": "삼성바이오로직스의 최대주주는 삼성물산으로, 43.06%의 지분을 보유하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_10cdd98fb5b630ff",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061",
+      "evidence_published_at": "2026-05-07T16:36:00+09:00"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_005930",
+      "to": "company_207940",
+      "evidence": "삼성전자는 31.2%를 보유하고 있으며 기타 주주가 25.7%선이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_10cdd98fb5b630ff",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061",
+      "evidence_published_at": "2026-05-07T16:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_bio",
+      "evidence": "삼성그룹이 15년 세월 묵묵히 공을 들인 바이오사업이 엉뚱한 방향으로 흐르고 있다.",
+      "date": "",
+      "evidence_source_id": "news_207940_10cdd98fb5b630ff",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.financialpost.co.kr/news/articleView.html?idxno=258061",
+      "evidence_published_at": "2026-05-07T16:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001260",
+      "to": "industry_bio",
+      "evidence": "삼성에피스홀딩스는 지난해 11월 삼성바이오로직스의 인적분할로 신설된 바이오 지주사로, 삼성바이오에피스를 100% 자회사로 두고 있다.",
       "date": "",
       "evidence_source_id": "news_207940_10cdd98fb5b630ff",
       "evidence_source_type": "news",

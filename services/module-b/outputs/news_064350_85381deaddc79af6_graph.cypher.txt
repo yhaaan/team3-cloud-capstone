@@ -1,31 +1,161 @@
-// node: company_hd_hyundai
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai", "type": "Company", "name": "HD현대", "stock_code": "267250"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "무인 플랫폼과 지상 무기체계에 AI 기반 통합 지휘통제체계 구축"}
 
-// node: company_korean_air
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_korean_air", "type": "Company", "name": "대한항공", "stock_code": "003490"}
-
-// node: company_hyundai_rotem
+// node: company_003490
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+:params {"id": "company_003490", "type": "Company", "name": "대한항공", "stock_code": "003490", "description": "무인기 분야 협력과 임무 자율화 소프트웨어 성능 검증"}
 
-// node: company_hd_hyundai_heavy_industry
+// node: company_267250
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd_hyundai_heavy_industry", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
+:params {"id": "company_267250", "type": "Company", "name": "HD현대", "stock_code": "267250", "description": "무인수상정 개발, 자율 무인 수상함 건조 및 AI 솔루션 공급"}
+
+// node: company_329180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "무인수상함 시제함 조선 및 첨단 무인잠수정 시스템 공동 개발"}
+
+// node: business_area_unmanned_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_unmanned_vehicle", "type": "BusinessArea", "name": "무인기"}
+
+// node: business_area_autonomous_surface_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_autonomous_surface_vehicle", "type": "BusinessArea", "name": "무인수상정"}
+
+// node: business_area_autonomous_submersible_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_autonomous_submersible_vehicle", "type": "BusinessArea", "name": "무인잠수정"}
+
+// node: business_area_integrated_command_control
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_integrated_command_control", "type": "BusinessArea", "name": "통합 지휘통제체계"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방산"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_unmanned_vehicle", "properties": {"evidence": "현대로템과 AI 기반 유·무인 복합(MUM-T) 통합 지휘통제체계 구축을 위한 양해각서(MOU)를 체결했다고 밝혔다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_integrated_command_control", "properties": {"evidence": "현대로템과 AI 기반 유·무인 복합(MUM-T) 통합 지휘통제체계 구축을 위한 양해각서(MOU)를 체결했다고 밝혔다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_unmanned_vehicle", "properties": {"evidence": "안두릴은 지난 30일 대한항공과 한국 시험장에서 3개 플랫폼을 활용한 시연을 통해 임무 자율화 소프트웨어의 성능을 성공적으로 검증한 바 있다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_267250", "to_id": "business_area_autonomous_surface_vehicle", "properties": {"evidence": "HD현대와는 2025년 4월 무인수상정(USV) 개발을 위한 MOU를 체결한 데 이어, 같은 해 11월 자율 무인 수상함 시제함 설계·건조 및 AI 솔루션 공급 계약을 체결했다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_autonomous_surface_vehicle", "properties": {"evidence": "현재 시제함은 HD현대중공업 울산 조선소에서 건조 중이며, 이르면 올해 10월 진수 후 미국 연안에서 시험 운항에 투입될 예정이다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_autonomous_submersible_vehicle", "properties": {"evidence": "협력 범위를 수상에서 수중으로 확장해 '첨단 무인잠수정 시스템 공동 개발 MOU'를 추가로 체결했다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_unmanned_vehicle", "to_id": "industry_defense", "properties": {"evidence": "무인기 분야 협력(Teaming Agreement)을 확대하는 한편, 전 세계 대규모 산불 예방을 위한 통합 솔루션 공동 개발에도 나서며 협력 범위를 넓혀가고 있다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_autonomous_surface_vehicle", "to_id": "industry_defense", "properties": {"evidence": "2025년 4월 무인수상정(USV) 개발을 위한 MOU 체결 및 관련 조선·AI 솔루션 공급", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_autonomous_submersible_vehicle", "to_id": "industry_defense", "properties": {"evidence": "'첨단 무인잠수정 시스템 공동 개발 MOU'를 추가로 체결했다.", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_integrated_command_control", "to_id": "industry_defense", "properties": {"evidence": "AI 기반 유·무인 복합(MUM-T) 통합 지휘통제체계 구축", "date": "", "evidence_source_id": "news_064350_85381deaddc79af6", "evidence_source_type": "news", "evidence_source_url": "https://www.irobotnews.com/news/articleView.html?idxno=46254", "evidence_published_at": "2026-05-07T17:10:00+09:00"}}

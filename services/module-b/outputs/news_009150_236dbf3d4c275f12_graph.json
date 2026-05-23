@@ -2,11 +2,95 @@
   "source_id": "news_009150_236dbf3d4c275f12",
   "entities": [
     {
-      "id": "company_삼성전기",
+      "id": "company_009150",
       "type": "Company",
       "name": "삼성전기",
-      "stock_code": "009150"
+      "stock_code": "009150",
+      "description": "MLCC, AI서버용 필름 등 전자 부품과 기술개발 지원을 중심으로 하는 전자부품 기업"
+    },
+    {
+      "id": "company_006980",
+      "type": "Company",
+      "name": "우성",
+      "stock_code": "006980"
+    },
+    {
+      "id": "company_005070",
+      "type": "Company",
+      "name": "코스모신소재",
+      "stock_code": "005070"
+    },
+    {
+      "id": "business_area_mlcc",
+      "type": "BusinessArea",
+      "name": "MLCC"
+    },
+    {
+      "id": "business_area_ai_server_films",
+      "type": "BusinessArea",
+      "name": "AI 서버용 필름"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자부품"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_mlcc",
+      "evidence": "삼성전기는 MLCC(적층세라믹콘덴서) 설비를 공급하는 우성에스이 등 협력사와 동반성장함",
+      "date": "",
+      "evidence_source_id": "news_009150_236dbf3d4c275f12",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695",
+      "evidence_published_at": "2026-04-28T19:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_ai_server_films",
+      "evidence": "코스모신소재는 AI(인공지능)서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받음",
+      "date": "",
+      "evidence_source_id": "news_009150_236dbf3d4c275f12",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695",
+      "evidence_published_at": "2026-04-28T19:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_mlcc",
+      "to": "industry_electronics",
+      "evidence": "MLCC(적층세라믹콘덴서) 는 전자부품의 한 분야임",
+      "date": "",
+      "evidence_source_id": "news_009150_236dbf3d4c275f12",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695",
+      "evidence_published_at": "2026-04-28T19:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_server_films",
+      "to": "industry_electronics",
+      "evidence": "AI 서버용 필름은 전자부품 분야에 해당함",
+      "date": "",
+      "evidence_source_id": "news_009150_236dbf3d4c275f12",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695",
+      "evidence_published_at": "2026-04-28T19:40:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_009150",
+      "to": "industry_electronics",
+      "evidence": "삼성전기는 전자부품 및 기술개발과 동반성장 지원 기업임",
+      "date": "",
+      "evidence_source_id": "news_009150_236dbf3d4c275f12",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026042819334785695",
+      "evidence_published_at": "2026-04-28T19:40:00+09:00"
+    }
+  ]
 }

@@ -1,18 +1,35 @@
-// node: company_sk_square
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_square", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "연결대상 종속회사를 통해 다양한 사업 영역 확장 중"}
 
-// node: company_incrosse
+// node: company_216050
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_incrosse", "type": "Company", "name": "인크로스", "stock_code": "216050"}
+:params {"id": "company_216050", "type": "Company", "name": "인크로스", "stock_code": "216050"}
+
+// node: business_area_media_agency
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_media_agency", "type": "BusinessArea", "name": "매체대행업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_216050", "to_id": "business_area_media_agency", "properties": {"evidence": "인크로스㈜ | 2007-08-13 | 서울특별시 관악구 남부순환로 1926 경동제약빌딩 3,5,8,9층 | 매체대행업 | 290,959 | 실질지배력 | 주요종속회사 (직전연도 자산총액 750억원 이상)", "date": "2026-03-17", "evidence_source_id": "dart_402340_consolidated_subsidiary_status_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
 
 // relation: INVESTS_IN
 
@@ -21,4 +38,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_square", "to_id": "company_incrosse", "properties": {"evidence": "SK스퀘어의 연결대상 종속회사 후보로 인크로스 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_consolidated_subsidiary_status_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_402340", "to_id": "company_216050", "properties": {"evidence": "SK스퀘어의 연결대상 종속회사 후보로 인크로스 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_402340_consolidated_subsidiary_status_20260317000830", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}

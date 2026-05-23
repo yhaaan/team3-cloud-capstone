@@ -2,17 +2,51 @@
   "source_id": "news_207940_987e61fd073b9b70",
   "entities": [
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "바이오 의약품 위탁생산과 관련 서비스 제공"
     },
     {
-      "id": "company_삼성전자",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
+    },
+    {
+      "id": "business_area_biopharmaceutical_manufacturing",
+      "type": "BusinessArea",
+      "name": "바이오 의약품 위탁생산"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_biopharmaceutical_manufacturing",
+      "evidence": "삼성바이오로직스 노사가 임금·단체협약 협상에서 합의점을 찾지 못한 가운데 협상이 비공개로 전환됐다.",
+      "date": "",
+      "evidence_source_id": "news_207940_987e61fd073b9b70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065589669499873",
+      "evidence_published_at": "2026-05-11T18:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biopharmaceutical_manufacturing",
+      "to": "industry_bio",
+      "evidence": "삼성바이오로직스 노사가 임금·단체협약 협상에서 합의점을 찾지 못한 가운데 협상이 비공개로 전환됐다.",
+      "date": "",
+      "evidence_source_id": "news_207940_987e61fd073b9b70",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://mdtoday.co.kr/news/view/1065589669499873",
+      "evidence_published_at": "2026-05-11T18:30:00+09:00"
+    }
+  ]
 }

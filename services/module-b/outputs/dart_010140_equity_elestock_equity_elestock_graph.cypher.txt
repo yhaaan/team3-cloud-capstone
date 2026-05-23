@@ -1,26 +1,26 @@
-// node: company_삼성중공업
+// node: company_010140
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업", "stock_code": "010140"}
+:params {"id": "company_010140", "type": "Company", "name": "삼성중공업", "stock_code": "010140", "description": "조선 및 해양플랜트 건조 중심의 중공업 기업"}
 
-// node: person_황원준
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_황원준", "type": "Person", "name": "황원준", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
-
-// node: person_권혁수
+// node: person_hwang_wonjun
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_권혁수", "type": "Person", "name": "권혁수", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+:params {"id": "person_hwang_wonjun", "type": "Person", "name": "황원준", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
+
+// node: person_kwon_hyuksu
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_kwon_hyuksu", "type": "Person", "name": "권혁수", "role_raw": "상무", "role": "OTHER", "role_label": "상무"}
 
 // relation: AFFILIATED_WITH
 
@@ -29,7 +29,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_황원준", "to_id": "company_삼성중공업", "properties": {"evidence": "삼성중공업의 임원·주요주주 소유상황 보고자는 황원준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 160주, 주식수 증감은 160, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-03", "evidence_source_id": "dart_010140_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251203000217", "evidence_published_at": "2025-12-03"}}
+:params {"from_id": "person_hwang_wonjun", "to_id": "company_010140", "properties": {"evidence": "삼성중공업의 임원·주요주주 소유상황 보고자는 황원준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 160주, 주식수 증감은 160, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-03", "evidence_source_id": "dart_010140_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251203000217", "evidence_published_at": "2025-12-03"}}
 
 // relation: AFFILIATED_WITH
 
@@ -38,4 +38,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_권혁수", "to_id": "company_삼성중공업", "properties": {"evidence": "삼성중공업의 임원·주요주주 소유상황 보고자는 권혁수, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 600주, 주식수 증감은 600, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-03", "evidence_source_id": "dart_010140_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251203000217", "evidence_published_at": "2025-12-03"}}
+:params {"from_id": "person_kwon_hyuksu", "to_id": "company_010140", "properties": {"evidence": "삼성중공업의 임원·주요주주 소유상황 보고자는 권혁수, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 600주, 주식수 증감은 600, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2025-12-03", "evidence_source_id": "dart_010140_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251203000217", "evidence_published_at": "2025-12-03"}}

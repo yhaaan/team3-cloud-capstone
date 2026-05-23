@@ -1,0 +1,119 @@
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "석유개발·정제, 화학 및 배터리 등 에너지와 소재 사업을 영위"}
+
+// node: company_388720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_388720", "type": "Company", "name": "유일로보틱스", "stock_code": "388720"}
+
+// node: company_361610
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_361610", "type": "Company", "name": "SK아이이테크놀로지", "stock_code": "361610", "description": "2차전지용 분리막 제조 사업을 영위"}
+
+// node: business_area_industrial_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_industrial_robot", "type": "BusinessArea", "name": "산업용로봇"}
+
+// node: productservice_battery_separator
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_battery_separator", "type": "ProductService", "name": "2차전지용 분리막"}
+
+// node: industry_energy_material
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_material", "type": "Industry", "name": "에너지·소재"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "company_388720", "properties": {"evidence": "SK이노베이션의 연결대상 종속회사 후보로 유일로보틱스 등이 탐지되었다.", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "company_361610", "properties": {"evidence": "SK이노베이션의 연결대상 종속회사 후보로 SK아이이테크놀로지 등이 탐지되었다.", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_388720", "to_id": "business_area_industrial_robot", "properties": {"evidence": "㈜ 유일로보틱스 | 산업용로봇 제조 및 판매업", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_361610", "to_id": "productservice_battery_separator", "properties": {"evidence": "SK아이이테크놀로지(주) | 2차전지용 분리막 제조", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_industrial_robot", "to_id": "industry_energy_material", "properties": {"evidence": "산업용로봇 제조 및 판매업은 에너지·소재 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "productservice_battery_separator", "to_id": "industry_energy_material", "properties": {"evidence": "2차전지용 분리막 제조는 에너지·소재 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "industry_energy_material", "properties": {"evidence": "SK이노베이션은 에너지·소재 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_361610", "to_id": "industry_energy_material", "properties": {"evidence": "SK아이이테크놀로지는 에너지·소재 산업에 속함", "date": "2026-03-16", "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827", "evidence_published_at": "2026-03-16"}}

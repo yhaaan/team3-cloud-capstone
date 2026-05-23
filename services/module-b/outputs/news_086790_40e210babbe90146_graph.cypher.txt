@@ -1,0 +1,64 @@
+// node: company_086790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086790", "type": "Company", "name": "하나금융지주", "stock_code": "086790", "description": "금융서비스, 미래 디지털 금융 포함 은행·투자 등 사업 운영"}
+
+// node: company_139130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_139130", "type": "Company", "name": "iM금융지주", "stock_code": "139130"}
+
+// node: company_323410
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_323410", "type": "Company", "name": "카카오뱅크", "stock_code": "323410"}
+
+// node: company_316140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_316140", "type": "Company", "name": "우리금융지주", "stock_code": "316140"}
+
+// node: company_105560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_105560", "type": "Company", "name": "KB금융", "stock_code": "105560"}
+
+// node: company_024110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_024110", "type": "Company", "name": "기업은행", "stock_code": "024110"}
+
+// node: company_055550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_055550", "type": "Company", "name": "신한지주", "stock_code": "055550"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "company_139130", "properties": {"evidence": "5월 15일 업계에 따르면 하나금융그룹은 가상자산 업비트 운영소 두나무에 1조원 규모의 지분 투자를 단행했다.", "date": "", "evidence_source_id": "news_086790_40e210babbe90146", "evidence_source_type": "news", "evidence_source_url": "https://www.nspna.com/news/?mode=view&newsid=813367", "evidence_published_at": "2026-05-15T17:08:00+09:00"}}

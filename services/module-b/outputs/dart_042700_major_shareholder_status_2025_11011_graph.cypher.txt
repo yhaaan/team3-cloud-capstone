@@ -1,0 +1,143 @@
+// node: company_042700
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042700", "type": "Company", "name": "한미반도체", "stock_code": "042700"}
+
+// node: person_곽동신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽동신", "type": "Person", "name": "곽동신"}
+
+// node: person_곽혜신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽혜신", "type": "Person", "name": "곽혜신"}
+
+// node: person_곽명신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽명신", "type": "Person", "name": "곽명신"}
+
+// node: person_곽영미
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽영미", "type": "Person", "name": "곽영미"}
+
+// node: person_곽영아
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽영아", "type": "Person", "name": "곽영아"}
+
+// node: person_곽호성
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽호성", "type": "Person", "name": "곽호성"}
+
+// node: person_곽호중
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽호중", "type": "Person", "name": "곽호중"}
+
+// node: person_곽노섭
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽노섭", "type": "Person", "name": "곽노섭"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽동신", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽동신, 관계는 本人, 당기말 보유주식수는 31,937,861주, 지분율은 33.51%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽혜신", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽혜신, 관계는 姉, 당기말 보유주식수는 3,917,434주, 지분율은 4.11%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽명신", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽명신, 관계는 姉, 당기말 보유주식수는 3,960,770주, 지분율은 4.16%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽영미", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽영미, 관계는 姉, 당기말 보유주식수는 4,213,200주, 지분율은 4.42%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽영아", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽영아, 관계는 姉, 당기말 보유주식수는 3,970,568주, 지분율은 4.17%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽호성", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽호성, 관계는 子, 당기말 보유주식수는 2,460,992주, 지분율은 2.58%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽호중", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽호중, 관계는 子, 당기말 보유주식수는 2,460,992주, 지분율은 2.58%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_곽노섭", "to_id": "company_042700", "properties": {"evidence": "한미반도체의 최대주주 관련 인물/법인은 곽노섭, 관계는 叔父, 당기말 보유주식수는 168,000주, 지분율은 0.18%.", "date": "2026-03-12", "evidence_source_id": "dart_042700_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001230", "evidence_published_at": "2026-03-12"}}

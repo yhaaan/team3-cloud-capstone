@@ -2,32 +2,99 @@
   "source_id": "news_009150_ed2357a13604cc4f",
   "entities": [
     {
-      "id": "company_삼성전기",
+      "id": "company_009150",
       "type": "Company",
       "name": "삼성전기",
-      "stock_code": "009150"
+      "stock_code": "009150",
+      "description": "AI 서버용 MLCC, 전기차용 MLCC, 휴머노이드용 카메라 모듈 등 차별화된 전자부품을 생산"
     },
     {
-      "id": "company_우성",
-      "type": "Company",
-      "name": "우성",
-      "stock_code": "006980"
+      "id": "product_service_mlcc",
+      "type": "ProductService",
+      "name": "MLCC"
     },
     {
-      "id": "company_코스모신소재",
-      "type": "Company",
-      "name": "코스모신소재",
-      "stock_code": "005070"
+      "id": "product_service_camera_module",
+      "type": "ProductService",
+      "name": "카메라 모듈"
     },
     {
-      "id": "person_장덕현",
-      "type": "Person",
-      "name": "장덕현",
-      "role_raw": "삼성전기 사장",
-      "affiliated_company": "company_삼성전기",
-      "role": "PRESIDENT",
-      "role_label": "사장"
+      "id": "business_area_component",
+      "type": "BusinessArea",
+      "name": "전자부품"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "PRODUCES",
+      "from": "company_009150",
+      "to": "product_service_mlcc",
+      "evidence": "삼성전기는 AI 서버용 고전압·고용량 MLCC와 전기차용 고신뢰성·고온 MLCC, 휴머노이드용 카메라 모듈 등 차별화된 제품으로 사업 기회를 창출하고 해당 시장을 중심으로 사업구조를 전환할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009150",
+      "to": "product_service_camera_module",
+      "evidence": "삼성전기는 AI 서버용 고전압·고용량 MLCC와 전기차용 고신뢰성·고온 MLCC, 휴머노이드용 카메라 모듈 등 차별화된 제품으로 사업 기회를 창출하고 해당 시장을 중심으로 사업구조를 전환할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_component",
+      "evidence": "삼성전기는 AI 서버용 고전압·고용량 MLCC와 전기차용 고신뢰성·고온 MLCC, 휴머노이드용 카메라 모듈 등 차별화된 제품으로 사업 기회를 창출하고 해당 시장을 중심으로 사업구조를 전환할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_mlcc",
+      "to": "business_area_component",
+      "evidence": "MLCC는 전자부품에 해당함.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_camera_module",
+      "to": "business_area_component",
+      "evidence": "카메라 모듈은 전자부품에 해당함.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_component",
+      "to": "industry_electronics",
+      "evidence": "전자부품은 전자 산업에 속함.",
+      "date": "",
+      "evidence_source_id": "news_009150_ed2357a13604cc4f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598453536036",
+      "evidence_published_at": "2026-04-28T17:36:00+09:00"
+    }
+  ]
 }

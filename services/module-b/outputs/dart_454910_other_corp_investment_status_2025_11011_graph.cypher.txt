@@ -1,0 +1,7 @@
+// node: company_454910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910", "description": "두산로보틱스는 로봇 관련 사업에 진출하여 전략적 출자를 통해 경영참여 및 일반투자를 진행합니다."}

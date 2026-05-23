@@ -1,0 +1,67 @@
+// node: company_007660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_007660", "type": "Company", "name": "이수페타시스", "stock_code": "007660", "description": "전자제품 핵심부품인 고다층PCB(MLB)를 전문 생산·판매하는 기업"}
+
+// node: business_area_pcb_production_sale
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_pcb_production_sale", "type": "BusinessArea", "name": "PCB 생산과 판매"}
+
+// node: product_service_pcb
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_pcb", "type": "ProductService", "name": "PCB(인쇄회로기판)"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자부품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_007660", "to_id": "business_area_pcb_production_sale", "properties": {"evidence": "당사는 전자제품의 핵심부품인 인쇄회로기판(PCB)을 전문으로 생산하고 있으며, 한국 (주)이수페타시스(본사)에는 4개의 공장 및 연구소를 운영하고 있습니다.", "date": "2026-03-23", "evidence_source_id": "dart_007660_business_segments_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_007660", "to_id": "product_service_pcb", "properties": {"evidence": "고다층PCB(MLB:Multi Layer Board)의 양산과 판매", "date": "2026-03-23", "evidence_source_id": "dart_007660_business_segments_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_pcb", "to_id": "business_area_pcb_production_sale", "properties": {"evidence": "고다층PCB(MLB:Multi Layer Board)의 양산과 판매", "date": "2026-03-23", "evidence_source_id": "dart_007660_business_segments_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_pcb_production_sale", "to_id": "industry_electronics", "properties": {"evidence": "전자제품의 핵심부품인 인쇄회로기판(PCB)을 전문으로 생산하고 있으며", "date": "2026-03-23", "evidence_source_id": "dart_007660_business_segments_20260323000847", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847", "evidence_published_at": "2026-03-23"}}

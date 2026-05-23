@@ -1,0 +1,367 @@
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260", "description": "국내외 건축, 토목, 플랜트, 주택 등 건설과 화학, 철강, 에너지 등 상사, 의류, 리조트, 바이오 사업을 영위"}
+
+// node: business_area_건설부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_건설부문", "type": "BusinessArea", "name": "건설부문"}
+
+// node: business_area_상사부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_상사부문", "type": "BusinessArea", "name": "상사부문"}
+
+// node: business_area_패션부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_패션부문", "type": "BusinessArea", "name": "패션부문"}
+
+// node: business_area_리조트부문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_리조트부문", "type": "BusinessArea", "name": "리조트부문"}
+
+// node: business_area_급식_식자재유통
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_급식_식자재유통", "type": "BusinessArea", "name": "급식/식자재유통"}
+
+// node: business_area_바이오사업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_바이오사업", "type": "BusinessArea", "name": "바이오사업"}
+
+// node: industry_건설
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_건설", "type": "Industry", "name": "건설"}
+
+// node: industry_무역
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_무역", "type": "Industry", "name": "무역"}
+
+// node: industry_패션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_패션", "type": "Industry", "name": "패션"}
+
+// node: industry_리조트_관광
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_리조트_관광", "type": "Industry", "name": "리조트/관광"}
+
+// node: industry_급식_유통
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_급식_유통", "type": "Industry", "name": "급식/유통"}
+
+// node: industry_바이오
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_바이오", "type": "Industry", "name": "바이오"}
+
+// node: product_service_건설주택사업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_건설주택사업", "type": "ProductService", "name": "건설·주택사업"}
+
+// node: product_service_화학_철강_에너지_소재
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_화학_철강_에너지_소재", "type": "ProductService", "name": "화학·철강·에너지·소재"}
+
+// node: product_service_의류_제조_판매
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_의류_제조_판매", "type": "ProductService", "name": "의류 제조 및 판매"}
+
+// node: product_service_리조트_골프_조경
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_리조트_골프_조경", "type": "ProductService", "name": "리조트 및 골프, 조경"}
+
+// node: product_service_전문급식_식자재_유통
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_전문급식_식자재_유통", "type": "ProductService", "name": "전문급식서비스 및 식자재 유통"}
+
+// node: product_service_항체의약품_바이오시밀러
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_항체의약품_바이오시밀러", "type": "ProductService", "name": "항체의약품·바이오시밀러"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_건설부문", "properties": {"evidence": "당사 사업부문은 국내외 건축, 토목, 플랜트, 주택 분야의 사업을 영위하는 건설부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_상사부문", "properties": {"evidence": "철강, 화학, 에너지, 소재 등 다양한 방면에서 국제무역을 하고 있는 상사부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_패션부문", "properties": {"evidence": "의류 수입 및 판매사업을 하는 패션부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_리조트부문", "properties": {"evidence": "조경사업과 에버랜드, 캐리비안베이, 골프장 및 전문급식, 식자재유통사업을 영위하는 리조트부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_급식_식자재유통", "properties": {"evidence": "전문급식서비스 및 식자재 유통", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "business_area_바이오사업", "properties": {"evidence": "바이오의약품 위탁생산사업 및 바이오시밀러 사업으로 구성", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_건설부문", "to_id": "industry_건설", "properties": {"evidence": "국내외 건축, 토목, 플랜트, 주택 분야의 사업을 영위하는 건설부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_상사부문", "to_id": "industry_무역", "properties": {"evidence": "다양한 방면에서 국제무역을 하고 있는 상사부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_패션부문", "to_id": "industry_패션", "properties": {"evidence": "의류 수입 및 판매사업을 하는 패션부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_리조트부문", "to_id": "industry_리조트_관광", "properties": {"evidence": "에버랜드, 캐리비안베이, 골프장 등 리조트 부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_급식_식자재유통", "to_id": "industry_급식_유통", "properties": {"evidence": "전문급식서비스 및 식자재 유통", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_바이오사업", "to_id": "industry_바이오", "properties": {"evidence": "바이오의약품 위탁생산사업 및 바이오시밀러 사업", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_건설주택사업", "properties": {"evidence": "건설부문에서는 건설, 주택사업 등을 영위", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_화학_철강_에너지_소재", "properties": {"evidence": "상사부문은 화학, 철강, 에너지, 소재 등의 제품과 용역을 제공", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_의류_제조_판매", "properties": {"evidence": "패션부문은 의류 제조 및 판매 사업을 영위", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_리조트_골프_조경", "properties": {"evidence": "리조트부문은 리조트 및 골프, 조경 서비스를 제공", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_전문급식_식자재_유통", "properties": {"evidence": "급식/식자재유통 부문은 전문급식서비스 및 식자재 유통을 운영", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_028260", "to_id": "product_service_항체의약품_바이오시밀러", "properties": {"evidence": "바이오 사업은 항체의약품과 바이오시밀러 등을 생산", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_건설주택사업", "to_id": "business_area_건설부문", "properties": {"evidence": "건설, 주택사업 등은 건설부문에 속함", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_화학_철강_에너지_소재", "to_id": "business_area_상사부문", "properties": {"evidence": "화학, 철강, 에너지, 소재 등은 상사부문의 주요 제품 및 서비스", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_의류_제조_판매", "to_id": "business_area_패션부문", "properties": {"evidence": "의류 제조 및 판매는 패션부문 사업", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_리조트_골프_조경", "to_id": "business_area_리조트부문", "properties": {"evidence": "리조트 및 골프, 조경은 리조트부문에 속함", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_전문급식_식자재_유통", "to_id": "business_area_급식_식자재유통", "properties": {"evidence": "전문급식서비스 및 식자재 유통은 급식/식자재유통 부문", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_항체의약품_바이오시밀러", "to_id": "business_area_바이오사업", "properties": {"evidence": "항체의약품, 바이오시밀러 등은 바이오사업에 속함", "date": "2026-03-12", "evidence_source_id": "dart_028260_business_segments_20260312000856", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856", "evidence_published_at": "2026-03-12"}}

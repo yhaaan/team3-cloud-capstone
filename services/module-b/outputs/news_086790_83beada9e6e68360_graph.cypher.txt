@@ -1,0 +1,143 @@
+// node: company_086790
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086790", "type": "Company", "name": "하나금융지주", "stock_code": "086790", "description": "전통 금융과 디지털 자산 관련 사업에 투자하고 자회사와 금융·가상자산 융합 서비스를 추진"}
+
+// node: company_035420
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035420", "type": "Company", "name": "NAVER", "stock_code": "035420", "description": "AI 기술과 핀테크 서비스를 결합한 파이낸셜 플랫폼 및 웹3 생태계 구축 중심 기업"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "금융 서비스"}
+
+// node: business_area_web3_ecosystem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_web3_ecosystem", "type": "BusinessArea", "name": "웹3 생태계"}
+
+// node: business_area_fintech_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_fintech_platform", "type": "BusinessArea", "name": "핀테크 플랫폼"}
+
+// node: product_service_stable_coin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_stable_coin", "type": "ProductService", "name": "스테이블 코인"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// node: industry_blockchain
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_blockchain", "type": "Industry", "name": "블록체인"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086790", "to_id": "business_area_financial_services", "properties": {"evidence": "전통 금융인 하나은행, 코인거래소 4대 주주로 올라….", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_web3_ecosystem", "properties": {"evidence": "전통 금융회사인 하나은행이 두나무의 주주로 합류하면서 네이버의 웹3 생태계 구축도 가속화될 전망이다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "business_area_fintech_platform", "properties": {"evidence": "네이버의 파이낸셜 플랫폼 사업이 하나금융지주의 두나무 지분 인수를 계기로 급물살을 탈 전망이다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035420", "to_id": "product_service_stable_coin", "properties": {"evidence": "네이버는 웹3 생태계를 조속히 구축해 원화 스테이블 코인 시장을 외국 결제 플랫폼들에 장악당하지 않겠다는 각오다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_financial_services", "to_id": "industry_finance", "properties": {"evidence": "전통 금융인 하나은행, 코인거래소 4대 주주로 올라….", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_web3_ecosystem", "to_id": "industry_blockchain", "properties": {"evidence": "네이버의 웹3 생태계(분산화, 블록체인 등 기술로 이용자가 플랫폼에 종속되지 않은 상태) 구축도 가속화될 전망이다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_fintech_platform", "to_id": "industry_platform", "properties": {"evidence": "네이버의 파이낸셜 플랫폼 사업이 하나금융지주의 두나무 지분 인수를 계기로 급물살을 탈 전망이다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_stable_coin", "to_id": "business_area_fintech_platform", "properties": {"evidence": "네이버의 파이낸셜 플랫폼 사업이 하나금융지주의 두나무 지분 인수를 계기로 급물살을 탈 전망이다.", "date": "", "evidence_source_id": "news_086790_83beada9e6e68360", "evidence_source_type": "news", "evidence_source_url": "https://www.mt.co.kr/tech/2026/05/15/2026051513361251975", "evidence_published_at": "2026-05-15T15:01:00+09:00"}}

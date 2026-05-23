@@ -2,42 +2,296 @@
   "source_id": "dart_034730_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
-      "name": "SK"
+      "name": "SK",
+      "stock_code": "034730",
+      "description": "에너지, 화학, 반도체, 통신 등 다양한 산업에서 사업을 운영하는 기업"
     },
     {
-      "id": "industry_ai",
-      "type": "Industry",
-      "name": "AI"
+      "id": "company_096770",
+      "type": "Company",
+      "name": "SK이노베이션",
+      "stock_code": "096770",
+      "description": "에너지 및 화학 관련 사업 운영"
     },
     {
-      "id": "industry_cloud",
-      "type": "Industry",
-      "name": "cloud"
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "반도체 사업 운영"
     },
     {
-      "id": "industry_battery",
-      "type": "Industry",
-      "name": "battery"
+      "id": "company_017670",
+      "type": "Company",
+      "name": "SK텔레콤",
+      "stock_code": "017670",
+      "description": "통신 및 플랫폼 사업 운영"
     },
     {
-      "id": "industry_bio",
-      "type": "Industry",
-      "name": "bio"
+      "id": "company_011790",
+      "type": "Company",
+      "name": "SKC",
+      "stock_code": "011790"
     },
     {
-      "id": "industry_it",
+      "id": "company_001740",
+      "type": "Company",
+      "name": "SK네트웍스",
+      "stock_code": "001740"
+    },
+    {
+      "id": "company_285130",
+      "type": "Company",
+      "name": "SK케미칼",
+      "stock_code": "285130",
+      "description": "화학 및 바이오 사업 운영"
+    },
+    {
+      "id": "company_267980",
+      "type": "Company",
+      "name": "매일유업",
+      "stock_code": "267980",
+      "description": "유제품 및 식품 제조"
+    },
+    {
+      "id": "company_402340",
+      "type": "Company",
+      "name": "SK스퀘어",
+      "stock_code": "402340"
+    },
+    {
+      "id": "company_041510",
+      "type": "Company",
+      "name": "에스엠",
+      "stock_code": "041510"
+    },
+    {
+      "id": "company_326030",
+      "type": "Company",
+      "name": "SK바이오팜",
+      "stock_code": "326030"
+    },
+    {
+      "id": "company_002020",
+      "type": "Company",
+      "name": "코오롱",
+      "stock_code": "002020"
+    },
+    {
+      "id": "company_120110",
+      "type": "Company",
+      "name": "코오롱인더",
+      "stock_code": "120110"
+    },
+    {
+      "id": "company_004170",
+      "type": "Company",
+      "name": "신세계",
+      "stock_code": "004170"
+    },
+    {
+      "id": "company_065770",
+      "type": "Company",
+      "name": "CS",
+      "stock_code": "065770"
+    },
+    {
+      "id": "company_067170",
+      "type": "Company",
+      "name": "오텍",
+      "stock_code": "067170"
+    },
+    {
+      "id": "company_006980",
+      "type": "Company",
+      "name": "우성",
+      "stock_code": "006980"
+    },
+    {
+      "id": "company_452400",
+      "type": "Company",
+      "name": "이닉스",
+      "stock_code": "452400"
+    },
+    {
+      "id": "business_area_energy",
+      "type": "BusinessArea",
+      "name": "에너지"
+    },
+    {
+      "id": "business_area_chemical",
+      "type": "BusinessArea",
+      "name": "화학"
+    },
+    {
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "반도체"
+    },
+    {
+      "id": "business_area_telecommunication",
+      "type": "BusinessArea",
+      "name": "통신"
+    },
+    {
+      "id": "business_area_platform",
+      "type": "BusinessArea",
+      "name": "플랫폼"
+    },
+    {
+      "id": "business_area_dairy_products",
+      "type": "BusinessArea",
+      "name": "유제품"
+    },
+    {
+      "id": "industry_energy",
       "type": "Industry",
-      "name": "IT"
+      "name": "에너지"
+    },
+    {
+      "id": "industry_chemical",
+      "type": "Industry",
+      "name": "화학"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_telecommunication",
+      "type": "Industry",
+      "name": "통신"
+    },
+    {
+      "id": "industry_platform",
+      "type": "Industry",
+      "name": "플랫폼"
+    },
+    {
+      "id": "industry_food",
+      "type": "Industry",
+      "name": "식품"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_sk",
-      "to": "industry_ai",
-      "evidence": "Chairperson of the Board of Directors - (겸) SK Hynix America 회장.",
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_energy",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사 ... (겸) SK이노베이션 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_chemical",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사 ... (겸) SK이노베이션 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_semiconductor",
+      "evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사 ... (겸) SK하이닉스 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_telecommunication",
+      "evidence": "SK의 임원은 최태원, ... (겸) SK텔레콤 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_034730",
+      "to": "business_area_platform",
+      "evidence": "SK의 임원은 최태원, ... 대한상공회의소 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_energy",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_chemical",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor",
+      "evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사 ... (겸) SK하이닉스 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_telecommunication",
+      "evidence": "SK의 임원은 최태원, ... (겸) SK텔레콤 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_285130",
+      "to": "business_area_chemical",
+      "evidence": "SK의 임원은 김기동, ... SK케미칼 경영지원본부장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_267980",
+      "to": "business_area_dairy_products",
+      "evidence": "SK의 임원은 김선희, ... 매일유업㈜ 대표이사 사장",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -46,9 +300,9 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk",
-      "to": "industry_cloud",
-      "evidence": "SK의 임원은 신장수, 직위는 부문장, 이사회상 역할은 미등기, 담당업무는 Cloud부문장 겸) SHE 추진단장 겸) SUPEX 추구협의회 임원, 주요경력은 - New York State Univ.",
+      "from": "company_034730",
+      "to": "industry_energy",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -57,9 +311,9 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk",
-      "to": "industry_battery",
-      "evidence": "SK의 임원은 김유석, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 업무지원실 임원, 주요경력은 - Yale University 석사 - SK온 Battery 전략기획본부장 - (겸) 최종현학술원 상임이사 - (겸) 한국고등교육재단 상임이사.",
+      "from": "company_034730",
+      "to": "industry_chemical",
+      "evidence": "SK의 임원은 최태원, ... SK이노베이션 대표이사",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -68,9 +322,9 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk",
-      "to": "industry_bio",
-      "evidence": "SK의 임원은 김연태, 직위는 담당, 이사회상 역할은 미등기, 담당업무는 PM4담당 겸) 혁신신약TF 임원, 최대주주와의 관계는 계열회사 임원, 주요경력은 - University College London 석사 - SK㈜ Bio 투자센터 임원 - (겸) SK바이오팜 기타비상무이사.",
+      "from": "company_034730",
+      "to": "industry_semiconductor",
+      "evidence": "SK의 임원은 최태원, ... SK하이닉스 대표이사",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_executive_status_2025_11011",
       "evidence_source_type": "dart",
@@ -79,9 +333,64 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk",
-      "to": "industry_it",
-      "evidence": "SK의 임원은 유정준, 직위는 부회장, 이사회상 역할은 미등기, 담당업무는 부회장 겸) 미주총괄, 최대주주와의 관계는 계열회사 임원, 주요경력은 - Illinois State University 석사 - SK온 부회장 겸) SK Americas, Inc.",
+      "from": "company_034730",
+      "to": "industry_telecommunication",
+      "evidence": "SK의 임원은 최태원, ... SK텔레콤 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_platform",
+      "evidence": "SK의 임원은 최태원, ... 대한상공회의소 회장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_285130",
+      "to": "industry_chemical",
+      "evidence": "SK의 임원은 김기동, ... SK케미칼 경영지원본부장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267980",
+      "to": "industry_food",
+      "evidence": "SK의 임원은 김선희, ... 매일유업㈜ 대표이사 사장",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011790",
+      "to": "business_area_chemical",
+      "evidence": "SK의 임원은 김기동, ... (겸) SKC 기타비상무이사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_001740",
+      "to": "business_area_chemical",
+      "evidence": "SK의 임원은 김기동, ... (겸) SK네트웍스 기타비상무이사",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_executive_status_2025_11011",
       "evidence_source_type": "dart",

@@ -1,15 +1,24 @@
-// node: company_호텔신라
+// node: company_008770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_호텔신라", "type": "Company", "name": "호텔신라", "stock_code": "008770"}
+:params {"id": "company_008770", "type": "Company", "name": "호텔신라", "stock_code": "008770"}
 
-// node: company_삼성생명
+// node: company_032830
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성생명", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "company_008770", "properties": {"evidence": "호텔신라의 대량보유 보고자는 삼성생명, 보고 유형은 일반, 접수일은 2026-05-04, 보유주식수는 6,950,857주, 지분율은 17.71%, 주식수 증감은 184,198, 지분율 증감은 0.47, 보고사유는 특별관계자 및 주식수 변동.", "date": "2026-05-04", "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527", "evidence_published_at": "2026-05-04"}}

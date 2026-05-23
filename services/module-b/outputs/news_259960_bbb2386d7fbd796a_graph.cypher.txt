@@ -1,0 +1,231 @@
+// node: company_259960
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_259960", "type": "Company", "name": "크래프톤", "stock_code": "259960", "description": "글로벌 게임 신작 PC·콘솔 해양 어드벤처 '서브노티카 2' 매출 1위, 인도 시장 공략과 펀드 운영"}
+
+// node: company_095660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_095660", "type": "Company", "name": "네오위즈", "stock_code": "095660", "description": "다양한 신작 게임 개발로 완성도 높이고 글로벌 시장에 출시 준비 중"}
+
+// node: company_225570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_225570", "type": "Company", "name": "넥슨게임즈", "stock_code": "225570", "description": "AAA급 신작 개발과 글로벌 온라인 게임 출시 집중"}
+
+// node: company_251270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_251270", "type": "Company", "name": "넷마블", "stock_code": "251270", "description": "글로벌 MMORPG 및 RPG 신작 다수 출시 및 매출 다변화"}
+
+// node: company_078340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078340", "type": "Company", "name": "컴투스", "stock_code": "078340", "description": "글로벌 신작 '제우스: 오만의 신' 등 게임 개발과 퍼블리싱 진행"}
+
+// node: company_293490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_293490", "type": "Company", "name": "카카오게임즈", "stock_code": "293490", "description": "글로벌 MMORPG 및 액션 RPG 신작 출시로 시장 반등 추진"}
+
+// node: business_area_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_game", "type": "BusinessArea", "name": "게임"}
+
+// node: business_area_global_market
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_global_market", "type": "BusinessArea", "name": "글로벌 시장"}
+
+// node: productservice_subnautica2
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_subnautica2", "type": "ProductService", "name": "서브노티카 2"}
+
+// node: productservice_zeus
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_zeus", "type": "ProductService", "name": "제우스: 오만의 신"}
+
+// node: industry_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_game", "type": "Industry", "name": "게임"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_259960", "to_id": "business_area_game", "properties": {"evidence": "크래프톤은 이미 하반기 대박 조짐을 보이고 있다. 지난 15일 미리 해보기(얼리 액세스)로 출시한 '서브노티카 2'가 주인공이다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_259960", "to_id": "productservice_subnautica2", "properties": {"evidence": "지난 15일 미리 해보기(얼리 액세스)로 출시한 '서브노티카 2'가 주인공이다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_259960", "to_id": "business_area_global_market", "properties": {"evidence": "특히 인도 시장 공략에 공을 들이고 있다. 네이버·미래에셋과 함께 1조원 규모 펀드를 가동했다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_259960", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_095660", "to_id": "business_area_game", "properties": {"evidence": "네오위즈는 'P의 거짓 차기작'이 핵심 재미 요소 검증을 마치고 완성도를 높이는 단계에 진입했다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_095660", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_225570", "to_id": "business_area_game", "properties": {"evidence": "넥슨게임즈가 AAA급 신작으로 개발 중인 '우치 더 웨이페어러' 티저 이미지", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_225570", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_251270", "to_id": "business_area_game", "properties": {"evidence": "넷마블은 지난 14일 '왕좌의 게임: 킹스로드' 아시아 출시를 시작으로 본격적인 글로벌 신작 출격에 나섰다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_251270", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078340", "to_id": "business_area_game", "properties": {"evidence": "컴투스는 하반기 '제우스: 오만의 신'과 '도원암귀'로 글로벌 시장에 도전한다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078340", "to_id": "productservice_zeus", "properties": {"evidence": "컴투스는 개발사 에이버튼이 제작하고 자사가 퍼블리싱하는 신작 '프로젝트 ES'의 공식 명칭을 '제우스: 오만의 신'으로 확정했다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078340", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_293490", "to_id": "business_area_game", "properties": {"evidence": "카카오게임즈는 하반기 신작 3종을 차례로 선보인다. 3분기에 모바일·PC 크로스플레이 MMORPG '오딘Q'를 한국을 비롯해 대만·일본·아시아를 포함한 글로벌 원빌드로 출시한다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_293490", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_game", "to_id": "industry_game", "properties": {"evidence": "올 하반기 한국 게임(K-게임)의 해외 시장 공략이 본격화된다.", "date": "", "evidence_source_id": "news_259960_bbb2386d7fbd796a", "evidence_source_type": "news", "evidence_source_url": "https://www.newsis.com/view/NISX20260515_0003631354", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}

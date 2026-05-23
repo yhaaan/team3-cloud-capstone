@@ -2,56 +2,98 @@
   "source_id": "news_011210_b07eaabc651bb181",
   "entities": [
     {
-      "id": "company_hyundai_wia",
+      "id": "company_011210",
       "type": "Company",
       "name": "현대위아",
-      "stock_code": "011210"
+      "stock_code": "011210",
+      "description": "전동화 부품과 로봇, 스마트 제조 솔루션 중심으로 미래사업 집중"
     },
     {
-      "id": "company_hyundai_rotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
-      "stock_code": "064350"
+      "stock_code": "064350",
+      "description": "지상무기체계 플랫폼과 화포 제조 역량을 가진 종합 방산기업"
     },
     {
-      "id": "company_hyundai_motor",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
-    },
-    {
-      "id": "company_kia",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_yujin_investment_securities",
+      "id": "company_005380",
       "type": "Company",
-      "name": "유진투자증권",
-      "stock_code": "001200"
+      "name": "현대차",
+      "stock_code": "005380"
     },
     {
-      "id": "company_hyundai_mobis",
-      "type": "Company",
-      "name": "현대모비스",
-      "stock_code": "012330"
+      "id": "business_area_방산",
+      "type": "BusinessArea",
+      "name": "방산"
     },
     {
-      "id": "person_jeong_uisun",
-      "type": "Person",
-      "name": "정의선",
-      "role_raw": "현대차그룹 회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "business_area_미래차_로봇",
+      "type": "BusinessArea",
+      "name": "미래차·로봇"
+    },
+    {
+      "id": "product_service_지상무기체계_플랫폼",
+      "type": "ProductService",
+      "name": "지상무기체계 플랫폼"
+    },
+    {
+      "id": "product_service_무장조립체",
+      "type": "ProductService",
+      "name": "무장조립체"
+    },
+    {
+      "id": "product_service_포신",
+      "type": "ProductService",
+      "name": "포신"
+    },
+    {
+      "id": "product_service_곡사포체계",
+      "type": "ProductService",
+      "name": "곡사포체계"
+    },
+    {
+      "id": "product_service_함포",
+      "type": "ProductService",
+      "name": "함포"
+    },
+    {
+      "id": "product_service_통합_열관리_시스템",
+      "type": "ProductService",
+      "name": "통합 열관리 시스템"
+    },
+    {
+      "id": "product_service_전동화_구동_부품",
+      "type": "ProductService",
+      "name": "전동화 구동 부품"
+    },
+    {
+      "id": "product_service_로봇_및_스마트팩토리_솔루션",
+      "type": "ProductService",
+      "name": "로봇 및 스마트팩토리 솔루션"
+    },
+    {
+      "id": "industry_방위산업",
+      "type": "Industry",
+      "name": "방위산업"
+    },
+    {
+      "id": "industry_미래차",
+      "type": "Industry",
+      "name": "미래차"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
-      "from": "company_hyundai_rotem",
-      "to": "company_hyundai_wia",
-      "evidence": "현대차그룹은 현대위아의 방위사업부를 현대로템에 넘기는 절차를 진행 중이다.",
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "business_area_미래차_로봇",
+      "evidence": "현대위아는 미래차·로봇 기업으로 전환하는 그림이다.",
       "date": "",
       "evidence_source_id": "news_011210_b07eaabc651bb181",
       "evidence_source_type": "news",
@@ -59,10 +101,10 @@
       "evidence_published_at": "2026-05-09T09:02:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeong_uisun",
-      "to": "company_hyundai_motor",
-      "evidence": "이를 두고 정의선 현대차그룹 회장이 직접 보유한 현대위아 지분 가치 제고와도 맞물린 다층적 포석이라는 해석이 제기되고 있다.",
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_방산",
+      "evidence": "현대로템이 지상무기체계 플랫폼을 맡고, 현대위아가 핵심 무장 부품을 공급하는 방식으로 분산돼 있었다.",
       "date": "",
       "evidence_source_id": "news_011210_b07eaabc651bb181",
       "evidence_source_type": "news",
@@ -70,10 +112,131 @@
       "evidence_published_at": "2026-05-09T09:02:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeong_uisun",
-      "to": "company_hyundai_wia",
-      "evidence": "이를 두고 정의선 현대차그룹 회장이 직접 보유한 현대위아 지분 가치 제고와도 맞물린 다층적 포석이라는 해석이 제기되고 있다.",
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "business_area_방산",
+      "evidence": "현대위아의 특수사업, 즉 방위사업부를 현대로템에 양도하는 방안이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_무장조립체",
+      "evidence": "현대위아 방산부문은 전차와 자주포 등에 탑재되는 무장조립체, 포신, 곡사포체계, 함포 등을 생산해 온 알짜 사업이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_포신",
+      "evidence": "현대위아 방산부문은 전차와 자주포 등에 탑재되는 무장조립체, 포신, 곡사포체계, 함포 등을 생산해 온 알짜 사업이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_곡사포체계",
+      "evidence": "현대위아 방산부문은 전차와 자주포 등에 탑재되는 무장조립체, 포신, 곡사포체계, 함포 등을 생산해 온 알짜 사업이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_함포",
+      "evidence": "현대위아 방산부문은 전차와 자주포 등에 탑재되는 무장조립체, 포신, 곡사포체계, 함포 등을 생산해 온 알짜 사업이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_지상무기체계_플랫폼",
+      "evidence": "현대로템은 K2 전차와 K808 차륜형 장갑차 등 지상무기체계 플랫폼에 더해 포신·무장조립체·원격사격통제체계 등 핵심 무장 기술까지 품게 된다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011210",
+      "to": "business_area_미래차_로봇",
+      "evidence": "현대위아는 전기차 열관리, 전동화 구동 부품, 로봇, 스마트 제조 솔루션 중심으로 미래사업 집중",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_통합_열관리_시스템",
+      "evidence": "이 자금은 전기차 열관리 시스템, 냉각수 분배·공급 통합 모듈, 전동화 액슬, 자율이동로봇, 무인운반차, 주차로봇, 스마트팩토리 솔루션 등 미래차·로봇·스마트 제조 분야에 투입될 가능성이 크다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_전동화_구동_부품",
+      "evidence": "현대위아가 방산과 공작기계 같은 전통 제조 사업을 줄이고 통합 열관리 인력을 늘리는 것은, ... 전기차 핵심 시스템 부품사로 이동하겠다는 신호이다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011210",
+      "to": "product_service_로봇_및_스마트팩토리_솔루션",
+      "evidence": "현대위아의 로봇 사업은 모바일 로봇과 협동 로봇 개발뿐 아니라 글로벌 영업 직군까지 모집하고 있다. 자율이동로봇, 무인운반차, 무인지게차, 협동로봇은 ... 제조·물류 자동화 시장을 겨냥한 사업화 단계로 이동하고 있음을 시사한다.",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_방산",
+      "to": "industry_방위산업",
+      "evidence": "글로벌 시장에서 뜨겁게 확대되는 방위산업 부문을 현대로템쪽으로 일원화하는 한편...",
+      "date": "",
+      "evidence_source_id": "news_011210_b07eaabc651bb181",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.pennmike.com/news/articleView.html?idxno=120184",
+      "evidence_published_at": "2026-05-09T09:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_미래차_로봇",
+      "to": "industry_미래차",
+      "evidence": "현대위아는 미래차·로봇 기업으로 전환하는 그림이다.",
       "date": "",
       "evidence_source_id": "news_011210_b07eaabc651bb181",
       "evidence_source_type": "news",

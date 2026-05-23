@@ -2,11 +2,29 @@
   "source_id": "news_373220_44ed9deaba54049b",
   "entities": [
     {
-      "id": "company_lg_energy_solution",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "저장강박 가구 지원 등 주거환경 개선 복지활동을 하는 에너지 기업"
+    },
+    {
+      "id": "business_area_welfare",
+      "type": "BusinessArea",
+      "name": "복지"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_373220",
+      "to": "business_area_welfare",
+      "evidence": "LG에너지솔루션이 '저장강박'으로 고통받는 이웃의 주거환경 개선에 나섰다.",
+      "date": "",
+      "evidence_source_id": "news_373220_44ed9deaba54049b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newspim.com/news/view/20260429001104",
+      "evidence_published_at": "2026-04-29T15:48:00+09:00"
+    }
+  ]
 }

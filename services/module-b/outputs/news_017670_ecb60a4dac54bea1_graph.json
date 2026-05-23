@@ -2,17 +2,77 @@
   "source_id": "news_017670_ecb60a4dac54bea1",
   "entities": [
     {
-      "id": "company_sk_telecom",
+      "id": "company_017670",
       "type": "Company",
       "name": "SK텔레콤",
-      "stock_code": "017670"
+      "stock_code": "017670",
+      "description": "통신사업과 AI 데이터센터 사업 중심으로 수익성과 미래 성장동력 확보에 주력하는 기업"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "id": "industry_telecommunication",
+      "type": "Industry",
+      "name": "telecommunication"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "AI"
+    },
+    {
+      "id": "business_area_telecom",
+      "type": "BusinessArea",
+      "name": "통신사업"
+    },
+    {
+      "id": "business_area_ai_data_center",
+      "type": "BusinessArea",
+      "name": "AI 데이터센터 사업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_telecom",
+      "evidence": "본업인 통신사업에서 수익성을 회복한",
+      "date": "",
+      "evidence_source_id": "news_017670_ecb60a4dac54bea1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.dealsitetv.com/articles/169919",
+      "evidence_published_at": "2026-05-07T18:28:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_017670",
+      "to": "business_area_ai_data_center",
+      "evidence": "미래 성장동력인 AI 데이터센터 사업에서 질적 성장을 이뤄낸 결과다",
+      "date": "",
+      "evidence_source_id": "news_017670_ecb60a4dac54bea1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.dealsitetv.com/articles/169919",
+      "evidence_published_at": "2026-05-07T18:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_telecom",
+      "to": "industry_telecommunication",
+      "evidence": "본업인 통신사업에서 수익성을 회복한",
+      "date": "",
+      "evidence_source_id": "news_017670_ecb60a4dac54bea1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.dealsitetv.com/articles/169919",
+      "evidence_published_at": "2026-05-07T18:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_data_center",
+      "to": "industry_ai",
+      "evidence": "미래 성장동력인 AI 데이터센터 사업에서 질적 성장을 이뤄낸 결과다",
+      "date": "",
+      "evidence_source_id": "news_017670_ecb60a4dac54bea1",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://news.dealsitetv.com/articles/169919",
+      "evidence_published_at": "2026-05-07T18:28:00+09:00"
+    }
+  ]
 }

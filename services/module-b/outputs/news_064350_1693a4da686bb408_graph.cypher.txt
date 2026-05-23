@@ -1,26 +1,137 @@
-// node: company_현대로템
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대로템", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "방산과 레일솔루션 사업 중심으로 전차, 전동차 생산 및 미래 먹거리 개발"}
 
-// node: company_현대위아
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대위아", "type": "Company", "name": "현대위아", "stock_code": "011210"}
-
-// node: company_현대차
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_001200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001200", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
+
+// node: business_area_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense", "type": "BusinessArea", "name": "방산"}
+
+// node: business_area_rail_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_rail_solution", "type": "BusinessArea", "name": "레일솔루션"}
+
+// node: product_service_k2_tank
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_k2_tank", "type": "ProductService", "name": "K-2 전차"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방산"}
+
+// node: industry_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_transport", "type": "Industry", "name": "운송"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_defense", "properties": {"evidence": "디펜스솔루션 부문에서 하반기 대규모 해외 수주 기대감은 유효하다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_rail_solution", "properties": {"evidence": "레일솔루션 수주잔고는 무려 '19조원'(디펜스솔루션 10조원)이다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_k2_tank", "properties": {"evidence": "하반기 이라크 및 페루 정치 지형 안정화 후 K-2 전차 수주를 기대한다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense", "to_id": "industry_defense", "properties": {"evidence": "키워드 #현대로템 #방산", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_rail_solution", "to_id": "industry_transport", "properties": {"evidence": "레일솔루션 수주잔고는 무려 '19조원'(디펜스솔루션 10조원)이다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_k2_tank", "to_id": "business_area_defense", "properties": {"evidence": "하반기 이라크 및 페루 정치 지형 안정화 후 K-2 전차 수주를 기대한다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001200", "to_id": "company_064350", "properties": {"evidence": "유진투자증권은 7일 현대로템에 대해 투자의견 'BUY'를 유지하고, 목표주가를 31만6000원을 상향했다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
 
 // relation: ACQUIRES
 
@@ -29,13 +140,13 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:ACQUIRES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대로템", "to_id": "company_현대위아", "properties": {"evidence": "언론 보도 등을 통해 현대위아 방산 부문 인수 가능성도 제기했다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "company_011210", "properties": {"evidence": "언론 보도 등을 통해 현대위아 방산 부문 인수 가능성도 제기했다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
 
-// relation: AFFILIATED_WITH
+// relation: PART_OF
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:PART_OF]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대로템", "to_id": "company_현대차", "properties": {"evidence": "현대로템 인수 시, 현대차 그룹 내 방산 중복 투자 해소 및 시너지 창출을 기대한다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}
+:params {"from_id": "business_area_defense", "to_id": "industry_defense", "properties": {"evidence": "현대로템 인수 시, 현대차 그룹 내 방산 중복 투자 해소 및 시너지 창출을 기대한다.", "date": "", "evidence_source_id": "news_064350_1693a4da686bb408", "evidence_source_type": "news", "evidence_source_url": "https://www.newsquest.co.kr/news/articleView.html?idxno=265909", "evidence_published_at": "2026-05-07T17:30:00+09:00"}}

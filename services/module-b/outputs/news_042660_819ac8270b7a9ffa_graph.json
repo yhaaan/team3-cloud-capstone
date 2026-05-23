@@ -2,17 +2,100 @@
   "source_id": "news_042660_819ac8270b7a9ffa",
   "entities": [
     {
-      "id": "company_한화오션",
+      "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
-      "stock_code": "042660"
+      "stock_code": "042660",
+      "description": "조선소 안전관리 및 대규모 안전 투자, 노후 크레인·고소차 교체, 협력사 안전 지원, 안전문화 정착에 주력"
     },
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "business_area_안전관리",
+      "type": "BusinessArea",
+      "name": "안전관리"
+    },
+    {
+      "id": "business_area_조선소경영",
+      "type": "BusinessArea",
+      "name": "조선소 경영"
+    },
+    {
+      "id": "industry_조선",
+      "type": "Industry",
+      "name": "조선"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_안전관리",
+      "evidence": "한화오션은 \"안전을 경영의 최우선 가치로 두고 있으며 현장의 안전 원칙을 훼손할 우려가 있는 어떠한 요구도 수용할 수 없다\"며 \"안전하지 않은 조선소는 글로벌 시장에서 경쟁력을 유지할 수 없다\"고 강조했다.",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_조선소경영",
+      "evidence": "한화오션은 임직원들의 생명과 안전을 저해하려는 어떠한 강요나 압력행사에도 절대 응하지 않을 것입니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_안전관리",
+      "to": "industry_조선",
+      "evidence": "한화오션은 \"안전하지 않은 조선소는 글로벌 시장에서 경쟁력을 유지할 수 없다\"고 강조했다.",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_조선소경영",
+      "to": "industry_조선",
+      "evidence": "한화오션은 \"안전하지 않은 조선소는 글로벌 시장에서 경쟁력을 유지할 수 없다\"고 강조했다.",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042660",
+      "to": "industry_조선",
+      "evidence": "한화오션은 \"안전하지 않은 조선소는 글로벌 시장에서 경쟁력을 유지할 수 없다\"고 강조했다.",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_조선",
+      "evidence": "한화 계열의 한화오션은 조선 산업에 속한다는 점에서 간접적 근거로 포함",
+      "date": "",
+      "evidence_source_id": "news_042660_819ac8270b7a9ffa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.gndomin.com/news/articleView.html?idxno=474865",
+      "evidence_published_at": "2026-05-07T18:15:00+09:00"
+    }
+  ]
 }

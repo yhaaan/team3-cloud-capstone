@@ -2,22 +2,56 @@
   "source_id": "dart_008770_executive_status_2025_11011",
   "entities": [
     {
-      "id": "company_호텔신라",
+      "id": "company_008770",
       "type": "Company",
-      "name": "호텔신라"
+      "name": "호텔신라",
+      "stock_code": "008770",
+      "description": "호텔 및 레저, TR(면세점·유통) 부문을 중심으로 운영하는 종합서비스 기업입니다."
     },
     {
-      "id": "industry_ai",
-      "type": "Industry",
-      "name": "AI"
+      "id": "business_area_tr부문",
+      "type": "BusinessArea",
+      "name": "TR부문"
+    },
+    {
+      "id": "business_area_호텔레저부문",
+      "type": "BusinessArea",
+      "name": "호텔&레저부문"
+    },
+    {
+      "id": "business_area_경영전략",
+      "type": "BusinessArea",
+      "name": "경영전략"
     }
   ],
   "relations": [
     {
-      "type": "BELONGS_TO",
-      "from": "company_호텔신라",
-      "to": "industry_ai",
-      "evidence": "of Illinois, Urbana-Champaign 경영전문대학원(MBA) 호텔신라 TR부문장.",
+      "type": "OPERATES_IN",
+      "from": "company_008770",
+      "to": "business_area_tr부문",
+      "evidence": "호텔신라의 임원들은 TR부문 인사팀장, TR부문 MD팀장, TR부문 판매지원팀장, TR부문장 등 TR부문 관련 업무를 담당하고 있습니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_008770",
+      "to": "business_area_호텔레저부문",
+      "evidence": "호텔신라의 임원들의 담당업무는 호텔&레저부문 서울호텔 총지배인, 호텔&레저부문 운영팀장, 호텔&레저부문 지원팀장 등 호텔&레저부문 관련입니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_executive_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_008770",
+      "to": "business_area_경영전략",
+      "evidence": "호텔신라 임원 이부진, 김지훈 등이 경영전략팀 담당 간부 및 경영전략담당으로 활동 중입니다.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_executive_status_2025_11011",
       "evidence_source_type": "dart",

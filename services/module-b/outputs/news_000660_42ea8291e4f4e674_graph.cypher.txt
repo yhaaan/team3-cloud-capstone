@@ -1,39 +1,143 @@
-// node: company_sk하이닉스
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 분야에서 메모리 사업을 중심으로 운영하는 기업"}
 
-// node: company_삼성전자
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_현대모비스
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대모비스", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
 
-// node: company_현대차
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
-
-// node: company_기아
+// node: company_012330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330", "description": "자동차 부품과 램프사업부를 포함해 자동차 부품 산업에 주력"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "business_area_semiconductor", "type": "Industry", "name": "Semiconductor"}
+
+// node: business_area_automotive_parts
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive_parts", "type": "BusinessArea", "name": "Automotive parts"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "Automotive"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "SK하이닉스는 반도체 분야에서 메모리 사업을 중심으로 운영하는 기업", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "business_area_semiconductor", "properties": {"evidence": "SK하이닉스는 올 1분기에 분기 영업이익 최고치를 갈아치웠지만 하청노동자들의 삶은 더욱 어려워졌다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_semiconductor", "properties": {"evidence": "반도체와 자동차는 국내 수출의 절반 가까이를 책임지고 있다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "business_area_automotive_parts", "properties": {"evidence": "현대모비스 하청 노조도 램프사업부 매각 반대와 원청 교섭을 요구하는 파업을 시작했다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive_parts", "to_id": "industry_automotive", "properties": {"evidence": "자동차업종의 경우 부품사 한곳만 셧다운 되도 완성차 생산라인이 모두 멈출 수 있다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "industry_automotive", "properties": {"evidence": "자동차는 국내 수출의 절반 가까이를 책임지고 있다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_automotive", "properties": {"evidence": "현재 하청 25개가 파업에 나서면 현대차·기아 공장도 멈추게 된다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "industry_automotive", "properties": {"evidence": "현재 하청 25개가 파업에 나서면 현대차·기아 공장도 멈추게 된다", "date": "", "evidence_source_id": "news_000660_42ea8291e4f4e674", "evidence_source_type": "news", "evidence_source_url": "https://www.dt.co.kr/article/12060232?ref=naver", "evidence_published_at": "2026-04-29T17:08:00+09:00"}}

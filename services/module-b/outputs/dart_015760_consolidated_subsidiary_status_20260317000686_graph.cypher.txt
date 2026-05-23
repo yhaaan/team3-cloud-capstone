@@ -1,0 +1,58 @@
+// node: company_015760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_015760", "type": "Company", "name": "한국전력", "stock_code": "015760", "description": "전력 설비 및 에너지 공급과 관련한 사업을 영위한다."}
+
+// node: company_051600
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_051600", "type": "Company", "name": "한전KPS", "stock_code": "051600", "description": "전력설비 개보수 등 전력 설비 유지보수 사업을 수행한다."}
+
+// node: business_area_power_equipment_maintenance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_equipment_maintenance", "type": "BusinessArea", "name": "전력설비개보수"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051600", "to_id": "business_area_power_equipment_maintenance", "properties": {"evidence": "한전KPS(주) | 1984.04.01 | 전라남도 나주시 문화로 211 | 전력설비개보수 외 | 1,687,760 | 상동 | ○", "date": "2026-03-17", "evidence_source_id": "dart_015760_consolidated_subsidiary_status_20260317000686", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_equipment_maintenance", "to_id": "industry_energy", "properties": {"evidence": "한전KPS(주) | 1984.04.01 | 전라남도 나주시 문화로 211 | 전력설비개보수 외 | 1,687,760 | 상동 | ○", "date": "2026-03-17", "evidence_source_id": "dart_015760_consolidated_subsidiary_status_20260317000686", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "industry_energy", "properties": {"evidence": "한국전력의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.", "date": "2026-03-17", "evidence_source_id": "dart_015760_consolidated_subsidiary_status_20260317000686", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000686", "evidence_published_at": "2026-03-17"}}

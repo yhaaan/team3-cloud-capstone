@@ -2,36 +2,29 @@
   "source_id": "news_122900_e4e36731a1b07151",
   "entities": [
     {
-      "id": "company_아이마켓코리아",
+      "id": "company_122900",
       "type": "Company",
       "name": "아이마켓코리아",
-      "stock_code": "122900"
+      "stock_code": "122900",
+      "description": "상품 종합 도매업체로 B2B 구매서비스를 제공하는 기업"
     },
     {
-      "id": "person_이호준",
-      "type": "Person",
-      "name": "이호준",
-      "role_raw": "사외이사",
-      "affiliated_company": "company_아이마켓코리아",
-      "role": "OUTSIDE_DIRECTOR",
-      "role_label": "사외이사"
+      "id": "business_area_상품종합도매업",
+      "type": "BusinessArea",
+      "name": "상품 종합 도매업"
     },
     {
-      "id": "person_김주형",
-      "type": "Person",
-      "name": "김주형",
-      "role_raw": "사외이사",
-      "affiliated_company": "company_아이마켓코리아",
-      "role": "OUTSIDE_DIRECTOR",
-      "role_label": "사외이사"
+      "id": "industry_도매업",
+      "type": "Industry",
+      "name": "도매업"
     }
   ],
   "relations": [
     {
-      "type": "APPOINTED_TO",
-      "from": "person_이호준",
-      "to": "company_아이마켓코리아",
-      "evidence": "회사는 사외이사이호준을 신규 선임하고, 김주형이 임기만료 전에 자진사임했다고 밝혔다.",
+      "type": "OPERATES_IN",
+      "from": "company_122900",
+      "to": "business_area_상품종합도매업",
+      "evidence": "아이마켓코리아는 2010년 7월 30일 코스피 시장에 상장된 상품 종합 도매업체다.",
       "date": "",
       "evidence_source_id": "news_122900_e4e36731a1b07151",
       "evidence_source_type": "news",
@@ -39,10 +32,10 @@
       "evidence_published_at": "2026-03-27T20:56:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_김주형",
-      "to": "company_아이마켓코리아",
-      "evidence": "회사는 사외이사이호준을 신규 선임하고, 김주형이 임기만료 전에 자진사임했다고 밝혔다.",
+      "type": "PART_OF",
+      "from": "business_area_상품종합도매업",
+      "to": "industry_도매업",
+      "evidence": "아이마켓코리아는 2010년 7월 30일 코스피 시장에 상장된 상품 종합 도매업체다.",
       "date": "",
       "evidence_source_id": "news_122900_e4e36731a1b07151",
       "evidence_source_type": "news",

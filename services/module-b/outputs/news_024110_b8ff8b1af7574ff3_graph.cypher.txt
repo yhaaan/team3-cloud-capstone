@@ -1,0 +1,84 @@
+// node: company_024110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_024110", "type": "Company", "name": "기업은행", "stock_code": "024110", "description": "제조업 소공인 위한 정책 및 금융 지원 강조하는 경제연구소"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_035720
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_035720", "type": "Company", "name": "카카오", "stock_code": "035720"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "automotive"}
+
+// node: business_area_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_manufacturing", "type": "BusinessArea", "name": "manufacturing"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "industry_automotive", "properties": {"evidence": "자동차 한 대를 현대자동차나 기아자동차 혼자 만들 수는 없습니다.", "date": "", "evidence_source_id": "news_024110_b8ff8b1af7574ff3", "evidence_source_type": "news", "evidence_source_url": "https://news.ifm.kr/news/articleView.html?idxno=471105", "evidence_published_at": "2026-05-16T16:38:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_024110", "to_id": "industry_automotive", "properties": {"evidence": "우리 기업은행 경제연구소에서도 이 소공인 관련된 실태 조사, 이들의 중요성, 경제 기여도 이런 것들을 한참 조사를 해서 실제 이 법안 마련하는 데 기여를 했던 적이 있습니다.", "date": "", "evidence_source_id": "news_024110_b8ff8b1af7574ff3", "evidence_source_type": "news", "evidence_source_url": "https://news.ifm.kr/news/articleView.html?idxno=471105", "evidence_published_at": "2026-05-16T16:38:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_035720", "to_id": "industry_automotive", "properties": {"evidence": "유튜브, 네이버, 카카오에서도 경인방송을 구독해주세요!", "date": "", "evidence_source_id": "news_024110_b8ff8b1af7574ff3", "evidence_source_type": "news", "evidence_source_url": "https://news.ifm.kr/news/articleView.html?idxno=471105", "evidence_published_at": "2026-05-16T16:38:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_024110", "to_id": "business_area_manufacturing", "properties": {"evidence": "IBK기업은행 경제연구소 소장으로서 제조업 소공인 대상 정책과 금융 지원을 강조하고 있습니다.", "date": "", "evidence_source_id": "news_024110_b8ff8b1af7574ff3", "evidence_source_type": "news", "evidence_source_url": "https://news.ifm.kr/news/articleView.html?idxno=471105", "evidence_published_at": "2026-05-16T16:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_manufacturing", "to_id": "industry_automotive", "properties": {"evidence": "자동차 한 대를 현대자동차나 기아자동차 혼자 만들 수는 없습니다. ... 소공인은 우리 제조업의 일부다", "date": "", "evidence_source_id": "news_024110_b8ff8b1af7574ff3", "evidence_source_type": "news", "evidence_source_url": "https://news.ifm.kr/news/articleView.html?idxno=471105", "evidence_published_at": "2026-05-16T16:38:00+09:00"}}

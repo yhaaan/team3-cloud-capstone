@@ -2,32 +2,106 @@
   "source_id": "news_005380_65b599bf3a4945c5",
   "entities": [
     {
-      "id": "company_현대차",
+      "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "전기차 제조와 충전 인프라 운영을 통한 미래 모빌리티 밸류체인 내재화에 주력"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_LG에너지솔루션",
+      "id": "company_066670",
       "type": "Company",
-      "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "name": "디티씨",
+      "stock_code": "066670"
     },
     {
-      "id": "person_정의선",
-      "type": "Person",
-      "name": "정의선",
-      "role_raw": "회장",
-      "affiliated_company": "company_현대차",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "automotive"
+    },
+    {
+      "id": "business_area_electric_vehicle_charging_infrastructure",
+      "type": "BusinessArea",
+      "name": "electric vehicle charging infrastructure"
+    },
+    {
+      "id": "business_area_electric_vehicle_manufacturing",
+      "type": "BusinessArea",
+      "name": "electric vehicle manufacturing"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_electric_vehicle_manufacturing",
+      "evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005380",
+      "to": "business_area_electric_vehicle_charging_infrastructure",
+      "evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000270",
+      "to": "business_area_electric_vehicle_manufacturing",
+      "evidence": "한국전기차충전서비스는 현대자동차(43.51%)와 기아(29.01%)가 주요 주주로 참여한 전기차 충전사업자(CPO)다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_automotive",
+      "evidence": "단기 수익성 악화라는 리스크에도 불구하고 전기차 제조부터 충전 인프라 운영까지 이어지는 밸류체인을 그룹 내에 내재화해 미래 모빌리티 주도권을 놓치지 않겠다는 의지로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_automotive",
+      "evidence": "한국전기차충전서비스는 현대자동차(43.51%)와 기아(29.01%)가 주요 주주로 참여한 전기차 충전사업자(CPO)다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_005380",
+      "to": "company_066670",
+      "evidence": "디티씨(19.91%)가 나머지 지분을 보유하고 있으며 과거 주주였던 한국전력과 KT는 지분을 모두 정리한 상태다.",
+      "date": "",
+      "evidence_source_id": "news_005380_65b599bf3a4945c5",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.thebigdata.co.kr/view.php?ud=2026042915314946520ecbf9426b_23",
+      "evidence_published_at": "2026-04-29T17:30:00+09:00"
+    }
+  ]
 }

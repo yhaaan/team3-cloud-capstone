@@ -1,47 +1,110 @@
-// node: company_sk
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220", "description": "전기차용 이차 전지 출하 증가하며 배터리 사업 운영"}
 
-// node: company_lg_에너지_솔루션
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lg_에너지_솔루션", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
-
-// node: company_삼성SDI
+// node: company_006400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성SDI", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400", "description": "전기차용 이차 전지 생산 및 원형 배터리 제공"}
 
-// node: company_SK이노베이션
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_SK이노베이션", "type": "Company", "name": "SK이노베이션", "stock_code": "096770"}
-
-// node: company_대신증권
+// node: company_096770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_대신증권", "type": "Company", "name": "대신증권", "stock_code": "003540"}
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "배터리 사업부문 운영, 이차 전지 자회사 SK온 포함"}
 
-// node: company_삼성증권
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성증권", "type": "Company", "name": "삼성증권", "stock_code": "016360"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_electric_vehicle_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_electric_vehicle_battery", "type": "BusinessArea", "name": "전기차 배터리"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "business_area_electric_vehicle_battery", "properties": {"evidence": "LG에너지솔루션의 출하량은 11.8GWh(기가와트시)로 16% 증가세를 나타냈다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_electric_vehicle_battery", "properties": {"evidence": "국내 배터리 업체들이 긴장하고 있다. ... 삼성SDI 역시 2.2GWh(-28%)로 줄었다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_electric_vehicle_battery", "properties": {"evidence": "SK이노베이션의 이차 전지 자회사인 SK온은 3.9GWh로 6% 감소했다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_electric_vehicle_battery", "to_id": "industry_battery", "properties": {"evidence": "전기차 배터리 등의 생산 현지화와 제조업 강화를 위해", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_373220", "to_id": "industry_battery", "properties": {"evidence": "글로벌 1위 배터리 업체인 중국의 닝더스다이(CATL)가 나트륨배터리 공급 계획을 밝히면서 LG에너지솔루션[373220] ... 국내 배터리 업체들이 긴장하고 있다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "industry_battery", "properties": {"evidence": "글로벌 1위 배터리 업체인 중국의 닝더스다이(CATL)가 나트륨배터리 공급 계획을 밝히면서 ... 삼성SDI[006400] 등 국내 배터리 업체들이 긴장하고 있다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "industry_battery", "properties": {"evidence": "글로벌 1위 배터리 업체인 중국의 닝더스다이(CATL)가 나트륨배터리 공급 계획을 밝히면서 ... SK이노베이션[096770] 등 국내 배터리 업체들이 긴장하고 있다.", "date": "", "evidence_source_id": "news_034730_6197cb21e38a61c2", "evidence_source_type": "news", "evidence_source_url": "https://news.einfomax.co.kr/news/articleView.html?idxno=4414251", "evidence_published_at": "2026-05-12T09:28:00+09:00"}}

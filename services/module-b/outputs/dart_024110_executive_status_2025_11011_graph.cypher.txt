@@ -1,0 +1,24 @@
+// node: company_024110
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_024110", "type": "Company", "name": "기업은행", "stock_code": "024110"}
+
+// node: industry_it
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it", "type": "Industry", "name": "IT"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_024110", "to_id": "industry_it", "properties": {"evidence": "기업은행의 임원은 권오삼, 직위는 집행간부, 이사회상 역할은 미등기, 담당업무는 IT그룹, 주요경력은 - 기업은행 경기남부지역본부장 - 〃 가치경영실장(본부장) - 〃 선릉역지점장.", "date": "2026-03-18", "evidence_source_id": "dart_024110_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761", "evidence_published_at": "2026-03-18"}}

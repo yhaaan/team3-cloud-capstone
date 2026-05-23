@@ -1,10 +1,10 @@
-// node: company_호텔신라
+// node: company_008770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_호텔신라", "type": "Company", "name": "호텔신라", "stock_code": "008770"}
+:params {"id": "company_008770", "type": "Company", "name": "호텔신라", "stock_code": "008770", "description": "호텔신라는 운영총괄, 사외이사, 대표이사 등 임원을 보유한 기업입니다."}
 
 // node: person_한인규
 
@@ -12,7 +12,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_한인규", "type": "Person", "name": "한인규", "role_raw": "운영총괄(사장)", "affiliated_company": "company_호텔신라", "role": "OTHER", "role_label": "운영총괄"}
+:params {"id": "person_한인규", "type": "Person", "name": "한인규", "role_raw": "운영총괄(사장)", "role": "OTHER", "role_label": "운영총괄"}
 
 // node: person_진정구
 
@@ -20,7 +20,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_진정구", "type": "Person", "name": "진정구", "role_raw": "사외이사", "affiliated_company": "company_호텔신라", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+:params {"id": "person_진정구", "type": "Person", "name": "진정구", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
 
 // node: person_이부진
 
@@ -28,7 +28,7 @@ MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Person`
 
-:params {"id": "person_이부진", "type": "Person", "name": "이부진", "role_raw": "대표이사(사장)", "affiliated_company": "company_호텔신라", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "person_이부진", "type": "Person", "name": "이부진", "role_raw": "대표이사(사장)", "role": "CEO", "role_label": "대표이사"}
 
 // relation: AFFILIATED_WITH
 
@@ -37,7 +37,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_한인규", "to_id": "company_호텔신라", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 한인규, 등기 여부는 등기임원, 직위는 운영총괄(사장), 보유주식수는 4,800주, 주식수 증감은 4,800, 지분율은 0.01%, 지분율 증감은 0.01.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}
+:params {"from_id": "person_한인규", "to_id": "company_008770", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 한인규, 등기 여부는 등기임원, 직위는 운영총괄(사장), 보유주식수는 4,800주, 주식수 증감은 4,800, 지분율은 0.01%, 지분율 증감은 0.01.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}
 
 // relation: AFFILIATED_WITH
 
@@ -46,7 +46,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_진정구", "to_id": "company_호텔신라", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 진정구, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 1,200주, 주식수 증감은 1,200, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}
+:params {"from_id": "person_진정구", "to_id": "company_008770", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 진정구, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 1,200주, 주식수 증감은 1,200, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}
 
 // relation: AFFILIATED_WITH
 
@@ -55,4 +55,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:AFFILIATED_WITH]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이부진", "to_id": "company_호텔신라", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 이부진, 등기 여부는 등기임원, 직위는 대표이사(사장), 보유주식수는 300,000주, 주식수 증감은 300,000, 지분율은 0.75%, 지분율 증감은 0.75.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}
+:params {"from_id": "person_이부진", "to_id": "company_008770", "properties": {"evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 이부진, 등기 여부는 등기임원, 직위는 대표이사(사장), 보유주식수는 300,000주, 주식수 증감은 300,000, 지분율은 0.75%, 지분율 증감은 0.75.", "date": "2026-04-29", "evidence_source_id": "dart_008770_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965", "evidence_published_at": "2026-04-29"}}

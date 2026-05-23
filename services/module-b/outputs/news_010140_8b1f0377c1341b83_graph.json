@@ -2,35 +2,206 @@
   "source_id": "news_010140_8b1f0377c1341b83",
   "entities": [
     {
-      "id": "company_hd_한국조선해양",
-      "type": "Company",
-      "name": "HD한국조선해양",
-      "stock_code": "009540"
-    },
-    {
-      "id": "company_삼성중공업",
+      "id": "company_010140",
       "type": "Company",
       "name": "삼성중공업",
-      "stock_code": "010140"
+      "stock_code": "010140",
+      "description": "해양플랜트와 친환경 분야 중심의 조선사업을 운영하며 LNG 운반선 등 고부가 선종을 생산합니다."
     },
     {
-      "id": "company_한화",
+      "id": "company_009540",
+      "type": "Company",
+      "name": "HD한국조선해양",
+      "stock_code": "009540",
+      "description": "엔진기계 부문에서 이중연료 엔진 비중 확대와 판가 상승이 반영된 조선사업을 운영합니다."
+    },
+    {
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
     },
     {
-      "id": "company_한화오션",
+      "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
-      "stock_code": "042660"
+      "stock_code": "042660",
+      "description": "특수선과 방산 부문을 확대 중이며 해외 함정 유지·보수·정비(MRO) 사업을 영위합니다."
     },
     {
-      "id": "company_hd_현대중공업",
-      "type": "Company",
-      "name": "HD현대중공업",
-      "stock_code": "329180"
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선"
+    },
+    {
+      "id": "business_area_engine",
+      "type": "BusinessArea",
+      "name": "엔진기계"
+    },
+    {
+      "id": "business_area_specialty_ship",
+      "type": "BusinessArea",
+      "name": "특수선"
+    },
+    {
+      "id": "business_area_offshore_plant",
+      "type": "BusinessArea",
+      "name": "해양플랜트"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "product_service_LNG_carrier",
+      "type": "ProductService",
+      "name": "LNG 운반선"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_offshore_plant",
+      "evidence": "삼성중공업 역시 해양플랜트·친환경 분야 등을 중심으로 비상선 경쟁력 강화에 나서고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_engine",
+      "evidence": "HD한국조선해양은 엔진기계 부문에서 이중연료(DF) 엔진 비중 확대와 판가 상승 영향이 반영됐다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_specialty_ship",
+      "evidence": "한화오션은 특수선 부문이 아직 초기 단계로 적자지만, 해외 함정 유지·보수·정비(MRO) 사업과 방산 수주 등을 바탕으로 특수선·방산 부문 확대에 속도를 내고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_shipbuilding",
+      "evidence": "액화천연가스(LNG) 운반선 등 고부가 프로젝트가 실적 개선에 효자 역할을 해냈다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "국내 조선 빅3가 올해 1분기 합산 영업이익 2조원을 돌파하며 조선업 슈퍼사이클 기대감을 키우고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_shipbuilding",
+      "evidence": "한화오션은 특수선 부문이 아직 초기 단계로 적자지만, 해외 함정 유지·보수·정비(MRO) 사업과 방산 수주 등을 바탕으로 특수선·방산 부문 확대에 속도를 내고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000880",
+      "to": "business_area_shipbuilding",
+      "evidence": "한화오션 포함 한화의 조선산업 관련 사업 언급으로 조선 사업 관련 가능성.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_LNG_carrier",
+      "evidence": "액화천연가스(LNG) 운반선 등 고부가 프로젝트가 실적 개선에 효자 역할을 해냈다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "국내 조선 빅3가 ... 조선업 슈퍼사이클 기대감을 키우고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_engine",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양은 엔진기계 부문에서 이중연료(DF) 엔진 비중 확대와 판가 상승 영향이 반영됐다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_specialty_ship",
+      "to": "business_area_shipbuilding",
+      "evidence": "한화오션은 특수선 부문이 아직 초기 단계로 적자지만, ... 특수선·방산 부문 확대에 속도를 내고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_offshore_plant",
+      "to": "business_area_shipbuilding",
+      "evidence": "삼성중공업 역시 해양플랜트·친환경 분야 등을 중심으로 비상선 경쟁력 강화에 나서고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_LNG_carrier",
+      "to": "business_area_shipbuilding",
+      "evidence": "액화천연가스(LNG) 운반선 등 고부가 프로젝트가 실적 개선에 효자 역할을 해냈다.",
+      "date": "",
+      "evidence_source_id": "news_010140_8b1f0377c1341b83",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.viva100.com/article/20260511500744",
+      "evidence_published_at": "2026-05-11T15:18:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,58 @@
+// node: company_042700
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042700", "type": "Company", "name": "한미반도체", "stock_code": "042700", "description": "반도체 장비 제조 및 판매하는 기업"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "메모리 등 반도체 사업과 다양한 전자제품 사업 영위"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "[단독] 삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안", "date": "", "evidence_source_id": "news_042700_31a37d36d7144f3e", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver", "evidence_published_at": "2026-05-15T17:04:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "[단독] 삼성전자, 메모리 직원들에게 영업이익 10% 성과급 지급 약속…3년 뒤 성과급 제도화도 제안", "date": "", "evidence_source_id": "news_042700_31a37d36d7144f3e", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver", "evidence_published_at": "2026-05-15T17:04:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042700", "to_id": "industry_semiconductor", "properties": {"evidence": "한미반도체", "date": "", "evidence_source_id": "news_042700_31a37d36d7144f3e", "evidence_source_type": "news", "evidence_source_url": "https://biz.heraldcorp.com/article/10739038?ref=naver", "evidence_published_at": "2026-05-15T17:04:00+09:00"}}

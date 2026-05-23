@@ -1,15 +1,24 @@
-// node: company_lg_energy_solution
+// node: company_373220
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_energy_solution", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
+:params {"id": "company_373220", "type": "Company", "name": "LG에너지솔루션", "stock_code": "373220"}
 
-// node: company_lg_chemical
+// node: company_051910
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lg_chemical", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+:params {"id": "company_051910", "type": "Company", "name": "LG화학", "stock_code": "051910"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051910", "to_id": "company_373220", "properties": {"evidence": "LG에너지솔루션의 최대주주 관련 인물/법인은 ㈜LG화학, 관계는 최대주주 본인, 당기말 보유주식수는 185,747,525주, 지분율은 79.38%.", "date": "2026-03-12", "evidence_source_id": "dart_373220_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217", "evidence_published_at": "2026-03-12"}}

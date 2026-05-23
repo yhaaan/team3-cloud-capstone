@@ -1,0 +1,100 @@
+// node: company_032830
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032830", "type": "Company", "name": "삼성생명", "stock_code": "032830", "description": "국내 생명보험업계 대표 기업으로 보험 사업과 대규모 삼성전자 지분 보유 투자자산 기업입니다."}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_003540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003540", "type": "Company", "name": "대신증권", "stock_code": "003540", "description": "증권 리서치 및 투자 의견 제공 기업입니다."}
+
+// node: business_area_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_insurance", "type": "BusinessArea", "name": "보험"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// node: industry_insurance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_insurance", "type": "Industry", "name": "보험"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "business_area_insurance", "properties": {"evidence": "삼성생명은 업계 최고 수준의 자본력과 안정적인 보험 사업 구조를 갖추고 있지만", "date": "", "evidence_source_id": "news_032830_09bebccbeb80b10e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453129", "evidence_published_at": "2026-05-16T16:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "industry_insurance", "properties": {"evidence": "국내 생명보험업계 대표 기업 삼성생명", "date": "", "evidence_source_id": "news_032830_09bebccbeb80b10e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453129", "evidence_published_at": "2026-05-16T16:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "industry_finance", "properties": {"evidence": "국내 생명보험업계 대표 기업 삼성생명", "date": "", "evidence_source_id": "news_032830_09bebccbeb80b10e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453129", "evidence_published_at": "2026-05-16T16:32:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자 주가 상승과 반도체 업황 회복 기대감이 커지면서 삼성전자 주가가 강세를 이어가자", "date": "", "evidence_source_id": "news_032830_09bebccbeb80b10e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453129", "evidence_published_at": "2026-05-16T16:32:00+09:00"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_032830", "to_id": "company_005930", "properties": {"evidence": "시장에서는 삼성전자 지분 가치 상승이 삼성생명 기업가치 확대를 이끌고 있지만", "date": "", "evidence_source_id": "news_032830_09bebccbeb80b10e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453129", "evidence_published_at": "2026-05-16T16:32:00+09:00"}}

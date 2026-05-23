@@ -1,0 +1,7 @@
+// node: company_352820
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_352820", "type": "Company", "name": "하이브", "stock_code": "352820", "description": "하이브는 음악 콘텐츠 및 엔터테인먼트 중심의 플랫폼 비즈니스를 영위합니다."}

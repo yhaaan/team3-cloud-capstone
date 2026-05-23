@@ -1,0 +1,93 @@
+// node: company_062040
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_062040", "type": "Company", "name": "산일전기", "stock_code": "062040", "description": "글로벌 배전 변압기 전문기업으로 신재생·ESS용 특수변압기와 초고압변압기 생산 등 배전변압기 사업을 영위"}
+
+// node: business_area_distribution_transformer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_distribution_transformer", "type": "BusinessArea", "name": "배전변압기"}
+
+// node: business_area_special_transformer_for_renewable_ess
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_special_transformer_for_renewable_ess", "type": "BusinessArea", "name": "신재생·ESS용 특수변압기"}
+
+// node: business_area_ultra_high_voltage_transformer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ultra_high_voltage_transformer", "type": "BusinessArea", "name": "초고압변압기"}
+
+// node: industry_electric_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_power", "type": "Industry", "name": "전력"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_distribution_transformer", "properties": {"evidence": "글로벌 배전 변압기 전문기업 산일전기의 올해 1 분기 매출액은 전년비 52.1% 증가한 1,503 억원, 영업이익은 47.9% 증가한 555 억원을 기록했다.", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_special_transformer_for_renewable_ess", "properties": {"evidence": "신재생 ·ESS 용 특수변압기 매출액 1,067 억원 (+113.4%) 으로 고성장을 주도했으며", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_062040", "to_id": "business_area_ultra_high_voltage_transformer", "properties": {"evidence": "154kv 초고압변압기 포트폴리오 확대를 주목, 이는 기존 고객인 GE, 지멘스, 도시바 측 요청에 의한 것으로 배전변압기에 더해 신재생발전 사이트용 엔트리레벨 초고압변압기 납품 예정이다.", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_distribution_transformer", "to_id": "industry_electric_power", "properties": {"evidence": "글로벌 배전 변압기 전문기업 산일전기의 올해 1 분기 매출액은 전년비 52.1% 증가한 1,503 억원, 영업이익은 47.9% 증가한 555 억원을 기록했다.", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_special_transformer_for_renewable_ess", "to_id": "industry_electric_power", "properties": {"evidence": "신재생 ·ESS 용 특수변압기 매출액 1,067 억원 (+113.4%) 으로 고성장을 주도했으며", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ultra_high_voltage_transformer", "to_id": "industry_electric_power", "properties": {"evidence": "154kv 초고압변압기 포트폴리오 확대를 주목, 이는 기존 고객인 GE, 지멘스, 도시바 측 요청에 의한 것으로 배전변압기에 더해 신재생발전 사이트용 엔트리레벨 초고압변압기 납품 예정이다.", "date": "", "evidence_source_id": "news_062040_b53d410e9bf7573e", "evidence_source_type": "news", "evidence_source_url": "http://www.newsfc.co.kr/news/articleView.html?idxno=78500", "evidence_published_at": "2026-05-07T09:54:00+09:00"}}

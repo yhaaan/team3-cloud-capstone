@@ -1,15 +1,75 @@
-// node: company_두산퓨얼셀
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산퓨얼셀", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260", "description": "글로벌 에너지 전환과 수소 시장에서 발전용 수소 연료전지 사업을 영위하는 기업"}
 
-// node: company_두산
+// node: company_000150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_두산", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_hydrogen_fuel_cell
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_hydrogen_fuel_cell", "type": "BusinessArea", "name": "수소연료전지 사업"}
+
+// node: business_area_power_generation_hydrogen
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_power_generation_hydrogen", "type": "BusinessArea", "name": "발전용 수소"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_hydrogen_fuel_cell", "properties": {"evidence": "두산퓨얼셀이 영위하는 수소연료전지 사업은 글로벌 에너지 전환 정책과 맞물리며 중장기 성장 산업으로 분류되고 있기 때문이다.", "date": "", "evidence_source_id": "news_336260_249ef565ff176a1e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450054", "evidence_published_at": "2026-05-01T01:10:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_power_generation_hydrogen", "properties": {"evidence": "특히 발전용 수소 시장은 아직 초기 단계로, 향후 정책과 인프라 투자 확대에 따라 수요가 급격히 증가할 가능성이 있다.", "date": "", "evidence_source_id": "news_336260_249ef565ff176a1e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450054", "evidence_published_at": "2026-05-01T01:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_hydrogen_fuel_cell", "to_id": "industry_energy", "properties": {"evidence": "두산퓨얼셀이 영위하는 수소연료전지 사업은 글로벌 에너지 전환 정책과 맞물리며 중장기 성장 산업으로 분류되고 있기 때문이다.", "date": "", "evidence_source_id": "news_336260_249ef565ff176a1e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450054", "evidence_published_at": "2026-05-01T01:10:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_power_generation_hydrogen", "to_id": "industry_energy", "properties": {"evidence": "특히 발전용 수소 시장은 아직 초기 단계로, 향후 정책과 인프라 투자 확대에 따라 수요가 급격히 증가할 가능성이 있다.", "date": "", "evidence_source_id": "news_336260_249ef565ff176a1e", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=450054", "evidence_published_at": "2026-05-01T01:10:00+09:00"}}

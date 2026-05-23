@@ -1,15 +1,58 @@
-// node: company_sk하이닉스
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "반도체 메모리 사업 중심의 역대급 실적과 성과급 지급"}
 
-// node: company_현대차
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "semiconductor"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "memory"}
+
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "반도체 호황에 역대급 실적을 기록한 SK하이닉스가 구성원에 거액의 성과급을 지급한다는 이슈가 화제가 되는 가운데", "date": "", "evidence_source_id": "news_000660_ceede745bf35aca5", "evidence_source_type": "news", "evidence_source_url": "https://www.mediawatch.kr/news/article.html?no=259447", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 호황에 역대급 실적을 기록한 SK하이닉스가 구성원에 거액의 성과급을 지급한다는 이슈가 화제가 되는 가운데", "date": "", "evidence_source_id": "news_000660_ceede745bf35aca5", "evidence_source_type": "news", "evidence_source_url": "https://www.mediawatch.kr/news/article.html?no=259447", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "industry_semiconductor", "properties": {"evidence": "현대차가 자동차 업종에 속하는 점에서 산업적으로 반도체와 자동차업계가 가까운 관계이나 문서 내 자동차 관련 직접 사업 언급 없음, 대신 산업분류상 반도체와 별도로 자동차 산업으로 독립되어 있으므로 현대차 자동차산업으로 별도 추출하지 않음", "date": "", "evidence_source_id": "news_000660_ceede745bf35aca5", "evidence_source_type": "news", "evidence_source_url": "https://www.mediawatch.kr/news/article.html?no=259447", "evidence_published_at": "2026-04-29T17:30:00+09:00"}}

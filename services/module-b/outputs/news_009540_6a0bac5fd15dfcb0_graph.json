@@ -2,35 +2,187 @@
   "source_id": "news_009540_6a0bac5fd15dfcb0",
   "entities": [
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "stock_code": "009540",
+      "description": "조선 부문을 중심으로 친환경 선박, 엔진기계, 해양플랜트 사업을 영위"
     },
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
       "stock_code": "329180"
     },
     {
-      "id": "company_hd현대마린엔진",
+      "id": "company_071970",
       "type": "Company",
       "name": "HD현대마린엔진",
       "stock_code": "071970"
     },
     {
-      "id": "company_hd현대에너지솔루션",
+      "id": "company_322000",
       "type": "Company",
       "name": "HD현대에너지솔루션",
       "stock_code": "322000"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선"
+    },
+    {
+      "id": "business_area_engine_machinery",
+      "type": "BusinessArea",
+      "name": "엔진기계"
+    },
+    {
+      "id": "business_area_offshore_plant",
+      "type": "BusinessArea",
+      "name": "해양플랜트"
+    },
+    {
+      "id": "product_service_eco_friendly_ship",
+      "type": "ProductService",
+      "name": "친환경 선박"
+    },
+    {
+      "id": "product_service_dual_fuel_engine",
+      "type": "ProductService",
+      "name": "이중연료 엔진"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd현대중공업",
-      "to": "company_hd한국조선해양",
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양이 조선 부문을 필두로 사업 부문별로 고른 성장을 이어갔다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_engine_machinery",
+      "evidence": "엔진기계 부문은 글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 확대 및 판매 단가 상승에 매출이 7.5% 늘어난 7170억원, 영업이익이 41.3% 개선된 2181억원으로 집계됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_offshore_plant",
+      "evidence": "해양플랜트 부문에서도 매출이 4578억원, 영업이익 866억원으로 전년 대비 각각 183.8%, 1212.1% 크게 성장했다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "product_service_eco_friendly_ship",
+      "evidence": "고수익 친환경 선박의 매출 비중 확대, 생산성 향상, 해양 부문 수익 개선 등이 맞물리며 전 사업 부문에서 매출과 수익성이 증대됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "product_service_dual_fuel_engine",
+      "evidence": "엔진기계 부문은 글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 확대 및 판매 단가 상승에 매출이 7.5% 늘어난 7170억원, 영업이익이 41.3% 개선된 2181억원으로 집계됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_009540",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양이 조선 부문을 필두로 사업 부문별로 고른 성장을 이어갔다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양이 조선 부문을 필두로 사업 부문별로 고른 성장을 이어갔다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_engine_machinery",
+      "to": "industry_shipbuilding",
+      "evidence": "엔진기계 부문은 글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 확대 및 판매 단가 상승에 매출이 7.5% 늘어난 7170억원, 영업이익이 41.3% 개선된 2181억원으로 집계됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_offshore_plant",
+      "to": "industry_shipbuilding",
+      "evidence": "해양플랜트 부문에서도 매출이 4578억원, 영업이익 866억원으로 전년 대비 각각 183.8%, 1212.1% 크게 성장했다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_eco_friendly_ship",
+      "to": "business_area_shipbuilding",
+      "evidence": "고수익 친환경 선박의 매출 비중 확대, 생산성 향상, 해양 부문 수익 개선 등이 맞물리며 전 사업 부문에서 매출과 수익성이 증대됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_dual_fuel_engine",
+      "to": "business_area_engine_machinery",
+      "evidence": "엔진기계 부문은 글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 확대 및 판매 단가 상승에 매출이 7.5% 늘어난 7170억원, 영업이익이 41.3% 개선된 2181억원으로 집계됐다.",
+      "date": "",
+      "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401460",
+      "evidence_published_at": "2026-05-07T17:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding",
       "evidence": "계열사별로는 지난해 12월 출범한 통합 HD현대중공업이 매출 5조9163억원, 영업이익 9054억원을 기록하며 전체 성장을 이끌었다.",
       "date": "",
       "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
@@ -39,9 +191,9 @@
       "evidence_published_at": "2026-05-07T17:18:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd현대마린엔진",
-      "to": "company_hd한국조선해양",
+      "type": "OPERATES_IN",
+      "from": "company_071970",
+      "to": "business_area_engine_machinery",
       "evidence": "HD현대마린엔진은 매출이 60.8% 증가한 1335억원으로 집계됐다.",
       "date": "",
       "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",
@@ -50,9 +202,9 @@
       "evidence_published_at": "2026-05-07T17:18:00+09:00"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_hd현대에너지솔루션",
-      "to": "company_hd한국조선해양",
+      "type": "OPERATES_IN",
+      "from": "company_322000",
+      "to": "business_area_engine_machinery",
       "evidence": "HD현대에너지솔루션 또한 매출이 1599억원으로 전년 대비 87.6% 크게 늘어났다.",
       "date": "",
       "evidence_source_id": "news_009540_6a0bac5fd15dfcb0",

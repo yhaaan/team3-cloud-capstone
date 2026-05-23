@@ -1,0 +1,196 @@
+// node: company_096770
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "정유·화학·윤활기유·석유개발 및 배터리 사업을 영위하는 전통 에너지 기업"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_refining", "type": "BusinessArea", "name": "정유"}
+
+// node: business_area_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_chemical", "type": "BusinessArea", "name": "화학"}
+
+// node: business_area_lubricant_oil
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_lubricant_oil", "type": "BusinessArea", "name": "윤활기유"}
+
+// node: business_area_oil_development
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_oil_development", "type": "BusinessArea", "name": "석유개발"}
+
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지 사업"}
+
+// node: business_area_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery", "type": "BusinessArea", "name": "배터리 사업"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_refining", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_chemical", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_lubricant_oil", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_oil_development", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_battery", "properties": {"evidence": "배터리 사업도 긍정적인 흐름을 이어갔다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_refining", "to_id": "industry_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_chemical", "to_id": "industry_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_lubricant_oil", "to_id": "industry_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_oil_development", "to_id": "industry_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy", "to_id": "industry_energy", "properties": {"evidence": "정유와 화학, 윤활기유, 석유개발, 에너지 사업 등 전통 에너지 부문 전반에서 실적이 큰 폭으로 개선된 영향이다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery", "to_id": "industry_energy", "properties": {"evidence": "특히 전통 에너지 부문의 수익성이 예상보다 강하게 회복되고 있다는 점과 배터리 사업의 체질 개선 흐름이 동시에 나타나고 있다는 점을 긍정적으로 평가했다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "industry_energy", "properties": {"evidence": "한화투자증권은 최근 보고서에서 글로벌 에너지 안보 중요성이 커지는 시대에 전통 에너지 기업 가치가 다시 주목받고 있다고 평가했다.", "date": "", "evidence_source_id": "news_096770_f318f9988a4119e4", "evidence_source_type": "news", "evidence_source_url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=453080", "evidence_published_at": "2026-05-16T00:30:00+09:00"}}

@@ -1,144 +1,140 @@
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "자동차 중심 전동화 기술과 미래 모빌리티·로봇 사업을 확장하는 종합 모빌리티 기업"}
 
-// node: company_기아
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
-
-// node: company_현대위아
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대위아", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_현대무벡스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대무벡스", "type": "Company", "name": "현대무벡스", "stock_code": "319400"}
-
-// node: company_현대글로비스
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대글로비스", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210"}
 
-// node: company_현대모비스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_현대모비스", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
-
-// node: company_유진투자증권
+// node: company_086280
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_유진투자증권", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
+:params {"id": "company_086280", "type": "Company", "name": "현대글로비스", "stock_code": "086280"}
 
-// node: company_한국항공우주
+// node: company_012330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한국항공우주", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
 
-// relation: INVESTS_IN
+// node: company_001200
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "company_현대차", "to_id": "company_유진투자증권", "properties": {"evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "company_001200", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
 
-// relation: INVESTS_IN
+// node: company_047810
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
 
-:params {"from_id": "company_기아", "to_id": "company_유진투자증권", "properties": {"evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "company_047810", "type": "Company", "name": "한국항공우주", "stock_code": "047810"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_aam
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
 
-:params {"from_id": "company_유진투자증권", "to_id": "company_현대차", "properties": {"evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "business_area_aam", "type": "BusinessArea", "name": "미래 항공 모빌리티"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_robotics
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
 
-:params {"from_id": "company_유진투자증권", "to_id": "company_기아", "properties": {"evidence": "\"양승윤 유진투자증권 연구원은 \\\"앞으로도 보스턴다이나믹스는 신임 C레벨의 선임을 통한 기업 방향성 확인, 현대차·기아차 주도의 양산 계획·방식 구체화, 양산 부품 밸류체인 스크리닝 등 화제의 중심에 서 있을 것\\\"이라고 말했다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로봇 사업"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_mobility_platform
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
 
-:params {"from_id": "company_현대차", "to_id": "company_현대글로비스", "properties": {"evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "business_area_mobility_platform", "type": "BusinessArea", "name": "미래 모빌리티 플랫폼"}
 
-// relation: AFFILIATED_WITH
+// node: industry_automotive
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
 
-:params {"from_id": "company_현대차", "to_id": "company_현대위아", "properties": {"evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
 
-// relation: AFFILIATED_WITH
+// node: industry_robotics
 
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
 
-:params {"from_id": "company_현대차", "to_id": "company_현대모비스", "properties": {"evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"id": "industry_robotics", "type": "Industry", "name": "로봇"}
 
-// relation: AFFILIATED_WITH
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대차", "to_id": "company_현대무벡스", "properties": {"evidence": "\"같은 시각 현대무벡스(18.73%), 현대글로비스(10.96%), 현대위아(7.14%), 현대모비스(5.24%) 등 현대차그룹주도 동반 강세를 나타내고 있다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"from_id": "company_005380", "to_id": "business_area_aam", "properties": {"evidence": "현대차그룹은 지난 10일 한국항공우주산업(KAI)과 미래 항공 모빌리티(AAM) 개발을 위한 업무협약을 체결했다고 밝혔다.", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_현대차", "to_id": "company_한국항공우주", "properties": {"evidence": "\"현대차그룹은 지난 10일 한국항공우주산업(KAI)과 미래 항공 모빌리티(AAM) 개발을 위한 업무협약을 체결했다고 밝혔다.\"", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+:params {"from_id": "company_005380", "to_id": "business_area_robotics", "properties": {"evidence": "현대차그룹이 AAM 사업 확대에 속도를 내고 있는 데다 로봇 사업 경쟁력 강화 기대감까지 겹친 영향으로 해석된다.", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_mobility_platform", "properties": {"evidence": "자동차를 넘어 항공·로봇으로 사업 영역을 넓히며 미래 모빌리티 플랫폼 기업으로 진화하고 있다는 평가가 투자심리를 자극한 것으로 풀이된다.", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_aam", "to_id": "industry_automotive", "properties": {"evidence": "이번 협약은 현대차그룹의 항공용 전동화 파워트레인 개발 역량과 KAI의 항공기체 개발 역량을 결합해 경쟁력 있는 AAM을 개발하고 양산하기 위한 것이 핵심이다.", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_robotics", "properties": {"evidence": "보스턴다이나믹스 아틀라스 시연 재조명…로봇 사업 기대 확대", "date": "", "evidence_source_id": "news_005380_cdc9891e1afbaf05", "evidence_source_type": "news", "evidence_source_url": "https://www.newspim.com/news/view/20260512000300", "evidence_published_at": "2026-05-12T09:58:00+09:00"}}

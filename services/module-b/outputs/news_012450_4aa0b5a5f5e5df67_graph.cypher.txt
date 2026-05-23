@@ -1,39 +1,179 @@
-// node: company_hanwha_aerospace
+// node: company_012450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450", "description": "한화 방산 부문의 글로벌 사업과 방위산업 역량을 보유, 지상 항공 해양 분야에서 한미 동맹에 기여"}
 
-// node: company_hanwha
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
-
-// node: company_hanwha_system
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_system", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
 
-// node: company_hanwha_ocean
+// node: company_272210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_272210", "type": "Company", "name": "한화시스템", "stock_code": "272210"}
 
-// node: person_seo_uk
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`Company`
 
-:params {"id": "person_seo_uk", "type": "Person", "name": "서욱", "role_raw": "한화에어로스페이스 사장", "affiliated_company": "company_hanwha_aerospace", "role": "PRESIDENT", "role_label": "사장"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+
+// node: business_area_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_방산", "type": "BusinessArea", "name": "방산"}
+
+// node: business_area_지상_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_지상_방산", "type": "BusinessArea", "name": "지상 방산"}
+
+// node: business_area_항공_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_항공_방산", "type": "BusinessArea", "name": "항공 방산"}
+
+// node: business_area_해양_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_해양_방산", "type": "BusinessArea", "name": "해양 방산"}
+
+// node: industry_방위산업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_방위산업", "type": "Industry", "name": "방위산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_방산", "properties": {"evidence": "한화 방산 3사는 이날 그룹 방산 부문의 글로벌 사업 현황과 비전을 소개했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_272210", "to_id": "business_area_방산", "properties": {"evidence": "한화 방산 3사가 미국 국방 고위인사단과 한미 방산 협력 방안을 논의했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_방산", "properties": {"evidence": "한화 방산 3사가 미국 국방 고위인사단과 한미 방산 협력 방안을 논의했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_방산", "properties": {"evidence": "한화 방산 3사가 미국 국방 고위인사단과 한미 방산 협력 방안을 논의했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_방산", "to_id": "industry_방위산업", "properties": {"evidence": "한화 측에서는 서욱 한화에어로스페이스 사장과 한화시스템, 한화오션 등 방산 3사 주요 경영진이 참석했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_지상_방산", "to_id": "business_area_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_항공_방산", "to_id": "business_area_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_해양_방산", "to_id": "business_area_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_지상_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_항공_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "business_area_해양_방산", "properties": {"evidence": "주요 무기체계 역량을 공유하고 지상, 항공, 해양 분야에서 한미 동맹에 기여할 수 있는 방안도 설명했다.", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012450", "to_id": "industry_방위산업", "properties": {"evidence": "\"한화에어로스페이스 관계자는 \\\"한미 동맹은 한화 방산 사업의 근간\\\"이라며 \\\"미국 현지 투자, 생산, 기술 협력을 통해 양국 방위산업이 함께 성장하는 모델을 만들어 가겠다\\\"고 말했다.\"", "date": "", "evidence_source_id": "news_012450_4aa0b5a5f5e5df67", "evidence_source_type": "news", "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=301857", "evidence_published_at": "2026-05-07T18:16:00+09:00"}}

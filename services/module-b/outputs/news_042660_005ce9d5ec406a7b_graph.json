@@ -2,35 +2,124 @@
   "source_id": "news_042660_005ce9d5ec406a7b",
   "entities": [
     {
-      "id": "company_hd_hankook_choonhae_yang",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "stock_code": "009540",
+      "description": "고수익 친환경 선박 및 해양 부문 중심으로 조선업 전 사업 부문에서 실적 개선"
     },
     {
-      "id": "company_hanwha_ocean",
+      "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
-      "stock_code": "042660"
+      "stock_code": "042660",
+      "description": "LNG 운반선 등 고수익 선박 수주 중심으로 조선업 영업이익 크게 성장"
     },
     {
-      "id": "company_samsung_heavy_industries",
+      "id": "company_010140",
       "type": "Company",
       "name": "삼성중공업",
-      "stock_code": "010140"
+      "stock_code": "010140",
+      "description": "LNG 운반선 등 고수익 선박 수주 중심으로 조선업 영업이익 대폭 증가"
     },
     {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
     },
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
+      "id": "business_area_친환경_선박",
+      "type": "BusinessArea",
+      "name": "친환경 선박"
+    },
+    {
+      "id": "business_area_해양",
+      "type": "BusinessArea",
+      "name": "해양"
+    },
+    {
+      "id": "business_area_LNG_운반선",
+      "type": "BusinessArea",
+      "name": "LNG 운반선"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_친환경_선박",
+      "evidence": "HD한국조선해양 은 고수익 친환경 선박 매출 비중 확대와 생산성 향상, 해양 부문 수익 개선에 힘입어 전 사업 부문에서 실적이 개선됐다고 설명했습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_해양",
+      "evidence": "HD한국조선해양 은 고수익 친환경 선박 매출 비중 확대와 생산성 향상, 해양 부문 수익 개선에 힘입어 전 사업 부문에서 실적이 개선됐다고 설명했습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_LNG_운반선",
+      "evidence": "이들 회사 모두 LNG 운반선 등 고수익 선종에 힘입어 영업이익이 대폭 증가했습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_LNG_운반선",
+      "evidence": "이들 회사 모두 LNG 운반선 등 고수익 선종에 힘입어 영업이익이 대폭 증가했습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_친환경_선박",
+      "to": "industry_shipbuilding",
+      "evidence": "조선업계를 대표하는 '빅3' 업체...HD한국조선해양, 한화오션, 삼성중공업...조선업 슈퍼사이클 속에 고부가가치 선박 중심 수주를 늘리면서 수익성을 개선하고 있습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_해양",
+      "to": "industry_shipbuilding",
+      "evidence": "조선업계를 대표하는 '빅3' 업체...HD한국조선해양, 한화오션, 삼성중공업...조선업 슈퍼사이클 속에 고부가가치 선박 중심 수주를 늘리면서 수익성을 개선하고 있습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_LNG_운반선",
+      "to": "industry_shipbuilding",
+      "evidence": "조선업계를 대표하는 '빅3' 업체...HD한국조선해양, 한화오션, 삼성중공업...조선업 슈퍼사이클 속에 고부가가치 선박 중심 수주를 늘리면서 수익성을 개선하고 있습니다.",
+      "date": "",
+      "evidence_source_id": "news_042660_005ce9d5ec406a7b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829704",
+      "evidence_published_at": "2026-05-07T18:04:00+09:00"
+    }
+  ]
 }

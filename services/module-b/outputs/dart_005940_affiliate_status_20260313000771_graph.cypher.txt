@@ -1,0 +1,41 @@
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940", "description": "NH투자증권의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다."}
+
+// node: company_025860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_025860", "type": "Company", "name": "남해화학", "stock_code": "025860"}
+
+// node: company_054050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_054050", "type": "Company", "name": "농우바이오", "stock_code": "054050"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "company_025860", "properties": {"evidence": "NH투자증권의 상장 계열회사 후보로 남해화학, 농우바이오 등이 탐지되었다.", "date": "2026-03-13", "evidence_source_id": "dart_005940_affiliate_status_20260313000771", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771", "evidence_published_at": "2026-03-13"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005940", "to_id": "company_054050", "properties": {"evidence": "NH투자증권의 상장 계열회사 후보로 남해화학, 농우바이오 등이 탐지되었다.", "date": "2026-03-13", "evidence_source_id": "dart_005940_affiliate_status_20260313000771", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771", "evidence_published_at": "2026-03-13"}}

@@ -2,26 +2,78 @@
   "source_id": "news_012450_03ede00a859cf3f0",
   "entities": [
     {
-      "id": "company_한화에어로스페이스",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
-      "stock_code": "012450"
+      "stock_code": "012450",
+      "description": "다연장 정밀유도무기 등 방위산업 무기체계 개발·생산 및 수출을 주요 사업으로 함"
     },
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
     },
     {
-      "id": "person_손재일",
-      "type": "Person",
-      "name": "손재일",
-      "role": "CEO",
-      "affiliated_company": "company_한화에어로스페이스",
-      "role_raw": "대표이사",
-      "role_label": "대표이사"
+      "id": "product_service_cheonmu",
+      "type": "ProductService",
+      "name": "천무"
+    },
+    {
+      "id": "business_area_defense_industry",
+      "type": "BusinessArea",
+      "name": "방위산업"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방위산업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "product_service_cheonmu",
+      "evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_03ede00a859cf3f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv",
+      "evidence_published_at": "2026-05-12T00:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_defense_industry",
+      "evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_03ede00a859cf3f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv",
+      "evidence_published_at": "2026-05-12T00:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense_industry",
+      "to": "industry_defense",
+      "evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_03ede00a859cf3f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv",
+      "evidence_published_at": "2026-05-12T00:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cheonmu",
+      "to": "business_area_defense_industry",
+      "evidence": "한화에어로스페이스는 에스토니아와 다연장 정밀유도무기 '천무' 3문을 추가 공급하는 정부 간(G2G) 수출 계약을 체결했다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_012450_03ede00a859cf3f0",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=1778485600&code=11151400&cp=nv",
+      "evidence_published_at": "2026-05-12T00:46:00+09:00"
+    }
+  ]
 }

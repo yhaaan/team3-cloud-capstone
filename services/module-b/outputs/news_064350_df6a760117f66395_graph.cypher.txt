@@ -1,33 +1,67 @@
-// node: company_현대로템
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대로템", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "우주산업 및 항공우주 기술 개발과 인재 양성에 주력하는 방산 기업"}
 
-// node: person_이용배
+// node: business_area_우주산업
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_이용배", "type": "Person", "name": "이용배", "role_raw": "현대로템 대표이사 사장", "affiliated_company": "company_현대로템", "role": "CEO", "role_label": "대표이사"}
+:params {"id": "business_area_우주산업", "type": "BusinessArea", "name": "우주산업"}
 
-// relation: AFFILIATED_WITH
+// node: business_area_항공우주기술
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_항공우주기술", "type": "BusinessArea", "name": "항공우주 기술"}
+
+// node: industry_방산
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_방산", "type": "Industry", "name": "방산"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "이날 협약식에는 이용배 현대로템 대표이사 사장과 허희영 한국항공대 총장 등 관계자들이 참석했다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "business_area_우주산업", "properties": {"evidence": "현대로템이 한국항공대학교와 손잡고 우주산업 분야 기술 개발과 인재 양성에 나선다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
 
-// relation: APPOINTED_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:APPOINTED_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_이용배", "to_id": "company_현대로템", "properties": {"evidence": "이날 협약식에는 이용배 현대로템 대표이사 사장과 허희영 한국항공대 총장 등 관계자들이 참석했다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
+:params {"from_id": "company_064350", "to_id": "business_area_항공우주기술", "properties": {"evidence": "현대로템은 올해 항공우주개발센터 내 항공우주시스템팀을 신설했으며, 재사용 발사체용 메탄엔진 기술 개발 과제와 극초음속 비행체 '하이코어(HyCore)' 개발 과제 등 다양한 우주·항공 분야 연구개발 사업도 수행 중이다.", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_우주산업", "to_id": "industry_방산", "properties": {"evidence": "우주산업은 발사체와 위성, 극초음속 기술 등 방산·항공 기술과 연계성이 높은 분야", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_항공우주기술", "to_id": "industry_방산", "properties": {"evidence": "우주산업은 발사체와 위성, 극초음속 기술 등 방산·항공 기술과 연계성이 높은 분야", "date": "", "evidence_source_id": "news_064350_df6a760117f66395", "evidence_source_type": "news", "evidence_source_url": "https://www.thepublic.kr/news/articleView.html?idxno=304008", "evidence_published_at": "2026-05-11T18:28:00+09:00"}}

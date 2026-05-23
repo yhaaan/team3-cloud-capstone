@@ -1,31 +1,211 @@
-// node: company_hd한국조선해양
+// node: company_009540
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540"}
+:params {"id": "company_009540", "type": "Company", "name": "HD한국조선해양", "stock_code": "009540", "description": "조선, 해양 부문 중심 고수익 친환경 선박 생산성과 수익성 증대"}
 
-// node: company_hd현대중공업
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd현대중공업", "type": "Company", "name": "HD현대중공업", "stock_code": "329180"}
-
-// node: company_hd현대마린엔진
+// node: company_329180
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대마린엔진", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970"}
+:params {"id": "company_329180", "type": "Company", "name": "HD현대중공업", "stock_code": "329180", "description": "조선 사업 통합법인으로 고수익 친환경 선박 및 해양 수익 개선 주도"}
 
-// node: company_hd현대에너지솔루션
+// node: company_071970
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hd현대에너지솔루션", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000"}
+:params {"id": "company_071970", "type": "Company", "name": "HD현대마린엔진", "stock_code": "071970", "description": "엔진 판매, 인도 물량 및 부품 판매 증가로 매출 및 영업익 크게 증가"}
+
+// node: company_322000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322000", "type": "Company", "name": "HD현대에너지솔루션", "stock_code": "322000", "description": "모듈 판매량과 판가 상승에 따른 매출 및 영업익 큰 폭 증가"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "Shipbuilding"}
+
+// node: business_area_offshore
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore", "type": "BusinessArea", "name": "Offshore"}
+
+// node: business_area_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_engine", "type": "BusinessArea", "name": "Engine manufacture"}
+
+// node: business_area_energy_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy_solution", "type": "BusinessArea", "name": "Energy solution"}
+
+// node: productservice_ship
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_ship", "type": "ProductService", "name": "Eco-friendly ship"}
+
+// node: productservice_engine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_engine", "type": "ProductService", "name": "Engine"}
+
+// node: productservice_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "productservice_module", "type": "ProductService", "name": "Energy module"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "Shipbuilding"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "Energy"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_shipbuilding", "properties": {"evidence": "전 사업 부문에서 매출과 수익성이 증대됐다.", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "business_area_offshore", "properties": {"evidence": "전 사업 부문에서 매출과 수익성이 증대됐다.", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009540", "to_id": "productservice_ship", "properties": {"evidence": "고수익 친환경 선박의 매출 비중 확대", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "Shipbuilding", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore", "to_id": "industry_shipbuilding", "properties": {"evidence": "Shipbuilding", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_329180", "to_id": "business_area_shipbuilding", "properties": {"evidence": "통합 HD현대중공업은 실적 성장을 주도했다.", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "business_area_engine", "properties": {"evidence": "HD현대마린엔진은 엔진 판매단가 상승, 엔진 인도 물량 증가, 부품 판매 증가", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071970", "to_id": "productservice_engine", "properties": {"evidence": "HD현대마린엔진은 엔진 판매단가 상승, 엔진 인도 물량 증가", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_engine", "to_id": "industry_shipbuilding", "properties": {"evidence": "Engine manufacture in shipbuilding context", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_322000", "to_id": "business_area_energy_solution", "properties": {"evidence": "HD현대에너지솔루션은 국내외 모듈 판매량 증대, 판가 인상 등", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_322000", "to_id": "productservice_module", "properties": {"evidence": "모듈 판매량 증대", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy_solution", "to_id": "industry_energy", "properties": {"evidence": "Energy solution business", "date": "", "evidence_source_id": "news_009540_f32ef741ca796bf4", "evidence_source_type": "news", "evidence_source_url": "https://www.ulsanpress.net/news/articleView.html?idxno=574767", "evidence_published_at": "2026-05-07T21:43:00+09:00"}}

@@ -1,49 +1,188 @@
-// node: company_sk하이닉스
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660", "description": "메모리 반도체 분야에서 D램과 HBM 중심의 첨단 생산 설비 투자 및 생산을 주력으로 함"}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK"}
-
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체 분야에서 메모리, 파운드리, HBM, DDR4 D램, 낸드플래시 등 다양한 제품과 첨단 공정 라인 생산을 영위"}
 
-// node: industry_ai
+// node: company_034730
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "Memory"}
+
+// node: business_area_foundry
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_foundry", "type": "BusinessArea", "name": "Foundry"}
+
+// node: product_service_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dram", "type": "ProductService", "name": "D램"}
+
+// node: product_service_hbm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_hbm", "type": "ProductService", "name": "HBM"}
+
+// node: product_service_nand_flash
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_nand_flash", "type": "ProductService", "name": "낸드플래시"}
+
+// node: industry_semiconductor
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"}
 
-// relation: INVESTS_IN
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
-SET r += $properties
-
-:params {"from_id": "company_sk하이닉스", "to_id": "company_sk", "properties": {"evidence": "18:08 지면 A5 기사 글자크기 프린트 강해령 원종환 평택 P5 팹2 착공, 6개월 앞당긴다 P5 팹 1과 합쳐 120조원 투자 \"규모의 경제로 경쟁사 압도\" SK하이닉스도 청주 신공장 속도 용인 1기팹은 6세대 D램 양산 불과 1년 전만 해도 298만㎡ 규모인 삼성전자 경기 평택 사업장의 시계는 멈춰 있었다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
-
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk하이닉스", "to_id": "industry_ai", "properties": {"evidence": "적막했던 평택 사업장은 최근 인공지능(AI)발 훈풍으로 단박에 달궈졌다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자는 고대역폭메모리(HBM) 공급난과 파운드리(반도체 수탁생산) 수요 증대에 발맞춰 전방위적 설비 투자에 나섰다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_foundry", "properties": {"evidence": "삼성전자는 고대역폭메모리(HBM) 공급난과 파운드리(반도체 수탁생산) 수요 증대에 발맞춰 전방위적 설비 투자에 나섰다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_hbm", "properties": {"evidence": "주력인 HBM을 포함해 차세대 D램뿐 아니라 낸드플래시, 첨단 공정 파운드리 라인까지 모두 갖춘다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_dram", "properties": {"evidence": "주력인 HBM을 포함해 차세대 D램뿐 아니라 낸드플래시, 첨단 공정 파운드리 라인까지 모두 갖춘다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_nand_flash", "properties": {"evidence": "주력인 HBM을 포함해 차세대 D램뿐 아니라 낸드플래시, 첨단 공정 파운드리 라인까지 모두 갖춘다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "SK하이닉스는 충북 청주 신규 공장 M15X에 연내 월 7만 개 규모의 D램 생산 장비를 채워 넣기로 했다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_dram", "properties": {"evidence": "SK하이닉스는 충북 청주 신규 공장 M15X에 연내 월 7만 개 규모의 D램 생산 장비를 채워 넣기로 했다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_hbm", "properties": {"evidence": "이곳은 7세대 HBM(HBM4E) 기반이 될 6세대(1c) D램의 핵심 생산 기지가 될 예정이다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자 반도체(DS) 부문이 2023년 15조원 적자를 내자 기존 P5 팹1 공사는 착공 8개월여 만에 전면 중단됐다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_foundry", "to_id": "industry_semiconductor", "properties": {"evidence": "삼성전자 반도체(DS) 부문이 2023년 15조원 적자를 내자 기존 P5 팹1 공사는 착공 8개월여 만에 전면 중단됐다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_dram", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자의 현재 D램 전체 생산량(월 65만 개)과 맞먹는 압도적 규모다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_hbm", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자는 고대역폭메모리(HBM) 공급난과 파운드리(반도체 수탁생산) 수요 증대에 발맞춰 전방위적 설비 투자에 나섰다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_nand_flash", "to_id": "business_area_memory", "properties": {"evidence": "주력인 HBM을 포함해 차세대 D램뿐 아니라 낸드플래시, 첨단 공정 파운드리 라인까지 모두 갖춘다.", "date": "", "evidence_source_id": "news_000660_42eb591dd8aae77e", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026050723751", "evidence_published_at": "2026-05-07T18:09:00+09:00"}}

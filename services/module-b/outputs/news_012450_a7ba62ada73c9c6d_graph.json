@@ -2,23 +2,149 @@
   "source_id": "news_012450_a7ba62ada73c9c6d",
   "entities": [
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
-      "stock_code": "012450"
+      "stock_code": "012450",
+      "description": "한국과 미국 방산시장을 공략하는 국방 로봇과 다목적 무인차량 등의 방산 사업을 영위"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
     },
     {
-      "id": "company_hyundai_rotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
       "stock_code": "064350"
+    },
+    {
+      "id": "business_area_defense_robot",
+      "type": "BusinessArea",
+      "name": "국방 로봇"
+    },
+    {
+      "id": "business_area_military_vehicles",
+      "type": "BusinessArea",
+      "name": "다목적 무인차량"
+    },
+    {
+      "id": "product_service_explosive_detection_removal_robot",
+      "type": "ProductService",
+      "name": "폭발물 탐지제거로봇"
+    },
+    {
+      "id": "product_service_urion_smet",
+      "type": "ProductService",
+      "name": "아리온-스멧"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방산"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_defense_robot",
+      "evidence": "한화에어로스페이스는 지난해 9월 방위사업청과 약 2700억원 규모의 '폭발물 탐지제거로봇' 양산 계약을 맺었다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_military_vehicles",
+      "evidence": "한화에어로스페이스의 지능형 다목적 무인차량 아리온-스멧은 기존 모델대비 최고속도와 적재중량, 항속거리 등 주요 성능이 대폭 향상됐다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "product_service_explosive_detection_removal_robot",
+      "evidence": "지난해 9월 방위사업청과 약 2700억원 규모의 '폭발물 탐지제거로봇' 양산 계약을 맺었다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "product_service_urion_smet",
+      "evidence": "한화에어로스페이스의 지능형 다목적 무인차량 아리온-스멧은 기존 모델대비 최고속도와 적재중량, 항속거리 등 주요 성능이 대폭 향상됐다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense_robot",
+      "to": "industry_defense",
+      "evidence": "한국과 미국 방산시장을 맞춤형으로 공략하며 존재감을 과시하고 있다는 판단이다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_military_vehicles",
+      "to": "industry_defense",
+      "evidence": "한국과 미국 방산시장을 맞춤형으로 공략하며 존재감을 과시하고 있다는 판단이다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_explosive_detection_removal_robot",
+      "to": "business_area_defense_robot",
+      "evidence": "지난해 9월 방위사업청과 약 2700억원 규모의 '폭발물 탐지제거로봇' 양산 계약을 맺었다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_urion_smet",
+      "to": "business_area_military_vehicles",
+      "evidence": "한화에어로스페이스의 지능형 다목적 무인차량 아리온-스멧은 기존 모델대비 최고속도와 적재중량, 항속거리 등 주요 성능이 대폭 향상됐다.",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_military_vehicles",
+      "evidence": "향후 조 단위로 예상되는 후속사업에서도 유리할 수 있어 현대로템의 HR-셰르파와 치열한 경쟁이 불가피할 것",
+      "date": "",
+      "evidence_source_id": "news_012450_a7ba62ada73c9c6d",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sidae.com/article/2026051208252490880",
+      "evidence_published_at": "2026-05-12T08:43:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_086790_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_086790",
+      "type": "Company",
+      "name": "하나금융지주",
+      "stock_code": "086790",
+      "description": "금융지주회사로 금융서비스를 제공합니다."
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "finance"
+    },
+    {
+      "id": "business_area_financial_services",
+      "type": "BusinessArea",
+      "name": "financial services"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_086790",
+      "to": "business_area_financial_services",
+      "evidence": "하나금융지주",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_086790_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250708000257",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_financial_services",
+      "to": "industry_finance",
+      "evidence": "하나금융지주",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_086790_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250708000257",
+      "evidence_published_at": "2026-04-07"
+    }
+  ]
+}

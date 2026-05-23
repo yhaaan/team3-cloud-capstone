@@ -1,0 +1,245 @@
+// node: company_105560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_105560", "type": "Company", "name": "KB금융", "stock_code": "105560", "description": "KB금융은 금융서비스를 주 사업으로 하는 회사입니다."}
+
+// node: person_임대환
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_임대환", "type": "Person", "name": "임대환", "role_raw": "부사장", "affiliated_company": "company_105560", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_이창권
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이창권", "type": "Person", "name": "이창권", "role_raw": "부문장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "부문장"}
+
+// node: person_이현정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이현정", "type": "Person", "name": "이현정", "role_raw": "센터장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "센터장"}
+
+// node: person_박명화
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박명화", "type": "Person", "name": "박명화", "role_raw": "부장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "부장"}
+
+// node: person_최석문
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_최석문", "type": "Person", "name": "최석문", "role_raw": "부사장", "affiliated_company": "company_105560", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_이재용
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이재용", "type": "Person", "name": "이재용", "role_raw": "상무", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "상무"}
+
+// node: person_박선현
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박선현", "type": "Person", "name": "박선현", "role_raw": "담당", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "담당"}
+
+// node: person_강승호
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_강승호", "type": "Person", "name": "강승호", "role_raw": "상무", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "상무"}
+
+// node: person_조영서
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_조영서", "type": "Person", "name": "조영서", "role_raw": "부사장", "affiliated_company": "company_105560", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_김성현
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김성현", "type": "Person", "name": "김성현", "role_raw": "부문장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "부문장"}
+
+// node: person_윤희승
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤희승", "type": "Person", "name": "윤희승", "role_raw": "상무", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "상무"}
+
+// node: person_박형주
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_박형주", "type": "Person", "name": "박형주", "role_raw": "본부장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "본부장"}
+
+// node: person_이경종
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_이경종", "type": "Person", "name": "이경종", "role_raw": "센터장", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "센터장"}
+
+// node: person_나상록
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_나상록", "type": "Person", "name": "나상록", "role_raw": "전무", "affiliated_company": "company_105560", "role": "OTHER", "role_label": "전무"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_임대환", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 임대환, 등기 여부는 비등기임원, 직위는 부사장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이창권", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 이창권, 등기 여부는 비등기임원, 직위는 부문장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이현정", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 이현정, 등기 여부는 비등기임원, 직위는 센터장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박명화", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 박명화, 등기 여부는 비등기임원, 직위는 부장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_최석문", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 최석문, 등기 여부는 비등기임원, 직위는 부사장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이재용", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 이재용, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박선현", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 박선현, 등기 여부는 비등기임원, 직위는 담당", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_강승호", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 강승호, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_조영서", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 조영서, 등기 여부는 비등기임원, 직위는 부사장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김성현", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 김성현, 등기 여부는 비등기임원, 직위는 부문장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤희승", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 윤희승, 등기 여부는 비등기임원, 직위는 상무", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_박형주", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 박형주, 등기 여부는 비등기임원, 직위는 본부장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_이경종", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 이경종, 등기 여부는 비등기임원, 직위는 센터장", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_나상록", "to_id": "company_105560", "properties": {"evidence": "KB금융의 임원·주요주주 소유상황 보고자는 나상록, 등기 여부는 비등기임원, 직위는 전무", "date": "2026-05-04", "evidence_source_id": "dart_105560_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250521000101", "evidence_published_at": "2026-05-04"}}

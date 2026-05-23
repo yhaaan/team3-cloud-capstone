@@ -1,0 +1,421 @@
+{
+  "source_id": "dart_402340_business_segments_20260317000830",
+  "entities": [
+    {
+      "id": "company_402340",
+      "type": "Company",
+      "name": "SK스퀘어",
+      "stock_code": "402340",
+      "description": "지주회사 및 투자업 중심으로 11번가, 티맵모빌리티, SK하이닉스 등 주요 자회사 보유"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730"
+    },
+    {
+      "id": "company_017670",
+      "type": "Company",
+      "name": "SK텔레콤",
+      "stock_code": "017670"
+    },
+    {
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "DRAM, NAND Flash 등 반도체 제품을 생산하는 반도체 전문 기업"
+    },
+    {
+      "id": "company_452400",
+      "type": "Company",
+      "name": "이닉스",
+      "stock_code": "452400"
+    },
+    {
+      "id": "company_216050",
+      "type": "Company",
+      "name": "인크로스",
+      "stock_code": "216050",
+      "description": "디지털 광고 미디어렙 서비스 제공"
+    },
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200"
+    },
+    {
+      "id": "company_259960",
+      "type": "Company",
+      "name": "크래프톤",
+      "stock_code": "259960"
+    },
+    {
+      "id": "business_area_investment",
+      "type": "BusinessArea",
+      "name": "투자사업"
+    },
+    {
+      "id": "business_area_commerce",
+      "type": "BusinessArea",
+      "name": "커머스사업",
+      "description": "온라인 쇼핑몰 등 전자상거래 및 인터넷 관련 사업"
+    },
+    {
+      "id": "business_area_platform",
+      "type": "BusinessArea",
+      "name": "플랫폼사업",
+      "description": "앱스토어 및 정보통신, 인터넷 플랫폼 서비스"
+    },
+    {
+      "id": "business_area_mobility",
+      "type": "BusinessArea",
+      "name": "모빌리티사업",
+      "description": "모빌리티 관련 데이터 및 온라인 정보 제공"
+    },
+    {
+      "id": "business_area_advertising",
+      "type": "BusinessArea",
+      "name": "광고업"
+    },
+    {
+      "id": "industry_investment",
+      "type": "Industry",
+      "name": "투자업"
+    },
+    {
+      "id": "industry_ecommerce",
+      "type": "Industry",
+      "name": "e-Commerce"
+    },
+    {
+      "id": "industry_platform",
+      "type": "Industry",
+      "name": "플랫폼"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "모빌리티"
+    },
+    {
+      "id": "industry_advertising",
+      "type": "Industry",
+      "name": "디지털 광고"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_dram",
+      "type": "ProductService",
+      "name": "DRAM"
+    },
+    {
+      "id": "product_nand_flash",
+      "type": "ProductService",
+      "name": "NAND Flash"
+    },
+    {
+      "id": "product_ecommerce_service",
+      "type": "ProductService",
+      "name": "전자상거래"
+    },
+    {
+      "id": "product_app_store",
+      "type": "ProductService",
+      "name": "앱스토어"
+    },
+    {
+      "id": "product_mobility_service",
+      "type": "ProductService",
+      "name": "모빌리티 서비스"
+    },
+    {
+      "id": "product_advertisement",
+      "type": "ProductService",
+      "name": "광고 서비스"
+    },
+    {
+      "id": "business_area_semiconductor",
+      "type": "BusinessArea",
+      "name": "Semiconductor"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_investment",
+      "evidence": "SK스퀘어의 각 부문은 ... ① 투자사업 ...로 구분되어 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "business_area_investment",
+      "to": "industry_investment",
+      "evidence": "투자사업은 지주회사, 투자업 중심임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_commerce",
+      "evidence": "SK스퀘어의 각 부문은 ... ② 온라인쇼핑몰 등의 커머스사업으로 구분되어 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "business_area_commerce",
+      "to": "industry_ecommerce",
+      "evidence": "커머스사업은 전자상거래 및 인터넷 관련 사업임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_platform",
+      "evidence": "SK스퀘어의 각 부문은 ... ③ 플랫폼사업으로 구분되어 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "business_area_platform",
+      "to": "industry_platform",
+      "evidence": "플랫폼사업은 앱스토어 운용 및 정보통신, 인터넷 플랫폼 서비스임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_402340",
+      "to": "business_area_mobility",
+      "evidence": "SK스퀘어의 각 부문은 ... ④ 모빌리티사업으로 구분되어 있습니다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "business_area_mobility",
+      "to": "industry_mobility",
+      "evidence": "모빌리티사업은 모빌리티 관련 데이터베이스 및 온라인정보 제공업임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_216050",
+      "to": "business_area_advertising",
+      "evidence": "인크로스㈜는 디지털 광고 미디어렙 서비스임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "business_area_advertising",
+      "to": "industry_advertising",
+      "evidence": "인크로스㈜는 디지털 광고 미디어렙 서비스임",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_402340",
+      "to": "product_ecommerce_service",
+      "evidence": "커머스사업 11번가㈜ 전자상거래 및 인터넷 관련 사업",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_ecommerce_service",
+      "to": "business_area_commerce",
+      "evidence": "커머스사업 11번가㈜ 전자상거래 및 인터넷 관련 사업",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_402340",
+      "to": "product_app_store",
+      "evidence": "플랫폼사업 원스토어㈜ 앱스토어 운용",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_app_store",
+      "to": "business_area_platform",
+      "evidence": "플랫폼사업 원스토어㈜ 앱스토어 운용",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_402340",
+      "to": "product_mobility_service",
+      "evidence": "모빌리티사업 티맵모빌리티㈜ 모빌리티 관련 데이터베이스 및 온라인정보 제공업",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_mobility_service",
+      "to": "business_area_mobility",
+      "evidence": "모빌리티사업 티맵모빌리티㈜ 모빌리티 관련 데이터베이스 및 온라인정보 제공업",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_216050",
+      "to": "product_advertisement",
+      "evidence": "인크로스㈜ 디지털 광고 미디어렙 서비스",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_advertisement",
+      "to": "business_area_advertising",
+      "evidence": "인크로스㈜ 디지털 광고 미디어렙 서비스",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor",
+      "evidence": "SK하이닉스는 DRAM, NAND Flash 등 반도체 부문 제품을 생산함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_dram",
+      "evidence": "SK하이닉스는 DRAM을 생산함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_nand_flash",
+      "evidence": "SK하이닉스는 NAND Flash를 생산함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_dram",
+      "to": "business_area_semiconductor",
+      "evidence": "DRAM은 반도체 부문에 속함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_nand_flash",
+      "to": "business_area_semiconductor",
+      "evidence": "NAND Flash는 반도체 부문에 속함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스 반도체 부문은 반도체 산업에 속함",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_402340_business_segments_20260317000830",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830",
+      "evidence_published_at": "2026-03-17"
+    }
+  ]
+}

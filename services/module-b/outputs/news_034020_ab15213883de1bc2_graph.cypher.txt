@@ -1,0 +1,75 @@
+// node: company_034020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034020", "type": "Company", "name": "두산에너빌리티", "stock_code": "034020", "description": "원자로 압력용기 등 핵심 부품 양산에 경쟁력을 갖춘 소형모듈원전 핵심 기자재 제조업체"}
+
+// node: company_000150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000150", "type": "Company", "name": "페스카로", "stock_code": "000150"}
+
+// node: business_area_smr
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smr", "type": "BusinessArea", "name": "소형모듈원전"}
+
+// node: product_service_원자로_압력용기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_원자로_압력용기", "type": "ProductService", "name": "원자로 압력용기"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "business_area_smr", "properties": {"evidence": "두산에너빌리티는 뉴스케일의 설계를 바탕으로 핵심 부품을 만든다.", "date": "", "evidence_source_id": "news_034020_ab15213883de1bc2", "evidence_source_type": "news", "evidence_source_url": "https://www.kpinews.kr/newsView/1065601760417256", "evidence_published_at": "2026-05-15T18:01:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034020", "to_id": "product_service_원자로_압력용기", "properties": {"evidence": "두산에너빌리티는 원자로 압력용기 등 핵심 부품 12기를 제작 중이다.", "date": "", "evidence_source_id": "news_034020_ab15213883de1bc2", "evidence_source_type": "news", "evidence_source_url": "https://www.kpinews.kr/newsView/1065601760417256", "evidence_published_at": "2026-05-15T18:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smr", "to_id": "industry_에너지", "properties": {"evidence": "소형모듈원전(SMR) 관련 산업에서 엇갈린 신호가 나온다.", "date": "", "evidence_source_id": "news_034020_ab15213883de1bc2", "evidence_source_type": "news", "evidence_source_url": "https://www.kpinews.kr/newsView/1065601760417256", "evidence_published_at": "2026-05-15T18:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_원자로_압력용기", "to_id": "business_area_smr", "properties": {"evidence": "두산에너빌리티는 뉴스케일의 설계를 바탕으로 핵심 부품을 만든다.", "date": "", "evidence_source_id": "news_034020_ab15213883de1bc2", "evidence_source_type": "news", "evidence_source_url": "https://www.kpinews.kr/newsView/1065601760417256", "evidence_published_at": "2026-05-15T18:01:00+09:00"}}

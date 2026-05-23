@@ -1,0 +1,117 @@
+// node: company_180640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_180640", "type": "Company", "name": "한진칼", "stock_code": "180640", "description": "대한항공 최대주주로서 항공 사업 관련 지분 보유"}
+
+// node: company_003490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003490", "type": "Company", "name": "대한항공", "stock_code": "003490", "description": "항공 운송업과 공모 회사채 발행 활동 수행"}
+
+// node: company_020560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_020560", "type": "Company", "name": "아시아나항공", "stock_code": "020560"}
+
+// node: company_005940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005940", "type": "Company", "name": "NH투자증권", "stock_code": "005940"}
+
+// node: company_003540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003540", "type": "Company", "name": "대신증권", "stock_code": "003540"}
+
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490"}
+
+// node: business_area_air_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_air_transport", "type": "BusinessArea", "name": "항공운송"}
+
+// node: industry_transportation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_transportation", "type": "Industry", "name": "운송"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "company_020560", "properties": {"evidence": "대한항공은 지난 2024년 아시아나항공과 그 종속회사를 인수했다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_air_transport", "properties": {"evidence": "대한항공이 ... 연결기준 290대 항공기를 보유하고 있다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_020560", "to_id": "business_area_air_transport", "properties": {"evidence": "대한항공은 지난 2024년 아시아나항공과 그 종속회사를 인수했다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_180640", "to_id": "industry_transportation", "properties": {"evidence": "현재 최대주주는 한진칼로 지분 26.13%를 보유하고 있다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "industry_transportation", "properties": {"evidence": "대한항공이 다음달 공모 회사채 발행에 나선다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_020560", "to_id": "industry_transportation", "properties": {"evidence": "대한항공은 지난 2024년 아시아나항공과 그 종속회사를 인수했다.", "date": "", "evidence_source_id": "news_180640_98b5e801bc985f69", "evidence_source_type": "news", "evidence_source_url": "http://www.fnnews.com/news/202605131330283873", "evidence_published_at": "2026-05-13T13:37:00+09:00"}}

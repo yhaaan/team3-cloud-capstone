@@ -2,17 +2,106 @@
   "source_id": "news_000880_90ae4d5238dccb2a",
   "entities": [
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
-      "stock_code": "000880"
+      "stock_code": "000880",
+      "description": "한화는 다양한 산업에서 사업을 영위한다."
     },
     {
-      "id": "company_한화손해보험",
+      "id": "company_000370",
       "type": "Company",
       "name": "한화손해보험",
-      "stock_code": "000370"
+      "stock_code": "000370",
+      "description": "한화손해보험은 보장성 보험 상품을 중심으로 영업하는 손해보험사이다."
+    },
+    {
+      "id": "business_area_insurance",
+      "type": "BusinessArea",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "business_area_guarantee",
+      "type": "BusinessArea",
+      "name": "보장성 보험"
+    },
+    {
+      "id": "product_service_women_health_insurance",
+      "type": "ProductService",
+      "name": "여성건강보험"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000370",
+      "to": "business_area_insurance",
+      "evidence": "한화손보는 여성·시니어보험을 중심으로 보장성 상품 판매가 확대되면서 신계약 수익성이 개선됐다고 말했다.",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000370",
+      "to": "industry_finance",
+      "evidence": "한화손해보험[000370]이 1분기 당기 순이익이 989억원으로, 작년 동기보다 30.7% 감소했다고 12일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000370",
+      "to": "business_area_guarantee",
+      "evidence": "한화손보는 여성·시니어보험을 중심으로 보장성 상품 판매가 확대되면서 신계약 수익성이 개선됐다고 말했다.",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000370",
+      "to": "product_service_women_health_insurance",
+      "evidence": "1월 출시한 '시그니처 여성건강보험 4.0' 등 고가치 상품 중심으로 매출을 확대하고 있다",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_guarantee",
+      "to": "business_area_insurance",
+      "evidence": "한화손보는 여성·시니어보험을 중심으로 보장성 상품 판매가 확대되면서 신계약 수익성이 개선됐다고 말했다.",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_insurance",
+      "to": "industry_finance",
+      "evidence": "한화손해보험[000370]이 1분기 당기 순이익이 989억원으로, 작년 동기보다 30.7% 감소했다고 12일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_000880_90ae4d5238dccb2a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512047900002?input=1195m",
+      "evidence_published_at": "2026-05-12T09:56:00+09:00"
+    }
+  ]
 }

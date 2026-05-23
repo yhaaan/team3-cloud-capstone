@@ -1,0 +1,73 @@
+// node: company_060570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_060570", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570", "description": "팬덤 플랫폼 관련 투자, 전환사채 담보 제공 등 사업을 영위함"}
+
+// node: company_402340
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+
+// node: company_009150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+
+// node: company_122450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_122450", "type": "Company", "name": "KX", "stock_code": "122450"}
+
+// node: company_052900
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_052900", "type": "Company", "name": "KX하이텍", "stock_code": "052900"}
+
+// node: company_001810
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001810", "type": "Company", "name": "무림SP", "stock_code": "001810"}
+
+// node: company_009580
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_009580", "type": "Company", "name": "무림P&P", "stock_code": "009580"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "company_060570", "properties": {"evidence": "기존 주주인 SK스퀘어(402340)(22.17%)...도 급격히 낮아진 주가로 인해 사실상 투자금 회수가 요원한 상황이다.", "date": "", "evidence_source_id": "news_060570_1afd6619a72e2834", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044800?ref=naver", "evidence_published_at": "2026-05-16T12:00:00+09:00"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "company_122450", "to_id": "company_052900", "properties": {"evidence": "이 법인들은 KX(122450)이노베이션, KX하이텍(052900) 등이 지분을 보유하고 있으며...", "date": "", "evidence_source_id": "news_060570_1afd6619a72e2834", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20044800?ref=naver", "evidence_published_at": "2026-05-16T12:00:00+09:00"}}

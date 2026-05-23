@@ -1,0 +1,58 @@
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880", "description": "한화는 2026 신한 SOL Bank KBO리그 한화 이글스 프로야구팀을 운영한다."}
+
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200"}
+
+// node: business_area_professional_sports
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_professional_sports", "type": "BusinessArea", "name": "프로야구"}
+
+// node: industry_sports_entertainment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_sports_entertainment", "type": "Industry", "name": "스포츠"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "business_area_professional_sports", "properties": {"evidence": "17일 오후 수원KT위즈파크에서 열린 '2026 신한 SOL Bank KBO리그' 한화 이글스와 KT 위즈의 경기", "date": "", "evidence_source_id": "news_000880_a5193ba31d50e6ce", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150065", "evidence_published_at": "2026-05-17T15:08:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_professional_sports", "properties": {"evidence": "17일 오후 수원KT위즈파크에서 열린 '2026 신한 SOL Bank KBO리그' 한화 이글스와 KT 위즈의 경기", "date": "", "evidence_source_id": "news_000880_a5193ba31d50e6ce", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150065", "evidence_published_at": "2026-05-17T15:08:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_professional_sports", "to_id": "industry_sports_entertainment", "properties": {"evidence": "프로야구는 스포츠 산업에 속한다는 일반적 정의에 준함", "date": "", "evidence_source_id": "news_000880_a5193ba31d50e6ce", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150065", "evidence_published_at": "2026-05-17T15:08:00+09:00"}}

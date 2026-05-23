@@ -2,23 +2,40 @@
   "source_id": "dart_000720_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_현대건설",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
       "stock_code": "000720"
     },
     {
-      "id": "company_기아",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_현대모비스",
+      "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
       "stock_code": "012330"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "Construction"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000720",
+      "to": "industry_construction",
+      "evidence": "현대건설의 최대주주 관련 인물/법인은 현대자동차, 관계는 최대주주, 당기말 보유주식수는 23,327,400주, 지분율은 20.95%.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_000720_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001395",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
 }

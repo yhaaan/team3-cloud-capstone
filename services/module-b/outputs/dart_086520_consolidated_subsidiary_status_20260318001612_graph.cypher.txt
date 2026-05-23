@@ -1,0 +1,109 @@
+// node: company_086520
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_086520", "type": "Company", "name": "에코프로", "stock_code": "086520", "description": "이차전지용 양극재 및 온실가스 제어 관련 사업을 영위"}
+
+// node: company_247540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_247540", "type": "Company", "name": "에코프로비엠", "stock_code": "247540", "description": "이차전지용 양극재 제조 및 판매"}
+
+// node: company_383310
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_383310", "type": "Company", "name": "에코프로에이치엔", "stock_code": "383310", "description": "온실가스 및 유해가스 제어 사업을 영위"}
+
+// node: business_area_battery_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_battery_materials", "type": "BusinessArea", "name": "이차전지용 양극재"}
+
+// node: business_area_environmental_control
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_environmental_control", "type": "BusinessArea", "name": "온실가스 제어"}
+
+// node: industry_battery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery", "type": "Industry", "name": "배터리"}
+
+// node: industry_environment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_environment", "type": "Industry", "name": "환경"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086520", "to_id": "business_area_battery_materials", "properties": {"evidence": "㈜에코프로비엠 | 2016년 05월 02일 | 충북 청주시 청원구 오창읍 | 이차전지용 양극재 제조 및 판매", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_086520", "to_id": "business_area_environmental_control", "properties": {"evidence": "㈜에코프로에이치엔 | 2021년 05월 03일 | 충북 청주시 청원구 오창읍 | 온실가스 및 유해가스 제어", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_247540", "to_id": "business_area_battery_materials", "properties": {"evidence": "㈜에코프로비엠 | 2016년 05월 02일 | 충북 청주시 청원구 오창읍 | 이차전지용 양극재 제조 및 판매", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_383310", "to_id": "business_area_environmental_control", "properties": {"evidence": "㈜에코프로에이치엔 | 2021년 05월 03일 | 충북 청주시 청원구 오창읍 | 온실가스 및 유해가스 제어", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_battery_materials", "to_id": "industry_battery", "properties": {"evidence": "이차전지용 양극재 제조 및 판매", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_environmental_control", "to_id": "industry_environment", "properties": {"evidence": "온실가스 및 유해가스 제어", "date": "2026-03-18", "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612", "evidence_published_at": "2026-03-18"}}

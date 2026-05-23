@@ -1,0 +1,41 @@
+// node: company_079550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_079550", "type": "Company", "name": "LIG디펜스앤에어로스페이스", "stock_code": "079550"}
+
+// node: person_김도경
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김도경", "type": "Person", "name": "김도경", "role_raw": "경영임원", "role": "OTHER", "affiliated_company": "company_079550", "role_label": "경영임원"}
+
+// node: person_김미정
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김미정", "type": "Person", "name": "김미정", "role_raw": "경영임원", "role": "OTHER", "affiliated_company": "company_079550", "role_label": "경영임원"}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김도경", "to_id": "company_079550", "properties": {"evidence": "LIG디펜스앤에어로스페이스의 임원·주요주주 소유상황 보고자는 김도경, 등기 여부는 비등기임원, 직위는 경영임원, 보유주식수는 100주, 주식수 증감은 100, 지분율은 0.00%, 지분율 증감은 0.00.", "date": "2026-03-06", "evidence_source_id": "dart_079550_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250519000190", "evidence_published_at": "2026-03-06"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김미정", "to_id": "company_079550", "properties": {"evidence": "LIG디펜스앤에어로스페이스의 임원·주요주주 소유상황 보고자는 김미정, 등기 여부는 비등기임원, 직위는 경영임원, 보유주식수는 647주, 주식수 증감은 -220, 지분율은 0.00%, 지분율 증감은 -0.00.", "date": "2026-03-06", "evidence_source_id": "dart_079550_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250519000190", "evidence_published_at": "2026-03-06"}}

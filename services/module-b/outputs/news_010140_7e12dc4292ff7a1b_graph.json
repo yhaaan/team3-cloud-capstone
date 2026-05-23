@@ -2,40 +2,344 @@
   "source_id": "news_010140_7e12dc4292ff7a1b",
   "entities": [
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_009540",
       "type": "Company",
-      "name": "HD한국조선해양"
+      "name": "HD한국조선해양",
+      "stock_code": "009540",
+      "description": "고부가 친환경 선박과 해양 부문에서 실적 개선에 주력하는 조선사"
     },
     {
-      "id": "company_한화오션",
+      "id": "company_042660",
       "type": "Company",
-      "name": "한화오션"
+      "name": "한화오션",
+      "stock_code": "042660",
+      "description": "LNG선 중심 고수익 구조와 수익성 개선을 추진하는 조선 기업"
     },
     {
-      "id": "company_삼성중공업",
+      "id": "company_010140",
       "type": "Company",
-      "name": "삼성중공업"
+      "name": "삼성중공업",
+      "stock_code": "010140",
+      "description": "상선과 해양 부문 중심의 고수익 수주 전략을 운영하는 조선회사"
     },
     {
-      "id": "company_hd현대중공업",
+      "id": "company_267250",
       "type": "Company",
-      "name": "HD현대중공업"
+      "name": "HD현대",
+      "stock_code": "267250",
+      "description": "조선 분야에서 매출과 수익성 성장을 주도하는 기업"
     },
     {
-      "id": "company_한화",
+      "id": "company_322000",
       "type": "Company",
-      "name": "한화"
+      "name": "HD현대에너지솔루션",
+      "stock_code": "322000",
+      "description": "국내외 모듈 판매와 신재생에너지 확대에 따른 매출 증가 기업"
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
-      "name": "SK"
+      "name": "SK",
+      "stock_code": "034730"
     },
     {
-      "id": "company_hd현대에너지솔루션",
-      "type": "Company",
-      "name": "HD현대에너지솔루션"
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_lng_ships",
+      "type": "BusinessArea",
+      "name": "LNG ships"
+    },
+    {
+      "id": "business_area_energy_solution",
+      "type": "BusinessArea",
+      "name": "energy solution"
+    },
+    {
+      "id": "product_service_FLNG",
+      "type": "ProductService",
+      "name": "FLNG"
+    },
+    {
+      "id": "product_service_LNG_carrier",
+      "type": "ProductService",
+      "name": "LNG carrier"
+    },
+    {
+      "id": "product_service_FSRU",
+      "type": "ProductService",
+      "name": "FSRU"
+    },
+    {
+      "id": "product_service_VLEC",
+      "type": "ProductService",
+      "name": "VLEC"
+    },
+    {
+      "id": "product_service_VLGC",
+      "type": "ProductService",
+      "name": "VLGC"
+    },
+    {
+      "id": "product_service_VLAC",
+      "type": "ProductService",
+      "name": "VLAC"
+    },
+    {
+      "id": "product_service_container_ship",
+      "type": "ProductService",
+      "name": "container ship"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양은 전 사업 부문에서 실적 개선에 영향을 미쳤다고 설명했다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_010140",
+      "to": "business_area_shipbuilding",
+      "evidence": "삼성중공업은 상선 부문은 약 3년 치 안정적인 생산 물량을 기반으로 수익성 중심 수주 전략을 유지하고 해양 부문에서는 대형 FLNG 프로젝트 수주 확대를 추진한다는 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_lng_ships",
+      "evidence": "한화오션은 LNG선 중심 고수익 구조와 수익성 개선을 추진하는 조선 기업이다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_322000",
+      "to": "business_area_energy_solution",
+      "evidence": "HD현대에너지솔루션은 국내외 모듈 판매량 증가와 판매가 인상, 국내 신재생에너지 확대 정책 기조에 따른 구매 수요 증가 등으로 매출이 87.6% 증가했다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_LNG_carrier",
+      "evidence": "올해 1~4월 신규 수주는 34억 달러로 LNG운반선 16억 달러 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_FSRU",
+      "evidence": "올해 1~4월 신규 수주는 34억 달러로 FSRU 3억 달러 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_VLEC",
+      "evidence": "올해 1~4월 신규 수주는 34억 달러로 VLEC 3억 달러 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_VLGC",
+      "evidence": "올해 1~4월 신규 수주는 34억 달러로 VLGC 2억 달러 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010140",
+      "to": "product_service_container_ship",
+      "evidence": "올해 1~4월 신규 수주는 34억 달러로 컨테이너선 3억 달러 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_042660",
+      "to": "product_service_VLAC",
+      "evidence": "한화오션의 VLAC 수주가 이어지고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "product_service_VLGC",
+      "evidence": "HD현대중공업의 VLGC 수주 등이 이어지고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "조선업 전반의 실적 개선 흐름에도 관심이 쏠리고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_lng_ships",
+      "to": "business_area_shipbuilding",
+      "evidence": "한화오션은 LNG선 중심 고수익 구조를 유지하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_energy_solution",
+      "to": "industry_shipbuilding",
+      "evidence": "HD현대에너지솔루션은 국내외 모듈 판매와 신재생에너지 확대에 힘쓰고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_FLNG",
+      "to": "business_area_shipbuilding",
+      "evidence": "삼성중공업은 해양 부문에서 대형 FLNG 프로젝트 수주 확대를 추진한다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_LNG_carrier",
+      "to": "business_area_lng_ships",
+      "evidence": "LNG운반선 비중은 51% 수준이다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_FSRU",
+      "to": "business_area_lng_ships",
+      "evidence": "1~4월 수주에 FSRU 포함.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_VLEC",
+      "to": "business_area_lng_ships",
+      "evidence": "1~4월 수주에 VLEC 포함.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_VLGC",
+      "to": "business_area_lng_ships",
+      "evidence": "1~4월 신규 수주에 VLGC 포함.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_VLAC",
+      "to": "business_area_lng_ships",
+      "evidence": "한화오션의 VLAC 수주가 이어지고 있다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_container_ship",
+      "to": "business_area_shipbuilding",
+      "evidence": "1~4월 신규 수주에 컨테이너선 포함.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_shipbuilding",
+      "evidence": "SK증권은 HD현대중공업, 한화오션, 삼성중공업 등 조선 3사 실적을 언급했다.",
+      "date": "",
+      "evidence_source_id": "news_010140_7e12dc4292ff7a1b",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.banronbodo.com/news/articleView.html?idxno=32257",
+      "evidence_published_at": "2026-05-11T14:30:00+09:00"
+    }
+  ]
 }

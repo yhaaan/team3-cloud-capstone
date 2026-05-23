@@ -1,47 +1,203 @@
-// node: company_sk_034730
+// node: company_017670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_034730", "type": "Company", "name": "SK"}
+:params {"id": "company_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670", "description": "AI와 데이터센터 사업을 중심으로 성장하는 IT 통신 기업"}
 
-// node: company_sk_telecom_017670
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_telecom_017670", "type": "Company", "name": "SK텔레콤", "stock_code": "017670"}
-
-// node: company_sk_innovation_096770
+// node: company_096770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_innovation_096770", "type": "Company", "name": "SK이노베이션"}
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "고유가 수혜 및 ESS 신성장 분야에 집중하는 에너지 기업"}
 
-// node: company_sk_gas_018670
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk_gas_018670", "type": "Company", "name": "SK가스"}
-
-// node: company_samsung_c_corp_028260
+// node: company_018670
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_c_corp_028260", "type": "Company", "name": "삼성물산"}
+:params {"id": "company_018670", "type": "Company", "name": "SK가스", "stock_code": "018670", "description": "에너지 가격 변동과 AI 인프라 수요 증가에 따른 에너지 기업"}
 
-// node: company_yujin_investment_securities_001200
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_yujin_investment_securities_001200", "type": "Company", "name": "유진투자증권"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_001200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001200", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
+
+// node: business_area_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai", "type": "BusinessArea", "name": "AI"}
+
+// node: business_area_data_center
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_data_center", "type": "BusinessArea", "name": "데이터센터"}
+
+// node: business_area_ess
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ess", "type": "BusinessArea", "name": "에너지저장장치"}
+
+// node: business_area_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_energy", "type": "BusinessArea", "name": "에너지"}
+
+// node: industry_it_통신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_통신", "type": "Industry", "name": "IT 통신"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_ai", "properties": {"evidence": "SK텔레콤, 'AI·데이터센터' 본업과 신사업의 조화", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "business_area_data_center", "properties": {"evidence": "SK텔레콤, 'AI·데이터센터' 본업과 신사업의 조화", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_017670", "to_id": "industry_it_통신", "properties": {"evidence": "SK텔레콤은 2026년 1분기 연결 기준 영업이익 5,376억 원을 기록하며 시장 컨센서스를 상회하는 어닝 서프라이즈를 달성했다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_energy", "properties": {"evidence": "SK이노베이션은 중동 정세 불안에 따른 고유가와 정제마진 상승의 직접적인 수혜를 입고 있다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_ess", "properties": {"evidence": "기존 전기차(EV) 중심에서 에너지저장장치(ESS)로 성장의 무게중심을 이동하고 있으며", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "industry_energy", "properties": {"evidence": "SK이노베이션은 중동 정세 불안에 따른 고유가와 정제마진 상승의 직접적인 수혜를 입고 있다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018670", "to_id": "business_area_energy", "properties": {"evidence": "SK가스 역시 에너지 가격 변동에 따른 기회 이익 확보와 AI 인프라 확대로 인한 전력 수요 급증의 간접 수혜주로 분류된다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018670", "to_id": "industry_energy", "properties": {"evidence": "SK가스 역시 에너지 가격 변동에 따른 기회 이익 확보와 AI 인프라 확대로 인한 전력 수요 급증의 간접 수혜주로 분류된다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai", "to_id": "industry_it_통신", "properties": {"evidence": "SK그룹의 주요 계열사들이 인공지능(AI)과 데이터센터(AIDC) 수요 급증", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_data_center", "to_id": "industry_it_통신", "properties": {"evidence": "SK그룹의 주요 계열사들이 인공지능(AI)과 데이터센터(AIDC) 수요 급증", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ess", "to_id": "business_area_energy", "properties": {"evidence": "기존 전기차(EV) 중심에서 에너지저장장치(ESS)로 성장의 무게중심을 이동하고 있으며", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_energy", "to_id": "industry_energy", "properties": {"evidence": "SK이노베이션은 중동 정세 불안에 따른 고유가와 정제마진 상승의 직접적인 수혜를 입고 있다.", "date": "", "evidence_source_id": "news_017670_aec3c1fbe31caf07", "evidence_source_type": "news", "evidence_source_url": "https://www.betanews.net/article/view/beta202605110093", "evidence_published_at": "2026-05-12T08:02:00+09:00"}}

@@ -2,29 +2,50 @@
   "source_id": "dart_060570_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_dreamus_company",
+      "id": "company_060570",
       "type": "Company",
       "name": "드림어스컴퍼니",
       "stock_code": "060570"
     },
     {
-      "id": "person_lee_ki_young",
+      "id": "person_ikiyoung",
       "type": "Person",
       "name": "이기영",
       "role_raw": "대표이사",
-      "affiliated_company": "company_dreamus_company",
       "role": "CEO",
       "role_label": "대표이사"
     },
     {
-      "id": "person_soo_wooseok",
+      "id": "person_seo_useok",
       "type": "Person",
       "name": "서우석",
       "role_raw": "기타비상무이사",
-      "affiliated_company": "company_dreamus_company",
       "role": "DIRECTOR",
       "role_label": "이사"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_ikiyoung",
+      "to": "company_060570",
+      "evidence": "드림어스컴퍼니의 최대주주 관련 인물/법인은 이기영, 관계는 대표이사, 당기말 보유주식수는 28,000주, 지분율은 0.04%.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "AFFILIATED_WITH",
+      "from": "person_seo_useok",
+      "to": "company_060570",
+      "evidence": "드림어스컴퍼니의 최대주주 관련 인물/법인은 서우석, 관계는 기타비상무이사, 당기말 보유주식수는 56,000주, 지분율은 0.08%.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
 }

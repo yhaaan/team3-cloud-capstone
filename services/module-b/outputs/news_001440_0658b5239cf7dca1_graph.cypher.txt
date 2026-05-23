@@ -1,0 +1,93 @@
+// node: company_001440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001440", "type": "Company", "name": "대한전선", "stock_code": "001440", "description": "해저케이블 설계·생산·운송·시공을 아우르는 수직계열화 기반 글로벌 시장 공략"}
+
+// node: business_area_undersea_cable_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_undersea_cable_business", "type": "BusinessArea", "name": "해저케이블 사업"}
+
+// node: business_area_offshore_wind_power
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_wind_power", "type": "BusinessArea", "name": "해상풍력"}
+
+// node: product_service_cable_laying_vessel
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cable_laying_vessel", "type": "ProductService", "name": "해저케이블 전용 포설선"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_undersea_cable_business", "properties": {"evidence": "대한전선이 대형 '해저케이블 전용 포설선(CLV)'을 추가 확보하며 해저케이블 사업 경쟁력을 높인다.", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "business_area_offshore_wind_power", "properties": {"evidence": "대한전선이 보유하고 있는 국내 유일의 해상풍력용 CLV인 '팔로스'호에 이어 국내에 도입된 두 번째 해상풍력용 CLV로...", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_001440", "to_id": "product_service_cable_laying_vessel", "properties": {"evidence": "대한전선이 대형 '해저케이블 전용 포설선(CLV)'을 추가 확보하며 해저케이블 사업 경쟁력을 높인다.", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_undersea_cable_business", "to_id": "industry_energy", "properties": {"evidence": "대한전선은 자체 선대 운용은 물론, 용선 등을 통해 추가 사업 기회도 확대할 예정이다.", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_wind_power", "to_id": "industry_energy", "properties": {"evidence": "대한전선은 자체 선대 운용은 물론, 용선 등을 통해 추가 사업 기회도 확대할 예정이다.", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cable_laying_vessel", "to_id": "business_area_undersea_cable_business", "properties": {"evidence": "대한전선이 대형 '해저케이블 전용 포설선(CLV)'을 추가 확보하며 해저케이블 사업 경쟁력을 높인다.", "date": "", "evidence_source_id": "news_001440_0658b5239cf7dca1", "evidence_source_type": "news", "evidence_source_url": "https://www.goodkyung.com/news/articleView.html?idxno=286976", "evidence_published_at": "2026-05-14T15:12:00+09:00"}}

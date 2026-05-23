@@ -1,0 +1,67 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130", "description": "미국 테네시주 통합제련소 구축 등 금속 제련 등 사업을 영위하는 종합 비철금속 기업"}
+
+// node: business_area_통합제련소_사업
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_통합제련소_사업", "type": "BusinessArea", "name": "통합제련소 사업"}
+
+// node: business_area_금속_제련
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_금속_제련", "type": "BusinessArea", "name": "금속 제련"}
+
+// node: industry_비철금속
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_비철금속", "type": "Industry", "name": "비철금속"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_통합제련소_사업", "properties": {"evidence": "고려아연이 추진 중인 미국 테네시주 통합제련소 사업 '프로젝트 크루서블(Project Crucible)'을 겨냥한 대응이라는 해석이 나온다.", "date": "", "evidence_source_id": "news_010130_cfa2ef2862037e10", "evidence_source_type": "news", "evidence_source_url": "https://www.kyeonggi.com/article/20260515580475", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_금속_제련", "properties": {"evidence": "고려아연의 현지 제련소 구축은 한미 경제안보 협력 차원에서도 의미가 크다는 평가를 받아왔다.", "date": "", "evidence_source_id": "news_010130_cfa2ef2862037e10", "evidence_source_type": "news", "evidence_source_url": "https://www.kyeonggi.com/article/20260515580475", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_통합제련소_사업", "to_id": "business_area_금속_제련", "properties": {"evidence": "고려아연이 추진 중인 미국 테네시주 통합제련소 사업 '프로젝트 크루서블(Project Crucible)'을 겨냥한 대응이라는 해석이 나온다.", "date": "", "evidence_source_id": "news_010130_cfa2ef2862037e10", "evidence_source_type": "news", "evidence_source_url": "https://www.kyeonggi.com/article/20260515580475", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_금속_제련", "to_id": "industry_비철금속", "properties": {"evidence": "고려아연은 금속 제련 사업을 영위하는 비철금속 관련 기업이다.", "date": "", "evidence_source_id": "news_010130_cfa2ef2862037e10", "evidence_source_type": "news", "evidence_source_url": "https://www.kyeonggi.com/article/20260515580475", "evidence_published_at": "2026-05-15T20:50:00+09:00"}}

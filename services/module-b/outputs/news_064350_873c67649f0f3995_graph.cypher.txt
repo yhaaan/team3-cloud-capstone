@@ -1,39 +1,177 @@
-// node: company_hyundai_rotem
+// node: company_064350
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_rotem", "type": "Company", "name": "현대로템", "stock_code": "064350"}
+:params {"id": "company_064350", "type": "Company", "name": "현대로템", "stock_code": "064350", "description": "군사용 로봇 및 다목적 무인차량 개발·납품, 방산 부문 중심의 매출과 영업이익 성장 전망"}
 
-// node: company_samsung_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
-
-// node: company_hanwha
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: company_hanwha_aerospace
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hanwha_aerospace", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
-
-// node: company_hyundai_motor
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai_motor", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_012450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_012450", "type": "Company", "name": "한화에어로스페이스", "stock_code": "012450"}
+
+// node: business_area_military_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_military_robotics", "type": "BusinessArea", "name": "군사용 로봇"}
+
+// node: product_service_multipurpose_unmanned_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_multipurpose_unmanned_vehicle", "type": "ProductService", "name": "다목적 무인차량"}
+
+// node: product_service_legged_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_legged_robot", "type": "ProductService", "name": "다족보행로봇"}
+
+// node: product_service_unmanned_firefighting_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_unmanned_firefighting_robot", "type": "ProductService", "name": "무인 소방로봇"}
+
+// node: business_area_defense_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_defense_solution", "type": "BusinessArea", "name": "방산 부문"}
+
+// node: industry_defense
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_defense", "type": "Industry", "name": "방위산업"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_military_robotics", "properties": {"evidence": "\"군사용 로봇은 그룹 내에서 현대로템이 담당하는 구조로 이원화됐다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_legged_robot", "properties": {"evidence": "\"현대로템은 지난 2024년 8월 대테러작전용 다족보행로봇을 한국 육군에 납품했다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_multipurpose_unmanned_vehicle", "properties": {"evidence": "\"현대로템은 다목적 무인차량 신속 시범획득사업을 수주해 'HR-셰르파' 성능 강화 모델과 시범운용 지원 체계를 공급했다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "product_service_unmanned_firefighting_robot", "properties": {"evidence": "\"현대로템은 군용 다목적 무인차량 HR-셰르파를 기반으로 소방청과 함께 무인 소방로봇 개발에도 성공했다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064350", "to_id": "business_area_defense_solution", "properties": {"evidence": "\"한화투자증권은 27일 현대로템에 대해 '연내 방산부문(디펜스솔루션) 수출·이익 모멘텀(상승동력)이 지속될 것으로 기대한다'며...\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_military_robotics", "to_id": "business_area_defense_solution", "properties": {"evidence": "\"군사용 로봇은 그룹 내에서 현대로템이 담당하는 구조로 이원화됐다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_defense_solution", "to_id": "industry_defense", "properties": {"evidence": "\"방산부문(디펜스솔루션) 수출·이익 모멘텀(상승동력)이 지속될 것으로 기대한다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_legged_robot", "to_id": "business_area_military_robotics", "properties": {"evidence": "\"다족보행로봇이 한국군 납품에 성공한 최초의 사례\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_multipurpose_unmanned_vehicle", "to_id": "business_area_military_robotics", "properties": {"evidence": "\"군용 다목적 무인차량 HR-셰르파\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_unmanned_firefighting_robot", "to_id": "business_area_military_robotics", "properties": {"evidence": "\"무인 소방로봇 개발에도 성공했다\"", "date": "", "evidence_source_id": "news_064350_873c67649f0f3995", "evidence_source_type": "news", "evidence_source_url": "https://www.hankyung.com/article/2026051296256", "evidence_published_at": "2026-05-12T08:11:00+09:00"}}

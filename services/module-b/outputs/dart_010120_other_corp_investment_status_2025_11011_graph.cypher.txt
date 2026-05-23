@@ -1,0 +1,75 @@
+// node: company_010120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010120", "type": "Company", "name": "LS ELECTRIC", "stock_code": "010120", "description": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다."}
+
+// node: company_322180
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_322180", "type": "Company", "name": "LS티라유텍", "stock_code": "322180"}
+
+// node: business_area_전력기기
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전력기기", "type": "BusinessArea", "name": "전력기기"}
+
+// node: business_area_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_에너지", "type": "BusinessArea", "name": "에너지"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_전력기기", "properties": {"evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010120", "to_id": "business_area_에너지", "properties": {"evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전력기기", "to_id": "industry_에너지", "properties": {"evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_에너지", "to_id": "industry_에너지", "properties": {"evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.", "date": "2026-03-18", "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243", "evidence_published_at": "2026-03-18"}}

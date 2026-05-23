@@ -1,0 +1,7 @@
+// node: company_323410
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_323410", "type": "Company", "name": "카카오뱅크", "stock_code": "323410", "description": "카카오뱅크는 AI그룹, 금융소비자보호, 컴플라이언스, 정보보호, 고객서비스 등 다양한 금융·기술 분야 관리 조직을 운영합니다."}

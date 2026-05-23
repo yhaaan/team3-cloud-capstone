@@ -2,23 +2,69 @@
   "source_id": "news_000660_1ee9de500f4a6d84",
   "entities": [
     {
-      "id": "company_samsung전자",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_sk하이닉스",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "주요 반도체 제조 및 연구개발 협업 활동에 참여하는 기업"
     },
     {
-      "id": "company_sk",
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "글로벌 반도체 제조 및 연구개발 센터 협업을 진행하는 기업"
+    },
+    {
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
+    },
+    {
+      "id": "business_area_semiconductor_research",
+      "type": "BusinessArea",
+      "name": "반도체 연구개발"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_semiconductor_research",
+      "evidence": "글로벌 반도체 제조장비 업체인 어플라이드 머티어리얼즈가 미국 실리콘밸리에 7조원 규모로 조성 중인 연구개발 협업 센터에 삼성전자, SK하이닉스에 이어 대만 TSMC가 합류한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_1ee9de500f4a6d84",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512034500003?input=1195m",
+      "evidence_published_at": "2026-05-12T09:18:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_semiconductor_research",
+      "evidence": "글로벌 반도체 제조장비 업체인 어플라이드 머티어리얼즈가 미국 실리콘밸리에 7조원 규모로 조성 중인 연구개발 협업 센터에 삼성전자, SK하이닉스에 이어 대만 TSMC가 합류한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_1ee9de500f4a6d84",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512034500003?input=1195m",
+      "evidence_published_at": "2026-05-12T09:18:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_semiconductor_research",
+      "to": "industry_semiconductor",
+      "evidence": "글로벌 반도체 제조장비 업체인 어플라이드 머티어리얼즈가 미국 실리콘밸리에 7조원 규모로 조성 중인 연구개발 협업 센터에 삼성전자, SK하이닉스에 이어 대만 TSMC가 합류한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_1ee9de500f4a6d84",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.yna.co.kr/view/AKR20260512034500003?input=1195m",
+      "evidence_published_at": "2026-05-12T09:18:00+09:00"
+    }
+  ]
 }

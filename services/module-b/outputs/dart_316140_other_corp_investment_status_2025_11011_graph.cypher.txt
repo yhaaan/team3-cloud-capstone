@@ -1,0 +1,74 @@
+// node: company_316140
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_316140", "type": "Company", "name": "우리금융지주", "stock_code": "316140", "description": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다."}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_001520
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001520", "type": "Company", "name": "동양", "stock_code": "001520"}
+
+// node: company_082640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_082640", "type": "Company", "name": "동양생명", "stock_code": "082640"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "finance"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "financial services"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_316140", "to_id": "company_082640", "properties": {"evidence": "우리금융지주의 타법인 출자 대상은 동양생명보험㈜ 주5), 출자 목적은 자회사 편입, 최초 취득일은 2025.07.01, 당기말 보유수량은 121,566,000, 당기말 지분율은 75.34%, 장부가액은 1,283,936,000,000.", "date": "2026-03-13", "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235", "evidence_published_at": "2026-03-13"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_316140", "to_id": "industry_finance", "properties": {"evidence": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다.", "date": "2026-03-13", "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235", "evidence_published_at": "2026-03-13"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_316140", "to_id": "business_area_financial_services", "properties": {"evidence": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다.", "date": "2026-03-13", "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235", "evidence_published_at": "2026-03-13"}}

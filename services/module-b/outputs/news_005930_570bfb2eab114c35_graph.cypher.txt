@@ -1,18 +1,50 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "가전, 스마트폰, 통신장비, 반도체 등 다양한 사업을 운영하는 복합 기업"}
 
-// node: company_sk_hynix
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "반도체"}
+
+// node: business_area_consumer_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_consumer_electronics", "type": "BusinessArea", "name": "가전"}
+
+// node: business_area_smartphone
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smartphone", "type": "BusinessArea", "name": "스마트폰"}
+
+// node: business_area_telecommunications_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_telecommunications_equipment", "type": "BusinessArea", "name": "통신장비"}
 
 // node: industry_semiconductor
 
@@ -22,20 +54,47 @@ SET n:`Industry`
 
 :params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
 
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_samsung_electronics", "to_id": "industry_semiconductor", "properties": {"evidence": "대한민국의 경제를 지탱하는 가장 거대한 기둥은 단연 반도체다. 그 중심에 서 있는 삼성전자는 단순한 일개 기업을 넘어 국가 경쟁력의 핵심이자 국민적 자부심의 상징이다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_consumer_electronics", "properties": {"evidence": "삼성전자는 가전, 스마트폰, 통신 장비, 반도체라는 네 개의 큰 바퀴로 굴러가는 복합 기업이다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
 
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk_hynix", "to_id": "industry_semiconductor", "properties": {"evidence": "셋째, 경쟁사인 SK하이닉스의 사례를 반면교사로 삼아야 한다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_smartphone", "properties": {"evidence": "삼성전자는 가전, 스마트폰, 통신 장비, 반도체라는 네 개의 큰 바퀴로 굴러가는 복합 기업이다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_telecommunications_equipment", "properties": {"evidence": "삼성전자는 가전, 스마트폰, 통신 장비, 반도체라는 네 개의 큰 바퀴로 굴러가는 복합 기업이다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_semiconductor", "properties": {"evidence": "삼성전자는 가전, 스마트폰, 통신 장비, 반도체라는 네 개의 큰 바퀴로 굴러가는 복합 기업이다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "대한민국의 경제를 지탱하는 가장 거대한 기둥은 단연 반도체다.", "date": "", "evidence_source_id": "news_005930_570bfb2eab114c35", "evidence_source_type": "news", "evidence_source_url": "https://www.newscj.com/news/articleView.html?idxno=3397344", "evidence_published_at": "2026-04-29T17:48:00+09:00"}}

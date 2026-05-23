@@ -1,0 +1,75 @@
+// node: company_010130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_010130", "type": "Company", "name": "고려아연", "stock_code": "010130", "description": "비철금속과 핵심광물 제련 사업을 중심으로 한 글로벌 자원 개발 및 생산 기업"}
+
+// node: business_area_metal_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_metal_refining", "type": "BusinessArea", "name": "비철금속 제련"}
+
+// node: business_area_critical_minerals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_critical_minerals", "type": "BusinessArea", "name": "핵심광물 생산"}
+
+// node: industry_resources
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_resources", "type": "Industry", "name": "자원"}
+
+// node: industry_metal_mining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_metal_mining", "type": "Industry", "name": "비철금속"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_metal_refining", "properties": {"evidence": "고려아연의 미국 테네시주 통합 제련소 사업 '프로젝트 크루서블'은 대형 비철금속·핵심광물 제련 프로젝트다.", "date": "", "evidence_source_id": "news_010130_403d277fa840f551", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519753", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_010130", "to_id": "business_area_critical_minerals", "properties": {"evidence": "아연과 구리, 금, 은뿐 아니라 안티모니·갈륨·게르마늄 등 전략 광물 생산 체계를 구축하는 사업으로, 미국 정부의 핵심광물 공급망 재편 전략과도 맞닿아 있다.", "date": "", "evidence_source_id": "news_010130_403d277fa840f551", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519753", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_metal_refining", "to_id": "industry_metal_mining", "properties": {"evidence": "고려아연 비철금속 제련 사업은 대형 비철금속 제련 프로젝트로 알려져 있다.", "date": "", "evidence_source_id": "news_010130_403d277fa840f551", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519753", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_critical_minerals", "to_id": "industry_resources", "properties": {"evidence": "핵심광물 생산 사업은 광물 자원 공급망 재편 전략과 연관된다.", "date": "", "evidence_source_id": "news_010130_403d277fa840f551", "evidence_source_type": "news", "evidence_source_url": "https://www.joongangenews.com/news/articleView.html?idxno=519753", "evidence_published_at": "2026-05-16T09:00:00+09:00"}}

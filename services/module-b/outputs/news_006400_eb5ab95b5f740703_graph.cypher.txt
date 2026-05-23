@@ -1,47 +1,213 @@
-// node: company_parma_research
+// node: company_214450
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_parma_research", "type": "Company", "name": "파마리서치", "stock_code": "214450"}
+:params {"id": "company_214450", "type": "Company", "name": "파마리서치", "stock_code": "214450", "description": "PN 기반 주사제 등 의료기기, 화장품, 의약품 사업을 전개하며 피부 미용 시술 시장에서 경쟁력"}
 
-// node: company_sk_innovation
+// node: product_service_rejuran
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_rejuran", "type": "ProductService", "name": "리쥬란"}
+
+// node: company_096770
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_innovation", "type": "Company", "name": "SK이노베이션", "stock_code": "096770"}
+:params {"id": "company_096770", "type": "Company", "name": "SK이노베이션", "stock_code": "096770", "description": "정유, E&P, 에너지&서비스 사업부 운영하며 전기차 및 에너지저장시스템(ESS) 성장"}
 
-// node: company_alteogen
+// node: business_area_ess
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ess", "type": "BusinessArea", "name": "에너지저장시스템"}
+
+// node: business_area_petroleum_refining
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_petroleum_refining", "type": "BusinessArea", "name": "정유"}
+
+// node: business_area_ep
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ep", "type": "BusinessArea", "name": "E&P"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// node: company_196170
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_alteogen", "type": "Company", "name": "알테오젠", "stock_code": "196170"}
+:params {"id": "company_196170", "type": "Company", "name": "알테오젠", "stock_code": "196170", "description": "항암제 키트루다SC 피하주사 제형 기술 보유, 바이오 의약품 연구개발 및 계약 확대 중"}
 
-// node: company_samsung_sdi
+// node: product_service_kittruda_sc
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_kittruda_sc", "type": "ProductService", "name": "키트루다SC"}
+
+// node: company_006400
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_sdi", "type": "Company", "name": "삼성SDI", "stock_code": "006400"}
+:params {"id": "company_006400", "type": "Company", "name": "삼성SDI", "stock_code": "006400", "description": "ESS 배터리 및 전기차 배터리 사업 운영하며 AI 데이터센터용 ESS 중심 중장기 성장 추진"}
 
-// node: company_mirae_asset_securities
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_mirae_asset_securities", "type": "Company", "name": "미래에셋증권", "stock_code": "006800"}
-
-// node: company_sk
+// node: business_area_ev_battery
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "business_area_ev_battery", "type": "BusinessArea", "name": "전기차 배터리"}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_214450", "to_id": "product_service_rejuran", "properties": {"evidence": "파마리서치(214450)의 대표 제품 리쥬란은 대체재가 없는 PN(폴리뉴클레오타이드) 기반 주사제로...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_214450", "to_id": "business_area_ess", "properties": {"evidence": "의료기기 795억원(+15% YoY), 화장품 422억원(+51% YoY), 의약품 214억원(+25% YoY)으로 전 사업부가 고른 성장세를 기록했다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_214450", "to_id": "business_area_ess", "properties": {"evidence": "피부 미용 시술 시장에서 '오리지널 제품'의 힘이 다시 주목받고 있다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_214450", "to_id": "business_area_ess", "properties": {"evidence": "신성장 동력으로 4Q26 미용기기, 4Q26~1H27 합성 콜라겐 출시, 2H27 톡신 캐파 증설, 27~28년 차세대 리쥬란 등이 예정돼 있다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_petroleum_refining", "properties": {"evidence": "SK이노베이션(096770)은 정유·E&P·E&S(에너지&서비스) 등 전 사업부에서 고유가 환경을 누리는 가운데...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_ep", "properties": {"evidence": "SK이노베이션(096770)은 정유·E&P·E&S(에너지&서비스) 등 전 사업부에서 고유가 환경을 누리는 가운데...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_096770", "to_id": "business_area_ess", "properties": {"evidence": "SK-On의 신규 성장축이 전기차(EV)에서 에너지저장시스템(ESS)으로 이동하면서 iM증권이 투자의견을 Hold에서 Buy로 격상했다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ess", "to_id": "industry_energy", "properties": {"evidence": "ESS란 태양광·풍력 등 재생에너지와 AI 데이터센터(AIDC)의 안정적 전력 공급을 위한 배터리 기반 저장 장치다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ep", "to_id": "industry_energy", "properties": {"evidence": "E&P 부문은 중국·베트남 광구 원유가 Brent 유가에 연동되어 직접 수혜를 받는다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_petroleum_refining", "to_id": "industry_energy", "properties": {"evidence": "정유 부문은 중동 정제설비 차질로 정제마진 강세가 장기화될 전망이며...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_196170", "to_id": "product_service_kittruda_sc", "properties": {"evidence": "글로벌 최대 항암제 키트루다의 피하주사(SC) 제형 전환을 가능하게 한 핵심 기술이 알테오젠(196170)의 것이다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_ess", "properties": {"evidence": "삼성SDI(006400)의 ESS 부문이 전기차 배터리 부진을 상쇄할 핵심 성장 동력으로 재조명받는 이유다.", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006400", "to_id": "business_area_ev_battery", "properties": {"evidence": "EV 배터리 부문은 미국 세액공제 종료, 유럽 내 중국산 경쟁 심화 등으로 불확실성이 지속되나...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ev_battery", "to_id": "industry_energy", "properties": {"evidence": "EV 배터리 부문은 미국 세액공제 종료, 유럽 내 중국산 경쟁 심화 등으로 불확실성이 지속되나...", "date": "", "evidence_source_id": "news_006400_eb5ab95b5f740703", "evidence_source_type": "news", "evidence_source_url": "https://www.hellot.net/news/article.html?no=112490", "evidence_published_at": "2026-05-11T17:32:00+09:00"}}

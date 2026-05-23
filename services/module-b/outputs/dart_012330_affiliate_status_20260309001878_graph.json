@@ -1,0 +1,233 @@
+{
+  "source_id": "dart_012330_affiliate_status_20260309001878",
+  "entities": [
+    {
+      "id": "company_012330",
+      "type": "Company",
+      "name": "현대모비스",
+      "stock_code": "012330",
+      "description": "자동차 부품 및 모듈 생산 중심의 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270",
+      "description": "자동차 제조 및 판매를 주요 사업으로 하는 기업"
+    },
+    {
+      "id": "company_004020",
+      "type": "Company",
+      "name": "현대제철",
+      "stock_code": "004020",
+      "description": "철강 제품 생산 및 공급을 중심 사업으로 하는 기업"
+    },
+    {
+      "id": "company_086280",
+      "type": "Company",
+      "name": "현대글로비스",
+      "stock_code": "086280",
+      "description": "물류 및 운송 서비스 등을 제공하는 기업"
+    },
+    {
+      "id": "company_011210",
+      "type": "Company",
+      "name": "현대위아",
+      "stock_code": "011210",
+      "description": "자동차 부품 및 기계 산업 관련 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_064350",
+      "type": "Company",
+      "name": "현대로템",
+      "stock_code": "064350",
+      "description": "철도차량 및 방위 산업용 제품을 생산하는 기업"
+    },
+    {
+      "id": "company_000720",
+      "type": "Company",
+      "name": "현대건설",
+      "stock_code": "000720",
+      "description": "건설 및 엔지니어링 사업을 하는 기업"
+    },
+    {
+      "id": "company_214320",
+      "type": "Company",
+      "name": "이노션",
+      "stock_code": "214320",
+      "description": "광고 및 마케팅 서비스 제공 기업"
+    },
+    {
+      "id": "industry_automotive",
+      "type": "Industry",
+      "name": "automotive"
+    },
+    {
+      "id": "industry_steel",
+      "type": "Industry",
+      "name": "steel"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "logistics"
+    },
+    {
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "construction"
+    },
+    {
+      "id": "industry_advertising",
+      "type": "Industry",
+      "name": "advertising"
+    },
+    {
+      "id": "business_area_automobile_manufacturing",
+      "type": "BusinessArea",
+      "name": "automobile manufacturing"
+    },
+    {
+      "id": "business_area_auto_parts",
+      "type": "BusinessArea",
+      "name": "auto parts"
+    },
+    {
+      "id": "business_area_steel_production",
+      "type": "BusinessArea",
+      "name": "steel production"
+    },
+    {
+      "id": "business_area_logistics_services",
+      "type": "BusinessArea",
+      "name": "logistics services"
+    },
+    {
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "construction"
+    },
+    {
+      "id": "business_area_advertising_services",
+      "type": "BusinessArea",
+      "name": "advertising services"
+    },
+    {
+      "id": "business_area_railway_vehicle_production",
+      "type": "BusinessArea",
+      "name": "railway vehicle production"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012330",
+      "to": "business_area_auto_parts",
+      "evidence": "현대모비스의 사업보고서 (2025.12)",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_automotive",
+      "evidence": "현대모비스의 사업보고서 (2025.12)",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_automotive",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 기아가 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004020",
+      "to": "industry_steel",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 현대제철이 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086280",
+      "to": "industry_logistics",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 현대글로비스가 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011210",
+      "to": "industry_automotive",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 현대위아가 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "business_area_railway_vehicle_production",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 현대로템이 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_railway_vehicle_production",
+      "to": "industry_automotive",
+      "evidence": "현대모비스 사업보고서 내 현대로템 관련 내용",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000720",
+      "to": "industry_construction",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 현대건설이 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_214320",
+      "to": "industry_advertising",
+      "evidence": "현대모비스의 사업보고서 (2025.12)에서 이노션이 상장 계열회사 후보로 탐지되었다.",
+      "date": "2026-03-09",
+      "evidence_source_id": "dart_012330_affiliate_status_20260309001878",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260309001878",
+      "evidence_published_at": "2026-03-09"
+    }
+  ]
+}

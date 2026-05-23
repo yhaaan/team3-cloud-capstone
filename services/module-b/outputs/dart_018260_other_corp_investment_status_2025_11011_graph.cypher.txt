@@ -1,0 +1,58 @@
+// node: company_018260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_018260", "type": "Company", "name": "삼성에스디에스", "stock_code": "018260", "description": "삼성에스디에스는 경영참가를 통한 정보기술 서비스 및 교육, 보안, 물류 분야에 투자하여 사업을 운영합니다."}
+
+// node: company_067280
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_067280", "type": "Company", "name": "멀티캠퍼스", "stock_code": "067280"}
+
+// node: company_052860
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_052860", "type": "Company", "name": "아이앤씨", "stock_code": "052860"}
+
+// node: company_058970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_058970", "type": "Company", "name": "엠로", "stock_code": "058970"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "company_067280", "properties": {"evidence": "삼성에스디에스의 타법인 출자 대상은 (주)멀티캠퍼스, 출자 목적은 경영참가(경영참가 등), 최초 취득일은 2011.03.01, 당기말 보유수량은 3,698,379, 당기말 지분율은 62.40%, 장부가액은 131,728,000,000.", "date": "2026-03-10", "evidence_source_id": "dart_018260_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989", "evidence_published_at": "2026-03-10"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "company_052860", "properties": {"evidence": "삼성에스디에스의 타법인 출자 대상은 (주)미라콤아이앤씨, 출자 목적은 경영참가(경영참가 등), 최초 취득일은 2011.03.01, 당기말 보유수량은 5,010,297, 당기말 지분율은 83.62%, 장부가액은 18,737,000,000.", "date": "2026-03-10", "evidence_source_id": "dart_018260_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989", "evidence_published_at": "2026-03-10"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018260", "to_id": "company_058970", "properties": {"evidence": "삼성에스디에스의 타법인 출자 대상은 (주)엠로, 출자 목적은 경영참가(경영참가 등), 최초 취득일은 2023.05.31, 당기말 보유수량은 4,385,662, 당기말 지분율은 35.48%, 장부가액은 147,902,000,000.", "date": "2026-03-10", "evidence_source_id": "dart_018260_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989", "evidence_published_at": "2026-03-10"}}

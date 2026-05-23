@@ -2,23 +2,45 @@
   "source_id": "news_009150_cc9b916534212219",
   "entities": [
     {
-      "id": "company_삼성전기",
+      "id": "company_009150",
       "type": "Company",
       "name": "삼성전기",
-      "stock_code": "009150"
+      "stock_code": "009150",
+      "description": "AI 중심의 전자부품 산업에서 협력사와 특허 개방, 기술 교류로 공급망 경쟁력 강화에 주력"
     },
     {
-      "id": "company_우성",
-      "type": "Company",
-      "name": "우성",
-      "stock_code": "006980"
+      "id": "business_area_ai_related_electronic_components",
+      "type": "BusinessArea",
+      "name": "AI 관련 전자부품"
     },
     {
-      "id": "company_코스모신소재",
-      "type": "Company",
-      "name": "코스모신소재",
-      "stock_code": "005070"
+      "id": "industry_electronic_components",
+      "type": "Industry",
+      "name": "전자부품"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009150",
+      "to": "business_area_ai_related_electronic_components",
+      "evidence": "장 사장은 \"AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것\"이라며 모든 협력사가 함께 차별화된 핵심 기술로 경쟁력 있는 제품을 만들어 내자고 말했다.",
+      "date": "",
+      "evidence_source_id": "news_009150_cc9b916534212219",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kukinews.com/article/view/kuk202604280239",
+      "evidence_published_at": "2026-04-28T18:28:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ai_related_electronic_components",
+      "to": "industry_electronic_components",
+      "evidence": "고성능 반도체와 전자부품 경쟁이 격화되는 상황에서 협력사 기술력 확보가 곧 기업 경쟁력으로 직결되기 때문이다.",
+      "date": "",
+      "evidence_source_id": "news_009150_cc9b916534212219",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kukinews.com/article/view/kuk202604280239",
+      "evidence_published_at": "2026-04-28T18:28:00+09:00"
+    }
+  ]
 }

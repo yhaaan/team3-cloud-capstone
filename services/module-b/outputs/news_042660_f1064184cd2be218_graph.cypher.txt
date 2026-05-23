@@ -1,15 +1,101 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "거제사업장 조선소 안전 관리와 크레인 작업, 안전규정 위반 관련 징계와 대규모 안전 투자 진행"}
 
-// node: company_hanwha
+// node: company_000880
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "조선소"}
+
+// node: business_area_safety_management
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_safety_management", "type": "BusinessArea", "name": "안전 관리"}
+
+// node: product_service_crane_operation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_crane_operation", "type": "ProductService", "name": "크레인 작업"}
+
+// node: industry_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션은 \"안전하지 않은 조선소는 글로벌 고객들로부터 선박 수주를 받을 수 없게 된다\"며", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_safety_management", "properties": {"evidence": "한화오션에 따르면 ... 회사는 ... 안전 규정을 위반하거나 안전 관리에 소홀했던 것으로 확인됐다고 밝혔다.", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "product_service_crane_operation", "properties": {"evidence": "지난 2월 26일에 주행형 타워크레인을 이용해 서비스타워를 이동하는 과정에서 크레인 상부가 서비스타워와 충돌해 상부 작업자가 추락했다.", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "한화오션은 \"안전하지 않은 조선소는 글로벌 고객들로부터 선박 수주를 받을 수 없게 된다\"며", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_safety_management", "to_id": "industry_shipbuilding", "properties": {"evidence": "한화오션에 따르면 ... 사고 관련 현장 담당자들이 안전 규정을 위반하거나 안전 관리에 소홀했던 것으로 확인됐다고 밝혔다.", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_crane_operation", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션은 조선소 내 크레인 작업 중 발생한 사고와 안전규정 위반을 다루고 있다.", "date": "", "evidence_source_id": "news_042660_f1064184cd2be218", "evidence_source_type": "news", "evidence_source_url": "http://www.kdfnews.com/news/articleView.html?idxno=182993", "evidence_published_at": "2026-05-07T17:00:00+09:00"}}

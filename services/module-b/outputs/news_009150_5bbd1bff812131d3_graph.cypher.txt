@@ -1,63 +1,179 @@
-// node: company_삼성전기
+// node: company_009150
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전기", "type": "Company", "name": "삼성전기", "stock_code": "009150"}
+:params {"id": "company_009150", "type": "Company", "name": "삼성전기", "stock_code": "009150", "description": "삼성전기는 AI 산업 및 자율주행 시스템 등 전자부품 주요 부품 협력사와 동반성장에 집중"}
 
-// node: company_코스모신소재
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_코스모신소재", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
-
-// node: company_우성
+// node: company_006980
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_우성", "type": "Company", "name": "우성", "stock_code": "006980"}
+:params {"id": "company_006980", "type": "Company", "name": "우성", "stock_code": "006980"}
 
-// node: company_LG
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_LG", "type": "Company", "name": "LG", "stock_code": "003550"}
-
-// node: company_SK
+// node: company_005070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_SK", "type": "Company", "name": "SK", "stock_code": "034730"}
+:params {"id": "company_005070", "type": "Company", "name": "코스모신소재", "stock_code": "005070"}
 
-// node: company_대상
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_대상", "type": "Company", "name": "대상", "stock_code": "001680"}
-
-// node: company_SG
+// node: business_area_mlcc
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_SG", "type": "Company", "name": "SG", "stock_code": "255220"}
+:params {"id": "business_area_mlcc", "type": "BusinessArea", "name": "MLCC"}
 
-// node: company_오아
+// node: business_area_camera_module_parts
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_오아", "type": "Company", "name": "오아", "stock_code": "342870"}
+:params {"id": "business_area_camera_module_parts", "type": "BusinessArea", "name": "카메라모듈용 부품"}
+
+// node: business_area_package_substrate
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_package_substrate", "type": "BusinessArea", "name": "패키지기판"}
+
+// node: business_area_film
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_film", "type": "BusinessArea", "name": "필름"}
+
+// node: business_area_ai_server_film
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ai_server_film", "type": "BusinessArea", "name": "AI 서버향 필름"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자부품"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006980", "to_id": "business_area_mlcc", "properties": {"evidence": "MLCC 설비를 공급하는 우성에스이는 설비 제작과 셋업 일정 단축 성과를 인정받아 생산성 혁신 부문에서 우수상을 수상했다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005070", "to_id": "business_area_film", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI 서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005070", "to_id": "business_area_ai_server_film", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI 서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_mlcc", "properties": {"evidence": "삼성전기는 연 매출 10억원대부터 10조원대 기업까지 국내외 약 900여개 협력사와 거래하고 있다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_camera_module_parts", "properties": {"evidence": "카메라모듈용 관련 부품을 공급하는 정진넥스텍은 신공법 도입 성과를...품질 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "business_area_package_substrate", "properties": {"evidence": "패키지기판 적층을 수행하는 아비코테크는 적층 품질 개선 성과를 각각 인정받아 품질 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mlcc", "to_id": "industry_electronics", "properties": {"evidence": "삼성전기는 연 매출 10억원대부터 10조원대 기업까지 국내외 약 900여개 협력사와 거래하고 있다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_camera_module_parts", "to_id": "industry_electronics", "properties": {"evidence": "카메라모듈용 관련 부품을 공급하는 정진넥스텍은 신공법 도입 성과를...품질 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_package_substrate", "to_id": "industry_electronics", "properties": {"evidence": "패키지기판 적층을 수행하는 아비코테크는 적층 품질 개선 성과를 각각 인정받아 품질 혁신 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ai_server_film", "to_id": "business_area_film", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI 서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_film", "to_id": "industry_electronics", "properties": {"evidence": "MLCC용 필름을 공급하는 코스모신소재는 AI 서버향 필름 개발을 통한 수율 개선 성과로 기술 개발 부문 우수상을 받았다.", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_009150", "to_id": "industry_electronics", "properties": {"evidence": "삼성전기는 AI 산업의 고성장세 유지와 자율주행 시스템 고도화 등 삼성전기가 집중하는 산업의 성장은 기회 요인이 될 것", "date": "", "evidence_source_id": "news_009150_5bbd1bff812131d3", "evidence_source_type": "news", "evidence_source_url": "https://www.viva100.com/article/20260428500820", "evidence_published_at": "2026-04-28T17:34:00+09:00"}}

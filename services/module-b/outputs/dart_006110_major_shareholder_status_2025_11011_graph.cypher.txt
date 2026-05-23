@@ -1,188 +1,18 @@
-// node: company_삼아알미늄
+// node: company_006110
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼아알미늄", "type": "Company", "name": "삼아알미늄", "stock_code": "006110"}
+:params {"id": "company_006110", "type": "Company", "name": "삼아알미늄", "stock_code": "006110", "description": "알루미늄 압출제품 제조 및 판매 전문 기업"}
 
-// node: company_동양
+// node: company_001520
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_동양", "type": "Company", "name": "동양", "stock_code": "001520"}
-
-// node: person_서의철
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_서의철", "type": "Person", "name": "서의철", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_김관주
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_김관주", "type": "Person", "name": "김관주", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_한남희
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_한남희", "type": "Person", "name": "한남희", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_하상용
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_하상용", "type": "Person", "name": "하상용", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_김진범
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_김진범", "type": "Person", "name": "김진범", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_김규만
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_김규만", "type": "Person", "name": "김규만", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_이은호
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이은호", "type": "Person", "name": "이은호", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_정석재
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_정석재", "type": "Person", "name": "정석재", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_이용진
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_이용진", "type": "Person", "name": "이용진", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// node: person_정내덕
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Person`
-
-:params {"id": "person_정내덕", "type": "Person", "name": "정내덕", "role": "OTHER", "affiliated_company": "company_삼아알미늄", "role_raw": "발행회사 임원", "role_label": "발행회사 임원"}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_서의철", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 서의철, 관계는 발행회사 임원, 당기말 보유주식수는 150주, 지분율은 0.00%, 비고는 신규 선임.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_김관주", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 김관주, 관계는 발행회사 임원, 당기말 보유주식수는 97,400주, 지분율은 0.66%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_한남희", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 한남희, 관계는 발행회사 임원, 당기말 보유주식수는 1,085,016주, 지분율은 7.38%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_하상용", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 하상용, 관계는 발행회사 임원, 당기말 보유주식수는 1,090주, 지분율은 0.01%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_김진범", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 김진범, 관계는 발행회사 임원, 당기말 보유주식수는 20,000주, 지분율은 0.14%, 비고는 장내 매매.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_김규만", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 김규만, 관계는 발행회사 임원, 당기말 보유주식수는 90,520주, 지분율은 0.62%, 비고는 장내 매매.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_이은호", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 이은호, 관계는 발행회사 임원, 당기말 보유주식수는 1,500주, 지분율은 0.01%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_정석재", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 정석재, 관계는 발행회사 임원, 당기말 보유주식수는 2,880주, 지분율은 0.02%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_이용진", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 이용진, 관계는 발행회사 임원, 당기말 보유주식수는 10주, 지분율은 0.00%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
-
-// relation: AFFILIATED_WITH
-
-MATCH (source:Entity {id: $from_id})
-MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
-SET r += $properties
-
-:params {"from_id": "person_정내덕", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 정내덕, 관계는 발행회사 임원, 당기말 보유주식수는 500주, 지분율은 0.00%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
+:params {"id": "company_001520", "type": "Company", "name": "동양", "stock_code": "001520"}
 
 // relation: INVESTS_IN
 
@@ -191,4 +21,4 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_동양", "to_id": "company_삼아알미늄", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 日本동양알미늄(주), 관계는 본인, 당기말 보유주식수는 3,674,000주, 지분율은 24.97%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}
+:params {"from_id": "company_001520", "to_id": "company_006110", "properties": {"evidence": "삼아알미늄의 최대주주 관련 인물/법인은 日本동양알미늄(주), 관계는 본인, 당기말 보유주식수는 3,674,000주, 지분율은 24.97%.", "date": "2026-03-18", "evidence_source_id": "dart_006110_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860", "evidence_published_at": "2026-03-18"}}

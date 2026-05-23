@@ -1,0 +1,24 @@
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490"}
+
+// node: company_023590
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_023590", "type": "Company", "name": "다우기술", "stock_code": "023590"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_023590", "to_id": "company_039490", "properties": {"evidence": "키움증권의 최대주주 관련 인물/법인은 (주)다우기술, 관계는 최대주주, 당기말 보유주식수는 11,134,003주, 지분율은 41.55%, 비고는 상환전환우선주의 보통주 전환으로 증가.", "date": "2026-03-17", "evidence_source_id": "dart_039490_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}

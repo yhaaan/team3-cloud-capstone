@@ -1,148 +1,118 @@
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "메모리 반도체와 파운드리 기술을 기반으로 AI 인프라용 낸드 플래시, HBM 분야에서 경쟁력을 보유"}
 
-// node: company_hd한국조선해양
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hd한국조선해양", "type": "Company", "name": "HD한국조선해양"}
-
-// node: company_sk
+// node: company_000660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk", "type": "Company", "name": "SK"}
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
 
-// node: company_sk텔레콤
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk텔레콤", "type": "Company", "name": "SK텔레콤"}
-
-// node: company_sk하이닉스
+// node: business_area_memory
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_sk하이닉스", "type": "Company", "name": "SK하이닉스"}
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
 
-// node: company_삼성sdi
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_삼성sdi", "type": "Company", "name": "삼성SDI"}
-
-// node: company_삼성중공업
+// node: business_area_foundry
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_삼성중공업", "type": "Company", "name": "삼성중공업"}
+:params {"id": "business_area_foundry", "type": "BusinessArea", "name": "파운드리"}
 
-// node: company_한화
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_한화", "type": "Company", "name": "한화"}
-
-// node: company_현대차
+// node: product_service_nand_flash
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`ProductService`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차"}
+:params {"id": "product_service_nand_flash", "type": "ProductService", "name": "낸드 플래시"}
 
-// node: person_자공학부_교수
+// node: product_service_hbm
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`ProductService`
 
-:params {"id": "person_자공학부_교수", "type": "Person", "name": "자공학부 교수"}
+:params {"id": "product_service_hbm", "type": "ProductService", "name": "HBM"}
 
-// node: industry_ai
+// node: industry_semiconductor
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
 
-// node: industry_bio
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_bio", "type": "Industry", "name": "bio"}
-
-// node: industry_it
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
-
-// relation: ACQUIRES
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:ACQUIRES]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전자", "to_id": "company_hd한국조선해양", "properties": {"evidence": "07 삼성전자 노사 11시간 마라톤 협상에도 빈손⋯오늘 마지막 조정 돌입 08 속보 코스피 장중 7900선 첫 돌파⋯팔천피 코앞 09 NH투자증권 \"동화기업, 삼성SDI·EVE ESS 동반 성장…목표가 22% 상향\" 10 전국 대부분 비...돌풍·천둥·우박까지 동반 [날씨] 최신 영상 정원오표 부동산 \"역시나 박원순 시즌2\" 서울 집값 시뮬레이션 돌려봅니다 I 집땅지성 I 김인만, 한문도, 두성규 산업 최신 뉴스 아모레퍼시픽, 차세대 나노 화장품 전달체 기술 개발 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" [BioS]동아 메타비아, 'GLP-1/GCG' 1상 유럽간학회 발표 셀트리온, 프랑스 지프레 인수…'대체조제 시대 대비' 약국 영업망 확보 '사회 문제 해결자' 모여라, SOVAC 2026 참가 기업 모집 CJ제일제당, 1분기 영업익 1485억원⋯전년比 26%↓ 차세대 인증 설루션 'SK텔레콤 패스키'…국가 공인 인증 1등급 획득 [BioS]씨어스, 1Q 매출 325억·영업익 139억 \"역대최대\" 효성굿스프링스, 전력 효율 높인 펌프 솔루션 첫선 LG유플, AI 비서 '익시오' SaaS형 수출 첫발…말레이시아 통신사와 상용화 논의 뉴스발전소 김구라 웃고 이경실 울었다...삼성전자 투자 성공 비결은?", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "\"AI 본질은 메모리\"라며 \"결국 AI의 게임은 메모리에서 결정되는 걸로 가고 있다\"", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
 
-// relation: INVESTS_IN
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:INVESTS_IN]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전자", "to_id": "company_hd한국조선해양", "properties": {"evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "business_area_foundry", "properties": {"evidence": "삼성전자의 경우 메모리와 파운드리 역량을 함께 보유했다는 점도 강점으로 거론됐다.", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
 
-// relation: BELONGS_TO
+// relation: PRODUCES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:PRODUCES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전자", "to_id": "industry_ai", "properties": {"evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "product_service_nand_flash", "properties": {"evidence": "\"요즘 그런 역할을 하는 쪽에 낸드 플래시 메모리가 많이 필요해서 삼성, 하이닉스, 샌디스크 주가가 하늘을 올라가고 있다\"", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
 
-// relation: BELONGS_TO
+// relation: PRODUCES
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:PRODUCES]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전자", "to_id": "industry_bio", "properties": {"evidence": "07 삼성전자 노사 11시간 마라톤 협상에도 빈손⋯오늘 마지막 조정 돌입 08 속보 코스피 장중 7900선 첫 돌파⋯팔천피 코앞 09 NH투자증권 \"동화기업, 삼성SDI·EVE ESS 동반 성장…목표가 22% 상향\" 10 전국 대부분 비...돌풍·천둥·우박까지 동반 [날씨] 최신 영상 정원오표 부동산 \"역시나 박원순 시즌2\" 서울 집값 시뮬레이션 돌려봅니다 I 집땅지성 I 김인만, 한문도, 두성규 산업 최신 뉴스 아모레퍼시픽, 차세대 나노 화장품 전달체 기술 개발 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" [BioS]동아 메타비아, 'GLP-1/GCG' 1상 유럽간학회 발표 셀트리온, 프랑스 지프레 인수…'대체조제 시대 대비' 약국 영업망 확보 '사회 문제 해결자' 모여라, SOVAC 2026 참가 기업 모집 CJ제일제당, 1분기 영업익 1485억원⋯전년比 26%↓ 차세대 인증 설루션 'SK텔레콤 패스키'…국가 공인 인증 1등급 획득 [BioS]씨어스, 1Q 매출 325억·영업익 139억 \"역대최대\" 효성굿스프링스, 전력 효율 높인 펌프 솔루션 첫선 LG유플, AI 비서 '익시오' SaaS형 수출 첫발…말레이시아 통신사와 상용화 논의 뉴스발전소 김구라 웃고 이경실 울었다...삼성전자 투자 성공 비결은?", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+:params {"from_id": "company_005930", "to_id": "product_service_hbm", "properties": {"evidence": "\"GPU하고 HBM 사이에 데이터를 엄청 빠른 속도로 주고받아야 된다\"며 \"낸드 플래시와 HBM이 둘 다 필요한 시대가 됐다\"고 말했다.", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
 
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_삼성전자", "to_id": "industry_it", "properties": {"evidence": "속보창 신문/PDF 구독 RSS 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 마켓 금융 부동산 산업 경제 국제 정치 사회 오피니언 문화·라이프 뉴스발전소 이투데이TV 마켓 공시 시황 시세 장외/IPO 특징주 투자전략 채권/펀드 환율 국제시황 일반 금융 금융정책 은행 보험 2금융 카드 가상자산/핀테크 일반 부동산 시장동향 업계 정책 분양 일반 산업 재계 전자/통신/IT 자동차 중화학 항공/물류 유통 의료/바이오 중기/벤처 일반 경제 경제정책 경제지표 생활경제 일반 국제 국제경제 국제일반 미국 중국 아시아 유럽/중동 정치 대통령실/총리실 국회/정당 국방/외교 정책 일반 사회 법조 교육 사건/사고 노동/취업 전국 인사/부음 동정 일반 오피니언 논현논단 논현광장 시론 AI 만평 데스크 시각 마감 후 칼럼 노트북 너머 문화·라이프 관광 방송/TV 영화 음악 공연/출판 스포츠 일반 뉴스발전소 이슈크래커 요즘, 이거 그래픽스 한 컷 이투데이TV e스튜디오 랭킹영상 스페셜리포트 Channel 5 위너스IR클럽 날씨 정정·반론 보도 이투데이 산업 일반 AI 불장 올라탄 삼성전자·SK하이닉스…\"단군 이래 최고의 기회\" 기정아 기자 기자 이름을 클릭하면 더 자세한 정보를 확인할 수 있어요!", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+:params {"from_id": "company_000660", "to_id": "business_area_memory", "properties": {"evidence": "\"우리 삼성전자, SK하이닉스는 둘 다 하잖아요. 완전히 양손에 떡을 들고 있는 거죠\"", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_nand_flash", "properties": {"evidence": "\"요즘 그런 역할을 하는 쪽에 낸드 플래시 메모리가 많이 필요해서 삼성, 하이닉스, 샌디스크 주가가 하늘을 올라가고 있다\"", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000660", "to_id": "product_service_hbm", "properties": {"evidence": "\"우리 삼성전자, SK하이닉스는 둘 다 하잖아요. 완전히 양손에 떡을 들고 있는 거죠\"", "date": "", "evidence_source_id": "news_005930_eff8a590d2cba5e8", "evidence_source_type": "news", "evidence_source_url": "https://www.etoday.co.kr/news/view/2583531", "evidence_published_at": "2026-05-12T09:24:00+09:00"}}

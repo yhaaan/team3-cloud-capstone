@@ -1,15 +1,67 @@
-// node: company_doosan_fuel_cell
+// node: company_336260
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_doosan_fuel_cell", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260"}
+:params {"id": "company_336260", "type": "Company", "name": "두산퓨얼셀", "stock_code": "336260", "description": "수소연료전지와 전동기 발전기 및 전기 변환·공급·제어 장치 제조업체다."}
 
-// node: company_doosan
+// node: business_area_수소연료전지
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_doosan", "type": "Company", "name": "두산", "stock_code": "000150"}
+:params {"id": "business_area_수소연료전지", "type": "BusinessArea", "name": "수소연료전지"}
+
+// node: business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조", "type": "BusinessArea", "name": "전동기 발전기 및 전기 변환 공급 제어 장치 제조"}
+
+// node: industry_에너지
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_에너지", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_수소연료전지", "properties": {"evidence": "19:22 [디지털투데이 임민철 에디터] 수소연료전지 전문 회사 두산퓨얼셀(336260)이 2026년 1분기 연결 기준 잠정 실적을 29일 공시했다.", "date": "", "evidence_source_id": "news_336260_697ffe92b248dad9", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555", "evidence_published_at": "2026-04-29T19:26:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_336260", "to_id": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조", "properties": {"evidence": "두산퓨얼셀은 2019년 10월 18일 코스피 시장에 상장된 전동기 발전기 및 전기 변환 · 공급 · 제어 장치 제조업체다.", "date": "", "evidence_source_id": "news_336260_697ffe92b248dad9", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555", "evidence_published_at": "2026-04-29T19:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_수소연료전지", "to_id": "industry_에너지", "properties": {"evidence": "수소연료전지 전문 회사 두산퓨얼셀(336260)이 2026년 1분기 연결 기준 잠정 실적을 29일 공시했다.", "date": "", "evidence_source_id": "news_336260_697ffe92b248dad9", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555", "evidence_published_at": "2026-04-29T19:26:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_전동기_발전기_및_전기_변환_공급_제어_장치_제조", "to_id": "industry_에너지", "properties": {"evidence": "두산퓨얼셀은 2019년 10월 18일 코스피 시장에 상장된 전동기 발전기 및 전기 변환 · 공급 · 제어 장치 제조업체다.", "date": "", "evidence_source_id": "news_336260_697ffe92b248dad9", "evidence_source_type": "news", "evidence_source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=661555", "evidence_published_at": "2026-04-29T19:26:00+09:00"}}

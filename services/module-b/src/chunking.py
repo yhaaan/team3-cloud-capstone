@@ -47,21 +47,25 @@ def split_text_into_chunks(
             "doc_id": doc["source_id"],
             "chunk_id": f"{doc['source_id']}_chunk_{index}",
             "text": chunk_text,
-            "title": doc.get("title", ""),
-            "source": doc.get("source", ""),
-            "document_type": doc.get("document_type", ""),
-            "dataset": doc.get("dataset", ""),
-            "dataset_label": doc.get("dataset_label", ""),
-            "company_name": doc.get("company_name", ""),
-            "stock_code": doc.get("stock_code", ""),
-            "corp_code": doc.get("corp_code", ""),
-            "published_at": doc.get("published_at", ""),
-            "url": doc.get("url", ""),
+            "title": string_value(doc.get("title")),
+            "source": string_value(doc.get("source")),
+            "document_type": string_value(doc.get("document_type")),
+            "dataset": string_value(doc.get("dataset")),
+            "dataset_label": string_value(doc.get("dataset_label")),
+            "company_name": string_value(doc.get("company_name")),
+            "stock_code": string_value(doc.get("stock_code")),
+            "corp_code": string_value(doc.get("corp_code")),
+            "published_at": string_value(doc.get("published_at")),
+            "url": string_value(doc.get("url")),
             "chunk_index": index,
             "company_hint": extract_company_hints(doc, chunk_text),
         }
         for index, chunk_text in enumerate(chunks)
     ]
+
+
+def string_value(value: Any) -> str:
+    return "" if value is None else str(value)
 
 
 def split_sentences(text: str) -> list[str]:

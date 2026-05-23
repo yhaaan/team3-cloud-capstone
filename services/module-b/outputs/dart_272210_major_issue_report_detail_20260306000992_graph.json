@@ -2,24 +2,58 @@
   "source_id": "dart_272210_major_issue_report_detail_20260306000992",
   "entities": [
     {
-      "id": "company_hanwha_system",
+      "id": "company_272210",
       "type": "Company",
       "name": "한화시스템",
-      "stock_code": "272210"
+      "stock_code": "272210",
+      "description": "한화시스템은 방산 및 정보기술 기반의 시스템 사업을 하는 회사입니다."
     },
     {
-      "id": "company_hanwha_ocean",
+      "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
-      "stock_code": "042660"
+      "stock_code": "042660",
+      "description": "한화오션은 운송장비·부품 등 해양플랜트 및 조선 사업을 영위하는 계열사입니다."
+    },
+    {
+      "id": "business_area_transport_equipment_components",
+      "type": "BusinessArea",
+      "name": "운송장비·부품"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
     }
   ],
   "relations": [
     {
       "type": "ACQUIRES",
-      "from": "company_hanwha_system",
-      "to": "company_hanwha_ocean",
-      "evidence": "본 공시는 당사가 보유한 계열회사인 한화오션(주) 주식 일부를 양도하는 건으로, 양도된 주식과 관련하여 당사는 양수인(거래상대방)과 아래와 같이 주가수익스왑(PRS) 계약을 체결할 예정입니다",
+      "from": "company_272210",
+      "to": "company_042660",
+      "evidence": "본 공시는 당사가 보유한 계열회사인 한화오션(주) 주식 일부를 양도하는 건으로 ...",
+      "date": "2026-03-06",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260306000992",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260306000992",
+      "evidence_published_at": "2026-03-06"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_042660",
+      "to": "business_area_transport_equipment_components",
+      "evidence": "주요사업 운송장비·부품",
+      "date": "2026-03-06",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260306000992",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260306000992",
+      "evidence_published_at": "2026-03-06"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_transport_equipment_components",
+      "to": "industry_shipbuilding",
+      "evidence": "주요사업 운송장비·부품",
       "date": "2026-03-06",
       "evidence_source_id": "dart_272210_major_issue_report_detail_20260306000992",
       "evidence_source_type": "dart",

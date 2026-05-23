@@ -1,0 +1,150 @@
+{
+  "source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+  "entities": [
+    {
+      "id": "company_032830",
+      "type": "Company",
+      "name": "삼성생명",
+      "stock_code": "032830",
+      "description": "생명보험 및 금융서비스를 주력으로 하는 회사입니다."
+    },
+    {
+      "id": "company_029780",
+      "type": "Company",
+      "name": "삼성카드",
+      "stock_code": "029780",
+      "description": "신용카드업 및 할부금융업을 영위하는 금융회사입니다."
+    },
+    {
+      "id": "business_area_insurance",
+      "type": "BusinessArea",
+      "name": "보험"
+    },
+    {
+      "id": "business_area_finance",
+      "type": "BusinessArea",
+      "name": "금융서비스"
+    },
+    {
+      "id": "business_area_credit_card",
+      "type": "BusinessArea",
+      "name": "신용카드업"
+    },
+    {
+      "id": "business_area_installment_finance",
+      "type": "BusinessArea",
+      "name": "할부금융업"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032830",
+      "to": "business_area_insurance",
+      "evidence": "삼성생명의 [기재정정]사업보고서 (2025.12)",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_032830",
+      "to": "business_area_finance",
+      "evidence": "삼성생명의 [기재정정]사업보고서 (2025.12)",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_032830",
+      "to": "industry_insurance",
+      "evidence": "삼성생명의 [기재정정]사업보고서 (2025.12)",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_029780",
+      "to": "business_area_credit_card",
+      "evidence": "삼성카드 | 신용카드업시설대여업할부금융업",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_029780",
+      "to": "business_area_installment_finance",
+      "evidence": "삼성카드 | 신용카드업시설대여업할부금융업",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_029780",
+      "to": "industry_finance",
+      "evidence": "삼성카드 | 신용카드업시설대여업할부금융업",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_insurance",
+      "to": "industry_insurance",
+      "evidence": "보험은 보험 산업의 세부분야임",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_credit_card",
+      "to": "industry_finance",
+      "evidence": "신용카드업은 금융 산업의 세부분야임",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_installment_finance",
+      "to": "industry_finance",
+      "evidence": "할부금융업은 금융 산업의 세부분야임",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_consolidated_subsidiary_status_20260331004244",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "통신서비스 및 정보통신 관련 서비스업무를 영위하는 기업"}
+
+// node: company_036030
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_036030", "type": "Company", "name": "케이티알파", "stock_code": "036030", "description": "정보통신 관련 서비스업무를 하는 기업"}
+
+// node: business_area_information_communication_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_information_communication_service", "type": "BusinessArea", "name": "정보통신 관련 서비스업무"}
+
+// node: industry_telecommunication
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecommunication", "type": "Industry", "name": "통신"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_information_communication_service", "properties": {"evidence": "KT의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.", "date": "2026-03-23", "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_036030", "to_id": "business_area_information_communication_service", "properties": {"evidence": "㈜케이티알파 | 1991-12-12 | 서울특별시 동작구 보라매로5길 23 | 정보통신 관련 서비스업무 | 495,896 | 지분 50% 초과보유 | 주요", "date": "2026-03-23", "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_information_communication_service", "to_id": "industry_telecommunication", "properties": {"evidence": "정보통신 관련 서비스업무", "date": "2026-03-23", "evidence_source_id": "dart_030200_consolidated_subsidiary_status_20260323001553", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001553", "evidence_published_at": "2026-03-23"}}

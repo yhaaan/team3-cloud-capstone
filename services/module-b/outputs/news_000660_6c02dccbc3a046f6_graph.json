@@ -2,42 +2,260 @@
   "source_id": "news_000660_6c02dccbc3a046f6",
   "entities": [
     {
-      "id": "company_sk하이닉스",
+      "id": "company_068270",
       "type": "Company",
-      "name": "SK하이닉스"
+      "name": "셀트리온",
+      "stock_code": "068270",
+      "description": "신규 바이오시밀러 및 위탁생산 중심의 바이오 의약품 사업"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK"
-    },
-    {
-      "id": "company_현대로템",
-      "type": "Company",
-      "name": "현대로템"
-    },
-    {
-      "id": "person_관리_감독",
-      "type": "Person",
-      "name": "관리 감독"
-    },
-    {
-      "id": "industry_ai",
+      "id": "industry_bio",
       "type": "Industry",
-      "name": "AI"
+      "name": "bio"
     },
     {
-      "id": "industry_it",
+      "id": "company_064350",
+      "type": "Company",
+      "name": "현대로템",
+      "stock_code": "064350",
+      "description": "방산 및 철도 차량 생산과 해외 대규모 프로젝트 수주"
+    },
+    {
+      "id": "industry_shipbuilding",
       "type": "Industry",
-      "name": "IT"
+      "name": "shipbuilding"
+    },
+    {
+      "id": "business_area_defense",
+      "type": "BusinessArea",
+      "name": "방산"
+    },
+    {
+      "id": "business_area_rail_solution",
+      "type": "BusinessArea",
+      "name": "레일솔루션"
+    },
+    {
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "메모리 반도체와 HBM, LPDDR 등 반도체 제품 중심 사업"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
+    },
+    {
+      "id": "product_service_hbm",
+      "type": "ProductService",
+      "name": "HBM"
+    },
+    {
+      "id": "product_service_lpddr",
+      "type": "ProductService",
+      "name": "LPDDR"
+    },
+    {
+      "id": "company_100120",
+      "type": "Company",
+      "name": "뷰웍스",
+      "stock_code": "100120",
+      "description": "디지털 X-레이 디텍터와 의료 영상장비 사업"
+    },
+    {
+      "id": "business_area_medical_imaging",
+      "type": "BusinessArea",
+      "name": "의료 영상장비"
+    },
+    {
+      "id": "business_area_biosimilar",
+      "type": "BusinessArea",
+      "name": "Biosimilar"
+    },
+    {
+      "id": "business_area_cmo",
+      "type": "BusinessArea",
+      "name": "CMO"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk하이닉스",
-      "to": "company_sk",
-      "evidence": "IBK투자증권은 2026년 연간 매출액 5조3,318억 원(+28.1% YoY), 영업이익 1조8,171억 원(+55.5% YoY)을 전망하며 영업이익률은 34.1%까지 확대될 것으로 봤다.",
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_biosimilar",
+      "evidence": "성장의 핵심은 신규 바이오시밀러였다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_cmo",
+      "evidence": "테바향 위탁생산(CMO) 매출 962억 원이 더해지며 외형 성장에 기여했다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biosimilar",
+      "to": "industry_bio",
+      "evidence": "바이오시밀러는 특허가 만료된 오리지널 바이오의약품을 복제한 후속 의약품으로, 가격 경쟁력과 직판 체제 기반의 영업 레버리지가 결합되며 수익성 개선이 지속될 전망이다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cmo",
+      "to": "industry_bio",
+      "evidence": "바이오시밀러 및 바이오 의약품 관련 사업임.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_defense",
+      "evidence": "현대로템은 방산 수주에 철도까지, 지상군의 깃발이 휘날린다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_rail_solution",
+      "evidence": "레일솔루션의 수익성 개선 기대감에 주목해 목표주가를 상향 조정했다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense",
+      "to": "industry_shipbuilding",
+      "evidence": "현대로템 방산 부문은 shipbuilding 관련 방산 산업임.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_rail_solution",
+      "to": "industry_shipbuilding",
+      "evidence": "철도 차량 사업은 shipbuilding 산업군에 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스는 메모리 반도체 중심 사업을 영위한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_hbm",
+      "evidence": "미래에셋증권은 2026년 HBM 매출액을 54조 원(+72% YoY), 2027년에는 75조 원으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_lpddr",
+      "evidence": "동사는 1c 공정 기반 16Gb LPDDR6 DRAM을 공개한 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "메모리 사업은 반도체 산업의 한 부분이다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_hbm",
+      "to": "business_area_memory",
+      "evidence": "HBM은 메모리 사업의 주요 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_lpddr",
+      "to": "business_area_memory",
+      "evidence": "LPDDR은 메모리 사업의 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_100120",
+      "to": "business_area_medical_imaging",
+      "evidence": "디지털 X-레이 디텍터(검출기) 전문기업 뷰웍스가 의료 영상장비 등 사업을 영위한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_medical_imaging",
+      "to": "industry_bio",
+      "evidence": "의료 영상장비 사업은 바이오 산업의 한 분야다.",
       "date": "",
       "evidence_source_id": "news_000660_6c02dccbc3a046f6",
       "evidence_source_type": "news",
@@ -46,9 +264,9 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk하이닉스",
-      "to": "industry_ai",
-      "evidence": "AI 워크로드가 학습에서 추론·에이전틱(자율 작동형) 단계로 이동하며 GPU 대비 CPU 탑재 비율이 8대1에서 4대1, 1대1 이상까지 상승할 것으로 보인다.",
+      "from": "company_068270",
+      "to": "industry_bio",
+      "evidence": "셀트리온은 바이오시밀러 중심의 바이오 의약품 사업을 영위한다.",
       "date": "",
       "evidence_source_id": "news_000660_6c02dccbc3a046f6",
       "evidence_source_type": "news",
@@ -57,9 +275,31 @@
     },
     {
       "type": "BELONGS_TO",
-      "from": "company_sk하이닉스",
-      "to": "industry_it",
-      "evidence": "메타는 자체 ARM 기반 CPU인 그래비톤(Graviton)을 수천만 코어 계약했고, 마이크로소프트도 자체 CPU 코발트(Cobalt) 공급량을 크게 확대할 계획이다.",
+      "from": "company_064350",
+      "to": "industry_shipbuilding",
+      "evidence": "현대로템은 방산과 철도 차량 사업으로 shipbuilding 산업에 속한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스는 메모리 반도체 등 반도체 시장에서 활동한다.",
+      "date": "",
+      "evidence_source_id": "news_000660_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_100120",
+      "to": "industry_bio",
+      "evidence": "뷰웍스는 디지털 X-레이 디텍터 등 의료 영상장비 사업으로 바이오 관련 사업을 한다.",
       "date": "",
       "evidence_source_id": "news_000660_6c02dccbc3a046f6",
       "evidence_source_type": "news",

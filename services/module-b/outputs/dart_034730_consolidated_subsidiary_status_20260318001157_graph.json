@@ -2,54 +2,176 @@
   "source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
   "entities": [
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "034730",
+      "description": "에너지, 화학, 반도체, 바이오 등 다양한 산업 분야의 사업 운영"
     },
     {
-      "id": "company_sk_inoe_be_isyeon",
+      "id": "company_096770",
       "type": "Company",
       "name": "SK이노베이션",
-      "stock_code": "096770"
+      "stock_code": "096770",
+      "description": "액체연료 및 관련 제품 도매업"
     },
     {
-      "id": "company_yuil_robotics",
+      "id": "company_388720",
       "type": "Company",
       "name": "유일로보틱스",
-      "stock_code": "388720"
+      "stock_code": "388720",
+      "description": "산업용로봇 제조 및 판매업"
     },
     {
-      "id": "company_sk_ie_itek_nologi",
+      "id": "company_361610",
       "type": "Company",
       "name": "SK아이이테크놀로지",
-      "stock_code": "361610"
+      "stock_code": "361610",
+      "description": "2차전지용 분리막 제조"
     },
     {
-      "id": "company_sk_bai_opam",
+      "id": "company_326030",
       "type": "Company",
       "name": "SK바이오팜",
-      "stock_code": "326030"
+      "stock_code": "326030",
+      "description": "의약 및 생명과학 분야 사업 운영"
     },
     {
-      "id": "company_sk_osyeon_peullanteu",
+      "id": "company_100090",
       "type": "Company",
       "name": "SK오션플랜트",
-      "stock_code": "100090"
+      "stock_code": "100090",
+      "description": "강관 제조업"
     },
     {
-      "id": "company_skc",
+      "id": "company_011790",
       "type": "Company",
       "name": "SKC",
-      "stock_code": "011790"
+      "stock_code": "011790",
+      "description": "석유화학제조"
+    },
+    {
+      "id": "business_area_liquid_fuels",
+      "type": "BusinessArea",
+      "name": "액체연료"
+    },
+    {
+      "id": "business_area_industrial_robots",
+      "type": "BusinessArea",
+      "name": "산업용로봇"
+    },
+    {
+      "id": "business_area_battery_separators",
+      "type": "BusinessArea",
+      "name": "2차전지용 분리막"
+    },
+    {
+      "id": "business_area_pharmaceuticals_and_bioscience",
+      "type": "BusinessArea",
+      "name": "의약 및 생명과학"
+    },
+    {
+      "id": "business_area_steel_pipe_manufacturing",
+      "type": "BusinessArea",
+      "name": "강관 제조"
+    },
+    {
+      "id": "business_area_petrochemicals",
+      "type": "BusinessArea",
+      "name": "석유화학"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "에너지"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로봇"
+    },
+    {
+      "id": "industry_battery",
+      "type": "Industry",
+      "name": "배터리"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "바이오"
+    },
+    {
+      "id": "industry_steel",
+      "type": "Industry",
+      "name": "철강"
+    },
+    {
+      "id": "industry_chemical",
+      "type": "Industry",
+      "name": "화학"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_inoe_be_isyeon",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "type": "OPERATES_IN",
+      "from": "company_096770",
+      "to": "business_area_liquid_fuels",
+      "evidence": "SK이노베이션㈜ | 2007-07-01 | 서울시 종로구 서린동 99 | 액체연료 및 관련 제품 도매업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_388720",
+      "to": "business_area_industrial_robots",
+      "evidence": "㈜ 유일로보틱스 | 2011-12-16 | 인천광역시 남동구 남동서로 362번길 37-45 | 산업용로봇 제조 및 판매업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_361610",
+      "to": "business_area_battery_separators",
+      "evidence": "SK아이이테크놀로지㈜ | 2019-04-02 | 서울특별시 종로구 종로 26(서린동) | 2차전지용 분리막 제조",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_326030",
+      "to": "business_area_pharmaceuticals_and_bioscience",
+      "evidence": "SK바이오팜㈜ | 2011-04-01 | 성남시 분당구 판교역로 221 투썬빌딩 9층 | 의약 및 생명과학",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_100090",
+      "to": "business_area_steel_pipe_manufacturing",
+      "evidence": "SK오션플랜트 | 1996-11-01 | 경남 고성군 동해면 내산3길 51-1 | 강관 제조업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_011790",
+      "to": "business_area_petrochemicals",
+      "evidence": "SKC㈜ | 1973-07-16 | 경기 수원시 장안구 정자동 633 | 석유화학제조",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",
@@ -58,9 +180,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_yuil_robotics",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "from": "company_034730",
+      "to": "company_096770",
+      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",
@@ -69,9 +191,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_ie_itek_nologi",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "from": "company_034730",
+      "to": "company_388720",
+      "evidence": "SK의 연결대상 종속회사 후보로 유일로보틱스 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",
@@ -80,9 +202,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_bai_opam",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "from": "company_034730",
+      "to": "company_361610",
+      "evidence": "SK의 연결대상 종속회사 후보로 SK아이이테크놀로지 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",
@@ -91,9 +213,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_sk_osyeon_peullanteu",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "from": "company_034730",
+      "to": "company_326030",
+      "evidence": "SK의 연결대상 종속회사 후보로 SK바이오팜 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",
@@ -102,9 +224,86 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_sk",
-      "to": "company_skc",
-      "evidence": "SK의 연결대상 종속회사 후보로 SK이노베이션, 유일로보틱스, SK아이이테크놀로지, SK바이오팜, SK오션플랜트, SKC 등이 탐지되었다.",
+      "from": "company_034730",
+      "to": "company_100090",
+      "evidence": "SK의 연결대상 종속회사 후보로 SK오션플랜트 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_034730",
+      "to": "company_011790",
+      "evidence": "SK의 연결대상 종속회사 후보로 SKC 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_liquid_fuels",
+      "to": "industry_energy",
+      "evidence": "액체연료 및 관련 제품 도매업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_industrial_robots",
+      "to": "industry_robotics",
+      "evidence": "산업용로봇 제조 및 판매업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_battery_separators",
+      "to": "industry_battery",
+      "evidence": "2차전지용 분리막 제조",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_pharmaceuticals_and_bioscience",
+      "to": "industry_bio",
+      "evidence": "의약 및 생명과학",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_steel_pipe_manufacturing",
+      "to": "industry_steel",
+      "evidence": "강관 제조업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001157",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_petrochemicals",
+      "to": "industry_chemical",
+      "evidence": "석유화학제조",
       "date": "2026-03-18",
       "evidence_source_id": "dart_034730_consolidated_subsidiary_status_20260318001157",
       "evidence_source_type": "dart",

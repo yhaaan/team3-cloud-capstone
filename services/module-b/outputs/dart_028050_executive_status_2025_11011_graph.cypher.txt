@@ -1,0 +1,220 @@
+// node: company_028050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028050", "type": "Company", "name": "삼성E&A", "stock_code": "028050", "description": "주요 임원은 대표이사 사장과 사업본부장 등으로 구성되어 있으며, 플랜트 및 화공 등 EPC 사업을 영위"}
+
+// node: person_남궁홍
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_남궁홍", "type": "Person", "name": "남궁홍", "role_raw": "사장", "role": "PRESIDENT", "role_label": "사장"}
+
+// node: person_현건호
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_현건호", "type": "Person", "name": "현건호", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_윤형식
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_윤형식", "type": "Person", "name": "윤형식", "role_raw": "부사장", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+
+// node: person_최정현
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_최정현", "type": "Person", "name": "최정현", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_김용대
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_김용대", "type": "Person", "name": "김용대", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_신경택
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_신경택", "type": "Person", "name": "신경택", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: person_문승욱
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_문승욱", "type": "Person", "name": "문승욱", "role_raw": "사외이사", "role": "OUTSIDE_DIRECTOR", "role_label": "사외이사"}
+
+// node: company_028260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028260", "type": "Company", "name": "삼성물산", "stock_code": "028260"}
+
+// node: company_161000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_161000", "type": "Company", "name": "애경케미칼", "stock_code": "161000"}
+
+// node: company_001200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001200", "type": "Company", "name": "유진투자증권", "stock_code": "001200"}
+
+// node: company_111380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_111380", "type": "Company", "name": "동인기연", "stock_code": "111380"}
+
+// node: company_146060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_146060", "type": "Company", "name": "율촌", "stock_code": "146060"}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_남궁홍", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 남궁홍, 직위는 사장, 이사회상 역할은 사내이사, 담당업무는 대표이사 사장", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_현건호", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 현건호, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 화공사업본부장", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤형식", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 윤형식, 직위는 부사장, 이사회상 역할은 사내이사, 담당업무는 경영지원실장", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_최정현", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 최정현, 직위는 사외이사, 이사회상 역할는 사외이사, 담당업무는 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김용대", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 김용대, 직위는 사외이사, 이사회상 역할는 사외이사, 담당업무는 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_신경택", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 신경택, 직위는 사외이사, 이사회상 역할는 사외이사, 담당업무는 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: APPOINTED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:APPOINTED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "person_문승욱", "to_id": "company_028050", "properties": {"evidence": "삼성E&A의 임원은 문승욱, 직위는 사외이사, 이사회상 역할는 사외이사, 담당업무는 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_현건호", "to_id": "company_028260", "properties": {"evidence": "현건호 주요경력은 ... (前) 삼성물산 EPC 경쟁력 강화 T/F 담당", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_윤형식", "to_id": "company_028260", "properties": {"evidence": "윤형식 주요경력은 ... (前) 삼성물산 EPC 경쟁력 강화 T/F 담당", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_최정현", "to_id": "company_161000", "properties": {"evidence": "최정현 주요경력은 ... 애경케미칼(주) 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_김용대", "to_id": "company_001200", "properties": {"evidence": "김용대 주요경력은 ... 유진투자증권(주) 사외이사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_신경택", "to_id": "company_111380", "properties": {"evidence": "신경택 주요경력은 ... (주) 동인기연 감사", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_문승욱", "to_id": "company_146060", "properties": {"evidence": "문승욱 주요경력은 ... 법무법인율촌 고문", "date": "2026-03-11", "evidence_source_id": "dart_028050_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003927", "evidence_published_at": "2026-03-11"}}

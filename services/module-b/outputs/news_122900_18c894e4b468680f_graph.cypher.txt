@@ -1,15 +1,49 @@
-// node: company_imarket_korea
+// node: company_122900
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_imarket_korea", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900"}
+:params {"id": "company_122900", "type": "Company", "name": "아이마켓코리아", "stock_code": "122900", "description": "베트남 산업단지 개발에 참여하며 산업단지 개발 사업을 운영함"}
 
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: business_area_산업단지_개발
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_산업단지_개발", "type": "BusinessArea", "name": "산업단지 개발"}
+
+// node: industry_산업개발
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_산업개발", "type": "Industry", "name": "산업개발"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_122900", "to_id": "business_area_산업단지_개발", "properties": {"evidence": "아이마켓코리아, 베트남 푸토성과 MOU…베트남 산업단지 개발 박차", "date": "", "evidence_source_id": "news_122900_18c894e4b468680f", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12028334", "evidence_published_at": "2026-04-27T14:45:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_산업단지_개발", "to_id": "industry_산업개발", "properties": {"evidence": "아이마켓코리아, 베트남 푸토성과 MOU…베트남 산업단지 개발 박차", "date": "", "evidence_source_id": "news_122900_18c894e4b468680f", "evidence_source_type": "news", "evidence_source_url": "https://www.mk.co.kr/article/12028334", "evidence_published_at": "2026-04-27T14:45:00+09:00"}}

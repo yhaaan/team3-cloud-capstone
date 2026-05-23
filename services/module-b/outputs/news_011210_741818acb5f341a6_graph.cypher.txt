@@ -1,0 +1,92 @@
+// node: company_011210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210", "description": "자동차 부품과 공작기계 사업을 주력으로 하는 현대차그룹 계열사"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_automotive_parts
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive_parts", "type": "BusinessArea", "name": "자동차 부품"}
+
+// node: business_area_machine_tools
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_machine_tools", "type": "BusinessArea", "name": "공작기계"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_machine_tools
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machine_tools", "type": "Industry", "name": "공작기계"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_automotive_parts", "properties": {"evidence": "공작기계 시장에 현대위아 브랜드가 등장한 것은 2009년이다. 당시 현대차그룹 부품 계열사였던 위아는 글로벌 시장 공략을 위해 사명을 현대위아로 바꿨다.", "date": "", "evidence_source_id": "news_011210_741818acb5f341a6", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/160879", "evidence_published_at": "2026-05-14T08:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_machine_tools", "properties": {"evidence": "독립 전 위아공작기계의 전신인 현대위아 공작기계사업부는 현대차그룹의 우산 아래서 안정적으로 성장했다. 그룹 내 수요를 기반으로 범용·고급형 공작기계까지 제품 포트폴리오를 넓혔다.", "date": "", "evidence_source_id": "news_011210_741818acb5f341a6", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/160879", "evidence_published_at": "2026-05-14T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive_parts", "to_id": "industry_automotive", "properties": {"evidence": "공작기계 시장에 현대위아 브랜드가 등장한 것은 2009년이다. 당시 현대차그룹 부품 계열사였던 위아는 글로벌 시장 공략을 위해 사명을 현대위아로 바꿨다.", "date": "", "evidence_source_id": "news_011210_741818acb5f341a6", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/160879", "evidence_published_at": "2026-05-14T08:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_machine_tools", "to_id": "industry_machine_tools", "properties": {"evidence": "그룹 내 수요를 기반으로 범용·고급형 공작기계까지 제품 포트폴리오를 넓혔고, 해외에서는 현대차그룹의 브랜드 신뢰도를 영업 자산으로 활용해 입지를 다졌다.", "date": "", "evidence_source_id": "news_011210_741818acb5f341a6", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/160879", "evidence_published_at": "2026-05-14T08:02:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "industry_automotive", "properties": {"evidence": "공작기계 시장에 현대위아 브랜드가 등장한 것은 2009년이다. 당시 현대차그룹 부품 계열사였던 위아는 글로벌 시장 공략을 위해 사명을 현대위아로 바꿨다.", "date": "", "evidence_source_id": "news_011210_741818acb5f341a6", "evidence_source_type": "news", "evidence_source_url": "https://dealsite.co.kr/articles/160879", "evidence_published_at": "2026-05-14T08:02:00+09:00"}}

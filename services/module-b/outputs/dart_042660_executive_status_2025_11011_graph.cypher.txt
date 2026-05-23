@@ -1,41 +1,93 @@
-// node: company_한화오션
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_한화오션", "type": "Company", "name": "한화오션"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "한화오션은 특수선, 상선, 해양플랜트 등 해양 조선 및 해양개발 분야를 주력으로 합니다."}
 
-// node: industry_ai
+// node: business_area_special_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_special_shipbuilding", "type": "BusinessArea", "name": "특수선"}
+
+// node: business_area_commercial_shipbuilding
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_commercial_shipbuilding", "type": "BusinessArea", "name": "상선"}
+
+// node: business_area_offshore_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_offshore_plant", "type": "BusinessArea", "name": "해양플랜트"}
+
+// node: industry_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Industry`
 
-:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
 
-// node: industry_it
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Industry`
-
-:params {"id": "industry_it", "type": "Industry", "name": "IT"}
-
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화오션", "to_id": "industry_ai", "properties": {"evidence": "MBA 전) 한화시스템㈜ Air Space사업부문장 전) 한화에어로스페이스㈜ 우주사업본부장 전) 한화테크윈 UAM사업부장 전) 한화테크윈 사업운영부장.", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_042660", "to_id": "business_area_special_shipbuilding", "properties": {"evidence": "담당업무는 특수선기획담당, 특수선사업부장, 특수선해외사업단장, 특수선해외전략담당, 특수선생산담당 등 관련 여러 임원이 있음", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
 
-// relation: BELONGS_TO
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:BELONGS_TO]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_한화오션", "to_id": "industry_it", "properties": {"evidence": "한화오션의 임원은 김희철, 직위는 대표이사, 이사회상 역할은 사내이사, 담당업무는 대표이사, 최대주주와의 관계는 발행회사 임원, 주요경력은 Washington University in St.Louis MBA 서울대 화학공학 학/석사 전) 한화에너지㈜ 대표이사 전) 한화임팩트㈜ 대표이사 전) 한화솔루션㈜ 큐셀부문 대표이사 전) 한화토탈㈜ 대표이사 전) 한화종합화학㈜ 대표이사.", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_042660", "to_id": "business_area_commercial_shipbuilding", "properties": {"evidence": "담당업무는 상선구매본부장, 상선기술본부장, 상선영업담당, 상선사업관리담당 등 상선 관련 임원 다수 존재", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_042660", "to_id": "business_area_offshore_plant", "properties": {"evidence": "해양플랜트영업설계, 해양연구소장, 해양신규사업팀장, 해양의장부서장 등 해양플랜트 관련 임원 업무로 명시됨", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_special_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "특수선은 조선업 산업에 포함됨", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_commercial_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "상선은 조선업 산업에 포함됨", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_offshore_plant", "to_id": "industry_shipbuilding", "properties": {"evidence": "해양플랜트는 조선업 산업에 포함됨", "date": "2026-03-17", "evidence_source_id": "dart_042660_executive_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}

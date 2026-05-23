@@ -2,28 +2,132 @@
   "source_id": "news_012450_3d377dc6ce51a993",
   "entities": [
     {
-      "id": "company_한화에어로스페이스",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450",
-      "country": "KR"
+      "description": "다연장로켓 등 정밀유도무기 제작 및 방산 분야 사업을 영위"
     },
     {
-      "id": "company_한화",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
-      "stock_code": "000880",
-      "country": "KR"
+      "stock_code": "000880"
     },
     {
-      "id": "person_손재일",
-      "type": "Person",
-      "name": "손재일",
-      "role": "CEO",
-      "affiliated_company": "company_한화에어로스페이스",
-      "role_raw": "대표이사",
-      "role_label": "대표이사"
+      "id": "business_area_missile",
+      "type": "BusinessArea",
+      "name": "미사일"
+    },
+    {
+      "id": "business_area_military_weapon",
+      "type": "BusinessArea",
+      "name": "방산"
+    },
+    {
+      "id": "productservice_multilaunch_rocket",
+      "type": "ProductService",
+      "name": "다연장로켓"
+    },
+    {
+      "id": "productservice_guided_weapon",
+      "type": "ProductService",
+      "name": "정밀유도무기"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "방위산업"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_missile",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_012450",
+      "to": "business_area_military_weapon",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "productservice_multilaunch_rocket",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012450",
+      "to": "productservice_guided_weapon",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_missile",
+      "to": "industry_defense",
+      "evidence": "천무 다연장로켓 방산 사업과 관련",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_military_weapon",
+      "to": "industry_defense",
+      "evidence": "천무 다연장로켓 방산 사업과 관련",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_multilaunch_rocket",
+      "to": "business_area_military_weapon",
+      "evidence": "천무 다연장로켓은 정밀유도무기 방산 사업에 속함",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "productservice_guided_weapon",
+      "to": "business_area_military_weapon",
+      "evidence": "천무 다연장로켓은 정밀유도무기 방산 사업에 속함",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    }
+  ]
 }

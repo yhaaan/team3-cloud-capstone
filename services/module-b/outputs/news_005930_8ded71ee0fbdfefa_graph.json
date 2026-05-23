@@ -2,35 +2,144 @@
   "source_id": "news_005930_8ded71ee0fbdfefa",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "주요 사업은 반도체, 스마트폰, 디스플레이 등 전자제품 생산 및 판매업이다."
     },
     {
-      "id": "company_db",
-      "type": "Company",
-      "name": "DB",
-      "stock_code": "012030"
-    },
-    {
-      "id": "company_kia",
+      "id": "company_000270",
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
     },
     {
-      "id": "company_hyundai_construction",
+      "id": "company_000720",
       "type": "Company",
       "name": "현대건설",
       "stock_code": "000720"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "memory"
+    },
+    {
+      "id": "business_area_smartphone",
+      "type": "BusinessArea",
+      "name": "smartphone"
+    },
+    {
+      "id": "product_service_DRAM",
+      "type": "ProductService",
+      "name": "DRAM"
+    },
+    {
+      "id": "product_service_OLED",
+      "type": "ProductService",
+      "name": "OLED"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_memory",
+      "evidence": "삼성전자 주가는 지난해 10월 10만 원 선을 돌파한 데 이어 지난 2월에는 20만 원 선마저 넘어서며...",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_smartphone",
+      "evidence": "삼성전자 주가는 지난해 10월 10만 원 선을 돌파한 데 이어 지난 2월에는 20만 원 선마저 넘어서며...",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_DRAM",
+      "evidence": "삼성전자 주가는 지난해 10월 10만 원 선을 돌파한 데 이어 지난 2월에는 20만 원 선마저 넘어서며...",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_OLED",
+      "evidence": "삼성전자 주가는 지난해 10월 10만 원 선을 돌파한 데 이어 지난 2월에는 20만 원 선마저 넘어서며...",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 산업 내에서 메모리 분야는 삼성전자의 주력 사업 중 하나이다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_smartphone",
+      "to": "industry_semiconductor",
+      "evidence": "스마트폰 사업 역시 삼성전자가 속한 광범위한 전자 및 반도체 산업과 관련 있다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_DRAM",
+      "to": "business_area_memory",
+      "evidence": "DRAM은 메모리 사업 부문의 주요 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_OLED",
+      "to": "business_area_smartphone",
+      "evidence": "OLED는 스마트폰에 주로 사용되는 디스플레이 기술이다.",
+      "date": "",
+      "evidence_source_id": "news_005930_8ded71ee0fbdfefa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2147755",
+      "evidence_published_at": "2026-05-12T09:49:00+09:00"
+    }
+  ]
 }

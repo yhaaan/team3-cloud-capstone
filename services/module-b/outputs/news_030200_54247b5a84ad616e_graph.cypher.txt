@@ -1,0 +1,49 @@
+// node: company_030200
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_030200", "type": "Company", "name": "KT", "stock_code": "030200", "description": "KT는 통신 및 ICT 관련 서비스와 플랫폼 비즈니스를 운영하는 기업이다."}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: business_area_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_platform_business", "type": "BusinessArea", "name": "플랫폼 비즈니스"}
+
+// node: industry_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform", "type": "Industry", "name": "플랫폼"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_030200", "to_id": "business_area_platform_business", "properties": {"evidence": "KT는 통신 및 ICT 관련 서비스와 플랫폼 비즈니스를 운영하는 기업이다.", "date": "", "evidence_source_id": "news_030200_54247b5a84ad616e", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150028", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_platform_business", "to_id": "industry_platform", "properties": {"evidence": "KT는 통신 및 ICT 관련 서비스와 플랫폼 비즈니스를 운영하는 기업이다.", "date": "", "evidence_source_id": "news_030200_54247b5a84ad616e", "evidence_source_type": "news", "evidence_source_url": "https://www.xportsnews.com/article/2150028", "evidence_published_at": "2026-05-17T14:23:00+09:00"}}

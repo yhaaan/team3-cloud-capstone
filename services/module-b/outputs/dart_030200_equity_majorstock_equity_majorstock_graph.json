@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_030200_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "KT는 통신 및 디지털 플랫폼 서비스를 제공하는 국내 대표 통신기업입니다."
+    },
+    {
+      "id": "industry_telecommunications",
+      "type": "Industry",
+      "name": "telecommunications"
+    },
+    {
+      "id": "business_area_platform_business",
+      "type": "BusinessArea",
+      "name": "platform business"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_platform_business",
+      "evidence": "KT는 통신 및 디지털 플랫폼 서비스를 제공하는 국내 대표 통신기업입니다.",
+      "date": "2026-02-09",
+      "evidence_source_id": "dart_030200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000263",
+      "evidence_published_at": "2026-02-09"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_platform_business",
+      "to": "industry_telecommunications",
+      "evidence": "KT는 통신 및 디지털 플랫폼 서비스를 제공하는 국내 대표 통신기업입니다.",
+      "date": "2026-02-09",
+      "evidence_source_id": "dart_030200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000263",
+      "evidence_published_at": "2026-02-09"
+    }
+  ]
+}

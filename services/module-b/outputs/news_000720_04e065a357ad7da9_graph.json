@@ -2,77 +2,162 @@
   "source_id": "news_000720_04e065a357ad7da9",
   "entities": [
     {
-      "id": "company_hyundai_construction",
-      "type": "Company",
-      "name": "현대건설",
-      "stock_code": "000720"
-    },
-    {
-      "id": "company_dl_e_c",
-      "type": "Company",
-      "name": "DL이앤씨",
-      "stock_code": "375500"
-    },
-    {
-      "id": "company_gs_construction",
-      "type": "Company",
-      "name": "GS건설",
-      "stock_code": "006360"
-    },
-    {
-      "id": "company_daewoo_construction",
-      "type": "Company",
-      "name": "대우건설",
-      "stock_code": "047040"
-    },
-    {
-      "id": "company_samsung_corporation",
+      "id": "company_028260",
       "type": "Company",
       "name": "삼성물산",
+      "description": "건설 부문에서 프로젝트 수행 및 준공을 주력으로 하는 건설사",
       "stock_code": "028260"
     },
     {
-      "id": "company_samsung_electronics",
+      "id": "company_000720",
       "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
+      "name": "현대건설",
+      "description": "에너지·건설 분야 대형 프로젝트 수행 및 수주 전문 기업",
+      "stock_code": "000720"
     },
     {
-      "id": "company_ipark_hyundai_industrial_development",
+      "id": "company_047040",
+      "type": "Company",
+      "name": "대우건설",
+      "description": "건축사업 부문 수익성 개선과 재개발·재건축 수주를 하는 건설사",
+      "stock_code": "047040"
+    },
+    {
+      "id": "company_375500",
+      "type": "Company",
+      "name": "DL이앤씨",
+      "description": "도시정비, 인프라, 플랜트 등 선별적 수주 전략과 수익성 중심 사업 수행",
+      "stock_code": "375500"
+    },
+    {
+      "id": "company_294870",
       "type": "Company",
       "name": "IPARK현대산업개발",
+      "description": "고마진 대형 사업장 중심의 주택 건설 및 수익성 높은 사업 수행",
       "stock_code": "294870"
     },
     {
-      "id": "company_dl",
+      "id": "company_006360",
       "type": "Company",
-      "name": "DL",
-      "stock_code": "000210"
+      "name": "GS건설",
+      "description": "건축·주택사업과 국내외 신규 수주 중심의 종합건설사",
+      "stock_code": "006360"
     },
     {
-      "id": "company_seosan",
-      "type": "Company",
-      "name": "서산",
-      "stock_code": "079650"
+      "id": "business_area_건설",
+      "type": "BusinessArea",
+      "name": "건설"
     },
     {
-      "id": "company_shinheung",
-      "type": "Company",
-      "name": "신흥",
-      "stock_code": "004080"
+      "id": "business_area_에너지",
+      "type": "BusinessArea",
+      "name": "에너지"
     },
     {
-      "id": "company_efnguide",
-      "type": "Company",
-      "name": "에프앤가이드",
-      "stock_code": "064850"
-    },
-    {
-      "id": "company_gs",
-      "type": "Company",
-      "name": "GS",
-      "stock_code": "078930"
+      "id": "industry_건설",
+      "type": "Industry",
+      "name": "건설"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_028260",
+      "to": "business_area_건설",
+      "evidence": "삼성물산 건설부문·현대건설이 주춤한 반면, 대우건설·DL이앤씨·GS건설·IPARK현대산업개발은 성장세를 보였다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "business_area_건설",
+      "evidence": "현대건설은 1분기 연결실적(잠정) 집계 결과 영업이익 1809억 원, 매출 6조2813억 원을 기록했다.  대형 프로젝트 매출 반영 시차와 판관비 증가 영향이 겹쳐 실적 감소세를 초래한 것으로 분석된다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000720",
+      "to": "business_area_에너지",
+      "evidence": "포천양수발전소·완도금일 해상풍력 사전착수역무 등 에너지 부문에서 성과를 거뒀다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_047040",
+      "to": "business_area_건설",
+      "evidence": "대우건설은 영업이익 2556억 원... 이 같은 호조세는 건축사업 부문 수익성 개선이 가시적으로 나타난 성과로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_375500",
+      "to": "business_area_건설",
+      "evidence": "DL이앤씨는 올해 1분기 국내외 양방향에서 의미 있는 성과를 거뒀다. 도시정비·인프라·플랜트 전반 고른 수주 성과를 보인 것.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_294870",
+      "to": "business_area_건설",
+      "evidence": "IPARK현대산업개발은 고마진 대형 사업장의 포트폴리오가 고도화된 덕분이다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_006360",
+      "to": "business_area_건설",
+      "evidence": "GS건설은 건축·주택사업본부 매출 하향에도 불구, 국내외 신규 수주 달성하며 안정적 성과를 보였다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_건설",
+      "to": "industry_건설",
+      "evidence": "건설업계 전반 올해 1분기는 불안정한 건설환경 속 체질개선을 위한 숨 고르기의 시기, 그리고 그간 성과의 실질 반영이 공존한 시기로 해석된다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_에너지",
+      "to": "industry_건설",
+      "evidence": "포천양수발전소·완도금일 해상풍력 사전착수역무 등 에너지 부문에서 성과를 거뒀다.",
+      "date": "",
+      "evidence_source_id": "news_000720_04e065a357ad7da9",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=120583",
+      "evidence_published_at": "2026-05-07T15:40:00+09:00"
+    }
+  ]
 }

@@ -1,0 +1,58 @@
+// node: company_064400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064400", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400"}
+
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550"}
+
+// node: person_구광모
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_구광모", "type": "Person", "name": "구광모"}
+
+// node: person_구연수
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_구연수", "type": "Person", "name": "구연수"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003550", "to_id": "company_064400", "properties": {"evidence": "LG씨엔에스의 최대주주 관련 인물/법인은 (주)엘지, 관계는 최대주주, 당기말 보유주식수는 43,557,218주, 지분율은 44.96%.", "date": "2026-03-16", "evidence_source_id": "dart_064400_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000832", "evidence_published_at": "2026-03-16"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_구광모", "to_id": "company_064400", "properties": {"evidence": "LG씨엔에스의 최대주주 관련 인물/법인은 구광모, 관계는 특수관계인, 당기말 보유주식수는 972,600주, 지분율은 1.00%.", "date": "2026-03-16", "evidence_source_id": "dart_064400_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000832", "evidence_published_at": "2026-03-16"}}
+
+// relation: AFFILIATED_WITH
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:AFFILIATED_WITH]->(target)
+SET r += $properties
+
+:params {"from_id": "person_구연수", "to_id": "company_064400", "properties": {"evidence": "LG씨엔에스의 최대주주 관련 인물/법인은 구연수, 관계는 특수관계인, 당기말 보유주식수는 575주, 지분율은 0.00%.", "date": "2026-03-16", "evidence_source_id": "dart_064400_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000832", "evidence_published_at": "2026-03-16"}}

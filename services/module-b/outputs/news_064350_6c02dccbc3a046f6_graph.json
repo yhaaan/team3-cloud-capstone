@@ -2,35 +2,470 @@
   "source_id": "news_064350_6c02dccbc3a046f6",
   "entities": [
     {
-      "id": "company_셀트리온",
+      "id": "company_068270",
       "type": "Company",
       "name": "셀트리온",
-      "stock_code": "068270"
+      "stock_code": "068270",
+      "description": "바이오시밀러 개발 및 위탁생산(CMO) 중심의 바이오의약품 사업 운영"
     },
     {
-      "id": "company_현대로템",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
-      "stock_code": "064350"
+      "stock_code": "064350",
+      "description": "방산과 철도 레일솔루션 등 지상군과 철도 분야 사업 강점"
     },
     {
-      "id": "company_SK하이닉스",
+      "id": "company_000660",
       "type": "Company",
       "name": "SK하이닉스",
-      "stock_code": "000660"
+      "stock_code": "000660",
+      "description": "메모리 반도체, DRAM 및 HBM 제품 중심의 반도체 사업 영위"
     },
     {
-      "id": "company_뷰웍스",
+      "id": "company_100120",
       "type": "Company",
       "name": "뷰웍스",
-      "stock_code": "100120"
+      "stock_code": "100120",
+      "description": "디지털 X-레이 검출기 및 맘모그래피, 디지털 병리 스캐너 등 의료기기"
     },
     {
-      "id": "company_SK",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
       "stock_code": "034730"
+    },
+    {
+      "id": "business_area_biosimilar",
+      "type": "BusinessArea",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "business_area_cmo",
+      "type": "BusinessArea",
+      "name": "위탁생산"
+    },
+    {
+      "id": "business_area_defense_solution",
+      "type": "BusinessArea",
+      "name": "방산"
+    },
+    {
+      "id": "business_area_rail_solution",
+      "type": "BusinessArea",
+      "name": "철도"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "메모리"
+    },
+    {
+      "id": "business_area_medical_device",
+      "type": "BusinessArea",
+      "name": "의료기기"
+    },
+    {
+      "id": "product_service_biosimilar",
+      "type": "ProductService",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "product_service_cmo",
+      "type": "ProductService",
+      "name": "위탁생산"
+    },
+    {
+      "id": "product_service_k2_tank",
+      "type": "ProductService",
+      "name": "K-2 전차"
+    },
+    {
+      "id": "product_service_subway_car",
+      "type": "ProductService",
+      "name": "지하철 전동차"
+    },
+    {
+      "id": "product_service_lpddr6_dram",
+      "type": "ProductService",
+      "name": "LPDDR6 DRAM"
+    },
+    {
+      "id": "product_service_hbm",
+      "type": "ProductService",
+      "name": "HBM"
+    },
+    {
+      "id": "product_service_digital_xray_detector",
+      "type": "ProductService",
+      "name": "디지털 X-레이 검출기"
+    },
+    {
+      "id": "product_service_mammography",
+      "type": "ProductService",
+      "name": "맘모그래피"
+    },
+    {
+      "id": "product_service_digital_pathology_scanner",
+      "type": "ProductService",
+      "name": "디지털 병리 스캐너"
+    },
+    {
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
+    },
+    {
+      "id": "industry_defense",
+      "type": "Industry",
+      "name": "defense"
+    },
+    {
+      "id": "industry_rail",
+      "type": "Industry",
+      "name": "rail"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "industry_medical_device",
+      "type": "Industry",
+      "name": "medical device"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_biosimilar",
+      "evidence": "성장의 핵심은 신규 바이오시밀러였다. 전체 매출에서 고마진 신규 품목이 차지하는 비중이 50.8%로 전년 동기 대비 9.7%포인트 상승했고",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_068270",
+      "to": "business_area_cmo",
+      "evidence": "여기에 테바향 위탁생산(CMO) 매출 962억 원이 더해지며 외형 성장에 기여했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_biosimilar",
+      "evidence": "신규 바이오시밀러가 끌어올린 영업이익률 28% 셀트리온이 1분기에 영업이익 3,219억 원을 기록하며...",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_cmo",
+      "evidence": "테바향 위탁생산(CMO) 매출 962억 원이 더해지며 외형 성장에 기여했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_defense_solution",
+      "evidence": "현대로템 주가가 1분기 실적 발표 이후 12% 급등...유진투자증권은 디펜스솔루션의 하반기 대규모 해외 수주 가시성에 주목",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_064350",
+      "to": "business_area_rail_solution",
+      "evidence": "현대로템 주가가 1분기 실적 발표 이후 12% 급등...레일솔루션의 수익성 개선 기대감에 주목",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_k2_tank",
+      "evidence": "방산 부문에서는 하반기 이라크와 페루 정치 일정 안정화 후 K-2 전차 수주가 본격화될 전망이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_subway_car",
+      "evidence": "미국 뉴욕 메트로(NYCT/MTA) 전동차 사업은 기본 1,140량에 옵션 1,250량을 더해 약 10조 원 규모의 메가 프로젝트",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스 목표주가를 200만 원에서 270만 원으로 35% 상향...투자의견 상향의 핵심 근거는 서버 CPU 수요 초강세다. CPU 수요는 곧 DDR·LPDDR 등 컨벤셔널 DRAM 수요로 직결된다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_lpddr6_dram",
+      "evidence": "동사는 1c 공정 기반 16Gb LPDDR6 DRAM을 공개한 바 있으며",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000660",
+      "to": "product_service_hbm",
+      "evidence": "미래에셋증권은 2026년 HBM 매출액을 54조 원(+72% YoY), 2027년에는 75조 원으로 전망했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_100120",
+      "to": "business_area_medical_device",
+      "evidence": "뷰웍스는 디지털 X-레이 디텍터(검출기) 전문기업이며 맘모그래피와 디지털 병리 스캐너 등 미래 성장 동력이 포함된 기타 사업",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_100120",
+      "to": "product_service_digital_xray_detector",
+      "evidence": "디지털 X-레이 디텍터(검출기) 전문기업 뷰웍스",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_100120",
+      "to": "product_service_mammography",
+      "evidence": "올해 성장을 이끌 주력 분야로는 맘모그래피(유방촬영기)",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_100120",
+      "to": "product_service_digital_pathology_scanner",
+      "evidence": "디지털 병리 스캐너 등 미래 성장 동력이 포함된 기타 사업이 견조한 흐름을 보이고 있다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_biosimilar",
+      "to": "industry_bio",
+      "evidence": "바이오시밀러는 특허가 만료된 오리지널 바이오의약품을 복제한 후속 의약품으로...",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_cmo",
+      "to": "industry_bio",
+      "evidence": "위탁생산(CMO) 매출이 바이오의약품 사업의 외형 성장에 기여했다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_defense_solution",
+      "to": "industry_defense",
+      "evidence": "디펜스솔루션의 대규모 해외 수주가 기대됨",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_rail_solution",
+      "to": "industry_rail",
+      "evidence": "레일솔루션 수주잔고는 19조 원에 달하며 해외 철도 프로젝트 매출이 본격 인식된다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스는 메모리 제품을 중심으로 반도체 사업을 영위한다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_medical_device",
+      "to": "industry_medical_device",
+      "evidence": "뷰웍스는 의료기기 전문기업으로 디지털 X-레이 검출기, 맘모그래피, 디지털 병리 스캐너를 생산한다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_biosimilar",
+      "to": "business_area_biosimilar",
+      "evidence": "바이오시밀러는 바이오시밀러 사업부문의 구체적 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cmo",
+      "to": "business_area_cmo",
+      "evidence": "위탁생산은 CMO 사업부문에서 생산되는 서비스이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_k2_tank",
+      "to": "business_area_defense_solution",
+      "evidence": "K-2 전차는 방산 디펜스솔루션 사업부문에서 생산된다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_subway_car",
+      "to": "business_area_rail_solution",
+      "evidence": "뉴욕 메트로 전동차는 철도 레일솔루션 사업부문의 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_lpddr6_dram",
+      "to": "business_area_memory",
+      "evidence": "LPDDR6 DRAM은 메모리 사업부문의 DRAM 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_hbm",
+      "to": "business_area_memory",
+      "evidence": "HBM 공급 확대가 SK하이닉스 메모리 사업부문 핵심이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_digital_xray_detector",
+      "to": "business_area_medical_device",
+      "evidence": "디지털 X-레이 검출기 제품은 의료기기 사업부문의 핵심 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_mammography",
+      "to": "business_area_medical_device",
+      "evidence": "맘모그래피는 의료기기 주요 제품이다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_digital_pathology_scanner",
+      "to": "business_area_medical_device",
+      "evidence": "디지털 병리 스캐너도 의료기기 사업부문에 속한다.",
+      "date": "",
+      "evidence_source_id": "news_064350_6c02dccbc3a046f6",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=112451",
+      "evidence_published_at": "2026-05-07T18:02:00+09:00"
+    }
+  ]
 }

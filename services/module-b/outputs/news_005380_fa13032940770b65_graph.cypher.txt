@@ -1,79 +1,280 @@
-// node: company_hyundai
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hyundai", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380", "description": "자동차와 로보틱스·AI 소프트웨어·스마트팩토리 관련 핵심 협력사 중심 투자 대상"}
 
-// node: company_hyundai_mobis
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_mobis", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
-
-// node: company_kia
+// node: company_012330
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_kia", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_012330", "type": "Company", "name": "현대모비스", "stock_code": "012330"}
 
-// node: company_rainbowrobotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_rainbowrobotics", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
-
-// node: company_lginnotek
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lginnotek", "type": "Company", "name": "LG이노텍", "stock_code": "011070"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
 
-// node: company_hyundai_autoever
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_hyundai_autoever", "type": "Company", "name": "현대오토에버", "stock_code": "307950"}
-
-// node: company_lgcns
+// node: company_277810
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_lgcns", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400"}
+:params {"id": "company_277810", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
 
-// node: company_dosanrobotics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_dosanrobotics", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
-
-// node: company_robotis
+// node: company_011070
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_robotis", "type": "Company", "name": "로보티즈", "stock_code": "108490"}
+:params {"id": "company_011070", "type": "Company", "name": "LG이노텍", "stock_code": "011070"}
 
-// node: company_sl
+// node: company_307950
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sl", "type": "Company", "name": "에스엘", "stock_code": "005850"}
+:params {"id": "company_307950", "type": "Company", "name": "현대오토에버", "stock_code": "307950"}
+
+// node: company_064400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_064400", "type": "Company", "name": "LG씨엔에스", "stock_code": "064400"}
+
+// node: company_454910
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_454910", "type": "Company", "name": "두산로보틱스", "stock_code": "454910"}
+
+// node: company_108490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_108490", "type": "Company", "name": "로보티즈", "stock_code": "108490"}
+
+// node: company_005850
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005850", "type": "Company", "name": "에스엘", "stock_code": "005850"}
+
+// node: business_area_robotics_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics_ai", "type": "BusinessArea", "name": "로보틱스·AI 소프트웨어"}
+
+// node: business_area_smart_factory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_smart_factory", "type": "BusinessArea", "name": "스마트팩토리"}
+
+// node: business_area_physical_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_physical_ai", "type": "BusinessArea", "name": "피지컬 AI"}
+
+// node: business_area_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_automotive", "type": "BusinessArea", "name": "자동차"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "AI"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_automotive", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_robotics_ai", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_smart_factory", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "business_area_physical_ai", "properties": {"evidence": "이 ETF는 현대차그룹 핵심 계열사와 로봇·AI 전환 과정의 수혜가 기대되는 주요 협력 기업들까지 함께 담아 피지컬 AI 생태계 전반에 투자할 수 있도록 구성한 것이 특징이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_012330", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_277810", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011070", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_307950", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_064400", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_454910", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_108490", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005850", "to_id": "business_area_physical_ai", "properties": {"evidence": "이날 기준 주요 편입 예정 종목은 현대차(25.89%), 현대모비스(14.81%), 기아(13.77%), 레인보우로보틱스(9.59%), LG이노텍(9.27%), 현대오토에버(7.58%), LG씨엔에스(3.92%), 두산로보틱스(3.49%), 로보티즈(3.15%), 에스엘(1.81%) 등이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive", "to_id": "industry_automotive", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics_ai", "to_id": "industry_ai", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_smart_factory", "to_id": "industry_ai", "properties": {"evidence": "기존 자동차 ETF와 차별화된 전략을 내세워 내연기관 중심 자동차 산업 비중을 줄이고 로보틱스·AI 소프트웨어·스마트팩토리 관련 비중을 확대했다", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_physical_ai", "to_id": "industry_ai", "properties": {"evidence": "이 ETF는 현대차그룹 핵심 계열사와 로봇·AI 전환 과정의 수혜가 기대되는 주요 협력 기업들까지 함께 담아 피지컬 AI 생태계 전반에 투자할 수 있도록 구성한 것이 특징이다.", "date": "", "evidence_source_id": "news_005380_fa13032940770b65", "evidence_source_type": "news", "evidence_source_url": "http://www.smarttimes.co.kr/news/articleView.html?idxno=45439", "evidence_published_at": "2026-05-12T10:02:00+09:00"}}

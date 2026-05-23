@@ -1,23 +1,135 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "반도체 메모리 중심 사업으로 AI용 고대역폭메모리, 서버용 D램, 기업용 SSD 생산."}
 
-// node: company_sk
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sk", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_sk_hynix
+// node: company_034730
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_034730", "type": "Company", "name": "SK", "stock_code": "034730"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: business_area_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_memory", "type": "BusinessArea", "name": "메모리"}
+
+// node: product_service_high_bandwidth_memory
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_high_bandwidth_memory", "type": "ProductService", "name": "고대역폭메모리"}
+
+// node: product_service_dram
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_dram", "type": "ProductService", "name": "서버용 D램"}
+
+// node: product_service_ssd
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ssd", "type": "ProductService", "name": "기업용 SSD"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_memory", "properties": {"evidence": "특히 반도체를 담당하는 DS부문은 매출 81조7000억원, 영업이익 53조7000억원을 냈다. 회사 전체 이익의 대부분이 반도체에서 발생했다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_high_bandwidth_memory", "properties": {"evidence": "AI 데이터센터 투자가 폭발적으로 늘면서 고대역폭메모리, 서버용 D램, 기업용 SSD 수요가 동시에 커졌고, 공급 부족은 메모리 가격 상승으로 이어졌다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_dram", "properties": {"evidence": "AI 데이터센터 투자가 폭발적으로 늘면서 고대역폭메모리, 서버용 D램, 기업용 SSD 수요가 동시에 커졌고, 공급 부족은 메모리 가격 상승으로 이어졌다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "product_service_ssd", "properties": {"evidence": "AI 데이터센터 투자가 폭발적으로 늘면서 고대역폭메모리, 서버용 D램, 기업용 SSD 수요가 동시에 커졌고, 공급 부족은 메모리 가격 상승으로 이어졌다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_memory", "to_id": "industry_semiconductor", "properties": {"evidence": "메모리 반도체는 대표적인 경기순환 산업으로 분류됐다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_high_bandwidth_memory", "to_id": "business_area_memory", "properties": {"evidence": "골드만삭스도 삼성전자 실적 전망을 상향하며 메모리 가격 상승과 HBM 매출 확대를 주요 배경으로 제시했다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_dram", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자가 골드만삭스의 전망처럼 이익을 확대하려면 HBM4, 서버용 D램, 기업용 SSD뿐 아니라 첨단 패키징과 파운드리 경쟁력까지 함께 끌어올려야 한다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ssd", "to_id": "business_area_memory", "properties": {"evidence": "삼성전자가 골드만삭스의 전망처럼 이익을 확대하려면 HBM4, 서버용 D램, 기업용 SSD뿐 아니라 첨단 패키징과 파운드리 경쟁력까지 함께 끌어올려야 한다.", "date": "", "evidence_source_id": "news_005930_188baee7fe86ad3e", "evidence_source_type": "news", "evidence_source_url": "https://www.pressman.kr/news/articleView.html?idxno=101705", "evidence_published_at": "2026-05-07T20:38:00+09:00"}}

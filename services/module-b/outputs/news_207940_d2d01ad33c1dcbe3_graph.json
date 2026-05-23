@@ -2,39 +2,45 @@
   "source_id": "news_207940_d2d01ad33c1dcbe3",
   "entities": [
     {
-      "id": "company_samsung_biologics",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "글로벌 제약사 대상 의약품 위탁생산 전문기업"
     },
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     },
     {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
-    },
-    {
-      "id": "person_park_jae_sung",
-      "type": "Person",
-      "name": "박재성",
-      "role_raw": "삼성바이오로직스 노조위원장",
-      "role": "OTHER",
-      "role_label": "노조위원장"
-    },
-    {
-      "id": "person_hwang_yong_sik",
-      "type": "Person",
-      "name": "황용식",
-      "role_raw": "세종대 경영학부 교수",
-      "role": "OTHER",
-      "role_label": "세종대 경영학부 교수"
+      "id": "business_area_contract_manufacturing",
+      "type": "BusinessArea",
+      "name": "의약품 위탁생산"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_contract_manufacturing",
+      "evidence": "삼성바이오로직스 노사 갈등이 격화하고 있습니다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d2d01ad33c1dcbe3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605070088",
+      "evidence_published_at": "2026-05-07T19:14:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_contract_manufacturing",
+      "to": "industry_bio",
+      "evidence": "삼성바이오로직스 노사 갈등이 격화하고 있습니다.",
+      "date": "",
+      "evidence_source_id": "news_207940_d2d01ad33c1dcbe3",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sentv.co.kr/article/view/sentv202605070088",
+      "evidence_published_at": "2026-05-07T19:14:00+09:00"
+    }
+  ]
 }

@@ -1,32 +1,49 @@
-// node: company_기아
+// node: company_000270
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_기아", "type": "Company", "name": "기아", "stock_code": "000270"}
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270", "description": "자동차 정비 및 판매 대리점 사업 운영 지원과 전용 금융상품 협력 중심"}
 
-// node: company_현대차
+// node: company_005380
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
 
-// node: person_정원정
+// node: business_area_automotive_repair_and_sales
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Person`
+SET n:`BusinessArea`
 
-:params {"id": "person_정원정", "type": "Person", "name": "정원정", "role_raw": "국내사업본부장 부사장", "affiliated_company": "company_기아", "role": "VICE_PRESIDENT", "role_label": "부사장"}
+:params {"id": "business_area_automotive_repair_and_sales", "type": "BusinessArea", "name": "자동차 정비 및 판매"}
 
-// relation: AFFILIATED_WITH
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
 
 MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
-MERGE (source)-[r:AFFILIATED_WITH]->(target)
+MERGE (source)-[r:OPERATES_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "person_정원정", "to_id": "company_기아", "properties": {"evidence": "협약식은 서울 압구정동 기아 브랜드 체험관 '기아360'에서 열렸으며, 기아 국내사업본부장 정원정 부사장, 신한은행 장호식 CIB대기업그룹장(부행장) 등이 참석했다.", "date": "", "evidence_source_id": "news_000270_723096e317b741ec", "evidence_source_type": "news", "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840429", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}
+:params {"from_id": "company_000270", "to_id": "business_area_automotive_repair_and_sales", "properties": {"evidence": "기아와 신한은행이 자동차 정비 및 판매 대리점의 사업 운영 및 인프라 지원을 위해 의기투합했다.", "date": "", "evidence_source_id": "news_000270_723096e317b741ec", "evidence_source_type": "news", "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840429", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_automotive_repair_and_sales", "to_id": "industry_automotive", "properties": {"evidence": "기아와 신한은행이 자동차 정비 및 판매 대리점의 사업 운영 및 인프라 지원을 위해 의기투합했다.", "date": "", "evidence_source_id": "news_000270_723096e317b741ec", "evidence_source_type": "news", "evidence_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=840429", "evidence_published_at": "2026-05-12T09:20:00+09:00"}}

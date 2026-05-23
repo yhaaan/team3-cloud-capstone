@@ -1,23 +1,66 @@
-// node: company_samsung_electronics
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_samsung_electronics", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "히트펌프 보일러 신제품으로 전기 난방화 전환과 글로벌 시장 공략에 나서는 생활가전 기업"}
 
-// node: company_lg_electronics
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_lg_electronics", "type": "Company", "name": "LG전자", "stock_code": "066570"}
-
-// node: company_sk_hynix
+// node: company_066570
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk_hynix", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "company_066570", "type": "Company", "name": "LG전자", "stock_code": "066570", "description": "히트펌프 보일러 신제품과 유럽 기술력을 바탕으로 친환경 냉난방 시장을 선도하는 가전사"}
+
+// node: company_000660
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000660", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+
+// node: business_area_heat_pump_boiler
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_heat_pump_boiler", "type": "BusinessArea", "name": "히트펌프 보일러"}
+
+// node: industry_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy", "type": "Industry", "name": "에너지"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_heat_pump_boiler", "properties": {"evidence": "삼성전자(005930)와 LG전자(066570)가 난방 효율을 획기적으로 높이면서 탄소 배출도 줄이는 보일러 신제품 '히트펌프 ' 시장에서 본격적으로 맞붙는다.", "date": "", "evidence_source_id": "news_005930_8798e292bf011a5f", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038738?ref=naver", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_066570", "to_id": "business_area_heat_pump_boiler", "properties": {"evidence": "삼성전자(005930)와 LG전자(066570)가 난방 효율을 획기적으로 높이면서 탄소 배출도 줄이는 보일러 신제품 '히트펌프 ' 시장에서 본격적으로 맞붙는다.", "date": "", "evidence_source_id": "news_005930_8798e292bf011a5f", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038738?ref=naver", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_heat_pump_boiler", "to_id": "industry_energy", "properties": {"evidence": "히트펌프 보일러는 기름·가스 보일러와 달리 원자력·태양광·풍력 등으로 생산된 전기를 사용할 수 있다.", "date": "", "evidence_source_id": "news_005930_8798e292bf011a5f", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20038738?ref=naver", "evidence_published_at": "2026-04-29T17:46:00+09:00"}}

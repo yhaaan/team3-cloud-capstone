@@ -1,0 +1,109 @@
+// node: company_039490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_039490", "type": "Company", "name": "키움증권", "stock_code": "039490", "description": "키움증권은 다양한 상장 계열회사에 대한 출자를 통해 증권 중개 및 금융 서비스 사업을 영위한다."}
+
+// node: company_032190
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_032190", "type": "Company", "name": "다우데이타", "stock_code": "032190"}
+
+// node: company_023590
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_023590", "type": "Company", "name": "다우기술", "stock_code": "023590"}
+
+// node: company_020120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_020120", "type": "Company", "name": "키다리스튜디오", "stock_code": "020120"}
+
+// node: company_143240
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_143240", "type": "Company", "name": "사람인", "stock_code": "143240"}
+
+// node: company_053300
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_053300", "type": "Company", "name": "한국정보인증", "stock_code": "053300"}
+
+// node: company_273060
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_273060", "type": "Company", "name": "와이즈버즈", "stock_code": "273060"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_032190", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_023590", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_020120", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_143240", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_053300", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_039490", "to_id": "company_273060", "properties": {"evidence": "키움증권의 상장 계열회사 후보로 다우데이타, 다우기술, 키다리스튜디오, 사람인, 한국정보인증, 와이즈버즈 등이 탐지되었다.", "date": "2026-03-17", "evidence_source_id": "dart_039490_affiliate_status_20260317000838", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000838", "evidence_published_at": "2026-03-17"}}

@@ -1,47 +1,180 @@
-// node: company_현대건설
+// node: company_000720
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대건설", "type": "Company", "name": "현대건설", "stock_code": "000720"}
+:params {"id": "company_000720", "type": "Company", "name": "현대건설", "stock_code": "000720", "description": "초고급 미래형 주거 플랫폼과 AI 이동 서비스, 로보틱스, 커뮤니티, 특화 설계 중심 건설 사업을 영위"}
 
-// node: company_SK
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_SK", "type": "Company", "name": "SK", "stock_code": "034730"}
-
-// node: company_SK하이닉스
+// node: business_area_압구정_미래_주거_플랫폼
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_SK하이닉스", "type": "Company", "name": "SK하이닉스", "stock_code": "000660"}
+:params {"id": "business_area_압구정_미래_주거_플랫폼", "type": "BusinessArea", "name": "미래 주거 플랫폼"}
 
-// node: company_레인보우로보틱스
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_레인보우로보틱스", "type": "Company", "name": "레인보우로보틱스", "stock_code": "277810"}
-
-// node: company_삼성전자
+// node: business_area_커뮤니티_시설
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "business_area_커뮤니티_시설", "type": "BusinessArea", "name": "커뮤니티 시설"}
 
-// node: company_현대차
+// node: business_area_수요응답교통
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_현대차", "type": "Company", "name": "현대차", "stock_code": "005380"}
+:params {"id": "business_area_수요응답교통", "type": "BusinessArea", "name": "수요응답교통"}
+
+// node: industry_건설
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_건설", "type": "Industry", "name": "건설"}
+
+// node: product_service_AI_기반_무인셔틀
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_AI_기반_무인셔틀", "type": "ProductService", "name": "AI 기반 무인셔틀"}
+
+// node: product_service_로보틱스_보안로봇
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_로보틱스_보안로봇", "type": "ProductService", "name": "로보틱스 보안로봇"}
+
+// node: product_service_펜트하우스
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_펜트하우스", "type": "ProductService", "name": "펜트하우스"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_압구정_미래_주거_플랫폼", "properties": {"evidence": "현대건설이 초고급 미래형 주거 청사진을 공개했다. ...압구정을 '슈퍼리치 맞춤형 미래 주거 플랫폼'으로 탈바꿈시키겠다는 구상이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_커뮤니티_시설", "properties": {"evidence": "가장 눈길을 끈 공간은 순환형 실내 커뮤니티 시설인 '더 써클 원'이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "business_area_수요응답교통", "properties": {"evidence": "홍보관 한쪽에는 AI 기반 수요응답교통(DRT) 무인셔틀이 전시됐다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "industry_건설", "properties": {"evidence": "서울 한강변 핵심 재건축 사업지인 압구정3구역 수주전에 단독 참여한 현대건설이 ...", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "product_service_AI_기반_무인셔틀", "properties": {"evidence": "홍보관 한쪽에는 AI 기반 수요응답교통(DRT) 무인셔틀이 전시됐다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "product_service_로보틱스_보안로봇", "properties": {"evidence": "현장에서는 단지 내부와 외부를 순찰하는 로봇개도 함께 공개됐다. 24시간 실시간 감시를 통해 보안 기능을 수행하고 화재 감지 기능까지 갖춘 것이 특징이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000720", "to_id": "product_service_펜트하우스", "properties": {"evidence": "초고급 주거 상품도 전면에 내세웠다. 일반적인 스카이 커뮤니티 대신 54가구 규모 펜트하우스를 배치했고, 65층 최상층에는 '대한민국 0.01%'를 겨냥한 '트리플렉스 슈퍼펜트하우스'를 계획했다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_압구정_미래_주거_플랫폼", "to_id": "industry_건설", "properties": {"evidence": "현대건설은 이번 사업에 단독 입찰해 ... 미래 주거 환경을 직접 체험할 수 있도록 구성한 것이 특징이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_커뮤니티_시설", "to_id": "business_area_압구정_미래_주거_플랫폼", "properties": {"evidence": "가장 눈길을 끈 공간은 순환형 실내 커뮤니티 시설인 '더 써클 원'이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_수요응답교통", "to_id": "business_area_압구정_미래_주거_플랫폼", "properties": {"evidence": "홍보관 한쪽에는 AI 기반 수요응답교통(DRT) 무인셔틀이 전시됐다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_AI_기반_무인셔틀", "to_id": "business_area_수요응답교통", "properties": {"evidence": "홍보관 한쪽에는 AI 기반 수요응답교통(DRT) 무인셔틀이 전시됐다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_로보틱스_보안로봇", "to_id": "business_area_압구정_미래_주거_플랫폼", "properties": {"evidence": "단지 내부와 외부를 순찰하는 로봇개도 함께 공개됐다. 보안 기능을 수행하고 화재 감지 기능까지 갖춘 것이 특징이다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_펜트하우스", "to_id": "business_area_압구정_미래_주거_플랫폼", "properties": {"evidence": "초고급 주거 상품도 전면에 내세웠다. 일반적인 스카이 커뮤니티 대신 54가구 규모 펜트하우스를 배치했다.", "date": "", "evidence_source_id": "news_000720_46ddf9896f2474d9", "evidence_source_type": "news", "evidence_source_url": "https://www.sedaily.com/article/20042817?ref=naver", "evidence_published_at": "2026-05-12T08:01:00+09:00"}}

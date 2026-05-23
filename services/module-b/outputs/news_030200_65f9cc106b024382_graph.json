@@ -1,0 +1,52 @@
+{
+  "source_id": "news_030200_65f9cc106b024382",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "KT는 통신과 미디어, ICT 플랫폼 사업을 주요 영업 영역으로 한다"
+    },
+    {
+      "id": "company_000880",
+      "type": "Company",
+      "name": "한화",
+      "stock_code": "000880"
+    },
+    {
+      "id": "industry_platform",
+      "type": "Industry",
+      "name": "platform"
+    },
+    {
+      "id": "business_area_ict_platform",
+      "type": "BusinessArea",
+      "name": "ICT 플랫폼"
+    }
+  ],
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_030200",
+      "to": "business_area_ict_platform",
+      "evidence": "KT는 통신과 미디어, ICT 플랫폼 사업을 주요 영업 영역으로 한다",
+      "date": "",
+      "evidence_source_id": "news_030200_65f9cc106b024382",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150063",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_ict_platform",
+      "to": "industry_platform",
+      "evidence": "KT는 통신과 미디어, ICT 플랫폼 사업을 주요 영업 영역으로 한다",
+      "date": "",
+      "evidence_source_id": "news_030200_65f9cc106b024382",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.xportsnews.com/article/2150063",
+      "evidence_published_at": "2026-05-17T15:08:00+09:00"
+    }
+  ]
+}

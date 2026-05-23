@@ -1,0 +1,136 @@
+// node: company_011210
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210", "description": "전통 자동차 부품을 넘어 미래모빌리티, 로보틱스, 열관리 솔루션 등 신성장 사업에 집중"}
+
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// node: business_area_mobility_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility_solution", "type": "BusinessArea", "name": "모빌리티 솔루션"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: business_area_heat_management_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_heat_management_system", "type": "BusinessArea", "name": "열관리 시스템"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_mobility_solution", "properties": {"evidence": "현대위아가 사업 체질개선에 속도를 내고 있다. 전통적 자동차 부품 중심 사업 구조에서 벗어나 미래모빌리티·로보틱스·방산을 기반으로 수익성 개선에 청신호를 켰다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_robotics", "properties": {"evidence": "전통적 자동차 부품 중심 사업 구조에서 벗어나 미래모빌리티·로보틱스·방산을 기반으로 수익성 개선에 청신호를 켰다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_heat_management_system", "properties": {"evidence": "현대위아는 지난해 7월 창사 이래 49년간 이어오던 공작기계 사업 부문을 분할·매각하고 열관리시스템(TMS) 등 미래모빌리티 솔루션과 로보틱스를 미래 신성장 사업으로 지목했다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_heat_management_system", "properties": {"evidence": "전기차용 열관리 시스템은 기술적 난이도가 높다. 현대위아는 전기차를 중심으로 열관리 시스템을 양산한 뒤 하이브리드·내연기관차로 영역을 확대할 계획이다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_robotics", "properties": {"evidence": "모빌리티 솔루션 사업도 미래 사업의 선봉이다. 자율주행 물류로봇(AMR), 주차로봇, 협동로봇 등이 핵심이다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000270", "to_id": "business_area_heat_management_system", "properties": {"evidence": "지난해 7월에는 전기차용 통합 열관리 시스템을 기아 PV5에 납품하기 시작했다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility_solution", "to_id": "industry_automotive", "properties": {"evidence": "현대위아가 사업 체질개선에 속도를 내고 있다. 전통적 자동차 부품 중심 사업 구조에서 벗어나 미래모빌리티·로보틱스·방산을 기반으로 수익성 개선에 청신호를 켰다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_automotive", "properties": {"evidence": "전통적 자동차 부품 중심 사업 구조에서 벗어나 미래모빌리티·로보틱스·방산을 기반으로 수익성 개선에 청신호를 켰다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_heat_management_system", "to_id": "industry_automotive", "properties": {"evidence": "열관리 시스템은 전동화 차량의 에너지 효율을 극대화하는 핵심 기술이다.", "date": "", "evidence_source_id": "news_011210_10b0c921b9924762", "evidence_source_type": "news", "evidence_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=127036", "evidence_published_at": "2026-05-13T12:12:00+09:00"}}

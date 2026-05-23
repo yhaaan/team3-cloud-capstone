@@ -2,17 +2,244 @@
   "source_id": "news_009540_bc47af7dd893658a",
   "entities": [
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "stock_code": "009540",
+      "description": "친환경 선박, 해양 부문 중심 고수익 선박 매출 확대와 생산성 향상으로 사업 부문 성장"
     },
     {
-      "id": "company_hd현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "조선, 엔진기계, 해양플랜트 사업에서 생산성 확대와 규제 대응으로 실적 성장"
+    },
+    {
+      "id": "company_071970",
+      "type": "Company",
+      "name": "HD현대마린엔진",
+      "stock_code": "071970",
+      "description": "엔진 판매단가 상승과 인도 물량 증가, 부품 판매로 수익성 개선"
+    },
+    {
+      "id": "company_322000",
+      "type": "Company",
+      "name": "HD현대에너지솔루션",
+      "stock_code": "322000",
+      "description": "모듈 판매량 증대 및 판가 인상으로 매출 증가와 영업이익 흑자 전환"
+    },
+    {
+      "id": "business_area_shipbuilding",
+      "type": "BusinessArea",
+      "name": "조선"
+    },
+    {
+      "id": "business_area_engine_mechanics",
+      "type": "BusinessArea",
+      "name": "엔진기계"
+    },
+    {
+      "id": "business_area_offshore_plant",
+      "type": "BusinessArea",
+      "name": "해양플랜트"
+    },
+    {
+      "id": "business_area_energy_solution",
+      "type": "BusinessArea",
+      "name": "에너지솔루션"
+    },
+    {
+      "id": "product_service_environmental_ship",
+      "type": "ProductService",
+      "name": "친환경 선박"
+    },
+    {
+      "id": "product_service_multifuel_engine",
+      "type": "ProductService",
+      "name": "이중연료 엔진"
+    },
+    {
+      "id": "product_service_module",
+      "type": "ProductService",
+      "name": "모듈"
+    },
+    {
+      "id": "industry_shipbuilding",
+      "type": "Industry",
+      "name": "shipbuilding"
+    },
+    {
+      "id": "industry_energy",
+      "type": "Industry",
+      "name": "energy"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_009540",
+      "to": "business_area_shipbuilding",
+      "evidence": "HD한국조선해양이 올해 1분기 고수익 친환경 선박 매출 확대 등 전 사업 부문의 성장세에 힘입어 50% 이상의 영업이익 증가세를 기록했다.",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_009540",
+      "to": "product_service_environmental_ship",
+      "evidence": "고수익 친환경 선박 매출 비중 확대",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_shipbuilding",
+      "to": "industry_shipbuilding",
+      "evidence": "HD한국조선해양 조선 부문 관련 정보",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_shipbuilding",
+      "evidence": "통합 HD현대중공업은 매출액 5조9163억원, 영업이익 9054억원을 달성하며 실적 성장세를 이끌었다.",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_engine_mechanics",
+      "evidence": "엔진기계 부문은 매출액 7170억원, 영업이익 2181억원을 기록",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_329180",
+      "to": "business_area_offshore_plant",
+      "evidence": "해양플랜트 부문은 프로젝트 공정률 상승에 따른 수익 인식 확대와 비용 절감 효과",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_engine_mechanics",
+      "to": "industry_shipbuilding",
+      "evidence": "엔진기계 부문은 선박과 연관되므로 조선업 산업에 포함",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_offshore_plant",
+      "to": "industry_shipbuilding",
+      "evidence": "해양플랜트 부문은 해양 관련 조선 산업 영역",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_071970",
+      "to": "business_area_engine_mechanics",
+      "evidence": "HD현대마린엔진은 엔진 판매단가 상승, 엔진 인도 물량 증가, 부품 판매 증가가 수익성을 끌어올렸다.",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_071970",
+      "to": "product_service_multifuel_engine",
+      "evidence": "글로벌 친환경 규제 강화에 따른 이중연료 엔진 수요 확대와 판매 단가 상승",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_multifuel_engine",
+      "to": "business_area_engine_mechanics",
+      "evidence": "이중연료 엔진은 엔진기계 부문 제품",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_322000",
+      "to": "business_area_energy_solution",
+      "evidence": "HD현대에너지솔루션은 국내·외 모듈 판매량 증대 및 판가 인상 등에 힘입어 매출액은 87.6% 증가",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_322000",
+      "to": "product_service_module",
+      "evidence": "국내·외 모듈 판매량 증대",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_energy_solution",
+      "to": "industry_energy",
+      "evidence": "HD현대에너지솔루션 에너지솔루션 사업 부문 설명",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_module",
+      "to": "business_area_energy_solution",
+      "evidence": "모듈은 에너지솔루션 사업 부문 제품",
+      "date": "",
+      "evidence_source_id": "news_009540_bc47af7dd893658a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://it.chosun.com/news/articleView.html?idxno=2023092161700",
+      "evidence_published_at": "2026-05-07T21:22:00+09:00"
+    }
+  ]
 }

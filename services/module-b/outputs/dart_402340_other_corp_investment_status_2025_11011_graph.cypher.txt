@@ -1,26 +1,74 @@
-// node: company_sk스퀘어
+// node: company_402340
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_sk스퀘어", "type": "Company", "name": "SK스퀘어", "stock_code": "402340"}
+:params {"id": "company_402340", "type": "Company", "name": "SK스퀘어", "stock_code": "402340", "description": "경영참가 및 투자를 통해 다양한 IT, 플랫폼, 보안, 콘텐츠 사업을 영위"}
 
-// node: company_드림어스컴퍼니
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_드림어스컴퍼니", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
-
-// node: company_인크로스
+// node: company_060570
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_인크로스", "type": "Company", "name": "인크로스", "stock_code": "216050"}
+:params {"id": "company_060570", "type": "Company", "name": "드림어스컴퍼니", "stock_code": "060570"}
+
+// node: company_452400
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_452400", "type": "Company", "name": "이닉스", "stock_code": "452400"}
+
+// node: company_216050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_216050", "type": "Company", "name": "인크로스", "stock_code": "216050"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: Industry_IT
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "Industry_IT", "type": "Industry", "name": "IT"}
+
+// node: BusinessArea_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_platform_business", "type": "BusinessArea", "name": "플랫폼 사업"}
+
+// node: BusinessArea_investment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "BusinessArea_investment", "type": "BusinessArea", "name": "투자 사업"}
+
+// node: ProductService_digital_content
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "ProductService_digital_content", "type": "ProductService", "name": "디지털 콘텐츠"}
 
 // relation: INVESTS_IN
 
@@ -29,7 +77,7 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk스퀘어", "to_id": "company_드림어스컴퍼니", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 ㈜드림어스컴퍼니, 출자 목적은 경영참가, 최초 취득일은 2021.11.02, 당기말 보유수량은 16,430,038, 당기말 지분율은 22.2%, 장부가액은 38,907,000,000.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_402340", "to_id": "company_060570", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 ㈜드림어스컴퍼니, 출자 목적은 경영참가, 최초 취득일은 2021.11.02, 당기말 보유수량은 16,430,038, 당기말 지분율은 22.2%, 장부가액은 38,907,000,000.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
 
 // relation: INVESTS_IN
 
@@ -38,4 +86,76 @@ MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:INVESTS_IN]->(target)
 SET r += $properties
 
-:params {"from_id": "company_sk스퀘어", "to_id": "company_인크로스", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 인크로스㈜, 출자 목적은 경영참가, 최초 취득일은 2021.11.02, 당기말 보유수량은 4,631,251, 당기말 지분율은 36.1%, 장부가액은 33,762,000,000.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+:params {"from_id": "company_402340", "to_id": "company_216050", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 인크로스㈜, 출자 목적은 경영참가, 최초 취득일은 2021.11.02, 당기말 보유수량은 4,631,251, 당기말 지분율은 36.1%, 장부가액은 33,762,000,000.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "company_452400", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 에스케이하이닉스㈜, 출자 목적은 경영참가, 최초 취득일은 2021.11.02, 당기말 보유수량은 146,100,000, 당기말 지분율은 20.1%, 장부가액은 3,374,726,000,000.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "company_001680", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 ㈜그린랩스, 출자 목적은 단순투자, 최초 취득일은 2021.12.30.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "BusinessArea_platform_business", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 ㈜드림어스컴퍼니, 출자 목적은 경영참가.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_402340", "to_id": "BusinessArea_investment", "properties": {"evidence": "SK스퀘어의 타법인 출자 대상은 ㈜그린랩스, 출자 목적은 단순투자.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_060570", "to_id": "ProductService_digital_content", "properties": {"evidence": "SK스퀘어가 ㈜드림어스컴퍼니에 경영참가 투자한 사실(드림어스컴퍼니는 디지털 콘텐츠 사업 운영).", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "BusinessArea_platform_business", "to_id": "Industry_IT", "properties": {"evidence": "드림어스컴퍼니 등 SK스퀘어 출자 대상은 플랫폼과 IT 사업 관련.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "BusinessArea_investment", "to_id": "Industry_IT", "properties": {"evidence": "SK스퀘어는 단순투자 사업도 IT 산업 관련 투자 중심임.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "ProductService_digital_content", "to_id": "BusinessArea_platform_business", "properties": {"evidence": "드림어스컴퍼니가 디지털 콘텐츠를 제공하여 플랫폼 사업에 포함됨.", "date": "2026-03-17", "evidence_source_id": "dart_402340_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000830", "evidence_published_at": "2026-03-17"}}

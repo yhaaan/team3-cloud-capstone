@@ -1,0 +1,15 @@
+// node: company_003550
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003550", "type": "Company", "name": "LG", "stock_code": "003550", "description": "법적 공방 중인 고 구본무 회장 장녀 관련 뉴스"}
+
+// node: company_140410
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_140410", "type": "Company", "name": "메지온", "stock_code": "140410"}

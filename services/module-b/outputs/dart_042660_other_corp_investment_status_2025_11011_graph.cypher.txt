@@ -1,55 +1,41 @@
-// node: company_hanwha_ocean
+// node: company_042660
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_hanwha_ocean", "type": "Company", "name": "한화오션", "stock_code": "042660"}
+:params {"id": "company_042660", "type": "Company", "name": "한화오션", "stock_code": "042660", "description": "한화오션은 선박 건조와 해양플랜트 관련 사업을 영위하는 조선해양 전문 기업입니다."}
 
-// node: company_sg
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_sg", "type": "Company", "name": "SG", "stock_code": "255220"}
-
-// node: company_boryung
+// node: business_area_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`BusinessArea`
 
-:params {"id": "company_boryung", "type": "Company", "name": "보령", "stock_code": "003850"}
+:params {"id": "business_area_shipbuilding", "type": "BusinessArea", "name": "shipbuilding"}
 
-// node: company_kotek
-
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
-
-:params {"id": "company_kotek", "type": "Company", "name": "코텍", "stock_code": "052330"}
-
-// node: company_daesang
+// node: industry_shipbuilding
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
-SET n:`Company`
+SET n:`Industry`
 
-:params {"id": "company_daesang", "type": "Company", "name": "대상", "stock_code": "001680"}
+:params {"id": "industry_shipbuilding", "type": "Industry", "name": "shipbuilding"}
 
-// node: company_dai
+// relation: OPERATES_IN
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
 
-:params {"id": "company_dai", "type": "Company", "name": "디아이", "stock_code": "003160"}
+:params {"from_id": "company_042660", "to_id": "business_area_shipbuilding", "properties": {"evidence": "한화오션은 선박 건조와 해양플랜트 관련 사업을 영위하는 조선해양 전문 기업입니다.", "date": "2026-03-17", "evidence_source_id": "dart_042660_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}
 
-// node: company_hanwha
+// relation: PART_OF
 
-MERGE (n:Entity {id: $id})
-SET n += $properties
-SET n:`Company`
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
 
-:params {"id": "company_hanwha", "type": "Company", "name": "한화", "stock_code": "000880"}
+:params {"from_id": "business_area_shipbuilding", "to_id": "industry_shipbuilding", "properties": {"evidence": "선박 건조와 해양플랜트 관련 사업을 영위하는 조선해양 전문 기업입니다.", "date": "2026-03-17", "evidence_source_id": "dart_042660_other_corp_investment_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000644", "evidence_published_at": "2026-03-17"}}

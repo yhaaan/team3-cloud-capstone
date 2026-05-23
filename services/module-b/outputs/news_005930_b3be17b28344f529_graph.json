@@ -2,47 +2,72 @@
   "source_id": "news_005930_b3be17b28344f529",
   "entities": [
     {
-      "id": "company_samsung_electronics",
+      "id": "company_005930",
       "type": "Company",
       "name": "삼성전자",
-      "stock_code": "005930"
+      "stock_code": "005930",
+      "description": "삼성 월렛 해외 NFC 결제 서비스로 글로벌 결제 시장에서 디지털 결제 솔루션 제공"
     },
     {
-      "id": "company_sk",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "id": "business_area_digital_payment",
+      "type": "BusinessArea",
+      "name": "디지털 결제"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "id": "product_service_samsung_wallet",
+      "type": "ProductService",
+      "name": "삼성 월렛"
     },
     {
-      "id": "company_kia",
-      "type": "Company",
-      "name": "기아",
-      "stock_code": "000270"
-    },
-    {
-      "id": "company_hanwha",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
-    },
-    {
-      "id": "company_hyundai_construction",
-      "type": "Company",
-      "name": "현대건설",
-      "stock_code": "000720"
-    },
-    {
-      "id": "company_hyundai_motors",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_005930",
+      "to": "business_area_digital_payment",
+      "evidence": "삼성전자 및 비자(Visa)와 협업을 통해 해외결제(NFC)망 서비스 확대를 위한 '삼성 월렛 해외 NFC 결제 서비스'를 비자 브랜드까지 전면 확대 시행한다고 12일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_005930_b3be17b28344f529",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138",
+      "evidence_published_at": "2026-05-12T09:52:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_samsung_wallet",
+      "evidence": "삼성전자 및 비자(Visa)와 협업을 통해 해외결제(NFC)망 서비스 확대를 위한 '삼성 월렛 해외 NFC 결제 서비스'를 비자 브랜드까지 전면 확대 시행한다고 12일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_005930_b3be17b28344f529",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138",
+      "evidence_published_at": "2026-05-12T09:52:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_samsung_wallet",
+      "to": "business_area_digital_payment",
+      "evidence": "삼성 월렛 기반의 해외 결제 서비스 지원 브랜드 범위를 넓혔다는 평가다.",
+      "date": "",
+      "evidence_source_id": "news_005930_b3be17b28344f529",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138",
+      "evidence_published_at": "2026-05-12T09:52:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_digital_payment",
+      "to": "industry_finance",
+      "evidence": "하나카드가 해외 결제 시장에서 '실물카드 없는 여행' 경쟁 강화에 나섰다.",
+      "date": "",
+      "evidence_source_id": "news_005930_b3be17b28344f529",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://kpenews.com/View.aspx?No=4074138",
+      "evidence_published_at": "2026-05-12T09:52:00+09:00"
+    }
+  ]
 }

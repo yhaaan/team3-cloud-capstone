@@ -1,0 +1,93 @@
+// node: company_278470
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_278470", "type": "Company", "name": "에이피알", "stock_code": "278470", "description": "뷰티 디바이스와 병원용 의료기기 연구개발부터 생산까지 수직계열화하는 뷰티테크 기업"}
+
+// node: business_area_medical_aesthetic
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_medical_aesthetic", "type": "BusinessArea", "name": "메디컬 에스테틱"}
+
+// node: business_area_beauty_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_beauty_device", "type": "BusinessArea", "name": "뷰티 디바이스"}
+
+// node: business_area_medical_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_medical_device", "type": "BusinessArea", "name": "병원용 의료기기"}
+
+// node: industry_medical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_medical", "type": "Industry", "name": "의료기기"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_medical_aesthetic", "properties": {"evidence": "올해 1분기 경영 성과와 메디컬 에스테틱 시장 진출 전략을 구체화한다는 구상이다.", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_beauty_device", "properties": {"evidence": "에이피알은 올해 1분기 경영 실적을 바탕으로 홈 뷰티 디바이스의 압도적 기술 우위를 증명하는 한편", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_278470", "to_id": "business_area_medical_device", "properties": {"evidence": "오는 하반기 출시 예정인 고부가가치 병원용 의료기기 사업 진척 상황을 상세히 공유할 것으로 보인다.", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_medical_aesthetic", "to_id": "industry_medical", "properties": {"evidence": "시장은 에이피알이 이번 무대에서 선보일 '메디컬 테크' 전환 전략에 주목하고 있다.", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_medical_device", "to_id": "industry_medical", "properties": {"evidence": "국내 시장 한계를 넘어 글로벌 의료기기 시장 선두주자로 거듭나겠다는 의지를 전 세계 투자자들에게 직접 전달함으로써", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_beauty_device", "to_id": "industry_medical", "properties": {"evidence": "뷰티 디바이스 누적 판매량의 60% 이상이 미국과 일본 등 주요 선진국 시장에서 발생하고 있는 만큼", "date": "", "evidence_source_id": "news_278470_33136825b875e13f", "evidence_source_type": "news", "evidence_source_url": "https://www.theguru.co.kr/news/article.html?no=101703", "evidence_published_at": "2026-05-17T06:32:00+09:00"}}

@@ -2,63 +2,56 @@
   "source_id": "news_207940_fba5ce723214555f",
   "entities": [
     {
-      "id": "company_samsung_biologics",
+      "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940"
+      "stock_code": "207940",
+      "description": "생명공학 산업에서 주요 생산 체인의 자재 소분 사업을 운영"
     },
     {
-      "id": "company_sk_hynix",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "id": "industry_bio",
+      "type": "Industry",
+      "name": "bio"
     },
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_hyundai_motor",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
-    },
-    {
-      "id": "person_park_min_woo",
-      "type": "Person",
-      "name": "박민우",
-      "role_raw": "사장",
-      "affiliated_company": "company_hyundai_motor",
-      "role": "PRESIDENT",
-      "role_label": "사장"
-    },
-    {
-      "id": "person_kang_ji_suk",
-      "type": "Person",
-      "name": "강지숙",
-      "role_raw": "대표",
-      "affiliated_company": "company_lotte_sonhe_insurance",
-      "role": "CEO",
-      "role_label": "대표이사"
-    },
-    {
-      "id": "person_lim_jong_ryong",
-      "type": "Person",
-      "name": "임종룡",
-      "role_raw": "회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
-    },
-    {
-      "id": "person_choi_tae_won",
-      "type": "Person",
-      "name": "최태원",
-      "role_raw": "회장",
-      "role": "CHAIRMAN",
-      "role_label": "회장"
+      "id": "business_area_production",
+      "type": "BusinessArea",
+      "name": "생산 체인"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_207940",
+      "to": "business_area_production",
+      "evidence": "자재를 소분하는 부서는 생산 체인의 핵심 부분이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_fba5ce723214555f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.globalepic.co.kr/view.php?ud=20260429124014524548439a4874_29",
+      "evidence_published_at": "2026-04-29T12:42:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_production",
+      "to": "industry_bio",
+      "evidence": "내달 1일부터 예정된 전면파업이 현실화될 경우, 국내 생명공학 산업에 미칠 파장은 결코 작지 않을 것이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_fba5ce723214555f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.globalepic.co.kr/view.php?ud=20260429124014524548439a4874_29",
+      "evidence_published_at": "2026-04-29T12:42:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_bio",
+      "evidence": "내달 1일부터 예정된 전면파업이 현실화될 경우, 국내 생명공학 산업에 미칠 파장은 결코 작지 않을 것이다.",
+      "date": "",
+      "evidence_source_id": "news_207940_fba5ce723214555f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.globalepic.co.kr/view.php?ud=20260429124014524548439a4874_29",
+      "evidence_published_at": "2026-04-29T12:42:00+09:00"
+    }
+  ]
 }

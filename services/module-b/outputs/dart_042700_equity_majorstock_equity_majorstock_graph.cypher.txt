@@ -1,0 +1,23 @@
+// node: company_042700
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_042700", "type": "Company", "name": "한미반도체", "stock_code": "042700", "description": "반도체 장비 및 부품 제조 중심의 사업을 영위하는 한미반도체"}
+
+// node: person_곽동신
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_곽동신", "type": "Person", "name": "곽동신"}
+
+// node: person_미래에셋자산운용
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Person`
+
+:params {"id": "person_미래에셋자산운용", "type": "Person", "name": "미래에셋자산운용"}

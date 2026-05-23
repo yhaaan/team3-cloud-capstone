@@ -1,0 +1,41 @@
+// node: company_071050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_071050", "type": "Company", "name": "한국금융지주", "stock_code": "071050", "description": "한국금융지주는 금융 지주회사로서 금융 서비스 사업을 영위한다."}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "finance"}
+
+// node: business_area_financial_services
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_financial_services", "type": "BusinessArea", "name": "financial services"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_071050", "to_id": "business_area_financial_services", "properties": {"evidence": "한국금융지주는 금융 지주회사로서 금융 서비스 사업을 영위한다.", "date": "2026-04-02", "evidence_source_id": "dart_071050_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000363", "evidence_published_at": "2026-04-02"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_financial_services", "to_id": "industry_finance", "properties": {"evidence": "한국금융지주는 금융 지주회사로서 금융 서비스 사업을 영위한다.", "date": "2026-04-02", "evidence_source_id": "dart_071050_equity_elestock_equity_elestock", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000363", "evidence_published_at": "2026-04-02"}}

@@ -2,11 +2,29 @@
   "source_id": "dart_051910_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_lg_chem",
+      "id": "company_051910",
       "type": "Company",
       "name": "LG화학",
-      "stock_code": "051910"
+      "stock_code": "051910",
+      "description": "화학 및 배터리 관련 제품과 소재를 주력으로 하는 회사입니다."
+    },
+    {
+      "id": "industry_chemical",
+      "type": "Industry",
+      "name": "chemical"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051910",
+      "to": "industry_chemical",
+      "evidence": "LG화학",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_051910_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260305001433",
+      "evidence_published_at": "2026-03-05"
+    }
+  ]
 }

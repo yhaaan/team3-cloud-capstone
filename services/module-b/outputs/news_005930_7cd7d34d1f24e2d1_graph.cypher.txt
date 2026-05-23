@@ -1,7 +1,145 @@
-// node: company_삼성전자
+// node: company_005930
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_삼성전자", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930", "description": "가전, 모바일, 반도체, 의료기기 등 첨단산업 연구·생산 및 투자 중심 사업"}
+
+// node: business_area_home_appliance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_home_appliance", "type": "BusinessArea", "name": "생활가전"}
+
+// node: business_area_tv_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_tv_business", "type": "BusinessArea", "name": "TV 사업"}
+
+// node: business_area_mobile
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobile", "type": "BusinessArea", "name": "모바일"}
+
+// node: business_area_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_semiconductor", "type": "BusinessArea", "name": "반도체"}
+
+// node: business_area_medical_device
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_medical_device", "type": "BusinessArea", "name": "의료기기"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_home_appliance", "properties": {"evidence": "삼성전자 가 수익성 악화에 대응하기 위해 국내외 가전 사업 구조조정에 나섰습니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_tv_business", "properties": {"evidence": "지난해 TV 사업을 맡은 영상디스플레이(VD)와 생활가전(DA) 사업부에서 연간 2천억원의 적자를 냈습니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_mobile", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_semiconductor", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005930", "to_id": "business_area_medical_device", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_home_appliance", "to_id": "industry_electronics", "properties": {"evidence": "삼성전자 가 수익성 악화에 대응하기 위해 국내외 가전 사업 구조조정에 나섰습니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_tv_business", "to_id": "industry_electronics", "properties": {"evidence": "지난해 TV 사업을 맡은 영상디스플레이(VD)와 생활가전(DA) 사업부에서 연간 2천억원의 적자를 냈습니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobile", "to_id": "industry_electronics", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_semiconductor", "to_id": "industry_electronics", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_medical_device", "to_id": "industry_electronics", "properties": {"evidence": "다만 삼성전자 는 중국에서 모바일과 반도체·의료기기 등 사업은 지속한다는 방침입니다.", "date": "", "evidence_source_id": "news_005930_7cd7d34d1f24e2d1", "evidence_source_type": "news", "evidence_source_url": "http://mbnmoney.mbn.co.kr/news/view?news_no=MM1005829853", "evidence_published_at": "2026-05-07T21:36:00+09:00"}}

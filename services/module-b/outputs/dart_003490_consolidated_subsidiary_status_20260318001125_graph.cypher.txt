@@ -1,0 +1,135 @@
+// node: company_003490
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_003490", "type": "Company", "name": "대한항공", "stock_code": "003490", "description": "항공운송업을 주력으로 다양한 항공 관련 사업을 영위하는 회사"}
+
+// node: company_020560
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_020560", "type": "Company", "name": "아시아나항공", "stock_code": "020560"}
+
+// node: company_298690
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298690", "type": "Company", "name": "에어부산", "stock_code": "298690"}
+
+// node: company_272450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_272450", "type": "Company", "name": "진에어", "stock_code": "272450"}
+
+// node: company_005430
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005430", "type": "Company", "name": "한국공항", "stock_code": "005430"}
+
+// node: business_area_air_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_air_transport", "type": "BusinessArea", "name": "항공운송업"}
+
+// node: business_area_ground_handling
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_ground_handling", "type": "BusinessArea", "name": "항공기 지상조업"}
+
+// node: industry_air_transport
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_air_transport", "type": "Industry", "name": "항공"}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "company_020560", "properties": {"evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "company_298690", "properties": {"evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "company_272450", "properties": {"evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: ACQUIRES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:ACQUIRES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "company_005430", "properties": {"evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_003490", "to_id": "business_area_air_transport", "properties": {"evidence": "대한항공의 사업보고서에 따르면 아시아나항공, 에어부산, 진에어 모두 항공운송업에 종사한다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_air_transport", "to_id": "industry_air_transport", "properties": {"evidence": "업종명으로 '항공운송업'은 항공업계에 속한다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005430", "to_id": "business_area_ground_handling", "properties": {"evidence": "한국공항㈜는 항공기 지상조업, 항공기 지상조업용 장비대여 및 항공화물 하역 등의 용역사업을 영위한다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_ground_handling", "to_id": "industry_air_transport", "properties": {"evidence": "한국공항의 사업 분야인 항공기 지상조업은 항공업계에 속한다.", "date": "2026-03-18", "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125", "evidence_published_at": "2026-03-18"}}

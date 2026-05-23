@@ -2,41 +2,72 @@
   "source_id": "news_004020_cc8162f490de1b5e",
   "entities": [
     {
-      "id": "company_현대제철",
+      "id": "company_004020",
       "type": "Company",
       "name": "현대제철",
-      "stock_code": "004020"
+      "stock_code": "004020",
+      "description": "건축·토목 등 건설 산업 현장 문제 해결과 데이터센터·전력 인프라 기술 지원"
     },
     {
-      "id": "company_SK",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "id": "business_area_construction",
+      "type": "BusinessArea",
+      "name": "건설산업"
     },
     {
-      "id": "company_SK하이닉스",
-      "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "id": "business_area_data_center_infrastructure",
+      "type": "BusinessArea",
+      "name": "데이터센터 및 전력 인프라"
     },
     {
-      "id": "company_레인보우로보틱스",
-      "type": "Company",
-      "name": "레인보우로보틱스",
-      "stock_code": "277810"
-    },
-    {
-      "id": "company_삼성전자",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_현대차",
-      "type": "Company",
-      "name": "현대차",
-      "stock_code": "005380"
+      "id": "industry_construction",
+      "type": "Industry",
+      "name": "건설"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_construction",
+      "evidence": "현대제철은 이번 공모를 통해 고객사와 함께 공사비 절감, 공기 단축, 시공 및 제작 효율성 저하 등과 관련해 실제 건설 현장에서 겪는 문제점과 애로사항을 접수하고, 실질적인 해결 방안을 모색할 계획이다.",
+      "date": "",
+      "evidence_source_id": "news_004020_cc8162f490de1b5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20042854?ref=naver",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_004020",
+      "to": "business_area_data_center_infrastructure",
+      "evidence": "공모 분야도 기존 건축, 토목 부문을 비롯해 구조기술, 서버랙 및 IT 장비, 인테리어, 냉각·공조 설비, 에너지저장장치(ESS), 배전·변전 설비 등 데이터센터 및 전력 인프라까지 대폭 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_cc8162f490de1b5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20042854?ref=naver",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_construction",
+      "to": "industry_construction",
+      "evidence": "국내 건설업계가 오랜 침체를 겪고 있는 가운데 현대제철(004020)이 건설 현장에서 발생하는 고질적인 문제를 해소할 해결사로 나섰다.",
+      "date": "",
+      "evidence_source_id": "news_004020_cc8162f490de1b5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20042854?ref=naver",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_data_center_infrastructure",
+      "to": "industry_construction",
+      "evidence": "공모 분야도 기존 건축, 토목 부문을 비롯해 구조기술, 서버랙 및 IT 장비, 인테리어, 냉각·공조 설비, 에너지저장장치(ESS), 배전·변전 설비 등 데이터센터 및 전력 인프라까지 대폭 확대했다.",
+      "date": "",
+      "evidence_source_id": "news_004020_cc8162f490de1b5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20042854?ref=naver",
+      "evidence_published_at": "2026-05-12T09:12:00+09:00"
+    }
+  ]
 }

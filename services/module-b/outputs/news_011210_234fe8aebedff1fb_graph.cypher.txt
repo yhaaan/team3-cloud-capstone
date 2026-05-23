@@ -1,7 +1,170 @@
-// node: company_현대위아
+// node: company_011210
 
 MERGE (n:Entity {id: $id})
 SET n += $properties
 SET n:`Company`
 
-:params {"id": "company_현대위아", "type": "Company", "name": "현대위아", "stock_code": "011210"}
+:params {"id": "company_011210", "type": "Company", "name": "현대위아", "stock_code": "011210", "description": "모빌리티 부품과 로보틱스 분야 연구개발 및 글로벌 완성차 부품 생산"}
+
+// node: business_area_mobility_parts
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility_parts", "type": "BusinessArea", "name": "모빌리티 부품"}
+
+// node: business_area_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_robotics", "type": "BusinessArea", "name": "로보틱스"}
+
+// node: business_area_industrial_robot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_industrial_robot", "type": "BusinessArea", "name": "산업용 로봇"}
+
+// node: business_area_integrated_thermal_management
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_integrated_thermal_management", "type": "BusinessArea", "name": "통합 열관리"}
+
+// node: business_area_drive_axle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_drive_axle", "type": "BusinessArea", "name": "드라이브 액슬"}
+
+// node: business_area_mobility_component_research
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`BusinessArea`
+
+:params {"id": "business_area_mobility_component_research", "type": "BusinessArea", "name": "미래 모빌리티 부품 연구"}
+
+// node: industry_automotive
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automotive", "type": "Industry", "name": "자동차"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_mobility_parts", "properties": {"evidence": "현대위아는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_robotics", "properties": {"evidence": "현대위아는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_industrial_robot", "properties": {"evidence": "산업용 로봇 분야에서도 채용에 나선다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_integrated_thermal_management", "properties": {"evidence": "특히 통합 열관리 분야에서 가장 많은 인재를 뽑는다고 회사측은 밝혔다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_drive_axle", "properties": {"evidence": "또 통합형 드라이브 액슬(IDA), 고성능 댐퍼, 구동 시스템 제어 등 미래 모빌리티 부품 연구원도 대거 채용한다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: OPERATES_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:OPERATES_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_011210", "to_id": "business_area_mobility_component_research", "properties": {"evidence": "또 통합형 드라이브 액슬(IDA), 고성능 댐퍼, 구동 시스템 제어 등 미래 모빌리티 부품 연구원도 대거 채용한다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility_parts", "to_id": "industry_automotive", "properties": {"evidence": "이를 통해 글로벌 완성차 시장 공략을 위한 세계 최고 수준의 부품을 개발한다는 방침이다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_drive_axle", "to_id": "industry_automotive", "properties": {"evidence": "이를 통해 글로벌 완성차 시장 공략을 위한 세계 최고 수준의 부품을 개발한다는 방침이다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_mobility_component_research", "to_id": "industry_automotive", "properties": {"evidence": "이를 통해 글로벌 완성차 시장 공략을 위한 세계 최고 수준의 부품을 개발한다는 방침이다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_robotics", "to_id": "industry_robotics", "properties": {"evidence": "현대위아는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "business_area_industrial_robot", "to_id": "industry_robotics", "properties": {"evidence": "산업용 로봇 분야에서도 채용에 나선다.", "date": "", "evidence_source_id": "news_011210_234fe8aebedff1fb", "evidence_source_type": "news", "evidence_source_url": "https://www.naeil.com/news/read/587597?ref=naver", "evidence_published_at": "2026-05-04T13:02:00+09:00"}}

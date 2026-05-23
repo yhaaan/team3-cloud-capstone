@@ -2,47 +2,147 @@
   "source_id": "news_099320_9add5b61b450b596",
   "entities": [
     {
-      "id": "company_sk_hynix",
+      "id": "company_099320",
       "type": "Company",
-      "name": "SK하이닉스",
-      "stock_code": "000660"
+      "name": "쎄트렉아이",
+      "stock_code": "099320",
+      "description": "국내 우주 산업 밸류체인 전반에 투자하는 구조로 2025년 영업이익 흑자 전환과 매출 증가를 보임"
     },
     {
-      "id": "company_daol_investment_securities",
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660",
+      "description": "1분기 사상 최대 실적 기록, 메모리 사업 중심 반도체 산업의 주요 기업"
+    },
+    {
+      "id": "company_030210",
       "type": "Company",
       "name": "다올투자증권",
       "stock_code": "030210"
     },
     {
-      "id": "company_sk_securities",
+      "id": "company_001510",
       "type": "Company",
       "name": "SK증권",
       "stock_code": "001510"
     },
     {
-      "id": "company_setrec_ai",
-      "type": "Company",
-      "name": "쎄트렉아이",
-      "stock_code": "099320"
-    },
-    {
-      "id": "company_intelian_tech",
-      "type": "Company",
-      "name": "인텔리안테크",
-      "stock_code": "189300"
-    },
-    {
-      "id": "company_hanwha_system",
+      "id": "company_272210",
       "type": "Company",
       "name": "한화시스템",
       "stock_code": "272210"
     },
     {
-      "id": "company_korea_aerospace",
+      "id": "company_047810",
       "type": "Company",
       "name": "한국항공우주",
       "stock_code": "047810"
+    },
+    {
+      "id": "company_039840",
+      "type": "Company",
+      "name": "디오",
+      "stock_code": "039840"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "semiconductor"
+    },
+    {
+      "id": "business_area_memory",
+      "type": "BusinessArea",
+      "name": "Memory"
+    },
+    {
+      "id": "industry_space_aviation",
+      "type": "Industry",
+      "name": "space and aviation"
+    },
+    {
+      "id": "business_area_space_industry",
+      "type": "BusinessArea",
+      "name": "space industry"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "OPERATES_IN",
+      "from": "company_000660",
+      "to": "business_area_memory",
+      "evidence": "SK하이닉스(000660)가 올 1분기 사상 최대 실적을 기록하면서 글로벌 증권가를 중심으로 목표주가 상향 조정이 이어지고 있다.",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_memory",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 1분기 사상 최대 실적 발표와 메모리 사업은 반도체 산업과 밀접함",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_099320",
+      "to": "business_area_space_industry",
+      "evidence": "쎄트렉아이(099320) 등 국내 우주 산업 밸류체인 전반에 투자하는 구조다.",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "business_area_space_industry",
+      "to": "industry_space_aviation",
+      "evidence": "국내 우주 산업 밸류체인 전반은 우주항공 산업에 해당",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_272210",
+      "to": "business_area_space_industry",
+      "evidence": "쎄트렉아이(099320)·인텔리안테크(189300)·한화시스템(272210)·한국항공우주(047810) 등 국내 우주 산업 밸류체인 전반에 투자하는 구조다.",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_047810",
+      "to": "business_area_space_industry",
+      "evidence": "쎄트렉아이(099320)·인텔리안테크(189300)·한화시스템(272210)·한국항공우주(047810) 등 국내 우주 산업 밸류체인 전반에 투자하는 구조다.",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    },
+    {
+      "type": "OPERATES_IN",
+      "from": "company_001510",
+      "to": "business_area_memory",
+      "evidence": "국내 다올투자증권(030210)·한국투자증권·KB증권·메리츠증권·SK증권(001510) 도 일제히 200만 원대를 제시했다.",
+      "date": "",
+      "evidence_source_id": "news_099320_9add5b61b450b596",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sedaily.com/article/20037019?ref=naver",
+      "evidence_published_at": "2026-04-25T07:46:00+09:00"
+    }
+  ]
 }
