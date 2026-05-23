@@ -1,11 +1,12 @@
-from typing import List, Union
+import re
+from typing import List, Optional, Union
 from neo4j import Record
 from app.config import Config
 from langchain_neo4j import Neo4jGraph
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 import chromadb
-from app.schemas import GraphDBSearchResponse, CypherGenerationResponse
+from app.schemas import GraphDBSearchResponse, SearchFilter
 
 
 # Neo4j(그래프 DB) 핸들러
@@ -256,41 +257,31 @@ class Neo4jHandler():
             "end_id": rel_obj.end_node.element_id,
             "properties": dict(rel_obj)
         }
+    
 
-    # def _make_llm_context(self, rel_obj):
-    #     """LLM이 읽을 문장 생성"""
-    #     s_name = rel_obj.start_node.get('name') or "알 수 없음"
-    #     e_name = rel_obj.end_node.get('name') or "알 수 없음"
-    #     evidence = rel_obj.get('evidence', '없음')
-    #     evidence_published_at = rel_obj.get('evidence_published_at', '알 수 없음')
-    #     evidence_source_type = rel_obj.get('evidence_source_type', '알 수 없음')
-    #     evidence_source_url = rel_obj.get('evidence_source_url', '알 수 없음')
-
-    #     graph_text = (
-    #         f"[{s_name}] -({rel_obj.type})-> [{e_name}]\n"
-    #         f"근거: {evidence}\n"
-    #         f"- 발행일: {evidence_published_at}\n"
-    #         f"- 출처/문서명: {evidence_source_type}\n"
-    #         f"- 원문 링크: {evidence_source_url}\n"
-    #     )
-    #     return graph_text
-
-
-    # 해당 타입 모든 노드 이름 가져오기 함수
-    # Neo4j 노드 type - 'Company', 'Person', 'Event', 'Industry'
-    def get_node_names_by_type(self, entity_type: str):
+    # 해당 라벨 모든 노드 이름 가져오기 함수
+    # Neo4j 노드 라벨 - 'Company', 'Person', 'Industry', 'BusinessArea', 'ProductService'
+    def get_node_names_by_label(self, entity_label: str):
         # 내부의 driver를 직접 사용
+        # 🚨 보안 및 안전망: 라벨명에 알파벳과 숫자 외의 특수문자(인젝션 위험)가 있는지 검증
+        if not re.match(r"^[a-zA-Z0-9_]+$", entity_label):
+            print(f"❌ 유효하지 않은 라벨 형태입니다: {entity_label}")
+            return []
+
         try:
             with self.graph_db._driver.session() as session:
-                query = "MATCH (n) WHERE n.type = $entity_type RETURN n.name AS name"
-                result = session.run(query, entity_type=entity_type)
-                # 데이터를 리스트로 변환
+                # Neo4j 인덱스를 태우기 위해 f-string으로 라벨을 직접 주입합니다.
+                query = f"MATCH (n:{entity_label}) WHERE n.name IS NOT NULL RETURN n.name AS name"
+                result = session.run(query)
+                
+                # 레코드에서 name 리스트 추출 (None 방어 코드 포함)
                 names = [record["name"] for record in result if record["name"]]
                 return names
+                
         except Exception as e:
             self.graph_db_error = "❌ Neo4j 데이터베이스 탐색에 실패했습니다."
-            print(f"그래프 DB 탐색 에러: {e}\n")
-            return None
+            print(f"그래프 DB 탐색 에러 (라벨 조회): {e}\n")
+            return []
     
 
 # 벡터 DB 핸들러
@@ -337,11 +328,33 @@ class VectorHandler():
             return None
     
 
-    def search_vector_db(self, query: str, window_size: int = 2):
+    def search_vector_db(self, query: str, search_filter: Optional[SearchFilter] = None, window_size: int = 2):
         try:
-            # 1. 유사한 청크 검색 (k=3)
-            initial_docs = self.vector_db.similarity_search(query, k=3)
+            # 1. ChromaDB용 dynamic where 조건절 조립 (포맷은 기존 그대로 유지)
+            chroma_where = {}
+            and_conditions = []
             
+            if search_filter:
+                if search_filter.document_type:
+                    and_conditions.append({"document_type": {"$eq": search_filter.document_type}})
+                if search_filter.dataset_label:
+                    and_conditions.append({"dataset_label": {"$eq": search_filter.dataset_label}})
+                if search_filter.company_name:
+                    and_conditions.append({"company_hint": {"$eq": search_filter.company_name}})
+                    
+            if and_conditions:
+                chroma_where = {"$and": and_conditions} if len(and_conditions) > 1 else and_conditions[0]
+            else:
+                chroma_where = None
+
+            # 2. 🌟 [CRITICAL FIX]: where= 대신 filter= 키워드로 인젝션해야 합니다!
+            if chroma_where:
+                print(f"   🎯 [Chroma Filter 적용]: {chroma_where}")
+                # LangChain 래퍼 함수 규격에 맞게 filter= 로 매핑
+                initial_docs = self.vector_db.similarity_search(query, k=3, filter=chroma_where)
+            else:
+                initial_docs = self.vector_db.similarity_search(query, k=3)
+                
             formatted_contexts = []
             
             for i, d in enumerate(initial_docs):
@@ -350,13 +363,11 @@ class VectorHandler():
                 
                 # 맥락 확장 로직
                 if doc_id and current_idx is not None:
-                    # [수정 포인트] window_size만큼 인덱스 범위 생성
-                    # 예: idx가 5이고 window_size가 2이면 [3, 4, 5, 6, 7] 생성
                     start_idx = max(0, current_idx - window_size)
                     end_idx = current_idx + window_size
                     context_indices = list(range(start_idx, end_idx + 1))
                     
-                    # ChromaDB에서 범위 내 청크들 한 번에 가져오기
+                    # window 범위 긁어올 때도 동일 문서 내부에서만 보장
                     related_chunks = self.vector_db.get(
                         where={
                             "$and": [
@@ -366,18 +377,16 @@ class VectorHandler():
                         }
                     )
                     
-                    # 가져온 청크들을 인덱스 순서대로 정렬 (중요!)
                     combined_docs = sorted(
                         zip(related_chunks['metadatas'], related_chunks['documents']),
                         key=lambda x: x[0].get('chunk_index', 0)
                     )
                     
-                    # 텍스트 병합 (청크 사이를 자연스럽게 띄어줌)
                     full_text = " ".join([text for meta, text in combined_docs])
                 else:
                     full_text = d.page_content
 
-                # 2. 메타데이터 추출 및 포맷팅
+                # 메타데이터 추출 및 포맷팅
                 source = d.metadata.get('source', '알 수 없는 출처')
                 title = d.metadata.get('title', '제목 없음')
                 pub_date = d.metadata.get('published_at', '날짜 미상')
@@ -392,10 +401,13 @@ class VectorHandler():
                 )
                 formatted_contexts.append(chunk_text)
             
+            if not formatted_contexts:
+                return "조회된 벡터 DB 데이터 없음"
+                
             full_context = "\n\n".join(formatted_contexts)
             print(f"✔️ Window Size {window_size}가 적용된 맥락 확장이 완료되었습니다.\n")
             return full_context
 
         except Exception as e:
             print(f"벡터 DB 탐색 에러: {e}")
-            return None
+            return "벡터 DB 탐색 중 오류 발생"

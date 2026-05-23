@@ -31,34 +31,50 @@ class ChatRequest(BaseModel):
 # 채팅 응답 데이터
 class ChatResponse(BaseModel):
     answer: str # 최종 자연어 답변
-    how: str # 그래프 종류
+    how: Optional[str] = None # 그래프 종류
     graph: Optional[RelationGraph] = None # 그래프 DB 탐색 결과를 시각화하기 좋게 구조화한 데이터
 # endregion
 
 
 # region 엔티티 추출 
-# 기업명/인물명 엔티티 데이터 구조
-class NamedEntityData(BaseModel):
-    companies: List[str] = Field(default_factory=list, description="추출된 상장사/법인명 리스트")
-    people: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
+# # 기업명/인물명 엔티티 데이터 구조
+# class NamedEntityData(BaseModel):
+#     companies: List[str] = Field(default_factory=list, description="추출된 상장사/법인명 리스트")
+#     people: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
 
-# 관계 필터 데이터 구조
-class RelationFilter(BaseModel):
-    subject: str = Field(description="관계의 주체")
-    relation_type: str = Field(description="관계 종류")
-    object: str = Field(description="관계의 대상")
 
-# 엔티티 추출 데이터 구조
-class EntityExtractionData(BaseModel):
-    query_intent: str = Field(description="질문의 의도")
-    named_entities: NamedEntityData
-    relation_filters: List[RelationFilter] = Field(default_factory=list)
-    time_info: Optional[str] = Field(default=None, description="명시된 시간 정보")
 # endregion
 
 
+# region 응답 형태
+# 엔티티 추출 데이터 구조
+class EntityExtractionData(BaseModel):
+    companies: List[str] = Field(default_factory=list, description="추출된 상장사/법인명 리스트")
+    industries: List[str] = Field(default_factory=list, description="추출된 산업군 명칭 리스트")
+    products_services: List[str] = Field(default_factory=list, description="추출된 제품/서비스 명칭 리스트")
+    affiliate_groups: List[str] = Field(default_factory=list, description="추출된 계열사 그룹(예: 현대자동차그룹) 명칭 리스트")
+    people: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
+
+
+# 엔티티 추출 LLM 응답 형태
+class EnitityExtractionResponse(BaseModel):
+    named_entities: Optional[EntityExtractionData] = Field(None, description="라벨별로 정확히 분류된 고유명사 객체")
+    error_msg: Optional[str] = Field(default=None, description="예외 처리 우선순위에 따른 에러 메시지")
+
+
+# 엔티티 정규화 LLM 응답 형태
+class EnitityNormalizationResponse(BaseModel):
+    companies: List[str] = Field(default_factory=list, description="기업 사전 JSON에 매칭된 정식 상장사명 리스트")
+    industries: List[str] = Field(default_factory=list, description="산업 사전 JSON에 매칭된 표준 산업명 리스트")
+    products_services: List[str] = Field(default_factory=list, description="제품/서비스 사전 JSON에 매칭된 표준 제품명 리스트")
+    affiliate_groups: List[str] = Field(default_factory=list, description="계열사 그룹 사전에 매칭된 표준 대기업 그룹명 리스트")
+    people: List[str] = Field(default_factory=list, description="성+이름으로 정형화된 인물명 리스트")
+
+
+# 하위 질문에 대응되는 사이퍼 쿼리 리스트    
 class SubCypherQueries(BaseModel):
     sub_cypher_queries: List[str] = Field(description="하위 질문에 대한 Neo4j에서 실행할 사이퍼 쿼리 리스트")
+
 
 # 사이퍼 쿼리 생성 LLM 응답 형태
 class CypherGenerationResponse(BaseModel):
@@ -71,3 +87,19 @@ class GraphDBSearchResponse(BaseModel):
     center_id: str
     graph_context: str
     graph_structured_data: List[Dict[str, Any]] = Field(default_factory=list)
+
+
+class SearchFilter(BaseModel):
+    # stock_code: Optional[str] = Field(None, description="주식 코드 (005380 등)")
+    company_name: Optional[str] = Field(None, description="회사명 (현대차 등)")
+    dataset_label: Optional[str] = Field(None, description="문서 종류 (임원 현황 등)")
+    document_type: Optional[str] = Field(None, description="dart, news 등")
+
+
+class SubQuery(BaseModel):
+    query: str = Field(..., description="수행할 하위 질문")
+    filter: Optional[SearchFilter] = Field(None, description="벡터 검색 시 사용할 필터 조건")
+
+
+class QueryPlanResponse(BaseModel):
+    sub_queries: List[SubQuery] = Field(..., description="계획된 하위 질문 리스트")
