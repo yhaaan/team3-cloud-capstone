@@ -98,10 +98,10 @@ ENTITY_EXTRACTION_PROMPT = """
 [🚨 엔티티 분류 규칙 - 노드 라벨 매핑]
 질문에 등장하거나 맥락상 특정된 모든 고유명사를 아래 스키마 분류 규칙에 맞춰 정확히 쪼개어 추출하라. 명칭은 companies는 상장된 기준으로 정규화하고, 나머지는 원문 형태 그대로 적어야 한다.
 - companies: 기업명, 상장사명, 법인명
+- industries: 산업/시장
+- products_services: 구체적인 제품명, 서비스명
+- affiliate_groups: 계열사 그룹(예: 현대자동차그룹)
 - people: 인물명, 주주명, 임원명
-- industries: 넓은 산업/시장 범주 (예: 반도체, 배터리, 클라우드)
-- business_areas: 회사의 사업영역/사업부문/공정/세부 도메인 (예: 메모리, 파운드리, 후공정)
-- products_services: 구체적인 제품명, 서비스명 (예: HBM, 낸드플래시, 전기차)
 
 [예외 처리 우선순위] - 아래 순서를 엄격히 준수하여 검사한다.
 1순위 (범위 초과): 질문이 기업, 인물, 산업, 제품 분석과 전혀 무관한 일반 대화라면, error_msg에 "기업 관계 및 산업 분석 전문 서비스입니다. 관련 질문을 입력해 주세요."를 입력한다.
@@ -170,11 +170,12 @@ CYPHER_GENERATION_PROMPT = """
 2. 하나의 하위 질문을 해결하기 위해 성격이 다른 2개 이상의 쿼리가 필요하다면 `sub_cypher_queries` 배열 안에 모두 생성하여 담아라.
 3. 특정 하위 질문에 대해 그래프 쿼리가 필요 없다면 빈 배열(`[]`)로 넘겨라.
 
+<<<<<<< HEAD
 [Neo4j 스키마 명세]
 1. 주요 노드 라벨(Label) 종류:
-   - Company, Person, Event, Industry, BusinessArea, ProductService
+   - Company, Person, Industry, AffiliateGroup, ProductService
 2. 사용할 수 있는 노드 속성(Property):
-   - name(이름), role(직책/배역), industry(업종) (※ 이외 속성은 사용 금지)
+   - name(이름), role(직책/배역), industry(업종) (※ 무조건 해당 속성만 쿼리에 사용. 이외 date 등을 쿼리에 사용할 수 없음.)
    - role 종류: 
       - CHAIRMAN(회장/총수), VICE_CHAIRMAN(부회장), CEO(대표이사), PRESIDENT(사장)
       - BOARD_CHAIR(이사회 의장), DIRECTOR(사내이사), OUTSIDE_DIRECTOR(사외이사), VICE_PRESIDENT(부사장)
@@ -184,11 +185,10 @@ CYPHER_GENERATION_PROMPT = """
    - (Company)-[:ACQUIRES]->(Company): 기업 인수 합병
    - (Person)-[:AFFILIATED_WITH]->(Company): 인물의 소속, 재직, 밀접한 관련
    - (Person)-[:APPOINTED_TO]->(Company): 인물의 특정 직책(이사, 회장 등) 선임
-   - (Company)-[:BELONGS_TO]->(Industry): 기업이 속한 산업군 분류
-   - (Company)-[:OPERATES_IN]->(BusinessArea): 기업이 영위하는 사업부문/사업영역 - ex) 삼성전자 -[:OPERATES_IN]-> 메모리
-   - (Company)-[:PRODUCES]->(ProductService): 기업이 생산, 판매, 제공하는 제품 또는 서비스 - ex) 삼성전자 -[:PRODUCES]-> HBM
-   - (ProductService)-[:PART_OF]->(BusinessArea): 제품/서비스가 속한 상위 사업부문 - ex)  HBM -[:PART_OF]-> 메모리
-   - (BusinessArea)-[:PART_OF]->(Industry): 사업부문이 속한 상위 산업군 - ex) 메모리 -[:PART_OF]-> 반도체
+   - (Company)-[:BELONGS_TO]->(Industry): 기업이 속한 산업군 또는 사업영역 분류
+   - (Company)-[:PRODUCES]->(ProductService): 기업이 생산/판매/제공하는 제품 또는 서비스
+   - (Industry/ProductService)-[:PART_OF]->(Industry): 하위 산업/제품이 상위 산업에 속함
+   - (Industry)-[:RELATED_TO]->(Industry): 산업 간 비계층 연관
 
 [조회 규칙 - 하위 질문 최적화]
 1. **단일 엔티티 질문**: 해당 엔티티의 1~2홉 주변 노드를 탐색하라.
