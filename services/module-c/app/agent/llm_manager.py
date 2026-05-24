@@ -18,34 +18,42 @@ class LLMManager:
             seed=42 # 똑같은 질문에 대해 똑같은 답변을 내기 위해 고정
         )
 
-        # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 질문 재구성, 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
-        self.gpto4mini = ChatOpenAI(
-            model="o4-mini",
+        # 일관된 응답을 얻기 위해 temperature가 있고 빠른 gpt4omini 사용
+        self.gpt4omini = ChatOpenAI(
+            model="gpt-4o-mini",
             api_key=Config.OPENAI_API_KEY,
+            temperature=0,
             seed=42 # 똑같은 질문에 대해 똑같은 답변을 내기 위해 고정
         )
 
+        # # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 질문 재구성, 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
+        # self.gpto4mini = ChatOpenAI(
+        #     model="o4-mini",
+        #     api_key=Config.OPENAI_API_KEY,
+        #     seed=42 # 똑같은 질문에 대해 똑같은 답변을 내기 위해 고정
+        # )
+
         # 질문 재구성용 llm 체인 정의
         self.query_rewrite_prompt = ChatPromptTemplate.from_template(QUERY_REWRITE_PROMPT)
-        self.query_rewrite_chain = self.query_rewrite_prompt | self.gpto4mini
+        self.query_rewrite_chain = self.query_rewrite_prompt | self.gpt4omini
 
         # 엔티티 추출용 llm 체인 정의
-        self.entity_extraction_llm = self.gpto4mini.with_structured_output(EnitityExtractionResponse) # 응답 형태 지정
+        self.entity_extraction_llm = self.gpt4omini.with_structured_output(EnitityExtractionResponse) # 응답 형태 지정
         self.entity_extraction_prompt = ChatPromptTemplate.from_template(ENTITY_EXTRACTION_PROMPT)
         self.entity_extraction_chain = self.entity_extraction_prompt | self.entity_extraction_llm
 
-        # 엔티티 정규화용 llm 체인 정의
-        self.entity_normalization_llm = self.gpto4mini.with_structured_output(EnitityNormalizationResponse) # 응답 형태 지정
-        self.entity_normalization_prompt = ChatPromptTemplate.from_template(ENTITY_NORMALIZATION_PROMPT)
-        self.entity_normalization_chain = self.entity_normalization_prompt | self.entity_normalization_llm
+        # # 엔티티 정규화용 llm 체인 정의
+        # self.entity_normalization_llm = self.gpt4omini.with_structured_output(EnitityNormalizationResponse) # 응답 형태 지정
+        # self.entity_normalization_prompt = ChatPromptTemplate.from_template(ENTITY_NORMALIZATION_PROMPT)
+        # self.entity_normalization_chain = self.entity_normalization_prompt | self.entity_normalization_llm
 
         # 하위 쿼리 생성용 llm 체인 정의
-        self.query_planner_llm = self.gpto4mini.with_structured_output(QueryPlanResponse) # 응답 형태 지정
-        self.query_planner_prompt = ChatPromptTemplate.from_template(QUERY_PLANNER_PROMPT)
+        self.query_planner_llm = self.gpt4omini.with_structured_output(QueryPlanResponse) # 응답 형태 지정
+        self.query_planner_prompt = ChatPromptTemplate.from_template(VECTOR_QUERY_PLANNER_PROMPT)
         self.query_planner_chain = self.query_planner_prompt | self.query_planner_llm
 
         # 사이퍼 쿼리 생성용 llm 체인 정의
-        self.cypher_generation_llm = self.gpto4mini.with_structured_output(CypherGenerationResponse) # 응답 형태 지정
+        self.cypher_generation_llm = self.gpt4omini.with_structured_output(CypherGenerationResponse) # 응답 형태 지정
         self.cypher_generation_prompt = ChatPromptTemplate.from_template(CYPHER_GENERATION_PROMPT)
         self.cypher_generation_chain = self.cypher_generation_prompt | self.cypher_generation_llm
 
@@ -70,31 +78,20 @@ class LLMManager:
         })
     
 
-    # 엔티티 정규화 함수
-    def normalize_entities(self, query: str, dynamic_dictionaries: str, extracted_entities_data: str) -> EnitityNormalizationResponse:
-        return self.entity_normalization_chain.invoke({
-            "user_query": query,
-            "dynamic_dictionaries": dynamic_dictionaries,
-            "extracted_entities_data": extracted_entities_data
-        })
-    
-
     # 하위 쿼리 생성 함수
-    def generate_sub_queries(self, query: str, extracted_company_names: List[str], vector_context: str) -> QueryPlanResponse:
+    def generate_sub_queries(self, query: str, extracted_company_names: List[str]) -> QueryPlanResponse:
         return self.query_planner_chain.invoke({
             "user_query": query,
-            "extracted_company_names": extracted_company_names,
-            "vector_context": vector_context
+            "extracted_company_names": extracted_company_names
         })
     
 
     # 사이퍼 쿼리 생성 함수
-    def generate_cypher(self, query: str, sub_queries: List[str], entity_extraction_data: EntityExtractionData) -> CypherGenerationResponse:
+    def generate_cypher(self, query: str, entity_extraction_data: EntityExtractionData) -> CypherGenerationResponse:
         # 추출된 엔티티는 json으로 변환하여 프롬포트에 주입
         entity_extraction_json = entity_extraction_data.model_dump_json(indent=2) 
         return self.cypher_generation_chain.invoke({
             "user_query": query,
-            "sub_queries": sub_queries,
             "entity_extraction_data": entity_extraction_json
         })
     

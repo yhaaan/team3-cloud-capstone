@@ -45,32 +45,49 @@ class Neo4jHandler():
                 cypher_queries = [cypher_queries]
 
             all_records = []
+            success_count = 0
 
             with self.graph_db._driver.session() as session:
                 # 2. 리스트에 담긴 쿼리를 하나씩 순회하며 실행
-                for query in cypher_queries:
+                for idx, query in enumerate(cypher_queries):
                     # 빈 문자열 등 유효하지 않은 쿼리는 스킵
                     if not query or not query.strip():
                         continue
                     
-                    result = session.run(query)
-                    # session.run()의 결과(Result 객체)를 list로 변환하여 전체 레코드 누적
-                    all_records.extend(list(result))
+                    # 🌟 [핵심 수정] 개별 쿼리 실행을 try-except로 감싸서 독립성 보장
+                    try:
+                        result = session.run(query)
+                        all_records.extend(list(result))
+                        success_count += 1
+                    except Exception as q_err:
+                        # 특정 쿼리가 실패하더라도 로그만 남기고 다음 쿼리로 진행
+                        print(f"⚠️ [Cypher 쿼리 {idx+1}번 실행 실패]: {q_err}")
+                        print(f"   ↳ 실패한 쿼리 본문: {query}")
+                        continue
                 
+                # 모든 쿼리가 실패했거나 조회 데이터가 아예 없는 경우 방어 코드
+                if not all_records:
+                    print("⚠️ 모든 Cypher 쿼리에서 조회된 그래프 레코드가 없습니다.")
+                    return GraphDBSearchResponse(
+                        center_id="",
+                        graph_context="조회된 그래프 데이터 없음",
+                        graph_structured_data=[]
+                    )
+
                 # 3. 누적된 모든 Record 객체들을 한 번에 처리
                 graph_data = self.process_data_for_all(all_records, center_entity_name)
                 
-                print(graph_data)
                 self.graph_db_error = None
-                print(f"✔️ {len(cypher_queries)}개의 사이퍼 쿼리를 이용한 그래프 DB 탐색이 성공적으로 완료되었습니다.\n")
+                print(f"✔️ 총 {len(cypher_queries)}개 중 {success_count}개의 사이퍼 쿼리 탐색 성공 (레코드 {len(all_records)}개 누적).\n")
                 return graph_data
                 
         except Exception as e:
-            self.graph_db_error = "❌ Neo4j 데이터베이스 탐색에 실패했습니다."
-            print(f"그래프 DB 탐색 에러: {e}\n")
+            # 드라이버 세션 생성 자체가 실패하거나 process_data_for_all에서 터진 경우 대응
+            self.graph_db_error = "❌ Neo4j 데이터베이스 세션 및 데이터 가공에 실패했습니다."
+            print(f"그래프 DB 치명적 에러: {e}\n")
             return GraphDBSearchResponse(
-                center_id="",
-                graph_context="",
+                center_id="",  # 명확하게 None(또는 "") 스펙 일치
+                graph_context=f"그래프 DB 전체 실패: {str(e)}",
                 graph_structured_data=[]
             )
         
@@ -98,8 +115,8 @@ class Neo4jHandler():
                     detected_center_id = record['m'].element_id
 
             # CASE A: Path (p)가 들어온 경우
-            if 'p' in record.keys():
-                path_obj = record['p']
+            if 'path' in record.keys():
+                path_obj = record['path']
                 nodes_in_path = []
                 for node in path_obj.nodes:
                     if center_name != "" and node.get('name') == center_name:
@@ -109,7 +126,7 @@ class Neo4jHandler():
                         "name": node.get('name', 'Unknown'),
                         "type": list(node.labels)[0] if node.labels else 'Entity',
                     })
-                d['p'] = nodes_in_path 
+                d['path'] = nodes_in_path 
 
                 for rel in path_obj.relationships:
                     structured_rels.append(self._parse_single_rel(rel))
@@ -335,11 +352,11 @@ class VectorHandler():
             and_conditions = []
             
             if search_filter:
-                if search_filter.document_type:
+                if search_filter.document_type and search_filter.document_type.strip():
                     and_conditions.append({"document_type": {"$eq": search_filter.document_type}})
-                if search_filter.dataset_label:
+                if search_filter.dataset_label and search_filter.dataset_label.strip():
                     and_conditions.append({"dataset_label": {"$eq": search_filter.dataset_label}})
-                if search_filter.company_name:
+                if search_filter.company_name and search_filter.company_name.strip():
                     and_conditions.append({"company_hint": {"$eq": search_filter.company_name}})
                     
             if and_conditions:
