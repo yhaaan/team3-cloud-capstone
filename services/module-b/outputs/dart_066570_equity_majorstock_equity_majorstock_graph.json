@@ -1,0 +1,123 @@
+{
+  "source_id": "dart_066570_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_066570",
+      "type": "Company",
+      "name": "LG전자",
+      "stock_code": "066570",
+      "description": "가전제품, 전자부품 등 제조 및 판매"
+    },
+    {
+      "id": "company_003550",
+      "type": "Company",
+      "name": "LG",
+      "stock_code": "003550",
+      "description": "화학, 전자, 통신, 에너지 등 다양한 사업영역 보유"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_066570",
+      "to": "industry_electronics",
+      "evidence": "LG전자의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-08-01, 보유주식수는 10,608,602주, 지분율은 6.48%",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003550",
+      "to": "industry_holding_company",
+      "evidence": "LG전자의 대량보유 보고자는 LG, 보고 유형은 일반, 접수일은 2026-03-24, 보유주식수는 57,445,254주, 지분율은 35.27%",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_066570_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250801000213",
+      "evidence_published_at": "2026-03-24"
+    }
+  ]
+}

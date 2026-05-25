@@ -1,0 +1,78 @@
+{
+  "source_id": "dart_035250_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_035250",
+      "type": "Company",
+      "name": "강원랜드",
+      "stock_code": "035250",
+      "description": "카지노 운영을 주 사업으로 하는 회사"
+    },
+    {
+      "id": "industry_casino",
+      "type": "Industry",
+      "name": "카지노"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035250",
+      "to": "industry_casino",
+      "evidence": "강원랜드의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2026-04-01, 보유주식수는 10,770,433주, 지분율은 5.03%, 주식수 증감은 -2,190,259, 지분율 증감은 -1.03, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_035250_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260401003640",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_casino",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 카지노 is part of 여행/레저.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_035250_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260401003640",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_035250_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260401003640",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_035250_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260401003640",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

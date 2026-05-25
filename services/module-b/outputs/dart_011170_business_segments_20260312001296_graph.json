@@ -1,0 +1,636 @@
+{
+  "source_id": "dart_011170_business_segments_20260312001296",
+  "entities": [
+    {
+      "id": "company_011170",
+      "type": "Company",
+      "name": "롯데케미칼",
+      "stock_code": "011170",
+      "description": "기초화학, 첨단소재, 정밀화학, 전지소재 등 다양한 화학제품과 소재를 제조, 판매하는 기업"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_020150",
+      "type": "Company",
+      "name": "롯데에너지머티리얼즈",
+      "stock_code": "020150",
+      "description": "2차전지 소재 등 전지소재와 건설 관련 제품을 제조, 판매"
+    },
+    {
+      "id": "company_004000",
+      "type": "Company",
+      "name": "롯데정밀화학",
+      "stock_code": "004000",
+      "description": "정밀화학 사업을 중심으로 화학제품을 제조, 판매"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_basic_chemical",
+      "type": "Industry",
+      "name": "기초화학"
+    },
+    {
+      "id": "industry_fine_chemical",
+      "type": "Industry",
+      "name": "정밀화학"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "product_service_pe",
+      "type": "ProductService",
+      "name": "폴리에틸렌"
+    },
+    {
+      "id": "product_service_pp",
+      "type": "ProductService",
+      "name": "폴리프로필렌"
+    },
+    {
+      "id": "product_service_btx",
+      "type": "ProductService",
+      "name": "BTX"
+    },
+    {
+      "id": "product_service_abs",
+      "type": "ProductService",
+      "name": "ABS"
+    },
+    {
+      "id": "product_service_pc",
+      "type": "ProductService",
+      "name": "폴리카보네이트"
+    },
+    {
+      "id": "product_service_elecfoil",
+      "type": "ProductService",
+      "name": "동박"
+    },
+    {
+      "id": "product_service_ech",
+      "type": "ProductService",
+      "name": "ECH"
+    },
+    {
+      "id": "product_service_가성소다",
+      "type": "ProductService",
+      "name": "가성소다"
+    },
+    {
+      "id": "product_service_암모니아계",
+      "type": "ProductService",
+      "name": "암모니아계"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011170",
+      "to": "industry_chemical_materials",
+      "evidence": "롯데케미칼(주)와 종속회사(이하 '연결회사')는 2025년 말 기준으로 약 18조 4,830억원의 매출을 달성하였으며, 각 사업별 매출액은 기초화학 사업 67.5%, 첨단소재 사업 27.5%, 정밀화학 사업 9.5%, 전지소재 사업 3.7%로 구성되어 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011170",
+      "to": "industry_basic_chemical",
+      "evidence": "기초화학 사업은 석유화학제품을 생산하는 대규모 장치산업으로서, 에틸렌, 프로필렌, Xylene류의 기초 유분 및 모노머 제품으로 폴리에틸렌(PE), 폴리프로필렌(PP) 등의 제품을 제조, 판매",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011170",
+      "to": "industry_fine_chemical",
+      "evidence": "정밀화학 사업은 염소 계열, 암모니아 계열, 셀룰로스 계열의 제품과 상품을 판매",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_020150",
+      "to": "industry_battery_energy_storage",
+      "evidence": "전지소재 롯데에너지머티리얼즈(주) 와 그 종속회사 동박(Elecfoil) 등",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004000",
+      "to": "industry_fine_chemical",
+      "evidence": "정밀화학 롯데정밀화학(주)와 그 종속회사 ECH, 가성소다, 메셀로스, 애니코트 등",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_pe",
+      "evidence": "폴리에틸렌(PE), 필름, 일회용 제품, 석유화학제품 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_pp",
+      "evidence": "폴리프로필렌(PP), 자동차용 내/외장재 등, 석유화학제품 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_btx",
+      "evidence": "BTX, 석유화학제품 원료 등, 석유화학제품 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_abs",
+      "evidence": "ABS, 자동차용 내/외장재 등, 플라스틱 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_pc",
+      "evidence": "PC, 가전제품, IT 제품 등, 플라스틱 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_020150",
+      "to": "product_service_elecfoil",
+      "evidence": "동박(Elecfoil), 2차전지 소재 등, 2차전지 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004000",
+      "to": "product_service_ech",
+      "evidence": "ECH, 방수 및 방청 페인트의 주된 원료",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004000",
+      "to": "product_service_가성소다",
+      "evidence": "가성소다, 섬유, 의약, 제지, 세제 등 화학산업 분야 기초 원료",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004000",
+      "to": "product_service_암모니아계",
+      "evidence": "암모니아계 비료, 합성섬유 등 화학제품 제조",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_basic_chemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 기초화학 is part of 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_fine_chemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 정밀화학 is part of 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_011170_business_segments_20260312001296",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001296",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

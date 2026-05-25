@@ -1,0 +1,180 @@
+{
+  "source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+  "entities": [
+    {
+      "id": "company_032820",
+      "type": "Company",
+      "name": "우리기술",
+      "stock_code": "032820"
+    },
+    {
+      "id": "company_041520",
+      "type": "Company",
+      "name": "이엘씨",
+      "stock_code": "041520"
+    },
+    {
+      "id": "industry_environment",
+      "type": "Industry",
+      "name": "환경"
+    },
+    {
+      "id": "product_service_incineration_residue_recycling",
+      "type": "ProductService",
+      "name": "소각재 자원순환사업"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_032820",
+      "to": "company_041520",
+      "evidence": "우리기술의 연결대상 종속회사 후보로 이엘씨 등이 탐지되었다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_041520",
+      "to": "product_service_incineration_residue_recycling",
+      "evidence": "(주)이엘씨 | 2024.02.20 | 경기도 화성시 동탄대로 21길 10,1405호(영천동) | 소각재 자원순환사업 | 35,264,525 | 지분율53.3%를 보유 | 기타 지배회사에 미치는 영향이크다고 판단하는 종속회사",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_041520",
+      "to": "industry_environment",
+      "evidence": "(주)이엘씨 | 2024.02.20 | 경기도 화성시 동탄대로 21길 10,1405호(영천동) | 소각재 자원순환사업 | 35,264,525 | 지분율53.3%를 보유 | 기타 지배회사에 미치는 영향이크다고 판단하는 종속회사",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_incineration_residue_recycling",
+      "to": "industry_environment",
+      "evidence": "(주)이엘씨 | 2024.02.20 | 경기도 화성시 동탄대로 21길 10,1405호(영천동) | 소각재 자원순환사업 | 35,264,525 | 지분율53.3%를 보유 | 기타 지배회사에 미치는 영향이크다고 판단하는 종속회사",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 환경 is related to 화학소재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 환경 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_032820_consolidated_subsidiary_status_20260323001668",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001668",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

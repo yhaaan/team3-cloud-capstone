@@ -1,0 +1,69 @@
+{
+  "source_id": "dart_033780_affiliate_status_20260318001422",
+  "entities": [
+    {
+      "id": "company_033780",
+      "type": "Company",
+      "name": "KT&G",
+      "stock_code": "033780",
+      "description": "담배, 식품 및 관련 사업을 영위하는 회사"
+    },
+    {
+      "id": "company_003520",
+      "type": "Company",
+      "name": "영진약품",
+      "stock_code": "003520",
+      "description": "제약업을 영위하는 회사"
+    },
+    {
+      "id": "industry_tobacco",
+      "type": "Industry",
+      "name": "담배"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_033780",
+      "to": "industry_tobacco",
+      "evidence": "KT&G의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_affiliate_status_20260318001422",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003520",
+      "to": "industry_bio_healthcare",
+      "evidence": "영진약품의 명칭과 상장 업종에 따른 분류",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_affiliate_status_20260318001422",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_tobacco",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 담배 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_affiliate_status_20260318001422",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

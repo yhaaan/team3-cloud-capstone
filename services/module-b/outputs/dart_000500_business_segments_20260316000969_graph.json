@@ -1,0 +1,565 @@
+{
+  "source_id": "dart_000500_business_segments_20260316000969",
+  "entities": [
+    {
+      "id": "company_000500",
+      "type": "Company",
+      "name": "가온전선",
+      "stock_code": "000500",
+      "description": "전력케이블, 통신케이블, 특수케이블, 목드럼 생산 및 판매하는 국내 3대 전선 전문 제조업체"
+    },
+    {
+      "id": "company_015760",
+      "type": "Company",
+      "name": "한국전력",
+      "stock_code": "015760"
+    },
+    {
+      "id": "company_006260",
+      "type": "Company",
+      "name": "LS",
+      "stock_code": "006260"
+    },
+    {
+      "id": "industry_power_equipment",
+      "type": "Industry",
+      "name": "전력장비"
+    },
+    {
+      "id": "industry_cable_wire",
+      "type": "Industry",
+      "name": "전선/케이블"
+    },
+    {
+      "id": "industry_power_generation",
+      "type": "Industry",
+      "name": "전력발전"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "product_service_power_cable",
+      "type": "ProductService",
+      "name": "전력케이블"
+    },
+    {
+      "id": "product_service_communication_cable",
+      "type": "ProductService",
+      "name": "통신케이블"
+    },
+    {
+      "id": "product_service_special_cable",
+      "type": "ProductService",
+      "name": "특수케이블"
+    },
+    {
+      "id": "product_service_automobile_cable",
+      "type": "ProductService",
+      "name": "자동차전선"
+    },
+    {
+      "id": "product_service_compound_for_cable",
+      "type": "ProductService",
+      "name": "전선용 컴파운드"
+    },
+    {
+      "id": "product_service_wood_drum",
+      "type": "ProductService",
+      "name": "목드럼"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_cable_wire",
+      "evidence": "가온전선의 사업보고서 (2025.12)에서 연결기업은 전력케이블 및 통신케이블 등을 생산하는 국내 3대 전선 전문 제조업체",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_power_equipment",
+      "evidence": "연결기업은 전력케이블의 생산ㆍ판매하는 전력사업부, ... 전력케이블 등 판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_telecom_media",
+      "evidence": "연결기업은 통신케이블을 생산ㆍ판매하는 통신사업부, ... 통신케이블 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_mobility",
+      "evidence": "특수케이블사업부는 자동차전선 및 배전/센서케이블을 생산ㆍ판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_power_cable",
+      "evidence": "전력사업부: 전력케이블 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_communication_cable",
+      "evidence": "통신사업부: 통신케이블 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_special_cable",
+      "evidence": "특수케이블사업부: 특수케이블, 자동차전선, 전선용 컴파운드 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_automobile_cable",
+      "evidence": "특수케이블사업부: 자동차전선",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_compound_for_cable",
+      "evidence": "특수케이블사업부: 전선용 컴파운드",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000500",
+      "to": "product_service_wood_drum",
+      "evidence": "목드럼사업부: 목드럼 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_equipment",
+      "to": "industry_cable_wire",
+      "evidence": "전력케이블은 전선/케이블 산업에 속함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_power_cable",
+      "to": "industry_power_equipment",
+      "evidence": "전력사업부는 전력케이블을 생산ㆍ판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_communication_cable",
+      "to": "industry_telecom_media",
+      "evidence": "통신사업부는 통신케이블 생산ㆍ판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_special_cable",
+      "to": "industry_cable_wire",
+      "evidence": "특수케이블사업부는 특수케이블, 자동차전선, 전선용 컴파운드 등 생산",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_automobile_cable",
+      "to": "industry_mobility",
+      "evidence": "특수케이블사업부 자동차전선은 자동차/모빌리티 산업 관련",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_compound_for_cable",
+      "to": "industry_cable_wire",
+      "evidence": "전선용 컴파운드는 전선/케이블 산업 관련",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_wood_drum",
+      "to": "industry_cable_wire",
+      "evidence": "목드럼사업부 목드럼은 전선 보관 및 포장용",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_cable_wire",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전선/케이블 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력장비 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_generation",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력발전 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_business_segments_20260316000969",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

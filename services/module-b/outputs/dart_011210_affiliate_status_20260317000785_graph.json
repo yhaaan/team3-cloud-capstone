@@ -1,0 +1,640 @@
+{
+  "source_id": "dart_011210_affiliate_status_20260317000785",
+  "entities": [
+    {
+      "id": "company_011210",
+      "type": "Company",
+      "name": "현대위아",
+      "stock_code": "011210",
+      "description": "현대차그룹의 자동차 부품 및 기계공장비를 주력으로 하는 기업"
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270",
+      "description": "자동차 제조 및 판매를 주력으로 하는 기업"
+    },
+    {
+      "id": "company_012330",
+      "type": "Company",
+      "name": "현대모비스",
+      "stock_code": "012330",
+      "description": "자동차 부품 생산 및 모듈 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_004020",
+      "type": "Company",
+      "name": "현대제철",
+      "stock_code": "004020",
+      "description": "철강 및 금속 소재를 생산하는 기업"
+    },
+    {
+      "id": "company_000720",
+      "type": "Company",
+      "name": "현대건설",
+      "stock_code": "000720",
+      "description": "건설 인프라 및 플랜트 사업을 수행하는 기업"
+    },
+    {
+      "id": "company_086280",
+      "type": "Company",
+      "name": "현대글로비스",
+      "stock_code": "086280",
+      "description": "물류 및 자동차 운송 서비스를 제공하는 기업"
+    },
+    {
+      "id": "company_064350",
+      "type": "Company",
+      "name": "현대로템",
+      "stock_code": "064350",
+      "description": "방산, 철도차량 및 기계장비 사업 수행 기업"
+    },
+    {
+      "id": "company_307950",
+      "type": "Company",
+      "name": "현대오토에버",
+      "stock_code": "307950",
+      "description": "자동차 IT 및 소프트웨어 서비스 제공 기업"
+    },
+    {
+      "id": "company_214320",
+      "type": "Company",
+      "name": "이노션",
+      "stock_code": "214320",
+      "description": "광고 및 마케팅 서비스를 제공하는 기업"
+    },
+    {
+      "id": "company_004560",
+      "type": "Company",
+      "name": "현대비앤지스틸",
+      "stock_code": "004560",
+      "description": "철강 소재 생산 기업"
+    },
+    {
+      "id": "company_001500",
+      "type": "Company",
+      "name": "현대차증권",
+      "stock_code": "001500",
+      "description": "증권 및 금융 서비스 제공 기업"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_advertising_marketing",
+      "type": "Industry",
+      "name": "광고/마케팅"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_rail_vehicle",
+      "type": "Industry",
+      "name": "철도차량"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011210",
+      "to": "industry_auto_parts",
+      "evidence": "현대위아의 사업보고서 (2025.12)에서 자동차 부품 중심 사업임이 암시됨.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대위아의 상장 계열회사 후보로 기아가 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_auto_parts",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대모비스가 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004020",
+      "to": "industry_steel_metal",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대제철이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000720",
+      "to": "industry_construction_infrastructure",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대건설이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086280",
+      "to": "industry_logistics",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대글로비스가 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_defense_aerospace",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대로템이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_307950",
+      "to": "industry_it_software",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대오토에버가 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_214320",
+      "to": "industry_advertising_marketing",
+      "evidence": "현대위아의 상장 계열회사 후보로 이노션이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004560",
+      "to": "industry_steel_metal",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대비앤지스틸이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001500",
+      "to": "industry_finance",
+      "evidence": "현대위아의 상장 계열회사 후보로 현대차증권이 탐지되었다.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_rail_vehicle",
+      "to": "industry_defense_aerospace",
+      "evidence": "철도차량은 방산/항공우주 산업의 연관 분야임.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_rail_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 철도차량 is part of 자동차/모빌리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_advertising_marketing",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 광고/마케팅 is part of 통신/미디어.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_011210_affiliate_status_20260317000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000785",
+      "evidence_published_at": "2026-03-17"
+    }
+  ]
+}

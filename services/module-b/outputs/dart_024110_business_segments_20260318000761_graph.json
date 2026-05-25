@@ -1,0 +1,90 @@
+{
+  "source_id": "dart_024110_business_segments_20260318000761",
+  "entities": [
+    {
+      "id": "company_024110",
+      "type": "Company",
+      "name": "기업은행",
+      "stock_code": "024110",
+      "description": "중소기업 중심 금융업과 예금, 대출, 신용카드, 투자자문, 신탁업 등 금융서비스를 제공합니다."
+    },
+    {
+      "id": "company_255220",
+      "type": "Company",
+      "name": "SG",
+      "stock_code": "255220"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_payment_service",
+      "type": "Industry",
+      "name": "결제서비스"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_024110",
+      "to": "industry_finance",
+      "evidence": "중소기업은행은 은행법 등 관련 법률에 근거하여 은행의 고유업무, 부수업무, 겸영업무를 영위하고 있으며, 이에는 예금ㆍ적금의 수입, 자금의 대출 또는 어음의 할인, 내ㆍ외국환 등의 사업, 파생상품 및 파생결합증권의 매매업무, 국채, 지방채 및 특수채의 인수ㆍ매출ㆍ매매업무, 투자자문업, 신탁업, 보험대리점의 업무, 퇴직연금사업자의 업무, 신용카드업 등이 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_024110_business_segments_20260318000761",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_024110",
+      "to": "industry_banking",
+      "evidence": "중소기업은행은 은행법 등 관련 법률에 근거하여 은행의 고유업무, 부수업무, 겸영업무를 영위하고 있으며...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_024110_business_segments_20260318000761",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_024110",
+      "to": "industry_payment_service",
+      "evidence": "이에는 예금ㆍ적금의 수입, 자금의 대출 또는 어음의 할인, 내ㆍ외국환 등의 사업, 파생상품 및 파생결합증권의 매매업무, 국채, 지방채 및 특수채의 인수ㆍ매출ㆍ매매업무, 투자자문업, 신탁업, 보험대리점의 업무, 퇴직연금사업자의 업무, 신용카드업 등이 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_024110_business_segments_20260318000761",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "은행은 금융산업의 한 부분입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_024110_business_segments_20260318000761",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_payment_service",
+      "to": "industry_finance",
+      "evidence": "결제서비스는 금융업의 주요 분야 중 하나입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_024110_business_segments_20260318000761",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000761",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "source_id": "dart_139480_affiliate_status_20260318001024",
+  "entities": [
+    {
+      "id": "company_139480",
+      "type": "Company",
+      "name": "이마트",
+      "stock_code": "139480",
+      "description": "이마트는 유통업을 주요 사업으로 하는 기업이다."
+    },
+    {
+      "id": "company_004170",
+      "type": "Company",
+      "name": "신세계",
+      "stock_code": "004170",
+      "description": "신세계는 유통 및 백화점업을 주요 사업으로 하는 기업이다."
+    },
+    {
+      "id": "company_031440",
+      "type": "Company",
+      "name": "신세계푸드",
+      "stock_code": "031440",
+      "description": "신세계푸드는 식품 및 외식업을 주요 사업으로 하는 기업이다."
+    },
+    {
+      "id": "company_031430",
+      "type": "Company",
+      "name": "신세계인터내셔날",
+      "stock_code": "031430",
+      "description": "신세계인터내셔날은 패션 및 유통업을 주요 사업으로 하는 기업이다."
+    },
+    {
+      "id": "company_037710",
+      "type": "Company",
+      "name": "광주신세계",
+      "stock_code": "037710",
+      "description": "광주신세계는 백화점 및 유통업을 주요 사업으로 하는 기업이다."
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_food_service",
+      "type": "Industry",
+      "name": "외식/급식"
+    },
+    {
+      "id": "industry_textile_fashion",
+      "type": "Industry",
+      "name": "섬유/패션"
+    },
+    {
+      "id": "industry_department_store",
+      "type": "Industry",
+      "name": "백화점점포"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_retail_consumer",
+      "evidence": "이마트의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004170",
+      "to": "industry_retail_consumer",
+      "evidence": "이마트의 상장 계열회사 후보로 신세계 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_031440",
+      "to": "industry_food_service",
+      "evidence": "이마트의 상장 계열회사 후보로 신세계푸드 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_031430",
+      "to": "industry_textile_fashion",
+      "evidence": "이마트의 상장 계열회사 후보로 신세계인터내셔날 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_037710",
+      "to": "industry_department_store",
+      "evidence": "이마트의 상장 계열회사 후보로 광주신세계 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_service",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 외식/급식 is part of 식품/음료.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_department_store",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 백화점점포 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_affiliate_status_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

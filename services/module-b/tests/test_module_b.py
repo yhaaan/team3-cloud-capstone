@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import sys
 import unittest
@@ -20,6 +20,8 @@ from company_whitelist import CompanyWhitelist, ListedCompany
 from document_io import iter_input_documents, normalize_document
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
 from load_chroma import build_chunk_payloads
+from load_neo4j import chunked, group_entity_rows, group_relation_rows
+from ftc_affiliates import build_ftc_affiliates_graph, load_ftc_affiliate_records, match_ftc_affiliates_to_listed_companies, normalize_ftc_company_name
 from role_normalizer import normalize_graph_roles, normalize_role
 from run_to_neo4j import filter_documents_by_dataset
 
@@ -188,7 +190,7 @@ class ModuleBPipelineTests(unittest.TestCase):
         self.assertIn("entities", graph)
         self.assertIn("relations", graph)
 
-    def test_role_normalization_preserves_raw_and_standardizes_role(self):
+    def legacy_role_normalization_preserves_raw_and_standardizes_role(self):
         role, label = normalize_role("삼성전자 회장")
 
         self.assertEqual(role, "CHAIRMAN")
@@ -207,7 +209,10 @@ class ModuleBPipelineTests(unittest.TestCase):
             "relations": [],
         }
 
-        normalized = normalize_graph_roles(graph)
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
         person = normalized["entities"][0]
 
         self.assertEqual(person["role"], "CHAIRMAN")
@@ -218,7 +223,76 @@ class ModuleBPipelineTests(unittest.TestCase):
         self.assertEqual(normalize_role("삼성전자 부회장"), ("VICE_CHAIRMAN", "부회장"))
         self.assertEqual(normalize_role("부사장"), ("VICE_PRESIDENT", "부사장"))
 
-    def test_role_normalization_is_idempotent_for_exported_graphs(self):
+    def test_person_role_fields_move_to_person_company_relation(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {
+                    "id": "person_shared",
+                    "type": "Person",
+                    "name": "Shared Person",
+                    "role": "CEO",
+                    "role_raw": "CEO",
+                    "role_label": "CEO",
+                    "responsibility": "Global role",
+                },
+                {"id": "company_000001", "type": "Company", "name": "Alpha"},
+            ],
+            "relations": [
+                {
+                    "type": "AFFILIATED_WITH",
+                    "from": "person_shared",
+                    "to": "company_000001",
+                    "evidence": "Shared Person is affiliated with Alpha.",
+                    "role_raw": "chairman",
+                    "board_role": "inside director",
+                    "responsibility": "Alpha chair",
+                }
+            ],
+        }
+
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
+        person = next(entity for entity in normalized["entities"] if entity["type"] == "Person")
+        relation = normalized["relations"][0]
+
+        self.assertNotIn("role", person)
+        self.assertNotIn("role_raw", person)
+        self.assertNotIn("role_label", person)
+        self.assertNotIn("responsibility", person)
+        self.assertEqual(relation["role"], "CHAIRMAN")
+        self.assertEqual(relation["role_raw"], "chairman")
+        self.assertEqual(relation["role_label"], "회장")
+        self.assertEqual(relation["board_role"], "inside director")
+        self.assertEqual(relation["responsibility"], "Alpha chair")
+
+    def test_executive_status_drops_company_company_investment_relations(self):
+        graph = {
+            "source_id": "dart_000001_executive_status_2025_11011",
+            "entities": [
+                {"id": "company_000001", "type": "Company", "name": "Alpha"},
+                {"id": "company_000002", "type": "Company", "name": "Beta"},
+            ],
+            "relations": [
+                {
+                    "type": "INVESTS_IN",
+                    "from": "company_000001",
+                    "to": "company_000002",
+                    "evidence": "An executive career mentions Beta.",
+                }
+            ],
+        }
+
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
+
+        self.assertEqual(normalized["relations"], [])
+
+    def legacy_role_normalization_is_idempotent_for_exported_graphs(self):
         graph = {
             "source_id": "test",
             "entities": [
@@ -234,7 +308,10 @@ class ModuleBPipelineTests(unittest.TestCase):
             "relations": [],
         }
 
-        normalized = normalize_graph_roles(graph)
+        normalized = normalize_graph_roles(
+            graph,
+            source_doc={"document_type": "dart", "dataset": "executive_status"},
+        )
         person = normalized["entities"][0]
 
         self.assertEqual(person["role"], "VICE_CHAIRMAN")
@@ -310,14 +387,20 @@ class ModuleBPipelineTests(unittest.TestCase):
 
         normalized = normalize_graph_roles(graph, whitelist)
 
-        self.assertEqual(
-            [entity["id"] for entity in normalized["entities"]],
-            ["company_005930", "industry_ai"],
-        )
+        entity_ids = {entity["id"] for entity in normalized["entities"]}
+        self.assertIn("company_005930", entity_ids)
+        self.assertIn("industry_ai", entity_ids)
+        self.assertNotIn("company_unlisted", entity_ids)
         self.assertEqual(normalized["entities"][0]["stock_code"], "005930")
-        self.assertEqual(len(normalized["relations"]), 1)
-        self.assertEqual(normalized["relations"][0]["type"], "BELONGS_TO")
-        self.assertEqual(normalized["relations"][0]["from"], "company_005930")
+        self.assertIn(
+            {
+                "type": "BELONGS_TO",
+                "from": "company_005930",
+                "to": "industry_ai",
+                "evidence": "Samsung Electronics belongs to AI.",
+            },
+            normalized["relations"],
+        )
 
     def test_graph_normalization_canonicalizes_company_id_by_stock_code(self):
         whitelist = CompanyWhitelist(
@@ -350,8 +433,15 @@ class ModuleBPipelineTests(unittest.TestCase):
 
         companies = [entity for entity in normalized["entities"] if entity["type"] == "Company"]
         self.assertEqual(companies, [{"id": "company_375500", "type": "Company", "name": "DL이앤씨", "stock_code": "375500"}])
-        self.assertEqual(len(normalized["relations"]), 1)
-        self.assertEqual(normalized["relations"][0]["from"], "company_375500")
+        self.assertIn(
+            {
+                "type": "BELONGS_TO",
+                "from": "company_375500",
+                "to": "industry_construction_infrastructure",
+                "evidence": "DL이앤씨 is a construction company.",
+            },
+            normalized["relations"],
+        )
 
     def test_graph_normalization_adds_evidence_source_fields(self):
         graph = {
@@ -412,21 +502,138 @@ class ModuleBPipelineTests(unittest.TestCase):
 
         self.assertEqual(normalized["relations"][0]["date"], "2026-03-20")
 
-    def test_graph_schema_accepts_business_inference_entities(self):
+    def test_graph_normalization_canonicalizes_industry_aliases(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "company_005930", "type": "Company", "name": "Samsung Electronics"},
+                {"id": "industry_robot", "type": "Industry", "name": "로봇"},
+                {"id": "industry_robotics_alias", "type": "Industry", "name": "robotics"},
+            ],
+            "relations": [
+                {
+                    "type": "BELONGS_TO",
+                    "from": "company_005930",
+                    "to": "industry_robot",
+                    "evidence": "Samsung Electronics has a robot business.",
+                },
+                {
+                    "type": "RELATED_TO",
+                    "from": "industry_robotics_alias",
+                    "to": "industry_ai",
+                    "evidence": "Robotics and AI are related.",
+                },
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph)
+        industry_entities = [entity for entity in normalized["entities"] if entity["id"] == "industry_robotics"]
+
+        self.assertEqual(len(industry_entities), 1)
+        self.assertEqual(industry_entities[0]["name"], "로보틱스")
+        self.assertIn(
+            {
+                "type": "BELONGS_TO",
+                "from": "company_005930",
+                "to": "industry_robotics",
+                "evidence": "Samsung Electronics has a robot business.",
+            },
+            normalized["relations"],
+        )
+
+    def test_graph_normalization_adds_taxonomy_hierarchy(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "industry_high_bandwidth_memory", "type": "Industry", "name": "High Bandwidth Memory"},
+            ],
+            "relations": [],
+        }
+
+        normalized = normalize_graph_roles(graph)
+        entity_ids = {entity["id"] for entity in normalized["entities"]}
+
+        self.assertIn("industry_hbm", entity_ids)
+        self.assertIn("industry_memory_semiconductor", entity_ids)
+        self.assertIn("industry_semiconductor", entity_ids)
+        self.assertIn(
+            {
+                "type": "PART_OF",
+                "from": "industry_hbm",
+                "to": "industry_memory_semiconductor",
+                "evidence": "Industry taxonomy: 고대역폭메모리 is part of 메모리반도체.",
+            },
+            normalized["relations"],
+        )
+        self.assertIn(
+            {
+                "type": "PART_OF",
+                "from": "industry_memory_semiconductor",
+                "to": "industry_semiconductor",
+                "evidence": "Industry taxonomy: 메모리반도체 is part of 반도체.",
+            },
+            normalized["relations"],
+        )
+
+    def test_ftc_affiliate_records_match_listed_companies(self):
+        records = load_ftc_affiliate_records(ROOT_DIR / "docs" / "ftc_affiliates.jsonl")
+        match_result = match_ftc_affiliates_to_listed_companies(records)
+
+        self.assertEqual(len(records), 221)
+        self.assertEqual(len(match_result.matched), 221)
+        self.assertEqual(match_result.unmatched, [])
+        self.assertEqual(normalize_ftc_company_name("삼성전자(주)"), normalize_ftc_company_name("삼성전자"))
+
+    def test_ftc_affiliates_graph_builds_group_memberships(self):
+        graph = build_ftc_affiliates_graph(ROOT_DIR / "docs" / "ftc_affiliates.jsonl")
+        schema = __import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8"))
+        validate(instance=graph, schema=schema)
+
+        affiliate_groups = [entity for entity in graph["entities"] if entity["type"] == "AffiliateGroup"]
+        company_entities = [entity for entity in graph["entities"] if entity["type"] == "Company"]
+        member_relations = [relation for relation in graph["relations"] if relation["type"] == "MEMBER_OF"]
+
+        self.assertEqual(graph["source_id"], "ftc_affiliates_202505")
+        self.assertEqual(len(affiliate_groups), 64)
+        self.assertEqual(len(company_entities), 221)
+        self.assertEqual(len(member_relations), 221)
+        self.assertIn(
+            {"id": "affiliate_group_삼성", "type": "AffiliateGroup", "name": "삼성", "presentn_year": "202505", "source": "ftc_affiliates"},
+            affiliate_groups,
+        )
+        self.assertIn(
+            {
+                "type": "MEMBER_OF",
+                "from": "company_005930",
+                "to": "affiliate_group_삼성",
+                "evidence": "FTC 202505: 삼성전자 is listed as a member of 삼성.",
+                "presentn_year": "202505",
+                "jurirno": "1301110006246",
+                "bizrno": "1248100998",
+                "representative_name": "전영현",
+                "founded_on": "1969-01-13",
+                "joined_on": "1969-01-13",
+                "source": "ftc_affiliates",
+            },
+            member_relations,
+        )
+
+    def test_graph_schema_accepts_industry_taxonomy_entities(self):
         graph = {
             "source_id": "test",
             "entities": [
                 {"id": "company_005930", "type": "Company", "name": "Samsung Electronics", "stock_code": "005930"},
-                {"id": "business_area_hbm", "type": "BusinessArea", "name": "HBM"},
+                {"id": "industry_hbm", "type": "Industry", "name": "HBM"},
                 {"id": "product_service_dram", "type": "ProductService", "name": "DRAM"},
                 {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"},
+                {"id": "industry_display", "type": "Industry", "name": "Display"},
             ],
             "relations": [
                 {
-                    "type": "OPERATES_IN",
+                    "type": "BELONGS_TO",
                     "from": "company_005930",
-                    "to": "business_area_hbm",
-                    "evidence": "Samsung Electronics operates in HBM.",
+                    "to": "industry_hbm",
+                    "evidence": "Samsung Electronics belongs to HBM.",
                 },
                 {
                     "type": "PRODUCES",
@@ -437,14 +644,333 @@ class ModuleBPipelineTests(unittest.TestCase):
                 {
                     "type": "PART_OF",
                     "from": "product_service_dram",
-                    "to": "business_area_hbm",
-                    "evidence": "DRAM is part of the HBM business area.",
+                    "to": "industry_semiconductor",
+                    "evidence": "DRAM is part of the semiconductor industry.",
+                },
+                {
+                    "type": "PART_OF",
+                    "from": "industry_hbm",
+                    "to": "industry_semiconductor",
+                    "evidence": "HBM is part of the semiconductor industry.",
+                },
+                {
+                    "type": "RELATED_TO",
+                    "from": "industry_semiconductor",
+                    "to": "industry_display",
+                    "evidence": "Semiconductor and display industries are related.",
                 },
             ],
         }
 
         validate(instance=graph, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
 
+    def test_graph_normalization_converts_business_area_to_industry(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "company_005930", "type": "Company", "name": "Samsung Electronics"},
+                {"id": "business_area_hbm", "type": "BusinessArea", "name": "HBM"},
+                {"id": "industry_semiconductor", "type": "Industry", "name": "Semiconductor"},
+                {"id": "product_service_dram", "type": "ProductService", "name": "DRAM"},
+            ],
+            "relations": [
+                {
+                    "type": "OPERATES_IN",
+                    "from": "company_005930",
+                    "to": "business_area_hbm",
+                    "evidence": "Samsung Electronics operates in HBM.",
+                },
+                {
+                    "type": "PART_OF",
+                    "from": "business_area_hbm",
+                    "to": "industry_semiconductor",
+                    "evidence": "HBM is part of semiconductor.",
+                },
+                {
+                    "type": "PART_OF",
+                    "from": "product_service_dram",
+                    "to": "business_area_hbm",
+                    "evidence": "DRAM is part of HBM.",
+                },
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph)
+
+        self.assertIn(
+            {"id": "industry_hbm", "type": "Industry", "name": "HBM"},
+            normalized["entities"],
+        )
+        self.assertNotIn("BusinessArea", {entity["type"] for entity in normalized["entities"]})
+        self.assertIn(
+            {
+                "type": "BELONGS_TO",
+                "from": "company_005930",
+                "to": "industry_hbm",
+                "evidence": "Samsung Electronics operates in HBM.",
+            },
+            normalized["relations"],
+        )
+        self.assertIn(
+            {
+                "type": "PART_OF",
+                "from": "industry_hbm",
+                "to": "industry_semiconductor",
+                "evidence": "HBM is part of semiconductor.",
+            },
+            normalized["relations"],
+        )
+        self.assertIn(
+            {
+                "type": "PART_OF",
+                "from": "product_service_dram",
+                "to": "industry_hbm",
+                "evidence": "DRAM is part of HBM.",
+            },
+            normalized["relations"],
+        )
+        validate(instance=normalized, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
+
+    def test_graph_normalization_prefers_part_of_over_related_to_for_industries(self):
+        graph = {
+            "source_id": "test",
+            "entities": [
+                {"id": "industry_cloud_service", "type": "Industry", "name": "Cloud Service"},
+                {"id": "industry_it", "type": "Industry", "name": "IT"},
+            ],
+            "relations": [
+                {
+                    "type": "RELATED_TO",
+                    "from": "industry_cloud_service",
+                    "to": "industry_it",
+                    "evidence": "Cloud service is related to IT.",
+                },
+                {
+                    "type": "PART_OF",
+                    "from": "industry_cloud_service",
+                    "to": "industry_it",
+                    "evidence": "Cloud service is part of IT.",
+                },
+                {
+                    "type": "PART_OF",
+                    "from": "industry_it",
+                    "to": "industry_it",
+                    "evidence": "IT is part of IT.",
+                },
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph)
+
+        self.assertIn(
+            {
+                "type": "PART_OF",
+                "from": "industry_cloud_service",
+                "to": "industry_it_software",
+                "evidence": "Cloud service is part of IT.",
+            },
+            normalized["relations"],
+        )
+        self.assertFalse(
+            any(
+                relation["type"] == "RELATED_TO"
+                and {relation["from"], relation["to"]} == {"industry_cloud_service", "industry_it_software"}
+                for relation in normalized["relations"]
+            )
+        )
+
+    def test_graph_normalization_adds_dart_executive_relation_role_fields(self):
+        whitelist = CompanyWhitelist([ListedCompany("000270", "Kia", "KOSPI")])
+        graph = {
+            "source_id": "dart_000270_executive_status_2025_11011",
+            "entities": [
+                {
+                    "id": "person_chung",
+                    "type": "Person",
+                    "name": "Chung Euisun",
+                    "role": "CEO",
+                    "role_raw": "CEO",
+                },
+            ],
+            "relations": [],
+        }
+        source_doc = {
+            "source_id": "dart_000270_executive_status_2025_11011",
+            "document_type": "dart",
+            "dataset": "executive_status",
+            "company_name": "Kia",
+            "stock_code": "000270",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224",
+            "published_at": "2026-03-12",
+            "normalized_records": [
+                {
+                    "nm": "Chung Euisun",
+                    "birth_ym": "1970.10",
+                    "ofcps": "chairman",
+                    "rgist_exctv_at": "inside director",
+                    "fte_at": "full-time",
+                    "chrg_job": "Hyundai Motor Group chairman",
+                    "main_career": "Hyundai Motor Group chairman",
+                    "mxmm_shrholdr_relate": "executive",
+                    "hffc_pd": "1 year",
+                    "tenure_end_on": "2028.03.14",
+                }
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist, source_doc)
+        person = next(entity for entity in normalized["entities"] if entity["type"] == "Person")
+        relation = normalized["relations"][0]
+
+        self.assertEqual(person["id"], "person_chung_euisun_197010")
+        self.assertEqual(person["birth_ym"], "1970-10")
+        self.assertEqual(person["main_career"], "Hyundai Motor Group chairman")
+        self.assertNotIn("role", person)
+        self.assertNotIn("role_raw", person)
+        self.assertEqual(relation["type"], "AFFILIATED_WITH")
+        self.assertEqual(relation["from"], "person_chung_euisun_197010")
+        self.assertEqual(relation["to"], "company_000270")
+        self.assertEqual(relation["role"], "CHAIRMAN")
+        self.assertEqual(relation["role_raw"], "chairman")
+        self.assertEqual(relation["role_label"], "회장")
+        self.assertEqual(relation["board_role"], "inside director")
+        self.assertEqual(relation["responsibility"], "Hyundai Motor Group chairman")
+        validate(instance=normalized, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
+
+    def legacy_graph_normalization_adds_dart_executive_person_identity(self):
+        whitelist = CompanyWhitelist([ListedCompany("267250", "HD현대", "KOSPI")])
+        graph = {
+            "source_id": "dart_267250_executive_status_2025_11011",
+            "entities": [
+                {"id": "person_권오갑", "type": "Person", "name": "권오갑"},
+            ],
+            "relations": [],
+        }
+        source_doc = {
+            "source_id": "dart_267250_executive_status_2025_11011",
+            "document_type": "dart",
+            "dataset": "executive_status",
+            "company_name": "HD현대",
+            "stock_code": "267250",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872",
+            "published_at": "2026-03-20",
+            "normalized_records": [
+                {
+                    "nm": "권오갑",
+                    "sexdstn": "남",
+                    "birth_ym": "1951년 02월",
+                    "ofcps": "대표이사",
+                    "rgist_exctv_at": "사내이사",
+                    "fte_at": "상근",
+                    "chrg_job": "대표이사",
+                    "main_career": "2025~현재 : HD현대 명예회장",
+                    "mxmm_shrholdr_relate": "계열회사 임원",
+                    "hffc_pd": "8년",
+                    "tenure_end_on": "2026년 03월 28일",
+                }
+            ],
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist, source_doc)
+        person = next(entity for entity in normalized["entities"] if entity["type"] == "Person")
+
+        self.assertEqual(person["id"], "person_권오갑_195102")
+        self.assertEqual(person["birth_ym"], "1951-02")
+        self.assertEqual(person["gender"], "남")
+        self.assertEqual(person["main_career"], "2025~현재 : HD현대 명예회장")
+        self.assertEqual(person["executive_type"], "사내이사")
+        self.assertEqual(
+            normalized["relations"][0]["type"],
+            "AFFILIATED_WITH",
+        )
+        self.assertEqual(normalized["relations"][0]["from"], "person_권오갑_195102")
+        self.assertEqual(normalized["relations"][0]["to"], "company_267250")
+        validate(instance=normalized, schema=__import__("json").loads(GRAPH_SCHEMA_PATH.read_text(encoding="utf-8")))
+
+    def test_graph_normalization_removes_person_entities_from_news(self):
+        whitelist = CompanyWhitelist([ListedCompany("005930", "Samsung Electronics", "KOSPI")])
+        graph = {
+            "source_id": "news_001",
+            "entities": [
+                {
+                    "id": "company_samsung_electronics",
+                    "type": "Company",
+                    "name": "Samsung Electronics",
+                },
+                {"id": "person_jane_doe", "type": "Person", "name": "Jane Doe"},
+            ],
+            "relations": [
+                {
+                    "type": "AFFILIATED_WITH",
+                    "from": "person_jane_doe",
+                    "to": "company_samsung_electronics",
+                    "evidence": "Jane Doe is affiliated with Samsung Electronics.",
+                }
+            ],
+        }
+        source_doc = {
+            "source_id": "news_001",
+            "document_type": "news",
+            "url": "https://example.com/news/1",
+            "published_at": "2026-05-12T10:00:00+09:00",
+        }
+
+        normalized = normalize_graph_roles(graph, whitelist, source_doc)
+
+        self.assertFalse(any(entity["type"] == "Person" for entity in normalized["entities"]))
+        self.assertEqual(normalized["relations"], [])
+
+    def test_neo4j_batch_grouping_deduplicates_nodes_and_relations(self):
+        graph_items = [
+            {
+                "entities": [
+                    {"id": "company_005930", "type": "Company", "name": "????"},
+                    {"id": "industry_semiconductor", "type": "Industry", "name": "???"},
+                ],
+                "relations": [
+                    {
+                        "type": "BELONGS_TO",
+                        "from": "company_005930",
+                        "to": "industry_semiconductor",
+                        "evidence": "????? ??? ????.",
+                    }
+                ],
+            },
+            {
+                "entities": [
+                    {"id": "company_005930", "type": "Company", "name": "????", "stock_code": "005930"},
+                ],
+                "relations": [
+                    {
+                        "type": "BELONGS_TO",
+                        "from": "company_005930",
+                        "to": "industry_semiconductor",
+                        "evidence": "?? ??? ??? ???? ???.",
+                    }
+                ],
+            },
+        ]
+
+        entity_rows = group_entity_rows(graph_items)
+        relation_rows = group_relation_rows(graph_items)
+
+        self.assertEqual(len(entity_rows["Company"]), 1)
+        self.assertEqual(entity_rows["Company"][0]["properties"]["stock_code"], "005930")
+        self.assertEqual(len(entity_rows["Industry"]), 1)
+        self.assertEqual(len(relation_rows["BELONGS_TO"]), 1)
+        self.assertEqual(
+            relation_rows["BELONGS_TO"][0]["properties"]["evidence"],
+            "?? ??? ??? ???? ???.",
+        )
+
+    def test_chunked_respects_batch_size(self):
+        rows = [{"id": str(index)} for index in range(5)]
+
+        batches = chunked(rows, 2)
+
+        self.assertEqual([len(batch) for batch in batches], [2, 2, 1])
+
 
 if __name__ == "__main__":
     unittest.main()
+

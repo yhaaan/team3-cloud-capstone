@@ -1,0 +1,80 @@
+{
+  "source_id": "dart_055550_consolidated_subsidiary_status_20260318000826",
+  "entities": [
+    {
+      "id": "company_055550",
+      "type": "Company",
+      "name": "신한지주",
+      "stock_code": "055550",
+      "description": "금융지주회사로 은행업 등 금융 관련 사업을 영위한다."
+    },
+    {
+      "id": "company_006220",
+      "type": "Company",
+      "name": "제주은행",
+      "stock_code": "006220",
+      "description": "은행업을 영위하는 금융회사이다."
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_financial_holding",
+      "evidence": "신한지주의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_consolidated_subsidiary_status_20260318000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006220",
+      "to": "industry_banking",
+      "evidence": "제주은행 | 1969.03.20 | 제주시 1100로 3351(노형동) | 은행업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_consolidated_subsidiary_status_20260318000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_consolidated_subsidiary_status_20260318000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_consolidated_subsidiary_status_20260318000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

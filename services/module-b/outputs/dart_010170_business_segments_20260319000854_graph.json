@@ -1,0 +1,245 @@
+{
+  "source_id": "dart_010170_business_segments_20260319000854",
+  "entities": [
+    {
+      "id": "company_010170",
+      "type": "Company",
+      "name": "대한광통신",
+      "stock_code": "010170",
+      "description": "국내유일 광섬유-광케이블 일관생산체제를 갖추고 통신 및 전력 케이블 제조업과 소재부품장비 사업을 영위"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_power_generation",
+      "type": "Industry",
+      "name": "전력발전"
+    },
+    {
+      "id": "product_service_optical_cable",
+      "type": "ProductService",
+      "name": "광케이블"
+    },
+    {
+      "id": "product_service_opgw",
+      "type": "ProductService",
+      "name": "OPGW"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_010170",
+      "to": "industry_telecom_media",
+      "evidence": "국내유일 광섬유-광케이블 일관생산체제를 갖춘 업체로서 통신 및 전력 케이블 제조업을 영위하고 있으며",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_010170",
+      "to": "industry_power_generation",
+      "evidence": "국내유일 광섬유-광케이블 일관생산체제를 갖춘 업체로서 통신 및 전력 케이블 제조업을 영위하고 있으며",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010170",
+      "to": "product_service_optical_cable",
+      "evidence": "통신사업 제품/상품 광케이블 외 통신선 제조",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_010170",
+      "to": "product_service_opgw",
+      "evidence": "전력사업 제품/상품 OPGW 외 전력선 제조",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_optical_cable",
+      "to": "industry_telecom_media",
+      "evidence": "통신사업 제품/상품 광케이블 외 통신선 제조",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_opgw",
+      "to": "industry_power_generation",
+      "evidence": "전력사업 제품/상품 OPGW 외 전력선 제조",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_generation",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력발전 is part of 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_business_segments_20260319000854",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

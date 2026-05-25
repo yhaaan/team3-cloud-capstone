@@ -1,0 +1,130 @@
+{
+  "source_id": "news_000150_7b818ba231b74816",
+  "entities": [
+    {
+      "id": "company_000150",
+      "type": "Company",
+      "name": "페스카로",
+      "stock_code": "000150",
+      "description": "중공업 중심에서 반도체 중심으로 체질 개선에 나선 기업"
+    },
+    {
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730"
+    },
+    {
+      "id": "company_131970",
+      "type": "Company",
+      "name": "두산테스나",
+      "stock_code": "131970"
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380"
+    },
+    {
+      "id": "industry_semiconductor_materials",
+      "type": "Industry",
+      "name": "반도체소재"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_service_silicon_wafer",
+      "type": "ProductService",
+      "name": "실리콘 웨이퍼"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_034730",
+      "evidence": "두산그룹이 세계 3위 반도체 웨이퍼 제조업체인 SK실트론 인수를 사실상 확정했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_000150",
+      "to": "company_131970",
+      "evidence": "두산은 지난 2022년 반도체 후공정 업체인 두산테스나를 인수하며 반도체 시장에 진입했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000150",
+      "to": "industry_semiconductor",
+      "evidence": "중공업 중심에서 반도체 중심으로 체질 개선에 나선 것으로 풀이된다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_semiconductor_materials",
+      "evidence": "SK실트론 제공 두산그룹이 세계 3위 반도체 웨이퍼 제조업체인 SK실트론 인수를 사실상 확정했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_034730",
+      "to": "product_service_silicon_wafer",
+      "evidence": "SK실트론 연구원들이 반도체 소재인 실리콘 웨이퍼를 살펴보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_materials",
+      "to": "industry_semiconductor",
+      "evidence": "SK실트론 제공 두산그룹이 세계 3위 반도체 웨이퍼 제조업체인 SK실트론 인수를 사실상 확정했다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_silicon_wafer",
+      "to": "industry_semiconductor_materials",
+      "evidence": "SK실트론 연구원들이 반도체 소재인 실리콘 웨이퍼를 살펴보고 있다.",
+      "date": "",
+      "evidence_source_id": "news_000150_7b818ba231b74816",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.khan.co.kr/article/202605172301001",
+      "evidence_published_at": "2026-05-17T23:01:00+09:00"
+    }
+  ]
+}

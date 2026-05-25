@@ -1,0 +1,73 @@
+{
+  "source_id": "dart_088350_major_shareholder_change_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_088350",
+      "type": "Company",
+      "name": "한화생명",
+      "stock_code": "088350"
+    },
+    {
+      "id": "company_000880",
+      "type": "Company",
+      "name": "한화",
+      "stock_code": "000880"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_088350",
+      "to": "industry_insurance",
+      "evidence": "한화생명의 최대주주 변동 대상은 한화건설(주), 변동일은 2022년 05월 13일, 보유주식수는 319,292,523주, 지분율은 45.05%, 변동 사유는 임원 주식 취득.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_088350_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003585",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_insurance",
+      "evidence": "한화생명의 최대주주 변동 대상은 (주)한화, 변동일은 2024년 08월 07일, 보유주식수는 391,394,041주, 지분율은 45.06%, 변동 사유는 임원 주식 취득.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_088350_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003585",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_088350",
+      "to": "industry_insurance",
+      "evidence": "한화생명의 최대주주 변동 대상은 (주)한화, 변동일은 2025년 08월 05일, 보유주식수는 391,303,450주, 지분율은 45.05%, 변동 사유는 임원 퇴임, 임원 선임.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_088350_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003585",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_088350_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003585",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

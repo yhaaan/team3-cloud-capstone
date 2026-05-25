@@ -1,0 +1,59 @@
+{
+  "source_id": "dart_023530_consolidated_subsidiary_status_20260312001405",
+  "entities": [
+    {
+      "id": "company_023530",
+      "type": "Company",
+      "name": "롯데쇼핑",
+      "stock_code": "023530",
+      "description": "가전제품 소매업을 주요 사업으로 하는 유통기업"
+    },
+    {
+      "id": "company_071840",
+      "type": "Company",
+      "name": "롯데하이마트",
+      "stock_code": "071840",
+      "description": "가전제품 소매업을 주요 사업으로 하는 기업"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_023530",
+      "to": "company_071840",
+      "evidence": "롯데쇼핑의 연결대상 종속회사 후보로 롯데하이마트 등이 탐지되었다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_consolidated_subsidiary_status_20260312001405",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_023530",
+      "to": "industry_retail_consumer",
+      "evidence": "롯데하이마트 | 1987.06.03 | 서울특별시 강남구 삼성로 156 롯데하이마트빌딩 | 가전제품소매업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_consolidated_subsidiary_status_20260312001405",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_071840",
+      "to": "industry_retail_consumer",
+      "evidence": "롯데하이마트 | 1987.06.03 | 서울특별시 강남구 삼성로 156 롯데하이마트빌딩 | 가전제품소매업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_consolidated_subsidiary_status_20260312001405",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

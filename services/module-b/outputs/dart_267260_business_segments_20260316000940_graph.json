@@ -1,0 +1,710 @@
+{
+  "source_id": "dart_267260_business_segments_20260316000940",
+  "entities": [
+    {
+      "id": "company_267260",
+      "type": "Company",
+      "name": "HD현대일렉트릭",
+      "stock_code": "267260",
+      "description": "전력변압기, 고압차단기 등 전력기기와 회전기기, 배전기기 제조 및 에너지솔루션과 ESS, 태양광 사업을 영위"
+    },
+    {
+      "id": "company_015760",
+      "type": "Company",
+      "name": "한국전력",
+      "stock_code": "015760"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_power_equipment",
+      "type": "Industry",
+      "name": "전력장비"
+    },
+    {
+      "id": "industry_power_generation",
+      "type": "Industry",
+      "name": "전력발전"
+    },
+    {
+      "id": "industry_power_grid",
+      "type": "Industry",
+      "name": "전력전력망"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "product_service_power_transformer",
+      "type": "ProductService",
+      "name": "전력변압기"
+    },
+    {
+      "id": "product_service_high_voltage_circuit_breaker",
+      "type": "ProductService",
+      "name": "고압차단기"
+    },
+    {
+      "id": "product_service_distribution_board",
+      "type": "ProductService",
+      "name": "배전반"
+    },
+    {
+      "id": "product_service_power_control_device",
+      "type": "ProductService",
+      "name": "전력제어"
+    },
+    {
+      "id": "product_service_voltage_circuit_breaker",
+      "type": "ProductService",
+      "name": "중저압차단기"
+    },
+    {
+      "id": "product_service_rotating_machine",
+      "type": "ProductService",
+      "name": "회전기"
+    },
+    {
+      "id": "product_service_low_voltage_motor",
+      "type": "ProductService",
+      "name": "저압전동기"
+    },
+    {
+      "id": "industry_solar_energy",
+      "type": "Industry",
+      "name": "태양광에너지"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_smart_factory",
+      "type": "Industry",
+      "name": "스마트공장"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_energy_utility",
+      "evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_power_equipment",
+      "evidence": "당사가 제작하여 공급하는 제품들은 전력 공급의 단계에 따라 전력기기, 배전기기, 회전기기 등으로 구분될 수 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_power_transformer",
+      "evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 전력변압기, 고압차단기 등이 있으며",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_high_voltage_circuit_breaker",
+      "evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 전력변압기, 고압차단기 등이 있으며",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_distribution_board",
+      "evidence": "배전 단계(1kV~50kV 중압, 1kV미만 저압)에서 적용되는 배전반, 중저압차단기 등의 배전기기,",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_power_control_device",
+      "evidence": "배전반, 전력제어, 중저압차단기 등의 배전기기,",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_voltage_circuit_breaker",
+      "evidence": "배전반, 중저압차단기 등의 배전기기,",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_rotating_machine",
+      "evidence": "부하로써 전기에너지를 이용하여 운동에너지를 발생시키는 전동기등의 회전기기가 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_267260",
+      "to": "product_service_low_voltage_motor",
+      "evidence": "부하로써 전기에너지를 이용하여 운동에너지를 발생시키는 전동기등의 회전기기가 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_battery_energy_storage",
+      "evidence": "당사는 2025년 12월말 기준 누적 약 1.6GWh이상의 에너지저장시스템(ESS)을 설치, 운영해 온 우수한 실적을 보유하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_solar_energy",
+      "evidence": "당사는 기존 에너지저장시스템(ESS), 태양광 시장용 전력변환기기 판매 확대를 추진하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_ai",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 AI, 건설, 고객, 공급, 서비스, 선박, 솔루션, 수주, 시스템, 에너지, 전지, 제조, 제품, 태양광, 판매이다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267260",
+      "to": "industry_renewable_energy",
+      "evidence": "신재생발전 증가와 이에 따른 전력변환 및 에너지저장 시장 성장, IT 기술을 접목하여 효율적으로 에너지를 관리하는스마트그리드 시장 성장으로 요약할 수 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "당사는 발전→송전→배전→소비(부하)에 이르는 전력공급 과정 전 단계에 필요한 다양한 전기전자기기 및 에너지 솔루션을 제작ㆍ공급하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_power_transformer",
+      "to": "industry_power_equipment",
+      "evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 전력변압기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_high_voltage_circuit_breaker",
+      "to": "industry_power_equipment",
+      "evidence": "전력기기로는 발전ㆍ송전 단계(고압,통상 50kV 이상)에서 적용되는 고압차단기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_distribution_board",
+      "to": "industry_power_equipment",
+      "evidence": "배전 단계(1kV~50kV 중압, 1kV미만 저압)에서 적용되는 배전반",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_power_control_device",
+      "to": "industry_power_equipment",
+      "evidence": "배전반, 전력제어, 중저압차단기 등의 배전기기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_voltage_circuit_breaker",
+      "to": "industry_power_equipment",
+      "evidence": "배전반, 중저압차단기 등의 배전기기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_rotating_machine",
+      "to": "industry_power_equipment",
+      "evidence": "부하로써 전기에너지를 이용하여 운동에너지를 발생시키는 전동기 등 회전기기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_low_voltage_motor",
+      "to": "industry_power_equipment",
+      "evidence": "저압전동기 등의 회전기기",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_generation",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력발전 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_smart_factory",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 스마트공장 is part of 기계/장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_solar_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 태양광에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_grid",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력전력망 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_267260_business_segments_20260316000940",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000940",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

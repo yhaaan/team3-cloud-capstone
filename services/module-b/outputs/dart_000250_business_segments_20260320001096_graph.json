@@ -1,0 +1,210 @@
+{
+  "source_id": "dart_000250_business_segments_20260320001096",
+  "entities": [
+    {
+      "id": "company_000250",
+      "type": "Company",
+      "name": "삼천당제약",
+      "stock_code": "000250",
+      "description": "의약품 제조 및 판매, 항생제, 순환기·소화기질환 치료제, 안약류 등 전문의약품 생산"
+    },
+    {
+      "id": "company_131030",
+      "type": "Company",
+      "name": "옵투스제약",
+      "stock_code": "131030",
+      "description": "점안제 및 안과용제 등의 의약품 제조 및 판매"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "product_service_안과용_제",
+      "type": "ProductService",
+      "name": "안과용 제"
+    },
+    {
+      "id": "product_service_순환기질환_치료제",
+      "type": "ProductService",
+      "name": "순환기질환 치료제"
+    },
+    {
+      "id": "product_service_소화기계용_제",
+      "type": "ProductService",
+      "name": "소화기계용 제"
+    },
+    {
+      "id": "product_service_호흡기질환_치료제",
+      "type": "ProductService",
+      "name": "호흡기질환 치료제"
+    },
+    {
+      "id": "product_service_항생제",
+      "type": "ProductService",
+      "name": "항생제"
+    },
+    {
+      "id": "product_service_소염제",
+      "type": "ProductService",
+      "name": "소염제"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000250",
+      "to": "industry_bio_healthcare",
+      "evidence": "당사는 1943년 의약품 제조업 및 판매업을 사업목적으로 하여 설립되었으며...",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_131030",
+      "to": "industry_bio_healthcare",
+      "evidence": "옵투스제약은 점안제 및 안과용제 등 의약품 제조 및 판매를...",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_안과용_제",
+      "evidence": "각 제품별 매출액 및 총 매출액에서 차지하는 비율은 다음과 같습니다. 품목: 안과용 제",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_순환기질환_치료제",
+      "evidence": "품목: 순환기질환 치료제, 동맥경화, 협심증 치료제 아토로우 등",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_소화기계용_제",
+      "evidence": "품목: 소화기계용 제, 위, 십이지장궤양 치료제 산화마그네슘 등",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_호흡기질환_치료제",
+      "evidence": "품목: 호흡기질환 치료제, 급, 만성기관지염 치료제 소담 등",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_항생제",
+      "evidence": "품목: 항생제, 폐혈증, 호흡기 크라목스 등",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000250",
+      "to": "product_service_소염제",
+      "evidence": "품목: 소염제, 만성다발성관절염 외 에스부펜, 록소펜 등",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_안과용_제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_순환기질환_치료제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_소화기계용_제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_호흡기질환_치료제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_항생제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_소염제",
+      "to": "industry_bio_healthcare",
+      "evidence": "주요 제품 및 서비스 섹션에서 제약 제품군에 포함됨",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_business_segments_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    }
+  ]
+}

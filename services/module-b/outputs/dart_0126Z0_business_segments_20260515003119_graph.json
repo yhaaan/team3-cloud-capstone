@@ -1,0 +1,100 @@
+{
+  "source_id": "dart_0126Z0_business_segments_20260515003119",
+  "entities": [
+    {
+      "id": "company_001260",
+      "type": "Company",
+      "name": "삼성에피스홀딩스",
+      "stock_code": "001260",
+      "description": "바이오 투자지주회사이며, 자회사 삼성바이오에피스의 바이오의약품 개발 및 상업화를 주력 사업으로 영위합니다."
+    },
+    {
+      "id": "company_287840",
+      "type": "Company",
+      "name": "인투셀",
+      "stock_code": "287840"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "product_service_biosimilar",
+      "type": "ProductService",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "product_service_adc",
+      "type": "ProductService",
+      "name": "ADC"
+    },
+    {
+      "id": "industry_biosimilar",
+      "type": "Industry",
+      "name": "바이오시밀러"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001260",
+      "to": "industry_bio_healthcare",
+      "evidence": "당사는 '독점규제 및 공정거래에 관한 법률'에 따른 지주회사로서 ... '바이오 투자지주회사' 입니다.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biosimilar",
+      "to": "industry_biopharmaceutical",
+      "evidence": "바이오시밀러는 바이오의약품 개발 및 상업화 부문임.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "바이오의약품은 바이오/헬스케어 산업 분야임.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_adc",
+      "to": "industry_biopharmaceutical",
+      "evidence": "항체 약물 접합체(ADC) 분야는 차세대 치료제 시장으로 바이오의약품 개발 영역임.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biosimilar",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 바이오시밀러 is part of 바이오/헬스케어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
+      "evidence_published_at": "2026-05-15"
+    }
+  ]
+}

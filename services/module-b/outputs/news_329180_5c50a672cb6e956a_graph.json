@@ -1,0 +1,184 @@
+{
+  "source_id": "news_329180_5c50a672cb6e956a",
+  "entities": [
+    {
+      "id": "company_329180",
+      "type": "Company",
+      "name": "HD현대중공업",
+      "stock_code": "329180",
+      "description": "상륙함 건조와 장비 설치를 맡는 조선해양 기업"
+    },
+    {
+      "id": "company_071970",
+      "type": "Company",
+      "name": "HD현대마린엔진",
+      "stock_code": "071970"
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "company_267250",
+      "type": "Company",
+      "name": "HD현대",
+      "stock_code": "267250"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "product_service_ship_engine",
+      "type": "ProductService",
+      "name": "선박엔진",
+      "description": "LST-Ⅱ 상륙함 선도함 디젤엔진"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "HD현대중공업은 상륙함 건조와 장비 설치를 맡았다.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_071970",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "방사청이 LST-Ⅱ 차기상륙함 선도함의 디젤엔진 제조사인 HD현대마린엔진",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_071970",
+      "to": "product_service_ship_engine",
+      "evidence": "방사청이 LST-Ⅱ 차기상륙함 선도함의 디젤엔진 제조사인 HD현대마린엔진",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_ship_engine",
+      "evidence": "HD현대중공업은 상륙함 건조와 장비 설치를 맡았다.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "",
+      "evidence_source_id": "news_329180_5c50a672cb6e956a",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.naeil.com/news/read/585573?ref=naver",
+      "evidence_published_at": "2026-04-16T13:02:00+09:00"
+    }
+  ]
+}

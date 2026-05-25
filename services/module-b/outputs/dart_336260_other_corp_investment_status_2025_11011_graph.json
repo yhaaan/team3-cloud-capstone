@@ -2,24 +2,180 @@
   "source_id": "dart_336260_other_corp_investment_status_2025_11011",
   "entities": [
     {
-      "id": "company_dusanfuelcell",
+      "id": "company_336260",
       "type": "Company",
       "name": "두산퓨얼셀",
       "stock_code": "336260"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "industry_fuel_cell",
+      "type": "Industry",
+      "name": "연료셀"
+    },
+    {
+      "id": "industry_hydrogen_energy",
+      "type": "Industry",
+      "name": "수소에너지"
+    },
+    {
+      "id": "product_service_fund_investment",
+      "type": "ProductService",
+      "name": "일반투자"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_dusanfuelcell",
-      "to": "company_hanwha",
+      "type": "BELONGS_TO",
+      "from": "company_336260",
+      "to": "industry_fuel_cell",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 대산그린에너지㈜, 출자 목적은 경영참여, 최초 취득일은 2018.01.25, 당기말 보유수량은 1,020,000, 당기말 지분율은 10.00%, 장부가액은 3,687,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_336260",
+      "to": "industry_hydrogen_energy",
       "evidence": "두산퓨얼셀의 타법인 출자 대상은 한화클린수소에너지 일반사모특별자산 투자신탁1호, 출자 목적은 일반투자, 최초 취득일은 2024.01.12, 당기말 지분율은 30.23%, 장부가액은 5,136,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_hydrogen_energy",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 한화클린수소에너지 일반사모특별자산 투자신탁1호, 출자 목적은 일반투자, 최초 취득일은 2024.01.12, 당기말 지분율은 30.23%, 장부가액은 5,136,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_336260",
+      "to": "company_000880",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 한화클린수소에너지 일반사모특별자산 투자신탁1호, 출자 목적은 일반투자, 최초 취득일은 2024.01.12, 당기말 지분율은 30.23%, 장부가액은 5,136,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_fund_investment",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 자본재공제조합, 출자 목적은 일반투자, 최초 취득일은 2019.11.17, 당기말 보유수량은 25,000, 당기말 지분율은 1.58%, 장부가액은 5,129,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_fund_investment",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 한화클린수소에너지 일반사모특별자산 투자신탁1호, 출자 목적은 일반투자, 최초 취득일은 2024.01.12, 당기말 지분율은 30.23%, 장부가액은 5,136,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_336260",
+      "to": "product_service_fund_investment",
+      "evidence": "두산퓨얼셀의 타법인 출자 대상은 기계설비건설공제조합, 출자 목적은 일반투자, 최초 취득일은 2024.10.31, 당기말 보유수량은 915, 당기말 지분율은 0.09%, 장부가액은 1,009,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_fuel_cell",
+      "to": "industry_hydrogen_energy",
+      "evidence": "Industry taxonomy: 연료셀 is part of 수소에너지.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hydrogen_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 수소에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001264",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_336260_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

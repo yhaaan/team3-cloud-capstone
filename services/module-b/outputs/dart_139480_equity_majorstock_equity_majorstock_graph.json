@@ -1,0 +1,56 @@
+{
+  "source_id": "dart_139480_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_139480",
+      "type": "Company",
+      "name": "이마트",
+      "stock_code": "139480"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_retail_consumer",
+      "evidence": "이마트의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 3,363,683주, 지분율은 12.19%, 주식수 증감은 -50,635, 지분율 증감은 -0.06, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_139480_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000122",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_food_beverage",
+      "evidence": "이마트의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 3,363,683주, 지분율은 12.19%, 주식수 증감은 -50,635, 지분율 증감은 -0.06, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_139480_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000122",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_139480_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000122",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

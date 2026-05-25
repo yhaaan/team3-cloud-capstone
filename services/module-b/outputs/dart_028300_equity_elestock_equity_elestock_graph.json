@@ -1,0 +1,30 @@
+{
+  "source_id": "dart_028300_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_028300",
+      "type": "Company",
+      "name": "HLB",
+      "stock_code": "028300",
+      "description": "바이오 의약품 개발 및 연구에 주력하는 기업"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_028300",
+      "to": "industry_bio_healthcare",
+      "evidence": "HLB의 임원·주요주주 소유상황 보고자 문서 내 HLB가 바이오/헬스케어 분야 기업으로 알려져 있음",
+      "date": "2025-09-01",
+      "evidence_source_id": "dart_028300_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250901000428",
+      "evidence_published_at": "2025-09-01"
+    }
+  ]
+}

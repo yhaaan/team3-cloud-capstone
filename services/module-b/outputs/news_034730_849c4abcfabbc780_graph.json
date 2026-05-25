@@ -1,0 +1,53 @@
+{
+  "source_id": "news_034730_849c4abcfabbc780",
+  "entities": [
+    {
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730",
+      "description": "반도체 및 소재 사업 등 다양한 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_000150",
+      "type": "Company",
+      "name": "페스카로",
+      "stock_code": "000150",
+      "description": "산업재부터 인프라, 에너지 사업을 하는 종합기업"
+    },
+    {
+      "id": "industry_semiconductor_materials",
+      "type": "Industry",
+      "name": "반도체소재"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_semiconductor_materials",
+      "evidence": "SK실트론 인수를 앞둔 두산그룹에 2조5000억원 규모의 인수금융 주선을 추진한다.",
+      "date": "",
+      "evidence_source_id": "news_034730_849c4abcfabbc780",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605184681b",
+      "evidence_published_at": "2026-05-18T20:47:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체소재 is part of 반도체.",
+      "date": "",
+      "evidence_source_id": "news_034730_849c4abcfabbc780",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://magazine.hankyung.com/business/article/202605184681b",
+      "evidence_published_at": "2026-05-18T20:47:00+09:00"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "source_id": "dart_383220_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_383220",
+      "type": "Company",
+      "name": "F&F",
+      "stock_code": "383220",
+      "description": "스포츠 및 캐주얼 의류 디자인, 제조, 판매 전문 기업"
+    },
+    {
+      "id": "industry_textile_fashion",
+      "type": "Industry",
+      "name": "섬유/패션"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_383220",
+      "to": "industry_textile_fashion",
+      "evidence": "F&F는 스포츠 및 캐주얼 의류 디자인, 제조, 판매 전문 기업",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_383220_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000658",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 화학소재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_383220_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000658",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 유통/소비재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_383220_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000658",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_383220_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000658",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_383220_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000658",
+      "evidence_published_at": "2026-03-11"
+    }
+  ]
+}

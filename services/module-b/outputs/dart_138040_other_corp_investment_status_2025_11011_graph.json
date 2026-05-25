@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_138040_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_138040",
+      "type": "Company",
+      "name": "메리츠금융지주",
+      "stock_code": "138040",
+      "description": "금융지주회사로 출자 및 금융서비스를 영위"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138040",
+      "to": "industry_financial_holding",
+      "evidence": "메리츠금융지주",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_138040_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004202",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_138040_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004202",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

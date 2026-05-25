@@ -2,125 +2,116 @@
   "source_id": "dart_017670_major_shareholder_change_status_2025_11011",
   "entities": [
     {
-      "id": "company_sk_telecom",
+      "id": "company_017670",
       "type": "Company",
       "name": "SK텔레콤",
       "stock_code": "017670"
     },
     {
-      "id": "company_sk",
+      "id": "company_034730",
       "type": "Company",
       "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "034730",
+      "description": "에너지, 화학, 통신 등 다양한 산업에 종사하는 지주회사"
     },
     {
-      "id": "person_yu_young_sang",
-      "type": "Person",
-      "name": "유영상",
-      "role": "CEO",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "SK텔레콤 대표이사",
-      "role_label": "대표이사"
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
     },
     {
-      "id": "person_kang_jong_ryeol",
-      "type": "Person",
-      "name": "강종렬",
-      "role": "DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "SK텔레콤 사내이사",
-      "role_label": "이사"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
-      "id": "person_ahn_jung_ho",
-      "type": "Person",
-      "name": "안정호",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     },
     {
-      "id": "person_yoon_young_min",
-      "type": "Person",
-      "name": "윤영민",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_oh_hye_yeon",
-      "type": "Person",
-      "name": "오혜연",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_kim_jun_mo",
-      "type": "Person",
-      "name": "김준모",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_kim_seok_dong",
-      "type": "Person",
-      "name": "김석동",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_kim_yong_hak",
-      "type": "Person",
-      "name": "김용학",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_choi_kyu_nam",
-      "type": "Person",
-      "name": "최규남",
-      "role": "DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "기타비상무이사",
-      "role_label": "이사"
-    },
-    {
-      "id": "person_no_mi_kyung",
-      "type": "Person",
-      "name": "노미경",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
-    },
-    {
-      "id": "person_park_jung_ho",
-      "type": "Person",
-      "name": "박정호",
-      "role": "OTHER",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "계열사임원",
-      "role_label": "계열사임원"
-    },
-    {
-      "id": "person_kim_chang_bo",
-      "type": "Person",
-      "name": "김창보",
-      "role": "OUTSIDE_DIRECTOR",
-      "affiliated_company": "company_sk_telecom",
-      "role_raw": "사외이사",
-      "role_label": "사외이사"
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_telecom_media",
+      "evidence": "SK텔레콤의 최대주주 변동 대상은 SK㈜",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
 }

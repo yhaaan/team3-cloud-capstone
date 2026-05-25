@@ -15,8 +15,8 @@ class GraphFormatter:
             nodes_to_process = []
             if 'n' in path_data and path_data['n']: nodes_to_process.append(path_data['n'])
             if 'm' in path_data and path_data['m']: nodes_to_process.append(path_data['m'])
-            if 'p' in path_data and isinstance(path_data['p'], list):
-                nodes_to_process.extend(path_data['p'])
+            if 'path' in path_data and isinstance(path_data['path'], list):
+                nodes_to_process.extend(path_data['path'])
 
             for node in nodes_to_process:
                 if isinstance(node, dict) and 'name' in node:

@@ -2,66 +2,50 @@
   "source_id": "dart_060570_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_dreamus_company",
+      "id": "company_060570",
       "type": "Company",
       "name": "드림어스컴퍼니",
       "stock_code": "060570"
     },
     {
-      "id": "company_sk_square",
+      "id": "company_402340",
       "type": "Company",
       "name": "SK스퀘어",
       "stock_code": "402340"
     },
     {
-      "id": "company_sm",
+      "id": "company_041510",
       "type": "Company",
       "name": "에스엠",
       "stock_code": "041510"
     },
     {
-      "id": "person_lee_gi_young",
-      "type": "Person",
-      "name": "이기영",
-      "role_raw": "대표이사",
-      "role": "CEO",
-      "affiliated_company": "company_dreamus_company",
-      "role_label": "대표이사"
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
     },
     {
-      "id": "person_seo_woo_seok",
-      "type": "Person",
-      "name": "서우석",
-      "role_raw": "기타비상무이사",
-      "role": "DIRECTOR",
-      "affiliated_company": "company_dreamus_company",
-      "role_label": "이사"
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     },
     {
-      "id": "person_go_jin_ho",
-      "type": "Person",
-      "name": "고진호",
-      "role_raw": "투자제작그룹장",
-      "role": "OTHER",
-      "affiliated_company": "company_dreamus_company",
-      "role_label": "투자제작그룹장"
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
     },
     {
-      "id": "person_hwang_in_seong",
-      "type": "Person",
-      "name": "황인성",
-      "role_raw": "전략담당임원",
-      "role": "OTHER",
-      "affiliated_company": "company_dreamus_company",
-      "role_label": "전략담당임원"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_gi_young",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 이기영, 등기 여부는 등기임원, 직위는 대표이사, 보유주식수는 28,000주, 주식수 증감은 28,000, 지분율은 0.03%, 지분율 증감은 0.03.",
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_music_entertainment",
+      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 ...",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -69,10 +53,10 @@
       "evidence_published_at": "2026-05-06"
     },
     {
-      "type": "APPOINTED_TO",
-      "from": "person_lee_gi_young",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 이기영, 등기 여부는 등기임원, 직위는 대표이사, 보유주식수는 28,000주, 주식수 증감은 28,000, 지분율은 0.03%, 지분율 증감은 0.03.",
+      "type": "BELONGS_TO",
+      "from": "company_402340",
+      "to": "industry_music_entertainment",
+      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자에는 SK스퀘어가 포함됨.",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -80,10 +64,10 @@
       "evidence_published_at": "2026-05-06"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_seo_woo_seok",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 서우석, 등기 여부는 등기임원, 직위는 기타비상무이사, 보유주식수는 56,000주, 주식수 증감은 56,000, 지분율은 0.08%, 지분율 증감은 0.08.",
+      "type": "BELONGS_TO",
+      "from": "company_041510",
+      "to": "industry_music_entertainment",
+      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자에는 에스엠이 포함됨.",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -91,10 +75,10 @@
       "evidence_published_at": "2026-05-06"
     },
     {
-      "type": "APPOINTED_TO",
-      "from": "person_seo_woo_seok",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 서우석, 등기 여부는 등기임원, 직위는 기타비상무이사, 보유주식수는 56,000주, 주식수 증감은 56,000, 지분율은 0.08%, 지분율 증감은 0.08.",
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -102,10 +86,10 @@
       "evidence_published_at": "2026-05-06"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_go_jin_ho",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 고진호, 등기 여부는 비등기임원, 직위는 투자제작그룹장, 보유주식수는 16,081주, 주식수 증감은 16,081, 지분율은 0.02%, 지분율 증감은 0.02.",
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -113,32 +97,10 @@
       "evidence_published_at": "2026-05-06"
     },
     {
-      "type": "APPOINTED_TO",
-      "from": "person_go_jin_ho",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 고진호, 등기 여부는 비등기임원, 직위는 투자제작그룹장, 보유주식수는 16,081주, 주식수 증감은 16,081, 지분율은 0.02%, 지분율 증감은 0.02.",
-      "date": "2026-05-06",
-      "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250529000617",
-      "evidence_published_at": "2026-05-06"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_hwang_in_seong",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 황인성, 등기 여부는 비등기임원, 직위는 전략담당임원, 보유주식수는 20,000주, 주식수 증감은 20,000, 지분율은 0.03%, 지분율 증감은 0.03.",
-      "date": "2026-05-06",
-      "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250529000617",
-      "evidence_published_at": "2026-05-06"
-    },
-    {
-      "type": "APPOINTED_TO",
-      "from": "person_hwang_in_seong",
-      "to": "company_dreamus_company",
-      "evidence": "드림어스컴퍼니의 임원·주요주주 소유상황 보고자는 황인성, 등기 여부는 비등기임원, 직위는 전략담당임원, 보유주식수는 20,000주, 주식수 증감은 20,000, 지분율은 0.03%, 지분율 증감은 0.03.",
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
       "date": "2026-05-06",
       "evidence_source_id": "dart_060570_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

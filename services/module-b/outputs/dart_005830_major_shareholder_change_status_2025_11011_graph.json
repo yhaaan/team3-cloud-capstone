@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_005830_major_shareholder_change_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_005830",
+      "type": "Company",
+      "name": "DB손해보험",
+      "stock_code": "005830",
+      "description": "보험업을 주요 사업으로 영위하는 회사"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005830",
+      "to": "industry_insurance",
+      "evidence": "DB손해보험의 최대주주 변동 대상은 김남호, 변동일은 2014년 09월 25일, 보유주식수는 22,132,431주, 지분율은 31.26%, 변동 사유는 - 특별관계자 김하중 주식매도.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

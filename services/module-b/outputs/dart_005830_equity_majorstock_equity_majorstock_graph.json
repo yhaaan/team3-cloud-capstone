@@ -1,0 +1,58 @@
+{
+  "source_id": "dart_005830_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_005830",
+      "type": "Company",
+      "name": "DB손해보험",
+      "stock_code": "005830",
+      "description": "보험업을 영위하는 회사"
+    },
+    {
+      "id": "company_000990",
+      "type": "Company",
+      "name": "IBKS제25호스팩",
+      "stock_code": "000990"
+    },
+    {
+      "id": "company_012030",
+      "type": "Company",
+      "name": "DB",
+      "stock_code": "012030"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005830",
+      "to": "industry_insurance",
+      "evidence": "DB손해보험",
+      "date": "2026-05-07",
+      "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000592",
+      "evidence_published_at": "2026-05-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-05-07",
+      "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000592",
+      "evidence_published_at": "2026-05-07"
+    }
+  ]
+}

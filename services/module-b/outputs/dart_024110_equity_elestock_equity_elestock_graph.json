@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_024110_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_024110",
+      "type": "Company",
+      "name": "기업은행",
+      "stock_code": "024110",
+      "description": "은행업 중심 금융서비스를 제공하는 기업은행입니다."
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_024110",
+      "to": "industry_banking",
+      "evidence": "기업은행의 임원·주요주주 소유상황 보고자는 윤인지, 등기 여부는 비등기임원, 직위는 집행간부, 보유주식수는 153주, 주식수 증감은 153, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_024110",
+      "to": "industry_banking",
+      "evidence": "기업은행의 임원·주요주주 소유상황 보고자는 장민영, 등기 여부는 등기임원, 직위는 은행장, 보유주식수는 196주, 주식수 증감은 196, 지분율은 0.0%, 지분율 증감은 0.0.",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-01-30",
+      "evidence_source_id": "dart_024110_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000431",
+      "evidence_published_at": "2026-01-30"
+    }
+  ]
+}

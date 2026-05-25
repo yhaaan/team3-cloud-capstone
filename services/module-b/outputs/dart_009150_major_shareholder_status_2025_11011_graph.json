@@ -2,65 +2,29 @@
   "source_id": "dart_009150_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_samsung_electronics",
-      "type": "Company",
-      "name": "삼성전자",
-      "stock_code": "005930"
-    },
-    {
-      "id": "company_samsung_electro_mechanics",
+      "id": "company_009150",
       "type": "Company",
       "name": "삼성전기",
       "stock_code": "009150"
     },
     {
-      "id": "company_samsung_life_insurance",
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "company_032830",
       "type": "Company",
       "name": "삼성생명",
       "stock_code": "032830"
-    },
-    {
-      "id": "person_jang_deok_hyun",
-      "type": "Person",
-      "name": "장덕현",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "affiliated_company": "company_samsung_electro_mechanics",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_kim_seong_jin",
-      "type": "Person",
-      "name": "김성진",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "affiliated_company": "company_samsung_electro_mechanics",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_choi_jae_yeol",
-      "type": "Person",
-      "name": "최재열",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "affiliated_company": "company_samsung_electro_mechanics",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_yeo_yun_kyung",
-      "type": "Person",
-      "name": "여윤경",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "affiliated_company": "company_samsung_electro_mechanics",
-      "role_label": "계열회사 임원"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_samsung_electronics",
-      "to": "company_samsung_electro_mechanics",
+      "type": "ACQUIRES",
+      "from": "company_005930",
+      "to": "company_009150",
       "evidence": "삼성전기의 최대주주 관련 인물/법인은 삼성전자(주), 관계는 최대주주 본인, 당기말 보유주식수는 17,693,084주, 지분율은 23.69%.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
@@ -70,53 +34,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_samsung_life_insurance",
-      "to": "company_samsung_electro_mechanics",
+      "from": "company_032830",
+      "to": "company_009150",
       "evidence": "삼성전기의 최대주주 관련 인물/법인은 삼성생명보험(특별계정), 관계는 계열회사, 당기말 보유주식수는 77,210주, 지분율은 0.10%, 비고는 장내매매.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jang_deok_hyun",
-      "to": "company_samsung_electro_mechanics",
-      "evidence": "삼성전기의 최대주주 관련 인물/법인은 장덕현, 관계는 계열회사 임원, 당기말 보유주식수는 6,000주, 지분율은 0.01%, 비고는 장내매매.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_seong_jin",
-      "to": "company_samsung_electro_mechanics",
-      "evidence": "삼성전기의 최대주주 관련 인물/법인은 김성진, 관계는 계열회사 임원, 당기말 보유주식수는 2,007주, 지분율은 0.00%, 비고는 장내매매.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_choi_jae_yeol",
-      "to": "company_samsung_electro_mechanics",
-      "evidence": "삼성전기의 최대주주 관련 인물/법인은 최재열, 관계는 계열회사 임원, 당기말 보유주식수는 1,205주, 지분율은 0.00%, 비고는 장내매매.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_yeo_yun_kyung",
-      "to": "company_samsung_electro_mechanics",
-      "evidence": "삼성전기의 최대주주 관련 인물/법인은 여윤경, 관계는 계열회사 임원, 당기말 보유주식수는 50주, 지분율은 0.00%.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

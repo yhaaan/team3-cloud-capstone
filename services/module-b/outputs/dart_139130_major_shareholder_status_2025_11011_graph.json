@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_139130_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_139130",
+      "type": "Company",
+      "name": "iM금융지주",
+      "stock_code": "139130",
+      "description": "금융 지주회사로서 주식 소각 및 특수관계인간 주식 매매 활동 수행"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139130",
+      "to": "industry_financial_holding",
+      "evidence": "iM금융지주",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_139130_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000720",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "금융지주는 금융업의 한 부문임",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_139130_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515000720",
+      "evidence_published_at": "2026-05-15"
+    }
+  ]
+}

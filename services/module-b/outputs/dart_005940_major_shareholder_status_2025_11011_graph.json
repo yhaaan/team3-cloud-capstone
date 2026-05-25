@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_005940_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_005940",
+      "type": "Company",
+      "name": "NH투자증권",
+      "stock_code": "005940",
+      "description": "NH투자증권은 금융투자업을 영위하는 증권사입니다."
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_securities",
+      "type": "Industry",
+      "name": "증권"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005940",
+      "to": "industry_finance",
+      "evidence": "NH투자증권은 금융투자업을 영위하는 증권사입니다.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_005940_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005940",
+      "to": "industry_securities",
+      "evidence": "NH투자증권은 금융투자업을 영위하는 증권사입니다.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_005940_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_securities",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 증권 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_005940_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000771",
+      "evidence_published_at": "2026-03-13"
+    }
+  ]
+}

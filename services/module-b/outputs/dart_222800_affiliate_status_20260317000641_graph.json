@@ -1,0 +1,52 @@
+{
+  "source_id": "dart_222800_affiliate_status_20260317000641",
+  "entities": [
+    {
+      "id": "company_222800",
+      "type": "Company",
+      "name": "심텍",
+      "stock_code": "222800"
+    },
+    {
+      "id": "company_036710",
+      "type": "Company",
+      "name": "심텍홀딩스",
+      "description": "지주회사",
+      "stock_code": "036710"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_036710",
+      "to": "industry_holding_company",
+      "evidence": "상장사(2개사) | ㈜심텍홀딩스 | 315-81-01652 | \\ 26,413,877,000 | LIGHTMAC PTE. LTD. : 14.55% | 지주회사 | 대한민국 청주 | 12월",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_222800_affiliate_status_20260317000641",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000641",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_222800_affiliate_status_20260317000641",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000641",
+      "evidence_published_at": "2026-03-17"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "source_id": "dart_062040_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_062040",
+      "type": "Company",
+      "name": "산일전기",
+      "stock_code": "062040",
+      "description": "산일전기는 전기전자 산업에서 사업을 영위한다."
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_062040",
+      "to": "industry_electronics",
+      "evidence": "산일전기의 임원·주요주주 소유상황 보고를 통해 전기전자 산업에서 사업을 영위함을 확인할 수 있다.",
+      "date": "2026-05-12",
+      "evidence_source_id": "dart_062040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000470",
+      "evidence_published_at": "2026-05-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-05-12",
+      "evidence_source_id": "dart_062040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000470",
+      "evidence_published_at": "2026-05-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-05-12",
+      "evidence_source_id": "dart_062040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000470",
+      "evidence_published_at": "2026-05-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-05-12",
+      "evidence_source_id": "dart_062040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000470",
+      "evidence_published_at": "2026-05-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-05-12",
+      "evidence_source_id": "dart_062040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000470",
+      "evidence_published_at": "2026-05-12"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "source_id": "news_323410_867a570e85c7502f",
+  "entities": [
+    {
+      "id": "company_323410",
+      "type": "Company",
+      "name": "카카오뱅크",
+      "stock_code": "323410",
+      "description": "캐피탈사 인수·합병 추진 계획으로 포트폴리오 다각화 의지를 보임"
+    },
+    {
+      "id": "company_035720",
+      "type": "Company",
+      "name": "카카오",
+      "stock_code": "035720"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_capital_leasing",
+      "type": "Industry",
+      "name": "캐피탈/리스"
+    },
+    {
+      "id": "industry_savings_bank",
+      "type": "Industry",
+      "name": "저축은행"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_323410",
+      "to": "industry_finance",
+      "evidence": "카카오뱅크는 지난 2월 실적 발표 컨퍼런스콜에서 캐피탈사 인수·합병(M&A) 추진 계획을 밝히며 포트폴리오 다각화 의지를 드러낸 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_323410_867a570e85c7502f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604074861r",
+      "evidence_published_at": "2026-04-08T09:32:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_323410",
+      "to": "industry_banking",
+      "evidence": "카카오뱅크와 수협은행이 불참한 것으로 확인됐다.",
+      "date": "",
+      "evidence_source_id": "news_323410_867a570e85c7502f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604074861r",
+      "evidence_published_at": "2026-04-08T09:32:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "은행은 금융의 한 종류임.",
+      "date": "",
+      "evidence_source_id": "news_323410_867a570e85c7502f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604074861r",
+      "evidence_published_at": "2026-04-08T09:32:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_capital_leasing",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 캐피탈/리스 is part of 금융.",
+      "date": "",
+      "evidence_source_id": "news_323410_867a570e85c7502f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604074861r",
+      "evidence_published_at": "2026-04-08T09:32:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_savings_bank",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 저축은행 is part of 금융.",
+      "date": "",
+      "evidence_source_id": "news_323410_867a570e85c7502f",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/202604074861r",
+      "evidence_published_at": "2026-04-08T09:32:00+09:00"
+    }
+  ]
+}

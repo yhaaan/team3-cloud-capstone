@@ -2,72 +2,44 @@
   "source_id": "dart_009540_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_hd한국조선해양",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
-      "stock_code": "009540"
+      "stock_code": "009540",
+      "description": "조선해양 관련 사업을 영위하는 기업"
     },
     {
-      "id": "person_김형관",
-      "type": "Person",
-      "name": "김형관",
-      "role_raw": "사장",
-      "role": "PRESIDENT",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "사장"
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     },
     {
-      "id": "person_여용화",
-      "type": "Person",
-      "name": "여용화",
-      "role_raw": "부사장",
-      "role": "VICE_PRESIDENT",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "부사장"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "person_이준우",
-      "type": "Person",
-      "name": "이준우",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "상무"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "person_유영웅",
-      "type": "Person",
-      "name": "유영웅",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "상무"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "person_이상진",
-      "type": "Person",
-      "name": "이상진",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "상무"
-    },
-    {
-      "id": "person_이태진",
-      "type": "Person",
-      "name": "이태진",
-      "role_raw": "전무",
-      "role": "OTHER",
-      "affiliated_company": "company_hd한국조선해양",
-      "role_label": "전무"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_김형관",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 김형관, 등기 여부는 비등기임원, 직위는 사장, 보유주식수는 690주, 주식수 증감은 690, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_009540",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "HD한국조선해양",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -75,10 +47,10 @@
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_여용화",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 여용화, 등기 여부는 비등기임원, 직위는 부사장, 보유주식수는 550주, 주식수 증감은 550, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -86,10 +58,10 @@
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이준우",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 이준우, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1주, 주식수 증감은 1, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -97,10 +69,10 @@
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_유영웅",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 유영웅, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 88주, 주식수 증감은 88, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -108,10 +80,10 @@
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이상진",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 이상진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 232주, 주식수 증감은 232, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -119,10 +91,32 @@
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이태진",
-      "to": "company_hd한국조선해양",
-      "evidence": "HD한국조선해양의 임원·주요주주 소유상황 보고자는 이태진, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 180주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251024000108",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251024000108",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_009540_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

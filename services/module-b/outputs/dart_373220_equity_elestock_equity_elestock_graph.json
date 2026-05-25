@@ -2,123 +2,75 @@
   "source_id": "dart_373220_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_lg_energy_solution",
+      "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220"
+      "stock_code": "373220",
+      "description": "배터리셀 등 2차전지 사업을 주요 사업으로 함"
     },
     {
-      "id": "company_lg_chem",
+      "id": "company_051910",
       "type": "Company",
       "name": "LG화학",
       "stock_code": "051910"
     },
     {
-      "id": "person_choi_hae_won",
-      "type": "Person",
-      "name": "Choi Hae Won",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_battery_cell",
+      "type": "Industry",
+      "name": "배터리셀"
     },
     {
-      "id": "person_kim_wooseop",
-      "type": "Person",
-      "name": "김우섭",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "전무",
-      "role_label": "전무"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "person_lee_junggu",
-      "type": "Person",
-      "name": "이정규",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
     },
     {
-      "id": "person_kang_sung_mo",
-      "type": "Person",
-      "name": "강성모",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     },
     {
-      "id": "person_lee_dong_hyung",
-      "type": "Person",
-      "name": "이동형",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "person_lee_sang_hyun",
-      "type": "Person",
-      "name": "이상현",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     },
     {
-      "id": "person_bae_jae_hyun",
-      "type": "Person",
-      "name": "배재현",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "person_son_kwon_nam",
-      "type": "Person",
-      "name": "손권남",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "person_kim_hyun_tae",
-      "type": "Person",
-      "name": "김현태",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     },
     {
-      "id": "person_kim_nak_jin",
-      "type": "Person",
-      "name": "김낙진",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
-    },
-    {
-      "id": "person_cho_sang_yeon",
-      "type": "Person",
-      "name": "조상연",
-      "role": "OTHER",
-      "affiliated_company": "company_lg_energy_solution",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_choi_hae_won",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 Choi Hae Won, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 845주, 주식수 증감은 845, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_373220",
+      "to": "industry_battery_cell",
+      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 ... 주요주주 여부는 10%이상주주 ...",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -126,10 +78,10 @@
       "evidence_published_at": "2026-04-24"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_wooseop",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김우섭, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 300주, 주식수 증감은 300, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_373220",
+      "to": "industry_battery_energy_storage",
+      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 ... 주요주주 여부는 10%이상주주 ...",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -137,10 +89,10 @@
       "evidence_published_at": "2026-04-24"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_junggu",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이정규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,400주, 주식수 증감은 1,400, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_051910",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학는 LG에너지솔루션 주요주주로 나타남",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -148,87 +100,10 @@
       "evidence_published_at": "2026-04-24"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kang_sung_mo",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 강성모, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,100주, 주식수 증감은 1,100, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_dong_hyung",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이동형, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,557주, 주식수 증감은 1,557, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_sang_hyun",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 이상현, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 280주, 주식수 증감은 -700, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_bae_jae_hyun",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 배재현, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 700주, 주식수 증감은 700, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_son_kwon_nam",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 손권남, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 190주, 주식수 증감은 190, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_hyun_tae",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김현태, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 3주, 주식수 증감은 3, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_nak_jin",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 김낙진, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,364주, 주식수 증감은 1,364, 지분율은 0.00%, 지분율 증감은 0.00.",
-      "date": "2026-04-24",
-      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
-      "evidence_published_at": "2026-04-24"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_cho_sang_yeon",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 조상연, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 1,236주, 주식수 증감은 1,236, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "PART_OF",
+      "from": "industry_battery_cell",
+      "to": "industry_battery_energy_storage",
+      "evidence": "배터리셀은 2차전지(배터리/에너지저장) 산업의 핵심 부분임",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -237,9 +112,9 @@
     },
     {
       "type": "INVESTS_IN",
-      "from": "company_lg_chem",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 LG화학, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 191,499,175주, 주식수 증감은 -825, 지분율은 81.84%, 지분율 증감은 -0.00.",
+      "from": "company_051910",
+      "to": "company_373220",
+      "evidence": "LG화학는 LG에너지솔루션의 주요주주로 79.38% 이상 보유",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -247,10 +122,10 @@
       "evidence_published_at": "2026-04-24"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_lg_chem",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 LG화학, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 185,748,350주, 주식수 증감은 -5,750,825, 지분율은 79.38%, 지분율 증감은 -2.46.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -258,10 +133,109 @@
       "evidence_published_at": "2026-04-24"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_lg_chem",
-      "to": "company_lg_energy_solution",
-      "evidence": "LG에너지솔루션의 임원·주요주주 소유상황 보고자는 LG화학, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 185,747,525주, 주식수 증감은 -825, 지분율은 79.38%, 지분율 증감은 -0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000198",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-04-24",
       "evidence_source_id": "dart_373220_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

@@ -2,237 +2,276 @@
   "source_id": "dart_329180_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_hd_현대중공업",
+      "id": "company_329180",
       "type": "Company",
       "name": "HD현대중공업",
-      "stock_code": "329180"
+      "stock_code": "329180",
+      "description": "조선해양 플랜트 및 중공업용 기계장비를 생산하는 산업용 기업"
     },
     {
-      "id": "company_hd_한국조선해양",
+      "id": "company_009540",
       "type": "Company",
       "name": "HD한국조선해양",
       "stock_code": "009540"
     },
     {
-      "id": "person_lee_gang_guk",
-      "type": "Person",
-      "name": "이강국",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     },
     {
-      "id": "person_joo_dae_jung",
-      "type": "Person",
-      "name": "주대중",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_offshore_plant",
+      "type": "Industry",
+      "name": "해양플랜트"
     },
     {
-      "id": "person_lee_jong_seok",
-      "type": "Person",
-      "name": "이종석",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     },
     {
-      "id": "person_lee_gang_ho",
-      "type": "Person",
-      "name": "이강호",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "person_lee_chang_jun",
-      "type": "Person",
-      "name": "이창준",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     },
     {
-      "id": "person_kim_sung_hun",
-      "type": "Person",
-      "name": "김성훈",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "person_hwang_tae_hwan",
-      "type": "Person",
-      "name": "황태환",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "전무",
-      "role_label": "전무"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "person_lee_chul_heon",
-      "type": "Person",
-      "name": "이철헌",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "전무",
-      "role_label": "전무"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "person_lee_sang_gyun",
-      "type": "Person",
-      "name": "이상균",
-      "role": "VICE_CHAIRMAN",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "부회장",
-      "role_label": "부회장"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "person_yoon_dae_gyu",
-      "type": "Person",
-      "name": "윤대규",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "상무",
-      "role_label": "상무"
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
     },
     {
-      "id": "person_lee_tae_jin",
-      "type": "Person",
-      "name": "이태진",
-      "role": "OTHER",
-      "affiliated_company": "company_hd_현대중공업",
-      "role_raw": "전무",
-      "role_label": "전무"
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_gang_guk",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강국, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 20주, 주식수 증감은 20, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_joo_dae_jung",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 주대중, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 550주, 주식수 증감은 550, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_offshore_plant",
+      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_jong_seok",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이종석, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 80주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_machinery",
+      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_gang_ho",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이강호, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 121주, 주식수 증감은 121, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "BELONGS_TO",
+      "from": "company_009540",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "HD한국조선해양은 조선해양 관련 회사임",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_chang_jun",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이창준, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 324주, 주식수 증감은 324, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "PART_OF",
+      "from": "industry_offshore_plant",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "해양플랜트는 조선/해양 산업의 하위 분야임",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_sung_hun",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 김성훈, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 32주, 주식수 증감은 32, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_hwang_tae_hwan",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 황태환, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 243주, 주식수 증감은 243, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_chul_heon",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이철헌, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 1,016주, 주식수 증감은 16, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_sang_gyun",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이상균, 등기 여부는 등기임원, 직위는 부회장, 보유주식수는 1,188주, 주식수 증감은 81, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_yoon_dae_gyu",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 윤대규, 등기 여부는 비등기임원, 직위는 상무, 보유주식수는 8주, 주식수 증감은 8, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_tae_jin",
-      "to": "company_hd_현대중공업",
-      "evidence": "HD현대중공업의 임원·주요주주 소유상황 보고자는 이태진, 등기 여부는 비등기임원, 직위는 전무, 보유주식수는 180주, 주식수 증감은 80, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250430001464",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체장비 is part of 반도체.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_329180_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250520000237",
       "evidence_published_at": "2026-04-01"
     }
   ]

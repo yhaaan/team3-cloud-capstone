@@ -1,0 +1,223 @@
+{
+  "source_id": "dart_008770_business_segments_20260311004398",
+  "entities": [
+    {
+      "id": "company_008770",
+      "type": "Company",
+      "name": "호텔신라",
+      "stock_code": "008770",
+      "description": "TR부문에서 면세품 판매, 호텔&레저부문에서 숙박, 식음, 연회, 레포츠 및 여행 예약 대행 서비스를 영위"
+    },
+    {
+      "id": "industry_duty_free",
+      "type": "Industry",
+      "name": "면세점"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_hotel_resort",
+      "type": "Industry",
+      "name": "호텔/리조트"
+    },
+    {
+      "id": "industry_sports_fitness",
+      "type": "Industry",
+      "name": "레포츠"
+    },
+    {
+      "id": "product_service_fitness_club",
+      "type": "ProductService",
+      "name": "휘트니스 클럽"
+    },
+    {
+      "id": "product_service_travel_booking",
+      "type": "ProductService",
+      "name": "여행 예약 대행"
+    },
+    {
+      "id": "industry_air_transport",
+      "type": "Industry",
+      "name": "항공운송"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_duty_free",
+      "evidence": "TR 부문은 국가로부터 관련 사업권을 취득하여, 외국인 방문객 및 내국인 해외출국자를 대상으로 외국의 유명 브랜드 상품 및 토산품을 주요 제품으로 판매하고 있습니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_hotel_resort",
+      "evidence": "호텔&레저 부문의 호텔 부문은 외국인 관광객 및 내국인을 대상으로 숙박, 식음, 연회 등 서비스를 제공하고 있으며",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_sports_fitness",
+      "evidence": "레포츠는 실내 체련장 및 기업 내 휘트니스 클럽 위탁운영하며",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_008770",
+      "to": "product_service_fitness_club",
+      "evidence": "레포츠는 실내 체련장 및 기업 내 휘트니스 클럽 위탁운영하며",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_008770",
+      "to": "product_service_travel_booking",
+      "evidence": "여행사업은 기업 비즈니스 여행 관련 호텔, 항공권 등의 예약을 대행해주는 사업입니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_travel_leisure",
+      "evidence": "여 행 : 기업 비즈니스 여행 관련 호텔, 항공권, 렌터카 등의 예약 대행 산업임",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_sports_fitness",
+      "to": "industry_travel_leisure",
+      "evidence": "레포츠는 ... 기업 내 휘트니스 클럽 위탁 운영하는 산업임",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_air_transport",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 항공운송 is part of 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hotel_resort",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 호텔/리조트 is part of 여행/레저.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_duty_free",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 면세점 is part of 여행/레저.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_business_segments_20260311004398",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    }
+  ]
+}

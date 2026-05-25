@@ -1,0 +1,98 @@
+{
+  "source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+  "entities": [
+    {
+      "id": "company_078930",
+      "type": "Company",
+      "name": "GS",
+      "stock_code": "078930",
+      "description": "종합도소매업과 지주회사 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_007070",
+      "type": "Company",
+      "name": "GS리테일",
+      "stock_code": "007070",
+      "description": "서울특별시를 기반으로 한 종합도소매업"
+    },
+    {
+      "id": "company_499790",
+      "type": "Company",
+      "name": "GS피앤엘",
+      "stock_code": "499790",
+      "description": "지주회사 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_007070",
+      "to": "industry_retail_consumer",
+      "evidence": "(주)GS리테일 | 1971년2월 | 서울특별시 | 종합도소매업 | 7,483,098 | \" | O",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_499790",
+      "to": "industry_holding_company",
+      "evidence": "(주)GS피앤엘 | 2024년12월 | 대한민국 | 지주회사 | 792,543 | \" | O",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_078930",
+      "to": "industry_retail_consumer",
+      "evidence": "GS의 연결대상 종속회사 후보로 GS리테일, GS피앤엘 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_078930",
+      "to": "industry_holding_company",
+      "evidence": "GS의 연결대상 종속회사 후보로 GS리테일, GS피앤엘 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_078930_consolidated_subsidiary_status_20260318000836",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000836",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

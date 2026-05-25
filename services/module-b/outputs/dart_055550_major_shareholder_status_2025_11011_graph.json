@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_055550_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_055550",
+      "type": "Company",
+      "name": "신한지주",
+      "stock_code": "055550",
+      "description": "금융업 중심의 지주회사로 금융서비스 및 자회사들의 사업 관리"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_financial_holding",
+      "evidence": "신한지주의 최대주주 관련 인물/법인은 국민연금공단, 관계는 본인및특별관계자, 당기말 보유주식수는 43,846,070주, 지분율은 9.03%, 비고는 총발행주식수 기준.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "금융지주는 금융 산업의 하위 산업이며, 금융업의 세부 분야임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

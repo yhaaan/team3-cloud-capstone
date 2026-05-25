@@ -1,0 +1,100 @@
+{
+  "source_id": "dart_011790_major_issue_report_detail_20251217000351",
+  "entities": [
+    {
+      "id": "company_011790",
+      "type": "Company",
+      "name": "SKC",
+      "stock_code": "011790",
+      "description": "지배구조 단순화, 재무건전성 강화 및 신사업 투자재원 확보를 위해 자회사 에스케이엔펄스 흡수합병"
+    },
+    {
+      "id": "industry_semiconductor_materials",
+      "type": "Industry",
+      "name": "반도체소재"
+    },
+    {
+      "id": "product_service_blankmask",
+      "type": "ProductService",
+      "name": "Blankmask"
+    },
+    {
+      "id": "product_service_cmp_slurry",
+      "type": "ProductService",
+      "name": "CMP Slurry"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011790",
+      "to": "industry_semiconductor_materials",
+      "evidence": "에스케이엔펄스 주식회사는 반도체 소재/부품 제조업 회사임",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011790",
+      "to": "product_service_blankmask",
+      "evidence": "에스케이엔펄스는 Blankmask 사업부문을 보유하고 있음",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011790",
+      "to": "product_service_cmp_slurry",
+      "evidence": "에스케이엔펄스는 CMP Slurry 사업부문을 보유하고 있음",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_blankmask",
+      "to": "industry_semiconductor_materials",
+      "evidence": "Blankmask 사업부문은 반도체 소재 관련 사업임",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cmp_slurry",
+      "to": "industry_semiconductor_materials",
+      "evidence": "CMP Slurry 사업부문은 반도체 소재 관련 사업임",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체소재 is part of 반도체.",
+      "date": "2025-12-17",
+      "evidence_source_id": "dart_011790_major_issue_report_detail_20251217000351",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251217000351",
+      "evidence_published_at": "2025-12-17"
+    }
+  ]
+}

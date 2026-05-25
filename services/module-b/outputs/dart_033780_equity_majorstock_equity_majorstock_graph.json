@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_033780_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_033780",
+      "type": "Company",
+      "name": "KT&G",
+      "stock_code": "033780",
+      "description": "담배 제조 및 판매 중심의 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_tobacco",
+      "type": "Industry",
+      "name": "담배"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_033780",
+      "to": "industry_tobacco",
+      "evidence": "KT&G의 대량보유 보고자는 BlackRockFundAdvisors, 보고 유형은 약식, 접수일은 2026-01-30, 보유주식수는 5,914,169주, 지분율은 5.01%, 주식수 증감은 68,646, 지분율 증감은 0.06, 보고사유는 - 단순투자목적으로 장내에서 발행회사의 주식 매수.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_033780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000329",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_tobacco",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 담배 is part of 유통/소비재.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_033780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000329",
+      "evidence_published_at": "2026-05-08"
+    }
+  ]
+}

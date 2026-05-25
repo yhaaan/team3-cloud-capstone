@@ -2,54 +2,165 @@
   "source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
   "entities": [
     {
-      "id": "company_dusan",
+      "id": "company_000150",
       "type": "Company",
-      "name": "두산",
+      "name": "페스카로",
       "stock_code": "000150"
     },
     {
-      "id": "company_oricom",
+      "id": "company_010470",
       "type": "Company",
       "name": "오리콤",
-      "stock_code": "010470"
+      "stock_code": "010470",
+      "description": "광고업을 주력으로 하는 회사"
     },
     {
-      "id": "company_dusantasna",
+      "id": "company_131970",
       "type": "Company",
       "name": "두산테스나",
-      "stock_code": "131970"
+      "stock_code": "131970",
+      "description": "반도체 제조관련 테스트 및 엔지니어링 사업을 영위"
     },
     {
-      "id": "company_dusanrobotics",
+      "id": "company_454910",
       "type": "Company",
       "name": "두산로보틱스",
-      "stock_code": "454910"
+      "stock_code": "454910",
+      "description": "산업용 로봇 제조업을 하는 기업"
     },
     {
-      "id": "company_dusanenerbility",
+      "id": "company_034020",
       "type": "Company",
       "name": "두산에너빌리티",
-      "stock_code": "034020"
+      "stock_code": "034020",
+      "description": "기타기관 및 터빈 제조업을 영위하는 회사"
     },
     {
-      "id": "company_dusanbobcat",
+      "id": "company_241560",
       "type": "Company",
       "name": "두산밥캣",
-      "stock_code": "241560"
+      "stock_code": "241560",
+      "description": "지주회사"
     },
     {
-      "id": "company_dusanfuelcell",
+      "id": "company_336260",
       "type": "Company",
       "name": "두산퓨얼셀",
-      "stock_code": "336260"
+      "stock_code": "336260",
+      "description": "제조업을 영위하는 회사"
+    },
+    {
+      "id": "industry_advertising_marketing",
+      "type": "Industry",
+      "name": "광고/마케팅"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_manufacturing",
+      "type": "Industry",
+      "name": "제조업"
+    },
+    {
+      "id": "industry_turbine_manufacturing",
+      "type": "Industry",
+      "name": "터빈제조업"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_oricom",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_010470",
+      "to": "industry_advertising_marketing",
+      "evidence": "㈜오리콤 | 1975-02-24 | 서울특별시 강남구 | 광고업 | 194,689 | 의결권의 과반수 소유 | O (자산총액 750억원 이상)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -57,10 +168,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusantasna",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_131970",
+      "to": "industry_semiconductor",
+      "evidence": "㈜두산테스나 | 2002-09-06 | 경기도 평택시 산단로 16번길 72 | 반도체 제조관련 테스트 및 엔지니어링 | 703,867 | 실질지배력(주2) | O (자산총액 750억원 이상)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -68,10 +179,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanrobotics",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_454910",
+      "to": "industry_robotics",
+      "evidence": "두산로보틱스㈜ | 2015-07-31 | 경기도 수원시 | 산업용 로봇 제조업 | 398,677 | 의결권의 과반수 소유 | O (자산총액 750억원 이상)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -79,10 +190,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanenerbility",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_034020",
+      "to": "industry_energy_utility",
+      "evidence": "두산에너빌리티㈜ | 1962-09-20 | 경상남도 창원시 성산구 | 기타기관 및 터빈제조업 | 14,866,378 | 실질지배력(주2) | O (자산총액 750억원 이상)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -90,10 +201,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanbobcat",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_034020",
+      "to": "industry_turbine_manufacturing",
+      "evidence": "두산에너빌리티㈜ | 1962-09-20 | 경상남도 창원시 성산구 | 기타기관 및 터빈제조업 | 14,866,378 | 실질지배력(주2) | O (자산총액 750억원 이상)",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",
@@ -101,10 +212,285 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_dusanfuelcell",
-      "to": "company_dusan",
-      "evidence": "두산의 연결대상 종속회사 후보로 오리콤, 두산테스나, 두산로보틱스, 두산에너빌리티, 두산밥캣, 두산퓨얼셀 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_241560",
+      "to": "industry_holding_company",
+      "evidence": "두산밥캣 주식회사 | 2014-04-25 | 경기도 성남시 분당구 정자일로 155 (정자동, 분당두산타워) | 지주회사 | 4,060,656 | 실질지배력(주2) | O (자산총액 750억원 이상)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_336260",
+      "to": "industry_manufacturing",
+      "evidence": "두산퓨얼셀㈜ | 2019-10-01 | 전라북도 익산시 석암로7길 100 | 제조업 | 1,201,875 | 실질지배력(주2) | O (자산총액 750억원 이상)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_advertising_marketing",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 광고/마케팅 is part of 통신/미디어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000945",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_000150_consolidated_subsidiary_status_20260323000945",
       "evidence_source_type": "dart",

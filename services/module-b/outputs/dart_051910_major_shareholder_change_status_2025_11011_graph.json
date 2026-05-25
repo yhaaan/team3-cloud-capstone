@@ -2,22 +2,49 @@
   "source_id": "dart_051910_major_shareholder_change_status_2025_11011",
   "entities": [
     {
-      "id": "company_lg_003550",
+      "id": "company_051910",
       "type": "Company",
-      "name": "LG"
+      "name": "LG화학",
+      "stock_code": "051910"
     },
     {
-      "id": "company_lg화학_051910",
+      "id": "company_003550",
       "type": "Company",
-      "name": "LG화학"
+      "name": "LG",
+      "stock_code": "003550"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2017년 01월 02일, 보유주식수는 23,534,211주, 지분율은 30.06%, 변동 사유는 엘지생명과학과의 합병으로 인한 신주발행에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "BELONGS_TO",
+      "from": "company_051910",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -25,10 +52,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 13일, 보유주식수는 23,772,211주, 지분율은 30.37%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "BELONGS_TO",
+      "from": "company_003550",
+      "to": "industry_chemical_materials",
+      "evidence": "(주)LG",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -36,10 +63,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상는 (주)LG, 변동일은 2024년 11월 14일, 보유주식수는 23,795,211주, 지분율은 30.40%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -47,10 +74,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 15일, 보유주식수는 23,818,211주, 지분율은 30.43%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -58,10 +85,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 18일, 보유주식수는 23,841,211주, 지분율은 30.46%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -69,10 +96,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 19일, 보유주식수는 23,866,211주, 지분율은 30.49%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -80,32 +107,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 20일, 보유주식수는 23,891,211주, 지분율은 30.52%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
-      "date": "2026-03-13",
-      "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
-      "evidence_published_at": "2026-03-13"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 21일, 보유주식수는 23,919,211주, 지분율은 30.56%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
-      "date": "2026-03-13",
-      "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
-      "evidence_published_at": "2026-03-13"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "company_lg화학_051910",
-      "to": "company_lg_003550",
-      "evidence": "LG화학의 최대주주 변동 대상은 (주)LG, 변동일은 2024년 11월 22일, 보유주식수는 23,947,211주, 지분율은 30.59%, 변동 사유는 장내 매매에 따른 (주)LG의 소유주식수 및 지분율 변동.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",

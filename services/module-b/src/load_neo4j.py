@@ -8,7 +8,10 @@ from typing import Any
 
 from dotenv import load_dotenv
 
+from log_utils import log_with_timestamp
+
 from company_whitelist import load_default_company_whitelist
+from ftc_affiliates import DEFAULT_FTC_AFFILIATES_PATH, build_ftc_affiliates_graph
 from role_normalizer import normalize_graph_roles
 
 try:
@@ -35,6 +38,21 @@ MATCH (source:Entity {id: $from_id})
 MATCH (target:Entity {id: $to_id})
 MERGE (source)-[r:%s]->(target)
 SET r += $properties
+"""
+
+BATCH_NODE_QUERY = """
+UNWIND $rows AS row
+MERGE (n:Entity {id: row.id})
+SET n += row.properties
+SET n:`%s`
+"""
+
+BATCH_RELATION_QUERY = """
+UNWIND $rows AS row
+MATCH (source:Entity {id: row.from_id})
+MATCH (target:Entity {id: row.to_id})
+MERGE (source)-[r:%s]->(target)
+SET r += row.properties
 """
 
 
@@ -104,6 +122,63 @@ def load_graph_to_neo4j(
         driver.close()
 
 
+def load_graphs_to_neo4j_batch(
+    graph_items: list[dict[str, Any]],
+    uri: str,
+    user: str,
+    password: str,
+    batch_size: int = 1000,
+) -> None:
+    if GraphDatabase is None:
+        raise RuntimeError("neo4j package is not installed. Add neo4j to requirements.")
+
+    driver = GraphDatabase.driver(uri, auth=(user, password))
+    try:
+        with driver.session() as session:
+            for entity_type, rows in group_entity_rows(graph_items).items():
+                for batch in chunked(rows, batch_size):
+                    session.run(BATCH_NODE_QUERY % entity_type, rows=batch)
+
+            for relation_type, rows in group_relation_rows(graph_items).items():
+                for batch in chunked(rows, batch_size):
+                    session.run(BATCH_RELATION_QUERY % relation_type, rows=batch)
+    finally:
+        driver.close()
+
+
+def group_entity_rows(graph_items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, dict[str, dict[str, Any]]] = {}
+    for graph_data in graph_items:
+        for entity in graph_data.get("entities", []):
+            entity_type = str(entity["type"])
+            grouped.setdefault(entity_type, {})[entity["id"]] = {
+                "id": entity["id"],
+                "properties": entity,
+            }
+
+    return {entity_type: list(rows_by_id.values()) for entity_type, rows_by_id in grouped.items()}
+
+
+def group_relation_rows(graph_items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, dict[tuple[str, str], dict[str, Any]]] = {}
+    for graph_data in graph_items:
+        for relation in graph_data.get("relations", []):
+            relation_type = str(relation["type"])
+            relation_key = (str(relation["from"]), str(relation["to"]))
+            grouped.setdefault(relation_type, {})[relation_key] = {
+                "from_id": relation["from"],
+                "to_id": relation["to"],
+                "properties": build_relation_properties(relation),
+            }
+
+    return {relation_type: list(rows_by_key.values()) for relation_type, rows_by_key in grouped.items()}
+
+
+def chunked(rows: list[dict[str, Any]], batch_size: int) -> list[list[dict[str, Any]]]:
+    size = max(1, batch_size)
+    return [rows[start : start + size] for start in range(0, len(rows), size)]
+
+
 def build_relation_properties(relation: dict[str, Any]) -> dict[str, Any]:
     return {
         key: value
@@ -128,6 +203,28 @@ def build_argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Cypher ?뚯씪留??앹꽦?섍퀬 ?ㅼ젣 ?곸옱???섏? ?딆쓬",
     )
+    parser.add_argument(
+        "--ftc-affiliates",
+        action="store_true",
+        help="Load FTC listed affiliate-group membership graph from docs/ftc_affiliates.jsonl.",
+    )
+    parser.add_argument(
+        "--ftc-input",
+        type=Path,
+        default=DEFAULT_FTC_AFFILIATES_PATH,
+        help="FTC affiliates jsonl path. Defaults to docs/ftc_affiliates.jsonl.",
+    )
+    parser.add_argument(
+        "--batch",
+        action="store_true",
+        help="Load all selected graph JSON files with UNWIND batch queries.",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=1000,
+        help="Neo4j UNWIND row count per query when --batch is used.",
+    )
     return parser
 
 
@@ -135,24 +232,43 @@ if __name__ == "__main__":
     args = build_argument_parser().parse_args()
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+    if args.ftc_affiliates:
+        graph_data = build_ftc_affiliates_graph(args.ftc_input)
+        cypher_path = OUTPUT_DIR / f"{graph_data['source_id']}.cypher.txt"
+        export_cypher_payload(graph_data, cypher_path)
+        log_with_timestamp(f"[OK] FTC affiliate Cypher export complete: {cypher_path}")
+
+        if not args.export_only:
+            if not args.uri or not args.password:
+                log_with_timestamp("[SKIP] NEO4J_URI ?? NEO4J_PASSWORD? ?? ?? ??? ?????")
+            else:
+                load_graph_to_neo4j(graph_data, args.uri, args.user, args.password)
+                log_with_timestamp(f"[OK] FTC affiliate graph loaded: {graph_data['source_id']}")
+        raise SystemExit(0)
+
     if args.input.is_dir():
         file_paths = sorted(args.input.glob("*_graph.json"))
     else:
         file_paths = [args.input]
 
-    for file_path in file_paths:
-        graph_data = load_graph_json(file_path)
+    graph_items = [load_graph_json(file_path) for file_path in file_paths]
+
+    for file_path, graph_data in zip(file_paths, graph_items):
         cypher_path = OUTPUT_DIR / f"{file_path.stem}.cypher.txt"
         export_cypher_payload(graph_data, cypher_path)
-        print(f"[OK] Neo4j ?곸옱??Cypher ?대낫?닿린 ?꾨즺: {cypher_path}")
+        log_with_timestamp(f"[OK] Neo4j Cypher export complete: {cypher_path}")
 
-        if args.export_only:
-            continue
+    if args.export_only:
+        raise SystemExit(0)
 
-        if not args.uri or not args.password:
-            print("[SKIP] NEO4J_URI 또는 NEO4J_PASSWORD가 없어 실제 적재는 건너뜁니다")
-            continue
+    if not args.uri or not args.password:
+        log_with_timestamp("[SKIP] NEO4J_URI ?? NEO4J_PASSWORD? ?? ?? ??? ?????")
+        raise SystemExit(0)
 
-        load_graph_to_neo4j(graph_data, args.uri, args.user, args.password)
-        print(f"[OK] Neo4j ?곸옱 ?꾨즺: {file_path.name}")
-
+    if args.batch:
+        load_graphs_to_neo4j_batch(graph_items, args.uri, args.user, args.password, args.batch_size)
+        log_with_timestamp(f"[OK] Neo4j batch load complete: {len(graph_items)} graph files")
+    else:
+        for file_path, graph_data in zip(file_paths, graph_items):
+            load_graph_to_neo4j(graph_data, args.uri, args.user, args.password)
+            log_with_timestamp(f"[OK] Neo4j load complete: {file_path.name}")

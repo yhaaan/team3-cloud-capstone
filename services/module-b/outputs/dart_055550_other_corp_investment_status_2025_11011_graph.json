@@ -1,0 +1,284 @@
+{
+  "source_id": "dart_055550_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_055550",
+      "type": "Company",
+      "name": "신한지주",
+      "stock_code": "055550",
+      "description": "금융지주회사로 신한은행, 신한카드, 신한투자증권, 제주은행 등 금융 자회사를 보유"
+    },
+    {
+      "id": "company_006220",
+      "type": "Company",
+      "name": "제주은행",
+      "stock_code": "006220"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_capital_leasing",
+      "type": "Industry",
+      "name": "캐피탈/리스"
+    },
+    {
+      "id": "industry_securities",
+      "type": "Industry",
+      "name": "증권"
+    },
+    {
+      "id": "industry_asset_management",
+      "type": "Industry",
+      "name": "자산운용"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_055550",
+      "to": "company_006220",
+      "evidence": "신한지주의 타법인 출자 대상은 제주은행, 출자 목적은 경영권, 최초 취득일은 2002.04.29, 당기말 보유수량은 24,196,000, 당기말 지분율은 64.0%, 장부가액은 179,643,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_financial_holding",
+      "evidence": "신한지주는 금융지주회사로 신한은행, 신한카드, 신한투자증권 등 금융 자회사를 보유.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006220",
+      "to": "industry_banking",
+      "evidence": "제주은행은 은행업에 해당.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "금융지주는 금융 산업의 일부분임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "은행업은 금융 산업의 하위 분야임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_banking",
+      "evidence": "신한지주는 신한은행 등 은행업 관련 자회사를 보유.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_insurance",
+      "evidence": "신한지주의 출자 대상에는 신한라이프생명보험, 신한EZ손해보험 등 보험업 관련 회사가 포함됨.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_capital_leasing",
+      "evidence": "신한캐피탈은 캐피탈/리스 산업에 해당.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_securities",
+      "evidence": "신한투자증권은 증권 산업에 해당.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_asset_management",
+      "evidence": "신한자산운용은 자산운용 산업에 해당.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055550",
+      "to": "industry_real_estate",
+      "evidence": "신한리츠운용은 리츠 산업에 해당.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_asset_management",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 자산운용 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_capital_leasing",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 캐피탈/리스 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_securities",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 증권 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_055550_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000826",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

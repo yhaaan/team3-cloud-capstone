@@ -1,0 +1,117 @@
+{
+  "source_id": "dart_011070_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_011070",
+      "type": "Company",
+      "name": "LG이노텍",
+      "stock_code": "011070",
+      "description": "디스플레이·모바일 카메라 모듈 및 전자부품 제조"
+    },
+    {
+      "id": "company_003550",
+      "type": "Company",
+      "name": "LG",
+      "stock_code": "003550"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_electronic_component",
+      "type": "Industry",
+      "name": "전자부품"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011070",
+      "to": "industry_display",
+      "evidence": "LG이노텍의 임원·주요주주 소유상황 보고자는 국민연금공단...",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011070",
+      "to": "industry_electronic_component",
+      "evidence": "LG이노텍의 임원·주요주주 소유상황 보고자는 국민연금공단...",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electronic_component",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 전자부품 is part of 전자.",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-04-27",
+      "evidence_source_id": "dart_011070_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251209000255",
+      "evidence_published_at": "2026-04-27"
+    }
+  ]
+}

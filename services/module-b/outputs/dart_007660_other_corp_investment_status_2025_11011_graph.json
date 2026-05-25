@@ -1,0 +1,47 @@
+{
+  "source_id": "dart_007660_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_007660",
+      "type": "Company",
+      "name": "이수페타시스",
+      "stock_code": "007660",
+      "description": "이수페타시스의 타법인 출자 및 투자목적 지분 보유 현황 보고"
+    },
+    {
+      "id": "company_424980",
+      "type": "Company",
+      "name": "마이크로투나노",
+      "stock_code": "424980"
+    },
+    {
+      "id": "industry_investment",
+      "type": "Industry",
+      "name": "투자"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_007660",
+      "to": "company_424980",
+      "evidence": "이수페타시스의 타법인 출자 대상은 마이크로투나노(*), 출자 목적은 투자목적, 최초 취득일은 2000.12.19",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_007660",
+      "to": "industry_investment",
+      "evidence": "이수페타시스의 타법인 출자 및 투자목적 지분 보유 현황 보고",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_007660_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000847",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

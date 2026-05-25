@@ -1,0 +1,378 @@
+{
+  "source_id": "dart_005930_business_segments_20260310002820",
+  "entities": [
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930",
+      "description": "글로벌 전자 기업으로 TV, 스마트폰, 반도체, 디스플레이 패널, 전장제품 등 다양한 전자제품과 부품을 생산 및 판매"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_memory_semiconductor",
+      "type": "Industry",
+      "name": "메모리반도체"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_automotive_semiconductor",
+      "type": "Industry",
+      "name": "자동차반도체"
+    },
+    {
+      "id": "product_service_tv",
+      "type": "ProductService",
+      "name": "TV"
+    },
+    {
+      "id": "product_service_monitor",
+      "type": "ProductService",
+      "name": "모니터"
+    },
+    {
+      "id": "product_service_refrigerator",
+      "type": "ProductService",
+      "name": "냉장고"
+    },
+    {
+      "id": "product_service_washing_machine",
+      "type": "ProductService",
+      "name": "세탁기"
+    },
+    {
+      "id": "product_service_air_conditioner",
+      "type": "ProductService",
+      "name": "에어컨"
+    },
+    {
+      "id": "product_service_smartphone",
+      "type": "ProductService",
+      "name": "스마트폰"
+    },
+    {
+      "id": "product_service_network_system",
+      "type": "ProductService",
+      "name": "네트워크시스템"
+    },
+    {
+      "id": "product_service_pc",
+      "type": "ProductService",
+      "name": "PC"
+    },
+    {
+      "id": "product_service_dram",
+      "type": "ProductService",
+      "name": "DRAM"
+    },
+    {
+      "id": "product_service_nand_flash",
+      "type": "ProductService",
+      "name": "NAND Flash"
+    },
+    {
+      "id": "product_service_mobile_ap",
+      "type": "ProductService",
+      "name": "모바일AP"
+    },
+    {
+      "id": "product_service_oled_panel",
+      "type": "ProductService",
+      "name": "스마트폰용 OLED 패널"
+    },
+    {
+      "id": "product_service_digital_cockpit",
+      "type": "ProductService",
+      "name": "디지털 콕핏"
+    },
+    {
+      "id": "product_service_car_audio",
+      "type": "ProductService",
+      "name": "카오디오"
+    },
+    {
+      "id": "product_service_portable_speaker",
+      "type": "ProductService",
+      "name": "포터블 스피커"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_electronics",
+      "evidence": "당사는 본사를 거점으로 ... 308개의 종속기업으로 구성된 글로벌 전자 기업입니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_display",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 디스플레이, 메모리, 반도체, 부품, 생산, 서비스, 수주, 시스템, 제품, 판매이다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_semiconductor",
+      "evidence": "부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_tv",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_monitor",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_refrigerator",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_washing_machine",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_air_conditioner",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_smartphone",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_network_system",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_pc",
+      "evidence": "Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_dram",
+      "evidence": "부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_nand_flash",
+      "evidence": "부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_mobile_ap",
+      "evidence": "부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_oled_panel",
+      "evidence": "SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_digital_cockpit",
+      "evidence": "Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블/사운드바 스피커 등 컨슈머오디오 제품 등을 개발, 생산, 판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_car_audio",
+      "evidence": "Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블/사운드바 스피커 등 컨슈머오디오 제품 등을 개발, 생산, 판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005930",
+      "to": "product_service_portable_speaker",
+      "evidence": "Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블/사운드바 스피커 등 컨슈머오디오 제품 등을 개발, 생산, 판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_memory_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 디스플레이, 메모리, 반도체, 부품, 생산, 서비스, 수주, 시스템, 제품, 판매이다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 디스플레이, 메모리, 반도체, 부품, 생산, 서비스, 수주, 시스템, 제품, 판매이다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_oled_panel",
+      "to": "industry_display",
+      "evidence": "SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automotive_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 자동차반도체 is part of 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_005930_business_segments_20260310002820",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002820",
+      "evidence_published_at": "2026-03-10"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "source_id": "dart_103590_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_103590",
+      "type": "Company",
+      "name": "일진전기",
+      "stock_code": "103590"
+    },
+    {
+      "id": "company_015860",
+      "type": "Company",
+      "name": "일진홀딩스",
+      "stock_code": "015860"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_103590",
+      "to": "industry_it_software",
+      "evidence": "No explicit text supports industry classification; description unavailable.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_103590_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000040",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_015860",
+      "to": "industry_holding_company",
+      "evidence": "No explicit text supports industry classification; description unavailable.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_103590_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000040",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_103590_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000040",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_103590_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000040",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_103590_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250818000040",
+      "evidence_published_at": "2026-04-29"
+    }
+  ]
+}

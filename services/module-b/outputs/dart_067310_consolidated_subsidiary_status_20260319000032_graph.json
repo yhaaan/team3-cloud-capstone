@@ -1,0 +1,161 @@
+{
+  "source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+  "entities": [
+    {
+      "id": "company_067310",
+      "type": "Company",
+      "name": "하나마이크론",
+      "stock_code": "067310",
+      "description": "반도체 및 전자부품 기업"
+    },
+    {
+      "id": "company_166090",
+      "type": "Company",
+      "name": "하나머티리얼즈",
+      "stock_code": "166090",
+      "description": "실리콘 부품 및 잉곳 생산 기업"
+    },
+    {
+      "id": "product_service_silicon_parts",
+      "type": "ProductService",
+      "name": "Silicon Parts"
+    },
+    {
+      "id": "product_service_ingot",
+      "type": "ProductService",
+      "name": "Ingot"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_electronic_component",
+      "type": "Industry",
+      "name": "전자부품"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_067310",
+      "to": "company_166090",
+      "evidence": "하나마이크론의 연결대상 종속회사 후보로 하나머티리얼즈 등이 탐지되었다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_166090",
+      "to": "product_service_silicon_parts",
+      "evidence": "Silicon Parts 및 Ingot",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_166090",
+      "to": "product_service_ingot",
+      "evidence": "Silicon Parts 및 Ingot",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_166090",
+      "to": "industry_semiconductor",
+      "evidence": "Silicon Parts 및 Ingot",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_166090",
+      "to": "industry_electronic_component",
+      "evidence": "Silicon Parts 및 Ingot",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_067310",
+      "to": "industry_semiconductor",
+      "evidence": "하나마이크론의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electronic_component",
+      "to": "industry_semiconductor",
+      "evidence": "Silicon Parts 및 Ingot",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electronic_component",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 전자부품 is part of 전자.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_consolidated_subsidiary_status_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_086790_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_086790",
+      "type": "Company",
+      "name": "하나금융지주",
+      "stock_code": "086790",
+      "description": "금융지주회사로 은행, 증권, 카드, 보험, 자산신탁 등 금융서비스 제공"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086790",
+      "to": "industry_financial_holding",
+      "evidence": "하나금융지주의 타법인 출자 대상은 하나은행, 출자 목적은 경영참여...",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

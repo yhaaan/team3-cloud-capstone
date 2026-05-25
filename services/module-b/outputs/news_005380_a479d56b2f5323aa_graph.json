@@ -1,0 +1,184 @@
+{
+  "source_id": "news_005380_a479d56b2f5323aa",
+  "entities": [
+    {
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380",
+      "description": "자동차 제조 및 완성차 생산라인 운영"
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270",
+      "description": "자동차 제조 및 완성차 생산라인 운영"
+    },
+    {
+      "id": "company_012330",
+      "type": "Company",
+      "name": "현대모비스",
+      "stock_code": "012330",
+      "description": "자동차 부품 제조 및 램프 사업 추진"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "product_service_lamp",
+      "type": "ProductService",
+      "name": "램프"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대차·기아 완성차 생산라인 전체가 영향을 받을 가능성이 크기 때문이다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대차·기아 완성차 생산라인 전체가 영향을 받을 가능성이 크기 때문이다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_auto_parts",
+      "evidence": "현대모비스가 추진 중인 램프 사업 매각이 '노사 갈등' 변수로 급부상하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_lamp",
+      "evidence": "이번 시위는 올해 1월 현대모비스가 램프사업부를 프랑스 자동차 부품기업인 OP모빌리티에 매각하기로 결정하면서 촉발됐다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_lamp",
+      "to": "industry_auto_parts",
+      "evidence": "이번 시위는 올해 1월 현대모비스가 램프사업부를 프랑스 자동차 부품기업인 OP모빌리티에 매각하기로 결정하면서 촉발됐다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_auto_parts",
+      "evidence": "현대차·기아 완성차 생산라인 전체가 영향을 받을 가능성이 크기 때문이다.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "",
+      "evidence_source_id": "news_005380_a479d56b2f5323aa",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20260515010004055",
+      "evidence_published_at": "2026-05-14T18:24:00+09:00"
+    }
+  ]
+}

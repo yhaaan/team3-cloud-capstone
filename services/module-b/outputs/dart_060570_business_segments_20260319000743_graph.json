@@ -1,0 +1,169 @@
+{
+  "source_id": "dart_060570_business_segments_20260319000743",
+  "entities": [
+    {
+      "id": "company_060570",
+      "type": "Company",
+      "name": "드림어스컴퍼니",
+      "stock_code": "060570",
+      "description": "음악서비스 및 음반·디지털콘텐츠 유통과 MD, 공연사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
+    },
+    {
+      "id": "product_service_music_service",
+      "type": "ProductService",
+      "name": "음악서비스"
+    },
+    {
+      "id": "industry_online_retail",
+      "type": "Industry",
+      "name": "온라인유통"
+    },
+    {
+      "id": "product_service_led_cheer_light",
+      "type": "ProductService",
+      "name": "무선제어 LED 응원봉"
+    },
+    {
+      "id": "industry_event_planning",
+      "type": "Industry",
+      "name": "공연 기획"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_music_entertainment",
+      "evidence": "음악서비스 부문 온라인 음악 서비스, 오디오 콘텐츠 기획 및 제작음반 및 디지털 콘텐츠 유통",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_060570",
+      "to": "product_service_music_service",
+      "evidence": "음악서비스(FLO)음반 및 디지털 콘텐츠 유통",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_music_service",
+      "to": "industry_music_entertainment",
+      "evidence": "음악서비스(FLO)음반 및 디지털 콘텐츠 유통",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_online_retail",
+      "evidence": "MD, 공연 부문 아티스트 MD공연사업 무선제어 LED 응원봉, 굿즈공연 기획 및 제작",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_060570",
+      "to": "product_service_led_cheer_light",
+      "evidence": "무선제어 LED 응원봉, 굿즈공연 기획 및 제작",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_event_planning",
+      "evidence": "MD, 공연 부문 아티스트 MD공연사업 무선제어 LED 응원봉, 굿즈공연 기획 및 제작",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_online_retail",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 온라인유통 is part of 유통/소비재.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_060570_business_segments_20260319000743",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000743",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

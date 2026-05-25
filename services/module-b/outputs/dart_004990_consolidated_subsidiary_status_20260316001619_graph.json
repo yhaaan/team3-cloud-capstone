@@ -1,0 +1,64 @@
+{
+  "source_id": "dart_004990_consolidated_subsidiary_status_20260316001619",
+  "entities": [
+    {
+      "id": "company_004990",
+      "type": "Company",
+      "name": "롯데지주",
+      "stock_code": "004990",
+      "description": "종합식품회사 롯데웰푸드를 사실상 지배하는 지주회사"
+    },
+    {
+      "id": "company_280360",
+      "type": "Company",
+      "name": "롯데웰푸드",
+      "stock_code": "280360",
+      "description": "종합식품회사"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_004990",
+      "to": "company_280360",
+      "evidence": "롯데지주의 연결대상 종속회사 후보로 롯데웰푸드 등이 탐지되었다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_consolidated_subsidiary_status_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_280360",
+      "to": "industry_food_beverage",
+      "evidence": "롯데웰푸드 | 2017년 10일 01일 | 서울특별시 영등포구 양평로21길 10 | 종합식품회사",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_consolidated_subsidiary_status_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_consolidated_subsidiary_status_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

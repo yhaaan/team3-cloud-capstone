@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_005490_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_005490",
+      "type": "Company",
+      "name": "POSCO홀딩스",
+      "stock_code": "005490",
+      "description": "철강 및 관련 소재 사업을 영위하는 지주회사"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005490",
+      "to": "industry_holding_company",
+      "evidence": "POSCO홀딩스의 대량보유 보고자는 BlackRockFundAdvisors, 보고 유형은 약식, 접수일은 2026-05-08, 보유주식수는 4,933,523주, 지분율은 6.23%, 주식수 증감은 377,560, 지분율 증감은 1.00, 보고사유는 - 단순투자목적으로 장내에서 발행회사의 주식 매수 - 특별관계자 변동.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_005490_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260508000029",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_005490_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260508000029",
+      "evidence_published_at": "2026-05-08"
+    }
+  ]
+}

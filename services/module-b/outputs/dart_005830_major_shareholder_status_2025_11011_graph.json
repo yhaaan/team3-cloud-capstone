@@ -1,0 +1,79 @@
+{
+  "source_id": "dart_005830_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_005830",
+      "type": "Company",
+      "name": "DB손해보험",
+      "stock_code": "005830"
+    },
+    {
+      "id": "company_012030",
+      "type": "Company",
+      "name": "DB",
+      "stock_code": "012030"
+    },
+    {
+      "id": "company_000990",
+      "type": "Company",
+      "name": "IBKS제25호스팩",
+      "stock_code": "000990"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005830",
+      "to": "industry_insurance",
+      "evidence": "DB손해보험의 최대주주 관련 인물/법인은 김남호, 관계는 본인, 당기말 보유주식수는 6,379,520주, 지분율은 9.19%.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012030",
+      "to": "industry_insurance",
+      "evidence": "DB손해보험의 최대주주 관련 인물/법인은 DB Inc., 관계는 계열사, 당기말 보유주식수는 600,000주, 지분율은 0.86%, 비고는 주식 매수.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000990",
+      "to": "industry_insurance",
+      "evidence": "DB손해보험의 최대주주 관련 인물/법인은 DB하이텍, 관계는 계열사, 당기말 보유주식수는 350,000주, 지분율은 0.50%, 비고는 주식 매수.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_005830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331003904",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

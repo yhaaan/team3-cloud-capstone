@@ -1,0 +1,122 @@
+{
+  "source_id": "dart_067310_business_segments_20260319000032",
+  "entities": [
+    {
+      "id": "company_067310",
+      "type": "Company",
+      "name": "하나마이크론",
+      "stock_code": "067310",
+      "description": "반도체 후공정 전문기업으로 반도체 패키징 및 테스트, 반도체 재료 생산을 주력으로 함"
+    },
+    {
+      "id": "company_166090",
+      "type": "Company",
+      "name": "하나머티리얼즈",
+      "stock_code": "166090"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_semiconductor_materials",
+      "type": "Industry",
+      "name": "반도체소재"
+    },
+    {
+      "id": "product_service_pkg",
+      "type": "ProductService",
+      "name": "PKG"
+    },
+    {
+      "id": "product_service_silicon_parts",
+      "type": "ProductService",
+      "name": "실리콘부품"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_067310",
+      "to": "industry_semiconductor",
+      "evidence": "당사는 2001년 8월에 설립되어 2005년 10월 코스닥시장에 상장된 반도체 후공정 전문 기업 입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_067310",
+      "to": "industry_semiconductor",
+      "evidence": "당사 및 주요종속회사는 현재 반도체 제품(패키징) 생산 및 반도체 재료(반도체 식각공정용 실리콘 Part)제품의 생산을 주요 사업으로 영위하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_067310",
+      "to": "product_service_pkg",
+      "evidence": "반도체 제조 지배회사 하나마이크론(주) 반도체 패키징 & 테스트",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_067310",
+      "to": "product_service_silicon_parts",
+      "evidence": "반도체 재료 종속회사 하나머티리얼즈(주) 반도체식각장비의 Silicon parts 등",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_166090",
+      "to": "industry_semiconductor_materials",
+      "evidence": "반도체 재료 종속회사 하나머티리얼즈(주) 반도체식각장비의 Silicon parts 등",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_materials",
+      "to": "industry_semiconductor",
+      "evidence": "반도체 제품(패키징) 생산 및 반도체 재료(반도체 식각공정용 실리콘 Part)제품의 생산을 주요 사업으로 영위하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체장비 is part of 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_067310_business_segments_20260319000032",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000032",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

@@ -2,20 +2,118 @@
   "source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
   "entities": [
     {
-      "id": "company_삼성물산",
+      "id": "company_028260",
       "type": "Company",
-      "name": "삼성물산"
+      "name": "삼성물산",
+      "stock_code": "028260",
+      "description": "건설, 상사, 패션, 리조트 등 다양한 사업을 영위하는 종합상사"
     },
     {
-      "id": "company_삼성바이오로직스",
+      "id": "company_207940",
       "type": "Company",
-      "name": "삼성바이오로직스"
+      "name": "삼성바이오로직스",
+      "stock_code": "207940",
+      "description": "생물학적제제 제조"
     },
     {
-      "id": "company_삼성에피스홀딩스",
+      "id": "company_001260",
       "type": "Company",
-      "name": "삼성에피스홀딩스"
+      "name": "삼성에피스홀딩스",
+      "stock_code": "001260",
+      "description": "지주회사, 바이오시밀러 개발 및 상업화"
+    },
+    {
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "industry_biosimilar",
+      "type": "Industry",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_biopharmaceutical",
+      "evidence": "삼성바이오로직스㈜ | 2011년 4월 | 인천광역시 연수구 | 생물학적제제 제조업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001260",
+      "to": "industry_holding_company",
+      "evidence": "삼성에피스홀딩스㈜ | 2025년 11월 | 인천광역시 연수구 | 지주회사, 바이오시밀러 개발 및 상업화",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001260",
+      "to": "industry_biosimilar",
+      "evidence": "삼성에피스홀딩스㈜ | 2025년 11월 | 인천광역시 연수구 | 지주회사, 바이오시밀러 개발 및 상업화",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 바이오의약품 is part of 바이오/헬스케어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biosimilar",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 바이오시밀러 is part of 바이오/헬스케어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_consolidated_subsidiary_status_20260312000856",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
 }

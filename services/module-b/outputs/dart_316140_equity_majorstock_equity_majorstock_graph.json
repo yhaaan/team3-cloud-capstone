@@ -1,0 +1,73 @@
+{
+  "source_id": "dart_316140_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_316140",
+      "type": "Company",
+      "name": "우리금융지주",
+      "stock_code": "316140",
+      "description": "은행업 및 금융지주회사로서 지주 및 금융서비스를 영위"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주",
+      "date": "2026-02-10",
+      "evidence_source_id": "dart_316140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000720",
+      "evidence_published_at": "2026-02-10"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_banking",
+      "evidence": "우리금융지주",
+      "date": "2026-02-10",
+      "evidence_source_id": "dart_316140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000720",
+      "evidence_published_at": "2026-02-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-02-10",
+      "evidence_source_id": "dart_316140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000720",
+      "evidence_published_at": "2026-02-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-02-10",
+      "evidence_source_id": "dart_316140_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260130000720",
+      "evidence_published_at": "2026-02-10"
+    }
+  ]
+}

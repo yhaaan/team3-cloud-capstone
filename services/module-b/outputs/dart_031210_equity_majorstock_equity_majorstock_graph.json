@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_031210_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_031210",
+      "type": "Company",
+      "name": "서울보증보험",
+      "stock_code": "031210",
+      "description": "서울보증보험은 보증·보험업을 주력으로 하는 금융회사입니다."
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_031210",
+      "to": "industry_insurance",
+      "evidence": "서울보증보험의 대량보유 보고자는 국민연금공단, 보고 유형은 약식...",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_031210_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000233",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_031210_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000233",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_042700_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_042700",
+      "type": "Company",
+      "name": "한미반도체",
+      "stock_code": "042700",
+      "description": "반도체 장비 및 부품 제조 전문업체"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042700",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "한미반도체의 대량보유 보고자는 곽동신, 보고 유형은 일반, 접수일은 2025-05-22, 보유주식수는 53,048,714주, 지분율은 54.91%",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_042700_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250522000095",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "한미반도체",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_042700_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250522000095",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

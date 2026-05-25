@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_316140_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_316140",
+      "type": "Company",
+      "name": "우리금융지주",
+      "stock_code": "316140",
+      "description": "금융지주회사로 금융업 전반을 영위"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주 최대주주 현황 (금융지주회사로 금융업 전반을 영위 내지 유추 가능 문장)",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "금융지주회사는 금융산업의 한 부문임이 일반적 산업구분 상식",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    }
+  ]
+}

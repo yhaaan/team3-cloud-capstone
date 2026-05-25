@@ -1,0 +1,51 @@
+{
+  "source_id": "dart_032830_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_032830",
+      "type": "Company",
+      "name": "삼성생명",
+      "stock_code": "032830"
+    },
+    {
+      "id": "company_028260",
+      "type": "Company",
+      "name": "삼성물산",
+      "stock_code": "028260"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_032830",
+      "to": "industry_insurance",
+      "evidence": "삼성생명의 최대주주 관련 인물/법인은 삼성물산(주), 관계는 최대주주 본인, 당기말 보유주식수는 38,688,000주, 지분율은 19.34%.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-31",
+      "evidence_source_id": "dart_032830_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260331004244",
+      "evidence_published_at": "2026-03-31"
+    }
+  ]
+}

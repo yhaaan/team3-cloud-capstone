@@ -1,0 +1,58 @@
+{
+  "source_id": "dart_000250_consolidated_subsidiary_status_20260320001096",
+  "entities": [
+    {
+      "id": "company_000250",
+      "type": "Company",
+      "name": "삼천당제약",
+      "stock_code": "000250",
+      "description": "의약품 제조업을 주력으로 하는 제약회사"
+    },
+    {
+      "id": "company_131030",
+      "type": "Company",
+      "name": "옵투스제약",
+      "stock_code": "131030"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000250",
+      "to": "industry_bio_healthcare",
+      "evidence": "주식회사옵투스제약 | 2010.07.23 | 충청북도 청주시 흥덕구 오송읍 오송생명6로 50 | 의약품 제조업 | 191,056,547 | 실질지배력보유(기업회계기준서 제1110호) | 해당(자산총액의 10%이상)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_consolidated_subsidiary_status_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_131030",
+      "to": "industry_bio_healthcare",
+      "evidence": "주식회사옵투스제약 | 2010.07.23 | 충청북도 청주시 흥덕구 오송읍 오송생명6로 50 | 의약품 제조업 | 191,056,547 | 실질지배력보유(기업회계기준서 제1110호) | 해당(자산총액의 10%이상)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_consolidated_subsidiary_status_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "ACQUIRES",
+      "from": "company_000250",
+      "to": "company_131030",
+      "evidence": "삼천당제약의 연결대상 종속회사 후보로 옵투스제약 등이 탐지되었다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_consolidated_subsidiary_status_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    }
+  ]
+}

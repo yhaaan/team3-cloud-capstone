@@ -1,0 +1,63 @@
+{
+  "source_id": "dart_001040_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_001040",
+      "type": "Company",
+      "name": "CJ",
+      "stock_code": "001040",
+      "description": "식품, 유통, 바이오, 미디어 등 다양한 사업영역에서 활동하는 종합 생활문화기업"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001040",
+      "to": "industry_food_beverage",
+      "evidence": "CJ의 타법인 출자 대상은 씨제이제일제당(주), ... 장부가액은 1,474,061,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001040",
+      "to": "industry_retail_consumer",
+      "evidence": "CJ의 타법인 출자 대상은 씨제이올리브영(주), ... 장부가액은 54,476,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

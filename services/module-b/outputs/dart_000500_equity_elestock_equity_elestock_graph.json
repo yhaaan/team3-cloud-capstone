@@ -1,0 +1,94 @@
+{
+  "source_id": "dart_000500_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_000500",
+      "type": "Company",
+      "name": "가온전선",
+      "stock_code": "000500",
+      "description": "전선 및 케이블 제조를 주요 사업으로 영위하는 기업입니다."
+    },
+    {
+      "id": "industry_cable_wire",
+      "type": "Industry",
+      "name": "전선/케이블"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_cable_wire",
+      "evidence": "가온전선은 전선 및 케이블 제조를 주요 사업으로 영위하는 기업입니다.",
+      "date": "2026-05-18",
+      "evidence_source_id": "dart_000500_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000333",
+      "evidence_published_at": "2026-05-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_cable_wire",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전선/케이블 is part of 에너지/유틸리티.",
+      "date": "2026-05-18",
+      "evidence_source_id": "dart_000500_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000333",
+      "evidence_published_at": "2026-05-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-05-18",
+      "evidence_source_id": "dart_000500_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000333",
+      "evidence_published_at": "2026-05-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-05-18",
+      "evidence_source_id": "dart_000500_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000333",
+      "evidence_published_at": "2026-05-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-05-18",
+      "evidence_source_id": "dart_000500_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000333",
+      "evidence_published_at": "2026-05-18"
+    }
+  ]
+}

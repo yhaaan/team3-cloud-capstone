@@ -2,45 +2,73 @@
   "source_id": "dart_064350_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_hyundorotem",
+      "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
       "stock_code": "064350"
     },
     {
-      "id": "person_lee_yong_bae",
-      "type": "Person",
-      "name": "이용배",
-      "role_raw": "계열사임원",
-      "affiliated_company": "company_hyundorotem",
-      "role": "OTHER",
-      "role_label": "계열사임원"
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     },
     {
-      "id": "person_kim_du_hong",
-      "type": "Person",
-      "name": "김두홍",
-      "role_raw": "계열사임원",
-      "affiliated_company": "company_hyundorotem",
-      "role": "OTHER",
-      "role_label": "계열사임원"
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
     },
     {
-      "id": "person_kim_jung_hoon",
-      "type": "Person",
-      "name": "김정훈",
-      "role_raw": "계열사임원",
-      "affiliated_company": "company_hyundorotem",
-      "role": "OTHER",
-      "role_label": "계열사임원"
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_rail_vehicle",
+      "type": "Industry",
+      "name": "철도차량"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_lee_yong_bae",
-      "to": "company_hyundorotem",
-      "evidence": "현대로템의 최대주주 관련 인물/법인은 이용배, 관계는 계열사임원, 당기말 보유주식수는 1,612주, 지분율은 0.00%.",
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_machinery",
+      "evidence": "현대로템은 주로 중공업 및 기계장비 관련 사업을 영위함으로 추정됨.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -48,10 +76,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_du_hong",
-      "to": "company_hyundorotem",
-      "evidence": "현대로템의 최대주주 관련 인물/법인은 김두홍, 관계는 계열사임원, 당기말 보유주식수는 645주, 지분율은 0.00%.",
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_machinery",
+      "evidence": "현대로템은 중공업 및 기계장비 산업에 속함 (간접 추론).",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -59,10 +87,164 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_jung_hoon",
-      "to": "company_hyundorotem",
-      "evidence": "현대로템의 최대주주 관련 인물/법인은 김정훈, 관계는 계열사임원, 당기말 보유주식수는 1,947주, 지분율은 0.00%.",
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_defense_aerospace",
+      "evidence": "현대로템은 방산 항공우주 산업에도 관련 있음 (간접 추론).",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_rail_vehicle",
+      "evidence": "현대로템은 철도차량 산업에도 관련 있음 (간접 추론).",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대로템은 자동차부품 및 모빌리티 관련 사업을 영위함 (간접 추론).",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_auto_parts",
+      "evidence": "현대로템은 자동차 부품 관련 산업에 속함 (간접 추론).",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_mobility",
+      "evidence": "현대로템은 모빌리티 산업에 속함 (간접 추론).",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_rail_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 철도차량 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

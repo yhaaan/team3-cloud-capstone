@@ -1,0 +1,45 @@
+{
+  "source_id": "dart_086790_major_shareholder_change_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_086790",
+      "type": "Company",
+      "name": "하나금융지주",
+      "stock_code": "086790"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086790",
+      "to": "industry_financial_holding",
+      "evidence": "하나금융지주의 최대주주 변동 대상은 국민연금공단, 변동일은 2011년 04월 28일, 보유주식수는 19,198,416주, 지분율은 7.90%, 변동 사유는 기존 최대주주의 지분매각으로 인한 변경.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_086790_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001292",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

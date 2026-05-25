@@ -1,0 +1,84 @@
+{
+  "source_id": "dart_043260_major_issue_report_detail_20260105000427",
+  "entities": [
+    {
+      "id": "company_043260",
+      "type": "Company",
+      "name": "성호전자",
+      "stock_code": "043260",
+      "description": "광통신관련제품 및 시스템 설계, 개발, 제조 및 판매업을 주요 사업으로 함"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_043260",
+      "to": "industry_electronics",
+      "evidence": "주요사업 광통신관련제품 및 시스템의 설계, 개발, 제조 및 판매업",
+      "date": "2026-01-05",
+      "evidence_source_id": "dart_043260_major_issue_report_detail_20260105000427",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260105000427",
+      "evidence_published_at": "2026-01-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-01-05",
+      "evidence_source_id": "dart_043260_major_issue_report_detail_20260105000427",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260105000427",
+      "evidence_published_at": "2026-01-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-01-05",
+      "evidence_source_id": "dart_043260_major_issue_report_detail_20260105000427",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260105000427",
+      "evidence_published_at": "2026-01-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-01-05",
+      "evidence_source_id": "dart_043260_major_issue_report_detail_20260105000427",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260105000427",
+      "evidence_published_at": "2026-01-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-01-05",
+      "evidence_source_id": "dart_043260_major_issue_report_detail_20260105000427",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260105000427",
+      "evidence_published_at": "2026-01-05"
+    }
+  ]
+}

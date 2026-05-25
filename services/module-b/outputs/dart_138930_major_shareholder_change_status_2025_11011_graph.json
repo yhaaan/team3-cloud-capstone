@@ -1,0 +1,145 @@
+{
+  "source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_138930",
+      "type": "Company",
+      "name": "BNK금융지주",
+      "stock_code": "138930",
+      "description": "금융업을 주력으로 하는 금융지주회사"
+    },
+    {
+      "id": "company_004990",
+      "type": "Company",
+      "name": "롯데지주",
+      "stock_code": "004990"
+    },
+    {
+      "id": "company_023530",
+      "type": "Company",
+      "name": "롯데쇼핑",
+      "stock_code": "023530"
+    },
+    {
+      "id": "company_005300",
+      "type": "Company",
+      "name": "롯데칠성",
+      "stock_code": "005300"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_beverage_liquor",
+      "type": "Industry",
+      "name": "음료주류"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138930",
+      "to": "industry_financial_holding",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138930",
+      "to": "industry_finance",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004990",
+      "to": "industry_financial_holding",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 롯데지주 외 특수관계인 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_023530",
+      "to": "industry_retail_consumer",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 롯데쇼핑(주) 외 특수관계인 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005300",
+      "to": "industry_beverage_liquor",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 롯데쇼핑(주) 외 특수관계인, ... 롯데칠성음료(주)에 매매함에 따른 변경.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "BNK금융지주의 최대주주 변동 대상은 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beverage_liquor",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 음료주류 is part of 식품/음료.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_138930_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001147",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

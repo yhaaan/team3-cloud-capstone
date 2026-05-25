@@ -2,45 +2,44 @@
   "source_id": "dart_008770_equity_elestock_equity_elestock",
   "entities": [
     {
-      "id": "company_호텔신라",
+      "id": "company_008770",
       "type": "Company",
       "name": "호텔신라",
-      "stock_code": "008770"
+      "stock_code": "008770",
+      "description": "호텔신라는 호텔·레저 산업을 영위하는 회사입니다."
     },
     {
-      "id": "person_한인규",
-      "type": "Person",
-      "name": "한인규",
-      "role_raw": "운영총괄(사장)",
-      "affiliated_company": "company_호텔신라",
-      "role": "OTHER",
-      "role_label": "운영총괄"
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
     },
     {
-      "id": "person_진정구",
-      "type": "Person",
-      "name": "진정구",
-      "role_raw": "사외이사",
-      "affiliated_company": "company_호텔신라",
-      "role": "OUTSIDE_DIRECTOR",
-      "role_label": "사외이사"
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     },
     {
-      "id": "person_이부진",
-      "type": "Person",
-      "name": "이부진",
-      "role_raw": "대표이사(사장)",
-      "affiliated_company": "company_호텔신라",
-      "role": "CEO",
-      "role_label": "대표이사"
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_한인규",
-      "to": "company_호텔신라",
-      "evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 한인규, 등기 여부는 등기임원, 직위는 운영총괄(사장), 보유주식수는 4,800주, 주식수 증감은 4,800, 지분율은 0.01%, 지분율 증감은 0.01.",
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_travel_leisure",
+      "evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 ... 직위는 운영총괄(사장), ...",
       "date": "2026-04-29",
       "evidence_source_id": "dart_008770_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -48,10 +47,10 @@
       "evidence_published_at": "2026-04-29"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_진정구",
-      "to": "company_호텔신라",
-      "evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 진정구, 등기 여부는 등기임원, 직위는 사외이사, 보유주식수는 1,200주, 주식수 증감은 1,200, 지분율은 0.00%, 지분율 증감은 0.00.",
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
       "date": "2026-04-29",
       "evidence_source_id": "dart_008770_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -59,10 +58,32 @@
       "evidence_published_at": "2026-04-29"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이부진",
-      "to": "company_호텔신라",
-      "evidence": "호텔신라의 임원·주요주주 소유상황 보고자는 이부진, 등기 여부는 등기임원, 직위는 대표이사(사장), 보유주식수는 300,000주, 주식수 증감은 300,000, 지분율은 0.75%, 지분율 증감은 0.75.",
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_008770_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_008770_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000965",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
       "date": "2026-04-29",
       "evidence_source_id": "dart_008770_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

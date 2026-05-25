@@ -2,72 +2,141 @@
   "source_id": "dart_012450_equity_majorstock_equity_majorstock",
   "entities": [
     {
-      "id": "company_hanwha_aerospace",
+      "id": "company_012450",
       "type": "Company",
       "name": "한화에어로스페이스",
-      "stock_code": "012450"
+      "stock_code": "012450",
+      "description": "항공우주 및 방산 관련 사업을 영위하는 한화 계열사"
     },
     {
-      "id": "company_hanwha",
+      "id": "company_000880",
       "type": "Company",
       "name": "한화",
       "stock_code": "000880"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_hanwha",
-      "to": "company_hanwha_aerospace",
-      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화, 보고 유형은 일반, 접수일은 2025-04-29, 보유주식수는 17,323,474주, 지분율은 36.63%, 주식수 증감은 1,715,040, 지분율 증감은 2.39, 계약보유주식수는 113,804주, 계약보유지분율은 0.24%, 보고사유는 제3자배정 유상증자에 따른 특별관계자 추가.",
+      "type": "BELONGS_TO",
+      "from": "company_012450",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화...",
       "date": "2026-01-13",
       "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000750",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
       "evidence_published_at": "2026-01-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_hanwha",
-      "to": "company_hanwha_aerospace",
-      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화, 보고 유형은 일반, 접수일은 2025-06-11, 보유주식수는 18,568,652주, 지분율은 38.25%, 주식수 증감은 1,245,178, 지분율 증감은 1.62, 계약보유주식수는 113,804주, 계약보유지분율은 0.24%, 보고사유는 보유주식등의 내역 변동.",
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화...",
       "date": "2026-01-13",
       "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000750",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
       "evidence_published_at": "2026-01-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_hanwha",
-      "to": "company_hanwha_aerospace",
-      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화, 보고 유형은 일반, 접수일은 2025-07-10, 보유주식수는 18,460,818주, 지분율은 35.80%, 주식수 증감은 -107,834, 지분율 증감은 -2.45, 계약보유주식수는 129,783주, 계약보유지분율은 0.25%, 보고사유는 유상증자에 따른 보유주식등의 내역 변동 및 양도제한조건부주식 부여 계약 체결.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
       "date": "2026-01-13",
       "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000750",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
       "evidence_published_at": "2026-01-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_hanwha",
-      "to": "company_hanwha_aerospace",
-      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화, 보고 유형은 일반, 접수일은 2026-01-08, 보유주식수는 18,430,445주, 지분율은 35.74%, 주식수 증감은 -30,373, 지분율 증감은 -0.06, 계약보유주식수는 104,177주, 계약보유지분율은 0.20%, 보고사유는 특별관계자 변동에 따른 보고 및 보유주식 등에 관한 계약의 변경.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "2026-01-13",
       "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000750",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
       "evidence_published_at": "2026-01-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_hanwha",
-      "to": "company_hanwha_aerospace",
-      "evidence": "한화에어로스페이스의 대량보유 보고자는 한화, 보고 유형은 일반, 접수일은 2026-01-13, 보유주식수는 18,430,495주, 지분율은 35.74%, 주식수 증감은 50, 지분율 증감은 0, 계약보유주식수는 104,177주, 계약보유지분율은 0.20%, 보고사유는 특별관계자의 주식매수에 따른 변동보고.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-01-13",
       "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250429000750",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
+      "evidence_published_at": "2026-01-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-01-13",
+      "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
+      "evidence_published_at": "2026-01-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-01-13",
+      "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
+      "evidence_published_at": "2026-01-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-01-13",
+      "evidence_source_id": "dart_012450_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250611000545",
       "evidence_published_at": "2026-01-13"
     }
   ]

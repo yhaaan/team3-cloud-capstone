@@ -1,0 +1,79 @@
+{
+  "source_id": "dart_259960_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_259960",
+      "type": "Company",
+      "name": "크래프톤",
+      "stock_code": "259960"
+    },
+    {
+      "id": "company_217270",
+      "type": "Company",
+      "name": "넵튠",
+      "stock_code": "217270"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_259960",
+      "to": "industry_content_game",
+      "evidence": "크래프톤의 최대주주 관련 인물/법인...",
+      "source": "dart_259960_major_shareholder_status_2025_11011",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_259960",
+      "to": "company_217270",
+      "evidence": "크래프톤의 최대주주 관련 인물/법인은 ㈜넵튠, 관계는 계열회사, 당기말 보유주식수는 433,330주, 지분율은 0.91%, 비고는 신규보고.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    }
+  ]
+}

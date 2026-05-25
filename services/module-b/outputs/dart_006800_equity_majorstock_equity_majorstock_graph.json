@@ -1,0 +1,30 @@
+{
+  "source_id": "dart_006800_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_006800",
+      "type": "Company",
+      "name": "미래에셋증권",
+      "stock_code": "006800",
+      "description": "증권 중개 및 자산 관리 등 금융서비스 제공"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006800",
+      "to": "industry_finance",
+      "evidence": "미래에셋증권의 대량보유 보고자는 미래에셋캐피탈...",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_006800_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250522000340",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

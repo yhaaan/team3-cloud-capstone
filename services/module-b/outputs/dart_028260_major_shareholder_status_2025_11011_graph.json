@@ -2,69 +2,60 @@
   "source_id": "dart_028260_major_shareholder_status_2025_11011",
   "entities": [
     {
-      "id": "company_삼성물산",
+      "id": "company_028260",
       "type": "Company",
       "name": "삼성물산",
-      "stock_code": "028260"
+      "stock_code": "028260",
+      "description": "삼성물산은 건설 및 인프라 사업을 주력으로 하는 기업입니다."
     },
     {
-      "id": "company_삼성생명",
+      "id": "company_032830",
       "type": "Company",
       "name": "삼성생명",
       "stock_code": "032830"
     },
     {
-      "id": "person_이재용",
-      "type": "Person",
-      "name": "이재용"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "person_오세철",
-      "type": "Person",
-      "name": "오세철",
-      "role_raw": "발행회사 임원",
-      "role": "OTHER",
-      "role_label": "발행회사 임원"
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
     },
     {
-      "id": "person_정해린",
-      "type": "Person",
-      "name": "정해린",
-      "role_raw": "발행회사 임원",
-      "role": "OTHER",
-      "role_label": "발행회사 임원"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "person_이재언",
-      "type": "Person",
-      "name": "이재언",
-      "role_raw": "발행회사 임원",
-      "role": "OTHER",
-      "role_label": "발행회사 임원"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "person_이준서",
-      "type": "Person",
-      "name": "이준서",
-      "role_raw": "발행회사 임원",
-      "role": "OTHER",
-      "role_label": "발행회사 임원"
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     },
     {
-      "id": "person_정병석",
-      "type": "Person",
-      "name": "정병석",
-      "role_raw": "발행회사 임원",
-      "role": "OTHER",
-      "role_label": "발행회사 임원"
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이재용",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 이 재 용, 관계는 최대주주 본인, 당기말 보유주식수는 33,880,220주, 지분율은 19.76%.",
+      "type": "BELONGS_TO",
+      "from": "company_028260",
+      "to": "industry_construction_infrastructure",
+      "evidence": "삼성물산은 건설 및 인프라 사업을 주력으로 하는 기업입니다.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -72,10 +63,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_오세철",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 오세철, 관계는 발행회사 임원, 당기말 보유주식수는 3,000주, 지분율은 0.00%, 비고는 장내매매.",
+      "type": "BELONGS_TO",
+      "from": "company_032830",
+      "to": "industry_insurance",
+      "evidence": "삼성생명보험(특별계정), 관계는 계열회사, 당기말 보유주식수는 98,546주, 지분율은 0.06%, 비고는 고객계정 보유분 감소.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -83,10 +74,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정해린",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 정해린, 관계는 발행회사 임원, 당기말 보유주식수는 4,000주, 지분율은 0.00%, 비고는 장내매매.",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -94,10 +85,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이재언",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 이재언, 관계는 발행회사 임원, 당기말 보유주식수는 3,400주, 지분율은 0.00%, 비고는 장내매매.",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -105,10 +96,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이준서",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 이준서, 관계는 발행회사 임원, 당기말 보유주식수는 4,299주, 지분율은 0.00%, 비고는 장내매매.",
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -116,10 +107,54 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정병석",
-      "to": "company_삼성물산",
-      "evidence": "삼성물산의 최대주주 관련 인물/법인은 정병석, 관계는 발행회사 임원, 당기말 보유주식수는 200주, 지분율은 0.00%.",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000856",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_028260_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

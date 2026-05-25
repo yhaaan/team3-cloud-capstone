@@ -1,0 +1,175 @@
+{
+  "source_id": "dart_034220_affiliate_status_20260311003822",
+  "entities": [
+    {
+      "id": "company_034220",
+      "type": "Company",
+      "name": "LG디스플레이",
+      "stock_code": "034220",
+      "description": "디스플레이 패널 및 소재를 생산하는 회사"
+    },
+    {
+      "id": "company_066570",
+      "type": "Company",
+      "name": "LG전자",
+      "stock_code": "066570",
+      "description": "가전 및 전자제품을 제조하는 기업"
+    },
+    {
+      "id": "company_003550",
+      "type": "Company",
+      "name": "LG",
+      "stock_code": "003550",
+      "description": "다양한 산업 분야에 걸친 지주회사"
+    },
+    {
+      "id": "company_011070",
+      "type": "Company",
+      "name": "LG이노텍",
+      "stock_code": "011070",
+      "description": "전자부품과 소재를 제조하는 기업"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_electronic_component",
+      "type": "Industry",
+      "name": "전자부품"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034220",
+      "to": "industry_display",
+      "evidence": "LG디스플레이",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_066570",
+      "to": "industry_electronics",
+      "evidence": "LG전자 | 최대주주 | 36.7% | 특수관계인",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003550",
+      "to": "industry_holding_company",
+      "evidence": "이상우 | 비상근 | ㈜LG | 부사장 | 상근 | -",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011070",
+      "to": "industry_electronic_component",
+      "evidence": "LG이노텍 | 기타비상무이사 | 비상근 | -",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electronic_component",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 전자부품 is part of 전자.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_034220_affiliate_status_20260311003822",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311003822",
+      "evidence_published_at": "2026-03-11"
+    }
+  ]
+}

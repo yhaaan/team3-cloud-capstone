@@ -34,7 +34,11 @@ class CompanyWhitelist:
             if normalize_stock_code(company.stock_code)
         }
 
-    def find(self, name: str | None = None, stock_code: str | None = None) -> ListedCompany | None:
+    def find(
+        self,
+        name: str | None = None,
+        stock_code: str | None = None,
+    ) -> ListedCompany | None:
         if stock_code:
             company = self._by_stock_code.get(normalize_stock_code(stock_code))
             if company is not None:
@@ -51,7 +55,7 @@ class CompanyWhitelist:
     def allowed_companies_for_doc(self, doc: dict[str, Any]) -> list[ListedCompany]:
         candidates: dict[str, ListedCompany] = {}
 
-        for key in ("stock_code", "corp_code"):
+        for key in ("stock_code",):
             company = self.find(stock_code=str(doc.get(key) or ""))
             if company is not None:
                 candidates[company.stock_code] = company
@@ -90,10 +94,11 @@ def load_listed_companies(file_path: Path) -> list[ListedCompany]:
     headers = [str(value).strip() for value in rows[0]]
     try:
         stock_code_index = headers.index("stock_code")
+        corp_code_index = headers.index("corp_code")
         company_name_index = headers.index("company_name")
     except ValueError as exc:
         raise RuntimeError(
-            f"listed companies file must include stock_code and company_name headers: {file_path}"
+            f"listed companies file must include stock_code, corp_code, and company_name headers: {file_path}"
         ) from exc
 
     market_index = headers.index("market") if "market" in headers else None
@@ -101,9 +106,10 @@ def load_listed_companies(file_path: Path) -> list[ListedCompany]:
 
     for row in rows[1:]:
         stock_code = cell_value(row, stock_code_index).zfill(6)
+        corp_code = normalize_corp_code(cell_value(row, corp_code_index))
         company_name = cell_value(row, company_name_index)
         market = cell_value(row, market_index) if market_index is not None else ""
-        if stock_code and company_name:
+        if stock_code and corp_code and company_name:
             companies.append(ListedCompany(stock_code, company_name, market))
 
     return companies
@@ -119,13 +125,21 @@ def read_xlsx_rows(file_path: Path) -> list[list[str]]:
     for row in sheet.findall(".//a:sheetData/a:row", XLSX_NS):
         values: list[str] = []
         for cell in row.findall("a:c", XLSX_NS):
-            value_node = cell.find("a:v", XLSX_NS)
-            value = "" if value_node is None else value_node.text or ""
-            if cell.get("t") == "s" and value:
-                value = shared_strings[int(value)]
+            value = read_xlsx_cell_value(cell, shared_strings)
             values.append(value)
         rows.append(values)
     return rows
+
+
+def read_xlsx_cell_value(cell: ET.Element, shared_strings: list[str]) -> str:
+    if cell.get("t") == "inlineStr":
+        return "".join(text.text or "" for text in cell.findall(".//a:t", XLSX_NS))
+
+    value_node = cell.find("a:v", XLSX_NS)
+    value = "" if value_node is None else value_node.text or ""
+    if cell.get("t") == "s" and value:
+        return shared_strings[int(value)]
+    return value
 
 
 def read_shared_strings(workbook: zipfile.ZipFile) -> list[str]:
@@ -149,6 +163,11 @@ def cell_value(row: list[str], index: int | None) -> str:
 def normalize_stock_code(value: str) -> str:
     digits = re.sub(r"\D", "", str(value or ""))
     return digits.zfill(6) if digits else ""
+
+
+def normalize_corp_code(value: str) -> str:
+    digits = re.sub(r"\D", "", str(value or ""))
+    return digits.zfill(8) if digits else ""
 
 
 def normalize_company_name(value: str | None) -> str:

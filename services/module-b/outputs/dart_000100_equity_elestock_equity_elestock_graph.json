@@ -1,0 +1,30 @@
+{
+  "source_id": "dart_000100_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_000100",
+      "type": "Company",
+      "name": "제이피아이헬스케어",
+      "stock_code": "000100",
+      "description": "제약 및 바이오헬스케어 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000100",
+      "to": "industry_bio_healthcare",
+      "evidence": "유한양행은 제약 및 바이오헬스케어 사업을 영위하는 기업",
+      "date": "2026-05-11",
+      "evidence_source_id": "dart_000100_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250522000024",
+      "evidence_published_at": "2026-05-11"
+    }
+  ]
+}

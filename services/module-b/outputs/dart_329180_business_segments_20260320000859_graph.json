@@ -1,0 +1,423 @@
+{
+  "source_id": "dart_329180_business_segments_20260320000859",
+  "entities": [
+    {
+      "id": "company_329180",
+      "type": "Company",
+      "name": "HD현대중공업",
+      "stock_code": "329180",
+      "description": "조선, 해양플랜트, 엔진기계 사업을 중심으로 원유운반선, LNG선, 해상구조물, 선박용엔진 등을 생산"
+    },
+    {
+      "id": "company_267250",
+      "type": "Company",
+      "name": "HD현대",
+      "stock_code": "267250"
+    },
+    {
+      "id": "company_000950",
+      "type": "Company",
+      "name": "전방",
+      "stock_code": "000950"
+    },
+    {
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_offshore_plant",
+      "type": "Industry",
+      "name": "해양플랜트"
+    },
+    {
+      "id": "industry_powertrain",
+      "type": "Industry",
+      "name": "파워트레인"
+    },
+    {
+      "id": "product_service_oil_tanker",
+      "type": "ProductService",
+      "name": "원유운반선"
+    },
+    {
+      "id": "product_service_container_ship",
+      "type": "ProductService",
+      "name": "컨테이너선"
+    },
+    {
+      "id": "product_service_lng_carrier",
+      "type": "ProductService",
+      "name": "LNG 선"
+    },
+    {
+      "id": "product_service_battle_ship",
+      "type": "ProductService",
+      "name": "군함"
+    },
+    {
+      "id": "product_service_offshore_structure",
+      "type": "ProductService",
+      "name": "해상구조물"
+    },
+    {
+      "id": "product_service_floating_production_facility",
+      "type": "ProductService",
+      "name": "부유식 원유생산설비"
+    },
+    {
+      "id": "product_service_ship_engine",
+      "type": "ProductService",
+      "name": "선박용엔진"
+    },
+    {
+      "id": "product_service_diesel_generator",
+      "type": "ProductService",
+      "name": "디젤발전설비"
+    },
+    {
+      "id": "product_service_pump",
+      "type": "ProductService",
+      "name": "펌프"
+    },
+    {
+      "id": "product_service_fluid_machine",
+      "type": "ProductService",
+      "name": "유체기계"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "조선 HD현대중공업㈜HD현대엠엔에스㈜HD현대이엔티㈜ 원유운반선, 컨테이너선, LNG선, 군함 外 12,463,099(70.89%)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_offshore_plant",
+      "evidence": "해양플랜트 HD현대중공업㈜ 해상구조물 제작 및 설치,부유식 원유생산설비 外 1,239,028(7.05%)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_329180",
+      "to": "industry_powertrain",
+      "evidence": "엔진기계 HD현대중공업㈜HD현대엔진 유한회사Hyundai Heavy Industries Argentina S.R.L 선박용엔진, 디젤발전설비 外 3,790,789(21.56%)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_oil_tanker",
+      "evidence": "조선 HD현대중공업㈜HD현대엠엔에스㈜HD현대이엔티㈜ 원유운반선, 컨테이너선, LNG선, 군함 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_container_ship",
+      "evidence": "조선 HD현대중공업㈜HD현대엠엔에스㈜HD현대이엔티㈜ 원유운반선, 컨테이너선, LNG선, 군함 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_lng_carrier",
+      "evidence": "조선 HD현대중공업㈜HD현대엠엔에스㈜HD현대이엔티㈜ 원유운반선, 컨테이너선, LNG선, 군함 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_battle_ship",
+      "evidence": "조선 HD현대중공업㈜HD현대엠엔에스㈜HD현대이엔티㈜ 원유운반선, 컨테이너선, LNG선, 군함 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_offshore_structure",
+      "evidence": "해양플랜트 HD현대중공업㈜ 해상구조물 제작 및 설치,부유식 원유생산설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_floating_production_facility",
+      "evidence": "해양플랜트 HD현대중공업㈜ 해상구조물 제작 및 설치,부유식 원유생산설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_ship_engine",
+      "evidence": "엔진기계 HD현대중공업㈜HD현대엔진 유한회사Hyundai Heavy Industries Argentina S.R.L 선박용엔진, 디젤발전설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_diesel_generator",
+      "evidence": "엔진기계 HD현대중공업㈜HD현대엔진 유한회사Hyundai Heavy Industries Argentina S.R.L 선박용엔진, 디젤발전설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_pump",
+      "evidence": "엔진기계 HD현대중공업㈜HD현대엔진 유한회사Hyundai Heavy Industries Argentina S.R.L 선박용엔진, 디젤발전설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_329180",
+      "to": "product_service_fluid_machine",
+      "evidence": "엔진기계 HD현대중공업㈜HD현대엔진 유한회사Hyundai Heavy Industries Argentina S.R.L 선박용엔진, 디젤발전설비 外",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_offshore_plant",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "해양플랜트 산업은 해양 유전과 가스전에서 원유와 천연가스를 생산하는 다양한 형태의 설비에 대한 설계, 구매, 제작, 운송, 설치 및 시운전까지 포함하는 산업입니다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_powertrain",
+      "to": "industry_auto_parts",
+      "evidence": "Industry taxonomy: 파워트레인 is part of 자동차부품.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_329180_business_segments_20260320000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000859",
+      "evidence_published_at": "2026-03-20"
+    }
+  ]
+}

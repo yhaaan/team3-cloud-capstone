@@ -1,0 +1,64 @@
+{
+  "source_id": "dart_068270_affiliate_status_20260316001415",
+  "entities": [
+    {
+      "id": "company_068270",
+      "type": "Company",
+      "name": "셀트리온",
+      "stock_code": "068270",
+      "description": "바이오의약품과 바이오시밀러 제품을 개발 및 생산하는 기업"
+    },
+    {
+      "id": "company_068760",
+      "type": "Company",
+      "name": "셀트리온제약",
+      "stock_code": "068760",
+      "description": "셀트리온 계열 바이오의약품 전문 제약회사"
+    },
+    {
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_068270",
+      "to": "industry_biopharmaceutical",
+      "evidence": "셀트리온의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_affiliate_status_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_068760",
+      "to": "industry_biopharmaceutical",
+      "evidence": "셀트리온의 상장 계열회사 후보로 셀트리온제약 등이 탐지되었다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_affiliate_status_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "바이오의약품는 바이오/헬스케어 산업의 한 분야임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_affiliate_status_20260316001415",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_319660_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_319660",
+      "type": "Company",
+      "name": "피에스케이",
+      "stock_code": "319660",
+      "description": "반도체 장비 및 기술지원 사업을 주력으로 하는 기업"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_319660",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "피에스케이의 타법인 출자 대상은 ... 출자 목적은 기술지원, ... 국내 장비 셋업",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_319660_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000017",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체장비 is part of 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_319660_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000017",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

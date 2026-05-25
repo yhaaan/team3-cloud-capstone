@@ -2,29 +2,143 @@
   "source_id": "dart_008770_other_corp_investment_status_2025_11011",
   "entities": [
     {
-      "id": "company_호텔신라",
+      "id": "company_008770",
       "type": "Company",
       "name": "호텔신라",
-      "stock_code": "008770"
+      "stock_code": "008770",
+      "description": "호텔, 면세점 등 여행·레저 사업을 운영하는 기업"
     },
     {
-      "id": "company_모두투어",
+      "id": "company_080160",
       "type": "Company",
       "name": "모두투어",
       "stock_code": "080160"
     },
     {
-      "id": "company_3s",
+      "id": "company_060310",
       "type": "Company",
       "name": "3S",
       "stock_code": "060310"
     },
     {
-      "id": "company_레이",
-      "type": "Company",
-      "name": "레이",
-      "stock_code": "228670"
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_duty_free",
+      "type": "Industry",
+      "name": "면세점"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_008770",
+      "to": "company_080160",
+      "evidence": "호텔신라의 타법인 출자 대상은 (주)모두투어인터내셔널, 출자 목적은 경영참여",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_travel_leisure",
+      "evidence": "호텔, 면세점 등 여행·레저 사업을 운영하는 기업",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_duty_free",
+      "evidence": "호텔신라의 타법인 출자 대상은 에이치디씨신라면세점 주식회사, 출자 목적은 경영참여",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_duty_free",
+      "to": "industry_travel_leisure",
+      "evidence": "면세점은 여행·레저 산업의 한 분야임",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    }
+  ]
 }

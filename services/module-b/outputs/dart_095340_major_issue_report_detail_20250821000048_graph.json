@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_095340_major_issue_report_detail_20250821000048",
+  "entities": [
+    {
+      "id": "company_095340",
+      "type": "Company",
+      "name": "ISC",
+      "stock_code": "095340",
+      "description": "반도체 후공정 장비 제조 기업을 흡수합병하여 경영 효율성 증대"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_service_semiconductor_post_process_equipment",
+      "type": "ProductService",
+      "name": "반도체 후공정 장비"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_095340",
+      "to": "industry_semiconductor",
+      "evidence": "아이에스시는 반도체 후공정 장비 제조기업인 아이세미를 흡수합병",
+      "date": "2025-08-21",
+      "evidence_source_id": "dart_095340_major_issue_report_detail_20250821000048",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250821000048",
+      "evidence_published_at": "2025-08-21"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_095340",
+      "to": "product_service_semiconductor_post_process_equipment",
+      "evidence": "아이세미(주) 주요사업 반도체 후공정 장비/부품 제조업",
+      "date": "2025-08-21",
+      "evidence_source_id": "dart_095340_major_issue_report_detail_20250821000048",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250821000048",
+      "evidence_published_at": "2025-08-21"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_semiconductor_post_process_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "아이세미의 주요사업은 반도체 후공정 장비/부품 제조업",
+      "date": "2025-08-21",
+      "evidence_source_id": "dart_095340_major_issue_report_detail_20250821000048",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250821000048",
+      "evidence_published_at": "2025-08-21"
+    }
+  ]
+}
