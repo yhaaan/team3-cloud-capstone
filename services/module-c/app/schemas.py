@@ -40,10 +40,17 @@ class ChatResponse(BaseModel):
 
 
 # region 응답 형태
+# 산업 엔티티 데이터 구조
+class IndustryResponse(BaseModel):
+    industy: str = Field(description="산업 이름")
+    is_mapped: bool = Field(description="[핵심 산업 리스트]에 매핑됐는지 여부(없는 세부 산업/기술을 넣은 경우는 false)")
+
+
+
 # 엔티티 추출 데이터 구조
 class EntityExtractionData(BaseModel):
     companies: List[str] = Field(default_factory=list, description="추출된 상장사/법인명 리스트")
-    industries: List[str] = Field(default_factory=list, description="추출된 산업군 명칭 리스트")
+    industries: List[IndustryResponse] = Field(default_factory=list, description="추출된 산업군 명칭 리스트")
     affiliate_groups: List[str] = Field(default_factory=list, description="추출된 계열사 그룹(예: 현대자동차그룹) 명칭 리스트")
     people: List[str] = Field(default_factory=list, description="추출된 인물명 리스트")
 
@@ -54,12 +61,12 @@ class EnitityExtractionResponse(BaseModel):
     error_msg: Optional[str] = Field(default=None, description="예외 처리 우선순위에 따른 에러 메시지")
 
 
-# 엔티티 정규화 LLM 응답 형태
-class EnitityNormalizationResponse(BaseModel):
-    companies: List[str] = Field(default_factory=list, description="기업 사전 JSON에 매칭된 정식 상장사명 리스트")
-    industries: List[str] = Field(default_factory=list, description="산업 사전 JSON에 매칭된 표준 산업명 리스트")
-    affiliate_groups: List[str] = Field(default_factory=list, description="계열사 그룹 사전에 매칭된 표준 대기업 그룹명 리스트")
-    people: List[str] = Field(default_factory=list, description="성+이름으로 정형화된 인물명 리스트")
+# # 엔티티 정규화 LLM 응답 형태
+# class EnitityNormalizationResponse(BaseModel):
+#     companies: List[str] = Field(default_factory=list, description="기업 사전 JSON에 매칭된 정식 상장사명 리스트")
+#     industries: List[str] = Field(default_factory=list, description="산업 사전 JSON에 매칭된 표준 산업명 리스트")
+#     affiliate_groups: List[str] = Field(default_factory=list, description="계열사 그룹 사전에 매칭된 표준 대기업 그룹명 리스트")
+#     people: List[str] = Field(default_factory=list, description="성+이름으로 정형화된 인물명 리스트")
 
 
 # 사이퍼 쿼리 생성 LLM 응답 형태

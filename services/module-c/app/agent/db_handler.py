@@ -124,7 +124,7 @@ class Neo4jHandler():
                     nodes_in_path.append({
                         "id": node.element_id, 
                         "name": node.get('name', 'Unknown'),
-                        "type": list(node.labels)[0] if node.labels else 'Entity',
+                        "type": self._get_node_type(node),
                     })
                 d['path'] = nodes_in_path 
 
@@ -138,14 +138,16 @@ class Neo4jHandler():
                     # 대신 경로가 실제로 유효한지만 체크
                     if not node_names: 
                         continue
-
-                    path_str = f"({path_obj.nodes[0].get('name', 'Unknown')})"
+                    
+                    start_node = path_obj.nodes[0]
+                    path_str = f"({start_node.get('name', 'Unknown')}:{self._get_node_type(start_node)})"
                     for i, rel in enumerate(path_obj.relationships):
                         next_node = path_obj.nodes[i+1]
+                        label = self._get_node_type(next_node)
                         if rel.start_node.element_id == path_obj.nodes[i].element_id:
-                            path_str += f" -[{rel.type}]-> ({next_node.get('name', 'Unknown')})"
+                            path_str += f" -[{rel.type}]-> ({next_node.get('name', 'Unknown')}:{label})"
                         else:
-                            path_str += f" <-[{rel.type}]- ({next_node.get('name', 'Unknown')})"
+                            path_str += f" <-[{rel.type}]- ({next_node.get('name', 'Unknown')}:{label})"
 
                     arrow_count = path_str.count("->") + path_str.count("<-")
 
@@ -167,8 +169,8 @@ class Neo4jHandler():
                     s_node = rel_obj.start_node
                     e_node = rel_obj.end_node
                     
-                    d['n'] = {"id": s_node.element_id, "name": s_node.get('name', 'Unknown'), "type": list(s_node.labels)[0] if s_node.labels else 'Entity'}
-                    d['m'] = {"id": e_node.element_id, "name": e_node.get('name', 'Unknown'), "type": list(e_node.labels)[0] if e_node.labels else 'Entity'}
+                    d['n'] = {"id": s_node.element_id, "name": s_node.get('name', 'Unknown'), "type": self._get_node_type(node)}
+                    d['m'] = {"id": e_node.element_id, "name": e_node.get('name', 'Unknown'), "type": self._get_node_type(node)}
 
                     if center_name != "" and s_node.get('name') == center_name:
                         detected_center_id = s_node.element_id
@@ -197,18 +199,22 @@ class Neo4jHandler():
                 
                 # 이미 노출된 증거라면 텍스트는 생략하고 관계선만 표시
                 if evidence in global_exposed_contents:
+                    s_type = self._get_node_type(rel.start_node)
+                    e_type = self._get_node_type(rel.end_node)
                     s_name = rel.start_node.get('name') or "알 수 없음"
                     e_name = rel.end_node.get('name') or "알 수 없음"
-                    formatted_evidences.append(f"  * [{s_name}] -({rel.type})-> [{e_name}]\n    - (상기 중복 증거 생략)")
+                    formatted_evidences.append(f"  * [{s_name}:{s_type}] -({rel.type})-> [{e_name}:{e_type}]\n    - (상기 중복 증거 생략)")
                     continue
 
                 # 처음 나오는 증거라면 캐싱하고 상세 내용 작성
                 global_exposed_contents.add(evidence)
+                s_type = self._get_node_type(rel.start_node)
+                e_type = self._get_node_type(rel.end_node)
                 s_name = rel.start_node.get('name') or "알 수 없음"
                 e_name = rel.end_node.get('name') or "알 수 없음"
                 
                 formatted_evidences.append(
-                    f"  * [{s_name}] -({rel.type})-> [{e_name}]\n"
+                    f"  * [{s_name}:{s_type}] -({rel.type})-> [{e_name}:{e_type}]\n"
                     f"    - 내용: {evidence}\n"
                     f"    - 발행일: {rel.get('evidence_published_at', '알 수 없음')}\n"
                     f"    - 출처/문서명: {rel.get('evidence_source_type', '알 수 없음')}\n"
@@ -253,6 +259,14 @@ class Neo4jHandler():
             graph_context=final_context,
             graph_structured_data=all_processed_data
         )
+    
+
+    def _get_node_type(self, node):
+        # node.labels에서 'Entity'를 제외한 나머지를 찾음
+        labels = list(node.labels)
+        # 'Entity'가 아닌 라벨이 있다면 그것을 반환, 없으면 'Entity' 반환
+        filtered_labels = [l for l in labels if l != 'Entity']
+        return filtered_labels[0] if filtered_labels else 'Entity'
 
 
     def _extract_rel_meta(self, rel_obj) -> tuple:

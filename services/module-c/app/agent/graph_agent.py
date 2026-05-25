@@ -168,7 +168,8 @@ class GraphAgent:
             "error_msg": None
         }
     
-
+    
+    # 엔티티 정규화
     def normalize_entities(self, state: GraphState):
         entities = state.get("entities")
         normalized_companies = set()
