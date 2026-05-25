@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "우리금융지주",
       "stock_code": "316140",
-      "description": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다."
+      "description": "금융지주회사로 은행, 캐피탈, 저축은행, 증권, 자산운용 등 금융 전반 사업을 영위"
     },
     {
       "id": "company_001680",
@@ -27,22 +27,47 @@
       "stock_code": "082640"
     },
     {
-      "id": "industry_finance",
+      "id": "industry_financial_holding",
       "type": "Industry",
-      "name": "finance"
+      "name": "금융지주"
     },
     {
-      "id": "business_area_financial_services",
-      "type": "BusinessArea",
-      "name": "financial services"
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_credit_card",
+      "type": "Industry",
+      "name": "신용카드"
+    },
+    {
+      "id": "industry_asset_management",
+      "type": "Industry",
+      "name": "자산운용"
+    },
+    {
+      "id": "industry_securities",
+      "type": "Industry",
+      "name": "증권"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_316140",
-      "to": "company_082640",
-      "evidence": "우리금융지주의 타법인 출자 대상은 동양생명보험㈜ 주5), 출자 목적은 자회사 편입, 최초 취득일은 2025.07.01, 당기말 보유수량은 121,566,000, 당기말 지분율은 75.34%, 장부가액은 1,283,936,000,000.",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 ㈜우리은행, ... 당기말 지분율은 100.00%",
       "date": "2026-03-13",
       "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -52,8 +77,8 @@
     {
       "type": "BELONGS_TO",
       "from": "company_316140",
-      "to": "industry_finance",
-      "evidence": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다.",
+      "to": "industry_banking",
+      "evidence": "우리금융지주의 타법인 출자 대상은 ㈜우리은행, ... 당기말 지분율은 100.00%",
       "date": "2026-03-13",
       "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -61,10 +86,164 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_316140",
-      "to": "business_area_financial_services",
-      "evidence": "우리금융지주는 금융서비스업에서 은행, 증권, 보험, 카드 등 다양한 자회사를 보유한 금융지주회사이다.",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 우리금융캐피탈㈜, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 ㈜우리금융저축은행, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 우리금융에프앤아이㈜, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 우리벤처파트너스㈜, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_securities",
+      "evidence": "우리금융지주의 타법인 출자 대상은 ㈜우리투자증권 ... 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_insurance",
+      "evidence": "우리금융지주의 타법인 출자 대상은 동양생명보험㈜ ... 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_insurance",
+      "evidence": "우리금융지주의 타법인 출자 대상은 에이비엘생명보험㈜ ... 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_financial_holding",
+      "evidence": "우리금융지주의 타법인 출자 대상은 우리자산운용㈜, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_316140",
+      "to": "industry_credit_card",
+      "evidence": "우리금융지주의 타법인 출자 대상은 ㈜우리카드, 출자 목적은 자회사 편입",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_credit_card",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 신용카드 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_asset_management",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 자산운용 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001235",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_securities",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 증권 is part of 금융.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_316140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

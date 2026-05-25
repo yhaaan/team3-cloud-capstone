@@ -6,153 +6,107 @@
       "type": "Company",
       "name": "한진칼",
       "stock_code": "180640",
-      "description": "항공과 물류를 중심으로 한 사업을 영위하는 지주회사이다."
+      "description": "한진칼은 항공·물류 등 사업을 영위하는 지주회사이다."
     },
     {
       "id": "company_003490",
       "type": "Company",
       "name": "대한항공",
       "stock_code": "003490",
-      "description": "항공 운송업을 주력으로 하는 회사이다."
+      "description": "대한항공은 항공운송 및 관련 물류 서비스를 제공한다."
     },
     {
       "id": "company_020560",
       "type": "Company",
       "name": "아시아나항공",
       "stock_code": "020560",
-      "description": "항공 운송과 관련 사업을 영위하는 회사이다."
+      "description": "아시아나항공은 항공운송 사업을 영위한다."
     },
     {
       "id": "company_298690",
       "type": "Company",
       "name": "에어부산",
       "stock_code": "298690",
-      "description": "지역 항공 운송 서비스를 제공하는 회사이다."
+      "description": "에어부산은 국내 저비용 항공사를 운영한다."
     },
     {
       "id": "company_272450",
       "type": "Company",
       "name": "진에어",
       "stock_code": "272450",
-      "description": "항공 운송 사업을 하는 회사이다."
+      "description": "진에어는 저비용 항공운송 사업을 수행한다."
     },
     {
       "id": "company_005430",
       "type": "Company",
       "name": "한국공항",
       "stock_code": "005430",
-      "description": "공항 운영 및 관련 서비스를 제공하는 회사이다."
+      "description": "한국공항은 공항 운영 및 관련 서비스를 제공한다."
     },
     {
       "id": "company_002320",
       "type": "Company",
       "name": "한진",
-      "stock_code": "002320"
+      "stock_code": "002320",
+      "description": "한진은 종합물류 및 항공운송 사업을 영위한다."
     },
     {
-      "id": "business_area_air_transport",
-      "type": "BusinessArea",
+      "id": "industry_air_transport",
+      "type": "Industry",
       "name": "항공운송"
-    },
-    {
-      "id": "business_area_airport_operation",
-      "type": "BusinessArea",
-      "name": "공항운영"
     },
     {
       "id": "industry_logistics",
       "type": "Industry",
-      "name": "물류"
+      "name": "항공/물류"
     },
     {
-      "id": "industry_air_transportation",
+      "id": "industry_holding_company",
       "type": "Industry",
-      "name": "항공운송"
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
-      "from": "company_180640",
-      "to": "business_area_air_transport",
-      "evidence": "한진칼의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_180640",
-      "to": "industry_logistics",
-      "evidence": "한진칼의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_003490",
-      "to": "business_area_air_transport",
-      "evidence": "대한항공의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_020560",
-      "to": "business_area_air_transport",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_298690",
-      "to": "business_area_air_transport",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_272450",
-      "to": "business_area_air_transport",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_005430",
-      "to": "business_area_airport_operation",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
       "type": "BELONGS_TO",
       "from": "company_180640",
-      "to": "industry_logistics",
-      "evidence": "한진칼의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "to": "industry_holding_company",
+      "evidence": "한진칼은 항공·물류 등 사업을 영위하는 지주회사이다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",
@@ -162,8 +116,19 @@
     {
       "type": "BELONGS_TO",
       "from": "company_003490",
-      "to": "industry_air_transportation",
-      "evidence": "대한항공의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
+      "to": "industry_air_transport",
+      "evidence": "대한항공은 항공운송 및 관련 물류 서비스를 제공한다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003490",
+      "to": "industry_logistics",
+      "evidence": "대한항공은 항공운송 및 관련 물류 서비스를 제공한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",
@@ -173,8 +138,8 @@
     {
       "type": "BELONGS_TO",
       "from": "company_020560",
-      "to": "industry_air_transportation",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
+      "to": "industry_air_transport",
+      "evidence": "아시아나항공은 항공운송 사업을 영위한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",
@@ -184,8 +149,8 @@
     {
       "type": "BELONGS_TO",
       "from": "company_298690",
-      "to": "industry_air_transportation",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
+      "to": "industry_air_transport",
+      "evidence": "에어부산은 국내 저비용 항공사를 운영한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",
@@ -195,8 +160,8 @@
     {
       "type": "BELONGS_TO",
       "from": "company_272450",
-      "to": "industry_air_transportation",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
+      "to": "industry_air_transport",
+      "evidence": "진에어는 저비용 항공운송 사업을 수행한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",
@@ -206,8 +171,118 @@
     {
       "type": "BELONGS_TO",
       "from": "company_005430",
-      "to": "industry_air_transportation",
-      "evidence": "한진칼의 상장 계열회사 후보로 한진, 대한항공, 진에어, 한국공항, 아시아나항공, 에어부산 등이 탐지되었다.",
+      "to": "industry_air_transport",
+      "evidence": "한국공항은 공항 운영 및 관련 서비스를 제공한다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002320",
+      "to": "industry_logistics",
+      "evidence": "한진은 종합물류 및 항공운송 사업을 영위한다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_air_transport",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 항공운송 is part of 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001143",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_180640_affiliate_status_20260318001143",
       "evidence_source_type": "dart",

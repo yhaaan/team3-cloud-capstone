@@ -6,105 +6,115 @@
       "type": "Company",
       "name": "S-Oil",
       "stock_code": "010950",
-      "description": "정유, 석유화학, 윤활기유 중심의 다각화된 석유화학 및 정유 사업을 영위하는 기업입니다."
+      "description": "정유, 석유화학, 윤활기유 중심의 다각화된 정유사로 대규모 정제시설과 생산능력을 보유"
     },
     {
-      "id": "business_area_refining",
-      "type": "BusinessArea",
-      "name": "정유부문"
+      "id": "industry_petroleum_refining",
+      "type": "Industry",
+      "name": "석유정유"
     },
     {
-      "id": "business_area_lubricants",
-      "type": "BusinessArea",
-      "name": "윤활부문"
+      "id": "industry_petrochemical",
+      "type": "Industry",
+      "name": "석유화학"
     },
     {
-      "id": "business_area_petrochemicals",
-      "type": "BusinessArea",
-      "name": "석유화학부문"
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     },
     {
-      "id": "product_lpg",
-      "type": "ProductService",
-      "name": "LPG"
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
     },
     {
-      "id": "product_gasoline",
+      "id": "product_service_gasoline",
       "type": "ProductService",
       "name": "휘발유"
     },
     {
-      "id": "product_naphtha",
-      "type": "ProductService",
-      "name": "납사"
-    },
-    {
-      "id": "product_kerosene",
-      "type": "ProductService",
-      "name": "등유"
-    },
-    {
-      "id": "product_jet_fuel",
-      "type": "ProductService",
-      "name": "항공유"
-    },
-    {
-      "id": "product_diesel",
+      "id": "product_service_diesel",
       "type": "ProductService",
       "name": "경유"
     },
     {
-      "id": "product_bunker_fuel",
+      "id": "product_service_jet_fuel",
+      "type": "ProductService",
+      "name": "항공유"
+    },
+    {
+      "id": "product_service_lpg",
+      "type": "ProductService",
+      "name": "LPG"
+    },
+    {
+      "id": "product_service_naphtha",
+      "type": "ProductService",
+      "name": "납사"
+    },
+    {
+      "id": "product_service_kero_sene",
+      "type": "ProductService",
+      "name": "등유"
+    },
+    {
+      "id": "product_service_bunker_oil",
       "type": "ProductService",
       "name": "Bunker유"
     },
     {
-      "id": "product_blending_fuel",
+      "id": "product_service_blending_oil",
       "type": "ProductService",
       "name": "Blending유"
     },
     {
-      "id": "product_asphalt",
+      "id": "product_service_asphalt",
       "type": "ProductService",
       "name": "아스팔트"
     },
     {
-      "id": "product_other",
-      "type": "ProductService",
-      "name": "기타"
-    },
-    {
-      "id": "product_lubricant_base_oil",
+      "id": "product_service_lubricant_base_oil",
       "type": "ProductService",
       "name": "윤활기유"
     },
     {
-      "id": "product_lubricants",
+      "id": "product_service_lubricants",
       "type": "ProductService",
       "name": "윤활유"
     },
     {
-      "id": "product_basic_chem_polymer",
+      "id": "product_service_basic_chemical_polymer",
       "type": "ProductService",
       "name": "Basic Chemical/Polymer"
     },
     {
-      "id": "industry_energy",
+      "id": "industry_battery_energy_storage",
       "type": "Industry",
-      "name": "에너지"
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "industry_chemical",
+      "id": "industry_semiconductor",
       "type": "Industry",
-      "name": "화학"
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_010950",
-      "to": "business_area_refining",
-      "evidence": "정유뿐 아니라 석유화학ㆍ윤활기유 등으로 다각화된 사업 포트폴리오를 보유하고 있습니다. 전체 매출액에서 70% 이상으로 가장 높은 비중을 차지하는 정유부문",
+      "to": "industry_petroleum_refining",
+      "evidence": "당사는 하루 66만 9천배럴의 원유정제능력을 보유한 정유사로, 전체 매출액에서 70% 이상으로 가장 높은 비중을 차지하는 정유부문을 보유하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -112,10 +122,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_010950",
-      "to": "business_area_lubricants",
-      "evidence": "또한, 윤활 및 석유화학부문에서도 높은 사업 안정성을 가지고 있습니다. 윤활부문은 고급 윤활기유를 중심으로 하루 4만 4천배럴의 생산능력을 보유하고 있으며",
+      "to": "industry_petrochemical",
+      "evidence": "석유화학부문은 지속적인 투자와 공정 효율화를 통하여 연간 약 330만톤의 대규모 방향족 제품과 약 77만톤의 올레핀계 제품 생산능력을 보유하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -123,10 +133,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_010950",
-      "to": "business_area_petrochemicals",
-      "evidence": "석유화학부문은 지속적인 투자와 공정 효율화를 통하여 연간 약 330만톤의 대규모 방향족 제품 생산능력 뿐 아니라 연간 약 77만톤의 올레핀계 제품 생산능력도 보유하고 있습니다.",
+      "to": "industry_chemical_materials",
+      "evidence": "석유화학, 윤활기유 등으로 다각화된 사업 포트폴리오를 보유하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -136,8 +146,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_lpg",
-      "evidence": "정유 | 제품 및 상품 | LPG | 난방유 및 자동차용 연료",
+      "to": "product_service_gasoline",
+      "evidence": "정유부문의 주요 제품으로 휘발유가 포함되어 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -147,8 +157,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_gasoline",
-      "evidence": "정유 | 제품 및 상품 | 휘발유 | 자동차 연료",
+      "to": "product_service_diesel",
+      "evidence": "정유부문의 주요 제품으로 경유가 포함되어 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -158,8 +168,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_naphtha",
-      "evidence": "정유 | 제품 및 상품 | 납사 | 석유화학제품의 원료",
+      "to": "product_service_jet_fuel",
+      "evidence": "정유부문의 주요 제품으로 항공유가 포함되어 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -169,8 +179,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_kerosene",
-      "evidence": "정유 | 제품 및 상품 | 등유 | 난방용 연료",
+      "to": "product_service_lpg",
+      "evidence": "정유부문의 제품 및 상품인 LPG는 난방유 및 자동차용 연료로 생산됩니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -180,8 +190,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_jet_fuel",
-      "evidence": "정유 | 제품 및 상품 | 항공유 | 항공기 연료",
+      "to": "product_service_naphtha",
+      "evidence": "납사는 석유화학제품의 원료로 사용됩니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -191,8 +201,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_diesel",
-      "evidence": "정유 | 제품 및 상품 | 경유 | 수송, 난방용 연료",
+      "to": "product_service_kero_sene",
+      "evidence": "등유는 난방용 연료로 생산됩니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -202,8 +212,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_bunker_fuel",
-      "evidence": "정유 | 제품 및 상품 | Bunker유 | 산업 및 해상수송용 연료",
+      "to": "product_service_bunker_oil",
+      "evidence": "Bunker유는 산업 및 해상수송용 연료입니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -213,8 +223,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_blending_fuel",
-      "evidence": "정유 | 제품 및 상품 | Blending유 | 해상수송용 연료",
+      "to": "product_service_blending_oil",
+      "evidence": "Blending유는 해상수송용 연료로 생산됩니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -224,8 +234,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_asphalt",
-      "evidence": "정유 | 제품 및 상품 | 아스팔트 | 도로포장용 원료",
+      "to": "product_service_asphalt",
+      "evidence": "아스팔트는 도로포장용 원료입니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -235,8 +245,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_other",
-      "evidence": "정유 | 제품 및 상품 | 기타 | 파라핀 제조용 등",
+      "to": "product_service_lubricant_base_oil",
+      "evidence": "윤활부문은 고급 윤활기유를 중심으로 하루 4만 4천배럴의 생산능력을 보유하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -246,8 +256,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_lubricant_base_oil",
-      "evidence": "윤활 | 제품 및 상품 | 윤활기유 | 윤활유 원료 등",
+      "to": "product_service_lubricants",
+      "evidence": "윤활부문의 주요 제품으로 윤활유도 포함되어 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -257,19 +267,8 @@
     {
       "type": "PRODUCES",
       "from": "company_010950",
-      "to": "product_lubricants",
-      "evidence": "윤활 | 제품 및 상품 | 윤활유 | 윤활유 등",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_010950",
-      "to": "product_basic_chem_polymer",
-      "evidence": "석유화학 | 제품 및 상품 | Basic Chemical/Polymer | 석유화학제품의 원재료",
+      "to": "product_service_basic_chemical_polymer",
+      "evidence": "석유화학부문은 Basic Chemical/Polymer 등 석유화학제품의 원재료를 생산합니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -278,9 +277,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_refining",
-      "to": "industry_energy",
-      "evidence": "S-Oil의 정유부문은 원유정제능력을 보유한 에너지 관련 사업입니다.",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "석유화학부문은 지속적인 투자와 공정 효율화를 통해 석유화학제품을 생산, 이는 화학소재 산업에 속합니다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_010950_business_segments_20260320000559",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_010950_business_segments_20260320000559",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -289,9 +310,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_lpg",
-      "to": "business_area_refining",
-      "evidence": "LPG는 정유부문 제품으로 분류됨",
+      "from": "industry_petroleum_refining",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유정유 is part of 화학소재.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -299,10 +320,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "PART_OF",
-      "from": "product_gasoline",
-      "to": "business_area_refining",
-      "evidence": "휘발유는 정유부문 제품으로 분류됨",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -310,10 +331,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "PART_OF",
-      "from": "product_naphtha",
-      "to": "business_area_refining",
-      "evidence": "납사는 정유부문 제품으로 분류됨",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",
@@ -321,120 +342,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "PART_OF",
-      "from": "product_kerosene",
-      "to": "business_area_refining",
-      "evidence": "등유는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_jet_fuel",
-      "to": "business_area_refining",
-      "evidence": "항공유는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_diesel",
-      "to": "business_area_refining",
-      "evidence": "경유는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_bunker_fuel",
-      "to": "business_area_refining",
-      "evidence": "Bunker유는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_blending_fuel",
-      "to": "business_area_refining",
-      "evidence": "Blending유는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_asphalt",
-      "to": "business_area_refining",
-      "evidence": "아스팔트는 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_other",
-      "to": "business_area_refining",
-      "evidence": "기타 제품은 정유부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_lubricant_base_oil",
-      "to": "business_area_lubricants",
-      "evidence": "윤활기유는 윤활부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_lubricants",
-      "to": "business_area_lubricants",
-      "evidence": "윤활유는 윤활부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_basic_chem_polymer",
-      "to": "business_area_petrochemicals",
-      "evidence": "Basic Chemical/Polymer는 석유화학부문 제품으로 분류됨",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_010950_business_segments_20260320000559",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000559",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_petrochemicals",
-      "to": "industry_chemical",
-      "evidence": "석유화학부문은 화학 관련 사업입니다.",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_010950_business_segments_20260320000559",
       "evidence_source_type": "dart",

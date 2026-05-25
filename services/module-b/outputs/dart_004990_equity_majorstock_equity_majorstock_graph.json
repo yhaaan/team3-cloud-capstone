@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_004990_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_004990",
+      "type": "Company",
+      "name": "롯데지주",
+      "stock_code": "004990",
+      "description": "롯데지주는 지주회사로서 다양한 계열사 지분 보유 및 경영관리 역할을 담당"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004990",
+      "to": "industry_holding_company",
+      "evidence": "롯데지주는 지주회사로서 다양한 계열사 지분 보유 및 경영관리 역할을 담당",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_004990_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250630000840",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_004990_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250630000840",
+      "evidence_published_at": "2026-05-08"
+    }
+  ]
+}

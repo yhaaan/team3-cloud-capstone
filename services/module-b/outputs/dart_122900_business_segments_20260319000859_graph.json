@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "아이마켓코리아",
       "stock_code": "122900",
-      "description": "B2B 구매서비스 전문 기업으로 산업재 B2B 전자상거래 및 의약품·의료용품 도매업을 영위"
+      "description": "B2B 구매서비스 기업으로 MRO 구매대행, IT·건자재 유통, 헬스케어 분야 진출"
     },
     {
       "id": "company_101390",
@@ -15,78 +15,82 @@
       "stock_code": "101390"
     },
     {
-      "id": "business_area_industrial_B2B_ecommerce",
-      "type": "BusinessArea",
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_building_materials",
+      "type": "Industry",
+      "name": "건축소재"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "product_service_b2b_ecommerce",
+      "type": "ProductService",
       "name": "산업재 B2B 전자상거래업"
     },
     {
-      "id": "business_area_pharmaceutical_wholesale",
-      "type": "BusinessArea",
+      "id": "product_service_pharmaceutical_wholesale",
+      "type": "ProductService",
       "name": "의약품 및 의료용품 도매업"
     },
     {
-      "id": "industry_distribution",
+      "id": "industry_ai",
       "type": "Industry",
-      "name": "유통"
+      "name": "인공지능"
     },
     {
-      "id": "product_automated_equipment",
-      "type": "ProductService",
-      "name": "자동화설비"
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
     },
     {
-      "id": "product_machine_parts",
-      "type": "ProductService",
-      "name": "기계부품"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "product_rebar",
-      "type": "ProductService",
-      "name": "철근"
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     },
     {
-      "id": "product_office_supplies",
-      "type": "ProductService",
-      "name": "사무용품"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "product_office_furniture",
-      "type": "ProductService",
-      "name": "사무용가구"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "product_server",
-      "type": "ProductService",
-      "name": "서버"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "product_pharmaceuticals",
-      "type": "ProductService",
-      "name": "전문의약품"
-    },
-    {
-      "id": "product_medical_supplies",
-      "type": "ProductService",
-      "name": "의료소모품"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_122900",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "당사의 사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성된다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_122900",
-      "to": "business_area_pharmaceutical_wholesale",
-      "evidence": "당사의 사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성된다.",
+      "to": "industry_it_software",
+      "evidence": "MRO 구매대행 사업을 기반으로 IT, 건자재 등 다양한 전문 유통 사업과 헬스케어 분야로 진출하면서 산업 전 분야로 사업을 확대하고 있습니다.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -96,8 +100,30 @@
     {
       "type": "BELONGS_TO",
       "from": "company_122900",
-      "to": "industry_distribution",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 고객, 납품, 바이오, 부품, 생산, 서비스, 유통, 제품, 팩이다.",
+      "to": "industry_building_materials",
+      "evidence": "MRO 구매대행 사업을 기반으로 IT, 건자재 등 다양한 전문 유통 사업과 헬스케어 분야로 진출하면서 산업 전 분야로 사업을 확대하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_122900_business_segments_20260319000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_122900",
+      "to": "industry_bio_healthcare",
+      "evidence": "MRO 구매대행 사업을 기반으로 IT, 건자재 등 다양한 전문 유통 사업과 헬스케어 분야로 진출하면서 산업 전 분야로 사업을 확대하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_122900_business_segments_20260319000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_122900",
+      "to": "industry_retail_consumer",
+      "evidence": "당사의 사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성되며...",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -107,8 +133,8 @@
     {
       "type": "PRODUCES",
       "from": "company_122900",
-      "to": "product_automated_equipment",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "to": "product_service_b2b_ecommerce",
+      "evidence": "당사의 사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성되며...",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -118,8 +144,8 @@
     {
       "type": "PRODUCES",
       "from": "company_122900",
-      "to": "product_machine_parts",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "to": "product_service_pharmaceutical_wholesale",
+      "evidence": "당사의 사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성되며...",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -127,10 +153,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_rebar",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -138,54 +164,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_office_supplies",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_office_furniture",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_server",
-      "evidence": "주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_pharmaceuticals",
-      "evidence": "병원에 납품하는 전문의약품과 의료소모품이 주요 상품입니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_122900",
-      "to": "product_medical_supplies",
-      "evidence": "병원에 납품하는 전문의약품과 의료소모품이 주요 상품입니다.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -194,9 +176,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_industrial_B2B_ecommerce",
-      "to": "industry_distribution",
-      "evidence": "사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성된다.",
+      "from": "industry_building_materials",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 건축소재 is part of 건설인프라.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -204,10 +186,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_pharmaceutical_wholesale",
-      "to": "industry_distribution",
-      "evidence": "사업부문은 크게 산업재 B2B 전자상거래업과 의약품 및 의료용품 도매업으로 구성된다.",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -215,10 +197,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_automated_equipment",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -226,10 +208,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_machine_parts",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -237,10 +219,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_rebar",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -248,10 +230,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_office_supplies",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -259,10 +241,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_office_furniture",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",
@@ -270,32 +252,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "PART_OF",
-      "from": "product_server",
-      "to": "business_area_industrial_B2B_ecommerce",
-      "evidence": "제품 생산에 필요한 소모성자재를 비롯한 원부자재, 건자재, IT 제품 등이 주요상품이며, 대표품목으로 자동화설비, 기계부품, 철근, 사무용품, 사무용가구, 서버 등이 있습니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_pharmaceuticals",
-      "to": "business_area_pharmaceutical_wholesale",
-      "evidence": "병원에 납품하는 전문의약품과 의료소모품이 주요 상품입니다.",
-      "date": "2026-03-19",
-      "evidence_source_id": "dart_122900_business_segments_20260319000859",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
-      "evidence_published_at": "2026-03-19"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_medical_supplies",
-      "to": "business_area_pharmaceutical_wholesale",
-      "evidence": "병원에 납품하는 전문의약품과 의료소모품이 주요 상품입니다.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_122900_business_segments_20260319000859",
       "evidence_source_type": "dart",

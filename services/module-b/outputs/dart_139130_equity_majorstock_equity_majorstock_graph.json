@@ -1,0 +1,46 @@
+{
+  "source_id": "dart_139130_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_139130",
+      "type": "Company",
+      "name": "iM금융지주",
+      "stock_code": "139130",
+      "description": "금융 지주 회사로서 금융 관련 사업을 영위함"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139130",
+      "to": "industry_financial_holding",
+      "evidence": "iM금융지주",
+      "date": "2026-04-17",
+      "evidence_source_id": "dart_139130_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000124",
+      "evidence_published_at": "2026-04-17"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "financial holding is a subtype of finance",
+      "date": "2026-04-17",
+      "evidence_source_id": "dart_139130_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000124",
+      "evidence_published_at": "2026-04-17"
+    }
+  ]
+}

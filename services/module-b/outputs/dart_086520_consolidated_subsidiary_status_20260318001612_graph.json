@@ -6,49 +6,84 @@
       "type": "Company",
       "name": "에코프로",
       "stock_code": "086520",
-      "description": "이차전지용 양극재 및 온실가스 제어 관련 사업을 영위"
+      "description": "이차전지용 양극재 등 화학소재 및 환경 관련 사업을 영위"
     },
     {
       "id": "company_247540",
       "type": "Company",
       "name": "에코프로비엠",
       "stock_code": "247540",
-      "description": "이차전지용 양극재 제조 및 판매"
+      "description": "이차전지용 양극재 제조 및 판매 사업"
     },
     {
       "id": "company_383310",
       "type": "Company",
       "name": "에코프로에이치엔",
       "stock_code": "383310",
-      "description": "온실가스 및 유해가스 제어 사업을 영위"
+      "description": "온실가스 및 유해가스 제어 사업"
     },
     {
-      "id": "business_area_battery_materials",
-      "type": "BusinessArea",
-      "name": "이차전지용 양극재"
-    },
-    {
-      "id": "business_area_environmental_control",
-      "type": "BusinessArea",
-      "name": "온실가스 제어"
-    },
-    {
-      "id": "industry_battery",
+      "id": "industry_cathode_material",
       "type": "Industry",
-      "name": "배터리"
+      "name": "양극재소재"
     },
     {
       "id": "industry_environment",
       "type": "Industry",
       "name": "환경"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "ACQUIRES",
       "from": "company_086520",
-      "to": "business_area_battery_materials",
-      "evidence": "㈜에코프로비엠 | 2016년 05월 02일 | 충북 청주시 청원구 오창읍 | 이차전지용 양극재 제조 및 판매",
+      "to": "company_247540",
+      "evidence": "에코프로의 연결대상 종속회사 후보로 에코프로비엠, 에코프로에이치엔 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
       "evidence_source_type": "dart",
@@ -56,10 +91,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "ACQUIRES",
       "from": "company_086520",
-      "to": "business_area_environmental_control",
-      "evidence": "㈜에코프로에이치엔 | 2021년 05월 03일 | 충북 청주시 청원구 오창읍 | 온실가스 및 유해가스 제어",
+      "to": "company_383310",
+      "evidence": "에코프로의 연결대상 종속회사 후보로 에코프로비엠, 에코프로에이치엔 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
       "evidence_source_type": "dart",
@@ -67,10 +102,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_247540",
-      "to": "business_area_battery_materials",
-      "evidence": "㈜에코프로비엠 | 2016년 05월 02일 | 충북 청주시 청원구 오창읍 | 이차전지용 양극재 제조 및 판매",
+      "to": "industry_cathode_material",
+      "evidence": "㈜에코프로비엠 | 이차전지용 양극재 제조 및 판매",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
       "evidence_source_type": "dart",
@@ -78,10 +113,21 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_383310",
-      "to": "business_area_environmental_control",
-      "evidence": "㈜에코프로에이치엔 | 2021년 05월 03일 | 충북 청주시 청원구 오창읍 | 온실가스 및 유해가스 제어",
+      "to": "industry_environment",
+      "evidence": "㈜에코프로에이치엔 | 온실가스 및 유해가스 제어",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086520",
+      "to": "industry_battery_energy_storage",
+      "evidence": "에코프로의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
       "evidence_source_type": "dart",
@@ -90,8 +136,8 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_battery_materials",
-      "to": "industry_battery",
+      "from": "industry_cathode_material",
+      "to": "industry_battery_energy_storage",
       "evidence": "이차전지용 양극재 제조 및 판매",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
@@ -100,10 +146,142 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_environmental_control",
-      "to": "industry_environment",
-      "evidence": "온실가스 및 유해가스 제어",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 환경 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 환경 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001612",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_086520_consolidated_subsidiary_status_20260318001612",
       "evidence_source_type": "dart",

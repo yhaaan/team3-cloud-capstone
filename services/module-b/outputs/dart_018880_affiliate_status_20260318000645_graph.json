@@ -1,0 +1,128 @@
+{
+  "source_id": "dart_018880_affiliate_status_20260318000645",
+  "entities": [
+    {
+      "id": "company_018880",
+      "type": "Company",
+      "name": "한온시스템",
+      "stock_code": "018880",
+      "description": "한온시스템은 모빌리티 부품 및 시스템 사업을 영위하는 회사이다."
+    },
+    {
+      "id": "company_000240",
+      "type": "Company",
+      "name": "한국앤컴퍼니",
+      "stock_code": "000240",
+      "description": "한국앤컴퍼니는 다양한 산업에 투자하는 지주회사이다."
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_018880",
+      "to": "industry_mobility",
+      "evidence": "한온시스템은 모빌리티 부품 및 시스템 사업을 영위하는 회사이다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000240",
+      "to": "industry_holding_company",
+      "evidence": "한국앤컴퍼니는 다양한 산업에 투자하는 지주회사이다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_mobility",
+      "evidence": "한온시스템의 상장 계열회사 후보로 한국앤컴퍼니 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_affiliate_status_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

@@ -20,6 +20,7 @@ from company_whitelist import CompanyWhitelist, ListedCompany
 from document_io import iter_input_documents, normalize_document
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
 from load_chroma import build_chunk_payloads
+from load_neo4j import chunked, group_entity_rows, group_relation_rows
 from ftc_affiliates import build_ftc_affiliates_graph, load_ftc_affiliate_records, match_ftc_affiliates_to_listed_companies, normalize_ftc_company_name
 from role_normalizer import normalize_graph_roles, normalize_role
 from run_to_neo4j import filter_documents_by_dataset
@@ -918,6 +919,56 @@ class ModuleBPipelineTests(unittest.TestCase):
 
         self.assertFalse(any(entity["type"] == "Person" for entity in normalized["entities"]))
         self.assertEqual(normalized["relations"], [])
+
+    def test_neo4j_batch_grouping_deduplicates_nodes_and_relations(self):
+        graph_items = [
+            {
+                "entities": [
+                    {"id": "company_005930", "type": "Company", "name": "????"},
+                    {"id": "industry_semiconductor", "type": "Industry", "name": "???"},
+                ],
+                "relations": [
+                    {
+                        "type": "BELONGS_TO",
+                        "from": "company_005930",
+                        "to": "industry_semiconductor",
+                        "evidence": "????? ??? ????.",
+                    }
+                ],
+            },
+            {
+                "entities": [
+                    {"id": "company_005930", "type": "Company", "name": "????", "stock_code": "005930"},
+                ],
+                "relations": [
+                    {
+                        "type": "BELONGS_TO",
+                        "from": "company_005930",
+                        "to": "industry_semiconductor",
+                        "evidence": "?? ??? ??? ???? ???.",
+                    }
+                ],
+            },
+        ]
+
+        entity_rows = group_entity_rows(graph_items)
+        relation_rows = group_relation_rows(graph_items)
+
+        self.assertEqual(len(entity_rows["Company"]), 1)
+        self.assertEqual(entity_rows["Company"][0]["properties"]["stock_code"], "005930")
+        self.assertEqual(len(entity_rows["Industry"]), 1)
+        self.assertEqual(len(relation_rows["BELONGS_TO"]), 1)
+        self.assertEqual(
+            relation_rows["BELONGS_TO"][0]["properties"]["evidence"],
+            "?? ??? ??? ???? ???.",
+        )
+
+    def test_chunked_respects_batch_size(self):
+        rows = [{"id": str(index)} for index in range(5)]
+
+        batches = chunked(rows, 2)
+
+        self.assertEqual([len(batch) for batch in batches], [2, 2, 1])
 
 
 if __name__ == "__main__":

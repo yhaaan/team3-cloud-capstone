@@ -36,13 +36,83 @@
       "type": "Company",
       "name": "삼성SDI",
       "stock_code": "006400"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_032830",
-      "to": "company_008770",
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_travel_leisure",
       "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성생명, 관계는 최대주주 본인, 당기말 보유주식수는 2,865,158주, 지분율은 7.30%.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
@@ -51,9 +121,20 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_032830",
+      "to": "industry_finance",
+      "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성생명, 관계는 최대주주 본인, 당기말 보유주식수는 2,865,158주, 지분율은 7.30%.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_005930",
-      "to": "company_008770",
+      "to": "industry_electronics",
       "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성전자, 관계는 특수관계인, 당기말 보유주식수는 2,004,717주, 지분율은 5.10%.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
@@ -62,9 +143,9 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_016360",
-      "to": "company_008770",
+      "to": "industry_finance",
       "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성증권, 관계는 특수관계인, 당기말 보유주식수는 1,200,000주, 지분율은 3.10%.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
@@ -73,9 +154,9 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_029780",
-      "to": "company_008770",
+      "to": "industry_finance",
       "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성카드, 관계는 특수관계인, 당기말 보유주식수는 524,863주, 지분율은 1.30%.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
@@ -84,10 +165,219 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_006400",
-      "to": "company_008770",
+      "to": "industry_battery_energy_storage",
       "evidence": "호텔신라의 최대주주 관련 인물/법인은 삼성SDI, 관계는 특수관계인, 당기말 보유주식수는 29,316주, 지분율은 0.10%.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004398",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_008770_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

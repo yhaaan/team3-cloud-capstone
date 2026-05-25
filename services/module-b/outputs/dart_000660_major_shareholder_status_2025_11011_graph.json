@@ -12,11 +12,38 @@
       "type": "Company",
       "name": "SK스퀘어",
       "stock_code": "402340"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 SK스퀘어(주), 관계는 최대주주, 당기말 보유주식수는 146,100,000주, 지분율은 20.07%.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_402340",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 SK스퀘어(주), 관계는 최대주주, 당기말 보유주식수는 146,100,000주, 지분율은 20.07%.",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "ACQUIRES",
       "from": "company_402340",
       "to": "company_000660",
       "evidence": "SK하이닉스의 최대주주 관련 인물/법인은 SK스퀘어(주), 관계는 최대주주, 당기말 보유주식수는 146,100,000주, 지분율은 20.07%.",

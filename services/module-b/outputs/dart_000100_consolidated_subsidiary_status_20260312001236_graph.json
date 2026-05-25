@@ -1,0 +1,59 @@
+{
+  "source_id": "dart_000100_consolidated_subsidiary_status_20260312001236",
+  "entities": [
+    {
+      "id": "company_000100",
+      "type": "Company",
+      "name": "제이피아이헬스케어",
+      "stock_code": "000100",
+      "description": "의약품 제조 및 판매 중심의 바이오/헬스케어 사업을 영위"
+    },
+    {
+      "id": "company_424870",
+      "type": "Company",
+      "name": "이뮨온시아",
+      "stock_code": "424870",
+      "description": "생명과학 연구개발을 영위하는 바이오/헬스케어 기업"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_000100",
+      "to": "company_424870",
+      "evidence": "유한양행의 연결대상 종속회사 후보로 이뮨온시아 등이 탐지되었다. (주)이뮨온시아... 기업의결권의 과반수 소유",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000100_consolidated_subsidiary_status_20260312001236",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001236",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000100",
+      "to": "industry_bio_healthcare",
+      "evidence": "유한양행의 사업보고서 (2025.12)에서 의약품 제조 및 연구 개발을 중심으로 사업을 영위함",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000100_consolidated_subsidiary_status_20260312001236",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001236",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_424870",
+      "to": "industry_bio_healthcare",
+      "evidence": "(주)이뮨온시아 ... 생명과학 연구개발",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_000100_consolidated_subsidiary_status_20260312001236",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001236",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

@@ -6,50 +6,108 @@
       "type": "Company",
       "name": "삼성SDI",
       "stock_code": "006400",
-      "description": "전기자동차용, 에너지저장장치(ESS) 배터리 생산 및 공급"
+      "description": "전기차용 하이니켈 NCM 각형 배터리 등 2차전지 생산 및 공급"
     },
     {
       "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
-      "stock_code": "373220",
-      "description": "전기차용 리튬인산철(LFP), 원통형 배터리 등 생산·공급"
-    },
-    {
-      "id": "company_034730",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
+      "stock_code": "373220"
     },
     {
       "id": "company_096770",
       "type": "Company",
       "name": "SK이노베이션",
-      "stock_code": "096770",
-      "description": "전기자동차용 배터리 생산 및 공급"
+      "stock_code": "096770"
     },
     {
-      "id": "business_area_ev_battery",
-      "type": "BusinessArea",
-      "name": "EV battery"
+      "id": "company_003670",
+      "type": "Company",
+      "name": "포스코퓨처엠",
+      "stock_code": "003670"
     },
     {
-      "id": "business_area_ess",
-      "type": "BusinessArea",
-      "name": "Energy storage system"
-    },
-    {
-      "id": "industry_battery",
+      "id": "industry_battery_energy_storage",
       "type": "Industry",
-      "name": "Battery"
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_battery_cell",
+      "type": "Industry",
+      "name": "배터리셀"
+    },
+    {
+      "id": "product_service_electric_vehicle_battery",
+      "type": "ProductService",
+      "name": "전기차용 배터리"
+    },
+    {
+      "id": "product_service_energy_storage_system",
+      "type": "ProductService",
+      "name": "에너지저장장치(ESS)"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_electric_vehicle",
+      "type": "Industry",
+      "name": "전기차량"
+    },
+    {
+      "id": "product_service_ncm_battery",
+      "type": "ProductService",
+      "name": "니켈코발트망간 각형 배터리"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006400",
-      "to": "business_area_ev_battery",
-      "evidence": "삼성SDI가 독일 메르세데스벤츠에 수조원대 전기자동차용 배터리를 공급한다는 소식이 단초가 됐다.",
+      "to": "industry_battery_energy_storage",
+      "evidence": "국내 2차전지 관련주가 긴 침체를 끝으로 지난달부터 반등에 성공했다.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",
@@ -57,32 +115,10 @@
       "evidence_published_at": "2026-05-07T16:00:00+09:00"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006400",
-      "to": "business_area_ess",
-      "evidence": "국내 배터리업계의 또 다른 먹거리인 ESS 사업도 주목하고 있다.",
-      "date": "",
-      "evidence_source_id": "news_006400_e62287d5212ee868",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
-      "evidence_published_at": "2026-05-07T16:00:00+09:00"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_373220",
-      "to": "business_area_ev_battery",
-      "evidence": "LG에너지솔루션은 2024년부터 벤츠 전동화 전략에 올라탄 LG에너지솔루션이 벤츠에 납품하는 배터리는 리튬·인산철(LFP)부터 차세대 원통형 배터리 등을 포함해 25조원 규모에 달한다.",
-      "date": "",
-      "evidence_source_id": "news_006400_e62287d5212ee868",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
-      "evidence_published_at": "2026-05-07T16:00:00+09:00"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_096770",
-      "to": "business_area_ev_battery",
-      "evidence": "SK이노베이션은 지난달 주가가 27.69% 올랐다.",
+      "to": "industry_battery_cell",
+      "evidence": "삼성SDI는 2028년부터 벤츠의 차세대 전기차에 하이니켈(니켈 비중 80% 이상) 기반 니켈코발트망간(NCM) 각형 배터리를 공급하기로 했다.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",
@@ -92,8 +128,8 @@
     {
       "type": "PRODUCES",
       "from": "company_006400",
-      "to": "business_area_ev_battery",
-      "evidence": "삼성SDI는 2028년부터 벤츠의 차세대 전기차에 하이니켈(니켈 비중 80% 이상) 기반 니켈코발트망간(NCM) 각형 배터리를 공급하기로 했다.",
+      "to": "product_service_electric_vehicle_battery",
+      "evidence": "삼성SDI가 독일 메르세데스벤츠에 수조원대 전기자동차용 배터리를 공급한다는 소식이 단초가 됐다.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",
@@ -101,32 +137,10 @@
       "evidence_published_at": "2026-05-07T16:00:00+09:00"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_ev_battery",
-      "to": "industry_battery",
-      "evidence": "국내 2차전지 관련주가 긴 침체를 끝으로 지난달부터 반등에 성공했다.",
-      "date": "",
-      "evidence_source_id": "news_006400_e62287d5212ee868",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
-      "evidence_published_at": "2026-05-07T16:00:00+09:00"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_ess",
-      "to": "industry_battery",
-      "evidence": "국내 배터리업계의 또 다른 먹거리인 ESS 사업도 주목하고 있다.",
-      "date": "",
-      "evidence_source_id": "news_006400_e62287d5212ee868",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
-      "evidence_published_at": "2026-05-07T16:00:00+09:00"
-    },
-    {
-      "type": "BELONGS_TO",
+      "type": "PRODUCES",
       "from": "company_006400",
-      "to": "industry_battery",
-      "evidence": "국내 2차전지 관련주가 긴 침체를 끝으로 지난달부터 반등에 성공했다.",
+      "to": "product_service_ncm_battery",
+      "evidence": "2028년부터 벤츠의 차세대 전기차에 하이니켈(니켈 비중 80% 이상) 기반 니켈코발트망간(NCM) 각형 배터리를 공급하기로 했다.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",
@@ -136,19 +150,8 @@
     {
       "type": "BELONGS_TO",
       "from": "company_373220",
-      "to": "industry_battery",
-      "evidence": "LG에너지솔루션은 2024년부터 벤츠 전동화 전략에 올라탄 LG에너지솔루션이 벤츠에 납품하는 배터리는 리튬·인산철(LFP)부터 차세대 원통형 배터리 등을 포함해 25조원 규모에 달한다.",
-      "date": "",
-      "evidence_source_id": "news_006400_e62287d5212ee868",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
-      "evidence_published_at": "2026-05-07T16:00:00+09:00"
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_034730",
-      "to": "industry_battery",
-      "evidence": "SK는 배터리 관련 주가 상승이 있었다.",
+      "to": "industry_battery_energy_storage",
+      "evidence": "LG에너지솔루션이 벤츠에 납품하는 배터리는 리튬·인산철(LFP)부터 차세대 원통형 배터리 등을 포함해 25조원 규모에 달한다.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",
@@ -158,8 +161,250 @@
     {
       "type": "BELONGS_TO",
       "from": "company_096770",
-      "to": "industry_battery",
-      "evidence": "SK이노베이션은 지난달 주가가 27.69% 올랐다.",
+      "to": "industry_battery_energy_storage",
+      "evidence": "SK이노베이션은 지난달 주가가 각각 13.14%, 27.69% 올랐다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003670",
+      "to": "industry_battery_energy_storage",
+      "evidence": "[단독] 포스코퓨처엠, 日 완성차 업체와 전고체 양극재 개발...",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006400",
+      "to": "product_service_energy_storage_system",
+      "evidence": "국내 배터리업계의 또 다른 먹거리인 ESS 사업도 주목하고 있다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_battery_cell",
+      "to": "industry_battery_energy_storage",
+      "evidence": "니켈코발트망간(NCM) 각형 배터리 등 2차전지 제품 내용",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_ncm_battery",
+      "to": "industry_battery_energy_storage",
+      "evidence": "니켈코발트망간(NCM) 각형 배터리는 2차전지 산업 제품임",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_electric_vehicle_battery",
+      "to": "industry_battery_energy_storage",
+      "evidence": "전기자동차용 배터리는 2차전지 산업 제품임",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006400",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "삼성SDI가 벤츠, BMW, 아우디 등 독일 자동차 3사에 배터리를 공급하는 사업.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006400",
+      "to": "industry_electric_vehicle",
+      "evidence": "삼성SDI의 배터리가 독일차 전기차용 배터리로 공급됨.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "전기차 및 ESS 수요가 배터리업계 주가 상승 배경으로 꼽힌다.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electric_vehicle",
+      "to": "industry_battery_energy_storage",
+      "evidence": "전기차와 2차전지(배터리)는 수요 측면에서 긴밀하게 연관됨.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electric_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 전기차량 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_006400_e62287d5212ee868",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hankyung.com/article/2026050707881",
+      "evidence_published_at": "2026-05-07T16:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "",
       "evidence_source_id": "news_006400_e62287d5212ee868",
       "evidence_source_type": "news",

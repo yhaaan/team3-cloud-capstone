@@ -6,8 +6,89 @@
       "type": "Company",
       "name": "삼아알미늄",
       "stock_code": "006110",
-      "description": "신규사업 진출과 지분 참여를 통한 수익 창출을 위한 투자 활동을 수행하는 기업"
+      "description": "알루미늄 산업에 종사하며 타법인 출자를 통한 신규사업 진출과 수익창출에 주력"
+    },
+    {
+      "id": "industry_aluminum",
+      "type": "Industry",
+      "name": "알루미늄"
+    },
+    {
+      "id": "industry_nonferrous_metal",
+      "type": "Industry",
+      "name": "비철금속"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006110",
+      "to": "industry_aluminum",
+      "evidence": "삼아알미늄의 타법인 출자 대상은 (주)삼아소이전자, 출자 목적은 신규사업진출, 최초 취득일은 2018.05.29, 당기말 보유수량은 176,389, 당기말 지분율은 100%, 장부가액은 1,354,291,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_aluminum",
+      "to": "industry_nonferrous_metal",
+      "evidence": "Industry taxonomy: 알루미늄 is part of 비철금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_nonferrous_metal",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 비철금속 is part of 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
 }

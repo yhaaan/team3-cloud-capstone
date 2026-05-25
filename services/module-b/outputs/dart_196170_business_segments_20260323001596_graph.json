@@ -6,22 +6,17 @@
       "type": "Company",
       "name": "알테오젠",
       "stock_code": "196170",
-      "description": "히알루로니다제 단백질 공학 등 플랫폼 기술 기반 바이오베터, 바이오신약, 바이오시밀러 연구개발, 생산 및 판매"
+      "description": "바이오의약품 연구개발, 생산, 판매 및 바이오시밀러 사업을 영위하는 바이오기업"
     },
     {
-      "id": "business_area_biopharmaceutical",
-      "type": "BusinessArea",
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
       "name": "바이오의약품"
-    },
-    {
-      "id": "business_area_biosimilar",
-      "type": "BusinessArea",
-      "name": "바이오시밀러"
-    },
-    {
-      "id": "business_area_platform_technology",
-      "type": "BusinessArea",
-      "name": "플랫폼 기술"
     },
     {
       "id": "product_service_hyaluronidase",
@@ -29,32 +24,27 @@
       "name": "히알루로니다제"
     },
     {
-      "id": "product_service_sc_injection",
+      "id": "product_service_biosimilar",
+      "type": "ProductService",
+      "name": "바이오시밀러"
+    },
+    {
+      "id": "product_service_license",
+      "type": "ProductService",
+      "name": "기술이전 라이선스"
+    },
+    {
+      "id": "product_service_subcutaneous_injection_formulation",
       "type": "ProductService",
       "name": "피하주사 제형"
-    },
-    {
-      "id": "product_service_alt_b4",
-      "type": "ProductService",
-      "name": "ALT-B4"
-    },
-    {
-      "id": "product_service_adc_technology",
-      "type": "ProductService",
-      "name": "ADC 기술"
-    },
-    {
-      "id": "industry_bio",
-      "type": "Industry",
-      "name": "bio"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_196170",
-      "to": "business_area_biopharmaceutical",
-      "evidence": "알테오젠은 바이오의약품(바이오베터, 바이오신약 등)의 연구개발, 생산 및 판매 활동을 영위하는 바이오기업입니다.",
+      "to": "industry_bio_healthcare",
+      "evidence": "바이오의약품(바이오베터, 바이오신약 등)의 연구개발, 생산 및 판매 활동을 영위하는 바이오기업입니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -62,21 +52,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_196170",
-      "to": "business_area_biosimilar",
-      "evidence": "또한 바이오시밀러 분야의 연구 개발 및 상업화 등을 진행하고 있습니다.",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_196170_business_segments_20260323001596",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001596",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_196170",
-      "to": "business_area_platform_technology",
-      "evidence": "히알루로니다제 단백질 공학 기술(Hybrozyme™), NexP™ 융합(Fusion), NexMab™ (ADC 기술) 등의 플랫폼 기술(Platform Technology) 등을 기반으로 사업을 영위",
+      "to": "industry_biopharmaceutical",
+      "evidence": "지속형 바이오의약품 기반 기술인 NexP™ 융합(Fusion), 차세대 항체-약물접합체 기반 기술인 NexMab™ (ADC 기술) 등의 플랫폼 기술(Platform Technology) 등을 기반으로 바이오의약품의 연구개발, 생산 및 판매 활동을 영위하는 바이오기업입니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -87,7 +66,7 @@
       "type": "PRODUCES",
       "from": "company_196170",
       "to": "product_service_hyaluronidase",
-      "evidence": "히알루로니다제 단백질 공학 기술과 관련 기술을 기반으로 바이오의약품을 연구개발, 생산 및 판매합니다.",
+      "evidence": "당사의 핵심 자산인 ALT-B4(물질명: berahyaluronidase alfa)를 사용한 피하주사(SC) 제형은 기존 정맥주사(IV) 제형에 비해 환자의 투약 편의성 및 약물전달의 효율을 증대시키고 전반적인 의료 비용을 절감할 수 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -97,8 +76,8 @@
     {
       "type": "PRODUCES",
       "from": "company_196170",
-      "to": "product_service_sc_injection",
-      "evidence": "고유 원천기술인 정맥주사(IV) 제형을 피하주사(Subcutaneous injection, SC) 제형으로 전환해주는 히알루로니다제 단백질 공학 기술",
+      "to": "product_service_biosimilar",
+      "evidence": "바이오시밀러 분야의 연구 개발 및 상업화 등을 진행하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -108,8 +87,8 @@
     {
       "type": "PRODUCES",
       "from": "company_196170",
-      "to": "product_service_alt_b4",
-      "evidence": "당사의 핵심 자산인 ALT-B4(물질명: berahyaluronidase alfa)를 사용한 피하주사 제형",
+      "to": "product_service_license",
+      "evidence": "바이오베터 및 바이오신약 분야에서 당사는 보유 원천기술인 플랫폼 기술에 대해 다국적제약사와 기술이전 라이선스 계약을 체결하여 해당 기술의 개발 및 상업화를 진행하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -119,8 +98,8 @@
     {
       "type": "PRODUCES",
       "from": "company_196170",
-      "to": "product_service_adc_technology",
-      "evidence": "차세대 항체-약물접합체 기반 기술인 NexMab™ (ADC 기술) 플랫폼 기술",
+      "to": "product_service_subcutaneous_injection_formulation",
+      "evidence": "ALT-B4를 사용한 피하주사(SC) 제형은 기존 정맥주사(IV) 제형에 비해 환자의 투약 편의성 및 약물전달의 효율을 증대시키고 전반적인 의료 비용을 절감할 수 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -129,31 +108,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_biopharmaceutical",
-      "to": "industry_bio",
-      "evidence": "알테오젠의 바이오의약품 사업은 바이오 산업 분야에 해당",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_196170_business_segments_20260323001596",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001596",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_biosimilar",
-      "to": "industry_bio",
-      "evidence": "알테오젠의 바이오시밀러 사업은 바이오 산업 분야에 해당",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_196170_business_segments_20260323001596",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001596",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_platform_technology",
-      "to": "industry_bio",
-      "evidence": "플랫폼 기술 기반 바이오의약품 연구개발 및 생산은 바이오 산업에 속함",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "지속형 바이오의약품 기반 기술인 NexP™ 융합(Fusion), 차세대 항체-약물접합체 기반 기술인 NexMab™ (ADC 기술) 등의 플랫폼 기술(Platform Technology) 등을 기반으로 바이오의약품의 연구개발, 생산 및 판매 활동을 영위함.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -163,8 +120,8 @@
     {
       "type": "PART_OF",
       "from": "product_service_hyaluronidase",
-      "to": "business_area_platform_technology",
-      "evidence": "히알루로니다제 단백질 공학 기술은 플랫폼 기술에 기반함",
+      "to": "industry_biopharmaceutical",
+      "evidence": "ALT-B4(물질명: berahyaluronidase alfa)를 사용한 피하주사(SC) 제형은 바이오의약품임.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",
@@ -173,31 +130,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_sc_injection",
-      "to": "business_area_platform_technology",
-      "evidence": "피하주사 제형 전환 기술은 히알루로니다제 관련 플랫폼 기술임",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_196170_business_segments_20260323001596",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001596",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_alt_b4",
-      "to": "business_area_platform_technology",
-      "evidence": "ALT-B4 제품은 히알루로니다제 기반 플랫폼 기술에 해당",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_196170_business_segments_20260323001596",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001596",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_adc_technology",
-      "to": "business_area_platform_technology",
-      "evidence": "ADC 기술은 차세대 항체-약물접합체 기반 플랫폼 기술임",
+      "from": "product_service_biosimilar",
+      "to": "industry_biopharmaceutical",
+      "evidence": "바이오시밀러 분야 연구개발 및 상업화 진행 중임.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_196170_business_segments_20260323001596",
       "evidence_source_type": "dart",

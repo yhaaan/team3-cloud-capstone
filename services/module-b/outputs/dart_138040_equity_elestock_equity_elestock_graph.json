@@ -6,8 +6,52 @@
       "type": "Company",
       "name": "메리츠금융지주",
       "stock_code": "138040",
-      "description": "메리츠금융지주는 금융 서비스업을 영위하는 회사입니다."
+      "description": "다양한 금융 서비스를 제공하는 금융지주회사"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138040",
+      "to": "industry_financial_holding",
+      "evidence": "메리츠금융지주",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_138040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002099",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "금융지주 is a subset of 금융",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_138040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002099",
+      "evidence_published_at": "2026-04-29"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138040",
+      "to": "industry_finance",
+      "evidence": "금융 services provided by 메리츠금융지주",
+      "date": "2026-04-29",
+      "evidence_source_id": "dart_138040_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002099",
+      "evidence_published_at": "2026-04-29"
+    }
+  ]
 }

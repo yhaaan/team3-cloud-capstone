@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "삼성에피스홀딩스",
       "stock_code": "001260",
-      "description": "바이오 투자지주회사로 삼성바이오에피스 지분 보유, 바이오의약품 개발·상업화와 차세대 바이오 기술 플랫폼 투자"
+      "description": "바이오 투자지주회사이며, 자회사 삼성바이오에피스의 바이오의약품 개발 및 상업화를 주력 사업으로 영위합니다."
     },
     {
       "id": "company_287840",
@@ -15,53 +15,37 @@
       "stock_code": "287840"
     },
     {
-      "id": "industry_bio",
+      "id": "industry_bio_healthcare",
       "type": "Industry",
-      "name": "bio"
+      "name": "바이오/헬스케어"
     },
     {
-      "id": "business_area_바이오의약품_개발및상업화",
-      "type": "BusinessArea",
-      "name": "바이오의약품 개발 및 상업화"
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
     },
     {
-      "id": "business_area_바이오_투자지주",
-      "type": "BusinessArea",
-      "name": "바이오 투자지주"
-    },
-    {
-      "id": "business_area_차세대_바이오_기술플랫폼",
-      "type": "BusinessArea",
-      "name": "차세대 바이오 기술 플랫폼"
-    },
-    {
-      "id": "product_service_바이오시밀러",
+      "id": "product_service_biosimilar",
       "type": "ProductService",
       "name": "바이오시밀러"
     },
     {
-      "id": "product_service_ADC",
+      "id": "product_service_adc",
       "type": "ProductService",
       "name": "ADC"
+    },
+    {
+      "id": "industry_biosimilar",
+      "type": "Industry",
+      "name": "바이오시밀러"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_001260",
-      "to": "business_area_바이오_투자지주",
-      "evidence": "당사는 '독점규제 및 공정거래에 관한 법률'에 따른 지주회사로서 현재 2개의 자회사(삼성바이오에피스, 에피스넥스랩)를 보유하고 있는 '바이오 투자지주회사' 입니다.",
-      "date": "2026-05-15",
-      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
-      "evidence_published_at": "2026-05-15"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_001260",
-      "to": "business_area_차세대_바이오_기술플랫폼",
-      "evidence": "에피스넥스랩은 차세대 바이오 기술 플랫폼 개발에 집중하고 있습니다.",
+      "to": "industry_bio_healthcare",
+      "evidence": "당사는 '독점규제 및 공정거래에 관한 법률'에 따른 지주회사로서 ... '바이오 투자지주회사' 입니다.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
       "evidence_source_type": "dart",
@@ -70,9 +54,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_바이오_투자지주",
-      "to": "industry_bio",
-      "evidence": "당사는 바이오 투자지주회사임",
+      "from": "industry_biosimilar",
+      "to": "industry_biopharmaceutical",
+      "evidence": "바이오시밀러는 바이오의약품 개발 및 상업화 부문임.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
       "evidence_source_type": "dart",
@@ -81,9 +65,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_바이오의약품_개발및상업화",
-      "to": "industry_bio",
-      "evidence": "삼성바이오에피스는 바이오의약품 개발 및 상업화를 주력 사업으로 영위",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "바이오의약품은 바이오/헬스케어 산업 분야임.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
       "evidence_source_type": "dart",
@@ -92,9 +76,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_차세대_바이오_기술플랫폼",
-      "to": "industry_bio",
-      "evidence": "에피스넥스랩은 차세대 바이오 기술 플랫폼 개발에 집중",
+      "from": "product_service_adc",
+      "to": "industry_biopharmaceutical",
+      "evidence": "항체 약물 접합체(ADC) 분야는 차세대 치료제 시장으로 바이오의약품 개발 영역임.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
       "evidence_source_type": "dart",
@@ -103,20 +87,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_바이오시밀러",
-      "to": "business_area_바이오의약품_개발및상업화",
-      "evidence": "바이오의약품 개발 및 상업화 부문 ... 제품 등 바이오시밀러 매출",
-      "date": "2026-05-15",
-      "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515003119",
-      "evidence_published_at": "2026-05-15"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_ADC",
-      "to": "business_area_바이오의약품_개발및상업화",
-      "evidence": "삼성바이오에피스는 신약 개발 영역으로 ADC 분야 연구개발 중임",
+      "from": "industry_biosimilar",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 바이오시밀러 is part of 바이오/헬스케어.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_0126Z0_business_segments_20260515003119",
       "evidence_source_type": "dart",

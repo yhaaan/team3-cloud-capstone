@@ -6,50 +6,65 @@
       "type": "Company",
       "name": "한국금융지주",
       "stock_code": "071050",
-      "description": "금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문금융, 부동산신탁, 헤지펀드 운용 등을 영위하는 금융지주회사"
-    },
-    {
-      "id": "business_area_financial_investment",
-      "type": "BusinessArea",
-      "name": "금융투자"
-    },
-    {
-      "id": "business_area_asset_management",
-      "type": "BusinessArea",
-      "name": "자산운용"
-    },
-    {
-      "id": "business_area_savings_banking",
-      "type": "BusinessArea",
-      "name": "저축은행"
-    },
-    {
-      "id": "business_area_specialized_credit_finance",
-      "type": "BusinessArea",
-      "name": "여신전문금융"
-    },
-    {
-      "id": "business_area_real_estate_trust",
-      "type": "BusinessArea",
-      "name": "부동산신탁"
-    },
-    {
-      "id": "business_area_investment_venture",
-      "type": "BusinessArea",
-      "name": "벤처 및 PEF투자"
+      "description": "금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문금융, 헤지펀드 운용 등 금융업 전반의 영역에서 독창적 상품과 서비스 제공"
     },
     {
       "id": "industry_finance",
       "type": "Industry",
       "name": "금융"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_asset_management",
+      "type": "Industry",
+      "name": "자산운용"
+    },
+    {
+      "id": "industry_savings_bank",
+      "type": "Industry",
+      "name": "저축은행"
+    },
+    {
+      "id": "industry_private_equity",
+      "type": "Industry",
+      "name": "사모펀드"
+    },
+    {
+      "id": "industry_credit_card",
+      "type": "Industry",
+      "name": "신용카드"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_financial_investment",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_finance",
+      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -57,10 +72,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_asset_management",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_financial_holding",
+      "evidence": "금융지주 | 계열회사 관리 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -68,10 +83,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_savings_banking",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_financial_holding",
+      "evidence": "한국투자금융지주 금융투자...",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -79,10 +94,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_specialized_credit_finance",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_asset_management",
+      "evidence": "자산운용 | 집합투자업, 투자자문 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -90,10 +105,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_real_estate_trust",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_savings_bank",
+      "evidence": "저축은행 | 상호저축은행법에 따른 서민, 중소기업 대상 여·수신 취급 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -101,10 +116,32 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_investment_venture",
-      "evidence": "한국투자금융지주는 금융투자, 자산운용, 저축은행, 벤처/PEF투자, 여신전문업, 헤지펀드 운용 등 금융업 전반의 영역에서 고객 니즈에 부합하는 독창적인 상품과 서비스를 제공하며...",
+      "to": "industry_credit_card",
+      "evidence": "여신전문금융 | 시설대여업, 할부금융업, 신기술사업금융업 등과 이에 수반되는 업무",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_071050_business_segments_20260319001006",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_071050",
+      "to": "industry_real_estate",
+      "evidence": "부동산신탁 | 부동산신탁업 및 이에 수반되는 업무",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_071050_business_segments_20260319001006",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_071050",
+      "to": "industry_private_equity",
+      "evidence": "기타투자 및 기타금융업 | 창업투자 및 PEF투자, 헤지펀드 운용, 스타트업 투자 및 성장지원 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -113,9 +150,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_financial_investment",
+      "from": "industry_financial_holding",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "금융지주 계열회사 관리 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -124,9 +161,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_asset_management",
+      "from": "industry_asset_management",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "자산운용 | 집합투자업, 투자자문 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -135,9 +172,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_savings_banking",
+      "from": "industry_savings_bank",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "저축은행 | 상호저축은행법에 따른 서민, 중소기업 대상 여·수신 취급 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -146,9 +183,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_specialized_credit_finance",
+      "from": "industry_credit_card",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "여신전문금융 | 시설대여업, 할부금융업, 신기술사업금융업 등과 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -157,9 +194,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_real_estate_trust",
+      "from": "industry_real_estate",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "부동산신탁 | 부동산신탁업 및 이에 수반되는 업무",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",
@@ -168,9 +205,42 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_investment_venture",
+      "from": "industry_private_equity",
       "to": "industry_finance",
-      "evidence": "한국투자금융지주는 금융업 전반의 영역에서...",
+      "evidence": "기타투자 및 기타금융업 | 창업투자 및 PEF투자, 헤지펀드 운용, 스타트업 투자 및 성장지원 등과 이에 수반되는 업무",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_071050_business_segments_20260319001006",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_071050_business_segments_20260319001006",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_071050_business_segments_20260319001006",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001006",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_business_segments_20260319001006",
       "evidence_source_type": "dart",

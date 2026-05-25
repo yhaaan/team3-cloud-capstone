@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "LG이노텍",
       "stock_code": "011070",
-      "description": "LG이노텍은 다양한 계열사에 경영참여 및 단순투자하는 기업입니다."
+      "description": "전자부품 생산과 광학솔루션 및 자동차부품 등 전자산업 중심 사업을 영위"
     },
     {
       "id": "company_228670",
@@ -27,22 +27,72 @@
       "stock_code": "011320"
     },
     {
-      "id": "business_area_경영참여",
-      "type": "BusinessArea",
-      "name": "경영참여"
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
     },
     {
-      "id": "business_area_단순투자",
-      "type": "BusinessArea",
-      "name": "단순투자"
+      "id": "industry_radar_sensor",
+      "type": "Industry",
+      "name": "레이더센서"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_011070",
-      "to": "company_424960",
-      "evidence": "LG이노텍의 타법인 출자 대상은 (주)스마트레이더시스템, 출자 목적은 단순투자, 최초 취득일은 2025.12.01, 당기말 보유수량은 807,770, 당기말 지분율은 4.9%, 장부가액은 6,793,000,000.",
+      "to": "industry_electronics",
+      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Yantai Co., Ltd., 출자 목적은 경영참여...",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -50,10 +100,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_011070",
-      "to": "company_011320",
-      "evidence": "LG이노텍의 타법인 출자 대상은 세븐브릿지제6호유니크글래스사모투자 합자회사, 출자 목적은 단순투자, 최초 취득일은 2025.11.20, 당기말 보유수량은 10,000, 당기말 지분율은 18.7%, 장부가액은 10,000,000,000.",
+      "to": "industry_auto_parts",
+      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Yantai Co., Ltd., 출자 목적은 경영참여...",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -61,10 +111,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Yantai Co., Ltd., 출자 목적은 경영참여, 최초 취득일은 2004.08.06, 당기말 지분율은 100%, 장부가액은 94,778,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_424960",
+      "to": "industry_radar_sensor",
+      "evidence": "LG이노텍의 타법인 출자 대상은 (주)스마트레이더시스템, 출자 목적은 단순투자...",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -72,10 +122,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG INNOTEK FUND II LLC, 출자 목적은 경영참여, 최초 취득일은 2024.10.16, 당기말 지분율은 100%, 장부가액은 13,783,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_424960",
+      "to": "industry_electronics",
+      "evidence": "LG이노텍의 타법인 출자 대상은 (주)스마트레이더시스템, 출자 목적은 단순투자...",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -83,10 +133,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 PT LG Innotek Indonesia, 출자 목적은 경영참여, 최초 취득일은 2000.10.19, 당기말 보유수량은 4,999, 당기말 지분율은 100%, 장부가액은 9,448,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_011320",
+      "to": "industry_electronics",
+      "evidence": "LG이노텍의 타법인 출자 대상은 세븐브릿지제6호유니크글래스사모투자 합자회사...",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -94,10 +144,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Poland Sp. z o.o., 출자 목적은 경영참여, 최초 취득일은 2005.09.01, 당기말 보유수량은 1,779,055, 당기말 지분율은 100%, 장부가액은 2,404,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -105,10 +155,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Mexico S.A. de C.V., 출자 목적은 경영참여, 최초 취득일은 2013.09.17, 당기말 보유수량은 3,357,625, 당기말 지분율은 100%, 장부가액은 165,903,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -116,10 +166,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Vietnam Haiphong Co., Ltd., 출자 목적은 경영참여, 최초 취득일은 2016.09.05, 당기말 지분율은 100%, 장부가액은 93,666,000,000.",
+      "type": "PART_OF",
+      "from": "industry_radar_sensor",
+      "to": "industry_defense_aerospace",
+      "evidence": "Industry taxonomy: 레이더센서 is part of 방산/항공우주.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -127,10 +177,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek (Taiwan) Co., Ltd., 출자 목적은 경영참여, 최초 취득일은 2005.11.18, 당기말 지분율은 100%.",
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -138,10 +188,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek USA, Inc., 출자 목적은 경영참여, 최초 취득일은 1994.11.29, 당기말 보유수량은 35,000, 당기말 지분율은 100%, 장부가액은 7,898,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -149,10 +199,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 LG Innotek Trading (Shanghai) Co., Ltd., 출자 목적은 경영참여, 최초 취득일은 2012.08.02, 당기말 지분율은 100%, 장부가액은 227,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -160,10 +210,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_경영참여",
-      "evidence": "LG이노텍의 타법인 출자 대상은 이노위드 주식회사, 출자 목적은 경영참여, 최초 취득일은 2012.05.18, 당기말 보유수량은 2,000, 당기말 지분율은 100%, 장부가액은 10,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -171,10 +221,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 Exploitation of Next Generation Co., Ltd., 출자 목적은 단순투자, 최초 취득일은 2010.04.05, 당기말 보유수량은 272, 당기말 지분율은 14.9%.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -182,10 +232,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 인텔렉추얼디스커버리 주식회사, 출자 목적은 단순투자, 최초 취득일은 2011.05.24, 당기말 보유수량은 15,908, 당기말 지분율은 0.48%, 장부가액은 142,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -193,10 +243,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 유안타 혁신성장형 소부장 펀드, 출자 목적은 단순투자, 최초 취득일은 2021.11.29, 당기말 보유수량은 13,950, 당기말 지분율은 14%, 장부가액은 14,034,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -204,43 +254,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 Suzhou Laijin Enterprise Management Co., Ltd., 출자 목적은 단순투자, 최초 취득일은 2022.06.21, 당기말 지분율은 16.4%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 (주)모티, 출자 목적은 단순투자, 최초 취득일은 2023.07.25, 당기말 보유수량은 1,400, 당기말 지분율은 4.6%, 장부가액은 200,000,000.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 AOE Optronics., Inc., 출자 목적은 단순투자, 최초 취득일은 2024.03.29, 당기말 보유수량은 1,057,500, 당기말 지분율은 5%, 장부가액은 6,567,000,000.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001270",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_011070",
-      "to": "business_area_단순투자",
-      "evidence": "LG이노텍의 타법인 출자 대상은 Aeva Technologies, Inc., 출자 목적은 단순투자, 최초 취득일은 2025.08.20, 당기말 보유수량은 3,509,719, 당기말 지분율은 6.0%, 장부가액은 66,879,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_011070_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

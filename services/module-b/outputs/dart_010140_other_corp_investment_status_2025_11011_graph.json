@@ -6,25 +6,27 @@
       "type": "Company",
       "name": "삼성중공업",
       "stock_code": "010140",
-      "description": "조선 및 해양플랜트 사업을 영위하는 종합 중공업 기업"
+      "description": "조선 및 해양 설계, 건조, 플랜트 사업을 주력으로 하는 기업"
     },
     {
       "id": "company_029460",
       "type": "Company",
       "name": "케이씨",
-      "stock_code": "029460"
+      "stock_code": "029460",
+      "description": "LNG 기술 및 관련 장비 개발, 생산 및 공급"
+    },
+    {
+      "id": "company_099220",
+      "type": "Company",
+      "name": "SDN",
+      "stock_code": "099220",
+      "description": "위탁개발생산 및 바이오 사업 참여 기업"
     },
     {
       "id": "company_000080",
       "type": "Company",
       "name": "하이트진로",
       "stock_code": "000080"
-    },
-    {
-      "id": "company_099220",
-      "type": "Company",
-      "name": "SDN",
-      "stock_code": "099220"
     },
     {
       "id": "company_333620",
@@ -39,22 +41,97 @@
       "stock_code": "001680"
     },
     {
-      "id": "industry_shipbuilding",
+      "id": "industry_shipbuilding_marine",
       "type": "Industry",
-      "name": "shipbuilding"
+      "name": "조선/해양"
     },
     {
-      "id": "business_area_shipbuilding",
-      "type": "BusinessArea",
-      "name": "shipbuilding"
+      "id": "industry_offshore_plant",
+      "type": "Industry",
+      "name": "해양플랜트"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_platform_business",
+      "type": "Industry",
+      "name": "플랫폼사업"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "product_service_lng_carrier",
+      "type": "ProductService",
+      "name": "LNG carrier"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_010140",
-      "to": "company_029460",
-      "evidence": "삼성중공업의 타법인 출자 대상은 케이씨 엘엔지테크 주식회사, 출자 목적은 경영참여, 최초 취득일은 2016.02.23, 당기말 보유수량은 5,043,080, 당기말 지분율은 17%, 장부가액은 0.",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "삼성중공업의 타법인 출자 대상은 삼성중공업 (영성)유한공사, 출자 목적은 경영참여, 최초 취득일은 2006.02.28, 당기말 보유수량은 147,300,000, 당기말 지분율은 100%, 장부가액은 181,486,000,000.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -62,10 +139,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_010140",
-      "to": "company_000080",
-      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자, 최초 취득일은 2017.09.11, 당기말 보유수량은 1,415,000, 당기말 지분율은 15%, 장부가액은 42,167,000,000.",
+      "to": "industry_offshore_plant",
+      "evidence": "삼성중공업의 타법인 출자 대상은 삼성중공업 (영성)유한공사, 출자 목적은 경영참여",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -73,10 +150,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_010140",
-      "to": "company_099220",
-      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자, 최초 취득일은 2017.09.11, 당기말 보유수량은 1,415,000, 당기말 지분율은 15%, 장부가액은 42,167,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_029460",
+      "to": "industry_energy_utility",
+      "evidence": "삼성중공업의 타법인 출자 대상은 케이씨 엘엔지테크 주식회사, 출자 목적은 경영참여",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -84,10 +161,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_010140",
-      "to": "company_333620",
-      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자, 최초 취득일은 2017.09.11, 당기말 보유수량은 1,415,000, 당기말 지분율은 15%, 장부가액은 42,167,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_099220",
+      "to": "industry_platform_business",
+      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -95,10 +172,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_010140",
-      "to": "company_001680",
-      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자, 최초 취득일은 2017.09.11, 당기말 보유수량은 1,415,000, 당기말 지분율은 15%, 장부가액은 42,167,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_099220",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -106,10 +183,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_010140",
-      "to": "business_area_shipbuilding",
-      "evidence": "삼성중공업은 조선 및 해양플랜트 사업을 영위하는 종합 중공업 기업.",
+      "type": "BELONGS_TO",
+      "from": "company_099220",
+      "to": "industry_it_software",
+      "evidence": "삼성중공업의 타법인 출자 대상은 에스엔시스, 출자 목적은 일반투자",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -118,9 +195,229 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_shipbuilding",
-      "to": "industry_shipbuilding",
-      "evidence": "삼성중공업은 조선 및 해양플랜트 사업을 영위하는 종합 중공업 기업.",
+      "from": "industry_offshore_plant",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 해양플랜트 is part of 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_platform_business",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001037",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_010140_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

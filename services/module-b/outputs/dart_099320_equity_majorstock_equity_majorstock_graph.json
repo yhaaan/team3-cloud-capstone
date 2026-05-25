@@ -14,17 +14,47 @@
       "stock_code": "012450"
     },
     {
-      "id": "person_박성동",
-      "type": "Person",
-      "name": "박성동"
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_박성동",
-      "to": "company_099320",
-      "evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-01-08, 보유주식수는 823,760주, 지분율은 7.52%",
+      "type": "BELONGS_TO",
+      "from": "company_099320",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-01-23, 보유주식수는 4,094,464주, 지분율은 37.39%, 주식수 증감은 -14,579, 지분율 증감은 -0.13, 보고사유는 특별관계자 지분 변동.",
       "date": "2026-03-05",
       "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -32,21 +62,76 @@
       "evidence_published_at": "2026-03-05"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_박성동",
-      "to": "company_099320",
-      "evidence": "쎄트렉아이의 대량보유 보고자는 박성동, 보고 유형은 일반, 접수일은 2026-03-05, 보유주식수는 707,061주, 지분율은 6.46%",
-      "date": "2026-03-05",
-      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
-      "evidence_published_at": "2026-03-05"
-    },
-    {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_012450",
-      "to": "company_099320",
-      "evidence": "쎄트렉아이의 대량보유 보고자는 한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-01-23, 보유주식수는 4,094,464주, 지분율은 37.39%",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스, 보고 유형은 일반, 접수일은 2026-01-23, 보유주식수는 4,094,464주, 지분율은 37.39%, 주식수 증감은 -14,579, 지분율 증감은 -0.13, 보고사유는 특별관계자 지분 변동.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-05",
+      "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260108000374",
+      "evidence_published_at": "2026-03-05"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "2026-03-05",
       "evidence_source_id": "dart_099320_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

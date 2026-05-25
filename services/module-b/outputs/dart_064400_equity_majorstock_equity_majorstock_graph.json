@@ -12,8 +12,101 @@
       "type": "Company",
       "name": "LG",
       "stock_code": "003550",
-      "description": "전기전자, 화학 등 다양한 산업에서 사업을 영위하는 종합기업"
+      "description": "전기전자, 정보통신 등 다양한 사업을 영위하는 종합 기업입니다."
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_003550",
+      "to": "company_064400",
+      "evidence": "LG씨엔에스의 대량보유 보고자는 LG, 보고 유형은 일반, 접수일은 2026-04-03, 보유주식수는 44,532,318주, 지분율은 45.96%",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064400",
+      "to": "industry_electronics",
+      "evidence": "LG씨엔에스는 전기전자 산업 관련 기업이며, LG그룹 계열사입니다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003550",
+      "to": "industry_electronics",
+      "evidence": "LG그룹은 전기전자, 정보통신 등 다양한 사업을 영위하는 종합 기업입니다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_064400_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000082",
+      "evidence_published_at": "2026-04-03"
+    }
+  ]
 }

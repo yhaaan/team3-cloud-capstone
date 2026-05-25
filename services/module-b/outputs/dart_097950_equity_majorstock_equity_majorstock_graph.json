@@ -1,0 +1,83 @@
+{
+  "source_id": "dart_097950_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_097950",
+      "type": "Company",
+      "name": "CJ제일제당",
+      "stock_code": "097950"
+    },
+    {
+      "id": "company_001040",
+      "type": "Company",
+      "name": "CJ",
+      "stock_code": "001040"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_097950",
+      "to": "industry_food_beverage",
+      "evidence": "CJ제일제당의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 1,629,759주, 지분율은 10.83%, 주식수 증감은 -155,640, 지분율 증감은 -1.03, 보고사유는 단순추가취득/처분.",
+      "date": "2026-01-02",
+      "evidence_source_id": "dart_097950_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000158",
+      "evidence_published_at": "2026-01-02"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001040",
+      "to": "industry_holding_company",
+      "evidence": "CJ제일제당의 대량보유 보고자는 CJ, 보고 유형은 일반, 접수일은 2025-07-09, 보유주식수는 6,850,148주, 지분율은 45.50%, 주식수 증감은 -500, 지분율 증감은 -0.01, 보고사유는 특별관계자 변동.",
+      "date": "2026-01-02",
+      "evidence_source_id": "dart_097950_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000158",
+      "evidence_published_at": "2026-01-02"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-01-02",
+      "evidence_source_id": "dart_097950_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000158",
+      "evidence_published_at": "2026-01-02"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-01-02",
+      "evidence_source_id": "dart_097950_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000158",
+      "evidence_published_at": "2026-01-02"
+    }
+  ]
+}

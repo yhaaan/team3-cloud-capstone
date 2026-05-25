@@ -1,0 +1,397 @@
+{
+  "source_id": "dart_051900_business_segments_20260316000985",
+  "entities": [
+    {
+      "id": "company_051900",
+      "type": "Company",
+      "name": "LG생활건강",
+      "stock_code": "051900",
+      "description": "화장품, 생활용품, 음료 사업을 주요 사업으로 하는 국내 시장 1위 기업"
+    },
+    {
+      "id": "industry_beauty_cosmetics",
+      "type": "Industry",
+      "name": "뷰티/화장품"
+    },
+    {
+      "id": "industry_household_goods",
+      "type": "Industry",
+      "name": "생활용품상품"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "product_service_basic_cosmetics",
+      "type": "ProductService",
+      "name": "기초 화장품"
+    },
+    {
+      "id": "product_service_color_cosmetics",
+      "type": "ProductService",
+      "name": "색조 화장품"
+    },
+    {
+      "id": "product_service_shampoo",
+      "type": "ProductService",
+      "name": "샴푸"
+    },
+    {
+      "id": "product_service_toothpaste",
+      "type": "ProductService",
+      "name": "치약"
+    },
+    {
+      "id": "product_service_body_lotion",
+      "type": "ProductService",
+      "name": "바디로션"
+    },
+    {
+      "id": "product_service_laundry_detergent",
+      "type": "ProductService",
+      "name": "세탁세제"
+    },
+    {
+      "id": "product_service_kitchen_detergent",
+      "type": "ProductService",
+      "name": "주방세제"
+    },
+    {
+      "id": "product_service_raw_materials",
+      "type": "ProductService",
+      "name": "생산원료"
+    },
+    {
+      "id": "product_service_carbonated_beverage",
+      "type": "ProductService",
+      "name": "탄산음료"
+    },
+    {
+      "id": "product_service_non_carbonated_beverage",
+      "type": "ProductService",
+      "name": "비탄산음료"
+    },
+    {
+      "id": "product_service_bottled_water",
+      "type": "ProductService",
+      "name": "생수"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051900",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "당사의 핵심 사업은 Beauty(화장품), HDB(생활용품, Home Care & Daily Beauty),Refreshment(음료)으로 구분됩니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051900",
+      "to": "industry_household_goods",
+      "evidence": "당사의 핵심 사업은 Beauty(화장품), HDB(생활용품, Home Care & Daily Beauty),Refreshment(음료)으로 구분됩니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051900",
+      "to": "industry_food_beverage",
+      "evidence": "당사의 핵심 사업은 Beauty(화장품), HDB(생활용품, Home Care & Daily Beauty),Refreshment(음료)으로 구분됩니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_basic_cosmetics",
+      "evidence": "Beauty(화장품) 주요제품으로 기초 화장품(더후, 숨37˚, 오휘, CNP, 더페이스샵, 빌리프) 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_color_cosmetics",
+      "evidence": "색조 화장품은 VDL, VDIVOV, 글린트, hince 등 브랜드를 통해 판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_shampoo",
+      "evidence": "HDB(생활용품) 사업부문에서 샴푸 등 제품군 (엘라스틴, 리엔, 닥터그루트) 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_toothpaste",
+      "evidence": "HDB 사업부문 치약 등(페리오, 죽염, 유시몰) 제품 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_body_lotion",
+      "evidence": "HDB 사업부문 바디로션 등(벨먼, 피지오겔) 제품 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_laundry_detergent",
+      "evidence": "HDB 사업부문 세탁세제 등(테크, 샤프란, 아우라) 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_kitchen_detergent",
+      "evidence": "HDB 사업부문 주방세제 등(자연퐁, 홈스타) 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_raw_materials",
+      "evidence": "HDB 사업부문 생산원료(계면활성제, 지방산) B2B사업 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_carbonated_beverage",
+      "evidence": "Refreshment(음료) 주요 탄산음료(코카콜라, 스프라이트, 몬스터 에너지) 제조 및 판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_non_carbonated_beverage",
+      "evidence": "비탄산음료인 주스, 커피, 생수 등의 제품도 제조하여 판매하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051900",
+      "to": "product_service_bottled_water",
+      "evidence": "Refreshment 사업부문에서 생수 평창수 제품 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_basic_cosmetics",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "Beauty(화장품) 주요제품으로 기초 화장품 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_color_cosmetics",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "색조 화장품은 Beauty 부문 하위 제품군임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_shampoo",
+      "to": "industry_household_goods",
+      "evidence": "샴푸 등 생활용품은 HDB 사업부문에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_toothpaste",
+      "to": "industry_household_goods",
+      "evidence": "치약 등 생활용품은 HDB 사업부문에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_body_lotion",
+      "to": "industry_household_goods",
+      "evidence": "바디로션 등 생활용품은 HDB 사업부문에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_laundry_detergent",
+      "to": "industry_household_goods",
+      "evidence": "세탁세제 등 생활용품은 HDB 사업부문에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_kitchen_detergent",
+      "to": "industry_household_goods",
+      "evidence": "주방세제 등 생활용품은 HDB 사업부문에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_raw_materials",
+      "to": "industry_household_goods",
+      "evidence": "생활용품에 들어가는 원료를 판매하는 B2B 사업은 Home Care에 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_carbonated_beverage",
+      "to": "industry_food_beverage",
+      "evidence": "Refreshment 사업의 탄산음료 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_non_carbonated_beverage",
+      "to": "industry_food_beverage",
+      "evidence": "Refreshment 사업의 비탄산음료 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_bottled_water",
+      "to": "industry_food_beverage",
+      "evidence": "Refreshment 사업의 생수 포함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_household_goods",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 생활용품상품 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_051900_business_segments_20260316000985",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000985",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

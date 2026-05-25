@@ -5,52 +5,55 @@
       "id": "company_259960",
       "type": "Company",
       "name": "크래프톤",
-      "stock_code": "259960",
-      "description": "게임 개발과 운영, 경영참여 및 단순투자 형태의 다양한 기업 지분 보유"
+      "stock_code": "259960"
     },
     {
-      "id": "company_217270",
-      "type": "Company",
-      "name": "넵튠",
-      "stock_code": "217270"
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
     },
     {
-      "id": "company_063170",
-      "type": "Company",
-      "name": "서울옥션",
-      "stock_code": "063170"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
-      "id": "company_101390",
-      "type": "Company",
-      "name": "아이엠",
-      "stock_code": "101390"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "company_036570",
-      "type": "Company",
-      "name": "NC",
-      "stock_code": "036570"
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     },
     {
-      "id": "company_293490",
-      "type": "Company",
-      "name": "카카오게임즈",
-      "stock_code": "293490"
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
     },
     {
-      "id": "company_035720",
-      "type": "Company",
-      "name": "카카오",
-      "stock_code": "035720"
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_259960",
-      "to": "company_217270",
-      "evidence": "크래프톤의 타법인 출자 대상은 ㈜넵튠, 출자 목적은 경영참가, 최초 취득일은 2019.08.30, 당기말 지분율은 45.07%, 장부가액은 189,410,000,000.",
+      "to": "industry_ai",
+      "evidence": "크래프톤의 타법인 출자 대상은 Lumikai Fund II, 출자 목적은 단순투자, 최초 취득일은 2023.07.25, 당기말 지분율은 15.75%, 장부가액은 1,653,000,000.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -58,10 +61,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_259960",
-      "to": "company_063170",
-      "evidence": "크래프톤의 타법인 출자 대상은 ㈜서울옥션엑스, 출자 목적은 단순투자, 최초 취득일은 2022.02.10.",
+      "to": "industry_it_software",
+      "evidence": "크래프톤의 타법인 출자 대상은 Lifelike Capital Fund LP, 출자 목적은 단순투자, 최초 취득일은 2022.11.15, 당기말 지분율은 12.07%, 장부가액은 5,408,000,000.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -69,10 +72,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_063170",
-      "evidence": "크래프톤의 타법인 출자 대상은 ㈜서울옥션블루, 출자 목적은 단순투자, 최초 취득일은 2022.02.10.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -80,10 +83,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_101390",
-      "evidence": "크래프톤의 타법인 출자 대상은 아이엠엠 인도 펀드, 출자 목적은 단순투자, 당기말 지분율은 44.44%.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -91,10 +94,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_101390",
-      "evidence": "크래프톤의 타법인 출자 대상은 엔피티케이이머징아시아펀드1, 출자 목적은 단순투자, 당기말 지분율은 17.73%.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -102,10 +105,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_036570",
-      "evidence": "크래프톤의 타법인 출자 대상은 엔피티케이이머징아시아펀드1, 출자 목적은 단순투자, 당기말 지분율은 17.73%.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -113,10 +116,10 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_293490",
-      "evidence": "크래프톤의 타법인 출자 대상은 ㈜카카오게임즈, 출자 목적은 단순투자, 최초 취득일은 2018.02.28, 당기말 지분율은 0.72%, 장부가액은 9,590,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -124,10 +127,54 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_259960",
-      "to": "company_035720",
-      "evidence": "크래프톤의 타법인 출자 대상은 ㈜카카오게임즈, 출자 목적은 단순투자, 최초 취득일은 2018.02.28.",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002689",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_259960_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

@@ -12,6 +12,8 @@ import requests
 from dotenv import load_dotenv
 from jsonschema import validate
 
+from log_utils import log_with_timestamp
+
 from chunking import split_text_into_chunks
 from document_io import iter_input_documents, load_json_file, normalize_document
 
@@ -110,7 +112,7 @@ class OpenAIEmbeddingFunction:
 
             if attempt < 5:
                 wait_seconds = min(2**attempt, 30)
-                print(
+                log_with_timestamp(
                     f"[WARN] OpenAI embeddings retry {attempt}/5 after failure: {last_error}"
                 )
                 time.sleep(wait_seconds)
@@ -237,7 +239,7 @@ def insert_doc_to_chroma_collection(
 ) -> int:
     ids, documents, metadatas = build_chunk_payloads(doc)
     if not documents:
-        print(f"[SKIP] No chunks: {source_name}")
+        log_with_timestamp(f"[SKIP] No chunks: {source_name}")
         return 0
 
     embedding_function = embedding_function or OpenAIEmbeddingFunction()
@@ -250,7 +252,7 @@ def insert_doc_to_chroma_collection(
             metadatas=metadatas[start:end],
             embeddings=embedding_function(batch_documents),
         )
-    print(f"[OK] {source_name} -> {len(documents)} chunks inserted")
+    log_with_timestamp(f"[OK] {source_name} -> {len(documents)} chunks inserted")
     return len(documents)
 
 

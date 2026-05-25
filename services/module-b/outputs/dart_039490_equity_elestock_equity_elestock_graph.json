@@ -6,8 +6,25 @@
       "type": "Company",
       "name": "키움증권",
       "stock_code": "039490",
-      "description": "키움증권은 증권 중개 및 금융 투자 서비스를 제공하는 금융업체입니다."
+      "description": "종합 금융투자서비스 제공하는 증권사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_039490",
+      "to": "industry_finance",
+      "evidence": "키움증권의 임원·주요주주 소유상황 보고서",
+      "date": "2026-04-02",
+      "evidence_source_id": "dart_039490_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250701000254",
+      "evidence_published_at": "2026-04-02"
+    }
+  ]
 }

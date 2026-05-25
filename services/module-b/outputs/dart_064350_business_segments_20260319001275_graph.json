@@ -6,30 +6,67 @@
       "type": "Company",
       "name": "현대로템",
       "stock_code": "064350",
-      "description": "글로벌 종합기계 기업으로 디펜스솔루션, 레일솔루션, 에코플랜트 사업을 영위함"
+      "description": "글로벌 종합기계 기업으로 방산 무기체계, 철도차량 및 시스템, 수소 인프라·로봇 등 에코플랜트 사업 영위"
     },
     {
-      "id": "business_area_defense_solutions",
-      "type": "BusinessArea",
-      "name": "디펜스솔루션"
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200"
     },
     {
-      "id": "business_area_rail_solutions",
-      "type": "BusinessArea",
-      "name": "레일솔루션"
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380"
     },
     {
-      "id": "business_area_eco_plant",
-      "type": "BusinessArea",
-      "name": "에코플랜트"
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
     },
     {
-      "id": "product_service_defense_products",
+      "id": "industry_rail_vehicle",
+      "type": "Industry",
+      "name": "철도차량"
+    },
+    {
+      "id": "industry_rail_infrastructure",
+      "type": "Industry",
+      "name": "철도인프라"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "industry_hydrogen_energy",
+      "type": "Industry",
+      "name": "수소에너지"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_electric_vehicle",
+      "type": "Industry",
+      "name": "전기차량"
+    },
+    {
+      "id": "industry_autonomous_driving",
+      "type": "Industry",
+      "name": "자율주행"
+    },
+    {
+      "id": "product_service_defense_materials",
       "type": "ProductService",
       "name": "방산물자"
     },
     {
-      "id": "product_service_rail_cars",
+      "id": "product_service_electric_train",
       "type": "ProductService",
       "name": "전동차"
     },
@@ -39,17 +76,102 @@
       "name": "제철프레스환경운반설비"
     },
     {
-      "id": "industry_machine",
+      "id": "product_service_hydrogen_tram_infrastructure",
+      "type": "ProductService",
+      "name": "수소트램 인프라"
+    },
+    {
+      "id": "product_service_hydrogen_fuel_cell_power",
+      "type": "ProductService",
+      "name": "수소연료전지 발전"
+    },
+    {
+      "id": "product_service_ammonia_cracker",
+      "type": "ProductService",
+      "name": "암모니아 크래커"
+    },
+    {
+      "id": "product_service_plant_type_electrolyzer",
+      "type": "ProductService",
+      "name": "플랜트형 수전해"
+    },
+    {
+      "id": "industry_system_integration",
       "type": "Industry",
-      "name": "기계"
+      "name": "시스템통합"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_064350",
-      "to": "business_area_defense_solutions",
-      "evidence": "현대로템은 ... 종합무기체계와 우주발사체, 미래무인체계 등을 수행하는 디펜스솔루션 사업",
+      "to": "industry_defense_aerospace",
+      "evidence": "디펜스솔루션 사업은 육ㆍ해ㆍ공을 아우르는 종합무기체계와 우주발사체, 미래무인체계 등을 수행",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -57,10 +179,10 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_064350",
-      "to": "business_area_rail_solutions",
-      "evidence": "국가 기간산업인 고속철 등 종합철도차량 제조, 철도시스템 솔루션, 철도 운영 및 유지보수 등을 영위하고 있는 레일솔루션 사업",
+      "to": "industry_rail_vehicle",
+      "evidence": "국가 기간산업인 고속철 등 종합철도차량 제조, 철도시스템 솔루션, 철도 운영 및 유지보수 영위",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -68,10 +190,43 @@
       "evidence_published_at": "2026-03-19"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_064350",
-      "to": "business_area_eco_plant",
-      "evidence": "수소인프라솔루션, 산업용 로보틱스 및 프레스, 에코 제철설비 등을 제조ㆍ판매하는 에코플랜트 사업으로 구성되어 있습니다",
+      "to": "industry_rail_infrastructure",
+      "evidence": "철도시스템분야와 차량 운영 및 유지보수 등 철도서비스 분야로 사업영역을 적극 확대",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_renewable_energy",
+      "evidence": "수전해 시스템, 수소연료전지 발전, 암모니아 크래커 등 차세대 에너지 기술 확보",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_hydrogen_energy",
+      "evidence": "국내 최초 무인항만로봇 공급 성과와 글로벌 수소경제 실현을 위한 인프라 구축 역량 결집",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_064350",
+      "to": "industry_robotics",
+      "evidence": "산업용 로보틱스 및 다목적 무인차량 기반의 피지컬 AI(Physical AI) 시장 개척",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -81,8 +236,8 @@
     {
       "type": "PRODUCES",
       "from": "company_064350",
-      "to": "product_service_defense_products",
-      "evidence": "디펜스솔루션 부문 제품 방산물자 32,153억원",
+      "to": "product_service_defense_materials",
+      "evidence": "디펜스솔루션 부문의 방산물자 매출 32,153억원 (55%)",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -92,8 +247,8 @@
     {
       "type": "PRODUCES",
       "from": "company_064350",
-      "to": "product_service_rail_cars",
-      "evidence": "레일솔루션 부문 상품 ·제품 전동차 20,896억원",
+      "to": "product_service_electric_train",
+      "evidence": "레일솔루션 부문의 전동차 매출 20,896억원 (36%)",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -104,7 +259,51 @@
       "type": "PRODUCES",
       "from": "company_064350",
       "to": "product_service_steel_press_transport_equipment",
-      "evidence": "에코플랜트 부문 제품 제철프레스환경운반설비 5,341억원",
+      "evidence": "에코플랜트 부문의 제철프레스환경운반설비 매출 5,341억원 (9%)",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_hydrogen_tram_infrastructure",
+      "evidence": "수소트램 인프라, 수소연료전지 발전, 암모니아 크래커, 플랜트형 수전해 등 차세대 수소 에너지 솔루션 개발",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_hydrogen_fuel_cell_power",
+      "evidence": "수소트램 인프라, 수소연료전지 발전, 암모니아 크래커, 플랜트형 수전해 등 차세대 수소 에너지 솔루션 개발",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_ammonia_cracker",
+      "evidence": "수소트램 인프라, 수소연료전지 발전, 암모니아 크래커, 플랜트형 수전해 등 차세대 수소 에너지 솔루션 개발",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_064350",
+      "to": "product_service_plant_type_electrolyzer",
+      "evidence": "수소트램 인프라, 수소연료전지 발전, 암모니아 크래커, 플랜트형 수전해 등 차세대 수소 에너지 솔루션 개발",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -113,9 +312,42 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_defense_solutions",
-      "to": "industry_machine",
-      "evidence": "현대로템은 글로벌 종합기계 기업으로 ... 디펜스솔루션 사업",
+      "from": "industry_rail_vehicle",
+      "to": "industry_rail_infrastructure",
+      "evidence": "철도차량 및 철도시스템·운영 유지보수를 통한 철도 인프라 사업영역 확대",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_hydrogen_energy",
+      "to": "industry_renewable_energy",
+      "evidence": "글로벌 수소경제 실현과 차세대 에너지 솔루션 확보",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_autonomous_driving",
+      "evidence": "로봇 기술 접목된 무인차량과 자율주행 기술 개발 동시 추진",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_electric_vehicle",
+      "evidence": "수소 모빌리티 및 미래 모빌리티 관련 무인차량과 로봇 기술 연계",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -124,9 +356,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_rail_solutions",
-      "to": "industry_machine",
-      "evidence": "현대로템은 글로벌 종합기계 기업으로 ... 레일솔루션 사업",
+      "from": "industry_system_integration",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 시스템통합 is part of 정보기술/소프트웨어.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -135,9 +367,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_eco_plant",
-      "to": "industry_machine",
-      "evidence": "현대로템은 글로벌 종합기계 기업으로 ... 에코플랜트 사업",
+      "from": "industry_rail_infrastructure",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철도인프라 is part of 건설인프라.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -146,9 +378,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_defense_products",
-      "to": "business_area_defense_solutions",
-      "evidence": "디펜스솔루션 부문 제품 방산물자 32,153억원",
+      "from": "industry_rail_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 철도차량 is part of 자동차/모빌리티.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -157,9 +389,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_rail_cars",
-      "to": "business_area_rail_solutions",
-      "evidence": "레일솔루션 부문 상품 ·제품 전동차 20,896억원",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",
@@ -168,9 +422,218 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_steel_press_transport_equipment",
-      "to": "business_area_eco_plant",
-      "evidence": "에코플랜트 부문 제품 제철프레스환경운반설비 5,341억원",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electric_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 전기차량 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_autonomous_driving",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자율주행 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hydrogen_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 수소에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_064350_business_segments_20260319001275",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001275",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_064350_business_segments_20260319001275",
       "evidence_source_type": "dart",

@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "카카오",
       "stock_code": "035720",
-      "description": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다."
+      "description": "카카오는 IT 플랫폼과 콘텐츠 사업을 주요 영역으로 하는 기업이다."
     },
     {
       "id": "company_376300",
@@ -18,19 +18,22 @@
       "id": "company_293490",
       "type": "Company",
       "name": "카카오게임즈",
-      "stock_code": "293490"
+      "stock_code": "293490",
+      "description": "카카오게임즈는 게임 개발 및 퍼블리싱을 주요 사업으로 한다."
     },
     {
       "id": "company_323410",
       "type": "Company",
       "name": "카카오뱅크",
-      "stock_code": "323410"
+      "stock_code": "323410",
+      "description": "카카오뱅크는 인터넷 전문은행 서비스를 제공하는 금융회사이다."
     },
     {
       "id": "company_377300",
       "type": "Company",
       "name": "카카오페이",
-      "stock_code": "377300"
+      "stock_code": "377300",
+      "description": "카카오페이는 모바일 금융 및 결제 서비스를 제공한다."
     },
     {
       "id": "company_054780",
@@ -39,35 +42,14 @@
       "stock_code": "054780"
     },
     {
-      "id": "company_041510",
-      "type": "Company",
-      "name": "에스엠",
-      "stock_code": "041510"
-    },
-    {
-      "id": "business_area_platform",
-      "type": "BusinessArea",
-      "name": "플랫폼 사업"
-    },
-    {
-      "id": "business_area_digital_content",
-      "type": "BusinessArea",
-      "name": "디지털 콘텐츠"
-    },
-    {
-      "id": "business_area_financial_services",
-      "type": "BusinessArea",
-      "name": "금융 서비스"
-    },
-    {
-      "id": "business_area_gaming",
-      "type": "BusinessArea",
-      "name": "게임"
-    },
-    {
-      "id": "industry_platform",
+      "id": "industry_it_software",
       "type": "Industry",
-      "name": "플랫폼"
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     },
     {
       "id": "industry_finance",
@@ -75,17 +57,37 @@
       "name": "금융"
     },
     {
-      "id": "industry_entertainment",
+      "id": "industry_payment_service",
       "type": "Industry",
-      "name": "엔터테인먼트"
+      "name": "결제서비스"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_035720",
-      "to": "business_area_platform",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
+      "to": "industry_it_software",
+      "evidence": "카카오는 IT 플랫폼과 콘텐츠 사업을 주요 영역으로 하는 기업이다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
       "evidence_source_type": "dart",
@@ -93,10 +95,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_035720",
-      "to": "business_area_digital_content",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
+      "type": "BELONGS_TO",
+      "from": "company_293490",
+      "to": "industry_content_game",
+      "evidence": "카카오게임즈는 게임 개발 및 퍼블리싱을 주요 사업으로 한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
       "evidence_source_type": "dart",
@@ -104,54 +106,21 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_035720",
-      "to": "business_area_financial_services",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_035720",
-      "to": "business_area_gaming",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_platform",
-      "to": "industry_platform",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_digital_content",
-      "to": "industry_platform",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_financial_services",
+      "type": "BELONGS_TO",
+      "from": "company_323410",
       "to": "industry_finance",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
+      "evidence": "카카오뱅크는 인터넷 전문은행 서비스를 제공하는 금융회사이다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_377300",
+      "to": "industry_payment_service",
+      "evidence": "카카오페이는 모바일 금융 및 결제 서비스를 제공한다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
       "evidence_source_type": "dart",
@@ -160,9 +129,108 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_gaming",
-      "to": "industry_platform",
-      "evidence": "카카오는 디지털 콘텐츠, 금융, 게임 등 다양한 플랫폼 사업을 전개한다.",
+      "from": "industry_payment_service",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 결제서비스 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_affiliate_status_20260318001423",
       "evidence_source_type": "dart",

@@ -5,96 +5,40 @@
       "id": "company_267250",
       "type": "Company",
       "name": "HD현대",
-      "stock_code": "267250",
-      "description": "HD현대는 조선, 해운, 건설 등 다양한 산업 분야에 사업을 운영하는 대기업입니다."
+      "stock_code": "267250"
     },
     {
-      "id": "person_jeong_mong_jun",
-      "type": "Person",
-      "name": "정몽준",
-      "role_raw": "최대주주 본인",
-      "role": "OTHER",
-      "role_label": "최대주주 본인"
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     },
     {
-      "id": "person_kim_junghyuk",
-      "type": "Person",
-      "name": "김정혁",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "person_jeong_giseon",
-      "type": "Person",
-      "name": "정기선",
-      "role_raw": "최대주주의 친인척",
-      "role": "OTHER",
-      "role_label": "최대주주의 친인척"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "person_gwon_ogap",
-      "type": "Person",
-      "name": "권오갑",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "person_no_jin_yul",
-      "type": "Person",
-      "name": "노진율",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_geum_seokho",
-      "type": "Person",
-      "name": "금석호",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_song_myeongjun",
-      "type": "Person",
-      "name": "송명준",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_kim_jongcheol",
-      "type": "Person",
-      "name": "김종철",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_asan_social_welfare_foundation",
-      "type": "Person",
-      "name": "(재)아산사회복지재단",
-      "role_raw": "계열비영리법인",
-      "role": "OTHER",
-      "role_label": "계열비영리법인"
-    },
-    {
-      "id": "person_asan_nanum_foundation",
-      "type": "Person",
-      "name": "(재)아산나눔재단",
-      "role_raw": "계열비영리법인",
-      "role": "OTHER",
-      "role_label": "계열비영리법인"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeong_mong_jun",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 정몽준, 관계는 최대주주 본인",
+      "type": "BELONGS_TO",
+      "from": "company_267250",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "HD현대 최대주주 현황",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -102,10 +46,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_junghyuk",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 김정혁, 관계는 계열회사 임원",
+      "type": "BELONGS_TO",
+      "from": "company_267250",
+      "to": "industry_construction_infrastructure",
+      "evidence": "HD현대 최대주주 현황",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -113,10 +57,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_jeong_giseon",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 정기선, 관계는 최대주주의 친인척",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -124,10 +68,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_gwon_ogap",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 권오갑, 관계는 계열회사 임원",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -135,10 +79,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_no_jin_yul",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 노진율, 관계는 계열회사 임원",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -146,10 +90,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_geum_seokho",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 금석호, 관계는 계열회사 임원",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -157,10 +101,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_song_myeongjun",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 송명준, 관계는 계열회사 임원",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -168,10 +112,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kim_jongcheol",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 김종철, 관계는 계열회사 임원",
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -179,10 +123,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_asan_social_welfare_foundation",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 (재)아산사회복지재단, 관계는 계열비영리법인",
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -190,10 +134,21 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_asan_nanum_foundation",
-      "to": "company_267250",
-      "evidence": "HD현대의 최대주주 관련 인물/법인은 (재)아산나눔재단, 관계는 계열비영리법인",
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000872",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_267250_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

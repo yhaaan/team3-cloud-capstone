@@ -1,0 +1,264 @@
+{
+  "source_id": "dart_090430_affiliate_status_20260318000785",
+  "entities": [
+    {
+      "id": "company_090430",
+      "type": "Company",
+      "name": "아모레퍼시픽",
+      "stock_code": "090430",
+      "description": "화장품 제조 및 판매를 주력으로 하는 기업"
+    },
+    {
+      "id": "company_002790",
+      "type": "Company",
+      "name": "아모레퍼시픽홀딩스",
+      "stock_code": "002790",
+      "description": "화장품 관련 사업을 중심으로 한 지주회사"
+    },
+    {
+      "id": "industry_beauty_cosmetics",
+      "type": "Industry",
+      "name": "뷰티/화장품"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "product_service_cosmetics_manufacturing",
+      "type": "ProductService",
+      "name": "화장품 제조"
+    },
+    {
+      "id": "product_service_cosmetics_sales",
+      "type": "ProductService",
+      "name": "화장품 판매"
+    },
+    {
+      "id": "product_service_hair_cosmetics_sales",
+      "type": "ProductService",
+      "name": "두발용 화장품 판매"
+    },
+    {
+      "id": "product_service_food_sales",
+      "type": "ProductService",
+      "name": "식품 판매"
+    },
+    {
+      "id": "product_service_green_tea_cultivation",
+      "type": "ProductService",
+      "name": "녹차 재배"
+    },
+    {
+      "id": "product_service_beauty_device_sales",
+      "type": "ProductService",
+      "name": "미용기기 유통 및 판매"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_090430",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "(주)아모레퍼시픽(*1) | 화장품 제조 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002790",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)아모레퍼시픽(*1) | 화장품 제조 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_cosmetics_manufacturing",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)아모레퍼시픽(*1) | 화장품 제조 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_cosmetics_sales",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)이니스프리 | 화장품 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_cosmetics_manufacturing",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)에뛰드 | 화장품 제조 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_hair_cosmetics_sales",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)아모스프로페셔널 | 두발용 화장품 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_cosmetics_sales",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)에스쁘아 | 화장품 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_food_sales",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)오설록 | 식품(다류) 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_green_tea_cultivation",
+      "evidence": "(주)아모레퍼시픽홀딩스 | 농업회사법인 (주)오설록농장 | 녹차 재배 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_002790",
+      "to": "product_service_beauty_device_sales",
+      "evidence": "(주)아모레퍼시픽홀딩스 | (주)퍼시픽테크 | 미용기기 유통 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cosmetics_manufacturing",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "화장품 제조 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_cosmetics_sales",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "화장품 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_hair_cosmetics_sales",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "두발용 화장품 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_food_sales",
+      "to": "industry_food_beverage",
+      "evidence": "식품(다류) 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_green_tea_cultivation",
+      "to": "industry_food_beverage",
+      "evidence": "녹차 재배 및 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002790",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "아모레퍼시픽홀딩스 | 화장품 관련 사업을 중심으로 한 지주회사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_090430_affiliate_status_20260318000785",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000785",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

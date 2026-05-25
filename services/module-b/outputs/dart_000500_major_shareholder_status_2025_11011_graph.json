@@ -1,0 +1,74 @@
+{
+  "source_id": "dart_000500_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_000500",
+      "type": "Company",
+      "name": "가온전선",
+      "stock_code": "000500",
+      "description": "전선 제조 및 판매 사업을 영위하는 기업입니다."
+    },
+    {
+      "id": "company_006260",
+      "type": "Company",
+      "name": "LS",
+      "stock_code": "006260"
+    },
+    {
+      "id": "industry_cable_wire",
+      "type": "Industry",
+      "name": "전선/케이블"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000500",
+      "to": "industry_cable_wire",
+      "evidence": "가온전선은 전선 제조 및 판매 사업을 영위하는 기업입니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006260",
+      "to": "industry_cable_wire",
+      "evidence": "LS전선㈜는 전선 관련 사업을 하는 것으로 나타났습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_006260",
+      "to": "company_000500",
+      "evidence": "가온전선의 최대주주 관련 인물/법인은 LS전선㈜, 관계는 최대주주, 당기말 보유주식수는 13,501,695주, 지분율은 81.62%.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_cable_wire",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전선/케이블 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_000500_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000969",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "source_id": "news_030200_83d99ac34f002e59",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200"
+    },
+    {
+      "id": "company_000660",
+      "type": "Company",
+      "name": "SK하이닉스",
+      "stock_code": "000660"
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스 — 2026년 영업이익 17.6조원...",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005930",
+      "to": "industry_semiconductor",
+      "evidence": "삼성전자 mentioned in content related to semiconductor business",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_telecom_media",
+      "evidence": "KT — 자사주 vs 배당, 3~4월 주주환원 정책 분기점 하나증권은 KT 에 대해 목표주가 7만6,000원과 투자의견 BUY를...",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_030200_83d99ac34f002e59",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.hellot.net/news/article.html?no=110649",
+      "evidence_published_at": "2026-02-24T18:42:00+09:00"
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "source_id": "dart_080220_business_segments_20260323001029",
+  "entities": [
+    {
+      "id": "company_080220",
+      "type": "Company",
+      "name": "제주반도체",
+      "stock_code": "080220",
+      "description": "모바일용 메모리 중심의 반도체 제품을 개발 및 생산하는 기업입니다."
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_memory_semiconductor",
+      "type": "Industry",
+      "name": "메모리반도체"
+    },
+    {
+      "id": "industry_ai_semiconductor",
+      "type": "Industry",
+      "name": "인공지능반도체"
+    },
+    {
+      "id": "product_service_nand_mcp",
+      "type": "ProductService",
+      "name": "NAND MCP",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_dram",
+      "type": "ProductService",
+      "name": "DRAM",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_tlc_nand",
+      "type": "ProductService",
+      "name": "TLC NAND",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_lpddr4",
+      "type": "ProductService",
+      "name": "LPDDR4",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_consumer_ddr5",
+      "type": "ProductService",
+      "name": "Consumer DDR5",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_nand_flash",
+      "type": "ProductService",
+      "name": "NAND Flash",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_consumer_ddr4",
+      "type": "ProductService",
+      "name": "Consumer DDR4",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_cram",
+      "type": "ProductService",
+      "name": "CRAM",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_emmc",
+      "type": "ProductService",
+      "name": "eMMC",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_emcp",
+      "type": "ProductService",
+      "name": "eMCP",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_nor_mcp",
+      "type": "ProductService",
+      "name": "NOR MCP",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "product_service_spi_nand",
+      "type": "ProductService",
+      "name": "SPI NAND",
+      "description": "모바일 메모리"
+    },
+    {
+      "id": "industry_mobile_memory",
+      "type": "Industry",
+      "name": "모바일 메모리"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_080220",
+      "to": "industry_semiconductor",
+      "evidence": "제주반도체는 모바일용 메모리를 생산, 공급하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_080220",
+      "to": "industry_memory_semiconductor",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 메모리, 반도체 등이 포함되어 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_080220",
+      "to": "industry_ai_semiconductor",
+      "evidence": "2025년도 글로벌 반도체시장은 AI 중심의 수요 확대를 기반으로 성장했습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_nand_mcp",
+      "evidence": "주요 제품 모델은 NAND MCP, 셀룰라램(CRAM), 디램(DRAM) 등입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_dram",
+      "evidence": "주요 제품 모델은 NAND MCP, 셀룰라램(CRAM), 디램(DRAM) 등입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_tlc_nand",
+      "evidence": "주요 제품 모델에 TLC NAND가 포함되어 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_lpddr4",
+      "evidence": "주요 제품 모델 중 LPDDR4 모바일 메모리 제품을 생산합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_consumer_ddr5",
+      "evidence": "Consumer DDR5 모바일 메모리 제품을 공급하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_nand_flash",
+      "evidence": "NAND Flash 모바일 메모리 제품 또한 포함되어 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_consumer_ddr4",
+      "evidence": "Consumer DDR4 모바일 메모리 제품을 판매합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_cram",
+      "evidence": "CRAM 모바일 메모리 제품을 생산합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_emmc",
+      "evidence": "eMMC 모바일 메모리 제품을 개발 및 공급합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_emcp",
+      "evidence": "eMCP 모바일 메모리 제품 또한 포함됩니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_nor_mcp",
+      "evidence": "NOR MCP 모바일 메모리 제품을 생산하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_080220",
+      "to": "product_service_spi_nand",
+      "evidence": "SPI NAND 모바일 메모리 제품도 공급 품목입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_mobile_memory",
+      "to": "industry_memory_semiconductor",
+      "evidence": "모바일 메모리는 메모리 반도체의 세부 분야입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_memory_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "메모리 반도체는 반도체 산업의 한 부문입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_ai_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "인공지능반도체는 반도체 산업 내 AI 특화 분야입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_business_segments_20260323001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

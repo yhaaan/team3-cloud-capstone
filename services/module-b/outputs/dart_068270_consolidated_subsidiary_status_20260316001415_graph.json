@@ -6,32 +6,27 @@
       "type": "Company",
       "name": "셀트리온",
       "stock_code": "068270",
-      "description": "글로벌 바이오 의약품 제조 및 판매 전문 기업"
+      "description": "바이오 의약품 연구개발 및 제조, 판매 사업을 주력으로 함"
     },
     {
       "id": "company_068760",
       "type": "Company",
       "name": "셀트리온제약",
       "stock_code": "068760",
-      "description": "의약품 제조ㆍ판매 기업"
+      "description": "의약품 제조·판매 사업을 영위"
     },
     {
-      "id": "business_area_pharmaceuticals",
-      "type": "BusinessArea",
-      "name": "의약품 제조ㆍ판매"
-    },
-    {
-      "id": "industry_bio",
+      "id": "industry_bio_healthcare",
       "type": "Industry",
-      "name": "bio"
+      "name": "바이오/헬스케어"
     }
   ],
   "relations": [
     {
-      "type": "PART_OF",
-      "from": "business_area_pharmaceuticals",
-      "to": "industry_bio",
-      "evidence": "셀트리온제약 | 2000.11.17 | 충청북도 청주시 청원군 오창읍 2산단로 82 | 의약품 제조ㆍ판매 | 759,440,542 | 지분 50% 초과보유 | 해당",
+      "type": "BELONGS_TO",
+      "from": "company_068270",
+      "to": "industry_bio_healthcare",
+      "evidence": "셀트리온의 사업보고서 (2025.12)에서 연결대상 종속회사 후보로 셀트리온제약 등이 탐지되었다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_consolidated_subsidiary_status_20260316001415",
       "evidence_source_type": "dart",
@@ -39,10 +34,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_068760",
-      "to": "business_area_pharmaceuticals",
-      "evidence": "셀트리온제약 | 2000.11.17 | 충청북도 청주시 청원군 오창읍 2산단로 82 | 의약품 제조ㆍ판매 | 759,440,542 | 지분 50% 초과보유 | 해당",
+      "to": "industry_bio_healthcare",
+      "evidence": "셀트리온제약 | 2000.11.17 | 충청북도 청주시 청원군 오창읍 2산단로 82 | 의약품 제조ㆍ판매",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_consolidated_subsidiary_status_20260316001415",
       "evidence_source_type": "dart",

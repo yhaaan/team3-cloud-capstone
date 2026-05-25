@@ -1,0 +1,78 @@
+{
+  "source_id": "dart_011780_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_011780",
+      "type": "Company",
+      "name": "금호석유화학",
+      "stock_code": "011780",
+      "description": "석유화학제품 제조 및 판매를 주력으로 하는 기업"
+    },
+    {
+      "id": "industry_petrochemical",
+      "type": "Industry",
+      "name": "석유화학"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011780",
+      "to": "industry_petrochemical",
+      "evidence": "금호석유화학",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_011780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000372",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유화학 is part of 화학소재.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_011780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000372",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_011780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000372",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_011780_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251001000372",
+      "evidence_published_at": "2026-04-07"
+    }
+  ]
+}

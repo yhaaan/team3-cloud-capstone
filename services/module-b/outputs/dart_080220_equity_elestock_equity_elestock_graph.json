@@ -1,0 +1,30 @@
+{
+  "source_id": "dart_080220_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_080220",
+      "type": "Company",
+      "name": "제주반도체",
+      "stock_code": "080220",
+      "description": "반도체 제조 및 관련 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_080220",
+      "to": "industry_semiconductor",
+      "evidence": "제주반도체",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_080220_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000492",
+      "evidence_published_at": "2026-05-04"
+    }
+  ]
+}

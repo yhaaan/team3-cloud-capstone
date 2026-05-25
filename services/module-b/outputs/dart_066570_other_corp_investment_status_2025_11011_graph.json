@@ -5,51 +5,55 @@
       "id": "company_066570",
       "type": "Company",
       "name": "LG전자",
-      "stock_code": "066570",
-      "description": "LG전자의 타법인 출자 현황 문서"
+      "stock_code": "066570"
     },
     {
-      "id": "company_000070",
-      "type": "Company",
-      "name": "인벤테라",
-      "stock_code": "000070",
-      "description": "아크릴은 LG전자의 단순투자 출자 회사 중 하나입니다."
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
     },
     {
-      "id": "company_090360",
-      "type": "Company",
-      "name": "로보스타",
-      "stock_code": "090360",
-      "description": "로보스타는 LG전자의 경영참여 출자 회사 중 하나입니다."
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     },
     {
-      "id": "company_108490",
-      "type": "Company",
-      "name": "로보티즈",
-      "stock_code": "108490",
-      "description": "로보티즈는 LG전자의 경영참여 출자 회사 중 하나입니다."
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
-      "id": "company_051490",
-      "type": "Company",
-      "name": "나라엠앤디",
-      "stock_code": "051490",
-      "description": "나라엠앤디는 LG전자의 단순투자 출자 회사 중 하나입니다."
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "company_079950",
-      "type": "Company",
-      "name": "인베니아",
-      "stock_code": "079950",
-      "description": "인베니아는 LG전자의 단순투자 출자 회사 중 하나입니다."
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_066570",
-      "to": "company_000070",
-      "evidence": "LG전자의 타법인 출자 대상은 ㈜아크릴, 출자 목적은 단순투자, 최초 취득일은 2018.03.16, 당기말 보유수량은 639,000, 당기말 지분율은 8.0%, 장부가액은 23,739,000,000.",
+      "to": "industry_ai",
+      "evidence": "LG전자의 타법인 출자 대상은 APEX.AI, 출자 목적은 단순투자, 최초 취득일은 2025.01.22, 당기말 보유수량은 162,000, 당기말 지분율은 0.6%, 장부가액은 1,438,000,000.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -57,10 +61,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_066570",
-      "to": "company_090360",
-      "evidence": "LG전자의 타법인 출자 대상은 ㈜로보스타, 출자 목적은 경영참여, 최초 취득일은 2018.07.17, 당기말 보유수량은 3,257,000, 당기말 지분율은 33.4%, 장부가액은 88,112,000,000.",
+      "to": "industry_semiconductor",
+      "evidence": "LG전자의 타법인 출자 대상은 GCT SEMICONDUCTOR, 출자 목적은 단순투자, 최초 취득일은 2016.02.16.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -68,10 +72,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_066570",
-      "to": "company_108490",
-      "evidence": "LG전자의 타법인 출자 대상은 ㈜로보티즈, 출자 목적은 경영참여, 최초 취득일은 2017.12.15, 당기말 보유수량은 962,000, 당기말 지분율은 6.6%, 장부가액은 9,000,000,000.",
+      "to": "industry_it_software",
+      "evidence": "LG전자의 타법인 출자 대상은 China Mobility Fund, L.P., 출자 목적은 단순투자, 최초 취득일은 2018.11.13, 당기말 지분율은 9.0%, 장부가액은 11,209,000,000.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -79,10 +83,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_066570",
-      "to": "company_051490",
-      "evidence": "LG전자의 타법인 출자 대상은 나라엠앤디㈜, 출자 목적은 단순투자, 최초 취득일은 1999.02.19, 당기말 보유수량은 1,785,000, 당기말 지분율은 12.6%, 장부가액은 6,944,000,000.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -90,10 +94,98 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_066570",
-      "to": "company_079950",
-      "evidence": "LG전자의 타법인 출자 대상은 인베니아㈜, 출자 목적은 단순투자, 최초 취득일은 2001.01.01.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000662",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_066570_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

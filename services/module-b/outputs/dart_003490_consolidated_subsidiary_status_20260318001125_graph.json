@@ -6,109 +6,83 @@
       "type": "Company",
       "name": "대한항공",
       "stock_code": "003490",
-      "description": "항공운송업을 주력으로 다양한 항공 관련 사업을 영위하는 회사"
+      "description": "항공운송업, 연결대상 종속회사 관리"
     },
     {
       "id": "company_020560",
       "type": "Company",
       "name": "아시아나항공",
-      "stock_code": "020560"
+      "stock_code": "020560",
+      "description": "항공운송업"
     },
     {
       "id": "company_298690",
       "type": "Company",
       "name": "에어부산",
-      "stock_code": "298690"
+      "stock_code": "298690",
+      "description": "항공운송업"
     },
     {
       "id": "company_272450",
       "type": "Company",
       "name": "진에어",
-      "stock_code": "272450"
+      "stock_code": "272450",
+      "description": "항공운송업"
     },
     {
       "id": "company_005430",
       "type": "Company",
       "name": "한국공항",
-      "stock_code": "005430"
-    },
-    {
-      "id": "business_area_air_transport",
-      "type": "BusinessArea",
-      "name": "항공운송업"
-    },
-    {
-      "id": "business_area_ground_handling",
-      "type": "BusinessArea",
-      "name": "항공기 지상조업"
+      "stock_code": "005430",
+      "description": "항공기 지상조업 및 항공화물 하역 용역사업"
     },
     {
       "id": "industry_air_transport",
       "type": "Industry",
-      "name": "항공"
+      "name": "항공운송"
+    },
+    {
+      "id": "industry_aircraft_parts",
+      "type": "Industry",
+      "name": "항공기부품"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
+      "type": "BELONGS_TO",
       "from": "company_003490",
-      "to": "company_020560",
-      "evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_003490",
-      "to": "company_298690",
-      "evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_003490",
-      "to": "company_272450",
-      "evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_003490",
-      "to": "company_005430",
-      "evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_003490",
-      "to": "business_area_air_transport",
-      "evidence": "대한항공의 사업보고서에 따르면 아시아나항공, 에어부산, 진에어 모두 항공운송업에 종사한다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_air_transport",
       "to": "industry_air_transport",
-      "evidence": "업종명으로 '항공운송업'은 항공업계에 속한다.",
+      "evidence": "대한항공의 연결대상 종속회사 후보로 아시아나항공, 에어부산, 진에어, 한국공항 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
       "evidence_source_type": "dart",
@@ -116,10 +90,43 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_020560",
+      "to": "industry_air_transport",
+      "evidence": "아시아나항공㈜ | 항공운송업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298690",
+      "to": "industry_air_transport",
+      "evidence": "에어부산㈜ | 항공운송업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_272450",
+      "to": "industry_air_transport",
+      "evidence": "㈜진에어 | 항공운송업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_005430",
-      "to": "business_area_ground_handling",
-      "evidence": "한국공항㈜는 항공기 지상조업, 항공기 지상조업용 장비대여 및 항공화물 하역 등의 용역사업을 영위한다.",
+      "to": "industry_aircraft_parts",
+      "evidence": "한국공항㈜ | 항공기 지상조업, 항공기 지상조업용 장비대여 및 항공화물 하역 등의 용역사업",
       "date": "2026-03-18",
       "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
       "evidence_source_type": "dart",
@@ -128,9 +135,64 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_ground_handling",
-      "to": "industry_air_transport",
-      "evidence": "한국공항의 사업 분야인 항공기 지상조업은 항공업계에 속한다.",
+      "from": "industry_air_transport",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 항공운송 is part of 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_aircraft_parts",
+      "to": "industry_defense_aerospace",
+      "evidence": "Industry taxonomy: 항공기부품 is part of 방산/항공우주.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001125",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_003490_consolidated_subsidiary_status_20260318001125",
       "evidence_source_type": "dart",

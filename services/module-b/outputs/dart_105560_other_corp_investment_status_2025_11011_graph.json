@@ -6,25 +6,110 @@
       "type": "Company",
       "name": "KB금융",
       "stock_code": "105560",
-      "description": "금융 서비스 등 다양한 금융 자회사들을 보유한 금융지주회사"
+      "description": "금융업을 영위하는 금융지주회사로 은행, 증권, 보험, 카드, 자산운용 등 자회사를 보유"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_asset_management",
+      "type": "Industry",
+      "name": "자산운용"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
       "id": "industry_finance",
       "type": "Industry",
-      "name": "finance"
+      "name": "금융"
     },
     {
-      "id": "business_area_financial_services",
-      "type": "BusinessArea",
-      "name": "financial services"
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_credit_card",
+      "type": "Industry",
+      "name": "신용카드"
+    },
+    {
+      "id": "industry_savings_bank",
+      "type": "Industry",
+      "name": "저축은행"
+    },
+    {
+      "id": "industry_capital_leasing",
+      "type": "Industry",
+      "name": "캐피탈/리스"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_securities",
+      "type": "Industry",
+      "name": "증권"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_105560",
-      "to": "business_area_financial_services",
-      "evidence": "KB금융의 타법인 출자 대상은 국민은행... KB증권... KB손해보험... KB국민카드... KB라이프생명 등 다양한 금융계열사 보유",
+      "to": "industry_financial_holding",
+      "evidence": "KB금융은 금융업을 영위하는 금융지주회사로 은행, 증권, 보험, 카드, 자산운용 등 자회사를 보유",
       "date": "2026-03-24",
       "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -33,9 +118,207 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_financial_services",
+      "from": "industry_insurance",
       "to": "industry_finance",
-      "evidence": "KB금융의 타법인 출자 대상은 국민은행... KB증권... KB손해보험... KB국민카드... KB라이프생명 등 다양한 금융계열사 보유",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_credit_card",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 신용카드 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_asset_management",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 자산운용 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_savings_bank",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 저축은행 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_capital_leasing",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 캐피탈/리스 is part of 금융.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-24",
+      "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260324000835",
+      "evidence_published_at": "2026-03-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_securities",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 증권 is part of 금융.",
       "date": "2026-03-24",
       "evidence_source_id": "dart_105560_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

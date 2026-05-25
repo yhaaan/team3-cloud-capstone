@@ -1,0 +1,144 @@
+{
+  "source_id": "dart_097950_affiliate_status_20260316001116",
+  "entities": [
+    {
+      "id": "company_097950",
+      "type": "Company",
+      "name": "CJ제일제당",
+      "stock_code": "097950",
+      "description": "식품 및 바이오 사업을 중심으로 한 글로벌 종합식품기업"
+    },
+    {
+      "id": "company_253450",
+      "type": "Company",
+      "name": "스튜디오드래곤",
+      "stock_code": "253450",
+      "description": "드라마 제작 및 콘텐츠 사업을 하는 미디어 콘텐츠 기업"
+    },
+    {
+      "id": "industry_media_content",
+      "type": "Industry",
+      "name": "미디어콘텐츠"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_097950",
+      "to": "industry_food_beverage",
+      "evidence": "CJ제일제당의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_097950",
+      "to": "industry_bio_healthcare",
+      "evidence": "CJ제일제당의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_253450",
+      "to": "industry_media_content",
+      "evidence": "스튜디오드래곤(주) | STUDIO DRAGON INVESTMENTS, LLC | 100.0",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_097950",
+      "to": "company_253450",
+      "evidence": "CJ제일제당의 상장 계열회사 후보로 스튜디오드래곤 등이 탐지되었다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_media_content",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 미디어콘텐츠 is part of 통신/미디어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_097950_affiliate_status_20260316001116",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001116",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

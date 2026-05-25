@@ -6,13 +6,7 @@
       "type": "Company",
       "name": "SK텔레콤",
       "stock_code": "017670",
-      "description": "SK텔레콤은 통신 및 ICT 기술 기반으로 다양한 기업 출자와 경영참여를 수행함."
-    },
-    {
-      "id": "company_039840",
-      "type": "Company",
-      "name": "디오",
-      "stock_code": "039840"
+      "description": "이동통신, ICT 서비스, 미디어, AI솔루션 등 다양한 사업을 영위하는 통신기업"
     },
     {
       "id": "company_033130",
@@ -43,7 +37,111 @@
       "type": "Company",
       "name": "하나금융지주",
       "stock_code": "086790"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_017670",
+      "to": "company_033130",
+      "evidence": "SK텔레콤의 타법인 출자 대상은 ㈜디지틀조선일보, 출자 목적은 일반투자, 최초 취득일은 1997.08.13, 당기말 지분율은 7.8%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_017670",
+      "to": "company_053800",
+      "evidence": "SK텔레콤의 타법인 출자 대상은 안랩블록체인컴퍼니, 출자 목적은 경영참여, 최초 취득일은 2024.12.31, 당기말 지분율은 25.5%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_017670",
+      "to": "company_041510",
+      "evidence": "SK텔레콤의 타법인 출자 대상은 ㈜에스엠컬처앤콘텐츠, 출자 목적은 경영참여, 최초 취득일은 2017.10.13, 당기말 지분율은 22.8%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_017670",
+      "to": "company_402030",
+      "evidence": "SK텔레콤의 타법인 출자 대상은 코난테크놀로지, 출자 목적은 경영참여, 최초 취득일은 2022.11.10, 당기말 지분율은 18.8%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_017670",
+      "to": "company_086790",
+      "evidence": "SK텔레콤의 타법인 출자 대상은 하나금융지주, 출자 목적은 일반투자, 최초 취득일은 2022.07.29, 당기말 지분율은 3.1%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_telecom_media",
+      "evidence": "SK텔레콤은 이동통신 및 ICT 서비스 등 다양한 사업을 영위하는 통신기업임",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_017670_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000532",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
 }

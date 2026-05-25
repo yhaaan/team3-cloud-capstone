@@ -6,45 +6,140 @@
       "type": "Company",
       "name": "카카오뱅크",
       "stock_code": "323410",
-      "description": "카카오뱅크의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다."
+      "description": "은행업을 주력으로 하는 카카오뱅크"
     },
     {
       "id": "company_035720",
       "type": "Company",
       "name": "카카오",
-      "stock_code": "035720"
-    },
-    {
-      "id": "company_293490",
-      "type": "Company",
-      "name": "카카오게임즈",
-      "stock_code": "293490"
+      "stock_code": "035720",
+      "description": "인터넷 플랫폼과 IT, 콘텐츠 사업을 하는 카카오"
     },
     {
       "id": "company_376300",
       "type": "Company",
       "name": "디어유",
-      "stock_code": "376300"
+      "stock_code": "376300",
+      "description": "팬 커뮤니티 서비스 디지털 콘텐츠 사업을 하는 디어유"
+    },
+    {
+      "id": "company_293490",
+      "type": "Company",
+      "name": "카카오게임즈",
+      "stock_code": "293490",
+      "description": "온라인 및 모바일 게임 개발·퍼블리싱 사업을 하는 카카오게임즈"
     },
     {
       "id": "company_377300",
       "type": "Company",
       "name": "카카오페이",
-      "stock_code": "377300"
+      "stock_code": "377300",
+      "description": "모바일 간편결제와 금융서비스를 제공하는 카카오페이"
     },
     {
       "id": "company_054780",
       "type": "Company",
       "name": "키이스트",
-      "stock_code": "054780"
+      "stock_code": "054780",
+      "description": "엔터테인먼트 콘텐츠 제작 및 관리 사업을 하는 키이스트"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_advertising_marketing",
+      "type": "Industry",
+      "name": "광고/마케팅"
+    },
+    {
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
+    },
+    {
+      "id": "industry_platform_business",
+      "type": "Industry",
+      "name": "플랫폼사업"
+    },
+    {
+      "id": "industry_payment_service",
+      "type": "Industry",
+      "name": "결제서비스"
+    },
+    {
+      "id": "industry_digital_banking",
+      "type": "Industry",
+      "name": "디지털은행"
+    },
+    {
+      "id": "product_service_messenger_sns",
+      "type": "ProductService",
+      "name": "메신저소셜네트워크"
+    },
+    {
+      "id": "product_service_mobile_game",
+      "type": "ProductService",
+      "name": "모바일게임"
+    },
+    {
+      "id": "product_service_payment_service",
+      "type": "ProductService",
+      "name": "결제서비스"
+    },
+    {
+      "id": "product_service_digital_banking",
+      "type": "ProductService",
+      "name": "디지털은행"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
+    },
+    {
+      "id": "industry_industry_messenger_sns",
+      "type": "Industry",
+      "name": "Industry Messenger SNS"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_323410",
-      "to": "company_035720",
-      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.",
+      "to": "industry_finance",
+      "evidence": "카카오뱅크의 사업보고서 (2025.12)",
       "date": "2026-03-18",
       "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
       "evidence_source_type": "dart",
@@ -52,10 +147,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_323410",
-      "to": "company_293490",
-      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_035720",
+      "to": "industry_platform_business",
+      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오... 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
       "evidence_source_type": "dart",
@@ -63,10 +158,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_323410",
-      "to": "company_376300",
-      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_035720",
+      "to": "industry_it_software",
+      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오... 등이 탐지되었다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
       "evidence_source_type": "dart",
@@ -74,10 +169,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_323410",
-      "to": "company_377300",
-      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_035720",
+      "to": "industry_industry_messenger_sns",
+      "evidence": "카카오가 메신저소셜네트워크 서비스를 제공함",
       "date": "2026-03-18",
       "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
       "evidence_source_type": "dart",
@@ -85,10 +180,274 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_323410",
-      "to": "company_054780",
-      "evidence": "카카오뱅크의 상장 계열회사 후보로 카카오, 카카오게임즈, 디어유, 카카오페이, 키이스트 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_376300",
+      "to": "industry_advertising_marketing",
+      "evidence": "디어유는 팬 커뮤니티 중심의 콘텐츠 제작 및 마케팅 사업임",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_376300",
+      "to": "industry_music_entertainment",
+      "evidence": "디어유는 음악엔터테인먼트 분야 콘텐츠 제공",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_376300",
+      "to": "industry_content_game",
+      "evidence": "디어유는 게임/콘텐츠 산업 관련 사업을 영위",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_376300",
+      "to": "industry_it_software",
+      "evidence": "디어유는 IT 소프트웨어 사업 일환",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_293490",
+      "to": "industry_content_game",
+      "evidence": "카카오게임즈는 온라인 및 모바일 게임 개발·퍼블리싱",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_377300",
+      "to": "industry_payment_service",
+      "evidence": "카카오페이는 모바일 간편결제와 금융서비스 제공",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_377300",
+      "to": "industry_finance",
+      "evidence": "카카오페이는 금융업을 영위",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_377300",
+      "to": "industry_digital_banking",
+      "evidence": "카카오페이는 디지털은행 관련 결제서비스 제공",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_054780",
+      "to": "industry_music_entertainment",
+      "evidence": "키이스트는 엔터테인먼트 콘텐츠 제작 및 관리 사업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_054780",
+      "to": "industry_content_game",
+      "evidence": "키이스트가 게임/콘텐츠 산업에도 연관됨",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_advertising_marketing",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 광고/마케팅 is part of 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_platform_business",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_digital_banking",
+      "to": "industry_banking",
+      "evidence": "Industry taxonomy: 디지털은행 is part of 은행.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_payment_service",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 결제서비스 is part of 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000884",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_323410_affiliate_status_20260318000884",
       "evidence_source_type": "dart",

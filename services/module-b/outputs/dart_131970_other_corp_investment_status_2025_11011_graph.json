@@ -1,0 +1,74 @@
+{
+  "source_id": "dart_131970_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_131970",
+      "type": "Company",
+      "name": "두산테스나",
+      "stock_code": "131970",
+      "description": "반도체 검사장비 및 솔루션 분야 사업을 영위하는 기업"
+    },
+    {
+      "id": "company_490470",
+      "type": "Company",
+      "name": "세미파이브",
+      "stock_code": "490470"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_131970",
+      "to": "company_490470",
+      "evidence": "두산테스나의 타법인 출자 대상은 세미파이브, 출자 목적은 경영참여, 최초 취득일은 2023.04.06, 당기말 보유수량은 663,350, 당기말 지분율은 1.96%, 장부가액은 8,230,000,000.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_131970_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001118",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_131970",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "두산테스나의 타법인 출자현황 문서로 반도체 검사장비 분야 사업을 영위함.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_131970_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001118",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_490470",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "두산테스나가 경영참여 투자자로 출자한 세미파이브가 반도체장비 사업 분야임 확인.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_131970_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001118",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체장비 is part of 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_131970_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001118",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "source_id": "dart_029780_business_segments_20260311004049",
+  "entities": [
+    {
+      "id": "company_029780",
+      "type": "Company",
+      "name": "삼성카드",
+      "stock_code": "029780",
+      "description": "신용카드, 할부리스, 할부금융, 리스/렌탈 및 보험대리판매 등 금융서비스를 제공하는 여신전문금융회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "product_service_credit_card",
+      "type": "ProductService",
+      "name": "신용카드"
+    },
+    {
+      "id": "product_service_installment_financing",
+      "type": "ProductService",
+      "name": "할부금융"
+    },
+    {
+      "id": "product_service_lease_rental",
+      "type": "ProductService",
+      "name": "리스/렌탈 서비스"
+    },
+    {
+      "id": "product_service_factoring",
+      "type": "ProductService",
+      "name": "팩토링"
+    },
+    {
+      "id": "product_service_insurance_agent_service",
+      "type": "ProductService",
+      "name": "보험대리판매"
+    },
+    {
+      "id": "industry_credit_card",
+      "type": "Industry",
+      "name": "신용카드"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_029780",
+      "to": "industry_finance",
+      "evidence": "삼성카드는 ... 카드사업 부문과 할부리스사업 부문 및 기타 부문의 사업을 영위하고 있습니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_029780",
+      "to": "product_service_credit_card",
+      "evidence": "카드사업 부문은 개인ㆍ법인 등 신용카드회원이 가맹점으로부터 물품 및 용역을 구매할 수 있도록 신용을 제공하고...",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_029780",
+      "to": "product_service_installment_financing",
+      "evidence": "할부리스사업 부문은 고객이 전자, 내구재, 자동차 등을 할부로 구매할 수 있도록 할부금융 서비스와 일반고객을 대상으로 자금대여 서비스를 제공하고 있으며...",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_029780",
+      "to": "product_service_lease_rental",
+      "evidence": "자동차 등을 당사가 구입하여 이용자에게 대여하고 이용료를 받는 리스/렌탈 서비스를 제공하고 있습니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_029780",
+      "to": "product_service_factoring",
+      "evidence": "팩 토 링 | 기업으로부터 매출채권 등을 매입하고 매입대금을 지불하는 상품",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_029780",
+      "to": "product_service_insurance_agent_service",
+      "evidence": "기타 부문에서는 보험대리판매, SMS 알림상품, 온라인 쇼핑몰 및 여행알선 등의 상품 및 서비스를 제공하고 있습니다.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_credit_card",
+      "to": "industry_finance",
+      "evidence": "삼성카드는 ... 신용카드업의 인가를 받았으며...",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_029780_business_segments_20260311004049",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004049",
+      "evidence_published_at": "2026-03-11"
+    }
+  ]
+}

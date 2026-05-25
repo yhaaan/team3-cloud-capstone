@@ -5,23 +5,117 @@
       "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
-      "stock_code": "012330",
-      "description": "자동차 부품 및 모듈 제조 전문 기업입니다."
+      "stock_code": "012330"
     },
     {
       "id": "company_000270",
       "type": "Company",
       "name": "기아",
-      "stock_code": "000270",
-      "description": "자동차 제조 및 판매 사업을 영위합니다."
+      "stock_code": "000270"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_auto_parts",
+      "evidence": "현대모비스의 대량보유 보고자는 기아 ...",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_000270",
-      "to": "company_012330",
-      "evidence": "현대모비스의 대량보유 보고자는 기아, 보고 유형은 일반, 접수일은 2025-08-19, 보유주식수는 29,671,838주, 지분율은 32.32%.",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대모비스의 대량보유 보고자는 기아 ...",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250819000243",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_012330_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

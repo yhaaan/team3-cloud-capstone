@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "삼성전기",
       "stock_code": "009150",
-      "description": "수동소자, 반도체패키지기판, 카메라모듈 등 부품을 생산하는 전자부품 전문기업입니다."
+      "description": "수동소자, 반도체패키지기판, 카메라모듈을 생산, 국내외 판매 사업을 영위하는 전자부품 기업"
     },
     {
       "id": "company_005930",
@@ -15,62 +15,62 @@
       "stock_code": "005930"
     },
     {
-      "id": "business_area_컴포넌트",
-      "type": "BusinessArea",
-      "name": "컴포넌트"
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
     },
     {
-      "id": "business_area_패키지솔루션",
-      "type": "BusinessArea",
-      "name": "패키지솔루션"
+      "id": "industry_semiconductor_packaging",
+      "type": "Industry",
+      "name": "반도체패키징"
     },
     {
-      "id": "business_area_광학솔루션",
-      "type": "BusinessArea",
-      "name": "광학솔루션"
+      "id": "industry_camera_module",
+      "type": "Industry",
+      "name": "카메라모듈"
     },
     {
-      "id": "product_service_MLCC",
+      "id": "product_service_mlcc",
       "type": "ProductService",
       "name": "MLCC"
     },
     {
-      "id": "product_service_Inductor",
+      "id": "product_service_inductor",
       "type": "ProductService",
       "name": "Inductor"
     },
     {
-      "id": "product_service_Chip_Resistor",
+      "id": "product_service_chip_resistor",
       "type": "ProductService",
       "name": "Chip Resistor"
     },
     {
-      "id": "product_service_반도체패키지기판",
+      "id": "product_service_semiconductor_package_substrate",
       "type": "ProductService",
       "name": "반도체패키지기판"
     },
     {
-      "id": "product_service_카메라모듈",
+      "id": "product_service_camera_module",
       "type": "ProductService",
       "name": "카메라모듈"
     },
     {
-      "id": "industry_반도체",
+      "id": "industry_semiconductor",
       "type": "Industry",
       "name": "반도체"
     },
     {
-      "id": "industry_전자부품",
+      "id": "industry_display",
       "type": "Industry",
-      "name": "전자부품"
+      "name": "디스플레이"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_009150",
-      "to": "business_area_컴포넌트",
-      "evidence": "당사는 수동소자(MLCC, Inductor, Chip Resistor 등)를 생산하는 컴포넌트 사업부문으로 구성되어 있습니다.",
+      "to": "industry_electronics",
+      "evidence": "당사는 수동소자(MLCC, Inductor, Chip Resistor 등)를 생산하는 컴포넌트 사업부문, 반도체패키지기판을 생산하는 패키지솔루션 사업부문, 카메라모듈을 생산하는 광학솔루션 사업부문의 총 3개 사업부문으로 구성되어 있습니다.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -78,9 +78,9 @@
       "evidence_published_at": "2026-03-10"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_009150",
-      "to": "business_area_패키지솔루션",
+      "to": "industry_semiconductor_packaging",
       "evidence": "당사는 반도체패키지기판을 생산하는 패키지솔루션 사업부문으로 구성되어 있습니다.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
@@ -89,9 +89,9 @@
       "evidence_published_at": "2026-03-10"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_009150",
-      "to": "business_area_광학솔루션",
+      "to": "industry_camera_module",
       "evidence": "당사는 카메라모듈을 생산하는 광학솔루션 사업부문으로 구성되어 있습니다.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
@@ -102,8 +102,8 @@
     {
       "type": "PRODUCES",
       "from": "company_009150",
-      "to": "product_service_MLCC",
-      "evidence": "컴포넌트 사업부문의 주요제품은 수동소자(MLCC, Inductor, Chip Resistor 등)입니다.",
+      "to": "product_service_mlcc",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -113,8 +113,8 @@
     {
       "type": "PRODUCES",
       "from": "company_009150",
-      "to": "product_service_Inductor",
-      "evidence": "컴포넌트 사업부문의 주요제품은 수동소자(MLCC, Inductor, Chip Resistor 등)입니다.",
+      "to": "product_service_inductor",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -124,8 +124,8 @@
     {
       "type": "PRODUCES",
       "from": "company_009150",
-      "to": "product_service_Chip_Resistor",
-      "evidence": "컴포넌트 사업부문의 주요제품은 수동소자(MLCC, Inductor, Chip Resistor 등)입니다.",
+      "to": "product_service_chip_resistor",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -135,8 +135,8 @@
     {
       "type": "PRODUCES",
       "from": "company_009150",
-      "to": "product_service_반도체패키지기판",
-      "evidence": "패키지솔루션 사업부문의 주요제품은 반도체패키지기판입니다.",
+      "to": "product_service_semiconductor_package_substrate",
+      "evidence": "패키지솔루션 사업부문 주요제품 반도체패키지기판",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -146,8 +146,8 @@
     {
       "type": "PRODUCES",
       "from": "company_009150",
-      "to": "product_service_카메라모듈",
-      "evidence": "광학솔루션 사업부문의 주요제품은 카메라모듈입니다.",
+      "to": "product_service_camera_module",
+      "evidence": "광학솔루션 사업부문 주요제품 카메라모듈",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -156,9 +156,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_컴포넌트",
-      "to": "industry_전자부품",
-      "evidence": "컴포넌트 사업부문은 전자부품 관련 사업부문입니다.",
+      "from": "industry_semiconductor_packaging",
+      "to": "industry_electronics",
+      "evidence": "패키지솔루션 사업부문은 반도체패키지기판을 생산",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -167,9 +167,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_패키지솔루션",
-      "to": "industry_반도체",
-      "evidence": "패키지솔루션 사업부문은 반도체패키지기판을 생산합니다.",
+      "from": "industry_camera_module",
+      "to": "industry_electronics",
+      "evidence": "광학솔루션 사업부문은 카메라모듈을 생산",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -178,9 +178,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_광학솔루션",
-      "to": "industry_전자부품",
-      "evidence": "광학솔루션 사업부문은 전자부품 관련 부문입니다.",
+      "from": "product_service_mlcc",
+      "to": "industry_electronics",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -189,9 +189,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_MLCC",
-      "to": "business_area_컴포넌트",
-      "evidence": "MLCC는 컴포넌트 사업부문에 속하는 수동소자입니다.",
+      "from": "product_service_inductor",
+      "to": "industry_electronics",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -200,9 +200,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_Inductor",
-      "to": "business_area_컴포넌트",
-      "evidence": "Inductor는 컴포넌트 사업부문에 속하는 수동소자입니다.",
+      "from": "product_service_chip_resistor",
+      "to": "industry_electronics",
+      "evidence": "컴포넌트 사업부문 주요제품 수동소자(MLCC, Inductor, Chip Resistor 등)",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -211,9 +211,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_Chip_Resistor",
-      "to": "business_area_컴포넌트",
-      "evidence": "Chip Resistor는 컴포넌트 사업부문에 속하는 수동소자입니다.",
+      "from": "product_service_semiconductor_package_substrate",
+      "to": "industry_semiconductor_packaging",
+      "evidence": "패키지솔루션 사업부문 주요제품 반도체패키지기판",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -222,31 +222,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_반도체패키지기판",
-      "to": "business_area_패키지솔루션",
-      "evidence": "반도체패키지기판은 패키지솔루션 사업부문 제품입니다.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_business_segments_20260310003071",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_카메라모듈",
-      "to": "business_area_광학솔루션",
-      "evidence": "카메라모듈은 광학솔루션 사업부문 제품입니다.",
-      "date": "2026-03-10",
-      "evidence_source_id": "dart_009150_business_segments_20260310003071",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
-      "evidence_published_at": "2026-03-10"
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_009150",
-      "to": "industry_전자부품",
-      "evidence": "삼성전기는 전자부품 산업에 속합니다.",
+      "from": "product_service_camera_module",
+      "to": "industry_camera_module",
+      "evidence": "광학솔루션 사업부문 주요제품 카메라모듈",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",
@@ -256,8 +234,63 @@
     {
       "type": "BELONGS_TO",
       "from": "company_005930",
-      "to": "industry_반도체",
-      "evidence": "주요 매출처는 삼성전자이며, 이는 반도체 산업 관련 기업입니다.",
+      "to": "industry_electronics",
+      "evidence": "당사의 주요 매출처는 삼성전자와 그 종속기업이며",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_009150_business_segments_20260310003071",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_packaging",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체패키징 is part of 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_009150_business_segments_20260310003071",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_009150_business_segments_20260310003071",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_009150_business_segments_20260310003071",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_009150_business_segments_20260310003071",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310003071",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_009150_business_segments_20260310003071",
       "evidence_source_type": "dart",

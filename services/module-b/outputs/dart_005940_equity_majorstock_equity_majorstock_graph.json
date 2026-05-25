@@ -6,25 +6,36 @@
       "type": "Company",
       "name": "NH투자증권",
       "stock_code": "005940",
-      "description": "NH투자증권은 금융투자업을 중심으로 다양한 증권 관련 서비스를 제공합니다."
+      "description": "금융투자업 및 증권 관련 서비스 제공"
     },
     {
       "id": "industry_finance",
       "type": "Industry",
-      "name": "finance"
+      "name": "금융"
     },
     {
-      "id": "business_area_financial_services",
-      "type": "BusinessArea",
-      "name": "financial services"
+      "id": "industry_securities",
+      "type": "Industry",
+      "name": "증권"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_005940",
-      "to": "business_area_financial_services",
-      "evidence": "NH투자증권은 금융투자업을 중심으로 다양한 증권 관련 서비스를 제공합니다.",
+      "to": "industry_finance",
+      "evidence": "NH투자증권의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-01, 보유주식수는 30,399,204주, 지분율은 9.38%",
+      "date": "2026-05-13",
+      "evidence_source_id": "dart_005940_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250701000371",
+      "evidence_published_at": "2026-05-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005940",
+      "to": "industry_securities",
+      "evidence": "NH투자증권의 대량보유 보고자는 농협금융지주, 보고 유형은 일반, 접수일은 2025-08-14, 보유주식수는 220,737,032주, 지분율은 61.94%",
       "date": "2026-05-13",
       "evidence_source_id": "dart_005940_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -33,9 +44,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_financial_services",
+      "from": "industry_securities",
       "to": "industry_finance",
-      "evidence": "NH투자증권은 금융투자업을 중심으로 다양한 증권 관련 서비스를 제공합니다.",
+      "evidence": "업계 일반 지식상 증권은 금융 산업의 하위 분야임",
       "date": "2026-05-13",
       "evidence_source_id": "dart_005940_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

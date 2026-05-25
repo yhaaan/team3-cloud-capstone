@@ -11,7 +11,13 @@
       "id": "company_131030",
       "type": "Company",
       "name": "옵투스제약",
-      "stock_code": "131030"
+      "stock_code": "131030",
+      "description": "의약품 제조 및 판매 사업을 영위하는 제약회사"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     }
   ],
   "relations": [
@@ -20,6 +26,28 @@
       "from": "company_000250",
       "to": "company_131030",
       "evidence": "삼천당제약의 타법인 출자 대상은 주식회사 옵투스제약, 출자 목적은 경영참여, 최초 취득일은 2012.11.07, 당기말 보유수량은 7,851,161, 당기말 지분율은 39.4%, 장부가액은 19,042,966,000.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000250",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼천당제약",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_131030",
+      "to": "industry_bio_healthcare",
+      "evidence": "옵투스제약",
       "date": "2026-03-20",
       "evidence_source_id": "dart_000250_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

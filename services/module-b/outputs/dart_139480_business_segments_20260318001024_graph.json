@@ -1,0 +1,635 @@
+{
+  "source_id": "dart_139480_business_segments_20260318001024",
+  "entities": [
+    {
+      "id": "company_139480",
+      "type": "Company",
+      "name": "이마트",
+      "stock_code": "139480",
+      "description": "대형마트, 슈퍼마켓, 편의점, 온라인 쇼핑 플랫폼 등 유통업을 중심으로 다양한 상품 판매와 렌탈 서비스를 제공"
+    },
+    {
+      "id": "company_160550",
+      "type": "Company",
+      "name": "NEW",
+      "stock_code": "160550"
+    },
+    {
+      "id": "company_078930",
+      "type": "Company",
+      "name": "GS",
+      "stock_code": "078930"
+    },
+    {
+      "id": "company_026960",
+      "type": "Company",
+      "name": "동서",
+      "stock_code": "026960"
+    },
+    {
+      "id": "company_003160",
+      "type": "Company",
+      "name": "디아이",
+      "stock_code": "003160"
+    },
+    {
+      "id": "company_004170",
+      "type": "Company",
+      "name": "신세계",
+      "stock_code": "004170"
+    },
+    {
+      "id": "company_031440",
+      "type": "Company",
+      "name": "신세계푸드",
+      "stock_code": "031440",
+      "description": "식품, 외식, 음료, 주류 판매 및 식자재 납품 중심 식음료업을 영위"
+    },
+    {
+      "id": "company_052860",
+      "type": "Company",
+      "name": "아이앤씨",
+      "stock_code": "052860"
+    },
+    {
+      "id": "company_255220",
+      "type": "Company",
+      "name": "SG",
+      "stock_code": "255220"
+    },
+    {
+      "id": "company_036570",
+      "type": "Company",
+      "name": "NC",
+      "stock_code": "036570"
+    },
+    {
+      "id": "company_037370",
+      "type": "Company",
+      "name": "EG",
+      "stock_code": "037370"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_hotel_resort",
+      "type": "Industry",
+      "name": "호텔/리조트"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "product_service_food_clothing_goods",
+      "type": "ProductService",
+      "name": "상품"
+    },
+    {
+      "id": "product_service_real_estate_investment_rental",
+      "type": "ProductService",
+      "name": "부동산 투자 및 임대"
+    },
+    {
+      "id": "product_service_hotel_leisure_service",
+      "type": "ProductService",
+      "name": "호텔 및 레저 서비스"
+    },
+    {
+      "id": "product_service_it_service",
+      "type": "ProductService",
+      "name": "IT 서비스"
+    },
+    {
+      "id": "product_service_food_beverage_service",
+      "type": "ProductService",
+      "name": "식음료 및 외식 서비스"
+    },
+    {
+      "id": "product_service_construction_service",
+      "type": "ProductService",
+      "name": "건설 및 토목 서비스"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_retail_consumer",
+      "evidence": "회사는 수익을 창출하는 재화와 용역의 성격, 시장 및 판매방법의 특징 등을 고려하여 영업 부문별 경영성과를 적절히 반영할 수 있도록 유통업 부문... ㈜이마트",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_139480",
+      "to": "product_service_food_clothing_goods",
+      "evidence": "회사 는 제조업체 및 유통업체에서, 또는 직수입 등 다양한 채널에서 구매하거나 제조한 상품을 대형마트, 슈퍼마켓, 편의점 등을 통해 소비자를 직접 대면하거나 인터넷, 모바일 등의 매체를 통해 비대면 판매를 하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_031440",
+      "to": "industry_food_beverage",
+      "evidence": "㈜신세계푸드, ㈜신세계엘앤비, ㈜에스씨케이컴퍼니... 식품, 외식, 음료, 주류판매 및식자재납품 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_031440",
+      "to": "product_service_food_beverage_service",
+      "evidence": "식품, 외식, 음료, 주류판매 및식자재납품 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004170",
+      "to": "industry_real_estate",
+      "evidence": "부동산 투자 및 개발을 통한 수익과 배당을 목적으로 사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_004170",
+      "to": "product_service_real_estate_investment_rental",
+      "evidence": "부동산 투자 및 개발을 통한 수익과 배당을 목적으로 사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_real_estate",
+      "evidence": "회사는 복합쇼핑몰 및 대형마트 매장 내 테넌트 유치를 통해 소매업체에 임대를 주는 방법 등으로 수익이 발생하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004170",
+      "to": "industry_real_estate",
+      "evidence": "부동산업 부문 : ㈜신세계동서울피에프브이, ㈜신세계화성... 회사는 부동산 투자 및 개발을 통한 수익과 배당을 목적으로 사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_construction_infrastructure",
+      "evidence": "건설업 부문... 신세계건설㈜... 건설",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_031440",
+      "to": "industry_food_beverage",
+      "evidence": "식음료업 부문",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_052860",
+      "to": "industry_it_software",
+      "evidence": "㈜신세계아이앤씨 IT서비스",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_052860",
+      "to": "product_service_it_service",
+      "evidence": "IT서비스, IT유통 및IT정보서비스 등 ㈜신세계아이앤씨",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_139480",
+      "to": "product_service_real_estate_investment_rental",
+      "evidence": "복합쇼핑몰 및 대형마트 매장 내 테넌트 유치를 통해 소매업체에 임대를 주는 방법 등으로 수익이 발생하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_food_clothing_goods",
+      "to": "industry_retail_consumer",
+      "evidence": "유통업 부문 상품, 수수료 및 임대료 수입",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_real_estate_investment_rental",
+      "to": "industry_real_estate",
+      "evidence": "부동산 투자ㆍ개발 및 공급ㆍ임대업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_hotel_leisure_service",
+      "to": "industry_hotel_resort",
+      "evidence": "객실판매, 식음료판매 및서비스업 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_it_service",
+      "to": "industry_it_software",
+      "evidence": "IT서비스, IT유통 및IT정보서비스 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_food_beverage_service",
+      "to": "industry_food_beverage",
+      "evidence": "식품, 외식, 음료, 주류판매 및식자재납품 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_construction_service",
+      "to": "industry_construction_infrastructure",
+      "evidence": "건설업 및서비스업 등 신세계건설㈜... 건 축",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_139480",
+      "to": "industry_retail_consumer",
+      "evidence": "회사는 전국에 걸쳐 대형마트 및 창고형 할인매장 157개점, 슈퍼마켓 244개점, 편의점 5,510개점을 운영하고 있으며",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hotel_resort",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 호텔/리조트 is part of 여행/레저.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_139480_business_segments_20260318001024",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001024",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

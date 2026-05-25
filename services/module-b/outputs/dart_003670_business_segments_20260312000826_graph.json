@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "포스코퓨처엠",
       "stock_code": "003670",
-      "description": "이차전지 음극재·양극재 및 내화물, 생석회 제조·판매 전문 기업"
+      "description": "국내 유일 음/양극재 소재를 동시 생산 및 납품하는 이차전지 소재사로 내화물 및 생석회도 제조"
     },
     {
       "id": "company_093050",
@@ -69,62 +69,107 @@
       "stock_code": "000950"
     },
     {
-      "id": "business_area_energy_materials",
-      "type": "BusinessArea",
-      "name": "에너지소재"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "business_area_basic_materials",
-      "type": "BusinessArea",
-      "name": "기초소재"
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     },
     {
-      "id": "business_area_refractory",
-      "type": "BusinessArea",
-      "name": "내화물사업"
-    },
-    {
-      "id": "business_area_lime_chemical",
-      "type": "BusinessArea",
-      "name": "라임화성사업"
-    },
-    {
-      "id": "productservice_anode_material",
+      "id": "product_service_anode_material",
       "type": "ProductService",
       "name": "음극재"
     },
     {
-      "id": "productservice_cathode_material",
+      "id": "product_service_cathode_material",
       "type": "ProductService",
       "name": "양극재"
     },
     {
-      "id": "productservice_refractory_material",
+      "id": "product_service_refractory",
       "type": "ProductService",
       "name": "내화물"
     },
     {
-      "id": "productservice_lime",
+      "id": "product_service_lime",
       "type": "ProductService",
       "name": "생석회"
     },
     {
-      "id": "industry_battery",
+      "id": "industry_electric_vehicle",
       "type": "Industry",
-      "name": "배터리"
+      "name": "전기차량"
     },
     {
-      "id": "industry_basic_materials",
+      "id": "industry_energy_utility",
       "type": "Industry",
-      "name": "기초소재"
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_003670",
-      "to": "business_area_basic_materials",
-      "evidence": "내화물사업, 라임화성사업, 에너지소재사업 등 기초소재와 에너지소재 사업을 영위",
+      "to": "industry_battery_energy_storage",
+      "evidence": "포스코퓨처엠은 국내 유일 음/양극재 소재를 동시 생산 및 납품하는 이차전지 소재사입니다.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -132,32 +177,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_003670",
-      "to": "business_area_refractory",
-      "evidence": "내화물사업 내화물 제조 및 산업용노재 정비",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_003670_business_segments_20260312000826",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_003670",
-      "to": "business_area_lime_chemical",
-      "evidence": "라임화성사업 생석회 제조, 화성공장 위탁운영및 화성품 판매",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_003670_business_segments_20260312000826",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_003670",
-      "to": "business_area_energy_materials",
-      "evidence": "에너지소재사업 양극재, 음극재 제조 및 판매",
+      "to": "industry_chemical_materials",
+      "evidence": "내화물 제조 및 산업용노재 정비, 생석회 제조 등 화학소재 관련 기초소재사업을 영위",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -167,8 +190,8 @@
     {
       "type": "PRODUCES",
       "from": "company_003670",
-      "to": "productservice_refractory_material",
-      "evidence": "기초소재사업 내화물사업 내화물 제조 및산업용노재 정비",
+      "to": "product_service_anode_material",
+      "evidence": "천연흑연 음극재 제품부터 인조흑연, 실리콘 음극재까지 다양한 기술을 보유, 개발하고 있습니다.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -178,8 +201,8 @@
     {
       "type": "PRODUCES",
       "from": "company_003670",
-      "to": "productservice_lime",
-      "evidence": "라임화성사업 생석회, 화성품 가공 및 판매,화성공장 위탁 운영",
+      "to": "product_service_cathode_material",
+      "evidence": "양극재 사업부문은 2019년 포스코ESM 인수를 통해 진출하였으며 하이니켈계 NCMA 등을 양산하고 있습니다.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -189,8 +212,8 @@
     {
       "type": "PRODUCES",
       "from": "company_003670",
-      "to": "productservice_cathode_material",
-      "evidence": "에너지소재사업 양극재, 음극재 제조 및 판매",
+      "to": "product_service_refractory",
+      "evidence": "내화물 제조 및 산업용노재 정비를 주요 재화로 하는 내화물사업 부문",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -200,8 +223,107 @@
     {
       "type": "PRODUCES",
       "from": "company_003670",
-      "to": "productservice_anode_material",
-      "evidence": "에너지소재사업 양극재, 음극재 제조 및 판매",
+      "to": "product_service_lime",
+      "evidence": "생석회 제조, 화성공장 위탁운영 및 화성품 판매 등의 라임화성사업을 수행",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003670",
+      "to": "industry_electric_vehicle",
+      "evidence": "이차전지 사업은 EV(전기차)시장의 확대로 지속 성장이 예상됩니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003670",
+      "to": "industry_energy_utility",
+      "evidence": "에너지 저장장치(ESS) 등 신재생에너지의 효율적 저장이 가능한 에너지소재 사업을 영위",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_electric_vehicle",
+      "evidence": "이차전지는 전기차 보급 확대와 ESS시장의 성장에 따라 연관되어 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_it_software",
+      "evidence": "이차전지 사업은 IT기기의 성장에 따른 시장 확대에 영향을 받음",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -210,9 +332,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_basic_materials",
-      "to": "industry_basic_materials",
-      "evidence": "기초소재사업 부문 내용",
+      "from": "industry_electric_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 전기차량 is part of 자동차/모빌리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -220,10 +342,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_refractory",
-      "to": "business_area_basic_materials",
-      "evidence": "내화물사업은 기초소재사업에 포함",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -231,10 +353,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_lime_chemical",
-      "to": "business_area_basic_materials",
-      "evidence": "라임화성사업은 기초소재사업에 포함",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -242,10 +364,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_energy_materials",
-      "to": "industry_battery",
-      "evidence": "에너지소재사업은 배터리 산업에 속함",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -253,10 +375,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_refractory_material",
-      "to": "business_area_refractory",
-      "evidence": "내화물사업 내화물 제조 및 산업용노재 정비",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -264,10 +386,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_lime",
-      "to": "business_area_lime_chemical",
-      "evidence": "라임화성사업 생석회 제조 및 판매",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -275,10 +397,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_cathode_material",
-      "to": "business_area_energy_materials",
-      "evidence": "에너지소재사업 양극재 제조 및 판매",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -286,10 +408,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_anode_material",
-      "to": "business_area_energy_materials",
-      "evidence": "에너지소재사업 음극재 제조 및 판매",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -297,10 +419,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_373220",
-      "evidence": "에너지소재사업 주요 고객은 ㈜LG에너지솔루션",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -308,10 +430,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_006400",
-      "evidence": "에너지소재사업 주요 고객은 삼성SDI",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -319,10 +441,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_034730",
-      "evidence": "에너지소재사업 주요 고객은 SK온",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -330,10 +452,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_456040",
-      "evidence": "라임화성사업 주요 고객은 ㈜OCI",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -341,10 +463,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_001680",
-      "evidence": "문서 내 허용된 회사명 중 대상(001680) 언급되어 있으나 사업 관련 명확한 연결 문장은 없어 관계 생략",
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -352,10 +474,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_093050",
-      "evidence": "문서 내 LF 언급되나 사업 연결 근거 미발견, 관계 미생성",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -363,10 +485,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_006260",
-      "evidence": "LS 사업부문 인수 관련 언급 있으나 LS와 사업별 상세 연계 문장 부재, 관계 생략",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -374,10 +496,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_036570",
-      "evidence": "NC 언급이나 사업 관련 구체 근거 부족하여 관계 미생성",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",
@@ -385,10 +507,21 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003670",
-      "to": "company_000950",
-      "evidence": "전방 언급은 있으나 사업 연결 근거 불충분하여 관계 미생성",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_003670_business_segments_20260312000826",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000826",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_003670_business_segments_20260312000826",
       "evidence_source_type": "dart",

@@ -6,49 +6,54 @@
       "type": "Company",
       "name": "에이피알",
       "stock_code": "278470",
-      "description": "화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하며 다양한 브랜드와 제품을 판매합니다."
+      "description": "화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하고 있습니다."
     },
     {
-      "id": "business_area_cosmetics_beauty",
-      "type": "BusinessArea",
-      "name": "화장품 및 뷰티"
+      "id": "industry_beauty_cosmetics",
+      "type": "Industry",
+      "name": "뷰티/화장품"
     },
     {
-      "id": "business_area_home_beauty_device",
-      "type": "BusinessArea",
-      "name": "홈 뷰티 디바이스"
+      "id": "industry_medical_device",
+      "type": "Industry",
+      "name": "의료기기"
     },
     {
-      "id": "product_service_dermocosmetics",
+      "id": "product_service_dermocosmetic",
       "type": "ProductService",
       "name": "더마 코스메틱"
     },
     {
-      "id": "product_service_basic_makeup_cosmetics",
+      "id": "product_service_skin_care_makeup",
       "type": "ProductService",
       "name": "기초 화장품 및 색조 화장품"
     },
     {
       "id": "product_service_perfume",
       "type": "ProductService",
-      "name": "향수 등"
+      "name": "향수"
     },
     {
-      "id": "product_service_home_beauty_device_booster_pro",
+      "id": "product_service_beauty_device",
       "type": "ProductService",
-      "name": "부스터프로"
+      "name": "홈 뷰티 디바이스"
     },
     {
-      "id": "industry_beauty",
+      "id": "industry_bio_healthcare",
       "type": "Industry",
-      "name": "뷰티"
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_278470",
-      "to": "business_area_cosmetics_beauty",
+      "to": "industry_beauty_cosmetics",
       "evidence": "당사는 화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
@@ -57,10 +62,10 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_278470",
-      "to": "business_area_home_beauty_device",
-      "evidence": "당사는 화장품과 홈 뷰티 디바이스를 주요 사업으로 운영하고 있습니다.",
+      "to": "industry_medical_device",
+      "evidence": "홈 뷰티 디바이스는 브랜드 메디큐브 에이지알이 있으며 주요 제품은 부스터프로입니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -70,8 +75,8 @@
     {
       "type": "PRODUCES",
       "from": "company_278470",
-      "to": "product_service_dermocosmetics",
-      "evidence": "화장품은 메디큐브(더마 코스메틱)... 브랜드가 있습니다.",
+      "to": "product_service_dermocosmetic",
+      "evidence": "화장품은 메디큐브(더마 코스메틱), 에이프릴스킨(고기능 저자극 피부솔루션), 포맨트(라이프스타일 뷰티) 등의 브랜드가 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -81,8 +86,8 @@
     {
       "type": "PRODUCES",
       "from": "company_278470",
-      "to": "product_service_basic_makeup_cosmetics",
-      "evidence": "에이프릴스킨(고기능 저자극 피부솔루션)... 브랜드가 있습니다.",
+      "to": "product_service_skin_care_makeup",
+      "evidence": "에이프릴스킨은 당근, 카렌둘라 등 원료를 기반으로 만든 제품으로 높은 고객 만족도를 이끌고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -93,7 +98,7 @@
       "type": "PRODUCES",
       "from": "company_278470",
       "to": "product_service_perfume",
-      "evidence": "포맨트(라이프스타일 뷰티)... 향수, 바디워시 등의 제품을 운영하고 있습니다.",
+      "evidence": "포맨트는 내면의 고유한 매력이 표현될 수 있게 만드는 향수, 바디워시 등의 제품을 운영하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -103,7 +108,7 @@
     {
       "type": "PRODUCES",
       "from": "company_278470",
-      "to": "product_service_home_beauty_device_booster_pro",
+      "to": "product_service_beauty_device",
       "evidence": "홈 뷰티 디바이스는 브랜드 메디큐브 에이지알이 있으며 주요 제품은 부스터프로입니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
@@ -113,9 +118,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_cosmetics_beauty",
-      "to": "industry_beauty",
-      "evidence": "에이피알의 사업보고서에서 화장품 및 뷰티 사업부문 표기",
+      "from": "product_service_dermocosmetic",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "화장품은 메디큐브(더마 코스메틱), 에이프릴스킨(고기능 저자극 피부솔루션), 포맨트(라이프스타일 뷰티) 등의 브랜드가 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -124,31 +129,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_home_beauty_device",
-      "to": "industry_beauty",
-      "evidence": "에이피알의 사업보고서에서 홈 뷰티 디바이스 사업부문은 뷰티 영역에 포함",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_278470_business_segments_20260323001257",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_dermocosmetics",
-      "to": "business_area_cosmetics_beauty",
-      "evidence": "메디큐브는 화장품/뷰티 사업부문에 속함",
-      "date": "2026-03-23",
-      "evidence_source_id": "dart_278470_business_segments_20260323001257",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257",
-      "evidence_published_at": "2026-03-23"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_basic_makeup_cosmetics",
-      "to": "business_area_cosmetics_beauty",
-      "evidence": "에이프릴스킨은 화장품/뷰티 사업부문에 속함",
+      "from": "product_service_skin_care_makeup",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "에이프릴스킨은 당근, 카렌둘라 등 원료를 기반으로 만든 제품으로 높은 고객 만족도를 이끌고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -158,8 +141,8 @@
     {
       "type": "PART_OF",
       "from": "product_service_perfume",
-      "to": "business_area_cosmetics_beauty",
-      "evidence": "포맨트는 화장품/뷰티 사업부문에 속함",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "포맨트는 내면의 고유한 매력이 표현될 수 있게 만드는 향수, 바디워시 등의 제품을 운영하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",
@@ -168,9 +151,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_home_beauty_device_booster_pro",
-      "to": "business_area_home_beauty_device",
-      "evidence": "부스터프로는 홈 뷰티 디바이스 사업부문 주요 제품임",
+      "from": "product_service_beauty_device",
+      "to": "industry_medical_device",
+      "evidence": "홈 뷰티 디바이스는 브랜드 메디큐브 에이지알이 있으며 주요 제품은 부스터프로입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_278470_business_segments_20260323001257",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_medical_device",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 의료기기 is part of 바이오/헬스케어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_278470_business_segments_20260323001257",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001257",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_278470_business_segments_20260323001257",
       "evidence_source_type": "dart",

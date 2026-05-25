@@ -6,70 +6,140 @@
       "type": "Company",
       "name": "삼아알미늄",
       "stock_code": "006110",
-      "description": "삼아알미늄은 압연, 가공, 전자부품판매 사업부를 통해 알루미늄박과 포장재, USB 저장장치 등을 생산·판매합니다."
+      "description": "알루미늄박 및 레토르트 파우치 등 가공용 제품 생산, LIB용 알루미늄박과 전자부품판매를 주요 사업으로 영위"
     },
     {
-      "id": "business_area_압연",
-      "type": "BusinessArea",
-      "name": "압연"
+      "id": "industry_aluminum",
+      "type": "Industry",
+      "name": "알루미늄"
     },
     {
-      "id": "business_area_가공",
-      "type": "BusinessArea",
-      "name": "가공"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "business_area_전자부품판매",
-      "type": "BusinessArea",
-      "name": "전자부품판매"
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
     },
     {
-      "id": "product_service_LIB_양극집전체",
-      "type": "ProductService",
-      "name": "LIB 양극집전체"
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     },
     {
-      "id": "product_service_LIB_외장재용_알미늄박",
-      "type": "ProductService",
-      "name": "LIB 외장재용 알미늄박"
+      "id": "industry_building_materials",
+      "type": "Industry",
+      "name": "건축소재"
     },
     {
-      "id": "product_service_AL_FOIL",
-      "type": "ProductService",
-      "name": "연포장용 AL-FOIL"
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
     },
     {
-      "id": "product_service_식품_포장재",
-      "type": "ProductService",
-      "name": "식품 포장재"
-    },
-    {
-      "id": "product_service_산업_건축용_소재",
-      "type": "ProductService",
-      "name": "산업/건축용 소재"
-    },
-    {
-      "id": "product_service_USB_저장장치",
+      "id": "product_service_usb_storage_device",
       "type": "ProductService",
       "name": "USB 저장장치"
     },
     {
-      "id": "industry_소재_제조업",
-      "type": "Industry",
-      "name": "소재 제조업"
+      "id": "product_service_lib_foil",
+      "type": "ProductService",
+      "name": "LIB 양극집전체"
     },
     {
-      "id": "industry_전자_제품",
+      "id": "product_service_lib_casing_foil",
+      "type": "ProductService",
+      "name": "LIB 외장재용 알루미늄박"
+    },
+    {
+      "id": "product_service_al_foil",
+      "type": "ProductService",
+      "name": "AL-FOIL"
+    },
+    {
+      "id": "product_service_food_packaging_material",
+      "type": "ProductService",
+      "name": "식품 포장재"
+    },
+    {
+      "id": "product_service_packaging_material",
+      "type": "ProductService",
+      "name": "포장재"
+    },
+    {
+      "id": "product_service_building_material",
+      "type": "ProductService",
+      "name": "산업/건축용 소재"
+    },
+    {
+      "id": "industry_semiconductor",
       "type": "Industry",
-      "name": "전자 제품"
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_nonferrous_metal",
+      "type": "Industry",
+      "name": "비철금속"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006110",
-      "to": "business_area_압연",
-      "evidence": "연결회사는 압연, 가공, 전자부품판매 사업부문의 총 3개 사업부 체제로 운영되고 있습니다.",
+      "to": "industry_aluminum",
+      "evidence": "당사는 알루미늄박 국산화 실현이라는 가치를 바탕으로 1969년 설립한 이래 알루미늄박과 각종 레토르트 파우치 및 의약품, 산업용 등의 가공용 제품을 생산/판매하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -77,10 +147,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006110",
-      "to": "business_area_가공",
-      "evidence": "연결회사는 압연, 가공, 전자부품판매 사업부문의 총 3개 사업부 체제로 운영되고 있습니다.",
+      "to": "industry_battery_energy_storage",
+      "evidence": "당사는 선도적으로 개발한 LIB 양극집전체용과 외장재용 알루미늄박을 기반으로 기술 경쟁력과 품질 우위를 유지하며, 시장 변화에 적극적으로 대응하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -88,10 +158,43 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006110",
-      "to": "business_area_전자부품판매",
-      "evidence": "연결회사는 압연, 가공, 전자부품판매 사업부문의 총 3개 사업부 체제로 운영되고 있습니다.",
+      "to": "industry_food_beverage",
+      "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006110",
+      "to": "industry_bio_healthcare",
+      "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006110",
+      "to": "industry_building_materials",
+      "evidence": "산업/건축용으로는 진공단열재용 필름, 알루미늄 페이스트 등이 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006110",
+      "to": "industry_electronics",
+      "evidence": "전자사업부의 (주)삼아소이전자는 미국의 샌디스크 제품 수입 판매 업체로서 샌디스크의 리테일 분야인 컴팩트플래시, 씨큐어디지털, USB 저장장치, Mobile Solution의 micro SD, SSD 등의 제품을 샌디스크사로부터 수입하여 유통 및 서비스 판매하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -101,8 +204,8 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_LIB_양극집전체",
-      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 로는 양극 활물질과 외부 회로 간의 전자 이동 통로 역할을 하는 양극집전체를 비롯하여",
+      "to": "product_service_lib_foil",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다. LIB용 Foil로는 양극 활물질과 외부 회로 간의 전자 이동 통로 역할을 하는 양극집전체를 비롯하여 파우치형 LIB 외장재 및 LIB Tab재용을 생산하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -112,8 +215,8 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_LIB_외장재용_알미늄박",
-      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다. LIB용 Foil... 파우치형 LIB 외장재 및 LIB Tab재용을 생산하고 있습니다.",
+      "to": "product_service_lib_casing_foil",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다. LIB용 Foil로는 양극 활물질과 외부 회로 간의 전자 이동 통로 역할을 하는 양극집전체를 비롯하여 파우치형 LIB 외장재 및 LIB Tab재용을 생산하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -123,8 +226,8 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_AL_FOIL",
-      "evidence": "연포장용 Foil로는 가전 Hair Line용, 제약 포장재용 등을 생산하고 있습니다.",
+      "to": "product_service_al_foil",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다. 연포장용 Foil로는 가전 Hair Line용, 제약 포장재용 등을 생산하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -134,7 +237,7 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_식품_포장재",
+      "to": "product_service_food_packaging_material",
       "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
@@ -145,8 +248,8 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_산업_건축용_소재",
-      "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 산업/건축용으로는 진공단열재용 필름, 알루미늄 페이스트 등이 있습니다.",
+      "to": "product_service_packaging_material",
+      "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -156,8 +259,19 @@
     {
       "type": "PRODUCES",
       "from": "company_006110",
-      "to": "product_service_USB_저장장치",
-      "evidence": "전자부품판매 USB 저장장치 등",
+      "to": "product_service_building_material",
+      "evidence": "산업/건축용으로는 진공단열재용 필름, 알루미늄 페이스트 등이 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006110",
+      "to": "product_service_usb_storage_device",
+      "evidence": "전자사업부의 (주)삼아소이전자는 미국의 샌디스크 제품 수입 판매 업체로서 샌디스크의 리테일 분야인 컴팩트플래시, 씨큐어디지털, USB 저장장치, Mobile Solution의 micro SD, SSD 등의 제품을 샌디스크사로부터 수입하여 유통 및 서비스 판매하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -166,9 +280,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_압연",
-      "to": "industry_소재_제조업",
-      "evidence": "삼아알미늄은 알루미늄박과 각종 레토르트 파우치 및 의약품, 산업용 등의 가공용 제품을 생산/판매하고 있습니다.",
+      "from": "product_service_lib_foil",
+      "to": "industry_battery_energy_storage",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -177,9 +291,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_가공",
-      "to": "industry_소재_제조업",
-      "evidence": "삼아알미늄은 알루미늄박과 각종 레토르트 파우치 및 의약품, 산업용 등의 가공용 제품을 생산/판매하고 있습니다.",
+      "from": "product_service_lib_casing_foil",
+      "to": "industry_battery_energy_storage",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -188,9 +302,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_전자부품판매",
-      "to": "industry_전자_제품",
-      "evidence": "전자부품판매 USB 저장장치 등",
+      "from": "product_service_al_foil",
+      "to": "industry_aluminum",
+      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 과 연포장용 Foil을 생산합니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",
@@ -199,41 +313,8 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_LIB_양극집전체",
-      "to": "business_area_압연",
-      "evidence": "압연부문은 LIB(Lithium Ion Battery)용 Foil 로는 양극 활물질과 외부 회로 간의 전자 이동 통로 역할을 하는 양극집전체를 비롯하여",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_006110_business_segments_20260318000860",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_LIB_외장재용_알미늄박",
-      "to": "business_area_압연",
-      "evidence": "LIB용 Foil... 파우치형 LIB 외장재 및 LIB Tab재용을 생산하고 있습니다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_006110_business_segments_20260318000860",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_AL_FOIL",
-      "to": "business_area_압연",
-      "evidence": "연포장용 Foil로는 가전 Hair Line용, 제약 포장재용 등을 생산하고 있습니다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_006110_business_segments_20260318000860",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_식품_포장재",
-      "to": "business_area_가공",
+      "from": "product_service_food_packaging_material",
+      "to": "industry_food_beverage",
       "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
@@ -243,8 +324,19 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_산업_건축용_소재",
-      "to": "business_area_가공",
+      "from": "product_service_packaging_material",
+      "to": "industry_food_beverage",
+      "evidence": "가공부문은 포장용 제품과 산업/건축용 제품을 생산합니다. 포장용 제품은 레토르트 포장재, 초발수 Lid, 제약용 ALU-ALU, 담배포장지, 리필파우치 등입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_building_material",
+      "to": "industry_building_materials",
       "evidence": "산업/건축용으로는 진공단열재용 필름, 알루미늄 페이스트 등이 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
@@ -254,9 +346,262 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_USB_저장장치",
-      "to": "business_area_전자부품판매",
-      "evidence": "전자부품판매 USB 저장장치 등",
+      "from": "product_service_usb_storage_device",
+      "to": "industry_electronics",
+      "evidence": "전자부품판매상 상품 USB 저장장치 외 전자부품 저장장치",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_building_materials",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 건축소재 is part of 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_aluminum",
+      "to": "industry_nonferrous_metal",
+      "evidence": "Industry taxonomy: 알루미늄 is part of 비철금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_nonferrous_metal",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 비철금속 is part of 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_006110_business_segments_20260318000860",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000860",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_006110_business_segments_20260318000860",
       "evidence_source_type": "dart",

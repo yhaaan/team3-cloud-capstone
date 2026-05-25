@@ -1,0 +1,52 @@
+{
+  "source_id": "dart_302440_major_shareholder_change_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_302440",
+      "type": "Company",
+      "name": "SK바이오사이언스",
+      "stock_code": "302440"
+    },
+    {
+      "id": "company_285130",
+      "type": "Company",
+      "name": "SK케미칼",
+      "stock_code": "285130"
+    },
+    {
+      "id": "company_321550",
+      "type": "Company",
+      "name": "티움바이오",
+      "stock_code": "321550"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_302440",
+      "to": "industry_bio_healthcare",
+      "evidence": "SK바이오사이언스의 최대주주 변동 대상은 SK케미칼(주), 변동일은 2023년 12월 18일, 보유주식수는 52,437,408주, 지분율은 68.25 %, 변동 사유는 주식매수선택권 행사에 따른 신주발행 (43,704주).",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_302440_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000936",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_285130",
+      "to": "company_321550",
+      "evidence": "SK바이오사이언스의 최대주주 변동 대상은 SK케미칼(주), 변동일은 2023년 12월 28일, 보유주식수는 52,147,132주, 지분율은 67.88 %, 변동 사유는 (주)티움바이오 신주 인수계약에 따른 현물출자 계약 이행 (290,276주).",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_302440_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313000936",
+      "evidence_published_at": "2026-03-13"
+    }
+  ]
+}

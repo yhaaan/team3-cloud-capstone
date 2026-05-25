@@ -24,9 +24,25 @@
       "type": "Company",
       "name": "삼성생명",
       "stock_code": "032830"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     }
   ],
   "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성바이오로직스의 최대주주 관련 인물/법인은 삼성물산, 관계는 최대주주, 당기말 보유주식수는 19,932,350주, 지분율은 43.06%.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
     {
       "type": "INVESTS_IN",
       "from": "company_028260",

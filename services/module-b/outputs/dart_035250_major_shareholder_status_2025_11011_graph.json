@@ -1,0 +1,77 @@
+{
+  "source_id": "dart_035250_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_035250",
+      "type": "Company",
+      "name": "강원랜드",
+      "stock_code": "035250"
+    },
+    {
+      "id": "industry_casino",
+      "type": "Industry",
+      "name": "카지노"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035250",
+      "to": "industry_casino",
+      "evidence": "강원랜드의 최대주주 관련 인물/법인은 한국광해광업공단, 관계는 본인, 당기말 보유주식수는 77,587,786주, 지분율은 36.27%.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_035250_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_casino",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 카지노 is part of 여행/레저.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_035250_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_035250_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_035250_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000917",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

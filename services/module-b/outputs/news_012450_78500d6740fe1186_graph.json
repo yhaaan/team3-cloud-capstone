@@ -6,7 +6,13 @@
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450",
-      "description": "에스토니아에 천무 다연장 로켓 등 방위산업 제품을 공급하는 방산 전문기업"
+      "description": "한화에어로스페이스는 다연장 정밀유도무기 천무를 생산하며 방산 생태계 강화에 기여하는 기업이다."
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
     },
     {
       "id": "company_000880",
@@ -15,43 +21,52 @@
       "stock_code": "000880"
     },
     {
-      "id": "business_area_rocket_systems",
-      "type": "BusinessArea",
-      "name": "다연장로켓"
-    },
-    {
-      "id": "business_area_defense_equipment",
-      "type": "BusinessArea",
-      "name": "방위산업"
-    },
-    {
-      "id": "product_service_cheonmu",
-      "type": "ProductService",
-      "name": "천무 다연장 정밀유도무기"
-    },
-    {
-      "id": "industry_defense",
+      "id": "industry_defense_aerospace",
       "type": "Industry",
-      "name": "방산"
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "product_service_precision_guided_multilaunch_rocket",
+      "type": "ProductService",
+      "name": "다연장 정밀유도무기"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_012450",
-      "to": "business_area_rocket_systems",
+      "to": "industry_defense_aerospace",
       "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
-      "date": "",
-      "evidence_source_id": "news_012450_78500d6740fe1186",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358",
-      "evidence_published_at": "2026-05-11T18:54:00+09:00"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_012450",
-      "to": "business_area_defense_equipment",
-      "evidence": "에스토니아군에 천무 3문을 추가 공급한다고 밝혔다.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
       "evidence_source_type": "news",
@@ -61,7 +76,7 @@
     {
       "type": "PRODUCES",
       "from": "company_012450",
-      "to": "product_service_cheonmu",
+      "to": "product_service_precision_guided_multilaunch_rocket",
       "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
@@ -71,19 +86,8 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_rocket_systems",
-      "to": "industry_defense",
-      "evidence": "천무 다연장로켓.",
-      "date": "",
-      "evidence_source_id": "news_012450_78500d6740fe1186",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358",
-      "evidence_published_at": "2026-05-11T18:54:00+09:00"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_defense_equipment",
-      "to": "industry_defense",
+      "from": "product_service_precision_guided_multilaunch_rocket",
+      "to": "industry_defense_aerospace",
       "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
@@ -92,10 +96,10 @@
       "evidence_published_at": "2026-05-11T18:54:00+09:00"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_cheonmu",
-      "to": "business_area_rocket_systems",
-      "evidence": "천무 다연장로켓.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
       "evidence_source_type": "news",
@@ -103,10 +107,10 @@
       "evidence_published_at": "2026-05-11T18:54:00+09:00"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_012450",
-      "to": "industry_defense",
-      "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
       "evidence_source_type": "news",
@@ -114,10 +118,43 @@
       "evidence_published_at": "2026-05-11T18:54:00+09:00"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_000880",
-      "to": "industry_defense",
-      "evidence": "앞으로도 발틱 지역에 한화의 방위 솔루션을 적극적으로 소개하며 에스토니아의 신뢰받는 전략적 파트너로 위상을 강화해 나가겠다.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_012450_78500d6740fe1186",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358",
+      "evidence_published_at": "2026-05-11T18:54:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_012450_78500d6740fe1186",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358",
+      "evidence_published_at": "2026-05-11T18:54:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_012450_78500d6740fe1186",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.nocutnews.co.kr/news/6515422?utm_source=naver&utm_medium=article&utm_campaign=20260511065358",
+      "evidence_published_at": "2026-05-11T18:54:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "",
       "evidence_source_id": "news_012450_78500d6740fe1186",
       "evidence_source_type": "news",

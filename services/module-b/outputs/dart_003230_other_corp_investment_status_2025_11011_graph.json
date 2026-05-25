@@ -6,26 +6,54 @@
       "type": "Company",
       "name": "삼양식품",
       "stock_code": "003230",
-      "description": "경영참여와 단순투자 목적의 다수 타법인 지분 보유"
+      "description": "식품 제조 및 판매를 주력으로 하는 기업입니다."
     },
     {
       "id": "company_005440",
       "type": "Company",
       "name": "현대지에프홀딩스",
-      "stock_code": "005440"
+      "stock_code": "005440",
+      "description": "식자재 유통 및 식품 서비스 사업을 하는 기업입니다."
     },
     {
       "id": "company_453340",
       "type": "Company",
       "name": "현대그린푸드",
-      "stock_code": "453340"
+      "stock_code": "453340",
+      "description": "외식 및 급식 사업을 운영하는 기업입니다."
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_food_service",
+      "type": "Industry",
+      "name": "외식/급식"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_003230",
-      "to": "company_005440",
+      "to": "industry_food_beverage",
+      "evidence": "삼양식품의 타법인 출자 대상은 (주)삼양스퀘어팩, 출자 목적은 경영참여, 최초 취득일은 -.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003230_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001082",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005440",
+      "to": "industry_food_service",
       "evidence": "삼양식품의 타법인 출자 대상은 현대지에프홀딩스, 출자 목적은 단순투자, 최초 취득일은 -, 당기말 보유수량은 209,396, 당기말 지분율은 0.1%, 장부가액은 1,742,175,000.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_003230_other_corp_investment_status_2025_11011",
@@ -34,10 +62,32 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_003230",
-      "to": "company_453340",
+      "type": "BELONGS_TO",
+      "from": "company_453340",
+      "to": "industry_food_service",
       "evidence": "삼양식품의 타법인 출자 대상은 (주)현대그린푸드, 출자 목적은 단순투자, 최초 취득일은 2023.04.11, 당기말 보유수량은 111,158, 당기말 지분율은 0.3%, 장부가액은 1,735,176,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003230_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001082",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_service",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 외식/급식 is part of 식품/음료.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_003230_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001082",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_003230_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

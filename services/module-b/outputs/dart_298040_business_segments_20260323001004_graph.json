@@ -6,17 +6,37 @@
       "type": "Company",
       "name": "효성중공업",
       "stock_code": "298040",
-      "description": "효성중공업은 중공업과 건설 부문을 주요 사업으로 하며 변압기, 차단기, 전동기 등 전력산업 설비와 주상복합, 아파트, 토목 건설 사업을 영위합니다."
+      "description": "중공업과 건설을 주력으로 하며 변압기, 차단기, 전동기, 플랜트, 수소충전소, 신재생에너지 사업에 집중"
     },
     {
-      "id": "business_area_industrial_equipment",
-      "type": "BusinessArea",
-      "name": "산업용 설비"
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
     },
     {
-      "id": "business_area_construction",
-      "type": "BusinessArea",
-      "name": "건설"
+      "id": "industry_power_equipment",
+      "type": "Industry",
+      "name": "전력장비"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_hydrogen_energy",
+      "type": "Industry",
+      "name": "수소에너지"
+    },
+    {
+      "id": "industry_wind_energy",
+      "type": "Industry",
+      "name": "풍력에너지"
+    },
+    {
+      "id": "industry_offshore_plant",
+      "type": "Industry",
+      "name": "해양플랜트"
     },
     {
       "id": "product_service_transformer",
@@ -34,41 +54,117 @@
       "name": "전동기"
     },
     {
-      "id": "product_service_reducer",
-      "type": "ProductService",
-      "name": "감속기"
-    },
-    {
-      "id": "product_service_residential_complex",
-      "type": "ProductService",
-      "name": "주상복합"
-    },
-    {
-      "id": "product_service_apartment",
-      "type": "ProductService",
-      "name": "아파트"
-    },
-    {
-      "id": "product_service_officetel",
-      "type": "ProductService",
-      "name": "오피스텔"
-    },
-    {
-      "id": "industry_energy",
+      "id": "industry_petrochemical",
       "type": "Industry",
-      "name": "에너지"
+      "name": "석유화학"
     },
     {
-      "id": "industry_construction",
+      "id": "product_service_plant_equipment",
+      "type": "ProductService",
+      "name": "플랜트용 핵심 장비"
+    },
+    {
+      "id": "industry_housing_construction",
       "type": "Industry",
-      "name": "건설"
+      "name": "주택건설"
+    },
+    {
+      "id": "industry_civil_engineering",
+      "type": "Industry",
+      "name": "토목엔지니어링"
+    },
+    {
+      "id": "product_service_asset_management",
+      "type": "ProductService",
+      "name": "전력설비 자산관리"
+    },
+    {
+      "id": "product_service_hvdc_system",
+      "type": "ProductService",
+      "name": "직류송전시스템"
+    },
+    {
+      "id": "product_service_statcom",
+      "type": "ProductService",
+      "name": "STATCOM"
+    },
+    {
+      "id": "product_service_ess",
+      "type": "ProductService",
+      "name": "ESS"
+    },
+    {
+      "id": "product_service_hydrogen_refueling_station",
+      "type": "ProductService",
+      "name": "수소충전소"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_298040",
-      "to": "business_area_industrial_equipment",
+      "to": "industry_construction_infrastructure",
+      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_power_equipment",
       "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 전력산업의 핵심 설비인 변압기, 차단기와 산업 생산설비 등에 광범위하게 이용되는 전동기, 감속기 등이 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
@@ -77,10 +173,43 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_298040",
-      "to": "business_area_construction",
-      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "to": "industry_energy_utility",
+      "evidence": "액화수소플랜트, ESS(Energy Storage System)를 중심으로 신재생에너지, 분산발전원과 연계된 신규 사업을 지속적으로 강화하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_hydrogen_energy",
+      "evidence": "최근에는 액화수소 생산 등 수소 밸류체인 전반으로 사업 영역을 확장하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_wind_energy",
+      "evidence": "풍력발전 사업의 경우, 기존 육상 중심의 사업 경험을 바탕으로 대용량 해상풍력터빈 분야까지 단계적으로 확대해 나갈 계획입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_offshore_plant",
+      "evidence": "고정밀 기어와 플랜트용 핵심 장비를 공급하여 석유화학 등 중화학 산업 전반의 기반 설비 수요에 대응하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -113,7 +242,18 @@
       "type": "PRODUCES",
       "from": "company_298040",
       "to": "product_service_electric_motor",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 전력산업의 핵심 설비인 변압기, 차단기와 산업 생산설비 등에 광범위하게 이용되는 전동기, 감속기 등이 있습니다.",
+      "evidence": "전력산업의 핵심 설비인 변압기, 차단기와 산업 생산설비 등에 광범위하게 이용되는 전동기, 감속기 등이 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_petrochemical",
+      "evidence": "플랜트용 핵심 장비를 공급하여 석유화학 등 중화학 산업 전반의 기반 설비 수요에 대응하고 있습니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -123,8 +263,30 @@
     {
       "type": "PRODUCES",
       "from": "company_298040",
-      "to": "product_service_reducer",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 전력산업의 핵심 설비인 변압기, 차단기와 산업 생산설비 등에 광범위하게 이용되는 전동기, 감속기 등이 있습니다.",
+      "to": "product_service_plant_equipment",
+      "evidence": "고정밀 기어와 플랜트용 핵심 장비를 공급하여 석유화학 등 중화학 산업 전반의 기반 설비 수요에 대응하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_housing_construction",
+      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_298040",
+      "to": "industry_civil_engineering",
+      "evidence": "토목부문은 경제활동의 근간이 되는 도로, 항만, 철도 등 사회간접자본시설을 생산하는 국가 경제의 기간산업입니다.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -134,8 +296,8 @@
     {
       "type": "PRODUCES",
       "from": "company_298040",
-      "to": "product_service_residential_complex",
-      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "to": "product_service_asset_management",
+      "evidence": "IT기반 전력설비 자산관리(Asset Management), 초고압 직류송전시스템(HVDC), STATCOM과 같은 사업을...",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -145,8 +307,8 @@
     {
       "type": "PRODUCES",
       "from": "company_298040",
-      "to": "product_service_apartment",
-      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "to": "product_service_hvdc_system",
+      "evidence": "IT기반 전력설비 자산관리(Asset Management), 초고압 직류송전시스템(HVDC), STATCOM과 같은 사업을...",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -156,8 +318,30 @@
     {
       "type": "PRODUCES",
       "from": "company_298040",
-      "to": "product_service_officetel",
-      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "to": "product_service_statcom",
+      "evidence": "IT기반 전력설비 자산관리(Asset Management), 초고압 직류송전시스템(HVDC), STATCOM과 같은 사업을...",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_298040",
+      "to": "product_service_ess",
+      "evidence": "액화수소플랜트, ESS(Energy Storage System)를 중심으로 신재생에너지, 분산발전원과 연계된 신규 사업을 지속적으로 강화하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_298040",
+      "to": "product_service_hydrogen_refueling_station",
+      "evidence": "수소모빌리티 인프라 구축을 위한 수소충전소 사업을 지속적으로 확대하고 있으며...",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -166,9 +350,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_industrial_equipment",
-      "to": "industry_energy",
-      "evidence": "당사의 중공업 부문은 전력산업과 산업용 생산설비 중심으로 구성되어 있습니다.",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유화학 is part of 화학소재.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -177,9 +361,42 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_construction",
-      "to": "industry_construction",
-      "evidence": "당사의 건설 부문은 국내외에서 주택사업, 재개발ㆍ재건축사업, 업무ㆍ상업시설, 토목ㆍ환경, SOC(사회간접자본) 사업 다양한 건설 사업을 영위하고 있습니다.",
+      "from": "industry_offshore_plant",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 해양플랜트 is part of 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -188,9 +405,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_transformer",
-      "to": "business_area_industrial_equipment",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 변압기, 차단기, 전동기, 감속기 등이 있습니다.",
+      "from": "industry_housing_construction",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 주택건설 is part of 건설인프라.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -199,9 +416,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_circuit_breaker",
-      "to": "business_area_industrial_equipment",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 변압기, 차단기, 전동기, 감속기 등이 있습니다.",
+      "from": "industry_civil_engineering",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 토목엔지니어링 is part of 건설인프라.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -210,9 +427,53 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_electric_motor",
-      "to": "business_area_industrial_equipment",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 변압기, 차단기, 전동기, 감속기 등이 있습니다.",
+      "from": "industry_wind_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 풍력에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -221,9 +482,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_reducer",
-      "to": "business_area_industrial_equipment",
-      "evidence": "당사의 중공업 부문에서 생산 및 판매 중인 주요 제품으로는 변압기, 차단기, 전동기, 감속기 등이 있습니다.",
+      "from": "industry_hydrogen_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 수소에너지 is part of 에너지/유틸리티.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -232,9 +493,53 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_residential_complex",
-      "to": "business_area_construction",
-      "evidence": "당사의 건설 부문은 주상복합, 아파트, 오피스텔 등 다양한 건설 사업을 영위하고 있습니다.",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력장비 is part of 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -243,9 +548,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_apartment",
-      "to": "business_area_construction",
-      "evidence": "당사의 건설 부문은 주상복합, 아파트, 오피스텔 등 다양한 건설 사업을 영위하고 있습니다.",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",
@@ -253,10 +558,98 @@
       "evidence_published_at": "2026-03-23"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_officetel",
-      "to": "business_area_construction",
-      "evidence": "당사의 건설 부문은 주상복합, 아파트, 오피스텔 등 다양한 건설 사업을 영위하고 있습니다.",
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_298040_business_segments_20260323001004",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001004",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-23",
       "evidence_source_id": "dart_298040_business_segments_20260323001004",
       "evidence_source_type": "dart",

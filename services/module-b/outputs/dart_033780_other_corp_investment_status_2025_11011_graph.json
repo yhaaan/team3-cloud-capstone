@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "KT&G",
       "stock_code": "033780",
-      "description": "타법인 출자를 통한 경영참여 및 단순투자 사업을 영위함"
+      "description": "담배, 건강기능식품, 바이오 및 의약품 사업을 영위함"
     },
     {
       "id": "company_003520",
@@ -15,16 +15,16 @@
       "stock_code": "003520"
     },
     {
-      "id": "company_277070",
-      "type": "Company",
-      "name": "린드먼아시아",
-      "stock_code": "277070"
-    },
-    {
       "id": "company_059090",
       "type": "Company",
       "name": "미코",
       "stock_code": "059090"
+    },
+    {
+      "id": "company_277070",
+      "type": "Company",
+      "name": "린드먼아시아",
+      "stock_code": "277070"
     },
     {
       "id": "company_041510",
@@ -51,23 +51,57 @@
       "stock_code": "000880"
     },
     {
-      "id": "company_001680",
-      "type": "Company",
-      "name": "대상",
-      "stock_code": "001680"
+      "id": "industry_tobacco",
+      "type": "Industry",
+      "name": "담배"
     },
     {
-      "id": "business_area_private_equity_fund",
-      "type": "BusinessArea",
-      "name": "사모부동산투자신탁"
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_health_functional_food",
+      "type": "Industry",
+      "name": "건강기능성식품"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_033780",
-      "to": "company_003520",
-      "evidence": "KT&G의 타법인 출자 대상은 영진약품㈜, 출자 목적은 경영참여, 최초 취득일은 2003.11.24, 당기말 보유수량은 95,928,655, 당기말 지분율은 52.45%, 장부가액은 73,299,000,000.",
+      "to": "industry_tobacco",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜한국인삼공사, 출자 목적은 경영참여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -75,10 +109,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_033780",
-      "to": "company_277070",
-      "evidence": "KT&G의 타법인 출자 대상은 린드먼아시아투자조합14호, 출자 목적은 단순투자, 최초 취득일은 2019.12.20, 당기말 지분율은 6.00%, 장부가액은 794,000,000.",
+      "to": "industry_health_functional_food",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜코스모코스, 출자 목적은 경영참여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -86,10 +120,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_033780",
-      "to": "company_059090",
-      "evidence": "KT&G의 타법인 출자 대상은 ㈜미코파워, 출자 목적은 단순투자, 최초 취득일은 2021.12.21, 당기말 보유수량은 32,430, 당기말 지분율은 1.15%, 장부가액은 3,750,000,000.",
+      "to": "industry_bio_healthcare",
+      "evidence": "KT&G의 타법인 출자 대상은 영진약품㈜, 출자 목적은 경영참여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -97,10 +131,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_033780",
-      "to": "company_041510",
-      "evidence": "KT&G의 타법인 출자 대상은 ㈜에스엠랩, 출자 목적은 단순투자, 최초 취득일은 2021.12.20, 당기말 보유수량은 177,968, 당기말 지분율은 0.57%.",
+      "type": "BELONGS_TO",
+      "from": "company_003520",
+      "to": "industry_bio_healthcare",
+      "evidence": "KT&G의 타법인 출자 대상은 영진약품㈜, 출자 목적은 경영참여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -108,10 +142,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_033780",
-      "to": "company_255220",
-      "evidence": "KT&G의 타법인 출자 대상은 SG, 출자 목적은 단순투자, 최초 취득일은 - , 당기말 보유수량과 지분율 등이 별도로 명기되어 있지 않음.",
+      "type": "BELONGS_TO",
+      "from": "company_277070",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 린드먼아시아투자조합14호, 출자 목적은 단순투자...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -119,10 +153,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_033780",
-      "to": "company_261520",
-      "evidence": "KT&G의 타법인 출자 대상은 이지스글로벌전문투자형사모부동산투자신탁378-2호 등 이지스 관련 사모 부동산 투자신탁들에 단순투자 목적 출자.",
+      "type": "BELONGS_TO",
+      "from": "company_059090",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜미코파워, 출자 목적은 단순투자...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -130,10 +164,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_033780",
-      "to": "company_000880",
-      "evidence": "KT&G의 타법인 출자 대상은 한화 Debt Strategy 전문투자형 사모부동산투자신탁 22호, 출자 목적은 단순투자, 최초 취득일은 2022.11.22, 당기말 지분율은 13.63%, 장부가액은 8,004,000,000.",
+      "type": "BELONGS_TO",
+      "from": "company_041510",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜에스엠랩, 출자 목적은 단순투자...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -141,10 +175,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_033780",
-      "to": "company_001680",
-      "evidence": "KT&G의 타법인 출자 대상은 대상(001680), 출자 목적은 명확히 경영참여나 단순투자로 특정되지 않았으나 목록에 포함되어 있음.",
+      "type": "BELONGS_TO",
+      "from": "company_255220",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 SG, 출자 목적은 단순투자...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -152,10 +186,98 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_261520",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜이지스, 출자 목적은 단순투자...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_finance",
+      "evidence": "KT&G의 타법인 출자 대상은 한화 Debt Strategy 전문투자형 사모부동산투자신탁 22호, 출자 목적은 단순투자...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_033780",
-      "to": "business_area_private_equity_fund",
-      "evidence": "KT&G의 타법인 출자 대상은 다수의 사모부동산투자신탁에 단순투자 및 경영참여 목적 출자가 다수 포함됨.",
+      "to": "industry_real_estate",
+      "evidence": "KT&G의 타법인 출자 대상은 ㈜스타필드수원, 출자 목적은 경영참여...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_health_functional_food",
+      "to": "industry_bio_healthcare",
+      "evidence": "Industry taxonomy: 건강기능성식품 is part of 바이오/헬스케어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_tobacco",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 담배 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001422",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_033780_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

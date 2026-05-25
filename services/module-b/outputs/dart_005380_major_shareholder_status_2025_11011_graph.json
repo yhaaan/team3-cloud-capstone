@@ -5,8 +5,7 @@
       "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380",
-      "description": "자동차 제조 및 판매를 주요 사업으로 하는 기업입니다."
+      "stock_code": "005380"
     },
     {
       "id": "company_012330",
@@ -15,115 +14,41 @@
       "stock_code": "012330"
     },
     {
-      "id": "person_호세_무뇨스",
-      "type": "Person",
-      "name": "호세 무뇨스",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
     },
     {
-      "id": "person_서강현",
-      "type": "Person",
-      "name": "서강현",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
     },
     {
-      "id": "person_이동석",
-      "type": "Person",
-      "name": "이동석",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
     },
     {
-      "id": "person_Eugene_M_Ohr",
-      "type": "Person",
-      "name": "Eugene M. Ohr",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "person_이승조",
-      "type": "Person",
-      "name": "이승조",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     },
     {
-      "id": "person_김수이",
-      "type": "Person",
-      "name": "김수이",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_도진명_Jim_Myong_Doh",
-      "type": "Person",
-      "name": "도진명Jim Myong Doh",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_벤자민_탄",
-      "type": "Person",
-      "name": "벤자민 탄",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_정몽구",
-      "type": "Person",
-      "name": "정몽구",
-      "role_raw": "기타",
-      "role": "OTHER",
-      "role_label": "기타"
-    },
-    {
-      "id": "person_정성이",
-      "type": "Person",
-      "name": "정성이",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_정명이",
-      "type": "Person",
-      "name": "정명이",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
-    },
-    {
-      "id": "person_정의선",
-      "type": "Person",
-      "name": "정의선",
-      "role_raw": "대표이사",
-      "role": "CEO",
-      "role_label": "대표이사"
-    },
-    {
-      "id": "person_장재훈",
-      "type": "Person",
-      "name": "장재훈",
-      "role_raw": "계열회사 임원",
-      "role": "OTHER",
-      "role_label": "계열회사 임원"
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_012330",
-      "to": "company_005380",
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_automobile_manufacturing",
       "evidence": "현대차의 최대주주 관련 인물/법인은 현대모비스, 관계는 본인, 당기말 보유주식수는 45,782,023주, 지분율은 22.36%.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
@@ -132,10 +57,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_호세_무뇨스",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 호세 무뇨스, 관계는 계열회사 임원, 당기말 보유주식수는 13,333주, 지분율은 0.01%, 비고는 자사주 상여금 지급 ('25.7.31).",
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_auto_parts",
+      "evidence": "현대차의 최대주주 관련 인물/법인은 현대모비스, 관계는 본인, 당기말 보유주식수는 45,782,023주, 지분율은 22.36%.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -143,10 +68,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_서강현",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 서강현, 관계는 계열회사 임원, 당기말 보유주식수는 400주, 지분율은 0.00%.",
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -154,10 +79,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이동석",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 이동석, 관계는 계열회사 임원, 당기말 보유주식수는 858주, 지분율은 0.00%.",
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -165,10 +90,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_Eugene_M_Ohr",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 Eugene M. Ohr, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 퇴임 ('25.3.20).",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -176,10 +101,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_이승조",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 이승조, 관계는 계열회사 임원, 당기말 보유주식수는 447주, 지분율은 0.00%.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",
@@ -187,87 +112,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_김수이",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 김수이, 관계는 계열회사 임원, 당기말 보유주식수는 250주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20).",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_도진명_Jim_Myong_Doh",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 도진명Jim Myong Doh, 관계는 계열회사 임원, 당기말 보유주식수는 300주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20).",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_벤자민_탄",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 벤자민 탄, 관계는 계열회사 임원, 당기말 보유주식수는 1,200주, 지분율은 0.00%, 비고는 등기임원 신규선임 ('25.3.20).",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정몽구",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 정몽구, 관계는 기타, 당기말 보유주식수는 11,395,859주, 지분율은 5.57%.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정성이",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 정성이, 관계는 계열회사 임원, 당기말 보유주식수는 1,445주, 지분율은 0.00%.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정명이",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 정명이, 관계는 계열회사 임원, 당기말 보유주식수는 1,445주, 지분율은 0.00%.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_정의선",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 정의선, 관계는 대표이사, 당기말 보유주식수는 5,598,478주, 지분율은 2.73%.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_장재훈",
-      "to": "company_005380",
-      "evidence": "현대차의 최대주주 관련 인물/법인은 장재훈, 관계는 계열회사 임원, 당기말 보유주식수는 0주, 지분율은 0.00%, 비고는 등기임원 사임 ('24.12.31).",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

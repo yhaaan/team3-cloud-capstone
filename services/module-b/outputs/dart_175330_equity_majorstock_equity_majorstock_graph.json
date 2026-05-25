@@ -1,0 +1,63 @@
+{
+  "source_id": "dart_175330_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_175330",
+      "type": "Company",
+      "name": "JB금융지주",
+      "stock_code": "175330",
+      "description": "금융지주회사로 금융업을 주요 사업으로 영위"
+    },
+    {
+      "id": "company_145990",
+      "type": "Company",
+      "name": "삼양사",
+      "stock_code": "145990"
+    },
+    {
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_175330",
+      "to": "industry_financial_holding",
+      "evidence": "JB금융지주",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_175330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000513",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_175330",
+      "to": "industry_finance",
+      "evidence": "JB금융지주",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_175330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000513",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_175330_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000513",
+      "evidence_published_at": "2026-04-07"
+    }
+  ]
+}

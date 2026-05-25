@@ -6,42 +6,77 @@
       "type": "Company",
       "name": "현대차",
       "stock_code": "005380",
-      "description": "자동차 제조 및 판매 사업을 주력으로 하는 기업"
+      "description": "자동차 제조 및 판매를 주요 사업으로 하는 기업"
     },
     {
       "id": "company_064350",
       "type": "Company",
       "name": "현대로템",
       "stock_code": "064350",
-      "description": "철도차량 제조 및 판매 사업을 영위하는 기업"
+      "description": "철도차량 제조 및 판매를 주력으로 하는 기업"
     },
     {
-      "id": "business_area_automotive",
-      "type": "BusinessArea",
-      "name": "자동차"
-    },
-    {
-      "id": "business_area_railway_vehicle_manufacturing",
-      "type": "BusinessArea",
-      "name": "철도차량 제조"
-    },
-    {
-      "id": "industry_automotive",
+      "id": "industry_rail_vehicle",
       "type": "Industry",
-      "name": "자동차"
+      "name": "철도차량"
     },
     {
-      "id": "industry_transportation_equipment",
+      "id": "industry_automobile_manufacturing",
       "type": "Industry",
-      "name": "운송장비"
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_005380",
-      "to": "business_area_automotive",
-      "evidence": "현대차의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대차의 사업보고서 (2025.12)에 기반한 회사 주력 사업은 자동차 제조 및 판매임.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
       "evidence_source_type": "dart",
@@ -49,10 +84,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_064350",
-      "to": "business_area_railway_vehicle_manufacturing",
-      "evidence": "현대로템(주) | 1999-07-01 | 경남 창원시 의창구 창원대로 488 | 철도차량 제조 및 판매",
+      "to": "industry_rail_vehicle",
+      "evidence": "현대로템(주) | 1999-07-01 | ... | 철도차량 제조 및 판매",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
       "evidence_source_type": "dart",
@@ -61,9 +96,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_automotive",
-      "to": "industry_automotive",
-      "evidence": "현대차의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "자동차제조는 자동차/모빌리티 산업의 하위 분야임.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
       "evidence_source_type": "dart",
@@ -72,9 +107,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_railway_vehicle_manufacturing",
-      "to": "industry_transportation_equipment",
-      "evidence": "현대로템(주) | 1999-07-01 | 경남 창원시 의창구 창원대로 488 | 철도차량 제조 및 판매",
+      "from": "industry_rail_vehicle",
+      "to": "industry_mobility",
+      "evidence": "철도차량은 자동차/모빌리티 산업 내의 세부 사업 영역임.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
       "evidence_source_type": "dart",
@@ -82,10 +117,109 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_005380",
-      "to": "company_064350",
-      "evidence": "현대차의 연결대상 종속회사 후보로 현대로템 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001394",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_005380_consolidated_subsidiary_status_20260318001394",
       "evidence_source_type": "dart",

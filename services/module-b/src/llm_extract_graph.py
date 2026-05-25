@@ -2,12 +2,16 @@
 
 import json
 import os
+import random
+import time
 from pathlib import Path
 from typing import Any
 
 import requests
 from dotenv import load_dotenv
 from jsonschema import validate
+
+from log_utils import log_with_timestamp
 
 from company_whitelist import load_default_company_whitelist
 from industry_taxonomy import load_default_industry_taxonomy
@@ -20,6 +24,7 @@ ROOT_DIR = MODULE_B_DIR.parent.parent
 ONTOLOGY_PATH = ROOT_DIR / "docs" / "ontology.md"
 GRAPH_SCHEMA_PATH = ROOT_DIR / "schemas" / "graph_schema.json"
 OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses"
+RETRYABLE_OPENAI_STATUS_CODES = {429, 500, 502, 503, 504}
 
 load_dotenv()
 
@@ -168,6 +173,7 @@ def extract_graph_with_openai(
     api_key: str | None = None,
     model: str | None = None,
     timeout: int = 60,
+    max_retries: int = 5,
 ) -> dict[str, Any]:
     resolved_api_key = api_key or os.getenv("OPENAI_API_KEY")
     resolved_model = model or os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
@@ -189,20 +195,57 @@ def extract_graph_with_openai(
         "Content-Type": "application/json",
     }
 
-    response = requests.post(
-        OPENAI_RESPONSES_URL,
+    response_json = post_openai_response_with_retry(
         headers=headers,
-        json=payload,
+        payload=payload,
         timeout=timeout,
+        max_retries=max_retries,
     )
-    response.raise_for_status()
-
-    response_json = response.json()
     output_text = extract_output_text(response_json)
     graph_data = json.loads(output_text)
     graph_data = normalize_graph_roles(graph_data, load_default_company_whitelist(), doc)
     validate(instance=graph_data, schema=load_json_file(GRAPH_SCHEMA_PATH))
     return graph_data
+
+
+def post_openai_response_with_retry(
+    headers: dict[str, str],
+    payload: dict[str, Any],
+    timeout: int,
+    max_retries: int = 5,
+) -> dict[str, Any]:
+    last_error: Exception | None = None
+    attempts = max(1, max_retries)
+
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.post(
+                OPENAI_RESPONSES_URL,
+                headers=headers,
+                json=payload,
+                timeout=timeout,
+            )
+            if response.status_code not in RETRYABLE_OPENAI_STATUS_CODES:
+                response.raise_for_status()
+                return response.json()
+
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            last_error = exc
+            status_code = exc.response.status_code if exc.response is not None else None
+            if status_code is not None and status_code not in RETRYABLE_OPENAI_STATUS_CODES:
+                raise
+            if attempt == attempts:
+                break
+
+            sleep_seconds = min(60.0, (2 ** (attempt - 1)) + random.uniform(0.0, 1.0))
+            log_with_timestamp(
+                f"[WARN] OpenAI graph extraction retry {attempt}/{attempts} "
+                f"after failure: {exc}"
+            )
+            time.sleep(sleep_seconds)
+
+    raise RuntimeError(f"OpenAI graph extraction failed after retries: {last_error}")
 
 
 def extract_output_text(response_json: dict[str, Any]) -> str:

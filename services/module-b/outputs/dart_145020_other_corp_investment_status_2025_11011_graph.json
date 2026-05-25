@@ -1,0 +1,63 @@
+{
+  "source_id": "dart_145020_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_145020",
+      "type": "Company",
+      "name": "휴젤",
+      "stock_code": "145020",
+      "description": "주로 필러제조판매 중심의 바이오/헬스케어 사업과 글로벌 시장 경영참여 활동을 영위한다."
+    },
+    {
+      "id": "company_226950",
+      "type": "Company",
+      "name": "올릭스",
+      "stock_code": "226950"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "product_service_filler",
+      "type": "ProductService",
+      "name": "필러"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_145020",
+      "to": "industry_bio_healthcare",
+      "evidence": "휴젤의 타법인 출자 대상은 ㈜아크로스, 출자 목적은 경영참여 (필러제조판매)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_145020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000349",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_145020",
+      "to": "product_service_filler",
+      "evidence": "휴젤의 타법인 출자 대상은 ㈜아크로스, 출자 목적은 경영참여 (필러제조판매)",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_145020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000349",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_145020",
+      "to": "company_226950",
+      "evidence": "휴젤의 타법인 출자 대상은 올릭스㈜, 출자 목적은 일반투자 (공동연구개발), 최초 취득일은 2015.06.25.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_145020_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000349",
+      "evidence_published_at": "2026-03-20"
+    }
+  ]
+}

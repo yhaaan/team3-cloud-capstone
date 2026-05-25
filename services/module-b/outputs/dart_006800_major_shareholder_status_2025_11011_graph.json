@@ -6,12 +6,18 @@
       "type": "Company",
       "name": "미래에셋증권",
       "stock_code": "006800",
-      "description": "금융투자업을 영위하는 증권회사"
+      "description": "금융투자업을 주력으로 하는 종합증권사"
+    },
+    {
+      "id": "company_098460",
+      "type": "Company",
+      "name": "고영",
+      "stock_code": "098460"
     },
     {
       "id": "industry_finance",
       "type": "Industry",
-      "name": "finance"
+      "name": "금융"
     }
   ],
   "relations": [
@@ -19,7 +25,18 @@
       "type": "BELONGS_TO",
       "from": "company_006800",
       "to": "industry_finance",
-      "evidence": "미래에셋증권의 최대주주 관련 인물/법인은 미래에셋캐피탈, 계열회사 임원, 발행회사 임원 등이 있으며, 미래에셋증권은 금융투자업을 영위하는 증권회사임.",
+      "evidence": "미래에셋증권의 최대주주 관련 인물/법인은 미래에셋캐피탈㈜, 관계는 최대주주, 당기말 보유주식수는 187,879,645주, 지분율은 33.13%",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_006800_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515002972",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_098460",
+      "to": "industry_finance",
+      "evidence": "미래에셋증권의 최대주주 관련 인물/법인은 고영철, 관계는 기타, 당기말 보유주식수는 22,000주, 지분율은 0.00%, 비고는 장내매도.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_006800_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450",
-      "description": "다연장로켓 등 정밀유도무기 제작 및 방산 분야 사업을 영위"
+      "description": "다연장 정밀유도무기 '천무'를 제작·공급하는 방산회사"
     },
     {
       "id": "company_000880",
@@ -15,47 +15,56 @@
       "stock_code": "000880"
     },
     {
-      "id": "business_area_missile",
-      "type": "BusinessArea",
-      "name": "미사일"
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
     },
     {
-      "id": "business_area_military_weapon",
-      "type": "BusinessArea",
-      "name": "방산"
-    },
-    {
-      "id": "productservice_multilaunch_rocket",
+      "id": "product_service_multiple_rocket_launcher",
       "type": "ProductService",
       "name": "다연장로켓"
     },
     {
-      "id": "productservice_guided_weapon",
+      "id": "product_service_guided_weapon",
       "type": "ProductService",
       "name": "정밀유도무기"
     },
     {
-      "id": "industry_defense",
+      "id": "industry_machinery",
       "type": "Industry",
-      "name": "방위산업"
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_012450",
-      "to": "business_area_missile",
-      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
-      "date": "",
-      "evidence_source_id": "news_012450_3d377dc6ce51a993",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
-      "evidence_published_at": "2026-05-11T17:51:00+09:00"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_012450",
-      "to": "business_area_military_weapon",
+      "to": "industry_defense_aerospace",
       "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
@@ -66,7 +75,7 @@
     {
       "type": "PRODUCES",
       "from": "company_012450",
-      "to": "productservice_multilaunch_rocket",
+      "to": "product_service_multiple_rocket_launcher",
       "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
@@ -77,7 +86,7 @@
     {
       "type": "PRODUCES",
       "from": "company_012450",
-      "to": "productservice_guided_weapon",
+      "to": "product_service_guided_weapon",
       "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
@@ -87,9 +96,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_missile",
-      "to": "industry_defense",
-      "evidence": "천무 다연장로켓 방산 사업과 관련",
+      "from": "product_service_multiple_rocket_launcher",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
       "evidence_source_type": "news",
@@ -98,9 +107,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_military_weapon",
-      "to": "industry_defense",
-      "evidence": "천무 다연장로켓 방산 사업과 관련",
+      "from": "product_service_guided_weapon",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스가 제작한 다연장 정밀유도무기 '천무'가 에스토니아에 추가 공급된다.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
       "evidence_source_type": "news",
@@ -108,10 +117,10 @@
       "evidence_published_at": "2026-05-11T17:51:00+09:00"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_multilaunch_rocket",
-      "to": "business_area_military_weapon",
-      "evidence": "천무 다연장로켓은 정밀유도무기 방산 사업에 속함",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
       "evidence_source_type": "news",
@@ -119,10 +128,54 @@
       "evidence_published_at": "2026-05-11T17:51:00+09:00"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_guided_weapon",
-      "to": "business_area_military_weapon",
-      "evidence": "천무 다연장로켓은 정밀유도무기 방산 사업에 속함",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_012450_3d377dc6ce51a993",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.busan.com/view/busan/view.php?code=2026051115465564340",
+      "evidence_published_at": "2026-05-11T17:51:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "",
       "evidence_source_id": "news_012450_3d377dc6ce51a993",
       "evidence_source_type": "news",

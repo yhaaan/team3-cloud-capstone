@@ -6,39 +6,120 @@
       "type": "Company",
       "name": "대우건설",
       "stock_code": "047040",
-      "description": "대우건설은 토목, 건축, 플랜트, 기타 부문에서 도로, 아파트, LNG, 투자자산운용 등 사업을 영위합니다."
+      "description": "토목, 건축, 플랜트, 투자개발 및 부동산 임대 등 사업을 영위하는 건설 전문 기업입니다."
     },
     {
-      "id": "business_area_토목",
-      "type": "BusinessArea",
-      "name": "토목"
-    },
-    {
-      "id": "business_area_건축",
-      "type": "BusinessArea",
-      "name": "건축"
-    },
-    {
-      "id": "business_area_플랜트",
-      "type": "BusinessArea",
-      "name": "플랜트"
-    },
-    {
-      "id": "business_area_기타",
-      "type": "BusinessArea",
-      "name": "기타"
-    },
-    {
-      "id": "industry_건설",
+      "id": "industry_construction_infrastructure",
       "type": "Industry",
-      "name": "건설"
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_civil_engineering",
+      "type": "Industry",
+      "name": "토목엔지니어링"
+    },
+    {
+      "id": "industry_housing_construction",
+      "type": "Industry",
+      "name": "주택건설"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_petrochemical",
+      "type": "Industry",
+      "name": "석유화학"
+    },
+    {
+      "id": "industry_nuclear_power",
+      "type": "Industry",
+      "name": "원자력전력"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_hotel_resort",
+      "type": "Industry",
+      "name": "호텔/리조트"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047040",
-      "to": "business_area_토목",
+      "to": "industry_construction_infrastructure",
       "evidence": "현재 당사가 영위하는 사업은 크게 토목부문, 건축부문, 플랜트부문, 기타부문으로 나눌 수 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
@@ -47,10 +128,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047040",
-      "to": "business_area_건축",
-      "evidence": "현재 당사가 영위하는 사업은 크게 토목부문, 건축부문, 플랜트부문, 기타부문으로 나눌 수 있습니다.",
+      "to": "industry_civil_engineering",
+      "evidence": "토 목: 도로, 교량, 항만, 철도, 지하철, 수자원, 환경, 신재생에너지 등",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -58,10 +139,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047040",
-      "to": "business_area_플랜트",
-      "evidence": "현재 당사가 영위하는 사업은 크게 토목부문, 건축부문, 플랜트부문, 기타부문으로 나눌 수 있습니다.",
+      "to": "industry_housing_construction",
+      "evidence": "건 축: 아파트, 주상복합, 오피스텔, 비주거시설(상업시설, 오피스, 데이터센터 등) 등",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -69,10 +150,76 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047040",
-      "to": "business_area_기타",
-      "evidence": "현재 당사가 영위하는 사업은 크게 토목부문, 건축부문, 플랜트부문, 기타부문으로 나눌 수 있습니다.",
+      "to": "industry_energy_utility",
+      "evidence": "플 랜 트: Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_petrochemical",
+      "evidence": "플 랜 트: Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_nuclear_power",
+      "evidence": "플 랜 트: Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_renewable_energy",
+      "evidence": "플 랜 트: Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_real_estate",
+      "evidence": "기 타: 국내외 투자개발(부동산, IPP, PPP), 투자자산운용, 부동산 임대, 호텔업 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047040",
+      "to": "industry_hotel_resort",
+      "evidence": "기 타: 국내외 투자개발(부동산, IPP, PPP), 투자자산운용, 부동산 임대, 호텔업 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001680",
+      "to": "industry_food_beverage",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 건설, 공급, 공급망, 생산, 서비스, 수소, 수주, 에너지, 전지, 제품, 플랜트, 화학이다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -81,9 +228,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_토목",
-      "to": "industry_건설",
-      "evidence": "대우건설은 토목부문에서 도로, 교량, 항만, 철도, 지하철, 수자원, 환경, 신재생에너지 등을 수행합니다.",
+      "from": "industry_civil_engineering",
+      "to": "industry_construction_infrastructure",
+      "evidence": "토 목: 도로, 교량, 항만, 철도, 지하철, 수자원, 환경, 신재생에너지 등",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -92,9 +239,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_건축",
-      "to": "industry_건설",
-      "evidence": "대우건설은 건축부문에서 아파트, 주상복합, 오피스텔, 비주거시설(상업시설, 오피스, 데이터센터 등)을 수행합니다.",
+      "from": "industry_housing_construction",
+      "to": "industry_construction_infrastructure",
+      "evidence": "건 축: 아파트, 주상복합, 오피스텔, 비주거시설(상업시설, 오피스, 데이터센터 등) 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_petrochemical",
+      "to": "industry_energy_utility",
+      "evidence": "플 랜 트: Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_hotel_resort",
+      "to": "industry_real_estate",
+      "evidence": "기 타: 국내외 투자개발(부동산, IPP, PPP), 투자자산운용, 부동산 임대, 호텔업 등",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -103,9 +272,42 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_플랜트",
-      "to": "industry_건설",
-      "evidence": "대우건설은 플랜트부문에서 Oil&Gas, LNG, Petrochemical, 복합화력발전, 원자력발전 및 유관사업, 신재생에너지, 산업설비 등을 수행합니다.",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유화학 is part of 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",
@@ -114,9 +316,207 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_기타",
-      "to": "industry_건설",
-      "evidence": "대우건설은 기타부문에서 국내외 투자개발(부동산, IPP, PPP), 투자자산운용, 부동산 임대, 호텔업 등을 수행합니다.",
+      "from": "industry_nuclear_power",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 원자력전력 is part of 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hotel_resort",
+      "to": "industry_travel_leisure",
+      "evidence": "Industry taxonomy: 호텔/리조트 is part of 여행/레저.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047040_business_segments_20260318001029",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001029",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047040_business_segments_20260318001029",
       "evidence_source_type": "dart",

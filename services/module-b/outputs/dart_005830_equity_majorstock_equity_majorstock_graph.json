@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "DB손해보험",
       "stock_code": "005830",
-      "description": "DB손해보험은 손해보험업을 주력 사업으로 영위하는 회사입니다."
+      "description": "보험업을 영위하는 회사"
     },
     {
       "id": "company_000990",
@@ -23,37 +23,20 @@
     {
       "id": "industry_insurance",
       "type": "Industry",
-      "name": "insurance"
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_005830",
-      "to": "company_012030",
-      "evidence": "보고사유는 - 특별관계자 (김남호) 보유 주식 중 일부 주식 계약 사항 변경 - 계열회사 (DB Inc.) 의 당사 주식 매수.",
-      "date": "2026-05-07",
-      "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000592",
-      "evidence_published_at": "2026-05-07"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_005830",
-      "to": "company_000990",
-      "evidence": "보고사유는 - 계열회사 (DB하이텍) 의 당사 주식 매수에 따른 특별관계자 추가",
-      "date": "2026-05-07",
-      "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000592",
-      "evidence_published_at": "2026-05-07"
-    },
-    {
       "type": "BELONGS_TO",
       "from": "company_005830",
       "to": "industry_insurance",
-      "evidence": "DB손해보험 주식등의 대량보유상황보고서",
+      "evidence": "DB손해보험",
       "date": "2026-05-07",
       "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -61,21 +44,10 @@
       "evidence_published_at": "2026-05-07"
     },
     {
-      "type": "BELONGS_TO",
-      "from": "company_012030",
-      "to": "industry_insurance",
-      "evidence": "계열회사 (DB Inc.) 의 당사 주식 매수",
-      "date": "2026-05-07",
-      "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250625000592",
-      "evidence_published_at": "2026-05-07"
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_000990",
-      "to": "industry_insurance",
-      "evidence": "계열회사 (DB하이텍) 의 당사 주식 매수",
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
       "date": "2026-05-07",
       "evidence_source_id": "dart_005830_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

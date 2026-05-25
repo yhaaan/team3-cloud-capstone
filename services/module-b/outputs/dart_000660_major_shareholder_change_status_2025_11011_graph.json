@@ -18,14 +18,19 @@
       "type": "Company",
       "name": "SK스퀘어",
       "stock_code": "402340"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_017670",
-      "to": "company_000660",
-      "evidence": "SK하이닉스의 최대주주 변동 대상은 SK텔레콤(주), 변동일은 2021년 05월 03일, 보유주식수는 146,103,332주, 지분율은 20.07%",
+      "type": "BELONGS_TO",
+      "from": "company_000660",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 최대주주 변동 대상은 SK텔레콤(주)...",
       "date": "2026-03-17",
       "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
@@ -33,10 +38,21 @@
       "evidence_published_at": "2026-03-17"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 최대주주 변동 대상은 SK텔레콤(주)...",
+      "date": "2026-03-17",
+      "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000635",
+      "evidence_published_at": "2026-03-17"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_402340",
-      "to": "company_000660",
-      "evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주), 변동일은 2023년 03월 28일, 보유주식수는 146,130,570주, 지분율은 20.07%",
+      "to": "industry_semiconductor",
+      "evidence": "SK하이닉스의 최대주주 변동 대상은 SK스퀘어(주)...",
       "date": "2026-03-17",
       "evidence_source_id": "dart_000660_major_shareholder_change_status_2025_11011",
       "evidence_source_type": "dart",
