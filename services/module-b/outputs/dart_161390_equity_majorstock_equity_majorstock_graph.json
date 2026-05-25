@@ -1,0 +1,126 @@
+{
+  "source_id": "dart_161390_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_161390",
+      "type": "Company",
+      "name": "한국타이어앤테크놀로지",
+      "stock_code": "161390"
+    },
+    {
+      "id": "company_000240",
+      "type": "Company",
+      "name": "한국앤컴퍼니",
+      "stock_code": "000240"
+    },
+    {
+      "id": "industry_tire",
+      "type": "Industry",
+      "name": "타이어"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_161390",
+      "to": "industry_tire",
+      "evidence": "한국타이어앤테크놀로지의 대량보유 보고자는 한국앤컴퍼니, 보고 유형은 일반, 접수일은 2025-06-18, 보유주식수는 53,529,343주, 지분율은 43.21%",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000240",
+      "to": "industry_tire",
+      "evidence": "한국타이어앤테크놀로지의 대량보유 보고자는 한국앤컴퍼니, 보고 유형은 일반, 접수일은 2025-06-18, 보유주식수는 53,529,343주, 지분율은 43.21%",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_tire",
+      "to": "industry_auto_parts",
+      "evidence": "Industry taxonomy: 타이어 is part of 자동차부품.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_161390_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250618000273",
+      "evidence_published_at": "2026-04-24"
+    }
+  ]
+}

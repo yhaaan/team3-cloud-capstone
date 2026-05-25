@@ -1,0 +1,78 @@
+{
+  "source_id": "dart_267270_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_267270",
+      "type": "Company",
+      "name": "HD건설기계",
+      "stock_code": "267270",
+      "description": "건설장비 제조 및 판매업를 영위하는 기업"
+    },
+    {
+      "id": "industry_building_materials",
+      "type": "Industry",
+      "name": "건축소재"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_267270",
+      "to": "industry_building_materials",
+      "evidence": "HD건설기계의 타법인 출자 대상은 HD Hyundai Construction Equipment Europe N.V., 출자 목적은 경영 참여, 최초 취득일은 2017.04.01, 당기말 보유수량은 10, 당기말 지분율은 100%, 장부가액은 10,322,000,000.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_267270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001192",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_building_materials",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 건축소재 is part of 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_267270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001192",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_267270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001192",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_267270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001192",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

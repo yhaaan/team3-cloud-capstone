@@ -6,8 +6,79 @@
       "type": "Company",
       "name": "카카오뱅크",
       "stock_code": "323410",
-      "description": "카카오뱅크는 AI그룹, 금융소비자보호, 컴플라이언스, 정보보호, 고객서비스 등 다양한 금융·기술 분야 관리 조직을 운영합니다."
+      "description": "카카오뱅크는 디지털 은행 서비스를 제공하는 금융회사입니다."
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_digital_banking",
+      "type": "Industry",
+      "name": "디지털은행"
+    },
+    {
+      "id": "industry_banking",
+      "type": "Industry",
+      "name": "은행"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_323410",
+      "to": "industry_finance",
+      "evidence": "카카오뱅크는 디지털 은행 서비스를 제공하는 금융회사입니다.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_323410_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000164",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_323410",
+      "to": "industry_digital_banking",
+      "evidence": "카카오뱅크는 디지털 은행 서비스를 제공하는 금융회사입니다.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_323410_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000164",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_digital_banking",
+      "to": "industry_finance",
+      "evidence": "디지털은행은 금융 산업의 한 분야입니다.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_323410_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000164",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_digital_banking",
+      "to": "industry_banking",
+      "evidence": "Industry taxonomy: 디지털은행 is part of 은행.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_323410_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000164",
+      "evidence_published_at": "2026-05-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_banking",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 은행 is part of 금융.",
+      "date": "2026-05-08",
+      "evidence_source_id": "dart_323410_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250730000164",
+      "evidence_published_at": "2026-05-08"
+    }
+  ]
 }

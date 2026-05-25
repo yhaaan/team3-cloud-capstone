@@ -6,27 +6,62 @@
       "type": "Company",
       "name": "삼성에스디에스",
       "stock_code": "018260",
-      "description": "삼성에스디에스는 IT 서비스와 솔루션 분야에서 사업을 영위한다."
+      "description": "IT 서비스와 컨설팅, 클라우드, 디지털 전환 사업을 영위하는 기업입니다."
     },
     {
       "id": "company_067280",
       "type": "Company",
       "name": "멀티캠퍼스",
       "stock_code": "067280",
-      "description": "멀티캠퍼스는 교육서비스 분야에서 사업을 영위한다."
+      "description": "교육서비스 및 기업교육, 온라인 교육 콘텐츠를 제공하는 기업입니다."
     },
     {
-      "id": "business_area_교육서비스",
-      "type": "BusinessArea",
+      "id": "industry_education_service",
+      "type": "Industry",
       "name": "교육서비스"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_education",
+      "type": "Industry",
+      "name": "교육"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
-      "from": "company_018260",
-      "to": "company_067280",
-      "evidence": "삼성에스디에스의 연결대상 종속회사 후보로 멀티캠퍼스 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_067280",
+      "to": "industry_education_service",
+      "evidence": "(주)멀티캠퍼스 | 2000.05.04 | 서울시 강남구 | 교육서비스 | 296,325 | 기업의결권의 과반수 | 해당",
       "date": "2026-03-10",
       "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
       "evidence_source_type": "dart",
@@ -34,10 +69,120 @@
       "evidence_published_at": "2026-03-10"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_067280",
-      "to": "business_area_교육서비스",
-      "evidence": "(주)멀티캠퍼스 | 2000.05.04 | 서울시 강남구 | 교육서비스 | 296,325 | 기업의결권의 과반수 | 해당",
+      "type": "BELONGS_TO",
+      "from": "company_018260",
+      "to": "industry_it_software",
+      "evidence": "삼성에스디에스의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_education_service",
+      "to": "industry_education",
+      "evidence": "Industry taxonomy: 교육서비스 is part of 교육.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_education",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 교육 is related to 게임/콘텐츠.",
+      "date": "2026-03-10",
+      "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260310002989",
+      "evidence_published_at": "2026-03-10"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_education",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 교육 is related to 정보기술/소프트웨어.",
       "date": "2026-03-10",
       "evidence_source_id": "dart_018260_consolidated_subsidiary_status_20260310002989",
       "evidence_source_type": "dart",

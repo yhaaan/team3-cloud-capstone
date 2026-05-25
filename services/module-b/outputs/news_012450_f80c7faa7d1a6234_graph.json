@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450",
-      "description": "천무 다연장 정밀유도무기 및 K9 자주포 등 무기체계 공급과 MRO 기술지원 제공"
+      "description": "천무 다연장 정밀유도무기 등 무기체계와 방산 솔루션을 제공하는 방산/항공우주 기업"
     },
     {
       "id": "company_000880",
@@ -21,32 +21,68 @@
       "stock_code": "005380"
     },
     {
-      "id": "business_area_military_defense",
-      "type": "BusinessArea",
-      "name": "방산"
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
     },
     {
-      "id": "product_service_천무_다연장_정밀유도무기",
+      "id": "industry_guided_weapon",
+      "type": "Industry",
+      "name": "유도무기"
+    },
+    {
+      "id": "product_service_cheonmu",
       "type": "ProductService",
       "name": "천무 다연장 정밀유도무기"
     },
     {
-      "id": "product_service_K9_자주포",
-      "type": "ProductService",
-      "name": "K9 자주포"
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     },
     {
-      "id": "industry_defense",
+      "id": "industry_it_software",
       "type": "Industry",
-      "name": "국방"
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_012450",
-      "to": "business_area_military_defense",
+      "to": "industry_defense_aerospace",
       "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000880",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화는 에스토니아와의 협력 관계를 단순 무기 판매를 넘어 장기 방산 파트너십 구축 단계로 끌어올릴 계획이다.",
       "date": "",
       "evidence_source_id": "news_012450_f80c7faa7d1a6234",
       "evidence_source_type": "news",
@@ -56,29 +92,7 @@
     {
       "type": "PRODUCES",
       "from": "company_012450",
-      "to": "product_service_천무_다연장_정밀유도무기",
-      "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
-      "date": "",
-      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
-      "evidence_source_type": "news",
-      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
-      "evidence_published_at": "2026-05-12T09:36:00+09:00"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_012450",
-      "to": "product_service_K9_자주포",
-      "evidence": "지난해 12월 첫 공급 계약 이후 5개월 만에 성사된 이번 후속 도입은 K9 자주포 수출로 시작된 양국의 방산 파트너십과 누적된 신뢰가 단기간에 가시적 성과로 이어진 사례다.",
-      "date": "",
-      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
-      "evidence_source_type": "news",
-      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
-      "evidence_published_at": "2026-05-12T09:36:00+09:00"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_military_defense",
-      "to": "industry_defense",
+      "to": "product_service_cheonmu",
       "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
       "date": "",
       "evidence_source_id": "news_012450_f80c7faa7d1a6234",
@@ -88,9 +102,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_천무_다연장_정밀유도무기",
-      "to": "business_area_military_defense",
-      "evidence": "한화에어로스페이스가 에스토니아에 천무 다연장 정밀유도무기 3문을 추가 공급한다.",
+      "from": "industry_guided_weapon",
+      "to": "industry_defense_aerospace",
+      "evidence": "Industry taxonomy: 유도무기 is part of 방산/항공우주.",
       "date": "",
       "evidence_source_id": "news_012450_f80c7faa7d1a6234",
       "evidence_source_type": "news",
@@ -98,10 +112,65 @@
       "evidence_published_at": "2026-05-12T09:36:00+09:00"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_K9_자주포",
-      "to": "business_area_military_defense",
-      "evidence": "지난해 12월 첫 공급 계약 이후 5개월 만에 성사된 이번 후속 도입은 K9 자주포 수출로 시작된 양국의 방산 파트너십과 누적된 신뢰가 단기간에 가시적 성과로 이어진 사례다.",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_012450_f80c7faa7d1a6234",
+      "evidence_source_type": "news",
+      "evidence_source_url": "http://www.newsian.co.kr/news/articleView.html?idxno=89530",
+      "evidence_published_at": "2026-05-12T09:36:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "",
       "evidence_source_id": "news_012450_f80c7faa7d1a6234",
       "evidence_source_type": "news",

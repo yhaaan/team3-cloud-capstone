@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_001450_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_001450",
+      "type": "Company",
+      "name": "현대해상",
+      "stock_code": "001450",
+      "description": "손해보험 및 보험서비스를 주력으로 하는 금융업체"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001450",
+      "to": "industry_finance",
+      "evidence": "현대해상은 손해보험 및 보험서비스를 주력으로 하는 금융업체",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_001450_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001448",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001450",
+      "to": "industry_insurance",
+      "evidence": "현대해상은 손해보험 및 보험서비스를 주력으로 하는 금융업체",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_001450_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001448",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_001450_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001448",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "source_id": "news_241560_e9bdeadee82a6d5e",
+  "entities": [
+    {
+      "id": "company_241560",
+      "type": "Company",
+      "name": "두산밥캣",
+      "stock_code": "241560",
+      "description": "두산그룹 내 주력기업으로 건설장비를 중심으로 사업을 영위"
+    },
+    {
+      "id": "company_454910",
+      "type": "Company",
+      "name": "두산로보틱스",
+      "stock_code": "454910"
+    },
+    {
+      "id": "company_028260",
+      "type": "Company",
+      "name": "삼성물산",
+      "stock_code": "028260"
+    },
+    {
+      "id": "industry_construction_equipment",
+      "type": "Industry",
+      "name": "건설장비"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_241560",
+      "to": "industry_construction_equipment",
+      "evidence": "실제 연매출 10조원, 영업이익 1조원대로 두산그룹 내 '캐시카우'로 불리는 두산밥캣은 2024년 두산의 기업구조 재편 과정에서 적자 계열사인 두산로보틱스와의 포괄적 주식교환 과정에서 불리한 비율로 합병이 추진된 바 있다.",
+      "date": "",
+      "evidence_source_id": "news_241560_e9bdeadee82a6d5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029640088&code=61111111&cp=nv",
+      "evidence_published_at": "2026-04-06T19:26:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_construction_equipment",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 건설장비 is part of 기계/장비.",
+      "date": "",
+      "evidence_source_id": "news_241560_e9bdeadee82a6d5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029640088&code=61111111&cp=nv",
+      "evidence_published_at": "2026-04-06T19:26:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_241560_e9bdeadee82a6d5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029640088&code=61111111&cp=nv",
+      "evidence_published_at": "2026-04-06T19:26:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "",
+      "evidence_source_id": "news_241560_e9bdeadee82a6d5e",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.kmib.co.kr/article/view.asp?arcid=0029640088&code=61111111&cp=nv",
+      "evidence_published_at": "2026-04-06T19:26:00+09:00"
+    }
+  ]
+}

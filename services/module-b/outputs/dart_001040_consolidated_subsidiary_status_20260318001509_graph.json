@@ -1,0 +1,106 @@
+{
+  "source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+  "entities": [
+    {
+      "id": "company_001040",
+      "type": "Company",
+      "name": "CJ",
+      "stock_code": "001040",
+      "description": "CJ는 방송 프로그램 제작 및 공급업 등을 영위하는 기업이다."
+    },
+    {
+      "id": "company_253450",
+      "type": "Company",
+      "name": "스튜디오드래곤",
+      "stock_code": "253450"
+    },
+    {
+      "id": "industry_media_content",
+      "type": "Industry",
+      "name": "미디어콘텐츠"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    }
+  ],
+  "relations": [
+    {
+      "type": "ACQUIRES",
+      "from": "company_001040",
+      "to": "company_253450",
+      "evidence": "의결권의 과반수소유(회계기준서 1110호)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_253450",
+      "to": "industry_media_content",
+      "evidence": "방송 프로그램 제작 및 공급업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001040",
+      "to": "industry_media_content",
+      "evidence": "방송 프로그램 제작 및 공급업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_media_content",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 미디어콘텐츠 is part of 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_consolidated_subsidiary_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

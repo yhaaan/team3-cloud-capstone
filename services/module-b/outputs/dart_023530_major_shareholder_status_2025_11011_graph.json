@@ -1,0 +1,67 @@
+{
+  "source_id": "dart_023530_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_023530",
+      "type": "Company",
+      "name": "롯데쇼핑",
+      "stock_code": "023530"
+    },
+    {
+      "id": "company_004990",
+      "type": "Company",
+      "name": "롯데지주",
+      "stock_code": "004990"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_023530",
+      "to": "industry_retail_consumer",
+      "evidence": "롯데쇼핑의 최대주주 관련 인물/법인은 롯데지주㈜, 관계는 최대주주, 당기말 보유주식수는 11,315,503주, 지분율은 40.00%.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004990",
+      "to": "industry_holding_company",
+      "evidence": "롯데쇼핑의 최대주주 관련 인물/법인은 롯데지주㈜, 관계는 최대주주, 당기말 보유주식수는 11,315,503주, 지분율은 40.00%.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_023530_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001405",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

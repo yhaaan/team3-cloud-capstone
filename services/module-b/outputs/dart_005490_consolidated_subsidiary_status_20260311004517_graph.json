@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "POSCO홀딩스",
       "stock_code": "005490",
-      "description": "철강, 자원개발 및 내화물 제조 등 주요 사업 운영"
+      "description": "지주회사로서 자회사들을 연결대상 종속회사로 관리"
     },
     {
       "id": "company_047050",
@@ -20,64 +20,109 @@
       "type": "Company",
       "name": "포스코퓨처엠",
       "stock_code": "003670",
-      "description": "내화물과 음/양극재 제조 및 판매"
+      "description": "내화물과 음극재·양극재 제조 및 판매 사업"
     },
     {
       "id": "company_058430",
       "type": "Company",
       "name": "포스코스틸리온",
       "stock_code": "058430",
-      "description": "철강재 제조 및 판매 사업 수행"
+      "description": "철강재 제조 및 판매 사업"
     },
     {
       "id": "company_009520",
       "type": "Company",
       "name": "포스코엠텍",
       "stock_code": "009520",
-      "description": "철강제품 포장 및 철강부원료 생산/판매"
+      "description": "철강제품 포장 및 철강부원료 생산과 판매"
     },
     {
-      "id": "business_area_trade",
-      "type": "BusinessArea",
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_industry_trade",
+      "type": "Industry",
       "name": "무역"
     },
     {
-      "id": "business_area_power_and_resources",
-      "type": "BusinessArea",
-      "name": "발전 및 자원 개발"
-    },
-    {
-      "id": "business_area_refractories_and_electrode_materials",
-      "type": "BusinessArea",
-      "name": "내화물 및 음양극재 제조"
-    },
-    {
-      "id": "business_area_steel_products_manufacturing",
-      "type": "BusinessArea",
-      "name": "철강재 제조"
-    },
-    {
-      "id": "business_area_steel_product_packaging_and_raw_materials",
-      "type": "BusinessArea",
-      "name": "철강제품 포장 및 철강부원료"
-    },
-    {
-      "id": "industry_steel",
+      "id": "industry_energy_utility",
       "type": "Industry",
-      "name": "철강"
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "industry_resource_and_energy",
+      "id": "industry_chemical_materials",
       "type": "Industry",
-      "name": "자원·에너지"
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_packaging_material",
+      "type": "Industry",
+      "name": "패키징소재"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_paper_packaging",
+      "type": "Industry",
+      "name": "제지/포장"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
-      "from": "company_047050",
-      "to": "business_area_trade",
-      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등 | 13,725,392 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "type": "BELONGS_TO",
+      "from": "company_005490",
+      "to": "industry_holding_company",
+      "evidence": "POSCO홀딩스의 사업보고서 (2025.12)에서 연결대상 종속회사 현황을 정제했다.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -85,10 +130,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047050",
-      "to": "business_area_power_and_resources",
-      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등 | 13,725,392 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "to": "industry_industry_trade",
+      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -96,10 +141,21 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_047050",
+      "to": "industry_energy_utility",
+      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_003670",
-      "to": "business_area_refractories_and_electrode_materials",
-      "evidence": "(주)포스코퓨처엠 | 1971년 5월 | 경북 포항시 | 내화물, 음/양극재 제조 및 판매 | 7,828,096 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "to": "industry_chemical_materials",
+      "evidence": "(주)포스코퓨처엠 | 1971년 5월 | 경북 포항시 | 내화물, 음/양극재 제조 및 판매",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -107,10 +163,21 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_003670",
+      "to": "industry_battery_energy_storage",
+      "evidence": "(주)포스코퓨처엠 | 1971년 5월 | 경북 포항시 | 내화물, 음/양극재 제조 및 판매",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_058430",
-      "to": "business_area_steel_products_manufacturing",
-      "evidence": "포스코스틸리온 주식회사 | 1988년 2월 | 경북 포항시 | 철강재 제조 및 판매 | 479,864 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "to": "industry_steel_metal",
+      "evidence": "포스코스틸리온 주식회사 | 1988년 2월 | 경북 포항시 | 철강재 제조 및 판매",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -118,10 +185,76 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_009520",
-      "to": "business_area_steel_product_packaging_and_raw_materials",
-      "evidence": "(주)포스코엠텍 | 1973년 12월 | 경북 포항시 | 철강제품 포장 및 철강부원료 생산/판매 | 155,483 | 실질지배력(회계기준서1110호) | ○",
+      "to": "industry_steel_metal",
+      "evidence": "(주)포스코엠텍 | 1973년 12월 | 경북 포항시 | 철강제품 포장 및 철강부원료 생산/판매",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_009520",
+      "to": "industry_packaging_material",
+      "evidence": "(주)포스코엠텍 | 1973년 12월 | 경북 포항시 | 철강제품 포장 및 철강부원료 생산/판매",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -130,9 +263,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_trade",
-      "to": "industry_resource_and_energy",
-      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등 | 13,725,392 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "from": "industry_packaging_material",
+      "to": "industry_paper_packaging",
+      "evidence": "Industry taxonomy: 패키징소재 is part of 제지/포장.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -140,10 +273,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_power_and_resources",
-      "to": "industry_resource_and_energy",
-      "evidence": "(주)포스코인터내셔널 | 2000년 12월 | 인천 연수구 | 무역, 발전 및 자원 개발 등 | 13,725,392 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -151,10 +284,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_refractories_and_electrode_materials",
-      "to": "industry_steel",
-      "evidence": "(주)포스코퓨처엠 | 1971년 5월 | 경북 포항시 | 내화물, 음/양극재 제조 및 판매 | 7,828,096 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -162,10 +295,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_steel_products_manufacturing",
-      "to": "industry_steel",
-      "evidence": "포스코스틸리온 주식회사 | 1988년 2월 | 경북 포항시 | 철강재 제조 및 판매 | 479,864 | 기업 의결권의 과반수소유(회계기준서1110호) | ○",
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -173,10 +306,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_steel_product_packaging_and_raw_materials",
-      "to": "industry_steel",
-      "evidence": "(주)포스코엠텍 | 1973년 12월 | 경북 포항시 | 철강제품 포장 및 철강부원료 생산/판매 | 155,483 | 실질지배력(회계기준서1110호) | ○",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -184,10 +317,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_005490",
-      "to": "business_area_trade",
-      "evidence": "POSCO홀딩스의 연결대상 종속회사 후보로 포스코인터내셔널, 포스코퓨처엠, 포스코스틸리온, 포스코엠텍 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -195,10 +328,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_005490",
-      "to": "business_area_power_and_resources",
-      "evidence": "POSCO홀딩스의 연결대상 종속회사 후보로 포스코인터내셔널, 포스코퓨처엠, 포스코스틸리온, 포스코엠텍 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -206,10 +339,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_005490",
-      "to": "business_area_refractories_and_electrode_materials",
-      "evidence": "POSCO홀딩스의 연결대상 종속회사 후보로 포스코인터내셔널, 포스코퓨처엠, 포스코스틸리온, 포스코엠텍 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -217,10 +350,10 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_005490",
-      "to": "business_area_steel_products_manufacturing",
-      "evidence": "POSCO홀딩스의 연결대상 종속회사 후보로 포스코인터내셔널, 포스코퓨처엠, 포스코스틸리온, 포스코엠텍 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",
@@ -228,10 +361,76 @@
       "evidence_published_at": "2026-03-11"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_005490",
-      "to": "business_area_steel_product_packaging_and_raw_materials",
-      "evidence": "POSCO홀딩스의 연결대상 종속회사 후보로 포스코인터내셔널, 포스코퓨처엠, 포스코스틸리온, 포스코엠텍 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_paper_packaging",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 제지/포장 is related to 화학소재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_paper_packaging",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 제지/포장 is related to 유통/소비재.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-11",
+      "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260311004517",
+      "evidence_published_at": "2026-03-11"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-11",
       "evidence_source_id": "dart_005490_consolidated_subsidiary_status_20260311004517",
       "evidence_source_type": "dart",

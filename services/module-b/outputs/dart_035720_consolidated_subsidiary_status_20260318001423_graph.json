@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "카카오",
       "stock_code": "035720",
-      "description": "게임개발, 소프트웨어 개발·공급, 영상 콘텐츠 제작 및 서비스 제공"
+      "description": "연결대상 종속회사로 게임개발, 소프트웨어개발, 영상콘텐츠 기획 제작, 서비스 제공"
     },
     {
       "id": "company_293490",
@@ -20,7 +20,7 @@
       "type": "Company",
       "name": "카카오페이",
       "stock_code": "377300",
-      "description": "소프트웨어 개발 및 공급업"
+      "description": "소프트웨어개발 및 공급업"
     },
     {
       "id": "company_054780",
@@ -37,32 +37,63 @@
       "description": "서비스, 소프트웨어 개발 및 공급업"
     },
     {
-      "id": "business_area_game_development_and_service",
-      "type": "BusinessArea",
-      "name": "게임개발 및 서비스업"
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     },
     {
-      "id": "business_area_software_development_and_supply",
-      "type": "BusinessArea",
-      "name": "소프트웨어 개발 및 공급업"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
-      "id": "business_area_video_content_production",
-      "type": "BusinessArea",
-      "name": "영상 콘텐츠 기획 및 제작"
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
     },
     {
-      "id": "business_area_entertainment_management",
-      "type": "BusinessArea",
-      "name": "연예 매니지먼트"
+      "id": "industry_service",
+      "type": "Industry",
+      "name": "서비스"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_035720",
+      "to": "industry_it_software",
+      "evidence": "카카오의 연결대상 종속회사 후보로 카카오게임즈, 카카오페이, 키이스트, 디어유 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_293490",
-      "to": "business_area_game_development_and_service",
-      "evidence": "㈜카카오게임즈 | 2013.08 | 경기도 성남시 분당구 판교역로 152, 14층 | 게임개발 및 서비스업 | 1,482,681 | 실질지배 | 해당",
+      "to": "industry_content_game",
+      "evidence": "㈜카카오게임즈 | 2013.08 | 경기도 성남시 분당구 판교역로 152, 14층 | 게임개발 및 서비스업",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -70,10 +101,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_377300",
-      "to": "business_area_software_development_and_supply",
-      "evidence": "㈜카카오페이 | 2017.04 | 경기도 성남시 분당구 판교역로 166, 비동 15층 | 소프트웨어개발 및 공급업 | 3,455,959 | 실질지배 | 해당",
+      "to": "industry_it_software",
+      "evidence": "㈜카카오페이 | 2017.04 | 경기도 성남시 분당구 판교역로 166, 비동 15층 | 소프트웨어개발 및 공급업",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -81,10 +112,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_054780",
-      "to": "business_area_video_content_production",
-      "evidence": "㈜키이스트 | 1996.10 | 서울특별시 강남구 학동로11길 30 | 영상 콘텐츠 기획 및 제작, 판권사업,연예 매니지먼트 | 58,355 | 실질지배 | 미해당",
+      "to": "industry_music_entertainment",
+      "evidence": "㈜키이스트 | 1996.10 | 서울특별시 강남구 학동로11길 30 | 영상 콘텐츠 기획 및 제작, 판권사업,연예 매니지먼트",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -92,21 +123,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_054780",
-      "to": "business_area_entertainment_management",
-      "evidence": "㈜키이스트 | 1996.10 | 서울특별시 강남구 학동로11길 30 | 영상 콘텐츠 기획 및 제작, 판권사업,연예 매니지먼트 | 58,355 | 실질지배 | 미해당",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_376300",
-      "to": "business_area_software_development_and_supply",
-      "evidence": "㈜디어유 | 2021.02 | 서울특별시 강남구 학동록25길 37 | 서비스, 소프트웨어 개발 및 공급업 | 245,077 | 실질지배 | 해당",
+      "to": "industry_service",
+      "evidence": "㈜디어유 | 2021.02 | 서울특별시 강남구 학동록25길 37 | 서비스, 소프트웨어 개발 및 공급업",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -114,10 +134,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_035720",
-      "to": "company_293490",
-      "evidence": "카카오의 연결대상 종속회사 후보로 카카오게임즈 등이 탐지되었다.",
+      "type": "BELONGS_TO",
+      "from": "company_376300",
+      "to": "industry_it_software",
+      "evidence": "㈜디어유 | 2021.02 | 서울특별시 강남구 학동록25길 37 | 서비스, 소프트웨어 개발 및 공급업",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -125,10 +145,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_035720",
-      "to": "company_377300",
-      "evidence": "카카오의 연결대상 종속회사 후보로 카카오페이 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -136,10 +156,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_035720",
-      "to": "company_054780",
-      "evidence": "카카오의 연결대상 종속회사 후보로 키이스트 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",
@@ -147,10 +167,87 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "ACQUIRES",
-      "from": "company_035720",
-      "to": "company_376300",
-      "evidence": "카카오의 연결대상 종속회사 후보로 디어유 등이 탐지되었다.",
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001423",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_035720_consolidated_subsidiary_status_20260318001423",
       "evidence_source_type": "dart",

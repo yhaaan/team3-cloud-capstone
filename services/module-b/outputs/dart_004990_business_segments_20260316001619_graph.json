@@ -1,0 +1,692 @@
+{
+  "source_id": "dart_004990_business_segments_20260316001619",
+  "entities": [
+    {
+      "id": "company_004990",
+      "type": "Company",
+      "name": "롯데지주",
+      "stock_code": "004990",
+      "description": "자회사 주식 소유로 지배, 배당수익·상표권사용수익·임대수익 등 영업수익 발생"
+    },
+    {
+      "id": "company_023530",
+      "type": "Company",
+      "name": "롯데쇼핑",
+      "stock_code": "023530",
+      "description": "백화점, 할인점, 슈퍼, 이커머스, 전자제품 전문점, 홈쇼핑, 영화상영업 등 유통사업 영위"
+    },
+    {
+      "id": "company_011170",
+      "type": "Company",
+      "name": "롯데케미칼",
+      "stock_code": "011170",
+      "description": "기초화학, 첨단소재, 정밀화학 등 석유화학제품 제조"
+    },
+    {
+      "id": "company_280360",
+      "type": "Company",
+      "name": "롯데웰푸드",
+      "stock_code": "280360"
+    },
+    {
+      "id": "company_005300",
+      "type": "Company",
+      "name": "롯데칠성",
+      "stock_code": "005300",
+      "description": "탄산음료, 주류 등 음료 제조 및 판매"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_039840",
+      "type": "Company",
+      "name": "디오",
+      "stock_code": "039840"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_petrochemical",
+      "type": "Industry",
+      "name": "석유화학"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_beverage_liquor",
+      "type": "Industry",
+      "name": "음료주류"
+    },
+    {
+      "id": "product_service_department_store",
+      "type": "ProductService",
+      "name": "백화점"
+    },
+    {
+      "id": "product_service_discount_store",
+      "type": "ProductService",
+      "name": "할인점"
+    },
+    {
+      "id": "product_service_supermarket",
+      "type": "ProductService",
+      "name": "슈퍼"
+    },
+    {
+      "id": "product_service_ecommerce",
+      "type": "ProductService",
+      "name": "이커머스"
+    },
+    {
+      "id": "product_service_electronics_retail",
+      "type": "ProductService",
+      "name": "전자제품 전문점"
+    },
+    {
+      "id": "product_service_homeshopping",
+      "type": "ProductService",
+      "name": "홈쇼핑"
+    },
+    {
+      "id": "product_service_film_screening",
+      "type": "ProductService",
+      "name": "영화상영업"
+    },
+    {
+      "id": "product_service_PE",
+      "type": "ProductService",
+      "name": "폴리에틸렌"
+    },
+    {
+      "id": "product_service_PP",
+      "type": "ProductService",
+      "name": "폴리프로필렌"
+    },
+    {
+      "id": "product_service_BTX",
+      "type": "ProductService",
+      "name": "BTX"
+    },
+    {
+      "id": "product_service_ABS",
+      "type": "ProductService",
+      "name": "ABS"
+    },
+    {
+      "id": "product_service_PC",
+      "type": "ProductService",
+      "name": "폴리카보네이트"
+    },
+    {
+      "id": "product_service_Elecfoil",
+      "type": "ProductService",
+      "name": "동박"
+    },
+    {
+      "id": "industry_basic_chemical",
+      "type": "Industry",
+      "name": "기초화학"
+    },
+    {
+      "id": "industry_fine_chemical",
+      "type": "Industry",
+      "name": "정밀화학"
+    },
+    {
+      "id": "industry_food_processing",
+      "type": "Industry",
+      "name": "식품가공"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004990",
+      "to": "industry_holding_company",
+      "evidence": "당사는 ... 지주회사로서 2017년 10월 1일자로 ... 설립된 회사이며 ...",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_023530",
+      "to": "industry_retail_consumer",
+      "evidence": "롯데쇼핑㈜ ... 백화점 설치, 운영에 관한 사업 등 유통발전법에 의한 유통산업",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011170",
+      "to": "industry_chemical_materials",
+      "evidence": "롯데케미칼㈜ ... 주요생산품목 기초화학, 첨단소재, 정밀화학 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005300",
+      "to": "industry_beverage_liquor",
+      "evidence": "롯데칠성 ... 탄산음료, 주류 제조 및 판매",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_department_store",
+      "evidence": "롯데쇼핑 ... 백화점 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_discount_store",
+      "evidence": "롯데쇼핑 ... 할인점 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_supermarket",
+      "evidence": "롯데쇼핑 ... 슈퍼 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_ecommerce",
+      "evidence": "롯데쇼핑 ... 이커머스 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_electronics_retail",
+      "evidence": "롯데쇼핑 ... 전자제품 전문점 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_homeshopping",
+      "evidence": "롯데쇼핑 ... 홈쇼핑 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_023530",
+      "to": "product_service_film_screening",
+      "evidence": "롯데쇼핑 ... 영화상영업 부문",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_PE",
+      "evidence": "기초화학 ... 폴리에틸렌(PE) 제조",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_PP",
+      "evidence": "기초화학 ... 폴리프로필렌(PP) 제조",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_BTX",
+      "evidence": "기초화학 ... BTX 석유화학제품 원료",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_ABS",
+      "evidence": "첨단소재 ... ABS",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_011170",
+      "to": "product_service_PC",
+      "evidence": "첨단소재 ... 폴리카보네이트(PC)",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_280360",
+      "to": "product_service_Elecfoil",
+      "evidence": "전지소재 ... 동박(Elecfoil) 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_011170",
+      "to": "industry_petrochemical",
+      "evidence": "롯데케미칼㈜는 석유화학제품 제조임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_basic_chemical",
+      "to": "industry_chemical_materials",
+      "evidence": "기초화학은 화학소재 산업 내 사업 구분",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_fine_chemical",
+      "to": "industry_chemical_materials",
+      "evidence": "정밀화학은 화학소재 산업 내 사업 구분",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_PE",
+      "to": "industry_basic_chemical",
+      "evidence": "폴리에틸렌(PE)은 기초화학제품임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_PP",
+      "to": "industry_basic_chemical",
+      "evidence": "폴리프로필렌(PP)은 기초화학제품임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_BTX",
+      "to": "industry_basic_chemical",
+      "evidence": "BTX는 기초화학제품임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_ABS",
+      "to": "industry_fine_chemical",
+      "evidence": "ABS는 첨단소재, 정밀화학 관련 소재임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_PC",
+      "to": "industry_fine_chemical",
+      "evidence": "폴리카보네이트(PC)는 첨단소재임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005300",
+      "to": "industry_food_beverage",
+      "evidence": "롯데칠성은 음료 제조판매 회사임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_280360",
+      "to": "industry_battery_energy_storage",
+      "evidence": "롯데에너지머티리얼즈㈜는 2차전지 소재 사업",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_023530",
+      "to": "industry_retail_consumer",
+      "evidence": "롯데쇼핑 ... 유통산업",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유화학 is part of 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_processing",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 식품가공 is part of 식품/음료.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beverage_liquor",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 음료주류 is part of 식품/음료.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_004990_business_segments_20260316001619",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001619",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

@@ -6,37 +6,37 @@
       "type": "Company",
       "name": "하이브",
       "stock_code": "352820",
-      "description": "음악, 플랫폼, 테크기반 미래성장 3대 영역에서 음반·음원, 공연, 광고, MD·라이선싱, 콘텐츠, 팬클럽 등 사업을 운영"
+      "description": "음악, 플랫폼, 테크기반 미래성장 3대 영역으로 아티스트 육성, 음악 제작, 공연 기획, 콘텐츠 제작, 팬 커뮤니티 및 플랫폼 운영"
     },
     {
-      "id": "business_area_music",
-      "type": "BusinessArea",
-      "name": "음악"
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
     },
     {
-      "id": "business_area_platform",
-      "type": "BusinessArea",
-      "name": "플랫폼"
+      "id": "industry_platform_business",
+      "type": "Industry",
+      "name": "플랫폼사업"
     },
     {
-      "id": "business_area_tech_driven_future_growth",
-      "type": "BusinessArea",
-      "name": "테크기반 미래성장"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     },
     {
-      "id": "product_service_album_music",
+      "id": "product_service_music_recording",
       "type": "ProductService",
-      "name": "음반·음원"
+      "name": "음반/음원"
     },
     {
-      "id": "product_service_performance",
+      "id": "product_service_live_performance",
       "type": "ProductService",
       "name": "공연"
     },
     {
-      "id": "product_service_advertisement_fee",
+      "id": "product_service_advertising",
       "type": "ProductService",
-      "name": "광고·출연료"
+      "name": "광고"
     },
     {
       "id": "product_service_md_licensing",
@@ -44,27 +44,47 @@
       "name": "MD 및 라이선싱"
     },
     {
-      "id": "product_service_content",
+      "id": "product_service_video_content",
       "type": "ProductService",
-      "name": "콘텐츠"
+      "name": "영상콘텐츠"
     },
     {
-      "id": "product_service_fanclub",
+      "id": "product_service_fan_club",
       "type": "ProductService",
       "name": "팬클럽"
     },
     {
-      "id": "industry_entertainment",
+      "id": "industry_ai",
       "type": "Industry",
-      "name": "엔터테인먼트"
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_352820",
-      "to": "business_area_music",
-      "evidence": "당사는 음악(Music), 플랫폼(Platform), 테크기반 미래성장(Tech-driven Future Growth) 세 가지 주요 영역으로 사업을 운영하고 있습니다.",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 음악(Music), 플랫폼(Platform), 테크기반 미래성장(Tech-driven Future Growth) 세 가지 주요 영역으로 사업을 운영하고 있습니다. 음악 영역은 아티스트를 양성하고 음악 콘텐츠를 제작하며, 음악에 기반한 다양한 산업을 전개합니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -72,10 +92,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_352820",
-      "to": "business_area_platform",
-      "evidence": "당사는 음악(Music), 플랫폼(Platform), 테크기반 미래성장(Tech-driven Future Growth) 세 가지 주요 영역으로 사업을 운영하고 있습니다.",
+      "to": "industry_platform_business",
+      "evidence": "플랫폼 영역은 위버스를 기반으로 하이브의 콘텐츠 연결과 확장을...",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -83,10 +103,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_352820",
-      "to": "business_area_tech_driven_future_growth",
-      "evidence": "당사는 음악(Music), 플랫폼(Platform), 테크기반 미래성장(Tech-driven Future Growth) 세 가지 주요 영역으로 사업을 운영하고 있습니다.",
+      "to": "industry_it_software",
+      "evidence": "테크기반 미래성장 영역은 미래형 엔터테인먼트 연구개발을 집중적으로 추진하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -96,7 +116,7 @@
     {
       "type": "PRODUCES",
       "from": "company_352820",
-      "to": "product_service_album_music",
+      "to": "product_service_music_recording",
       "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
@@ -107,7 +127,7 @@
     {
       "type": "PRODUCES",
       "from": "company_352820",
-      "to": "product_service_performance",
+      "to": "product_service_live_performance",
       "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
@@ -118,7 +138,7 @@
     {
       "type": "PRODUCES",
       "from": "company_352820",
-      "to": "product_service_advertisement_fee",
+      "to": "product_service_advertising",
       "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
@@ -140,7 +160,7 @@
     {
       "type": "PRODUCES",
       "from": "company_352820",
-      "to": "product_service_content",
+      "to": "product_service_video_content",
       "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
@@ -151,7 +171,7 @@
     {
       "type": "PRODUCES",
       "from": "company_352820",
-      "to": "product_service_fanclub",
+      "to": "product_service_fan_club",
       "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
@@ -161,9 +181,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_music",
-      "to": "industry_entertainment",
-      "evidence": "하이브(HYBE)는 음악 산업의 비즈니스 모델을 혁신하는 기업이며, 음악에 기반한 다양한 산업을 전개합니다.",
+      "from": "product_service_music_recording",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -172,9 +192,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_platform",
-      "to": "industry_entertainment",
-      "evidence": "하이브(HYBE)는 음악에 기반한 세계 최고의 엔터테인먼트 라이프스타일 플랫폼 기업을 지향합니다.",
+      "from": "product_service_live_performance",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -183,42 +203,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_tech_driven_future_growth",
-      "to": "industry_entertainment",
-      "evidence": "테크기반 미래성장 영역은 미래형 엔터테인먼트 연구개발을 집중적으로 추진하고 있습니다.",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_352820_business_segments_20260320000802",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_album_music",
-      "to": "business_area_music",
-      "evidence": "매출을 음반ㆍ음원으로 구분하여 관리하고 있습니다.",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_352820_business_segments_20260320000802",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_performance",
-      "to": "business_area_music",
-      "evidence": "매출을 공연으로 구분하여 관리하고 있습니다.",
-      "date": "2026-03-20",
-      "evidence_source_id": "dart_352820_business_segments_20260320000802",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
-      "evidence_published_at": "2026-03-20"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_advertisement_fee",
-      "to": "business_area_music",
-      "evidence": "매출을 광고ㆍ출연료로 구분하여 관리하고 있습니다.",
+      "from": "product_service_advertising",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -228,8 +215,8 @@
     {
       "type": "PART_OF",
       "from": "product_service_md_licensing",
-      "to": "business_area_music",
-      "evidence": "매출을 MD 및 라이선싱으로 구분하여 관리하고 있습니다.",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -238,9 +225,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_content",
-      "to": "business_area_music",
-      "evidence": "매출을 콘텐츠로 구분하여 관리하고 있습니다.",
+      "from": "product_service_video_content",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",
@@ -249,9 +236,130 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_fanclub",
-      "to": "business_area_music",
-      "evidence": "매출을 팬클럽 등으로 구분하여 관리하고 있습니다.",
+      "from": "product_service_fan_club",
+      "to": "industry_music_entertainment",
+      "evidence": "당사는 매출을 음반ㆍ음원, 공연, 광고ㆍ출연료, MD 및 라이선스, 콘텐츠, 팬클럽 등으로 구분하여 관리하고 있습니다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_platform_business",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_352820_business_segments_20260320000802",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000802",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_352820_business_segments_20260320000802",
       "evidence_source_type": "dart",

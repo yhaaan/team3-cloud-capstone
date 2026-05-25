@@ -6,32 +6,72 @@
       "type": "Company",
       "name": "LG화학",
       "stock_code": "051910",
-      "description": "전지 제조 및 판매를 포함한 화학제품 사업을 영위"
+      "description": "화학 및 전지 제조 중심 사업을 영위하는 기업"
     },
     {
       "id": "company_373220",
       "type": "Company",
       "name": "LG에너지솔루션",
       "stock_code": "373220",
-      "description": "전지 제조 및 판매 사업을 영위"
+      "description": "전지 제조 및 판매 사업을 영위하는 기업"
     },
     {
-      "id": "business_area_전지제조",
-      "type": "BusinessArea",
-      "name": "전지제조"
-    },
-    {
-      "id": "industry_배터리",
+      "id": "industry_battery_energy_storage",
       "type": "Industry",
-      "name": "배터리"
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "product_service_battery",
+      "type": "ProductService",
+      "name": "전지"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
+      "type": "BELONGS_TO",
       "from": "company_051910",
-      "to": "company_373220",
-      "evidence": "LG화학의 연결대상 종속회사 후보로 LG에너지솔루션 등이 탐지되었다.",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학의 사업보고서 (2025.12)",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
       "evidence_source_type": "dart",
@@ -39,9 +79,9 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_373220",
-      "to": "business_area_전지제조",
+      "to": "industry_battery_energy_storage",
       "evidence": "주식회사 LG에너지솔루션 | 2020-12-01 | 서울특별시 영등포구 여의대로 108 | 전지제조 및 판매 (전지)",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
@@ -50,10 +90,10 @@
       "evidence_published_at": "2026-03-13"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_051910",
-      "to": "business_area_전지제조",
-      "evidence": "주식회사 LG에너지솔루션 | 2020-12-01 | 서울특별시 영등포구 여의대로 108 | 전지제조 및 판매 (전지)",
+      "type": "PRODUCES",
+      "from": "company_373220",
+      "to": "product_service_battery",
+      "evidence": "주식회사 LG에너지솔루션 | 전지제조 및 판매 (전지)",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
       "evidence_source_type": "dart",
@@ -62,9 +102,130 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_전지제조",
-      "to": "industry_배터리",
-      "evidence": "주식회사 LG에너지솔루션 | 2020-12-01 | 서울특별시 영등포구 여의대로 108 | 전지제조 및 판매 (전지)",
+      "from": "product_service_battery",
+      "to": "industry_battery_energy_storage",
+      "evidence": "전지제조 및 판매 (전지)",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001195",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-13",
       "evidence_source_id": "dart_051910_consolidated_subsidiary_status_20260313001195",
       "evidence_source_type": "dart",

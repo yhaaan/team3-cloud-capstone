@@ -1,0 +1,144 @@
+{
+  "source_id": "news_030200_ebcc25964ce91230",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "기간통신사업자로서 전기통신서비스 제공 및 관련 인프라 운영"
+    },
+    {
+      "id": "company_005380",
+      "type": "Company",
+      "name": "현대차",
+      "stock_code": "005380"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_telecommunication_service",
+      "type": "Industry",
+      "name": "통신서비스"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_telecom_media",
+      "evidence": "이동통신사 등 기간통신사업자 최대주주가 변경될 경우 자발성 여부와 관계없이 정부 인가를 의무적으로 받아야 한다.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_telecommunication_service",
+      "evidence": "이동통신사 등 기간통신사업자 최대주주가 변경될 경우 자발성 여부와 관계없이 정부 인가를 의무적으로 받아야 한다.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_telecommunication_service",
+      "to": "industry_telecom_media",
+      "evidence": "통신서비스는 통신/미디어 산업 분야에 포함됨.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_030200_ebcc25964ce91230",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.newsis.com/view/NISX20260423_0003604102",
+      "evidence_published_at": "2026-04-23T17:08:00+09:00"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "source_id": "dart_084370_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_084370",
+      "type": "Company",
+      "name": "유진테크",
+      "stock_code": "084370"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_084370",
+      "to": "industry_electronics",
+      "evidence": "The document is from 유진테크 주식등의 대량보유상황보고서 and relates to stock ownership, implying this is the 대량보유상황 for the company 유진테크, which is known to be in the 전자산업.",
+      "date": "2026-05-07",
+      "evidence_source_id": "dart_084370_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250529000039",
+      "evidence_published_at": "2026-05-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-05-07",
+      "evidence_source_id": "dart_084370_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250529000039",
+      "evidence_published_at": "2026-05-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-05-07",
+      "evidence_source_id": "dart_084370_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250529000039",
+      "evidence_published_at": "2026-05-07"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "source_id": "dart_051900_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_051900",
+      "type": "Company",
+      "name": "LG생활건강",
+      "stock_code": "051900"
+    },
+    {
+      "id": "industry_beauty_cosmetics",
+      "type": "Industry",
+      "name": "뷰티/화장품"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051900",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "LG생활건강의 대량보유 보고자는 SilchesterInternationalInvestorsLLP, 보고 유형은 약식, 접수일은 2025-07-31, 보유주식수는 789,874주, 지분율은 5.06%, 주식수 증감은 789,874, 지분율 증감은 5.06, 보고사유는 단순 취득.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_051900_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250731000214",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051900",
+      "to": "industry_retail_consumer",
+      "evidence": "LG생활건강의 대량보유 보고자는 SilchesterInternationalInvestorsLLP, 보고 유형은 약식, 접수일은 2025-07-31, 보유주식수는 789,874주, 지분율은 5.06%, 주식수 증감은 789,874, 지분율 증감은 5.06, 보고사유는 단순 취득.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_051900_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250731000214",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_051900_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250731000214",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

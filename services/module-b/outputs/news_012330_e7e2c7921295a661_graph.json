@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "현대모비스",
       "stock_code": "012330",
-      "description": "현대자동차와 기아에 램프 공급하는 연매출 3조원 규모 조명사업"
+      "description": "현대자동차와 기아에 램프 공급하는 연매출 3조원 규모 핵심 조명 사업을 영위"
     },
     {
       "id": "company_000270",
@@ -21,21 +21,98 @@
       "stock_code": "005380"
     },
     {
-      "id": "business_area_램프사업",
-      "type": "BusinessArea",
-      "name": "램프사업"
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
     },
     {
-      "id": "industry_자동차",
+      "id": "industry_mobility",
       "type": "Industry",
-      "name": "자동차"
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "product_service_lamp",
+      "type": "ProductService",
+      "name": "램프"
+    },
+    {
+      "id": "industry_electric_vehicle",
+      "type": "Industry",
+      "name": "전기차량"
+    },
+    {
+      "id": "industry_autonomous_driving",
+      "type": "Industry",
+      "name": "자율주행"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_012330",
-      "to": "business_area_램프사업",
+      "to": "industry_auto_parts",
+      "evidence": "현대모비스 램프사업은 현대자동차와 기아 핵심 차종에 램프를 공급하는 안정적인 캐시카우 사업으로 꼽힌다.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_mobility",
+      "evidence": "현대모비스 램프사업은 현대자동차와 기아 핵심 차종에 램프를 공급하는 안정적인 캐시카우 사업으로 꼽힌다.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_012330",
+      "to": "product_service_lamp",
       "evidence": "현대모비스의 연매출 3조원 규모 램프사업 매각을 둘러싸고 '헐값 논란'이 커지고 있다.",
       "date": "",
       "evidence_source_id": "news_012330_e7e2c7921295a661",
@@ -45,9 +122,152 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_램프사업",
-      "to": "industry_자동차",
+      "from": "product_service_lamp",
+      "to": "industry_auto_parts",
       "evidence": "현대모비스 램프사업은 현대자동차와 기아 핵심 차종에 램프를 공급하는 안정적인 캐시카우 사업으로 꼽힌다.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_autonomous_driving",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자율주행 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electric_vehicle",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 전기차량 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "",
+      "evidence_source_id": "news_012330_e7e2c7921295a661",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.asiatime.co.kr/article/20260515500169",
+      "evidence_published_at": "2026-05-15T20:20:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "",
       "evidence_source_id": "news_012330_e7e2c7921295a661",
       "evidence_source_type": "news",

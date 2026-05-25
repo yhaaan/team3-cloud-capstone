@@ -6,62 +6,7 @@
       "type": "Company",
       "name": "쎄트렉아이",
       "stock_code": "099320",
-      "description": "지구관측 위성시스템 개발 및 생산, 위성 탑재체·부분품 제조, 관제 및 영상처리 소프트웨어 개발과 군사용 위성·지상체 개발"
-    },
-    {
-      "id": "business_area_satellite_systems",
-      "type": "BusinessArea",
-      "name": "위성시스템"
-    },
-    {
-      "id": "business_area_satellite_payloads_parts",
-      "type": "BusinessArea",
-      "name": "위성 탑재체·부분품"
-    },
-    {
-      "id": "business_area_satellite_software",
-      "type": "BusinessArea",
-      "name": "위성관제 소프트웨어"
-    },
-    {
-      "id": "business_area_image_processing_software",
-      "type": "BusinessArea",
-      "name": "영상처리 소프트웨어"
-    },
-    {
-      "id": "business_area_military_satellites_ground_units",
-      "type": "BusinessArea",
-      "name": "군사용 위성 및 이동형 지상체"
-    },
-    {
-      "id": "product_service_satellite_systems",
-      "type": "ProductService",
-      "name": "위성시스템"
-    },
-    {
-      "id": "product_service_electro_optical_cameras",
-      "type": "ProductService",
-      "name": "전자광학카메라"
-    },
-    {
-      "id": "product_service_satellite_ground_stations",
-      "type": "ProductService",
-      "name": "위성지상국"
-    },
-    {
-      "id": "product_service_satellite_image_reception_system",
-      "type": "ProductService",
-      "name": "위성영상수신처리시스템"
-    },
-    {
-      "id": "product_service_mobile_ground_units",
-      "type": "ProductService",
-      "name": "이동형 지상체"
-    },
-    {
-      "id": "industry_space_industry",
-      "type": "Industry",
-      "name": "우주산업"
+      "description": "지구관측 위성시스템 개발 및 생산과 군사용 위성·지상체 개발 중심 사업 영위"
     },
     {
       "id": "company_038880",
@@ -74,14 +19,104 @@
       "type": "Company",
       "name": "전방",
       "stock_code": "000950"
+    },
+    {
+      "id": "industry_satellite_space",
+      "type": "Industry",
+      "name": "위성/우주"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "product_service_satellite_system",
+      "type": "ProductService",
+      "name": "위성시스템"
+    },
+    {
+      "id": "product_service_optical_camera",
+      "type": "ProductService",
+      "name": "전자광학카메라"
+    },
+    {
+      "id": "product_service_satellite_ground_station",
+      "type": "ProductService",
+      "name": "위성지상국"
+    },
+    {
+      "id": "product_service_satellite_image_reception_software",
+      "type": "ProductService",
+      "name": "위성영상수신처리시스템"
+    },
+    {
+      "id": "product_service_mobile_ground_vehicle",
+      "type": "ProductService",
+      "name": "이동형 지상체"
+    },
+    {
+      "id": "product_service_satellite_image_sales",
+      "type": "ProductService",
+      "name": "위성영상 판매"
+    },
+    {
+      "id": "product_service_ai_satellite_image_analysis",
+      "type": "ProductService",
+      "name": "인공지능 기반 위성영상 분석사업"
+    },
+    {
+      "id": "product_service_data_analysis",
+      "type": "ProductService",
+      "name": "데이터 분석"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_099320",
-      "to": "business_area_satellite_systems",
-      "evidence": "당사는 지구관측 위성시스템의 개발 및 생산을 핵심사업으로 영위하고 있습니다.",
+      "to": "industry_satellite_space",
+      "evidence": "당사는 지구관측 위성시스템의 개발 및 생산을 핵심사업으로 영위하고 있으며 특히 중ㆍ소형위성시스템, 위성의 탑재체와 부분품 개발 및 제조, 위성의 관제소프트웨어, 위성으로부터 취득된 정보를 수신처리하기 위한 영상처리소프트웨어 등을 개발하고 있습니다.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -89,10 +124,10 @@
       "evidence_published_at": "2026-04-06"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_099320",
-      "to": "business_area_satellite_payloads_parts",
-      "evidence": "특히 중ㆍ소형위성시스템, 위성의 탑재체와 부분품 개발 및 제조를 영위하고 있습니다.",
+      "to": "industry_defense_aerospace",
+      "evidence": "또한 위성을 제작하는데 사용된 기술을 기반으로 군사 목적으로 활용할 수 있는 군사위성과 이동형 지상체 개발을 주요사업으로 하는 방위사업을 영위하고 있습니다.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -100,10 +135,10 @@
       "evidence_published_at": "2026-04-06"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_099320",
-      "to": "business_area_satellite_software",
-      "evidence": "위성의 관제 소프트웨어를 개발하고 있습니다.",
+      "to": "product_service_satellite_system",
+      "evidence": "주요 제품 등의 현황 ... 위성시스템,전자광학카메라,위성지상국",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -111,10 +146,10 @@
       "evidence_published_at": "2026-04-06"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_099320",
-      "to": "business_area_image_processing_software",
-      "evidence": "위성으로부터 취득된 정보를 수신처리하기 위한 영상처리 소프트웨어 등을 개발하고 있습니다.",
+      "to": "product_service_optical_camera",
+      "evidence": "주요 제품 등의 현황 ... 위성시스템,전자광학카메라,위성지상국",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -122,9 +157,31 @@
       "evidence_published_at": "2026-04-06"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_099320",
-      "to": "business_area_military_satellites_ground_units",
+      "to": "product_service_satellite_ground_station",
+      "evidence": "주요 제품 등의 현황 ... 위성시스템,전자광학카메라,위성지상국",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_099320",
+      "to": "product_service_satellite_image_reception_software",
+      "evidence": "주요 사업 영역 당사는 위성의 관제소프트웨어, 위성으로부터 취득된 정보를 수신처리하기 위한 영상처리소프트웨어 등을 개발하고 있습니다.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_099320",
+      "to": "product_service_mobile_ground_vehicle",
       "evidence": "군사 목적으로 활용할 수 있는 군사위성과 이동형 지상체 개발을 주요사업으로 하는 방위사업을 영위하고 있습니다.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
@@ -135,8 +192,8 @@
     {
       "type": "PRODUCES",
       "from": "company_099320",
-      "to": "product_service_satellite_systems",
-      "evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국",
+      "to": "product_service_satellite_image_sales",
+      "evidence": "자회사인 (주)에스아이아이에스와 (주)에스아이에이는 위성제조사업의 전방사업인 위성영상 판매 사업과 인공지능 기반 위성영상 분석사업을 영위하고 있으며",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -146,8 +203,8 @@
     {
       "type": "PRODUCES",
       "from": "company_099320",
-      "to": "product_service_electro_optical_cameras",
-      "evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국",
+      "to": "product_service_ai_satellite_image_analysis",
+      "evidence": "자회사인 (주)에스아이아이에스와 (주)에스아이에이는 ... 인공지능 기반 위성영상 분석사업을 영위하고 있으며",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -157,30 +214,8 @@
     {
       "type": "PRODUCES",
       "from": "company_099320",
-      "to": "product_service_satellite_ground_stations",
-      "evidence": "위성사업 제품용역 위성시스템, 전자광학카메라, 위성지상국",
-      "date": "2026-04-06",
-      "evidence_source_id": "dart_099320_business_segments_20260406004277",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
-      "evidence_published_at": "2026-04-06"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_099320",
-      "to": "product_service_satellite_image_reception_system",
-      "evidence": "위성영상 수신처리 및 위성관제, W위성영상수신처리시스템",
-      "date": "2026-04-06",
-      "evidence_source_id": "dart_099320_business_segments_20260406004277",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
-      "evidence_published_at": "2026-04-06"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_099320",
-      "to": "product_service_mobile_ground_units",
-      "evidence": "이동형 지상체",
+      "to": "product_service_data_analysis",
+      "evidence": "(주)에스아이에이 제품용역 인공지능 기반 위성/항공영상 데이터 분석사업 데이터 분석",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -189,9 +224,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_satellite_systems",
-      "to": "industry_space_industry",
-      "evidence": "당사는 지구관측 위성시스템의 개발 및 생산을 핵심사업으로 영위하고 있습니다.",
+      "from": "product_service_satellite_system",
+      "to": "industry_satellite_space",
+      "evidence": "위성과 관련된 사업을 운영",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -200,9 +235,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_satellite_payloads_parts",
-      "to": "industry_space_industry",
-      "evidence": "특히 중ㆍ소형위성시스템, 위성의 탑재체와 부분품 개발 및 제조를 영위하고 있습니다.",
+      "from": "product_service_optical_camera",
+      "to": "industry_satellite_space",
+      "evidence": "위성과 관련된 사업을 운영",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -211,9 +246,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_satellite_software",
-      "to": "industry_space_industry",
-      "evidence": "위성의 관제 소프트웨어를 개발하고 있습니다.",
+      "from": "product_service_satellite_ground_station",
+      "to": "industry_satellite_space",
+      "evidence": "위성과 관련된 사업을 운영",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -222,9 +257,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_image_processing_software",
-      "to": "industry_space_industry",
-      "evidence": "위성으로부터 취득된 정보를 수신처리하기 위한 영상처리 소프트웨어 등을 개발하고 있습니다.",
+      "from": "product_service_satellite_image_reception_software",
+      "to": "industry_satellite_space",
+      "evidence": "위성 관제 소프트웨어 관련",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -233,9 +268,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_military_satellites_ground_units",
-      "to": "industry_space_industry",
-      "evidence": "군사 목적으로 활용할 수 있는 군사위성과 이동형 지상체 개발을 주요사업으로 하는 방위사업을 영위하고 있습니다.",
+      "from": "product_service_mobile_ground_vehicle",
+      "to": "industry_defense_aerospace",
+      "evidence": "군사위성과 이동형 지상체 개발",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -244,9 +279,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_satellite_systems",
-      "to": "business_area_satellite_systems",
-      "evidence": "위성사업 제품용역 위성시스템",
+      "from": "product_service_satellite_image_sales",
+      "to": "industry_satellite_space",
+      "evidence": "위성영상 판매 사업 관련",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -255,9 +290,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_electro_optical_cameras",
-      "to": "business_area_satellite_systems",
-      "evidence": "위성사업 제품용역 전자광학카메라",
+      "from": "product_service_ai_satellite_image_analysis",
+      "to": "industry_ai",
+      "evidence": "인공지능 기반 위성영상 분석사업",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -266,9 +301,64 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_satellite_ground_stations",
-      "to": "business_area_satellite_systems",
-      "evidence": "위성사업 제품용역 위성지상국",
+      "from": "product_service_data_analysis",
+      "to": "industry_ai",
+      "evidence": "인공지능 기반 위성/항공영상 데이터 분석사업 데이터 분석",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -277,9 +367,53 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_satellite_image_reception_system",
-      "to": "business_area_image_processing_software",
-      "evidence": "위성영상수신처리시스템",
+      "from": "industry_satellite_space",
+      "to": "industry_defense_aerospace",
+      "evidence": "Industry taxonomy: 위성/우주 is part of 방산/항공우주.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",
@@ -288,9 +422,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "product_service_mobile_ground_units",
-      "to": "business_area_military_satellites_ground_units",
-      "evidence": "이동형 지상체",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-04-06",
+      "evidence_source_id": "dart_099320_business_segments_20260406004277",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406004277",
+      "evidence_published_at": "2026-04-06"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-04-06",
       "evidence_source_id": "dart_099320_business_segments_20260406004277",
       "evidence_source_type": "dart",

@@ -5,14 +5,7 @@
       "id": "company_000810",
       "type": "Company",
       "name": "삼성화재",
-      "stock_code": "000810",
-      "description": "보험업을 중심으로 다양한 투자 및 경영참여 활동을 수행한다."
-    },
-    {
-      "id": "company_000210",
-      "type": "Company",
-      "name": "DL",
-      "stock_code": "000210"
+      "stock_code": "000810"
     },
     {
       "id": "company_375500",
@@ -27,22 +20,22 @@
       "stock_code": "105560"
     },
     {
-      "id": "company_003550",
+      "id": "company_464680",
       "type": "Company",
-      "name": "LG",
-      "stock_code": "003550"
+      "name": "KB제27호스팩",
+      "stock_code": "464680"
+    },
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200"
     },
     {
       "id": "company_032640",
       "type": "Company",
       "name": "LG유플러스",
       "stock_code": "032640"
-    },
-    {
-      "id": "company_034730",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
     },
     {
       "id": "company_017670",
@@ -55,6 +48,12 @@
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
+    },
+    {
+      "id": "company_024110",
+      "type": "Company",
+      "name": "기업은행",
+      "stock_code": "024110"
     },
     {
       "id": "company_088980",
@@ -81,40 +80,22 @@
       "stock_code": "012750"
     },
     {
+      "id": "company_451700",
+      "type": "Company",
+      "name": "엔에이치스팩29호",
+      "stock_code": "451700"
+    },
+    {
       "id": "company_316140",
       "type": "Company",
       "name": "우리금융지주",
       "stock_code": "316140"
     },
     {
-      "id": "company_024110",
-      "type": "Company",
-      "name": "기업은행",
-      "stock_code": "024110"
-    },
-    {
-      "id": "company_030200",
-      "type": "Company",
-      "name": "KT",
-      "stock_code": "030200"
-    },
-    {
-      "id": "company_002020",
-      "type": "Company",
-      "name": "코오롱",
-      "stock_code": "002020"
-    },
-    {
       "id": "company_086790",
       "type": "Company",
       "name": "하나금융지주",
       "stock_code": "086790"
-    },
-    {
-      "id": "company_000880",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
     },
     {
       "id": "company_451800",
@@ -129,29 +110,42 @@
       "stock_code": "005380"
     },
     {
-      "id": "company_010240",
-      "type": "Company",
-      "name": "흥국",
-      "stock_code": "010240"
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
     }
   ],
   "relations": [
     {
       "type": "INVESTS_IN",
       "from": "company_000810",
-      "to": "company_000210",
-      "evidence": "삼성화재의 타법인 출자 대상은 DL이앤씨, 출자 목적은 단순투자, 최초 취득일은 2024.02.14, 당기말 지분율은 0.00%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
       "to": "company_375500",
-      "evidence": "삼성화재의 타법인 출자 대상은 DL이앤씨, 출자 목적은 단순투자, 최초 취득일은 2024.02.14.",
+      "evidence": "삼성화재의 타법인 출자 대상은 경기꿈나무(주), 출자 목적은 단순투자, 최초 취득일은 2007.12.21, 당기말 보유수량은 125,048, 당기말 지분율은 10.90%, 장부가액은 625,000,000.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -159,10 +153,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_000810",
-      "to": "company_105560",
-      "evidence": "삼성화재의 타법인 출자 대상은 KB금융, 출자 목적은 단순투자, 최초 취득일은 2022.06.16, 당기말 지분율은 0.05%.",
+      "to": "industry_it_software",
+      "evidence": "삼성화재의 타법인 출자 대상은 Fortuna Topco Limited, 출자 목적은 경영참여, 최초 취득일은 2019.11.04, 당기말 보유수량은 400,262,024, 당기말 지분율은 40.03%, 장부가액은 1,170,293,000,000.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -170,10 +164,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_032640",
-      "evidence": "삼성화재의 타법인 출자 대상은 LG유플러스, 출자 목적은 단순투자, 최초 취득일은 2022.05.16, 당기말 지분율은 0.14%.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -181,10 +175,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_034730",
-      "evidence": "삼성화재의 타법인 출자 대상은 SK텔레콤, 출자 목적은 단순투자, 최초 취득일은 2022.06.28, 당기말 지분율은 0.10%.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -192,10 +186,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_017670",
-      "evidence": "삼성화재의 타법인 출자 대상은 SK텔레콤, 출자 목적은 단순투자, 최초 취득일은 2022.06.28, 당기말 지분율은 0.10%.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -203,10 +197,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_000270",
-      "evidence": "삼성화재의 타법인 출자 대상은 기아, 출자 목적은 단순투자, 최초 취득일은 2025.12.22, 당기말 지분율은 0.01%.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -214,10 +208,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_088980",
-      "evidence": "삼성화재의 타법인 출자 대상은 맥쿼리인프라, 출자 목적은 단순투자, 최초 취득일은 2022.06.28, 당기말 지분율은 0.12%.",
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -225,10 +219,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_005930",
-      "evidence": "삼성화재의 타법인 출자 대상은 삼성전자, 출자 목적은 경영참여, 최초 취득일은 -, 당기말 지분율은 1.49%.",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -236,109 +230,10 @@
       "evidence_published_at": "2026-03-12"
     },
     {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_055550",
-      "evidence": "삼성화재의 타법인 출자 대상은 신한지주, 출자 목적은 단순투자, 최초 취득일은 2022.06.28, 당기말 지분율은 0.06%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_012750",
-      "evidence": "삼성화재의 타법인 출자 대상은 에스원, 출자 목적은 경영참여, 최초 취득일은 1997.10.31, 당기말 지분율은 0.97%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_316140",
-      "evidence": "삼성화재의 타법인 출자 대상은 우리금융지주, 출자 목적은 단순투자, 최초 취득일은 2024.09.04, 당기말 지분율은 0.05%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_024110",
-      "evidence": "삼성화재의 타법인 출자 대상은 기업은행, 출자 목적은 단순투자, 최초 취득일은 2024.09.04, 당기말 지분율은 0.06%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_030200",
-      "evidence": "삼성화재의 타법인 출자 대상은 KT, 출자 목적은 단순투자, 최초 취득일은 2022.11.16, 당기말 지분율은 0.06%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_002020",
-      "evidence": "삼성화재의 타법인 출자 대상은 코오롱 2021 이노베이션 투자조합, 출자 목적은 단순투자, 최초 취득일은 2021.09.09, 당기말 지분율은 5.13%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_086790",
-      "evidence": "삼성화재의 타법인 출자 대상은 하나금융지주, 출자 목적은 단순투자, 최초 취득일은 2022.06.28, 당기말 지분율은 0.11%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_451800",
-      "evidence": "삼성화재의 타법인 출자 대상은 한화리츠, 출자 목적은 단순투자, 최초 취득일은 2023.03.14, 당기말 지분율은 1.56%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_005380",
-      "evidence": "삼성화재의 타법인 출자 대상은 현대차, 출자 목적은 단순투자, 최초 취득일은 2023.08.07, 당기말 지분율은 0.02%.",
-      "date": "2026-03-12",
-      "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001399",
-      "evidence_published_at": "2026-03-12"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_000810",
-      "to": "company_010240",
-      "evidence": "삼성화재의 타법인 출자 대상은 흥국코어위탁관리부동산투자회사, 출자 목적은 단순투자.",
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_000810_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

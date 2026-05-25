@@ -1,0 +1,93 @@
+{
+  "source_id": "news_011790_bc51a6d31e5a6e38",
+  "entities": [
+    {
+      "id": "company_011790",
+      "type": "Company",
+      "name": "SKC",
+      "stock_code": "011790"
+    },
+    {
+      "id": "company_000880",
+      "type": "Company",
+      "name": "한화",
+      "stock_code": "000880"
+    },
+    {
+      "id": "industry_power_equipment",
+      "type": "Industry",
+      "name": "전력장비"
+    },
+    {
+      "id": "product_service_distribution_equipment",
+      "type": "ProductService",
+      "name": "배전기기"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "PART_OF",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력장비 is part of 에너지/유틸리티.",
+      "date": "",
+      "evidence_source_id": "news_011790_bc51a6d31e5a6e38",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=201161",
+      "evidence_published_at": "2026-05-18T18:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_011790_bc51a6d31e5a6e38",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=201161",
+      "evidence_published_at": "2026-05-18T18:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_011790_bc51a6d31e5a6e38",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=201161",
+      "evidence_published_at": "2026-05-18T18:00:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "",
+      "evidence_source_id": "news_011790_bc51a6d31e5a6e38",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.sisaon.co.kr/news/articleView.html?idxno=201161",
+      "evidence_published_at": "2026-05-18T18:00:00+09:00"
+    }
+  ]
+}

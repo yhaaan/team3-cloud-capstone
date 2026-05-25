@@ -1,0 +1,117 @@
+{
+  "source_id": "news_017670_ffb38755e182f244",
+  "entities": [
+    {
+      "id": "company_017670",
+      "type": "Company",
+      "name": "SK텔레콤",
+      "stock_code": "017670",
+      "description": "통신 서비스 및 반기 배당 실시로 주주 친화 정책을 추진하는 기업"
+    },
+    {
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730",
+      "description": "지주회사로서 자회사 SK텔레콤 배당금을 통해 현금 배당을 실시하는 기업"
+    },
+    {
+      "id": "industry_telecommunication_service",
+      "type": "Industry",
+      "name": "통신서비스"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_017670",
+      "to": "industry_telecommunication_service",
+      "evidence": "SK텔레콤 등 자회사에서 받은 배당금으로 지주회사인 SK가 배당하기 때문이다.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_holding_company",
+      "evidence": "지주회사인 SK(주)가 545억원을 받는다.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_telecommunication_service",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 통신서비스 is part of 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_017670_ffb38755e182f244",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.koreareport.co.kr/news/articleView.html?idxno=50304",
+      "evidence_published_at": "2026-05-07T07:52:00+09:00"
+    }
+  ]
+}

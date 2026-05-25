@@ -1,0 +1,597 @@
+{
+  "source_id": "dart_014680_business_segments_20260318001424",
+  "entities": [
+    {
+      "id": "company_014680",
+      "type": "Company",
+      "name": "한솔케미칼",
+      "stock_code": "014680",
+      "description": "반도체, 디스플레이, 제지 및 이차전지 소재 등 정밀화학제품 및 화학소재를 생산"
+    },
+    {
+      "id": "company_055490",
+      "type": "Company",
+      "name": "테이팩스",
+      "stock_code": "055490",
+      "description": "이차전지 전자재료와 식품포장용 소비재를 생산"
+    },
+    {
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_precursor",
+      "type": "ProductService",
+      "name": "박막소재"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "product_service_resin",
+      "type": "ProductService",
+      "name": "Resin"
+    },
+    {
+      "id": "product_service_qd",
+      "type": "ProductService",
+      "name": "QD"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "product_service_anode_binder",
+      "type": "ProductService",
+      "name": "음극바인더"
+    },
+    {
+      "id": "product_service_separator_binder",
+      "type": "ProductService",
+      "name": "분리막바인더"
+    },
+    {
+      "id": "product_service_silicon_anode",
+      "type": "ProductService",
+      "name": "실리콘음극재"
+    },
+    {
+      "id": "industry_paper_packaging",
+      "type": "Industry",
+      "name": "제지/포장"
+    },
+    {
+      "id": "product_service_latex",
+      "type": "ProductService",
+      "name": "라텍스"
+    },
+    {
+      "id": "industry_environment",
+      "type": "Industry",
+      "name": "환경"
+    },
+    {
+      "id": "product_service_polymer_coagulant",
+      "type": "ProductService",
+      "name": "고분자응집제"
+    },
+    {
+      "id": "industry_electronic_component",
+      "type": "Industry",
+      "name": "전자부품"
+    },
+    {
+      "id": "product_service_electronic_materials",
+      "type": "ProductService",
+      "name": "전자소재"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "product_service_food_packaging",
+      "type": "ProductService",
+      "name": "식품포장용"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_chemical_materials",
+      "evidence": "당사는 정밀화학 제품으로 반도체, 디스플레이, 제지 및 섬유에 사용되는 과산화수소, 섬유에 사용되는 차아황산소다, Polymer 합성시 중합개시제로 주로 사용되는 BPO를 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_paper_packaging",
+      "evidence": "또한 제지/환경제품으로 제지산업에서 부재료로 사용되는 라텍스외 제지약품, 폐수처리 등에 사용되는 고분자응집제 등을 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_environment",
+      "evidence": "또한 제지/환경제품으로 제지산업에서 부재료로 사용되는 라텍스외 제지약품, 폐수처리 등에 사용되는 고분자응집제 등을 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_semiconductor",
+      "evidence": "당사의 전자 및 이차전지소재 제품으로는 반도체 공정에서 반도체 박막을 형성하는 데에 사용하는 박막소재(Precursor), 디스플레이 제조에 사용되는 Resin 및 QD 등 전자소재 제품을 생산하고 있으며,",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_display",
+      "evidence": "당사의 전자 및 이차전지소재 제품으로는 반도체 공정에서 반도체 박막을 형성하는 데에 사용하는 박막소재(Precursor), 디스플레이 제조에 사용되는 Resin 및 QD 등 전자소재 제품을 생산하고 있으며,",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_014680",
+      "to": "industry_battery_energy_storage",
+      "evidence": "당사의 전자 및 이차전지소재 제품으로는 ... 이차전지용 소재인 음극바인더, 분리막바인더, 실리콘음극재 등을 개발 및 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "industry_precursor",
+      "evidence": "당사의 전자 및 이차전지소재 제품으로는 반도체 공정에서 반도체 박막을 형성하는 데에 사용하는 박막소재(Precursor) ... 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_resin",
+      "evidence": "디스플레이 제조에 사용되는 Resin 및 QD 등 전자소재 제품을 생산하고 있으며,",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_qd",
+      "evidence": "디스플레이 제조에 사용되는 Resin 및 QD 등 전자소재 제품을 생산하고 있으며,",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_anode_binder",
+      "evidence": "이차전지용 소재인 음극바인더, 분리막바인더, 실리콘음극재 등을 개발 및 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_separator_binder",
+      "evidence": "이차전지용 소재인 음극바인더, 분리막바인더, 실리콘음극재 등을 개발 및 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_silicon_anode",
+      "evidence": "이차전지용 소재인 음극바인더, 분리막바인더, 실리콘음극재 등을 개발 및 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_latex",
+      "evidence": "또한 제지/환경제품으로 제지산업에서 부재료로 사용되는 라텍스외 제지약품, 폐수처리 등에 사용되는 고분자응집제 등을 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_014680",
+      "to": "product_service_polymer_coagulant",
+      "evidence": "또한 제지/환경제품으로 제지산업에서 부재료로 사용되는 라텍스외 제지약품, 폐수처리 등에 사용되는 고분자응집제 등을 생산하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055490",
+      "to": "industry_battery_energy_storage",
+      "evidence": "(주)테이팩스의 주요 제품: 전자재료-이차전지 안정성 및 수명향상, 반도체 공정용 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055490",
+      "to": "industry_food_beverage",
+      "evidence": "(주)테이팩스의 주요 제품: 소비재-식품포장용",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_055490",
+      "to": "industry_retail_consumer",
+      "evidence": "(주)테이팩스의 주요 제품: 소비재-산업용, 주방 및 생활용",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_055490",
+      "to": "product_service_electronic_materials",
+      "evidence": "(주)테이팩스의 주요 제품: 전자재료-이차전지 안정성 및 수명향상, 반도체 공정용 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_055490",
+      "to": "product_service_food_packaging",
+      "evidence": "(주)테이팩스의 주요 제품: 소비재-식품포장용",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_electronic_component",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 전자부품 is part of 전자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_paper_packaging",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 제지/포장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_paper_packaging",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 제지/포장 is related to 유통/소비재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 환경 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 환경 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_014680_business_segments_20260318001424",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001424",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

@@ -6,8 +6,73 @@
       "type": "Company",
       "name": "하이브",
       "stock_code": "352820",
-      "description": "하이브는 매니지먼트 총괄, CHRO, CCO, CLO, CEO, CFO, 의장 등 임원 및 주주를 포함한 사업 운영을 수행함"
+      "description": "음악엔터테인먼트 산업에서 음악 및 엔터테인먼트 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_352820",
+      "to": "industry_music_entertainment",
+      "evidence": "하이브의 임원·주요주주 소유상황 보고자 ... 방시혁 ... 보유주식수는 12,439,860주 ... 지분율은 28.86%",
+      "date": "2026-04-08",
+      "evidence_source_id": "dart_352820_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000194",
+      "evidence_published_at": "2026-04-08"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-04-08",
+      "evidence_source_id": "dart_352820_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000194",
+      "evidence_published_at": "2026-04-08"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-04-08",
+      "evidence_source_id": "dart_352820_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000194",
+      "evidence_published_at": "2026-04-08"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-04-08",
+      "evidence_source_id": "dart_352820_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000194",
+      "evidence_published_at": "2026-04-08"
+    }
+  ]
 }

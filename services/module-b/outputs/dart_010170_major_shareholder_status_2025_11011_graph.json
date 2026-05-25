@@ -1,0 +1,61 @@
+{
+  "source_id": "dart_010170_major_shareholder_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_010170",
+      "type": "Company",
+      "name": "대한광통신",
+      "stock_code": "010170"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_010170",
+      "to": "industry_telecom_media",
+      "evidence": "대한광통신은 통신 관련 회사임이 문서에서 명확히 나타나있다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_010170_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000854",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

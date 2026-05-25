@@ -12,15 +12,65 @@
       "type": "Company",
       "name": "코오롱",
       "stock_code": "002020",
-      "description": "다양한 산업 분야에서 사업을 영위하는 종합 기업"
+      "description": "섬유, 화학, 소재, 건설, 바이오헬스케어 다각화 사업 영위"
+    },
+    {
+      "id": "company_102940",
+      "type": "Company",
+      "name": "코오롱생명과학",
+      "stock_code": "102940"
+    },
+    {
+      "id": "company_003070",
+      "type": "Company",
+      "name": "코오롱글로벌",
+      "stock_code": "003070"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_002020",
-      "to": "company_950160",
+      "type": "BELONGS_TO",
+      "from": "company_950160",
+      "to": "industry_bio_healthcare",
       "evidence": "코오롱티슈진의 최대주주 관련 인물/법인은 코오롱, 관계는 최대주주, 당기말 보유주식수는 6,535,772주, 지분율은 39.27%, 비고는 유상증자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_950160_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001341",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002020",
+      "to": "industry_bio_healthcare",
+      "evidence": "코오롱티슈진의 최대주주 관련 인물/법인은 코오롱, 관계는 최대주주, 당기말 보유주식수는 6,535,772주, 지분율은 39.27%, 비고는 유상증자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_950160_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001341",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_102940",
+      "to": "industry_bio_healthcare",
+      "evidence": "코오롱티슈진의 최대주주 관련 인물/법인은 코오롱 생명과학, 관계는 계열회사, 당기말 보유주식수는 1,534,466주, 지분율은 9.22%.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_950160_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001341",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003070",
+      "to": "industry_bio_healthcare",
+      "evidence": "코오롱티슈진의 최대주주 관련 인물/법인은 코오롱 글로벌, 관계는 계열회사, 당기말 보유주식수는 68,958주, 지분율은 0.41%.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_950160_major_shareholder_status_2025_11011",
       "evidence_source_type": "dart",

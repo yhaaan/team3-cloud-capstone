@@ -1,0 +1,47 @@
+{
+  "source_id": "dart_403870_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_403870",
+      "type": "Company",
+      "name": "HPSP",
+      "stock_code": "403870",
+      "description": "반도체 및 장비 관련 사업을 하는 기업"
+    },
+    {
+      "id": "company_042700",
+      "type": "Company",
+      "name": "한미반도체",
+      "stock_code": "042700"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_403870",
+      "to": "industry_semiconductor",
+      "evidence": "HPSP의 대량보유 보고자는 한미반도체, 보고 유형은 약식, 접수일은 2025-07-03",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_403870_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000457",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042700",
+      "to": "industry_semiconductor",
+      "evidence": "HPSP의 대량보유 보고자는 한미반도체, 보고 유형은 약식, 접수일은 2025-07-03",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_403870_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000457",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
+}

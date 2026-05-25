@@ -6,120 +6,41 @@
       "type": "Company",
       "name": "삼성생명",
       "stock_code": "032830",
-      "description": "삼성생명은 보험 사업을 영위하는 회사입니다."
+      "description": "생명보험업을 주력으로 하는 금융회사"
     },
     {
-      "id": "person_igilho",
-      "type": "Person",
-      "name": "이길호",
-      "role_raw": "부사장",
-      "role": "VICE_PRESIDENT",
-      "role_label": "부사장"
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     },
     {
-      "id": "person_kimchanghoon",
-      "type": "Person",
-      "name": "김창훈",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "role_label": "상무"
-    },
-    {
-      "id": "person_kimjinho",
-      "type": "Person",
-      "name": "김진호",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "role_label": "상무"
-    },
-    {
-      "id": "person_ijookyung",
-      "type": "Person",
-      "name": "이주경",
-      "role_raw": "부사장",
-      "role": "VICE_PRESIDENT",
-      "role_label": "부사장"
-    },
-    {
-      "id": "person_pakhunmin",
-      "type": "Person",
-      "name": "박훈민",
-      "role_raw": "상무",
-      "role": "OTHER",
-      "role_label": "상무"
+      "id": "industry_life_insurance",
+      "type": "Industry",
+      "name": "생명보험"
     },
     {
       "id": "industry_insurance",
       "type": "Industry",
-      "name": "insurance"
-    },
-    {
-      "id": "business_area_insurance",
-      "type": "BusinessArea",
-      "name": "insurance"
+      "name": "보험"
     }
   ],
   "relations": [
     {
-      "type": "AFFILIATED_WITH",
-      "from": "person_igilho",
-      "to": "company_032830",
-      "evidence": "삼성생명의 임원·주요주주 소유상황 보고자는 이길호, 등기 여부는 비등기임원, 직위는 부사장",
-      "date": "2025-12-02",
-      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
-      "evidence_published_at": "2025-12-02"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kimchanghoon",
-      "to": "company_032830",
-      "evidence": "삼성생명의 임원·주요주주 소유상황 보고자는 김창훈, 등기 여부는 비등기임원, 직위는 상무",
-      "date": "2025-12-02",
-      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
-      "evidence_published_at": "2025-12-02"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_kimjinho",
-      "to": "company_032830",
-      "evidence": "삼성생명의 임원·주요주주 소유상황 보고자는 김진호, 등기 여부는 비등기임원, 직위는 상무",
-      "date": "2025-12-02",
-      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
-      "evidence_published_at": "2025-12-02"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_ijookyung",
-      "to": "company_032830",
-      "evidence": "삼성생명의 임원·주요주주 소유상황 보고자는 이주경, 등기 여부는 비등기임원, 직위는 부사장",
-      "date": "2025-12-02",
-      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
-      "evidence_published_at": "2025-12-02"
-    },
-    {
-      "type": "AFFILIATED_WITH",
-      "from": "person_pakhunmin",
-      "to": "company_032830",
-      "evidence": "삼성생명의 임원·주요주주 소유상황 보고자는 박훈민, 등기 여부는 비등기임원, 직위는 상무",
-      "date": "2025-12-02",
-      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
-      "evidence_published_at": "2025-12-02"
-    },
-    {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_032830",
-      "to": "business_area_insurance",
-      "evidence": "삼성생명은 보험 사업을 영위하는 회사입니다.",
+      "to": "industry_finance",
+      "evidence": "삼성생명은 생명보험업을 주력으로 하는 금융회사",
+      "date": "2025-12-02",
+      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
+      "evidence_published_at": "2025-12-02"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_032830",
+      "to": "industry_life_insurance",
+      "evidence": "삼성생명은 생명보험업을 주력으로 하는 금융회사",
       "date": "2025-12-02",
       "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -128,9 +49,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_insurance",
+      "from": "industry_life_insurance",
+      "to": "industry_finance",
+      "evidence": "생명보험은 금융 산업의 한 분야이다.",
+      "date": "2025-12-02",
+      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
+      "evidence_published_at": "2025-12-02"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_life_insurance",
       "to": "industry_insurance",
-      "evidence": "삼성생명은 보험 사업을 영위하는 회사입니다.",
+      "evidence": "Industry taxonomy: 생명보험 is part of 보험.",
+      "date": "2025-12-02",
+      "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250612000143",
+      "evidence_published_at": "2025-12-02"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
       "date": "2025-12-02",
       "evidence_source_id": "dart_032830_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

@@ -6,40 +6,100 @@
       "type": "Company",
       "name": "산일전기",
       "stock_code": "062040",
-      "description": "산일전기는 전력용 및 배전용 변압기, 소프트스타터 등 전력기기 제조와 A/S 서비스를 주력으로 함"
-    },
-    {
-      "id": "business_area_power_transformer",
-      "type": "BusinessArea",
-      "name": "전력 변압기"
-    },
-    {
-      "id": "business_area_distribution_transformer",
-      "type": "BusinessArea",
-      "name": "배전 변압기"
-    },
-    {
-      "id": "business_area_soft_starter",
-      "type": "BusinessArea",
-      "name": "소프트스타터"
-    },
-    {
-      "id": "business_area_after_service",
-      "type": "BusinessArea",
-      "name": "A/S 서비스"
+      "description": "산일전기는 산업용 변압기 제조업체로 전력용 및 배전용 변압기, 소프트스타터, A/S 서비스 등을 제공한다."
     },
     {
       "id": "industry_power_equipment",
       "type": "Industry",
-      "name": "전력기기"
+      "name": "전력장비"
+    },
+    {
+      "id": "industry_power_generation",
+      "type": "Industry",
+      "name": "전력발전"
+    },
+    {
+      "id": "industry_power_grid",
+      "type": "Industry",
+      "name": "전력전력망"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_plant_construction",
+      "type": "Industry",
+      "name": "플랜트건설"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "product_service_power_transformers",
+      "type": "ProductService",
+      "name": "전력 변압기"
+    },
+    {
+      "id": "product_service_distribution_transformers",
+      "type": "ProductService",
+      "name": "배전 변압기"
+    },
+    {
+      "id": "product_service_pole_mounted_transformers",
+      "type": "ProductService",
+      "name": "주상 변압기"
+    },
+    {
+      "id": "product_service_pad_mounted_transformers",
+      "type": "ProductService",
+      "name": "지상 변압기"
+    },
+    {
+      "id": "product_service_soft_starter",
+      "type": "ProductService",
+      "name": "소프트스타터"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_062040",
-      "to": "business_area_power_transformer",
-      "evidence": "당사는 산업용 변압기 제조 업체로서, 전력용 변압기와 배전용 변압기를 주로 제조하고 있으며",
+      "to": "industry_power_equipment",
+      "evidence": "당사는 산업용 변압기 제조 업체로서, 전력용 변압기와 배전용 변압기를 주로 제조하고 있으며, 이 중에서도 전력기기 시장 내에서 72kV 까지의 전압을 다루는 배전 변압기 시장을 주요 목표시장으로 하고 있습니다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -47,10 +107,10 @@
       "evidence_published_at": "2026-04-03"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_062040",
-      "to": "business_area_distribution_transformer",
-      "evidence": "당사는 산업용 변압기 제조 업체로서, 전력용 변압기와 배전용 변압기를 주로 제조하고 있으며",
+      "to": "product_service_power_transformers",
+      "evidence": "당사의 변압기는 단상 혹은 삼상의 용량 70MVA와 72.5kV급 전압까지 생산이 가능하며, 고객이 원하는 특수용도(정류기용, 선박용, 고조파 필터용 등)의 다양한 제품을 생산 및 공급합니다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -58,10 +118,10 @@
       "evidence_published_at": "2026-04-03"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_062040",
-      "to": "business_area_soft_starter",
-      "evidence": "소프트스타터 등 발열, 샤프트 및 전원케이블 응력을 감소시켜 전기모터 및 시스템의 수명 연장",
+      "to": "product_service_distribution_transformers",
+      "evidence": "당사의 변압기는 단상 혹은 삼상의 용량 70MVA와 72.5kV급 전압까지 생산이 가능하며, 고객이 원하는 특수용도(정류기용, 선박용, 고조파 필터용 등)의 다양한 제품을 생산 및 공급합니다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -69,10 +129,32 @@
       "evidence_published_at": "2026-04-03"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_062040",
-      "to": "business_area_after_service",
-      "evidence": "기타매출 A/S 등 기타용역 서비스",
+      "to": "product_service_pole_mounted_transformers",
+      "evidence": "주상 변압기(Pole-mounted Transformers)는 최대333kVA, 최대33kV로 전주(Pole)에 설치되어 사용되며, 무부하 탭절환기(Tap Changer)가 제공될 수 있습니다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_062040",
+      "to": "product_service_pad_mounted_transformers",
+      "evidence": "지상 변압기(Pad-mounted Transformers)는 최대7MVA, 최대33kV로 지상 패드에 설치되어 사용되며, Radial 또는 Loop feed 시스템과 Live front 또는 Dead front 구조를 제공할 수 있습니다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_062040",
+      "to": "product_service_soft_starter",
+      "evidence": "소프트스타터 등은 발열, 샤프트 및 전원케이블 응력을 감소시켜 전기모터 및 시스템의 수명 연장에 기여합니다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -81,9 +163,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_power_transformer",
+      "from": "product_service_power_transformers",
       "to": "industry_power_equipment",
-      "evidence": "당사의 변압기는 산업 전반에 안전하고 경제적으로 사용할 수 있도록 앞선 기술력을 바탕으로 최신의 제조설비와 품질경영으로 생산",
+      "evidence": "전력 변압기(Power Transformers)는 전력기기 시장 내 제품이다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -92,9 +174,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_distribution_transformer",
+      "from": "product_service_distribution_transformers",
       "to": "industry_power_equipment",
-      "evidence": "당사의 변압기는 산업 전반에 안전하고 경제적으로 사용할 수 있도록 앞선 기술력을 바탕으로 최신의 제조설비와 품질경영으로 생산",
+      "evidence": "배전 변압기(Distribution Transformers)는 전력기기 시장 내 제품이다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -103,9 +185,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_soft_starter",
+      "from": "product_service_pole_mounted_transformers",
       "to": "industry_power_equipment",
-      "evidence": "소프트스타터 등 발열, 샤프트 및 전원케이블 응력을 감소시켜 전기모터 및 시스템의 수명 연장",
+      "evidence": "주상 변압기(Pole-mounted Transformers)는 전력기기 시장 내 제품이다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",
@@ -114,9 +196,251 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_after_service",
+      "from": "product_service_pad_mounted_transformers",
       "to": "industry_power_equipment",
-      "evidence": "기타매출 A/S 등 기타용역 서비스",
+      "evidence": "지상 변압기(Pad-mounted Transformers)는 전력기기 시장 내 제품이다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_062040",
+      "to": "industry_energy_utility",
+      "evidence": "배전 변압기 시장을 주요 목표시장으로 하고 있습니다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_062040",
+      "to": "industry_construction_infrastructure",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 건설, 플랜트, 소재 등이 포함됨.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_062040",
+      "to": "industry_chemical_materials",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드 중 화학 포괄함.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_062040",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "산일전기는 산업용 선박 건조 및 해양플랜트 관련 사업 영위.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_plant_construction",
+      "to": "industry_construction_infrastructure",
+      "evidence": "플랜트건설은 건설인프라에 속함.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_generation",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력발전 is part of 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력장비 is part of 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_grid",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력전력망 is part of 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_062040_business_segments_20260403003697",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003697",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_062040_business_segments_20260403003697",
       "evidence_source_type": "dart",

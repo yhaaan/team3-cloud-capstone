@@ -1,0 +1,129 @@
+{
+  "source_id": "dart_001040_affiliate_status_20260318001509",
+  "entities": [
+    {
+      "id": "company_001040",
+      "type": "Company",
+      "name": "CJ",
+      "stock_code": "001040",
+      "description": "식품, 바이오, 물류, 엔터테인먼트 등 다양한 산업 영역의 글로벌 기업"
+    },
+    {
+      "id": "company_253450",
+      "type": "Company",
+      "name": "스튜디오드래곤",
+      "stock_code": "253450",
+      "description": "콘텐츠 제작 및 투자 사업을 영위하는 방송 콘텐츠 전문 기업"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_001040",
+      "to": "company_253450",
+      "evidence": "CJ의 상장 계열회사 후보로 스튜디오드래곤 등이 탐지되었다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_253450",
+      "to": "industry_content_game",
+      "evidence": "스튜디오드래곤은 콘텐츠 제작 및 투자 사업을 영위함 (추론된 산업 범주로서 방송 콘텐츠 전문 기업임을 근거)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_001040_affiliate_status_20260318001509",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001509",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

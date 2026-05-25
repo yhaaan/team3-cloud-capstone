@@ -6,40 +6,20 @@
       "type": "Company",
       "name": "포스코인터내셔널",
       "stock_code": "047050",
-      "description": "포스코인터내셔널은 트레이딩과 에너지 중심으로 철강, 전기차 부품, 이차전지 소재, LNG 발전 등 사업을 영위함"
+      "description": "트레이딩과 에너지 사업을 중심으로 철강, 이차전지 소재, 팜오일, 광물자원 등 국내외 사업을 영위"
     },
     {
-      "id": "business_area_trading",
-      "type": "BusinessArea",
-      "name": "트레이딩사업"
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     },
     {
-      "id": "business_area_energy",
-      "type": "BusinessArea",
-      "name": "에너지사업"
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
     },
     {
-      "id": "product_service_steel",
-      "type": "ProductService",
-      "name": "철강"
-    },
-    {
-      "id": "product_service_steel_raw_materials",
-      "type": "ProductService",
-      "name": "철강원료"
-    },
-    {
-      "id": "product_service_ev_parts",
-      "type": "ProductService",
-      "name": "전기/하이브리드 차부품"
-    },
-    {
-      "id": "product_service_battery_materials",
-      "type": "ProductService",
-      "name": "이차전지소재"
-    },
-    {
-      "id": "product_service_motor_core",
+      "id": "product_service_driving_motor_core",
       "type": "ProductService",
       "name": "구동모터코아"
     },
@@ -49,14 +29,19 @@
       "name": "팜오일"
     },
     {
-      "id": "product_service_food_materials",
-      "type": "ProductService",
-      "name": "식량소재"
+      "id": "industry_agriculture_food_resources",
+      "type": "Industry",
+      "name": "농업/식량자원"
     },
     {
-      "id": "product_service_mineral_resources",
-      "type": "ProductService",
+      "id": "industry_mining_resources",
+      "type": "Industry",
       "name": "광물자원"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
       "id": "product_service_natural_gas",
@@ -74,37 +59,82 @@
       "name": "발전"
     },
     {
-      "id": "product_service_renewable_energy",
-      "type": "ProductService",
-      "name": "신재생에너지"
-    },
-    {
-      "id": "product_service_electricity",
-      "type": "ProductService",
-      "name": "전력"
-    },
-    {
-      "id": "business_area_trading_parts",
-      "type": "BusinessArea",
-      "name": "트레이딩 부품"
-    },
-    {
-      "id": "industry_steel_industry",
+      "id": "industry_renewable_energy",
       "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "product_service_steel",
+      "type": "ProductService",
       "name": "철강"
     },
     {
-      "id": "industry_energy",
+      "id": "product_service_electric_hybrid_auto_parts",
+      "type": "ProductService",
+      "name": "전기/하이브리드차 부품"
+    },
+    {
+      "id": "product_service_battery_material",
+      "type": "ProductService",
+      "name": "이차전지 소재"
+    },
+    {
+      "id": "product_service_food_material",
+      "type": "ProductService",
+      "name": "식량소재"
+    },
+    {
+      "id": "industry_construction_infrastructure",
       "type": "Industry",
-      "name": "에너지"
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047050",
-      "to": "business_area_trading",
-      "evidence": "포스코인터내셔널은 트레이딩과 에너지 사업을 중심으로 ... 트레이딩사업은 철강 및 철강원료, 전기/하이브리드차 부품, 산업소재, 이차전지 소재, 식량 등을 주요 품목으로 ... 다양한 분야의 사업을 전개하고 있습니다.",
+      "to": "industry_steel_metal",
+      "evidence": "트레이딩사업은 철강 및 철강원료... 주요 품목별 매출 비중은 철강 70.2%...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -112,21 +142,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_047050",
-      "to": "business_area_energy",
-      "evidence": "에너지 사업은 가스전을 탐사하고 개발하는 E&P사업, ... LNG사업, LNG를 원료로 활용하는 발전사업을 운영하고 있으며, 이외에도 신재생에너지 사업을 중점으로 사업을 확대해 나가고 있습니다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_047050",
-      "to": "product_service_steel",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "to": "industry_battery_energy_storage",
+      "evidence": "트레이딩사업은... 이차전지 소재... 등 주요 품목으로 하여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -136,41 +155,8 @@
     {
       "type": "PRODUCES",
       "from": "company_047050",
-      "to": "product_service_steel_raw_materials",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_047050",
-      "to": "product_service_ev_parts",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_047050",
-      "to": "product_service_battery_materials",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_047050",
-      "to": "product_service_motor_core",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "to": "product_service_driving_motor_core",
+      "evidence": "트레이딩 및 구동모터코아 생산/판매...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -181,7 +167,7 @@
       "type": "PRODUCES",
       "from": "company_047050",
       "to": "product_service_palm_oil",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "evidence": "팜농장 운영 및 팜오일 생산/판매...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -189,10 +175,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PRODUCES",
+      "type": "BELONGS_TO",
       "from": "company_047050",
-      "to": "product_service_food_materials",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "to": "industry_agriculture_food_resources",
+      "evidence": "트레이딩사업은... 식량 등을 주요 품목으로 하여...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -200,10 +186,21 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PRODUCES",
+      "type": "BELONGS_TO",
       "from": "company_047050",
-      "to": "product_service_mineral_resources",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "to": "industry_mining_resources",
+      "evidence": "광물자원 생산...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_047050",
+      "to": "industry_energy_utility",
+      "evidence": "에너지 사업은... LNG사업, LNG를 원료로 활용하는 발전사업을 운영...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -214,7 +211,7 @@
       "type": "PRODUCES",
       "from": "company_047050",
       "to": "product_service_natural_gas",
-      "evidence": "에너지사업 천연가스, LNG터미널, 발전,신재생 등 9.4%",
+      "evidence": "에너지사업 주요 제품: 천연가스...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -225,7 +222,7 @@
       "type": "PRODUCES",
       "from": "company_047050",
       "to": "product_service_lng_terminal",
-      "evidence": "에너지사업 천연가스, LNG터미널, 발전,신재생 등 9.4%",
+      "evidence": "LNG 터미널 및 트레이딩 사업...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -236,7 +233,7 @@
       "type": "PRODUCES",
       "from": "company_047050",
       "to": "product_service_power_generation",
-      "evidence": "에너지사업 천연가스, LNG터미널, 발전,신재생 등 9.4%",
+      "evidence": "LNG 발전사업(Downstream)... 발전사업 전력...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -246,8 +243,8 @@
     {
       "type": "PRODUCES",
       "from": "company_047050",
-      "to": "product_service_renewable_energy",
-      "evidence": "에너지사업 천연가스, LNG터미널, 발전,신재생 등 9.4%",
+      "to": "product_service_steel",
+      "evidence": "주요 품목별 매출 비중은 철강 70.2%...",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -257,8 +254,85 @@
     {
       "type": "PRODUCES",
       "from": "company_047050",
-      "to": "product_service_electricity",
-      "evidence": "발전사업 전력",
+      "to": "product_service_electric_hybrid_auto_parts",
+      "evidence": "트레이딩사업은 전기/하이브리드차 부품...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_047050",
+      "to": "product_service_battery_material",
+      "evidence": "트레이딩사업은 이차전지 소재...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_047050",
+      "to": "product_service_food_material",
+      "evidence": "트레이딩사업은 식량소재...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -267,9 +341,119 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_trading",
-      "to": "industry_steel_industry",
-      "evidence": "트레이딩사업은 철강 및 철강원료, 전기/하이브리드차 부품, 산업소재, 이차전지 소재, 식량 등을 주요 품목으로 하여 ...",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_agriculture_food_resources",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 농업/식량자원 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_agriculture_food_resources",
+      "to": "industry_food_beverage",
+      "evidence": "Industry taxonomy: 농업/식량자원 is related to 식품/음료.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_047050_business_segments_20260318001494",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -278,9 +462,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_energy",
-      "to": "industry_energy",
-      "evidence": "에너지 사업은 가스전을 탐사하고 개발하는 E&P사업, 가스 저장 및 운송에서 트레이딩에 이르는 LNG사업, LNG를 원료로 활용하는 발전사업을 운영하고 있으며 ...",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -288,10 +472,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_steel",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 철강/철강원료, 전기/하이브리드 차부품,이차전지소재, 구동모터코아,팜오일, 식량소재, 광물자원 등 90.6%",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -299,10 +483,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_steel_raw_materials",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 철강/철강원료 ...",
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -310,10 +494,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_ev_parts",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 전기/하이브리드 차부품 ...",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",
@@ -321,109 +505,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "product_service_battery_materials",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 이차전지소재 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_motor_core",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 구동모터코아 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_palm_oil",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 팜오일 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_food_materials",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 식량소재 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_mineral_resources",
-      "to": "business_area_trading",
-      "evidence": "트레이딩사업 ... 광물자원 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_natural_gas",
-      "to": "business_area_energy",
-      "evidence": "에너지사업 천연가스, LNG터미널, 발전,신재생 등",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_lng_terminal",
-      "to": "business_area_energy",
-      "evidence": "에너지사업 ... LNG터미널 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_power_generation",
-      "to": "business_area_energy",
-      "evidence": "에너지사업 ... 발전 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_renewable_energy",
-      "to": "business_area_energy",
-      "evidence": "에너지사업 ... 신재생 ...",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_047050_business_segments_20260318001494",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001494",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "product_service_electricity",
-      "to": "product_service_power_generation",
-      "evidence": "발전사업 전력",
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_047050_business_segments_20260318001494",
       "evidence_source_type": "dart",

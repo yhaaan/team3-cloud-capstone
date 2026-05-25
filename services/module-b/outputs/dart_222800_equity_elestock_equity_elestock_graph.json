@@ -1,0 +1,67 @@
+{
+  "source_id": "dart_222800_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_222800",
+      "type": "Company",
+      "name": "심텍",
+      "stock_code": "222800"
+    },
+    {
+      "id": "company_036710",
+      "type": "Company",
+      "name": "심텍홀딩스",
+      "stock_code": "036710"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_222800",
+      "to": "industry_semiconductor",
+      "evidence": "company_name: 심텍; stock_code: 222800 (in the prompt whitelist and context implies semiconductor sector as per known facts on 심텍)",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_222800_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250919000465",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_036710",
+      "to": "industry_holding_company",
+      "evidence": "심텍홀딩스 is named as a holding entity related to 심텍.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_222800_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250919000465",
+      "evidence_published_at": "2026-04-24"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-04-24",
+      "evidence_source_id": "dart_222800_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250919000465",
+      "evidence_published_at": "2026-04-24"
+    }
+  ]
+}

@@ -6,14 +6,14 @@
       "type": "Company",
       "name": "셀트리온",
       "stock_code": "068270",
-      "description": "바이오 의약품 연구개발 및 글로벌 의약품 제조, 판매, 임상 투자 등을 주요 사업으로 함"
+      "description": "바이오 의약품 개발 및 생산 중심의 글로벌 헬스케어 기업"
     },
     {
       "id": "company_068760",
       "type": "Company",
       "name": "셀트리온제약",
       "stock_code": "068760",
-      "description": "의약품 제조 및 판매 중심의 제약 사업을 영위함"
+      "description": "의약품 제조 및 판매 중심 바이오 제약회사"
     },
     {
       "id": "company_086040",
@@ -25,13 +25,8 @@
       "id": "company_086820",
       "type": "Company",
       "name": "바이오솔루션",
-      "stock_code": "086820"
-    },
-    {
-      "id": "company_099220",
-      "type": "Company",
-      "name": "SDN",
-      "stock_code": "099220"
+      "stock_code": "086820",
+      "description": "의약품 도소매업을 영위하는 바이오 기업"
     },
     {
       "id": "company_089790",
@@ -52,19 +47,19 @@
       "stock_code": "033790"
     },
     {
-      "id": "business_area_biopharmaceuticals",
-      "type": "BusinessArea",
-      "name": "바이오 의약품"
-    },
-    {
-      "id": "business_area_pharmaceuticals",
-      "type": "BusinessArea",
-      "name": "의약품 제조 및 판매"
-    },
-    {
-      "id": "industry_bio",
+      "id": "industry_bio_healthcare",
       "type": "Industry",
-      "name": "bio"
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
+    },
+    {
+      "id": "product_service_pharmaceutical_retail_wholesale",
+      "type": "ProductService",
+      "name": "의약품 도소매업"
     }
   ],
   "relations": [
@@ -72,18 +67,7 @@
       "type": "INVESTS_IN",
       "from": "company_068270",
       "to": "company_086040",
-      "evidence": "셀트리온의 타법인 출자 대상은 바이오톡스텍, 출자 목적은 투자수익",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_068270",
-      "to": "company_089790",
-      "evidence": "셀트리온의 타법인 출자 대상은 제이티비씨, 출자 목적은 투자수익",
+      "evidence": "셀트리온의 타법인 출자 대상은 바이오톡스텍, 출자 목적은 투자수익, 최초 취득일은 2009.07.28, 당기말 보유수량은 1,631,134, 당기말 지분율은 10.22%",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -94,7 +78,18 @@
       "type": "INVESTS_IN",
       "from": "company_068270",
       "to": "company_033830",
-      "evidence": "셀트리온의 타법인 출자 대상은 티비씨",
+      "evidence": "셀트리온의 타법인 출자 대상은 제이티비씨, 출자 목적은 투자수익, 최초 취득일은 2017.09.20, 당기말 보유수량은 100,000, 당기말 지분율은 0.09%",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_068270",
+      "to": "company_089790",
+      "evidence": "셀트리온의 타법인 출자 대상은 제이티비씨, 출자 목적은 투자수익, 최초 취득일은 2017.09.20, 당기말 보유수량은 100,000, 당기말 지분율은 0.09%",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -105,73 +100,7 @@
       "type": "INVESTS_IN",
       "from": "company_068270",
       "to": "company_033790",
-      "evidence": "셀트리온의 타법인 출자 대상은 피노바이오, 출자 목적은 신약 파이프라인 강화",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "INVESTS_IN",
-      "from": "company_068270",
-      "to": "company_086820",
-      "evidence": "셀트리온의 타법인 출자 대상은 셀트리온바이오솔루션스, 출자 목적은 의약품 도소매업",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_068270",
-      "to": "company_068760",
-      "evidence": "셀트리온의 타법인 출자 대상은 셀트리온제약, 출자 목적은 경영참가 등",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_068270",
-      "to": "business_area_biopharmaceuticals",
-      "evidence": "셀트리온의 여러 출자 목적은 신약 파이프라인 강화, 유망 바이오 벤처기업투자, 글로벌 의약품 안전성 데이터 관리",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_068760",
-      "to": "business_area_pharmaceuticals",
-      "evidence": "셀트리온제약은 의약품 제조 및 판매 중심 사업을 영위함",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_biopharmaceuticals",
-      "to": "industry_bio",
-      "evidence": "바이오 의약품 관련 투자 및 신약 개발 사업은 bio 산업에 속함",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_pharmaceuticals",
-      "to": "industry_bio",
-      "evidence": "의약품 제조 및 판매 사업은 bio 산업에 속함",
+      "evidence": "셀트리온의 타법인 출자 대상은 피노바이오, 출자 목적은 신약 파이프라인 강화, 최초 취득일은 2022.10.31, 당기말 보유수량은 125,724, 당기말 지분율은 1.77%",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -181,8 +110,63 @@
     {
       "type": "BELONGS_TO",
       "from": "company_068270",
-      "to": "industry_bio",
-      "evidence": "셀트리온은 바이오 의약품 연구개발 및 관련 글로벌 사업 등을 주요 사업으로 함",
+      "to": "industry_bio_healthcare",
+      "evidence": "셀트리온의 타법인 출자 대상은 다수 신약 개발 및 바이오 관련 업체와 펀드 투자 내역",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_068760",
+      "to": "industry_bio_healthcare",
+      "evidence": "셀트리온제약 출자 목적은 경영참가 등, 의약품 제조 및 판매 중심",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_086820",
+      "to": "industry_bio_healthcare",
+      "evidence": "셀트리온바이오솔루션스, 출자 목적은 의약품 도소매업",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068760",
+      "to": "product_service_pharmaceutical_retail_wholesale",
+      "evidence": "셀트리온제약 출자 목적은 경영참가 등, 의약품 제조 및 도소매업",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_068270",
+      "to": "product_service_pharmaceutical_retail_wholesale",
+      "evidence": "셀트리온은 다수 자회사 및 출자사에서 의약품 제조 및 도소매업을 영위",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001415",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "biopharmaceutical is part of bio/healthcare sector",
       "date": "2026-03-16",
       "evidence_source_id": "dart_068270_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

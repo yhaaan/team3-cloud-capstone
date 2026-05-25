@@ -1,0 +1,143 @@
+{
+  "source_id": "news_030200_f271649ffab22922",
+  "entities": [
+    {
+      "id": "company_030200",
+      "type": "Company",
+      "name": "KT",
+      "stock_code": "030200",
+      "description": "재생에너지 전력 공급과 탄소중립 플랫폼 역량을 기반으로 한 에너지 사업을 영위"
+    },
+    {
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_service_power_purchase_agreement",
+      "type": "ProductService",
+      "name": "재생에너지 직접전력거래계약"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_renewable_energy",
+      "evidence": "KT가 반도체 제조장비 기업에 재생에너지를 직접 공급하는 계약을 체결했다.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_030200",
+      "to": "industry_semiconductor",
+      "evidence": "국내 반도체 생태계의 RE100(재생에너지 100% 사용) 실현을 앞당기는 중요한 이정표가 될 전망이다.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_030200",
+      "to": "product_service_power_purchase_agreement",
+      "evidence": "KT가 반도체 제조장비 기업 도쿄일렉트론코리아와 탄소중립 실현을 위한 재생에너지 직접전력거래계약(직접PPA, Power Purchase Agreement) 추진에 나선다고 11일 밝혔다.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_power_purchase_agreement",
+      "to": "industry_renewable_energy",
+      "evidence": "재생에너지 직접전력거래계약은 재생에너지 발전사업자로부터 생산된 전력을 전력시장을 거치지 않고 기업 등에 직접 공급하는 전력거래 방식이다.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "",
+      "evidence_source_id": "news_030200_f271649ffab22922",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.huffingtonpost.kr/article/257120",
+      "evidence_published_at": "2026-05-12T08:30:00+09:00"
+    }
+  ]
+}

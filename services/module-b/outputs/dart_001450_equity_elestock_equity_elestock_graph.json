@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_001450_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_001450",
+      "type": "Company",
+      "name": "현대해상",
+      "stock_code": "001450",
+      "description": "자동차보험, 건강보험 등 다양한 보험상품을 제공하는 금융회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001450",
+      "to": "industry_finance",
+      "evidence": "현대해상은 자동차보험, 건강보험 등 다양한 보험상품을 제공하는 금융회사",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_001450_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000471",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001450",
+      "to": "industry_insurance",
+      "evidence": "현대해상은 자동차보험, 건강보험 등 다양한 보험상품을 제공하는 금융회사",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_001450_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000471",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "보험은 금융업의 한 분야로서 금융산업에 포함됨",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_001450_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250523000471",
+      "evidence_published_at": "2026-04-30"
+    }
+  ]
+}

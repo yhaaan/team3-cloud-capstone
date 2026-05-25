@@ -5,21 +5,93 @@
       "id": "company_005380",
       "type": "Company",
       "name": "현대차",
-      "stock_code": "005380"
+      "stock_code": "005380",
+      "description": "자동차 제조 및 모빌리티 서비스 제공"
     },
     {
       "id": "company_012330",
       "type": "Company",
       "name": "현대모비스",
-      "stock_code": "012330"
+      "stock_code": "012330",
+      "description": "자동차 부품 제조 및 공급"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_automotive_interior",
+      "type": "Industry",
+      "name": "자동차내장재"
+    },
+    {
+      "id": "industry_automotive_semiconductor",
+      "type": "Industry",
+      "name": "자동차반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_012330",
-      "to": "company_005380",
-      "evidence": "현대차의 대량보유 보고자는 현대모비스, 보고 유형은 일반, 접수일은 2025-08-04, 보유주식수는 62,796,038주, 지분율은 30.67%, 주식수 증감은 3,333, 지분율 증감은 0.69, 보고사유는 자사주 인센티브 지급.",
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
       "date": "2026-04-07",
       "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -27,10 +99,10 @@
       "evidence_published_at": "2026-04-07"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_012330",
-      "to": "company_005380",
-      "evidence": "현대차의 대량보유 보고자는 현대모비스, 보고 유형은 일반, 접수일은 2026-01-05, 보유주식수는 62,794,780주, 지분율은 30.67%, 주식수 증감은 -1,258, 지분율 증감은 -0.00, 보고사유는 특별관계자 제외.",
+      "to": "industry_auto_parts",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
       "date": "2026-04-07",
       "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -38,10 +110,10 @@
       "evidence_published_at": "2026-04-07"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_012330",
-      "to": "company_005380",
-      "evidence": "현대차의 대량보유 보고자는 현대모비스, 보고 유형은 일반, 접수일은 2026-03-30, 보유주식수는 62,795,085주, 지분율은 30.67%, 주식수 증감은 305, 지분율 증감은 0.00, 보고사유는 특별관계자 추가.",
+      "to": "industry_automotive_interior",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
       "date": "2026-04-07",
       "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -49,10 +121,197 @@
       "evidence_published_at": "2026-04-07"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_012330",
-      "to": "company_005380",
-      "evidence": "현대차의 대량보유 보고자는 현대모비스, 보고 유형은 일반, 접수일은 2026-04-07, 보유주식수는 62,795,760주, 지분율은 30.67%, 주식수 증감은 675, 지분율 증감은 0.00, 보고사유는 자사주 인센티브 지급.",
+      "to": "industry_automotive_semiconductor",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005380",
+      "to": "industry_mobility",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_mobility",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_auto_parts",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "현대차의 대량보유 보고자는 현대모비스...",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automotive_interior",
+      "to": "industry_auto_parts",
+      "evidence": "Industry taxonomy: 자동차내장재 is part of 자동차부품.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automotive_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 자동차반도체 is part of 반도체.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-04-07",
+      "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250804000206",
+      "evidence_published_at": "2026-04-07"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-04-07",
       "evidence_source_id": "dart_005380_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

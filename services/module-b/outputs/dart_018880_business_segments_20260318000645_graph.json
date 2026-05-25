@@ -1,0 +1,371 @@
+{
+  "source_id": "dart_018880_business_segments_20260318000645",
+  "entities": [
+    {
+      "id": "company_018880",
+      "type": "Company",
+      "name": "한온시스템",
+      "stock_code": "018880",
+      "description": "자동차 열 관리 시스템 단일 사업부문에서 에어컨, 파워트레인쿨링, 압축기 등 자동차부품 생산"
+    },
+    {
+      "id": "company_250060",
+      "type": "Company",
+      "name": "모비스",
+      "stock_code": "250060"
+    },
+    {
+      "id": "company_317850",
+      "type": "Company",
+      "name": "대모",
+      "stock_code": "317850"
+    },
+    {
+      "id": "company_396470",
+      "type": "Company",
+      "name": "워트",
+      "stock_code": "396470"
+    },
+    {
+      "id": "company_012330",
+      "type": "Company",
+      "name": "현대모비스",
+      "stock_code": "012330"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "product_service_hvac",
+      "type": "ProductService",
+      "name": "에어컨"
+    },
+    {
+      "id": "product_service_powertrain_cooling",
+      "type": "ProductService",
+      "name": "파워트레인쿨링"
+    },
+    {
+      "id": "product_service_compressor",
+      "type": "ProductService",
+      "name": "압축기"
+    },
+    {
+      "id": "product_service_fluid_transport",
+      "type": "ProductService",
+      "name": "플루이드 트랜스포트"
+    },
+    {
+      "id": "product_service_hydraulic_control",
+      "type": "ProductService",
+      "name": "유압제어장치"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_018880",
+      "to": "industry_auto_parts",
+      "evidence": "당사는 OEM 납품을 주로 하는 자동차 열 관리 시스템 단일품목 제조회사로서 ... 자동차부품(A/CON)사업을 영위하고 있음.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_018880",
+      "to": "industry_mobility",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 자동차, 전기차 ... 제조, 제품, 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_hvac",
+      "evidence": "당사는 자동차용 에어컨(HVAC)과 ... 생산하는 자동차 공조제품 전문 제조회사로서 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_powertrain_cooling",
+      "evidence": "당사는 ... 파워트레인 쿨링(PTC) ... 생산하는 자동차 공조제품 전문 제조회사로서 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_compressor",
+      "evidence": "당사는 ... 압축기(COMP) ... 생산하는 자동차 공조제품 전문 제조회사로서 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_fluid_transport",
+      "evidence": "당사는 ... 플루이드 트랜스포트(FT) ... 생산하는 자동차 공조제품 전문 제조회사로서 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_hydraulic_control",
+      "evidence": "당사는 ... 유압제어장치(E&FP) ... 생산하는 자동차 공조제품 전문 제조회사로서 ...",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "자동차부품 산업은 자동차 산업에 직접적인 영향을 받고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "자동차 부품 업체들은 완성차 업체와 협력하여 자동차를 생산하는 OEM 관계를 맺고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_250060",
+      "to": "industry_auto_parts",
+      "evidence": "모비스는 자동차부품 관련 기업으로 매출처 중 하나로 언급됨.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_317850",
+      "to": "industry_auto_parts",
+      "evidence": "대모가 사업보고서에 언급되며, 자동차부품 산업 관련.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_396470",
+      "to": "industry_auto_parts",
+      "evidence": "워트가 사업보고서에 언급되며, 자동차부품 산업 관련.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_012330",
+      "to": "industry_auto_parts",
+      "evidence": "현대모비스는 매출처로 언급됨, 자동차부품 관련.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_018880_business_segments_20260318000645",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000645",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

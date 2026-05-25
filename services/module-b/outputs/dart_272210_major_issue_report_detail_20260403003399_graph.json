@@ -6,32 +6,92 @@
       "type": "Company",
       "name": "한화시스템",
       "stock_code": "272210",
-      "description": "한화오션 주식 일부를 양도하는 사업에 참여"
+      "description": "방산·항공우주 및 정보기술 분야의 시스템 통합 및 솔루션 제공"
     },
     {
       "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
       "stock_code": "042660",
-      "description": "운송장비·부품 사업을 영위하는 계열회사"
+      "description": "해양플랜트 및 조선해양 운송장비·부품 제조 전문기업"
     },
     {
-      "id": "business_area_transportation_equipment",
-      "type": "BusinessArea",
-      "name": "운송장비·부품"
-    },
-    {
-      "id": "industry_shipbuilding",
+      "id": "industry_defense_aerospace",
       "type": "Industry",
-      "name": "shipbuilding"
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
+      "type": "BELONGS_TO",
       "from": "company_272210",
-      "to": "company_042660",
-      "evidence": "본 공시는 당사가 보유한 계열회사인 한화오션(주) 주식 일부를 양도하는 건임",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화시스템는 방산·항공우주 및 정보기술 분야의 시스템 통합 및 솔루션 제공 기업이다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
       "evidence_source_type": "dart",
@@ -39,10 +99,21 @@
       "evidence_published_at": "2026-04-03"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_272210",
+      "to": "industry_it_software",
+      "evidence": "한화시스템는 방산·항공우주 및 정보기술 분야의 시스템 통합 및 솔루션 제공 기업이다.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_042660",
-      "to": "business_area_transportation_equipment",
-      "evidence": "한화오션(주) 주요사업 운송장비·부품",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "한화오션은 해양플랜트 및 조선해양 운송장비·부품 제조 전문기업이다.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
       "evidence_source_type": "dart",
@@ -50,10 +121,197 @@
       "evidence_published_at": "2026-04-03"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_transportation_equipment",
-      "to": "industry_shipbuilding",
-      "evidence": "한화오션(주) 주요사업 운송장비·부품",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-04-03",
+      "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403003399",
+      "evidence_published_at": "2026-04-03"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-04-03",
       "evidence_source_id": "dart_272210_major_issue_report_detail_20260403003399",
       "evidence_source_type": "dart",

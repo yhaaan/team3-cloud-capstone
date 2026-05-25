@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "삼성SDI",
       "stock_code": "006400",
-      "description": "2차전지와 전자재료 중심 사업을 영위하는 기업"
+      "description": "배터리 및 전자소재를 주력으로 하는 기업"
     },
     {
       "id": "company_005930",
@@ -15,9 +15,14 @@
       "stock_code": "005930"
     },
     {
-      "id": "industry_battery",
+      "id": "industry_battery_energy_storage",
       "type": "Industry",
-      "name": "배터리"
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
     },
     {
       "id": "industry_semiconductor",
@@ -25,22 +30,52 @@
       "name": "반도체"
     },
     {
-      "id": "business_area_ev_battery",
-      "type": "BusinessArea",
-      "name": "2차전지"
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
     },
     {
-      "id": "business_area_electronic_materials",
-      "type": "BusinessArea",
-      "name": "전자재료"
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006400",
-      "to": "business_area_ev_battery",
-      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고자",
+      "to": "industry_battery_energy_storage",
+      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고서 내 삼성SDI는 배터리 및 전자소재를 주력으로 하는 기업임.",
       "date": "2026-03-30",
       "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -48,32 +83,10 @@
       "evidence_published_at": "2026-03-30"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_006400",
-      "to": "business_area_electronic_materials",
-      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고자",
-      "date": "2026-03-30",
-      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
-      "evidence_published_at": "2026-03-30"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_ev_battery",
-      "to": "industry_battery",
-      "evidence": "2차전지",
-      "date": "2026-03-30",
-      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
-      "evidence_published_at": "2026-03-30"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_electronic_materials",
-      "to": "industry_semiconductor",
-      "evidence": "전자재료",
+      "to": "industry_electronics",
+      "evidence": "삼성SDI의 임원·주요주주 소유상황 보고서 내 삼성SDI는 배터리 및 전자소재를 주력으로 하는 기업임.",
       "date": "2026-03-30",
       "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -83,8 +96,173 @@
     {
       "type": "BELONGS_TO",
       "from": "company_005930",
+      "to": "industry_electronics",
+      "evidence": "임원·주요주주 소유상황 보고서에 따르면 삼성전자는 전자산업에 속함.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
       "to": "industry_semiconductor",
-      "evidence": "삼성전자는 반도체 산업에 속함",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250604000106",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-30",
       "evidence_source_id": "dart_006400_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",

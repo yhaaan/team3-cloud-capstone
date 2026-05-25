@@ -12,7 +12,72 @@
       "type": "Company",
       "name": "LG화학",
       "stock_code": "051910"
+    },
+    {
+      "id": "industry_battery_battery_energy_storage",
+      "type": "Industry",
+      "name": "Battery Battery Energy Storage"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_373220",
+      "to": "industry_battery_battery_energy_storage",
+      "evidence": "LG에너지솔루션은 배터리 사업 영역에서 활동하는 회사임.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_373220_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_051910",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학은 화학소재 산업에 속하는 회사임.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_373220_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_373220_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_373220_major_shareholder_change_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312000217",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
 }

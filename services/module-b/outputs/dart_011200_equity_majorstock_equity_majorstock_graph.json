@@ -6,25 +6,55 @@
       "type": "Company",
       "name": "HMM",
       "stock_code": "011200",
-      "description": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다."
+      "description": "국내외 해상운송 및 관련 물류 서비스 제공하는 선사"
     },
     {
-      "id": "business_area_shipping",
-      "type": "BusinessArea",
-      "name": "해운"
-    },
-    {
-      "id": "industry_maritime",
+      "id": "industry_shipping_transport",
       "type": "Industry",
-      "name": "shipbuilding"
+      "name": "해운운송"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_011200",
-      "to": "business_area_shipping",
-      "evidence": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다.",
+      "to": "industry_shipping_transport",
+      "evidence": "HMM의 대량보유 보고자 관련 내용 및 회사명으로 보아 HMM은 해운운송 사업 영위",
       "date": "2026-04-01",
       "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",
@@ -33,9 +63,86 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_shipping",
-      "to": "industry_maritime",
-      "evidence": "HMM은 해운 및 물류 사업을 주력으로 하는 기업이다.",
+      "from": "industry_shipping_transport",
+      "to": "industry_logistics",
+      "evidence": "해운운송은 물류 산업의 세부분야임",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250827000407",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-04-01",
       "evidence_source_id": "dart_011200_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

@@ -6,15 +6,26 @@
       "type": "Company",
       "name": "삼천당제약",
       "stock_code": "000250",
-      "description": "삼천당제약은 주요 의약품 개발 및 제약 사업을 영위한다."
+      "description": "제약 사업을 영위하는 회사"
     },
     {
       "id": "company_131030",
       "type": "Company",
       "name": "옵투스제약",
-      "stock_code": "131030",
-      "description": "옵투스제약은 제약업종에서 의약품 제조 및 판매를 수행한다."
+      "stock_code": "131030"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "INVESTS_IN",
+      "from": "company_000250",
+      "to": "company_131030",
+      "evidence": "삼천당제약의 상장 계열회사 후보로 옵투스제약 등이 탐지되었다. (주)옵투스제약 | 삼천당제약(주) | 44.5%",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_000250_affiliate_status_20260320001096",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320001096",
+      "evidence_published_at": "2026-03-20"
+    }
+  ]
 }

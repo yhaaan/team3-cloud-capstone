@@ -1,0 +1,115 @@
+{
+  "source_id": "dart_204320_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_204320",
+      "type": "Company",
+      "name": "HL만도",
+      "stock_code": "204320",
+      "description": "HL만도는 자동차부품 사업을 영위하는 기업이다."
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "industry_automotive_semiconductor",
+      "type": "Industry",
+      "name": "자동차반도체"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_204320",
+      "to": "industry_auto_parts",
+      "evidence": "HL만도는 자동차부품 사업을 영위하는 기업이다.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automotive_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 자동차반도체 is part of 반도체.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-04-20",
+      "evidence_source_id": "dart_204320_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000393",
+      "evidence_published_at": "2026-04-20"
+    }
+  ]
+}

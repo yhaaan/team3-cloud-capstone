@@ -1,0 +1,57 @@
+{
+  "source_id": "dart_004170_equity_majorstock_equity_majorstock",
+  "entities": [
+    {
+      "id": "company_004170",
+      "type": "Company",
+      "name": "신세계",
+      "stock_code": "004170",
+      "description": "유통 및 백화점 중심의 사업을 영위하는 기업"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_department_store",
+      "type": "Industry",
+      "name": "백화점점포"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004170",
+      "to": "industry_retail_consumer",
+      "evidence": "신세계는 유통과 백화점 중심의 사업을 영위",
+      "date": "2025-09-05",
+      "evidence_source_id": "dart_004170_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002494",
+      "evidence_published_at": "2025-09-05"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004170",
+      "to": "industry_department_store",
+      "evidence": "신세계는 유통과 백화점 중심의 사업을 영위",
+      "date": "2025-09-05",
+      "evidence_source_id": "dart_004170_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002494",
+      "evidence_published_at": "2025-09-05"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_department_store",
+      "to": "industry_retail_consumer",
+      "evidence": "백화점점포는 유통/소비재 산업에 속함",
+      "date": "2025-09-05",
+      "evidence_source_id": "dart_004170_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250530002494",
+      "evidence_published_at": "2025-09-05"
+    }
+  ]
+}

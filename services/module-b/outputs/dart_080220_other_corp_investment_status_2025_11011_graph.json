@@ -1,0 +1,52 @@
+{
+  "source_id": "dart_080220_other_corp_investment_status_2025_11011",
+  "entities": [
+    {
+      "id": "company_080220",
+      "type": "Company",
+      "name": "제주반도체",
+      "stock_code": "080220",
+      "description": "반도체 사업을 하는 상장기업"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_ai_semiconductor",
+      "type": "Industry",
+      "name": "인공지능반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_080220",
+      "to": "industry_semiconductor",
+      "evidence": "제주반도체",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_ai_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능반도체 is part of 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_080220_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001029",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

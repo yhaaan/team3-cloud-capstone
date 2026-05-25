@@ -1,0 +1,175 @@
+{
+  "source_id": "dart_002380_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_002380",
+      "type": "Company",
+      "name": "KCC",
+      "stock_code": "002380",
+      "description": "건축자재와 화학소재 생산을 주력으로 하는 종합화학 기업"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_building_materials",
+      "type": "Industry",
+      "name": "건축소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002380",
+      "to": "industry_chemical_materials",
+      "evidence": "KCC의 임원·주요주주 소유상황 보고서와 회사명으로부터 KCC가 건축자재와 화학소재 생산을 주력으로 하는 종합화학 기업임을 알 수 있다.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_002380",
+      "to": "industry_building_materials",
+      "evidence": "KCC의 임원·주요주주 소유상황 보고서와 회사명으로부터 KCC가 건축자재와 화학소재 생산을 주력으로 하는 종합화학 기업임을 알 수 있다.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_building_materials",
+      "to": "industry_chemical_materials",
+      "evidence": "건축소재는 화학소재 산업의 하위 분야다.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_building_materials",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 건축소재 is part of 건설인프라.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-04-30",
+      "evidence_source_id": "dart_002380_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250703000014",
+      "evidence_published_at": "2026-04-30"
+    }
+  ]
+}

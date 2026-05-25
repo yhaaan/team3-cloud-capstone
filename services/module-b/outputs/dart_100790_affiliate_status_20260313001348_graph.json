@@ -1,0 +1,48 @@
+{
+  "source_id": "dart_100790_affiliate_status_20260313001348",
+  "entities": [
+    {
+      "id": "company_100790",
+      "type": "Company",
+      "name": "미래에셋벤처투자",
+      "stock_code": "100790",
+      "description": "벤처투자 전문 회사"
+    },
+    {
+      "id": "company_006800",
+      "type": "Company",
+      "name": "미래에셋증권",
+      "stock_code": "006800",
+      "description": "종합 금융투자 서비스 제공"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_100790",
+      "to": "industry_finance",
+      "evidence": "미래에셋벤처투자의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_100790_affiliate_status_20260313001348",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001348",
+      "evidence_published_at": "2026-03-13"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006800",
+      "to": "industry_finance",
+      "evidence": "미래에셋증권㈜ | 27.01 (33.13) | 18.98 (23.11)",
+      "date": "2026-03-13",
+      "evidence_source_id": "dart_100790_affiliate_status_20260313001348",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260313001348",
+      "evidence_published_at": "2026-03-13"
+    }
+  ]
+}

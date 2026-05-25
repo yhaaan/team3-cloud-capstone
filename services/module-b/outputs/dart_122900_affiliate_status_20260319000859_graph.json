@@ -5,14 +5,48 @@
       "id": "company_122900",
       "type": "Company",
       "name": "아이마켓코리아",
-      "stock_code": "122900"
+      "stock_code": "122900",
+      "description": "아이마켓코리아 사업보고서 (2025.12)"
     },
     {
       "id": "company_035080",
       "type": "Company",
       "name": "그래디언트",
       "stock_code": "035080"
+    },
+    {
+      "id": "industry_platform_business",
+      "type": "Industry",
+      "name": "플랫폼사업"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_122900",
+      "to": "industry_platform_business",
+      "evidence": "아이마켓코리아의 사업보고서 (2025.12)에서 IX. 계열회사 등에 관한 사항을 정제했다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_122900_affiliate_status_20260319000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_platform_business",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_122900_affiliate_status_20260319000859",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000859",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
 }

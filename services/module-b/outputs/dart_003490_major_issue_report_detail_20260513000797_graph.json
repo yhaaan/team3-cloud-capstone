@@ -6,38 +6,74 @@
       "type": "Company",
       "name": "대한항공",
       "stock_code": "003490",
-      "description": "항공여객운송, MRO, 지상조업, 기내식 등 항공운항 인프라 통합 운영으로 경쟁력 강화"
+      "description": "항공 여객 운송 및 항공기 정비, 지상조업, 기내식 등 운항 인프라 통합 운영"
     },
     {
       "id": "company_020560",
       "type": "Company",
       "name": "아시아나항공",
-      "stock_code": "020560"
+      "stock_code": "020560",
+      "description": "항공 여객 운송업"
     },
     {
-      "id": "business_area_aviation",
-      "type": "BusinessArea",
-      "name": "항공여객운송"
-    },
-    {
-      "id": "business_area_aircraft_maintenance",
-      "type": "BusinessArea",
-      "name": "항공기 정비"
-    },
-    {
-      "id": "business_area_ground_handling",
-      "type": "BusinessArea",
-      "name": "지상조업"
-    },
-    {
-      "id": "business_area_inflight_catering",
-      "type": "BusinessArea",
-      "name": "기내식"
-    },
-    {
-      "id": "industry_airline",
+      "id": "industry_air_transport",
       "type": "Industry",
-      "name": "항공"
+      "name": "항공운송"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_aircraft_parts",
+      "type": "Industry",
+      "name": "항공기부품"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
     }
   ],
   "relations": [
@@ -53,10 +89,10 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_003490",
-      "to": "business_area_aviation",
-      "evidence": "본건 합병은 급변하는 글로벌 항공시장 수요에 대응하여 양사의 노선 네트워크 및 운항 역량을 통합함",
+      "to": "industry_air_transport",
+      "evidence": "대한항공 주요사업은 항공 여객 운송 및 항공기 정비, 지상조업, 기내식 등의 운항 인프라 운영임",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -64,10 +100,10 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_003490",
-      "to": "business_area_aircraft_maintenance",
-      "evidence": "항공기 정비, 지상조업, 기내식 등 운항 인프라의 통합 운영으로 고정비 절감 및 규모의 경제 실현",
+      "type": "BELONGS_TO",
+      "from": "company_020560",
+      "to": "industry_air_transport",
+      "evidence": "아시아나항공㈜의 주요사업 항공 여객 운송업",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -75,10 +111,10 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_003490",
-      "to": "business_area_ground_handling",
-      "evidence": "항공기 정비, 지상조업, 기내식 등 운항 인프라의 통합 운영으로 고정비 절감 및 규모의 경제 실현",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -86,10 +122,10 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "OPERATES_IN",
-      "from": "company_003490",
-      "to": "business_area_inflight_catering",
-      "evidence": "항공기 정비, 지상조업, 기내식 등 운항 인프라의 통합 운영으로 고정비 절감 및 규모의 경제 실현",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -98,9 +134,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_aviation",
-      "to": "industry_airline",
-      "evidence": "회사와의 관계 자회사 최근 사업연도 재무내용 주요사업 항공 여객 운송업",
+      "from": "industry_air_transport",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 항공운송 is part of 항공/물류.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -109,9 +145,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_aircraft_maintenance",
-      "to": "industry_airline",
-      "evidence": "항공기 정비는 항공 산업 관련 사업 영역임",
+      "from": "industry_aircraft_parts",
+      "to": "industry_defense_aerospace",
+      "evidence": "Industry taxonomy: 항공기부품 is part of 방산/항공우주.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -119,10 +155,10 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_ground_handling",
-      "to": "industry_airline",
-      "evidence": "지상조업은 항공 산업 관련 사업 영역임",
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",
@@ -130,10 +166,54 @@
       "evidence_published_at": "2026-05-13"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_inflight_catering",
-      "to": "industry_airline",
-      "evidence": "기내식은 항공 산업 관련 사업 영역임",
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-05-13",
+      "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000797",
+      "evidence_published_at": "2026-05-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-05-13",
+      "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000797",
+      "evidence_published_at": "2026-05-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-05-13",
+      "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000797",
+      "evidence_published_at": "2026-05-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-05-13",
+      "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260513000797",
+      "evidence_published_at": "2026-05-13"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
       "date": "2026-05-13",
       "evidence_source_id": "dart_003490_major_issue_report_detail_20260513000797",
       "evidence_source_type": "dart",

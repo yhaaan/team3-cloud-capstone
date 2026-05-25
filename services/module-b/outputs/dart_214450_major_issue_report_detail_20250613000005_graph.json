@@ -1,0 +1,159 @@
+{
+  "source_id": "dart_214450_major_issue_report_detail_20250613000005",
+  "entities": [
+    {
+      "id": "company_214450",
+      "type": "Company",
+      "name": "파마리서치",
+      "stock_code": "214450",
+      "description": "의약품, 의료기기, 화장품 등의 연구제조 및 판매부문을 영위하는 기업"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "product_service_pharmaceutical",
+      "type": "ProductService",
+      "name": "의약품"
+    },
+    {
+      "id": "product_service_medical_device",
+      "type": "ProductService",
+      "name": "의료기기"
+    },
+    {
+      "id": "product_service_beauty_cosmetics",
+      "type": "ProductService",
+      "name": "화장품"
+    },
+    {
+      "id": "industry_medical_device",
+      "type": "Industry",
+      "name": "의료기기"
+    },
+    {
+      "id": "industry_beauty_cosmetics",
+      "type": "Industry",
+      "name": "뷰티/화장품"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_214450",
+      "to": "industry_bio_healthcare",
+      "evidence": "분할신설회사는 의약품, 의료기기, 화장품 제조 및 판매사업에 각각 집중함으로써 사업 특성에 맞는 신속하고 전문적인 의사결정이 가능한 지배구조 체제를 확립하고 투자위험과 경영위험의 분산을 추구한다.",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_214450",
+      "to": "product_service_pharmaceutical",
+      "evidence": "분할신설회사는 의약품, 의료기기, 화장품 등의 연구제조 및 판매부문을 영위하는 사업부문",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_214450",
+      "to": "product_service_medical_device",
+      "evidence": "분할신설회사는 의약품, 의료기기, 화장품 등의 연구제조 및 판매부문을 영위하는 사업부문",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_214450",
+      "to": "product_service_beauty_cosmetics",
+      "evidence": "분할신설회사는 의약품, 의료기기, 화장품 등의 연구제조 및 판매부문을 영위하는 사업부문",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_pharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "의약품은 제약 산업에 해당",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_medical_device",
+      "to": "industry_medical_device",
+      "evidence": "의료기기는 의료기기 산업에 해당",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_beauty_cosmetics",
+      "to": "industry_beauty_cosmetics",
+      "evidence": "화장품은 뷰티/화장품 산업에 해당",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_medical_device",
+      "to": "industry_bio_healthcare",
+      "evidence": "의료기기는 바이오/헬스케어 산업의 세부 분야",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_bio_healthcare",
+      "evidence": "뷰티/화장품은 바이오/헬스케어 산업의 세부 분야",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_beauty_cosmetics",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.",
+      "date": "2025-06-13",
+      "evidence_source_id": "dart_214450_major_issue_report_detail_20250613000005",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250613000005",
+      "evidence_published_at": "2025-06-13"
+    }
+  ]
+}

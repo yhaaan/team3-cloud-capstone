@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "LG화학",
       "stock_code": "051910",
-      "description": "신사업 투자 확대와 수처리, 편광필름 사업 매각으로 사업 구조 조정 중인 화학 회사"
+      "description": "청주공장 중심 화학소재와 IT소재 사업, 수처리 및 편광필름 매각 후 신사업 투자 중"
     },
     {
       "id": "company_373220",
@@ -15,60 +15,88 @@
       "stock_code": "373220"
     },
     {
-      "id": "business_area_water_solution",
-      "type": "BusinessArea",
+      "id": "company_005930",
+      "type": "Company",
+      "name": "삼성전자",
+      "stock_code": "005930"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_food_beverage",
+      "type": "Industry",
+      "name": "식품/음료"
+    },
+    {
+      "id": "product_service_water_solution",
+      "type": "ProductService",
       "name": "수처리"
     },
     {
-      "id": "business_area_polarizing_film",
-      "type": "BusinessArea",
+      "id": "product_service_polarizing_film",
+      "type": "ProductService",
       "name": "편광필름"
     },
     {
-      "id": "industry_chemical",
+      "id": "industry_ai",
       "type": "Industry",
-      "name": "화학"
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_051910",
-      "to": "business_area_water_solution",
-      "evidence": "휴업 대상 노동자들은 이미 매각된 수처리(워터솔루션) 사업과 편광필름 사업에서 일하던 노동자들이다.",
-      "date": "",
-      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
-      "evidence_published_at": "2026-05-12T06:34:00+09:00"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_051910",
-      "to": "business_area_polarizing_film",
-      "evidence": "휴업 대상 노동자들은 이미 매각된 수처리(워터솔루션) 사업과 편광필름 사업에서 일하던 노동자들이다.",
-      "date": "",
-      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
-      "evidence_published_at": "2026-05-12T06:34:00+09:00"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_water_solution",
-      "to": "industry_chemical",
-      "evidence": "LG화학이 수처리 사업부를 매각하는 과정에서 나타난 사업 구조 조정",
-      "date": "",
-      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
-      "evidence_published_at": "2026-05-12T06:34:00+09:00"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_polarizing_film",
-      "to": "industry_chemical",
-      "evidence": "LG화학이 편광필름·편광필름소재 사업을 매각한 내용",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학이 청주공장 매각 사업부 인력을 대상으로 휴업을 실시한다. ... LG화학은 2023년 신사업 투자를 확대하고 수익성이 떨어지는 사업을 정리하기 위해 워터솔루션 사업부를 토종 사모펀드인 글랜우드프라이빗에쿼티에 매각했다.",
       "date": "",
       "evidence_source_id": "news_051910_ce7dd07ed6c75969",
       "evidence_source_type": "news",
@@ -78,8 +106,195 @@
     {
       "type": "BELONGS_TO",
       "from": "company_051910",
-      "to": "industry_chemical",
-      "evidence": "LG화학의 사업 특성상 화학 산업에 속함",
+      "to": "industry_it_software",
+      "evidence": "2024년에는 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국기업에 팔았다.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051910",
+      "to": "product_service_water_solution",
+      "evidence": "LG화학은 2023년 신사업 투자를 확대하고 수익성이 떨어지는 사업을 정리하기 위해 워터솔루션 사업부를 토종 사모펀드인 글랜우드프라이빗에쿼티에 매각했다.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_051910",
+      "to": "product_service_polarizing_film",
+      "evidence": "2024년에는 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국기업에 팔았다.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_water_solution",
+      "to": "industry_chemical_materials",
+      "evidence": "LG화학은 2023년 신사업 투자를 확대하고 수익성이 떨어지는 사업을 정리하기 위해 워터솔루션 사업부를 토종 사모펀드인 글랜우드프라이빗에쿼티에 매각했다.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_polarizing_film",
+      "to": "industry_it_software",
+      "evidence": "2024년에는 IT소재사업부 산하 편광필름 및 편광필름소재 사업을 중국기업에 팔았다.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_food_beverage",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "",
+      "evidence_source_id": "news_051910_ce7dd07ed6c75969",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.labortoday.co.kr/news/articleView.html?idxno=234209",
+      "evidence_published_at": "2026-05-12T06:34:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "",
       "evidence_source_id": "news_051910_ce7dd07ed6c75969",
       "evidence_source_type": "news",

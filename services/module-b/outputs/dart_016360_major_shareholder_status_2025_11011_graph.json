@@ -12,13 +12,29 @@
       "type": "Company",
       "name": "삼성생명",
       "stock_code": "032830"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_016360",
+      "to": "industry_finance",
+      "evidence": "삼성증권의 최대주주 관련 인물/법인은 삼성생명보험, 관계는 최대주주 본인, 당기말 보유주식수는 26,246,112주, 지분율은 29.39%.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_016360_major_shareholder_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001379",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_032830",
-      "to": "company_016360",
+      "to": "industry_finance",
       "evidence": "삼성증권의 최대주주 관련 인물/법인은 삼성생명보험, 관계는 최대주주 본인, 당기말 보유주식수는 26,246,112주, 지분율은 29.39%.",
       "date": "2026-03-12",
       "evidence_source_id": "dart_016360_major_shareholder_status_2025_11011",

@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "두산로보틱스",
       "stock_code": "454910",
-      "description": "산업용 협동로봇 제조와 지능형 로봇 자동화 솔루션 사업을 영위하는 기업입니다."
+      "description": "산업용 협동로봇과 지능형 로봇 솔루션 제조 및 판매, 자동화 시스템 제공"
     },
     {
       "id": "company_001680",
@@ -27,196 +27,115 @@
       "stock_code": "228670"
     },
     {
-      "id": "business_area_collaborative_robot",
-      "type": "BusinessArea",
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "product_service_cobot",
+      "type": "ProductService",
       "name": "협동로봇"
     },
     {
-      "id": "business_area_automation_solution",
-      "type": "BusinessArea",
-      "name": "자동화 솔루션"
-    },
-    {
-      "id": "productservice_robot_arm",
+      "id": "product_service_robot_arm",
       "type": "ProductService",
       "name": "로봇 Arm"
     },
     {
-      "id": "productservice_EOL_CMI",
+      "id": "product_service_automation_solution",
+      "type": "ProductService",
+      "name": "자동화 솔루션"
+    },
+    {
+      "id": "product_service_eol_cmi",
       "type": "ProductService",
       "name": "EOL/CMI"
     },
     {
-      "id": "productservice_palletizing",
-      "type": "ProductService",
-      "name": "팔레타이징"
-    },
-    {
-      "id": "productservice_frying_module",
-      "type": "ProductService",
-      "name": "튀김모듈"
-    },
-    {
-      "id": "productservice_coffee_module",
-      "type": "ProductService",
-      "name": "커피모듈"
-    },
-    {
-      "id": "productservice_palletizer",
+      "id": "product_service_palletizer",
       "type": "ProductService",
       "name": "Palletizer"
     },
     {
-      "id": "productservice_case_erector",
+      "id": "product_service_case_erector",
       "type": "ProductService",
       "name": "Case Erector"
     },
     {
-      "id": "productservice_case_packer",
+      "id": "product_service_case_packer",
       "type": "ProductService",
       "name": "Case Packer"
     },
     {
-      "id": "productservice_cmi",
+      "id": "product_service_cmi",
       "type": "ProductService",
       "name": "CMI"
     },
     {
-      "id": "industry_robotics",
-      "type": "Industry",
-      "name": "로봇"
+      "id": "product_service_palettizing_solution",
+      "type": "ProductService",
+      "name": "팔레타이징"
     },
     {
-      "id": "industry_automation",
+      "id": "product_service_frying_module",
+      "type": "ProductService",
+      "name": "튀김모듈"
+    },
+    {
+      "id": "product_service_coffee_module",
+      "type": "ProductService",
+      "name": "커피모듈"
+    },
+    {
+      "id": "industry_it_software",
       "type": "Industry",
-      "name": "자동화"
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_454910",
-      "to": "business_area_collaborative_robot",
-      "evidence": "당사는 산업용 로봇, 그 중에서도 협동로봇(Cobot, Collaborative Robot)에 대한 제조 및 솔루션 제공 사업을 영위하고 있습니다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_454910",
-      "to": "business_area_automation_solution",
-      "evidence": "자회사인 Doosan Robotics Americas, Inc.를 통해 EOL 솔루션 및 맞춤형 자동화 시스템 사업(CMI)의 자동화솔루션 사업부문을 영위하고 있습니다.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_robot_arm",
-      "evidence": "협동로봇 사업부문 품목 로봇 Arm 생산(판매) 개시일 2018년",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_EOL_CMI",
-      "evidence": "자동화 솔루션 사업부문 품목 EOL/CMI 생산(판매) 개시일 2025년",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_palletizing",
-      "evidence": "팔레타이징 당사의 H시리즈 및 P시리즈 로봇 Arm에 진공흡착식 경량 그리퍼 및 Lift System을 결합하여 만들어진 흡착/적재 솔루션임.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_frying_module",
-      "evidence": "튀김모듈 반복 동작, 유증기 등으로 인해 근골격계 및 호흡기 질환, 열반 현상, 화상 등을 유발할 수 있는 튀김 조리작업의 효율성과 안정성 향상을 위한 솔루션임.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_coffee_module",
-      "evidence": "커피모듈 무인카페운영 로봇으로 당사에서 개발한 로봇 Arm을 사용하고 있음.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_palletizer",
-      "evidence": "자동화솔루션 Palletizer(팔레트 적재) End-of-Line 솔루션으로, 컨베이어에서 전달받은 포장 박스를 로봇이 팔레트에 적재하는 솔루션임.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_case_erector",
-      "evidence": "Case Erector(박스 제작) End-of-Line 솔루션으로, 로봇이 적재된 판지를 펼쳐 박스 형태를 세우고 테이핑기로 하단을 실링하여 박스를 완성하는 솔루션임.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_case_packer",
-      "evidence": "Case Packer(박스 포장) End-of-Line 솔루션으로, 로봇이 상품을 Pick & Place로 박스에 적재하고 테이핑기로 상단을 실링해 포장을 완성하는 솔루션임.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_454910",
-      "to": "productservice_cmi",
-      "evidence": "CMI(맞춤형 자동화시스템) 조립, 부품 이송, 적재, 포장, 검사 등 제조 공정 전반에 걸쳐 고객 맞춤형 자동화 시스템을 제공함.",
-      "date": "2026-03-18",
-      "evidence_source_id": "dart_454910_business_segments_20260318001562",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
-      "evidence_published_at": "2026-03-18"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_collaborative_robot",
       "to": "industry_robotics",
       "evidence": "당사는 산업용 로봇, 그 중에서도 협동로봇(Cobot, Collaborative Robot)에 대한 제조 및 솔루션 제공 사업을 영위하고 있습니다.",
       "date": "2026-03-18",
@@ -226,9 +145,53 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_automation_solution",
-      "to": "industry_automation",
+      "type": "BELONGS_TO",
+      "from": "company_454910",
+      "to": "industry_ai",
+      "evidence": "지능형 로봇 솔루션은 협동로봇의 하드웨어인 로봇 Arm과 소프트웨어, AI 기능이 통합된 형태로, 간단히 설치 후 바로 운영할 수 있는 플러그앤플레이(Plug & Play) 제품입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_cobot",
+      "evidence": "당사는 산업용 로봇, 그 중에서도 협동로봇(Cobot, Collaborative Robot)에 대한 제조 및 솔루션 제공 사업을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_robot_arm",
+      "evidence": "2025년 연결 기준으로는 약 330억원의 매출을 달성하였으며, 협동로봇 사업부문에 로봇 Arm 등이 포함되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_automation_solution",
+      "evidence": "자동화솔루션 사업부문을 영위하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_eol_cmi",
       "evidence": "자회사인 Doosan Robotics Americas, Inc.를 통해 EOL 솔루션 및 맞춤형 자동화 시스템 사업(CMI)의 자동화솔루션 사업부문을 영위하고 있습니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
@@ -237,10 +200,76 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_robot_arm",
-      "to": "business_area_collaborative_robot",
-      "evidence": "협동로봇 사업부문 품목 로봇 Arm",
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_palletizer",
+      "evidence": "End-of-Line(완제품 패킹 및 적재하는 제조 라인의 끝 공정) 솔루션으로, 컨베이어에서 전달받은 포장 박스를 로봇이 팔레트에 적재하는 솔루션임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_case_erector",
+      "evidence": "End-of-Line 솔루션으로, 로봇이 적재된 판지를 펼쳐 박스 형태를 세우고 테이핑기로 하단을 실링하여 박스를 완성하는 솔루션임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_case_packer",
+      "evidence": "End-of-Line 솔루션으로, 로봇이 상품을 Pick & Place로 박스에 적재하고 테이핑기로 상단을 실링해 포장을 완성하는 솔루션임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_cmi",
+      "evidence": "조립, 부품 이송, 적재, 포장, 검사 등 제조 공정 전반에 걸쳐 고객 맞춤형 자동화 시스템을 제공함.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_palettizing_solution",
+      "evidence": "당사의 H시리즈 및 P시리즈 로봇 Arm에 진공흡착식 경량 그리퍼 및 Lift System을 결합하여 만들어진 흡착/적재 솔루션임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_frying_module",
+      "evidence": "반복 동작, 유증기 등으로 인해 근골격계 및 호흡기 질환, 열반 현상, 화상 등을 유발할 수 있는 튀김 조리작업의 효율성과 안정성 향상을 위한 솔루션임.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_454910",
+      "to": "product_service_coffee_module",
+      "evidence": "무인카페운영 로봇으로 당사에서 개발한 로봇 Arm을 사용하고 있음.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -249,9 +278,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "productservice_EOL_CMI",
-      "to": "business_area_automation_solution",
-      "evidence": "자동화 솔루션 사업부문 품목 EOL/CMI",
+      "from": "product_service_cobot",
+      "to": "industry_robotics",
+      "evidence": "협동로봇은 산업용 로봇의 한 종류로서 산업용 로봇 시장의 한 축입니다.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -260,9 +289,42 @@
     },
     {
       "type": "PART_OF",
-      "from": "productservice_palletizing",
-      "to": "business_area_collaborative_robot",
-      "evidence": "팔레타이징 당사의 H시리즈 및 P시리즈 로봇 Arm에 진공흡착식 경량 그리퍼 및 Lift System을 결합하여 만들어진 흡착/적재 솔루션임.",
+      "from": "product_service_automation_solution",
+      "to": "industry_robotics",
+      "evidence": "자동화 솔루션은 협동로봇 사업부문 관련 자동화 시스템을 의미합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "지능형 로봇 솔루션은 로봇 하드웨어와 AI 기능이 통합된 제품으로 양 산업이 밀접히 연관되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -271,9 +333,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "productservice_frying_module",
-      "to": "business_area_collaborative_robot",
-      "evidence": "당사에서 개발한 로봇 Arm을 협력업체와 공동개발한 튀김모듈에 부착하여 생산한 완제품임",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -281,10 +343,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_coffee_module",
-      "to": "business_area_collaborative_robot",
-      "evidence": "무인카페운영 로봇으로 당사에서 개발한 로봇 Arm을 사용하고 있음",
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -292,10 +354,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_palletizer",
-      "to": "business_area_automation_solution",
-      "evidence": "자동화솔루션 Palletizer(팔레트 적재) End-of-Line 솔루션",
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -303,10 +365,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_case_erector",
-      "to": "business_area_automation_solution",
-      "evidence": "Case Erector(박스 제작) End-of-Line 솔루션임.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -314,10 +376,10 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_case_packer",
-      "to": "business_area_automation_solution",
-      "evidence": "Case Packer(박스 포장) End-of-Line 솔루션임.",
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",
@@ -325,10 +387,43 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "PART_OF",
-      "from": "productservice_cmi",
-      "to": "business_area_automation_solution",
-      "evidence": "CMI(맞춤형 자동화시스템) 고객 맞춤형 자동화 시스템을 제공함.",
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_454910_business_segments_20260318001562",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001562",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_454910_business_segments_20260318001562",
       "evidence_source_type": "dart",

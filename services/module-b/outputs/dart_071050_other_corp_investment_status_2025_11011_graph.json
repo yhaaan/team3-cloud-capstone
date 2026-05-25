@@ -6,12 +6,12 @@
       "type": "Company",
       "name": "한국금융지주",
       "stock_code": "071050",
-      "description": "금융 계열사에 100% 지분 출자하는 금융지주회사"
+      "description": "경영참여를 목적으로 다양한 금융 관련 기업에 출자하여 그룹 경영을 진행"
     },
     {
-      "id": "business_area_financial_services",
-      "type": "BusinessArea",
-      "name": "금융서비스"
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
     },
     {
       "id": "industry_finance",
@@ -21,10 +21,10 @@
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_071050",
-      "to": "business_area_financial_services",
-      "evidence": "한국금융지주의 타법인 출자 대상은 한국투자증권, 출자 목적은 경영참여",
+      "to": "industry_financial_holding",
+      "evidence": "한국금융지주의 타법인 출자 대상은 ... 출자 목적은 경영참여 ...",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -33,9 +33,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_financial_services",
+      "from": "industry_financial_holding",
       "to": "industry_finance",
-      "evidence": "한국금융지주의 타법인 출자 대상은 한국투자증권, 출자 목적은 경영참여",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
       "date": "2026-03-19",
       "evidence_source_id": "dart_071050_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

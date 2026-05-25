@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "드림어스컴퍼니",
       "stock_code": "060570",
-      "description": "FLO 음악 서비스와 음반 및 디지털 콘텐츠 유통, 아티스트 MD 및 공연 기획 중심 음악서비스 기업"
+      "description": "FLO 음악 플랫폼 운영과 음원 서비스, 디지털콘텐츠 유통, 공연 기획 및 MD 상품 유통"
     },
     {
       "id": "company_017670",
@@ -15,54 +15,52 @@
       "stock_code": "017670"
     },
     {
-      "id": "company_034730",
-      "type": "Company",
-      "name": "SK",
-      "stock_code": "034730"
-    },
-    {
-      "id": "business_area_music_service",
-      "type": "BusinessArea",
-      "name": "음악서비스"
-    },
-    {
-      "id": "product_service_flo_usage_license",
+      "id": "product_service_flo_music_service",
       "type": "ProductService",
-      "name": "FLO 이용권"
+      "name": "FLO 음악 서비스"
     },
     {
-      "id": "business_area_audio_content",
-      "type": "BusinessArea",
-      "name": "오디오 콘텐츠"
-    },
-    {
-      "id": "business_area_cloud_service",
-      "type": "BusinessArea",
-      "name": "클라우드"
-    },
-    {
-      "id": "industry_platform",
+      "id": "industry_music_entertainment",
       "type": "Industry",
-      "name": "플랫폼"
+      "name": "음악엔터테인먼트"
+    },
+    {
+      "id": "industry_media_content",
+      "type": "Industry",
+      "name": "미디어콘텐츠"
+    },
+    {
+      "id": "industry_cloud_service",
+      "type": "Industry",
+      "name": "클라우드서비스"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
-      "from": "company_060570",
-      "to": "business_area_music_service",
-      "evidence": "사업 부문별로는 FLO 서비스와 음반 및 디지털 콘텐츠 유통을 담당하는 음악서비스 부문이 1129억원의 매출을 올리며 전체의 50.18%를 차지했다.",
-      "date": "",
-      "evidence_source_id": "news_060570_70d66de9c0e0b024",
-      "evidence_source_type": "news",
-      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
-      "evidence_published_at": "2026-03-27T12:08:00+09:00"
-    },
-    {
       "type": "PRODUCES",
       "from": "company_060570",
-      "to": "product_service_flo_usage_license",
-      "evidence": "드림어스컴퍼니가 SK텔레콤과 195억원 규모의 FLO 이용권 제공 계약을 체결했다고 공시했다.",
+      "to": "product_service_flo_music_service",
+      "evidence": "드림어스컴퍼니는 2018년 서비스를 시작한 FLO를 통해 개인 맞춤형 음원 서비스와 팟캐스트, 오디오 북 등 오디오 콘텐츠 네트워크를 확장해오고 있다.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
       "evidence_source_type": "news",
@@ -70,10 +68,10 @@
       "evidence_published_at": "2026-03-27T12:08:00+09:00"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_060570",
-      "to": "business_area_audio_content",
-      "evidence": "FLO를 통해 개인 맞춤형 음원 서비스와 팟캐스트, 오디오 북 등 오디오 콘텐츠 네트워크를 확장해오고 있다.",
+      "to": "industry_music_entertainment",
+      "evidence": "드림어스컴퍼니는 2018년 서비스를 시작한 FLO를 통해 개인 맞춤형 음원 서비스와 팟캐스트, 오디오 북 등 오디오 콘텐츠 네트워크를 확장해오고 있다.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
       "evidence_source_type": "news",
@@ -81,9 +79,20 @@
       "evidence_published_at": "2026-03-27T12:08:00+09:00"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_060570",
-      "to": "business_area_cloud_service",
+      "to": "industry_media_content",
+      "evidence": "음악서비스 부문과 음반 및 디지털 콘텐츠 유통을 담당하는 음악서비스 부문이 1129억원의 매출을 올리며 전체의 50.18%를 차지했다.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_060570",
+      "to": "industry_cloud_service",
       "evidence": "특히 아마존 웹서비스(AWS) 기반 클라우드로 데이터센터를 전면 이전해 트래픽 집중 시 운영 안정성을 확보하고 있다고 설명했다.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
@@ -93,9 +102,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_music_service",
-      "to": "industry_platform",
-      "evidence": "FLO를 통해 개인 맞춤형 음원 서비스와 팟캐스트, 오디오 북 등 오디오 콘텐츠 네트워크를 확장해오고 있다.",
+      "from": "industry_media_content",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 미디어콘텐츠 is part of 통신/미디어.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
       "evidence_source_type": "news",
@@ -104,9 +113,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_audio_content",
-      "to": "industry_platform",
-      "evidence": "FLO를 통해 개인 맞춤형 음원 서비스와 팟캐스트, 오디오 북 등 오디오 콘텐츠 네트워크를 확장해오고 있다.",
+      "from": "industry_cloud_service",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 클라우드서비스 is part of 정보기술/소프트웨어.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
       "evidence_source_type": "news",
@@ -115,9 +124,75 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_cloud_service",
-      "to": "industry_platform",
-      "evidence": "아마존 웹서비스(AWS) 기반 클라우드로 데이터센터를 전면 이전해 트래픽 집중 시 운영 안정성을 확보하고 있다고 설명했다.",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "",
+      "evidence_source_id": "news_060570_70d66de9c0e0b024",
+      "evidence_source_type": "news",
+      "evidence_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=215828",
+      "evidence_published_at": "2026-03-27T12:08:00+09:00"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
       "date": "",
       "evidence_source_id": "news_060570_70d66de9c0e0b024",
       "evidence_source_type": "news",

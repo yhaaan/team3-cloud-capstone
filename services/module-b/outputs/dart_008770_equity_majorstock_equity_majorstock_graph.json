@@ -5,21 +5,124 @@
       "id": "company_008770",
       "type": "Company",
       "name": "호텔신라",
-      "stock_code": "008770"
+      "stock_code": "008770",
+      "description": "호텔 및 면세점 사업을 영위하는 기업"
     },
     {
       "id": "company_032830",
       "type": "Company",
       "name": "삼성생명",
-      "stock_code": "032830"
+      "stock_code": "032830",
+      "description": "생명보험 상품을 제공하는 금융업체"
+    },
+    {
+      "id": "industry_travel_leisure",
+      "type": "Industry",
+      "name": "여행/레저"
+    },
+    {
+      "id": "industry_insurance",
+      "type": "Industry",
+      "name": "보험"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_008770",
+      "to": "industry_travel_leisure",
+      "evidence": "호텔신라의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-06-02, 보유주식수는 2,756,864주, 지분율은 7.02%, 주식수 증감은 789,669, 지분율 증감은 2.01, 보고사유는 단순추가취득/처분.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_032830",
-      "to": "company_008770",
+      "to": "industry_insurance",
       "evidence": "호텔신라의 대량보유 보고자는 삼성생명, 보고 유형은 일반, 접수일은 2026-05-04, 보유주식수는 6,950,857주, 지분율은 17.71%, 주식수 증감은 184,198, 지분율 증감은 0.47, 보고사유는 특별관계자 및 주식수 변동.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_insurance",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 보험 is part of 금융.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 항공/물류.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_travel_leisure",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 여행/레저 is related to 유통/소비재.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-05-04",
+      "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250602000527",
+      "evidence_published_at": "2026-05-04"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
       "date": "2026-05-04",
       "evidence_source_id": "dart_008770_equity_majorstock_equity_majorstock",
       "evidence_source_type": "dart",

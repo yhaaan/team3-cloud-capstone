@@ -12,7 +12,116 @@
       "type": "Company",
       "name": "기아",
       "stock_code": "000270"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004020",
+      "to": "industry_steel_metal",
+      "evidence": "현대제철의 대량보유 보고자는 국민연금공단, 보고 유형은 약식, 접수일은 2025-07-02, 보유주식수는 13,936,825주, 지분율은 10.44%, 주식수 증감은 1,518,866, 지분율 증감은 1.13, 보고사유는 단순추가취득/처분.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_steel_metal",
+      "evidence": "현대제철의 대량보유 보고자는 기아, 보고 유형은 일반, 접수일은 2026-01-07, 보유주식수는 47,987,628주, 지분율은 35.96%, 주식수 증감은 -2,000, 지분율 증감은 -0.00, 보고사유는 특별관계자 제외.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-04-01",
+      "evidence_source_id": "dart_004020_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250702000265",
+      "evidence_published_at": "2026-04-01"
+    }
+  ]
 }

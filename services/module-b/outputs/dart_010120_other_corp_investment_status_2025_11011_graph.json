@@ -6,36 +6,102 @@
       "type": "Company",
       "name": "LS ELECTRIC",
       "stock_code": "010120",
-      "description": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다."
+      "description": "전력기기 및 자동화솔루션 분야의 제품과 서비스를 제공하는 기업"
     },
     {
       "id": "company_322180",
       "type": "Company",
       "name": "LS티라유텍",
-      "stock_code": "322180"
+      "stock_code": "322180",
+      "description": "전력용 전자부품 및 반도체 관련 제품을 제조 공급하는 기업"
     },
     {
-      "id": "business_area_전력기기",
-      "type": "BusinessArea",
-      "name": "전력기기"
-    },
-    {
-      "id": "business_area_에너지",
-      "type": "BusinessArea",
-      "name": "에너지"
-    },
-    {
-      "id": "industry_에너지",
+      "id": "industry_electronics",
       "type": "Industry",
-      "name": "에너지"
+      "name": "전자"
+    },
+    {
+      "id": "industry_power_equipment",
+      "type": "Industry",
+      "name": "전력장비"
+    },
+    {
+      "id": "industry_power_generation",
+      "type": "Industry",
+      "name": "전력발전"
+    },
+    {
+      "id": "industry_factory_automation",
+      "type": "Industry",
+      "name": "공장자동화"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_010120",
-      "to": "business_area_전력기기",
-      "evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.",
+      "to": "industry_power_equipment",
+      "evidence": "LS ELECTRIC의 타법인 출자 대상은 LS메탈㈜(*5), 출자 목적은 경영참여",
       "date": "2026-03-18",
       "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -43,10 +109,32 @@
       "evidence_published_at": "2026-03-18"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_010120",
-      "to": "business_area_에너지",
-      "evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.",
+      "to": "industry_factory_automation",
+      "evidence": "LS ELECTRIC의 타법인 출자 대상은 LS Automation Solution Otomasyon Sistemleri(*14), 출자 목적은 경영참여",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_010120",
+      "to": "industry_energy_utility",
+      "evidence": "LS ELECTRIC의 타법인 출자 대상은 SL에너지솔루션, 출자 목적은 경영참여",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_322180",
+      "to": "industry_electronics",
+      "evidence": "LS티라유텍㈜(구.㈜티라유텍)(*11,12), 출자 목적은 경영참여",
       "date": "2026-03-18",
       "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -55,9 +143,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_전력기기",
-      "to": "industry_에너지",
-      "evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.",
+      "from": "industry_power_equipment",
+      "to": "industry_energy_utility",
+      "evidence": "LS ELECTRIC 관련 전력기기 및 에너지 분야의 사업 내용",
       "date": "2026-03-18",
       "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -66,9 +154,207 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_에너지",
-      "to": "industry_에너지",
-      "evidence": "LS ELECTRIC은 전력기기와 자동화 시스템 등 전기·에너지 분야에 주력하는 기업입니다.",
+      "from": "industry_factory_automation",
+      "to": "industry_electronics",
+      "evidence": "LS ELECTRIC의 산업군은 전자 및 자동화솔루션을 포함",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_factory_automation",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 공장자동화 is part of 기계/장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_power_generation",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 전력발전 is part of 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_display",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 디스플레이 is related to 전자.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001243",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
       "date": "2026-03-18",
       "evidence_source_id": "dart_010120_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

@@ -1,0 +1,520 @@
+{
+  "source_id": "dart_006360_business_segments_20260316001192",
+  "entities": [
+    {
+      "id": "company_006360",
+      "type": "Company",
+      "name": "GS건설",
+      "stock_code": "006360",
+      "description": "건축ㆍ주택, 플랜트, 인프라, 개발신사업 및 Prefab, Inima 등 다양한 건설 및 플랜트 사업을 영위"
+    },
+    {
+      "id": "company_317400",
+      "type": "Company",
+      "name": "자이에스앤디",
+      "stock_code": "317400",
+      "description": "클린룸, 첨단공장, 데이터센터 등 건축사업과 아파트, 오피스텔 등 주택사업, 스마트 홈 시스템 등 홈솔루션 제공"
+    },
+    {
+      "id": "company_026960",
+      "type": "Company",
+      "name": "동서",
+      "stock_code": "026960"
+    },
+    {
+      "id": "company_029460",
+      "type": "Company",
+      "name": "케이씨",
+      "stock_code": "029460"
+    },
+    {
+      "id": "company_260970",
+      "type": "Company",
+      "name": "에스앤디",
+      "stock_code": "260970"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
+    },
+    {
+      "id": "company_053620",
+      "type": "Company",
+      "name": "태양",
+      "stock_code": "053620"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_plant_construction",
+      "type": "Industry",
+      "name": "플랜트건설"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_water_treatment",
+      "type": "Industry",
+      "name": "수처리처리"
+    },
+    {
+      "id": "product_service_modular_housing",
+      "type": "ProductService",
+      "name": "모듈러주택"
+    },
+    {
+      "id": "product_service_smart_home_system",
+      "type": "ProductService",
+      "name": "스마트 홈 시스템"
+    },
+    {
+      "id": "product_service_cleanroom_construction",
+      "type": "ProductService",
+      "name": "클린룸 시공"
+    },
+    {
+      "id": "product_service_internet_data_center",
+      "type": "ProductService",
+      "name": "인터넷데이터센터"
+    },
+    {
+      "id": "product_service_oil_refining_facility",
+      "type": "ProductService",
+      "name": "석유정제설비"
+    },
+    {
+      "id": "product_service_power_plant",
+      "type": "ProductService",
+      "name": "발전소"
+    },
+    {
+      "id": "product_service_road_rail_electric_control",
+      "type": "ProductService",
+      "name": "도로, 철도, 전력제어"
+    },
+    {
+      "id": "product_service_water_treatment_facility",
+      "type": "ProductService",
+      "name": "수처리 시설"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_environment",
+      "type": "Industry",
+      "name": "환경"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_construction_infrastructure",
+      "evidence": "사무용 빌딩, 생산 시설, 주거 시설, 정유, 석유화학 및 환경 등에 사용되는 설비 등을 건설하는 사업을 영위하고 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_plant_construction",
+      "evidence": "플랜트사업본부 석유정제설비, 발전소 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_real_estate",
+      "evidence": "주택사업은 조합을 발주처로 하는 정비사업과 시행사를 발주처로 하는 외주사업, 신규 택지 확보를 통한 자체사업으로 크게 나뉠 수 있습니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_energy_utility",
+      "evidence": "플랜트사업본부 석유정제설비, 발전소 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_006360",
+      "to": "industry_water_treatment",
+      "evidence": "Inima 수처리 시설",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006360",
+      "to": "product_service_modular_housing",
+      "evidence": "Prefab 모듈러주택 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_317400",
+      "to": "industry_construction_infrastructure",
+      "evidence": "건축사업 클린룸 조성, 첨단공장, 인터넷데이터센터(IDC), 석유화학 플랜트사업 등 시공",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_317400",
+      "to": "industry_real_estate",
+      "evidence": "주택사업 아파트, 오피스텔, 주상복합 등 건축물 시공분양(부동산 개발 및 공급)",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_317400",
+      "to": "product_service_cleanroom_construction",
+      "evidence": "건축사업 클린룸 조성",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_317400",
+      "to": "product_service_internet_data_center",
+      "evidence": "첨단공장, 인터넷데이터센터(IDC), 석유화학 플랜트사업 등 시공",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_317400",
+      "to": "product_service_smart_home_system",
+      "evidence": "스마트 홈 시스템(IoT, 홈네트워크 시스템)",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006360",
+      "to": "product_service_oil_refining_facility",
+      "evidence": "플랜트사업본부 석유정제설비, 발전소 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006360",
+      "to": "product_service_power_plant",
+      "evidence": "플랜트사업본부 석유정제설비, 발전소 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006360",
+      "to": "product_service_road_rail_electric_control",
+      "evidence": "인프라사업본부 도로, 철도, 전력제어 등",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_006360",
+      "to": "product_service_water_treatment_facility",
+      "evidence": "Inima 수처리 시설",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_plant_construction",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 플랜트건설 is part of 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_water_treatment",
+      "to": "industry_environment",
+      "evidence": "Industry taxonomy: 수처리처리 is part of 환경.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 환경 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 환경 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_006360_business_segments_20260316001192",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001192",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

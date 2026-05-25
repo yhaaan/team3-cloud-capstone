@@ -6,7 +6,7 @@
       "type": "Company",
       "name": "한화에어로스페이스",
       "stock_code": "012450",
-      "description": "한화에어로스페이스는 항공우주 및 방위산업 분야에서 다양한 계열사에 경영참가 및 투자 활동을 수행하고 있음"
+      "description": "항공우주 및 방산 분야에서 다양한 계열사 지분을 보유하며 사업을 영위"
     },
     {
       "id": "company_272210",
@@ -33,16 +33,40 @@
       "stock_code": "047810"
     },
     {
-      "id": "company_000880",
-      "type": "Company",
-      "name": "한화",
-      "stock_code": "000880"
-    },
-    {
       "id": "company_042660",
       "type": "Company",
       "name": "한화오션",
       "stock_code": "042660"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
     }
   ],
   "relations": [
@@ -72,7 +96,7 @@
       "type": "INVESTS_IN",
       "from": "company_012450",
       "to": "company_255220",
-      "evidence": "한화에어로스페이스의 타법인 출자 대상은 SG, 출자 목적은 경영참가 등, 최초 취득일은 2016.09.27, 당기말 지분율은 30.00%",
+      "evidence": "한화에어로스페이스의 타법인 출자 대상은 SG, 출자 목적은 경영참가 등, 최초 취득일은 2024.09.12, 당기말 지분율은 73.10%",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -93,8 +117,8 @@
     {
       "type": "INVESTS_IN",
       "from": "company_012450",
-      "to": "company_000880",
-      "evidence": "한화에어로스페이스의 타법인 출자 대상은 한화시스템㈜, 출자 목적은 경영참가 등",
+      "to": "company_042660",
+      "evidence": "한화에어로스페이스의 타법인 출자 대상은 한화오션㈜, 출자 목적은 경영참가 등, 최초 취득일은 2023.05.23, 당기말 지분율은 30.44%",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",
@@ -102,10 +126,98 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
       "from": "company_012450",
-      "to": "company_042660",
-      "evidence": "한화에어로스페이스의 타법인 출자 대상은 한화오션㈜, 출자 목적은 경영참가 등, 최초 취득일은 2023.05.23, 당기말 지분율은 30.44%",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스의 타법인 출자 대상은 한화시스템㈜, 출자 목적은 경영참가 등,... 관련 사업 분야가 방산/항공우주임을 문맥상 유추",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_272210",
+      "to": "industry_defense_aerospace",
+      "evidence": "한화에어로스페이스의 타법인 출자 대상은 한화시스템㈜, 출자 목적은 경영참가 등,... 관련 사업 분야가 방산/항공우주임을 문맥상 유추",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_099320",
+      "to": "industry_defense_aerospace",
+      "evidence": "㈜쎄트렉아이가 한화에어로스페이스의 출자대상임. 쎄트렉아이는 위성/우주 등 방산·항공우주 관련 기업임을 일반 지식에서 확인 가능",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_255220",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "SG(255220) 가 출자 대상으로 나타나며, 한화오션과 연관성이 있으며 해양서비스 및 조선/해양 산업에 속함을 유추",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_042660",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "한화오션㈜는 해양플랜트 및 선박 관련 사업을 하는 조선해양 산업군에 속함",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001112",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_012450_other_corp_investment_status_2025_11011",
       "evidence_source_type": "dart",

@@ -6,44 +6,114 @@
       "type": "Company",
       "name": "레인보우로보틱스",
       "stock_code": "277810",
-      "description": "협동로봇, 인간형 이족보행 및 사족보행 로봇, 초정밀 지향 마운트 시스템, 자율이동로봇 등 로봇 기술 기반 사업을 영위"
+      "description": "휴머노이드 로봇과 협동로봇 등의 핵심 부품과 제어 기술을 바탕으로 산업용 및 서비스용 로봇, 초정밀 지향 마운트 시스템을 개발·제조합니다."
     },
     {
-      "id": "business_area_협동로봇",
-      "type": "BusinessArea",
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "product_service_collaborative_robot",
+      "type": "ProductService",
       "name": "협동로봇"
     },
     {
-      "id": "business_area_이족보행로봇",
-      "type": "BusinessArea",
+      "id": "product_service_biped_robot",
+      "type": "ProductService",
       "name": "이족보행로봇"
     },
     {
-      "id": "business_area_사족보행로봇",
-      "type": "BusinessArea",
+      "id": "product_service_quadruped_robot",
+      "type": "ProductService",
       "name": "사족보행로봇"
     },
     {
-      "id": "business_area_초정밀지향마운트시스템",
-      "type": "BusinessArea",
-      "name": "초정밀지향마운트시스템"
+      "id": "product_service_humanoid_robot",
+      "type": "ProductService",
+      "name": "휴머노이드 로봇"
     },
     {
-      "id": "business_area_자율이동로봇",
-      "type": "BusinessArea",
-      "name": "자율이동로봇"
+      "id": "product_service_high_precision_mount_system",
+      "type": "ProductService",
+      "name": "초정밀 지향 마운트 시스템"
     },
     {
-      "id": "industry_로봇",
+      "id": "industry_industrial_robot",
       "type": "Industry",
-      "name": "로봇"
+      "name": "산업용로봇"
+    },
+    {
+      "id": "industry_service_robot",
+      "type": "Industry",
+      "name": "서비스로봇"
+    },
+    {
+      "id": "industry_defense_aerospace",
+      "type": "Industry",
+      "name": "방산/항공우주"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_277810",
-      "to": "business_area_협동로봇",
+      "to": "industry_robotics",
       "evidence": "당사는 인간형 이족보행 로봇 개발을 통해 확보한 핵심 부품 및 요소 기술을 활용하여 협동로봇 사업을 진행하고 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
@@ -52,10 +122,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_277810",
-      "to": "business_area_이족보행로봇",
-      "evidence": "인간형 이족보행 로봇은 일본 'H사'의 아시모, 미국 'B사'의 아틀라스 플랫폼 및 당사의 'HUBO'가 전 세계적으로 인정받고 있습니다.",
+      "to": "product_service_collaborative_robot",
+      "evidence": "협동로봇은 안전장치가 내장된 직렬 로봇팔(manipulator)로 작업자와 같은 공간에서 활용될 수 있어 기존 제조업 뿐만 아니라 서비스 분야 등 다양한 영역에서 활용될 수 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -63,10 +133,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_277810",
-      "to": "business_area_사족보행로봇",
-      "evidence": "당사의 순수 자체 기술로 개발한 사족보행로봇은 험지와 야지를 모두 보행 할 수 있는 로봇 플랫폼으로써 ... 주로 방범 순찰이나 군용 등 사업 분야에 활용가능합니다.",
+      "to": "product_service_biped_robot",
+      "evidence": "인간형 이족보행 로봇 플랫폼은 인간의 움직임을 묘사할 수 있는 로봇으로 기본적으로 인간과 유사하게 이족보행을 통해 이동할 수 있고 양팔과 손(말단장치, End-Effector)이 있어 인간이 수행하는 다양한 작업을 수행할 수 있습니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -74,10 +144,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_277810",
-      "to": "business_area_초정밀지향마운트시스템",
-      "evidence": "인간형 이족보행 로봇에 적용되는 핵심 기술을 활용한 또 다른 사업은 초정밀지향마운트시스템입니다.",
+      "to": "product_service_quadruped_robot",
+      "evidence": "당사의 순수 자체 기술로 개발한 사족보행로봇은 험지와 야지를 모두 보행 할 수 있는 로봇 플랫폼으로써, 이족보행로봇 제작에서 비롯된 노하우와 경험을 토대로 감속기를 포함한 모든 부품을 100% 내재화 하였으며, 복잡한 지형을 보행 할 수 있는 보행기술과, 보행제어 알고리즘을 기본 탑재하고 백플립, 점프 등과 같은 다이나믹한 모션까지 수행합니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -85,10 +155,10 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "PRODUCES",
       "from": "company_277810",
-      "to": "business_area_자율이동로봇",
-      "evidence": "AMR은 최종 고객이 요구하는 시스템의 요소로 활용되며, 제조 및 물류현장 자동화에 활용됩니다.",
+      "to": "product_service_high_precision_mount_system",
+      "evidence": "초정밀지향마운트시스템은 어떠한 지점을 정밀하게 지향하거나 추적하는 장치로 국내에서 이를 자체적으로 개발하여 제조 및 판매하는 회사는 당사가 유일합니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -97,9 +167,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_협동로봇",
-      "to": "industry_로봇",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇 ...",
+      "from": "industry_industrial_robot",
+      "to": "industry_robotics",
+      "evidence": "협동로봇은 산업용 로봇의 한 부류입니다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -108,9 +178,31 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_이족보행로봇",
-      "to": "industry_로봇",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇 ...",
+      "from": "industry_service_robot",
+      "to": "industry_robotics",
+      "evidence": "서비스 분야의 협동로봇 점유율은 계속해서 상승할 것으로 점쳐지고 있습니다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_277810",
+      "to": "industry_it_software",
+      "evidence": "당사 협동로봇의 가장 큰 경쟁력은 자체적으로 개발한 핵심 부품, 소프트웨어, 그리고 제어 알고리즘입니다.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_robotics",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇, 부품, 생산, 서비스, 소재, 소프트웨어, ... 우주, 자동차, 장비, 제조, 제품, 통신, 판매, 플랫폼이다.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -119,9 +211,53 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_사족보행로봇",
-      "to": "industry_로봇",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇 ...",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -130,9 +266,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_초정밀지향마운트시스템",
-      "to": "industry_로봇",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇 ...",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",
@@ -140,10 +276,120 @@
       "evidence_published_at": "2026-03-20"
     },
     {
-      "type": "PART_OF",
-      "from": "business_area_자율이동로봇",
-      "to": "industry_로봇",
-      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 로봇 ...",
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 기계/장비.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_defense_aerospace",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 방산/항공우주 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-20",
+      "evidence_source_id": "dart_277810_business_segments_20260320000803",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000803",
+      "evidence_published_at": "2026-03-20"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
       "date": "2026-03-20",
       "evidence_source_id": "dart_277810_business_segments_20260320000803",
       "evidence_source_type": "dart",

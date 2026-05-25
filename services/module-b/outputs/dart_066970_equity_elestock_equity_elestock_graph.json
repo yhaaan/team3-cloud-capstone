@@ -1,0 +1,235 @@
+{
+  "source_id": "dart_066970_equity_elestock_equity_elestock",
+  "entities": [
+    {
+      "id": "company_066970",
+      "type": "Company",
+      "name": "엘앤에프",
+      "stock_code": "066970",
+      "description": "2차전지 핵심 소재인 양극재를 생산하는 기업"
+    },
+    {
+      "id": "company_042600",
+      "type": "Company",
+      "name": "새로닉스",
+      "stock_code": "042600"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_cathode_material",
+      "type": "Industry",
+      "name": "양극재소재"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_066970",
+      "to": "industry_battery_energy_storage",
+      "evidence": "엘앤에프의 임원·주요주주 소유상황 보고",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_066970",
+      "to": "industry_cathode_material",
+      "evidence": "엘앤에프의 임원·주요주주 소유상황 보고",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "INVESTS_IN",
+      "from": "company_066970",
+      "to": "company_042600",
+      "evidence": "엘앤에프의 임원·주요주주 소유상황 보고자는 새로닉스, 주요주주 여부는 10%이상주주, 보유주식수는 5,487,870주, 지분율은 15.11%",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_cathode_material",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 양극재소재 is part of 배터리/에너지저장.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-05-14",
+      "evidence_source_id": "dart_066970_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250616000095",
+      "evidence_published_at": "2026-05-14"
+    }
+  ]
+}

@@ -6,109 +6,99 @@
       "type": "Company",
       "name": "SK이노베이션",
       "stock_code": "096770",
-      "description": "석유개발·정제, 화학 및 배터리 등 에너지와 소재 사업을 영위"
+      "description": "석유화학 및 에너지 사업을 영위하는 기업"
     },
     {
       "id": "company_388720",
       "type": "Company",
       "name": "유일로보틱스",
-      "stock_code": "388720"
+      "stock_code": "388720",
+      "description": "산업용로봇 제조 및 판매업을 영위하는 기업"
     },
     {
       "id": "company_361610",
       "type": "Company",
       "name": "SK아이이테크놀로지",
       "stock_code": "361610",
-      "description": "2차전지용 분리막 제조 사업을 영위"
+      "description": "2차전지용 분리막 제조 사업을 영위하는 기업"
     },
     {
-      "id": "business_area_industrial_robot",
-      "type": "BusinessArea",
-      "name": "산업용로봇"
-    },
-    {
-      "id": "productservice_battery_separator",
-      "type": "ProductService",
-      "name": "2차전지용 분리막"
-    },
-    {
-      "id": "industry_energy_material",
+      "id": "industry_robotics",
       "type": "Industry",
-      "name": "에너지·소재"
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_battery_recycling",
+      "type": "Industry",
+      "name": "배터리재활용"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
     }
   ],
   "relations": [
     {
-      "type": "ACQUIRES",
-      "from": "company_096770",
-      "to": "company_388720",
-      "evidence": "SK이노베이션의 연결대상 종속회사 후보로 유일로보틱스 등이 탐지되었다.",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "ACQUIRES",
-      "from": "company_096770",
-      "to": "company_361610",
-      "evidence": "SK이노베이션의 연결대상 종속회사 후보로 SK아이이테크놀로지 등이 탐지되었다.",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_388720",
-      "to": "business_area_industrial_robot",
-      "evidence": "㈜ 유일로보틱스 | 산업용로봇 제조 및 판매업",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_361610",
-      "to": "productservice_battery_separator",
-      "evidence": "SK아이이테크놀로지(주) | 2차전지용 분리막 제조",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PART_OF",
-      "from": "business_area_industrial_robot",
-      "to": "industry_energy_material",
-      "evidence": "산업용로봇 제조 및 판매업은 에너지·소재 산업에 속함",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PART_OF",
-      "from": "productservice_battery_separator",
-      "to": "industry_energy_material",
-      "evidence": "2차전지용 분리막 제조는 에너지·소재 산업에 속함",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "BELONGS_TO",
-      "from": "company_096770",
-      "to": "industry_energy_material",
-      "evidence": "SK이노베이션은 에너지·소재 산업에 속함",
+      "to": "industry_robotics",
+      "evidence": "㈜ 유일로보틱스 | 2011.12.16 | 인천광역시 남동구 남동서로 362번길 37-45 | 산업용로봇 제조 및 판매업",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
       "evidence_source_type": "dart",
@@ -118,8 +108,228 @@
     {
       "type": "BELONGS_TO",
       "from": "company_361610",
-      "to": "industry_energy_material",
-      "evidence": "SK아이이테크놀로지는 에너지·소재 산업에 속함",
+      "to": "industry_battery_recycling",
+      "evidence": "SK아이이테크놀로지(주) | 2019.04.01 | 서울특별시 종로구 종로 51 종로타워빌딩 | 2차전지용 분리막 제조",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_361610",
+      "to": "industry_battery_energy_storage",
+      "evidence": "SK아이이테크놀로지(주) | 2019.04.01 | 서울특별시 종로구 종로 51 종로타워빌딩 | 2차전지용 분리막 제조",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_battery_recycling",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 배터리재활용 is part of 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_consolidated_subsidiary_status_20260316000827",
       "evidence_source_type": "dart",

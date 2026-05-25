@@ -1,0 +1,388 @@
+{
+  "source_id": "dart_010060_business_segments_20260318000617",
+  "entities": [
+    {
+      "id": "company_010060",
+      "type": "Company",
+      "name": "OCI홀딩스",
+      "stock_code": "010060",
+      "description": "지주회사로 자회사 투자 및 경영관리, 임대수익·용역매출·배당금수익·브랜드사용수익 등 영위"
+    },
+    {
+      "id": "company_456040",
+      "type": "Company",
+      "name": "OCI",
+      "stock_code": "456040"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
+    },
+    {
+      "id": "company_053620",
+      "type": "Company",
+      "name": "태양",
+      "stock_code": "053620"
+    },
+    {
+      "id": "industry_petrochemical",
+      "type": "Industry",
+      "name": "석유화학",
+      "description": "베이직케미컬, 카본케미컬 등 관련 제품의 제조·판매"
+    },
+    {
+      "id": "industry_solar_energy",
+      "type": "Industry",
+      "name": "태양광에너지",
+      "description": "태양광용 폴리실리콘 및 Slim Rod 등 관련 제품 제조·판매"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티",
+      "description": "열병합·태양광 다운스트림 사업 영위"
+    },
+    {
+      "id": "industry_urban_development",
+      "type": "Industry",
+      "name": "도시개발",
+      "description": "도시개발사업 영위"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사",
+      "description": "지주사업 및 부동산 임대"
+    },
+    {
+      "id": "product_service_polysilicon",
+      "type": "ProductService",
+      "name": "폴리실리콘",
+      "description": "태양광용 폴리실리콘 제품"
+    },
+    {
+      "id": "product_service_solar_power",
+      "type": "ProductService",
+      "name": "태양광 발전"
+    },
+    {
+      "id": "product_service_cogeneration",
+      "type": "ProductService",
+      "name": "열병합 발전"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_010060",
+      "to": "industry_holding_company",
+      "evidence": "당사는 지주회사로서 타회사의 주식취득을 통하여 그 회사의 사업내용을 지배하는 것을 주된 사업으로 하고 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_456040",
+      "to": "industry_petrochemical",
+      "evidence": "베이직케미컬, 카본케미컬 등 관련 제품의 제조, 판매 OCI(주) 외 59%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_053620",
+      "to": "industry_solar_energy",
+      "evidence": "신재생에너지 부문 태양광용 폴리실리콘 및 Slim Rod 등 관련 제품의 제조, 판매 OCI TerraSus Sdn. Bhd. 외 12%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_228670",
+      "to": "industry_energy_utility",
+      "evidence": "에너지솔루션 부문 열병합, 태양광 다운스트림 OCI Enterprises Inc.,OCI SE(주) 외 13%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001680",
+      "to": "industry_urban_development",
+      "evidence": "도시개발사업 부문 도시개발사업 (주)디씨알이 13%",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_053620",
+      "to": "product_service_polysilicon",
+      "evidence": "태양광용 폴리실리콘 및 Slim Rod 등 관련 제품의 제조, 판매",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_228670",
+      "to": "product_service_cogeneration",
+      "evidence": "에너지솔루션 부문 열병합, 태양광 다운스트림",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_228670",
+      "to": "product_service_solar_power",
+      "evidence": "에너지솔루션 부문 열병합, 태양광 다운스트림",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_solar_energy",
+      "to": "industry_energy_utility",
+      "evidence": "신재생에너지, 에너지솔루션, 화학소재, 도시개발, 바이오 등 사업영역",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_petrochemical",
+      "to": "industry_chemical_materials",
+      "evidence": "베이직케미컬, 카본케미컬 등 화학소재 관련 사업",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "지주회사로서 투자 및 사업기능 분리",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_urban_development",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 도시개발 is part of 건설인프라.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_010060_business_segments_20260318000617",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000617",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

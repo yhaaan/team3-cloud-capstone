@@ -6,41 +6,76 @@
       "type": "Company",
       "name": "삼성바이오로직스",
       "stock_code": "207940",
-      "description": "바이오의약품 위탁생산(CDMO) 및 세포주·공정개발 서비스를 제공하는 글로벌 바이오 위탁개발생산 기업"
+      "description": "바이오의약품 위탁생산 및 세포주·공정 개발 CDMO 사업, 자회사 관리 및 투자"
     },
     {
       "id": "company_001260",
       "type": "Company",
       "name": "삼성에피스홀딩스",
       "stock_code": "001260",
-      "description": "바이오의약품 개발 및 상업화 사업 부문으로 분리된 순수 지주회사"
+      "description": "바이오의약품 개발 및 상업화 사업 부문을 담당하는 순수지주회사"
     },
     {
-      "id": "business_area_cdmo",
-      "type": "BusinessArea",
-      "name": "CDMO"
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     },
     {
-      "id": "business_area_biopharmaceutical_development_and_commercialization",
-      "type": "BusinessArea",
-      "name": "바이오의약품 개발 및 상업화"
+      "id": "industry_biopharmaceutical",
+      "type": "Industry",
+      "name": "바이오의약품"
     },
     {
-      "id": "productservice_biopharmaceuticals",
+      "id": "industry_cmo_cdmo",
+      "type": "Industry",
+      "name": "위탁개발생산"
+    },
+    {
+      "id": "product_service_antibody_drug",
       "type": "ProductService",
       "name": "항체의약품"
     },
     {
-      "id": "industry_bio",
+      "id": "industry_ai",
       "type": "Industry",
-      "name": "bio"
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_207940",
-      "to": "business_area_cdmo",
+      "to": "industry_bio_healthcare",
       "evidence": "삼성바이오로직스는 바이오의약품 위탁생산 및 세포주ㆍ공정 개발 서비스를 제공하는 CDMO(Contract Development and Manufacturing Organization) 사업을 영위하고 있습니다.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
@@ -49,10 +84,21 @@
       "evidence_published_at": "2026-05-15"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_cmo_cdmo",
+      "evidence": "삼성바이오로직스는 바이오의약품 위탁생산(CMO) 및 세포주 개발, 공정ㆍ제형ㆍ분석법 개발 등 초기 임상 단계까지 지원하는 위탁개발(CDO) 서비스를 제공하고 있습니다.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_001260",
-      "to": "business_area_biopharmaceutical_development_and_commercialization",
-      "evidence": "삼성에피스홀딩스 ㈜ 를 설립하기 위한 인적 분할 절차를 완료하여, 바이오의약품 개발 및 상업화 사업 부문을 분리하였습니다.",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성바이오에피스㈜ 의 지분을 100% 승계한 삼성에피스홀딩스 ㈜ 를 설립하기 위한 인적 분할 절차를 완료하여, 바이오의약품 개발 및 상업화 사업 부문을 분리하였습니다.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
       "evidence_source_type": "dart",
@@ -62,8 +108,8 @@
     {
       "type": "PRODUCES",
       "from": "company_207940",
-      "to": "productservice_biopharmaceuticals",
-      "evidence": "주요 제품 등의 현황 ... CDMO 제품 등 항체의약품 등 43,583억 원",
+      "to": "product_service_antibody_drug",
+      "evidence": "CDMO 제품 등 항체의약품 등 43,583억 원 (95.6%)",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
       "evidence_source_type": "dart",
@@ -72,9 +118,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_cdmo",
-      "to": "industry_bio",
-      "evidence": "삼성바이오로직스는 바이오의약품 위탁생산 및 세포주ㆍ공정 개발 서비스를 제공하는 CDMO 사업을 영위하고 있습니다.",
+      "from": "industry_cmo_cdmo",
+      "to": "industry_bio_healthcare",
+      "evidence": "위탁개발생산 사업은 바이오의약품 분야 내 사업임.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
       "evidence_source_type": "dart",
@@ -83,9 +129,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_biopharmaceutical_development_and_commercialization",
-      "to": "industry_bio",
-      "evidence": "삼성에피스홀딩스 ㈜ 를 설립하기 위한 인적 분할 절차를 완료하여, 바이오의약품 개발 및 상업화 사업 부문을 분리하였습니다.",
+      "from": "product_service_antibody_drug",
+      "to": "industry_biopharmaceutical",
+      "evidence": "항체의약품은 바이오의약품의 한 종류임.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
       "evidence_source_type": "dart",
@@ -94,9 +140,108 @@
     },
     {
       "type": "PART_OF",
-      "from": "productservice_biopharmaceuticals",
-      "to": "business_area_cdmo",
-      "evidence": "주요 제품 등의 현황 ... CDMO 제품 등 항체의약품 등 43,583억 원",
+      "from": "industry_biopharmaceutical",
+      "to": "industry_bio_healthcare",
+      "evidence": "바이오의약품은 바이오/헬스케어 산업에 속함.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_bio_healthcare",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 AI, 바이오 등으로 사업과 관련.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-05-15",
+      "evidence_source_id": "dart_207940_business_segments_20260515001658",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260515001658",
+      "evidence_published_at": "2026-05-15"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
       "date": "2026-05-15",
       "evidence_source_id": "dart_207940_business_segments_20260515001658",
       "evidence_source_type": "dart",

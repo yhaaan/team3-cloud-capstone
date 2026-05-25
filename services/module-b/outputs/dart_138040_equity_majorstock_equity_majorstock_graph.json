@@ -5,13 +5,53 @@
       "id": "company_138040",
       "type": "Company",
       "name": "메리츠금융지주",
-      "stock_code": "138040"
+      "stock_code": "138040",
+      "description": "금융지주회사로 금융업 중심의 사업을 영위"
     },
     {
-      "id": "person_조정호",
-      "type": "Person",
-      "name": "조정호"
+      "id": "industry_financial_holding",
+      "type": "Industry",
+      "name": "금융지주"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
     }
   ],
-  "relations": []
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138040",
+      "to": "industry_financial_holding",
+      "evidence": "메리츠금융지주는 금융지주회사로 금융업 중심의 사업을 영위",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_138040_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000434",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_138040",
+      "to": "industry_finance",
+      "evidence": "메리츠금융지주는 금융지주회사로 금융업 중심의 사업을 영위",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_138040_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000434",
+      "evidence_published_at": "2026-03-30"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_financial_holding",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 금융지주 is part of 금융.",
+      "date": "2026-03-30",
+      "evidence_source_id": "dart_138040_equity_majorstock_equity_majorstock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251120000434",
+      "evidence_published_at": "2026-03-30"
+    }
+  ]
 }

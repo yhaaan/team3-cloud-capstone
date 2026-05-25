@@ -1,0 +1,315 @@
+{
+  "source_id": "dart_009970_business_segments_20260319001240",
+  "entities": [
+    {
+      "id": "company_009970",
+      "type": "Company",
+      "name": "영원무역홀딩스",
+      "stock_code": "009970",
+      "description": "순수 지주회사로 자회사 지배 및 배당금과 경영관리 수수료 수입을 주요 사업으로 함."
+    },
+    {
+      "id": "company_111770",
+      "type": "Company",
+      "name": "영원무역",
+      "stock_code": "111770",
+      "description": "아웃도어 및 스포츠 의류, 신발, 백팩 제조, 수출 및 유통 사업을 영위하는 제조 OEM 기업."
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_fashion_apparel",
+      "type": "Industry",
+      "name": "의류/패션"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_bicycle",
+      "type": "Industry",
+      "name": "자전거"
+    },
+    {
+      "id": "product_service_outdoor_sports_apparel",
+      "type": "ProductService",
+      "name": "아웃도어 스포츠 의류"
+    },
+    {
+      "id": "product_service_shoes",
+      "type": "ProductService",
+      "name": "신발"
+    },
+    {
+      "id": "product_service_backpack",
+      "type": "ProductService",
+      "name": "백팩"
+    },
+    {
+      "id": "product_service_bicycle_related_products",
+      "type": "ProductService",
+      "name": "자전거 관련 상품"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_textile_fashion",
+      "type": "Industry",
+      "name": "섬유/패션"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_009970",
+      "to": "industry_holding_company",
+      "evidence": "㈜영원무역홀딩스 당사는 2009년 7월 1일 회사 분할을 통해 지주회사로서 존속하게 되었고, 순수 지주회사로 다른 회사의 주식을 소유함으로써 다른 회사를 지배하는 것을 주된 목적으로 하며",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_009970",
+      "to": "industry_it_software",
+      "evidence": "배당금, IT서비스 수수료, 임대료, 및 경영관리 수수료를 주 수입원으로 하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_111770",
+      "to": "industry_fashion_apparel",
+      "evidence": "㈜영원무역을 통해 아웃도어 및 스포츠 의류, 신발, Backpack의 제조, 수출 및 유통사업을 영위하고",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_111770",
+      "to": "industry_retail_consumer",
+      "evidence": "㈜영원무역을 통해 아웃도어 및 스포츠 의류, 신발, Backpack의 제조, 수출 및 유통사업을 영위하고",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_111770",
+      "to": "product_service_outdoor_sports_apparel",
+      "evidence": "회사는 약 40 여개의 해외 유명 바이어들로부터 아웃도어 및 스포츠 의류, 신발, Backpack 등의 제품을 수주 받아 해외현지법인 공장에서 OEM 방식으로 제품을 생산하여 수출하는 기업입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_111770",
+      "to": "product_service_shoes",
+      "evidence": "회사는 약 40 여개의 해외 유명 바이어들로부터 아웃도어 및 스포츠 의류, 신발, Backpack 등의 제품을 수주 받아 해외현지법인 공장에서 OEM 방식으로 제품을 생산하여 수출하는 기업입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_111770",
+      "to": "product_service_backpack",
+      "evidence": "회사는 약 40 여개의 해외 유명 바이어들로부터 아웃도어 및 스포츠 의류, 신발, Backpack 등의 제품을 수주 받아 해외현지법인 공장에서 OEM 방식으로 제품을 생산하여 수출하는 기업입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_111770",
+      "to": "product_service_bicycle_related_products",
+      "evidence": "2012년도에는 ㈜스캇노스아시아를 설립하여 SCOTT 자전거 브랜드의 국내 유통사업을 전개하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_fashion_apparel",
+      "to": "industry_textile_fashion",
+      "evidence": "Industry taxonomy: 의류/패션 is part of 섬유/패션.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 화학소재.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_textile_fashion",
+      "to": "industry_retail_consumer",
+      "evidence": "Industry taxonomy: 섬유/패션 is related to 유통/소비재.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_009970_business_segments_20260319001240",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001240",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

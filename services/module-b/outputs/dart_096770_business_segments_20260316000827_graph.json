@@ -6,125 +6,122 @@
       "type": "Company",
       "name": "SK이노베이션",
       "stock_code": "096770",
-      "description": "석유사업, 화학사업, 배터리, 윤활유, 소재 등 친환경 에너지 및 화학 소재 중심 사업을 영위"
+      "description": "석유화학, LNG, 전력, 배터리, 소재, 윤활유 등 균형 잡힌 에너지 포트폴리오를 구축한 종합 에너지 기업"
     },
     {
-      "id": "business_area_petroleum",
-      "type": "BusinessArea",
-      "name": "석유사업"
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730"
     },
     {
-      "id": "business_area_chemicals",
-      "type": "BusinessArea",
-      "name": "화학사업"
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
     },
     {
-      "id": "business_area_battery",
-      "type": "BusinessArea",
-      "name": "배터리사업"
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
     },
     {
-      "id": "business_area_lubricants",
-      "type": "BusinessArea",
-      "name": "윤활유사업"
+      "id": "industry_petroleum_refining",
+      "type": "Industry",
+      "name": "석유정유"
     },
     {
-      "id": "business_area_materials",
-      "type": "BusinessArea",
-      "name": "소재사업"
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
     },
     {
-      "id": "product_crude",
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
+    },
+    {
+      "id": "industry_fuel_cell",
+      "type": "Industry",
+      "name": "연료셀"
+    },
+    {
+      "id": "product_service_ev_battery",
       "type": "ProductService",
-      "name": "Crude"
+      "name": "EV 배터리"
     },
     {
-      "id": "product_unleaded_gasoline",
+      "id": "product_service_battery",
       "type": "ProductService",
-      "name": "무연휘발유"
+      "name": "배터리"
     },
     {
-      "id": "product_diesel",
-      "type": "ProductService",
-      "name": "경유"
-    },
-    {
-      "id": "product_kerosene",
-      "type": "ProductService",
-      "name": "등유"
-    },
-    {
-      "id": "product_aviation_fuel",
-      "type": "ProductService",
-      "name": "항공유"
-    },
-    {
-      "id": "product_naphtha",
-      "type": "ProductService",
-      "name": "납사"
-    },
-    {
-      "id": "product_ethylene",
-      "type": "ProductService",
-      "name": "에틸렌"
-    },
-    {
-      "id": "product_propylene",
-      "type": "ProductService",
-      "name": "프로필렌"
-    },
-    {
-      "id": "product_benzene",
-      "type": "ProductService",
-      "name": "벤젠"
-    },
-    {
-      "id": "product_tolunene",
-      "type": "ProductService",
-      "name": "톨루엔"
-    },
-    {
-      "id": "product_xylene",
-      "type": "ProductService",
-      "name": "자일렌"
-    },
-    {
-      "id": "product_lubricating_oil_base",
-      "type": "ProductService",
-      "name": "윤활기유"
-    },
-    {
-      "id": "product_lubricant",
+      "id": "product_service_lubricant_oil",
       "type": "ProductService",
       "name": "윤활유"
     },
     {
-      "id": "product_large_battery",
+      "id": "product_service_battery_separator",
       "type": "ProductService",
-      "name": "중대형 배터리"
+      "name": "분리막"
     },
     {
-      "id": "industry_energy",
+      "id": "industry_automobile_manufacturing",
       "type": "Industry",
-      "name": "에너지"
+      "name": "자동차제조"
     },
     {
-      "id": "industry_chemical",
+      "id": "industry_hydrogen_energy",
       "type": "Industry",
-      "name": "화학"
+      "name": "수소에너지"
     },
     {
-      "id": "industry_battery",
+      "id": "industry_shipbuilding_marine",
       "type": "Industry",
-      "name": "배터리"
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
     }
   ],
   "relations": [
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_096770",
-      "to": "business_area_petroleum",
-      "evidence": "당사의 매출액은 석유사업 59%...",
+      "to": "industry_energy_utility",
+      "evidence": "아시아·태평양 지역 민간 최대 종합 에너지 회사로 거듭났으며, 석유·화학, LNG, 전력, 배터리 등 현재와 미래 에너지를 아우르는 균형 잡힌 Energy Portfolio를 구축하였습니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -132,10 +129,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_096770",
-      "to": "business_area_chemicals",
-      "evidence": "당사의 매출액은... 화학사업 11%...",
+      "to": "industry_petroleum_refining",
+      "evidence": "석유사업은 석유제품 생산을 위해 원유를 중동 등 전 세계 다양한 공급망을 통해 안정적으로 조달하며, 울산 및 인천 Complex에서 이를 정제하여 휘발유, 경유, 등유, 항공유, 납사 등 연료와 화학제품 원료를 생산합니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -143,10 +140,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_096770",
-      "to": "business_area_battery",
-      "evidence": "당사의 매출액은... 배터리 사업 9%...",
+      "to": "industry_chemical_materials",
+      "evidence": "화학사업은 납사 등을 원료로 하여 에틸렌, 프로필렌 등의 올레핀계 제품과 벤젠, 톨루엔, 자일렌 등의 방향족을 생산하는 기초 소재 사업과 기초 유분을 원료로 하여 고기능성 포장재, 자동차 소재 등의 고부가 화학제품을 생산하는 화학소재 사업으로 구성되어 있습니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -154,21 +151,10 @@
       "evidence_published_at": "2026-03-16"
     },
     {
-      "type": "OPERATES_IN",
+      "type": "BELONGS_TO",
       "from": "company_096770",
-      "to": "business_area_lubricants",
-      "evidence": "당사의 매출액은... 윤활유 사업 5%...",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "OPERATES_IN",
-      "from": "company_096770",
-      "to": "business_area_materials",
-      "evidence": "당사의 매출액은... 소재사업...",
+      "to": "industry_battery_energy_storage",
+      "evidence": "배터리 사업은 전기차 및 ESS용 배터리 생산, BaaS(Battery as a Service) 사업 등을 함께 추진하고 있습니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -178,8 +164,8 @@
     {
       "type": "PRODUCES",
       "from": "company_096770",
-      "to": "product_crude",
-      "evidence": "울산 및 인천 Complex에서 정제하여 휘발유, 경유, 등유, 항공유, 납사 등 연료와 화학제품 원료를 생산합니다.",
+      "to": "product_service_ev_battery",
+      "evidence": "배터리사업 제품 중대형 배터리 EV용 배터리 등 판매",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -189,8 +175,8 @@
     {
       "type": "PRODUCES",
       "from": "company_096770",
-      "to": "product_unleaded_gasoline",
-      "evidence": "무연휘발유 자동차용 엔크린 제품 생산 및 판매",
+      "to": "product_service_battery_separator",
+      "evidence": "소재 사업은 국내 최초로 LiBS 생산기술을 독자 개발하였으며, 분리막 등 배터리 소재를 생산합니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -200,129 +186,8 @@
     {
       "type": "PRODUCES",
       "from": "company_096770",
-      "to": "product_diesel",
-      "evidence": "경유 자동차용 파워디젤 제품 생산 및 판매",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_kerosene",
-      "evidence": "등유 난방 및 취사용 100등유 제품 생산 및 판매",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_aviation_fuel",
-      "evidence": "항공유 항공기용 제품 생산 및 판매",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_naphtha",
-      "evidence": "납사를 원료로 하는 화학제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_ethylene",
-      "evidence": "에틸렌 등의 올레핀계 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_propylene",
-      "evidence": "프로필렌 등의 올레핀계 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_benzene",
-      "evidence": "벤젠 등의 방향족 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_tolunene",
-      "evidence": "톨루엔 등의 방향족 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_xylene",
-      "evidence": "자일렌 등의 방향족 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_lubricating_oil_base",
-      "evidence": "윤활기유 자동차 엔진 윤활유 제조에 사용",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_lubricant",
-      "evidence": "자동차용 윤활유 제품 생산",
-      "date": "2026-03-16",
-      "evidence_source_id": "dart_096770_business_segments_20260316000827",
-      "evidence_source_type": "dart",
-      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
-      "evidence_published_at": "2026-03-16"
-    },
-    {
-      "type": "PRODUCES",
-      "from": "company_096770",
-      "to": "product_large_battery",
-      "evidence": "배터리 사업은 전기차 및 ESS용 배터리 생산",
+      "to": "product_service_lubricant_oil",
+      "evidence": "윤활유 사업은 자동차 엔진용 윤활유 및 산업용 윤활유를 생산하고 있습니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -331,9 +196,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_petroleum",
-      "to": "industry_energy",
-      "evidence": "에너지 포트폴리오 구축 및 석유사업 주력",
+      "from": "product_service_ev_battery",
+      "to": "industry_battery_energy_storage",
+      "evidence": "EV용 배터리는 배터리 사업 내 주요 제품입니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -342,9 +207,9 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_chemicals",
-      "to": "industry_chemical",
-      "evidence": "화학사업과 윤활유사업 관련 화학제품 및 소재 생산",
+      "from": "product_service_battery_separator",
+      "to": "industry_battery_energy_storage",
+      "evidence": "분리막 등 소재는 배터리 산업에 속하는 소재입니다.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",
@@ -353,9 +218,229 @@
     },
     {
       "type": "PART_OF",
-      "from": "business_area_battery",
-      "to": "industry_battery",
-      "evidence": "배터리 사업은 전기차 및 ESS용 배터리 생산",
+      "from": "industry_petroleum_refining",
+      "to": "industry_energy_utility",
+      "evidence": "석유 정유 산업은 에너지/유틸리티 산업의 일부입니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_battery_energy_storage",
+      "evidence": "배터리는 전기차 및 자동차 산업과 밀접히 관련됩니다.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_fuel_cell",
+      "to": "industry_hydrogen_energy",
+      "evidence": "Industry taxonomy: 연료셀 is part of 수소에너지.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_hydrogen_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 수소에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_petroleum_refining",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 석유정유 is part of 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_096770_business_segments_20260316000827",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000827",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
       "date": "2026-03-16",
       "evidence_source_id": "dart_096770_business_segments_20260316000827",
       "evidence_source_type": "dart",

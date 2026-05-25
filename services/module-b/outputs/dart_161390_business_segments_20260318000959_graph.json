@@ -1,0 +1,422 @@
+{
+  "source_id": "dart_161390_business_segments_20260318000959",
+  "entities": [
+    {
+      "id": "company_161390",
+      "type": "Company",
+      "name": "한국타이어앤테크놀로지",
+      "stock_code": "161390",
+      "description": "타이어 제조 및 판매와 관련 생산설비, 자동차열관리시스템 등 사업을 영위"
+    },
+    {
+      "id": "company_073240",
+      "type": "Company",
+      "name": "금호타이어",
+      "stock_code": "073240"
+    },
+    {
+      "id": "company_005720",
+      "type": "Company",
+      "name": "넥센",
+      "stock_code": "005720"
+    },
+    {
+      "id": "company_002350",
+      "type": "Company",
+      "name": "넥센타이어",
+      "stock_code": "002350"
+    },
+    {
+      "id": "company_228670",
+      "type": "Company",
+      "name": "레이",
+      "stock_code": "228670"
+    },
+    {
+      "id": "company_136490",
+      "type": "Company",
+      "name": "선진",
+      "stock_code": "136490"
+    },
+    {
+      "id": "company_004080",
+      "type": "Company",
+      "name": "신흥",
+      "stock_code": "004080"
+    },
+    {
+      "id": "company_396470",
+      "type": "Company",
+      "name": "워트",
+      "stock_code": "396470"
+    },
+    {
+      "id": "company_018880",
+      "type": "Company",
+      "name": "한온시스템",
+      "stock_code": "018880",
+      "description": "자동차용 공조제품 및 부품을 생산하는 자동차 열관리시스템 전문 기업"
+    },
+    {
+      "id": "industry_tire",
+      "type": "Industry",
+      "name": "타이어"
+    },
+    {
+      "id": "industry_automobile_manufacturing",
+      "type": "Industry",
+      "name": "자동차제조"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "product_service_tire",
+      "type": "ProductService",
+      "name": "타이어"
+    },
+    {
+      "id": "product_service_battery_tube",
+      "type": "ProductService",
+      "name": "밧데리 튜브"
+    },
+    {
+      "id": "product_service_hvac",
+      "type": "ProductService",
+      "name": "에어컨(HVAC)"
+    },
+    {
+      "id": "product_service_powertrain_cooling",
+      "type": "ProductService",
+      "name": "파워트레인 쿨링(PTC)"
+    },
+    {
+      "id": "product_service_compressor",
+      "type": "ProductService",
+      "name": "압축기(COMP)"
+    },
+    {
+      "id": "product_service_fluid_transport",
+      "type": "ProductService",
+      "name": "플루이드 트랜스포트(FT)"
+    },
+    {
+      "id": "product_service_hydraulic_control",
+      "type": "ProductService",
+      "name": "유압제어장치(E&FP)"
+    },
+    {
+      "id": "product_service_production_equipment",
+      "type": "ProductService",
+      "name": "생산설비"
+    },
+    {
+      "id": "product_service_mold_ctr",
+      "type": "ProductService",
+      "name": "MOLD&CTR"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_161390",
+      "to": "industry_tire",
+      "evidence": "타이어 산업은 ... 국내타이어 시장은 당사와 금호타이어 및 넥센타이어가 전체시장의 약 90%이상 과점하고있으며",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_161390",
+      "to": "industry_chemical_materials",
+      "evidence": "타이어는 천연고무, 합성고무, 코드지 등 여러 원재료가 투입되어 화학산업과 연관되어 있는 산업입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_161390",
+      "to": "industry_auto_parts",
+      "evidence": "[자동차 열관리시스템 부문] ... 한온시스템㈜는 ... 자동차 공조제품 전문 제조회사로서",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_161390",
+      "to": "product_service_tire",
+      "evidence": "타이어 등 제 품 타이어 승용차,트럭,버스산업차량용 HANKOOK VENTUSDynaproOPTIMOAuroraLaufenniON 등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_161390",
+      "to": "product_service_battery_tube",
+      "evidence": "상 품 밧데리 튜브 등 승용차,트럭,버스산업차량용 ATLAS등",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_hvac",
+      "evidence": "한온시스템㈜는 자동차용 에어컨(HVAC)... 을 생산하는 자동차 공조제품 전문 제조회사",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_powertrain_cooling",
+      "evidence": "한온시스템㈜는 ... 파워트레인 쿨링(PTC)... 등을 생산",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_compressor",
+      "evidence": "한온시스템㈜는 ... 압축기(COMP) ... 등을 생산",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_fluid_transport",
+      "evidence": "한온시스템㈜는 ... 플루이드 트랜스포트(FT) ... 등을 생산",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_018880",
+      "to": "product_service_hydraulic_control",
+      "evidence": "한온시스템㈜는 ... 유압제어장치(E&FP) ... 등을 생산",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_161390",
+      "to": "product_service_production_equipment",
+      "evidence": "타이어 제조관련일반기계 제 품 생산설비 타이어 제조를 위한생산설비 자체상품(주문제작)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_161390",
+      "to": "product_service_mold_ctr",
+      "evidence": "금형 제품 MOLD&CTR 타이어 제조를 위한생산설비 (차량용) 자체상품 (주문제작)",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_automobile_manufacturing",
+      "evidence": "자동차 열 관리 시스템 부문은 자동차부품 관련",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_automobile_manufacturing",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_tire",
+      "to": "industry_auto_parts",
+      "evidence": "Industry taxonomy: 타이어 is part of 자동차부품.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_161390_business_segments_20260318000959",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000959",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

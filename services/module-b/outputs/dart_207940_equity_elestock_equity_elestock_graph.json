@@ -5,8 +5,7 @@
       "id": "company_207940",
       "type": "Company",
       "name": "삼성바이오로직스",
-      "stock_code": "207940",
-      "description": "삼성바이오로직스는 바이오의약품 위탁생산(CMO) 사업을 주력으로 하고 있습니다."
+      "stock_code": "207940"
     },
     {
       "id": "company_028260",
@@ -19,14 +18,19 @@
       "type": "Company",
       "name": "삼성전자",
       "stock_code": "005930"
+    },
+    {
+      "id": "industry_bio_healthcare",
+      "type": "Industry",
+      "name": "바이오/헬스케어"
     }
   ],
   "relations": [
     {
-      "type": "INVESTS_IN",
-      "from": "company_028260",
-      "to": "company_207940",
-      "evidence": "삼성물산 ... 주요주주 여부는 10%이상주주, 보유주식수는 19,932,350주, 지분율은 43.06%",
+      "type": "BELONGS_TO",
+      "from": "company_207940",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성바이오로직스",
       "date": "2025-12-30",
       "evidence_source_id": "dart_207940_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
@@ -34,10 +38,21 @@
       "evidence_published_at": "2025-12-30"
     },
     {
-      "type": "INVESTS_IN",
+      "type": "BELONGS_TO",
+      "from": "company_028260",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 삼성물산, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 19,932,350주, 주식수 증감은 -10,714,355, 지분율은 43.06%, 지분율 증감은 0.00.",
+      "date": "2025-12-30",
+      "evidence_source_id": "dart_207940_equity_elestock_equity_elestock",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250620000449",
+      "evidence_published_at": "2025-12-30"
+    },
+    {
+      "type": "BELONGS_TO",
       "from": "company_005930",
-      "to": "company_207940",
-      "evidence": "삼성전자 ... 주요주주 여부는 10%이상주주, 보유주식수는 14,449,944주, 지분율은 31.22%",
+      "to": "industry_bio_healthcare",
+      "evidence": "삼성바이오로직스의 임원·주요주주 소유상황 보고자는 삼성전자, 등기 여부는 -, 직위는 -, 주요주주 여부는 10%이상주주, 보유주식수는 14,449,944주, 주식수 증감은 -7,767,365, 지분율은 31.22%, 지분율 증감은 0.00.",
       "date": "2025-12-30",
       "evidence_source_id": "dart_207940_equity_elestock_equity_elestock",
       "evidence_source_type": "dart",
