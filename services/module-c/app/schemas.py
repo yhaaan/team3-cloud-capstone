@@ -69,9 +69,16 @@ class EnitityExtractionResponse(BaseModel):
 #     people: List[str] = Field(default_factory=list, description="성+이름으로 정형화된 인물명 리스트")
 
 
+# 사이퍼 쿼리
+class CypherQuery(BaseModel):
+    purpose: str = Field(description="어떤 것을 찾는 쿼리인지에 대한 설명")
+    cypher_query: str = Field(description="사이퍼 쿼리")
+    need_main_career: bool = Field(description="사이퍼 쿼리가 main_career 속성을 사용하는지 여부")
+
+
 # 사이퍼 쿼리 생성 LLM 응답 형태
 class CypherGenerationResponse(BaseModel):
-    cypher_queries: List[str] = Field(description="Neo4j에서 실행할 사이퍼 쿼리 리스트")
+    cypher_queries: List[CypherQuery] = Field(description="Neo4j에서 실행할 사이퍼 쿼리 리스트")
     center_entity_name: str = Field(description="이 검색의 중심이 되는 핵심 엔티티 이름 (가장 중요한 키워드 1개)")
 
 
@@ -80,6 +87,7 @@ class GraphDBSearchResponse(BaseModel):
     center_id: str
     graph_context: str
     graph_structured_data: List[Dict[str, Any]] = Field(default_factory=list)
+    cypher_query_purposes: List[str] = Field(default_factory=list) # 사이퍼 쿼리 목적 리스트
 
 
 # 벡터 DB 탐색 필터
@@ -97,4 +105,4 @@ class SubQuery(BaseModel):
 
 # 벡터 DB 탐색용 하위 쿼리 생성 응답
 class QueryPlanResponse(BaseModel):
-    sub_queries: List[SubQuery] = Field(..., description="계획된 하위 질문 리스트")
+    sub_queries: List[SubQuery] = Field(default_factory=list, description="계획된 하위 질문 리스트")

@@ -97,11 +97,12 @@ class LLMManager:
     
 
     # 최종 답변 생성 함수
-    def generate_final_response(self, query: str, vector_context: str, graph_context: str, history_context: str = "") -> str:
+    def generate_final_response(self, query: str, vector_context: str, graph_context: str, cypher_query_purposes = "", history_context: str = "") -> str:
         response = self.final_response_genration_chain.invoke({
             "user_query": query,
             "vector_context": vector_context,
             "graph_context": graph_context,
+            "cypher_query_purposes": cypher_query_purposes,
             "history_context": history_context
         })
         return response.content

@@ -6,7 +6,7 @@ from openai import OpenAI
 from pydantic import BaseModel
 from sklearn.metrics.pairwise import cosine_similarity
 from app.agent.db_handler import VectorHandler, Neo4jHandler 
-from app.schemas import GraphDBSearchResponse, SearchFilter
+from app.schemas import *
 from app.config import Config
 from app.utils import get_embeddings
 
@@ -63,7 +63,7 @@ class KnowledgeRetriever:
             return f"벡터 DB 조회 중 에러 발생: {str(e)}"
 
     # 🔵 2. 순수 그래프 DB 탐색 메서드
-    def get_graph_context(self, cypher_queries: List[str], center_entity_name: str) -> GraphDBSearchResponse:
+    def get_graph_context(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
         """오직 Neo4j에서 Cypher 쿼리를 실행하여 구조화 데이터 및 텍스트 반환"""
         try:
             graph_search_result = self.neo4j.search_graph_db(cypher_queries, center_entity_name)
@@ -74,7 +74,8 @@ class KnowledgeRetriever:
             return GraphDBSearchResponse(
                 graph_context=f"그래프 DB 조회 중 에러 발생: {str(e)}",
                 graph_structured_data=[],
-                center_id=None
+                center_id=None,
+                cypher_query_purposes=[]
             )
     
 

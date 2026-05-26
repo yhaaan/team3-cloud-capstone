@@ -6,7 +6,7 @@ from langchain_neo4j import Neo4jGraph
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 import chromadb
-from app.schemas import GraphDBSearchResponse, SearchFilter
+from app.schemas import *
 
 
 # Neo4j(그래프 DB) 핸들러
@@ -38,7 +38,7 @@ class Neo4jHandler():
 
 
     # 그래프 DB 탐색 함수
-    def search_graph_db(self, cypher_queries: List[str], center_entity_name: str):
+    def search_graph_db(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
         try:
             # 1. 단일 문자열 쿼리가 들어온 경우 리스트로 변환하여 처리 로직 통일
             if isinstance(cypher_queries, str):
@@ -46,10 +46,16 @@ class Neo4jHandler():
 
             all_records = []
             success_count = 0
+            # 쿼리별 목적 리스트를 담아둘 리스트
+            cypher_query_purposes = []
 
             with self.graph_db._driver.session() as session:
                 # 2. 리스트에 담긴 쿼리를 하나씩 순회하며 실행
-                for idx, query in enumerate(cypher_queries):
+                for idx, q_obj in enumerate(cypher_queries):
+                    # [수정] 쿼리 객체에서 데이터 추출
+                    query = q_obj.cypher_query
+                    cypher_query_purposes.append(q_obj.purpose)
+
                     # 빈 문자열 등 유효하지 않은 쿼리는 스킵
                     if not query or not query.strip():
                         continue
@@ -57,7 +63,13 @@ class Neo4jHandler():
                     # 🌟 [핵심 수정] 개별 쿼리 실행을 try-except로 감싸서 독립성 보장
                     try:
                         result = session.run(query)
-                        all_records.extend(list(result))
+                        records = list(result)
+                        
+                        # 레코드에 해당 쿼리의 '경력 포함 여부'를 속성으로 박아둠
+                        for record in records:
+                            record._is_main_career_needed = q_obj.need_main_career
+
+                        all_records.extend(records)
                         success_count += 1
                     except Exception as q_err:
                         # 특정 쿼리가 실패하더라도 로그만 남기고 다음 쿼리로 진행
@@ -71,11 +83,12 @@ class Neo4jHandler():
                     return GraphDBSearchResponse(
                         center_id="",
                         graph_context="조회된 그래프 데이터 없음",
-                        graph_structured_data=[]
+                        graph_structured_data=[],
+                        cypher_query_purposes=[]
                     )
 
                 # 3. 누적된 모든 Record 객체들을 한 번에 처리
-                graph_data = self.process_data_for_all(all_records, center_entity_name)
+                graph_data = self.process_data_for_all(all_records, cypher_query_purposes, center_entity_name)
                 
                 self.graph_db_error = None
                 print(f"✔️ 총 {len(cypher_queries)}개 중 {success_count}개의 사이퍼 쿼리 탐색 성공 (레코드 {len(all_records)}개 누적).\n")
@@ -88,11 +101,12 @@ class Neo4jHandler():
             return GraphDBSearchResponse(
                 center_id="",  # 명확하게 None(또는 "") 스펙 일치
                 graph_context=f"그래프 DB 전체 실패: {str(e)}",
-                graph_structured_data=[]
+                graph_structured_data=[],
+                cypher_query_purposes=[]
             )
         
 
-    def process_data_for_all(self, result: List['Record'], center_name: str = ""):
+    def process_data_for_all(self, result: List['Record'], cypher_query_purposes: List[str], center_name: str = ""):
         all_processed_data = [] 
         detected_center_id = ""
         
@@ -101,31 +115,31 @@ class Neo4jHandler():
 
         # [Pass 1] 데이터 분류 (기존과 동일)
         for record in result:
+            # record에 담아둔 bool 값을 바로 사용
+            is_main_career_needed = getattr(record, '_is_main_career_needed', False)
+        
             d = record.data()
             structured_rels = []
 
-            # 공통 노드 처리 (기존 로직 유지)
-            if 'n' in record.keys() and hasattr(record['n'], 'element_id'): 
-                d['n']['id'] = record['n'].element_id
-                if center_name != "" and record['n'].get('name') == center_name:
-                    detected_center_id = record['n'].element_id
-            if 'm' in record.keys() and hasattr(record['m'], 'element_id'): 
-                d['m']['id'] = record['m'].element_id
-                if center_name != "" and record['m'].get('name') == center_name:
-                    detected_center_id = record['m'].element_id
-
-            # CASE A: Path (p)가 들어온 경우
+            # Path (p)가 들어온 경우
             if 'path' in record.keys():
                 path_obj = record['path']
                 nodes_in_path = []
+
                 for node in path_obj.nodes:
                     if center_name != "" and node.get('name') == center_name:
                         detected_center_id = node.element_id
-                    nodes_in_path.append({
+                    
+                    node_data = {
                         "id": node.element_id, 
                         "name": node.get('name', 'Unknown'),
                         "type": self._get_node_type(node),
-                    })
+                    }
+                    if is_main_career_needed and 'main_career' in node:
+                        node_data["main_career"] = node.get('main_career')
+
+                    nodes_in_path.append(node_data)
+
                 d['path'] = nodes_in_path 
 
                 for rel in path_obj.relationships:
@@ -161,65 +175,49 @@ class Neo4jHandler():
                         # [중요] 연쇄 경로는 중복 여부와 상관없이 무조건 저장
                         if path_str not in raw_multi_paths:
                             raw_multi_paths[path_str] = list(path_obj.relationships)
-
-            # CASE B: 단일 Relationship (r)이 들어온 경우
-            elif 'r' in record.keys():
-                rel_obj = record['r']
-                if hasattr(rel_obj, 'element_id'):
-                    s_node = rel_obj.start_node
-                    e_node = rel_obj.end_node
-                    
-                    d['n'] = {"id": s_node.element_id, "name": s_node.get('name', 'Unknown'), "type": self._get_node_type(node)}
-                    d['m'] = {"id": e_node.element_id, "name": e_node.get('name', 'Unknown'), "type": self._get_node_type(node)}
-
-                    if center_name != "" and s_node.get('name') == center_name:
-                        detected_center_id = s_node.element_id
-                    elif center_name != "" and e_node.get('name') == center_name:
-                        detected_center_id = e_node.element_id
-
-                    structured_rels.append(self._parse_single_rel(rel_obj))
-                    
-                    path_str = f"({s_node.get('name', 'Unknown')}) -[{rel_obj.type}]-> ({e_node.get('name', 'Unknown')})"
-                    if path_str not in raw_single_rels:
-                        raw_single_rels[path_str] = []
-                    raw_single_rels[path_str].append(self._extract_rel_meta(rel_obj))
-
+            
             d['r'] = structured_rels
             all_processed_data.append(d)
 
         # [Pass 2] 컨텍스트 조립 (우선순위 변경)
         final_context_blocks = []
         global_exposed_contents = set() # 이미 출력된 증거(evidence) 본문을 저장
+        seen_careers = set() # 인물 경력 중복 방지용 (id 사용)
+
+        # 인물 경력 리스트를 먼저 만들고, 존재할 경우만 줄바꿈 추가
+        career_blocks = []
+        for data in all_processed_data:
+            if 'path' in data:
+                for node in data['path']:
+                    if node.get('main_career') and node['id'] not in seen_careers:
+                        career_blocks.append(f"[인물 주요 경력] {node['name']}: {node['main_career']}")
+                        seen_careers.add(node['id'])
+        
+        # 경력이 하나라도 있다면 리스트에 추가하고 마지막에 줄바꿈 1개만 삽입
+        if career_blocks:
+            final_context_blocks.extend(career_blocks)
+            final_context_blocks.append('\n')
 
         # Step 2-1. [연쇄 경로] 먼저 처리
         for path_str, rel_list in raw_multi_paths.items():
             formatted_evidences = []
             for rel in rel_list:
                 evidence = rel.get('evidence', '없음')
-                
-                # 이미 노출된 증거라면 텍스트는 생략하고 관계선만 표시
-                if evidence in global_exposed_contents:
-                    s_type = self._get_node_type(rel.start_node)
-                    e_type = self._get_node_type(rel.end_node)
-                    s_name = rel.start_node.get('name') or "알 수 없음"
-                    e_name = rel.end_node.get('name') or "알 수 없음"
-                    formatted_evidences.append(f"  * [{s_name}:{s_type}] -({rel.type})-> [{e_name}:{e_type}]\n    - (상기 중복 증거 생략)")
-                    continue
-
-                # 처음 나오는 증거라면 캐싱하고 상세 내용 작성
-                global_exposed_contents.add(evidence)
                 s_type = self._get_node_type(rel.start_node)
                 e_type = self._get_node_type(rel.end_node)
                 s_name = rel.start_node.get('name') or "알 수 없음"
                 e_name = rel.end_node.get('name') or "알 수 없음"
                 
-                formatted_evidences.append(
-                    f"  * [{s_name}:{s_type}] -({rel.type})-> [{e_name}:{e_type}]\n"
-                    f"    - 내용: {evidence}\n"
-                    f"    - 발행일: {rel.get('evidence_published_at', '알 수 없음')}\n"
-                    f"    - 출처/문서명: {rel.get('evidence_source_type', '알 수 없음')}\n"
-                    f"    - 원문 링크: {rel.get('evidence_source_url', '알 수 없음')}"
-                )
+                # 이미 노출된 증거라면 텍스트는 생략하고 관계선만 표시
+                if evidence in global_exposed_contents:
+                    # 중복일 경우 간단히 표시
+                    formatted_evidences.append(f"  * [{s_name}:{s_type}]-({rel.type})->[{e_name}:{e_type}] (증거 중복 생략)")
+                    continue
+                else:
+                    # 처음 나오는 증거라면 캐싱하고 상세 내용 작성
+                    global_exposed_contents.add(evidence)
+                    # 한 줄 포맷 적용
+                    formatted_evidences.append(f"  * [{s_name}:{s_type}]-({rel.type})->[{e_name}:{e_type}] | " + f"내용: {evidence} | 발행일: {rel.get('evidence_published_at')} | " + f"출처/문서명: {rel.get('evidence_source_type')} | 링크: {rel.get('evidence_source_url')}")
             
             if formatted_evidences:
                 block = f"[연쇄 경로]\n{path_str}\n[경로 근거 자료]\n" + "\n".join(formatted_evidences)
@@ -239,14 +237,10 @@ class Neo4jHandler():
                     # (또는 간단히 '상기 연쇄 경로 참조'라고 적을 수 있음)
                     continue 
 
+                # 처음 나오는 증거라면 캐싱하고 상세 내용 작성
                 global_exposed_contents.add(evidence)
-                formatted_evidences.append(
-                    f"  * 근거 {len(formatted_evidences)+1}\n"
-                    f"    - 내용: {evidence}\n"
-                    f"    - 발행일: {published_at}\n"
-                    f"    - 출처/문서명: {source_type}\n"
-                    f"    - 원문 링크: {url}"
-                )
+                # 한 줄 포맷 적용
+                formatted_evidences.append(f"  * [근거 {len(formatted_evidences)+1}] 내용: {evidence} | 발행일: {published_at} | " + f"출처/문서명: {source_type} | 링크: {url}")
                 
             if formatted_evidences:
                 block = f"[단일 관계]\n{path_str}\n[경로 근거 자료]\n" + "\n".join(formatted_evidences)
@@ -257,7 +251,8 @@ class Neo4jHandler():
         return GraphDBSearchResponse(
             center_id=detected_center_id,
             graph_context=final_context,
-            graph_structured_data=all_processed_data
+            graph_structured_data=all_processed_data,
+            cypher_query_purposes=cypher_query_purposes
         )
     
 
