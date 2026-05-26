@@ -40,11 +40,16 @@ class ChatResponse(BaseModel):
 
 
 # region 응답 형태
+# 질문 재구성 LLM 응답 형태
+class QueryRewriteResponse(BaseModel):
+    rewirtten_query: str = Field(description="재구성된 질문")
+    need_history_to_answer: bool = Field(description="현재 질문에 답변하기 위해 이전 기록 맥락이 필요한지 여부")
+
+
 # 산업 엔티티 데이터 구조
 class IndustryResponse(BaseModel):
     industy: str = Field(description="산업 이름")
     is_mapped: bool = Field(description="[핵심 산업 리스트]에 매핑됐는지 여부(없는 세부 산업/기술을 넣은 경우는 false)")
-
 
 
 # 엔티티 추출 데이터 구조

@@ -37,6 +37,7 @@ class GraphState(TypedDict):
     center_id: str                    # 구조화 데이터 중앙 노드 이름
     sub_queries: List[SubQuery]              # Query Planner가 이번 루프에 뽑아낸 하위 질문 리스트
     cypher_query_purposes: str          # 사이퍼 쿼리 목적들 텍스트
+    need_history_to_answer: bool        # 현재 질문에 답변하기 위해 이전 기록 맥락이 필요한지 여부
 
 
 class GraphAgent:
@@ -137,10 +138,12 @@ class GraphAgent:
         result = self.llm.rewrite_query(user_query, recent_history_str)
 
         print("[질문 재구성 완료]")
-        print(f"재구성된 질문: {result}\n")
+        print(f"재구성된 질문: {result.rewirtten_query}")
+        print(f"need_history_to_answer: {result.need_history_to_answer}\n")
         
         return {
-            "query": result
+            "query": result.rewirtten_query,
+            "need_history_to_answer": result.need_history_to_answer
         }
     
 
@@ -345,7 +348,12 @@ class GraphAgent:
         vector_context = state.get("vector_context")
         graph_context = state.get("graph_context")
         cypher_query_purposes = state.get("cypher_query_purposes", "")
-        recent_history_str = state.get("recent_history_str")
+
+        need_history_to_answer = state.get("need_history_to_answer")
+        if need_history_to_answer:
+            recent_history_str = state.get("recent_history_str")
+        else:
+            recent_history_str = ""
 
         # 에러가 없으면 정상적으로 LLM 호출
         final_response = self.llm.generate_final_response(
