@@ -1,0 +1,452 @@
+// node: company_282330
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_282330", "type": "Company", "name": "BGF리테일", "stock_code": "282330", "description": "국내 대표 편의점 사업자이며 도소매, 상품중개업 및 가맹사업을 운영함."}
+
+// node: industry_retail_consumer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_retail_consumer", "type": "Industry", "name": "유통/소비재"}
+
+// node: industry_food_beverage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_food_beverage", "type": "Industry", "name": "식품/음료"}
+
+// node: industry_tobacco
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_tobacco", "type": "Industry", "name": "담배"}
+
+// node: industry_courier_delivery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_courier_delivery", "type": "Industry", "name": "택배/배송"}
+
+// node: industry_ecommerce
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ecommerce", "type": "Industry", "name": "전자상거래"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// node: product_service_convenience_store
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_convenience_store", "type": "ProductService", "name": "편의점점포"}
+
+// node: product_service_ready_meal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ready_meal", "type": "ProductService", "name": "간편식사"}
+
+// node: product_service_ready_cooked_food
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ready_cooked_food", "type": "ProductService", "name": "즉석조리"}
+
+// node: product_service_processed_food
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_processed_food", "type": "ProductService", "name": "가공식품"}
+
+// node: product_service_beverage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_beverage", "type": "ProductService", "name": "음료"}
+
+// node: product_service_snack
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_snack", "type": "ProductService", "name": "과자류"}
+
+// node: product_service_daily_goods
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_daily_goods", "type": "ProductService", "name": "생활용품상품"}
+
+// node: product_service_service_product
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_service_product", "type": "ProductService", "name": "서비스상품"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_telecom_media
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom_media", "type": "Industry", "name": "통신/미디어"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_retail_consumer", "properties": {"evidence": "당사는 도소매, 상품중개업 및 가맹사업을 운영하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_convenience_store", "properties": {"evidence": "편의점 체인화사업을 운영하면서 가맹점 운영, PB상품, 24시간 콜센터 등 편의점 관련 시스템을 제공하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_ready_meal", "properties": {"evidence": "주요 판매상품은 간편식사(도시락, 삼각김밥, 샌드위치, 햄버거, 샐러드 등)입니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_ready_cooked_food", "properties": {"evidence": "즉석조리 상품으로 튀김류, 베이커리, 커피, 호빵, 오뎅 등 판매하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_processed_food", "properties": {"evidence": "가공식사 및 식재료 상품(봉지, 용기면, 즉석밥, 죽, 국, 스프, 냉장 간편식, 면, 반찬류, 분식류, 냉동 간편식, 만두, 면 등) 판매합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_beverage", "properties": {"evidence": "음료 및 유제품, 주류 상품(과일야채음료, 기능건강음료, 생수, 커피, 탄산음료, 요구르트, 우유, 맥주, 소주, 양주, 와인 등) 판매합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_snack", "properties": {"evidence": "과자류 및 아이스크림, 빵, 디저트, 안주류(빵, 케익, 젤리, 비스켓, 쿠키파이, 스낵 등) 판매합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_daily_goods", "properties": {"evidence": "생활잡화, 신변잡화, 화장품, 담배, 문구류, 소형가전, 상품권 등 다양한 비식품군을 취급합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "product_service_service_product", "properties": {"evidence": "서비스상품으로 교통카드, 모바일 결제, 택배, 공과금 수납, 휴대폰 충전, 수납대행 등 제공 중입니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_food_beverage", "properties": {"evidence": "주요 판매 상품군 중 식품과 가공식품, 담배, 음료 등이 포함되어 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_tobacco", "properties": {"evidence": "매출액 상위 품목 중 담배가 37% 이상을 차지하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_courier_delivery", "properties": {"evidence": "광고 및 택배업, 전자상거래업을 주요 사업 부문으로 보유하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_ecommerce", "properties": {"evidence": "광고 및 택배업 및 전자상거래업을 주요 사업 영역으로 포함합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_282330", "to_id": "industry_logistics", "properties": {"evidence": "물류 및 창고 사업 등 물류서비스 제공을 주요 사업으로 진행하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_food_beverage", "to_id": "industry_retail_consumer", "properties": {"evidence": "식품/음료는 유통/소비재 산업의 한 부문임이 일반적으로 알려져 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_tobacco", "to_id": "industry_food_beverage", "properties": {"evidence": "담배 산업은 식품/음료 산업의 특정 분야입니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_courier_delivery", "to_id": "industry_logistics", "properties": {"evidence": "택배/배송 산업은 물류 산업의 하위 분야입니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ecommerce", "to_id": "industry_retail_consumer", "properties": {"evidence": "전자상거래는 유통 및 소비재 산업에 속합니다.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_tobacco", "to_id": "industry_retail_consumer", "properties": {"evidence": "Industry taxonomy: 담배 is part of 유통/소비재.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ecommerce", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 전자상거래 is part of 정보기술/소프트웨어.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.", "date": "2026-03-18", "evidence_source_id": "dart_282330_business_segments_20260318000829", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000829", "evidence_published_at": "2026-03-18"}}

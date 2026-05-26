@@ -1,0 +1,857 @@
+// node: company_006120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006120", "type": "Company", "name": "SK디스커버리", "stock_code": "006120", "description": "순수지주회사로 자회사 관리 및 신규사업 투자를 주력"}
+
+// node: company_285130
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_285130", "type": "Company", "name": "SK케미칼", "stock_code": "285130", "description": "환경 친화적 소재 및 합성의약품 생산·판매를 주요 사업으로 함"}
+
+// node: company_018670
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_018670", "type": "Company", "name": "SK가스", "stock_code": "018670", "description": "LPG 등 화학제품 수입, 저장, 판매 중심 사업 영위"}
+
+// node: company_210980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_210980", "type": "Company", "name": "SK디앤디", "stock_code": "210980", "description": "부동산 개발 및 주택임대 사업을 수행"}
+
+// node: company_302440
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_302440", "type": "Company", "name": "SK바이오사이언스", "stock_code": "302440", "description": "독감·대상포진·수두·COVID-19 백신 생산·판매 및 CDMO 사업 영위"}
+
+// node: company_475150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_475150", "type": "Company", "name": "SK이터닉스", "stock_code": "475150", "description": "풍력·태양광·연료전지발전소 설치 및 운영 등 신재생에너지 사업"}
+
+// node: company_015760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_015760", "type": "Company", "name": "한국전력", "stock_code": "015760"}
+
+// node: company_000880
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000880", "type": "Company", "name": "한화", "stock_code": "000880"}
+
+// node: company_004800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004800", "type": "Company", "name": "효성", "stock_code": "004800"}
+
+// node: company_053620
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_053620", "type": "Company", "name": "태양", "stock_code": "053620"}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_307750
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_307750", "type": "Company", "name": "국전", "stock_code": "307750"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_bio_healthcare
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio_healthcare", "type": "Industry", "name": "바이오/헬스케어"}
+
+// node: industry_lpg
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_lpg", "type": "Industry", "name": "액화석유가스"}
+
+// node: industry_real_estate
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_real_estate", "type": "Industry", "name": "부동산/리츠"}
+
+// node: industry_renewable_energy
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_renewable_energy", "type": "Industry", "name": "재생에너지"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_vaccine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_vaccine", "type": "Industry", "name": "백신"}
+
+// node: industry_cmo_cdmo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_cmo_cdmo", "type": "Industry", "name": "위탁개발생산"}
+
+// node: product_service_copolyester_resin
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_copolyester_resin", "type": "ProductService", "name": "Copolyester 수지"}
+
+// node: product_service_pharmaceuticals
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_pharmaceuticals", "type": "ProductService", "name": "의약품"}
+
+// node: product_service_lpg
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_lpg", "type": "ProductService", "name": "LPG"}
+
+// node: product_service_plasma_fractionation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_plasma_fractionation", "type": "ProductService", "name": "혈장분획제제"}
+
+// node: product_service_real_estate_development
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_real_estate_development", "type": "ProductService", "name": "부동산 개발"}
+
+// node: product_service_real_estate_rental
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_real_estate_rental", "type": "ProductService", "name": "주택임대"}
+
+// node: product_service_renewable_energy_plant
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_renewable_energy_plant", "type": "ProductService", "name": "풍력/태양광/연료전지발전소"}
+
+// node: product_service_bio_pharmaceutical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_bio_pharmaceutical", "type": "ProductService", "name": "바이오의약품"}
+
+// node: product_service_vaccine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_vaccine", "type": "ProductService", "name": "백신"}
+
+// node: product_service_cdmo
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cdmo", "type": "ProductService", "name": "백신 CDMO"}
+
+// node: product_service_energy_generation
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_energy_generation", "type": "ProductService", "name": "전력"}
+
+// node: product_service_steam
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_steam", "type": "ProductService", "name": "스팀"}
+
+// node: product_service_electricity
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_electricity", "type": "ProductService", "name": "전기"}
+
+// node: product_service_real_estate_data_solution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_real_estate_data_solution", "type": "ProductService", "name": "부동산 데이터 솔루션"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// node: industry_holding_company
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_holding_company", "type": "Industry", "name": "지주회사"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006120", "to_id": "industry_holding_company", "properties": {"evidence": "당사는 별도의 사업을 영위하지 않는 순수지주회사로, 주요 자회사가 영위하는 사업으로...", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "industry_chemical_materials", "properties": {"evidence": "주요 자회사가 영위하는 사업으로는 Copolyester 수지 및 기넥신에프 등을 생산하는 환경 친화적 소재 및 제약사업(SK케미칼㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "industry_bio_healthcare", "properties": {"evidence": "환경 친화적 소재 및 합성의약품 등 생산, 판매", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018670", "to_id": "industry_lpg", "properties": {"evidence": "LPG 등을 판매하는 가스사업(SK가스㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_302440", "to_id": "industry_bio_healthcare", "properties": {"evidence": "백신 및 바이오의약품 제조업(SK바이오사이언스㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_210980", "to_id": "industry_real_estate", "properties": {"evidence": "부동산 개발 및 운영사업(SK디앤디㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_475150", "to_id": "industry_renewable_energy", "properties": {"evidence": "신재생에너지사업은 풍력/태양광/연료전지발전소 등 신재생에너지 관련 EPC 설치 및 운영 사업을 영위하고 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "industry_energy_utility", "properties": {"evidence": "생산된 전기를 한국전력거래소를 통해 판매하고 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_000880", "to_id": "industry_chemical_materials", "properties": {"evidence": "한화임팩 관련 원료", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "product_service_copolyester_resin", "properties": {"evidence": "Copolyester 수지 및 기넥신에프 등을 생산하는 환경 친화적 소재 및 제약사업(SK케미칼㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "product_service_pharmaceuticals", "properties": {"evidence": "환경 친화적 소재 및 합성의약품 등 생산, 판매", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_018670", "to_id": "product_service_lpg", "properties": {"evidence": "LPG 등을 판매하는 가스사업(SK가스㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006120", "to_id": "product_service_plasma_fractionation", "properties": {"evidence": "혈장분획제제의 제조 및 판매사업(SK플라즈마㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_210980", "to_id": "product_service_real_estate_development", "properties": {"evidence": "부동산 개발 및 운영사업(SK디앤디㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_210980", "to_id": "product_service_real_estate_rental", "properties": {"evidence": "부동산 개발 및 주택임대 등", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_475150", "to_id": "product_service_renewable_energy_plant", "properties": {"evidence": "풍력/태양광/연료전지발전소 설치 및 운영 등", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_302440", "to_id": "product_service_bio_pharmaceutical", "properties": {"evidence": "백신 및 바이오의약품 제조업(SK바이오사이언스㈜)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_302440", "to_id": "product_service_vaccine", "properties": {"evidence": "독감/대상포진/수두/COVID-19 백신생산, 판매 및 CDMO 사업 등", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_302440", "to_id": "product_service_cdmo", "properties": {"evidence": "백신 CDMO 사업도 영위하고 있습니다.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "product_service_energy_generation", "properties": {"evidence": "발전소에서 생산되는 전력을 주요제품으로 하며, 한국전력거래소를 통해 판매", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "product_service_steam", "properties": {"evidence": "집단에너지공급업(스팀/전기)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_285130", "to_id": "product_service_electricity", "properties": {"evidence": "집단에너지공급업(스팀/전기)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_006120", "to_id": "product_service_real_estate_data_solution", "properties": {"evidence": "부동산 데이터 솔루션 사업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_bio_healthcare", "to_id": "industry_chemical_materials", "properties": {"evidence": "합성의약품은 환경 친화적 소재 사업에 포함됨", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_lpg", "to_id": "industry_chemical_materials", "properties": {"evidence": "LPG는 화학제품에 해당함", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_vaccine", "to_id": "industry_bio_healthcare", "properties": {"evidence": "백신 및 바이오의약품 제조업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_copolyester_resin", "to_id": "industry_chemical_materials", "properties": {"evidence": "Copolyester 수지는 환경 친화적 소재임", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_pharmaceuticals", "to_id": "industry_bio_healthcare", "properties": {"evidence": "합성의약품 등 의약품 생산 포함", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_lpg", "to_id": "industry_lpg", "properties": {"evidence": "LPG 등의 화학제품 수입, 저장, 판매", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_plasma_fractionation", "to_id": "industry_bio_healthcare", "properties": {"evidence": "혈장분획제제 관련 제품", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_real_estate_development", "to_id": "industry_real_estate", "properties": {"evidence": "부동산 개발 및 운영사업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_real_estate_rental", "to_id": "industry_real_estate", "properties": {"evidence": "주택임대 등", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_renewable_energy_plant", "to_id": "industry_renewable_energy", "properties": {"evidence": "풍력/태양광/연료전지발전소 설치 및 운영", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_bio_pharmaceutical", "to_id": "industry_bio_healthcare", "properties": {"evidence": "바이오의약품 제조업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_vaccine", "to_id": "industry_vaccine", "properties": {"evidence": "독감·대상포진·수두·COVID-19 백신", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cdmo", "to_id": "industry_cmo_cdmo", "properties": {"evidence": "백신 CDMO 사업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_energy_generation", "to_id": "industry_energy_utility", "properties": {"evidence": "에너지 발전 사업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_steam", "to_id": "industry_energy_utility", "properties": {"evidence": "집단에너지공급업(스팀/전기)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_electricity", "to_id": "industry_energy_utility", "properties": {"evidence": "집단에너지공급업(스팀/전기)", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_real_estate_data_solution", "to_id": "industry_real_estate", "properties": {"evidence": "부동산 데이터 솔루션 사업", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_lpg", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 액화석유가스 is part of 에너지/유틸리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_real_estate", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_real_estate", "to_id": "industry_finance", "properties": {"evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_renewable_energy", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_cmo_cdmo", "to_id": "industry_bio_healthcare", "properties": {"evidence": "Industry taxonomy: 위탁개발생산 is part of 바이오/헬스케어.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_holding_company", "to_id": "industry_finance", "properties": {"evidence": "Industry taxonomy: 지주회사 is related to 금융.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-17", "evidence_source_id": "dart_006120_business_segments_20260317000867", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260317000867", "evidence_published_at": "2026-03-17"}}

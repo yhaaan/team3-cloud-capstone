@@ -1,0 +1,275 @@
+// node: company_034120
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_034120", "type": "Company", "name": "SBS", "stock_code": "034120", "description": "지상파 콘텐츠 제작, 지상파 플랫폼 광고 및 콘텐츠유통 사업을 영위하는 방송사"}
+
+// node: industry_telecom_media
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom_media", "type": "Industry", "name": "통신/미디어"}
+
+// node: industry_media_content
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_media_content", "type": "Industry", "name": "미디어콘텐츠"}
+
+// node: industry_advertising_marketing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_advertising_marketing", "type": "Industry", "name": "광고/마케팅"}
+
+// node: industry_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform_business", "type": "Industry", "name": "플랫폼사업"}
+
+// node: product_service_broadcasting_advertisement
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_broadcasting_advertisement", "type": "ProductService", "name": "방송광고"}
+
+// node: product_service_content_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_content_distribution", "type": "ProductService", "name": "콘텐츠유통"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_content_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_content_game", "type": "Industry", "name": "게임/콘텐츠"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "industry_telecom_media", "properties": {"evidence": "당사의 주요사업은 지상파를 근간으로 하는 콘텐츠 제작, 지상파 플랫폼 광고사업과 콘텐츠유통사업입니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "industry_media_content", "properties": {"evidence": "당사의 주요사업은 지상파를 근간으로 하는 콘텐츠 제작, 지상파 플랫폼 광고사업과 콘텐츠유통사업입니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "industry_advertising_marketing", "properties": {"evidence": "광고사업은 TV, 라디오 광고와 협찬으로 구성되어 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "industry_platform_business", "properties": {"evidence": "특히 OTT, 인터넷, 모바일(스마트폰 등), IPTV 등의 다양한 플랫폼에 대해서 별다른 재가공 비용없이 활용될 수 있어 OSMU(One-Source, Multi-Use)를 통한 다양한 부가가치를 창출할 수 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "product_service_broadcasting_advertisement", "properties": {"evidence": "지상파 TV 광고, AM-RADIO 광고, FM-RADIO 광고는 방송광고 매출 유형입니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_034120", "to_id": "product_service_content_distribution", "properties": {"evidence": "프로그램 판매 등의 콘텐츠유통사업은 고퀄리티의 지상파 콘텐츠를 해외 및 국내 OTT, IPTV, 케이블TV, 위성방송 등에 판매하고 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_media_content", "to_id": "industry_telecom_media", "properties": {"evidence": "방송산업은 콘텐츠를 기반으로 하는 문화산업으로 신규 부가가치를 창출하고 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_broadcasting_advertisement", "to_id": "industry_advertising_marketing", "properties": {"evidence": "광고사업은 TV, 라디오 광고와 협찬으로 구성되어 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_content_distribution", "to_id": "industry_media_content", "properties": {"evidence": "콘텐츠유통사업은 고퀄리티의 지상파 콘텐츠를 다양한 플랫폼에 판매하고 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_content_game", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_advertising_marketing", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 광고/마케팅 is part of 통신/미디어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_platform_business", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 반도체.", "date": "2026-03-19", "evidence_source_id": "dart_034120_business_segments_20260319001224", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001224", "evidence_published_at": "2026-03-19"}}

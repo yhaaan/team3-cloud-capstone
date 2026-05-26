@@ -16,7 +16,7 @@ if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
 from chunking import split_text_into_chunks
-from company_whitelist import CompanyWhitelist, ListedCompany
+from company_whitelist import CompanyWhitelist, ListedCompany, normalize_company_name
 from document_io import iter_input_documents, normalize_document
 from graph_pipeline import extract_graph as extract_graph_from_pipeline
 from load_chroma import build_chunk_payloads
@@ -56,6 +56,13 @@ class ModuleBPipelineTests(unittest.TestCase):
         self.assertTrue(doc["content"])
         self.assertEqual(doc["source"], "dart")
         self.assertEqual(doc["module_a_type"], "dart")
+
+    def test_company_whitelist_treats_hyundai_motor_aliases_as_same_company(self):
+        whitelist = CompanyWhitelist([ListedCompany("005380", "현대차", "KOSPI")])
+
+        self.assertEqual(normalize_company_name("현대자동차"), normalize_company_name("현대차"))
+        self.assertEqual(whitelist.find(name="현대자동차"), ListedCompany("005380", "현대차", "KOSPI"))
+        self.assertTrue(whitelist.is_allowed_name("현대자동차"))
 
     def test_module_a_major_issue_detail_mapping_preserves_detail_fields(self):
         doc = normalize_document(
@@ -291,6 +298,60 @@ class ModuleBPipelineTests(unittest.TestCase):
         )
 
         self.assertEqual(normalized["relations"], [])
+
+    def test_major_shareholder_status_adds_company_investment_relation(self):
+        whitelist = CompanyWhitelist(
+            [
+                ListedCompany("000270", "기아", "KOSPI"),
+                ListedCompany("005380", "현대차", "KOSPI"),
+            ]
+        )
+        graph = {
+            "source_id": "dart_000270_major_shareholder_status_2025_11011",
+            "entities": [],
+            "relations": [],
+        }
+
+        normalized = normalize_graph_roles(
+            graph,
+            whitelist,
+            source_doc={
+                "source_id": "dart_000270_major_shareholder_status_2025_11011",
+                "document_type": "dart",
+                "dataset": "major_shareholder_status",
+                "company_name": "기아",
+                "stock_code": "000270",
+                "normalized_records": [
+                    {
+                        "nm": "현대자동차",
+                        "relate": "최대주주",
+                        "trmend_posesn_stock_co": "137,318,251",
+                        "trmend_posesn_stock_qota_rt": "35.17",
+                        "stlm_dt": "2025-12-31",
+                    }
+                ],
+            },
+        )
+
+        self.assertIn(
+            {
+                "id": "company_005380",
+                "type": "Company",
+                "name": "현대차",
+                "stock_code": "005380",
+            },
+            normalized["entities"],
+        )
+        relation = next(
+            relation
+            for relation in normalized["relations"]
+            if relation["type"] == "INVESTS_IN"
+        )
+        self.assertEqual(relation["from"], "company_005380")
+        self.assertEqual(relation["to"], "company_000270")
+        self.assertEqual(relation["major_shareholder_relation"], "최대주주")
+        self.assertEqual(relation["shares_held"], "137,318,251")
+        self.assertEqual(relation["ownership_ratio"], "35.17")
 
     def legacy_role_normalization_is_idempotent_for_exported_graphs(self):
         graph = {
@@ -579,10 +640,11 @@ class ModuleBPipelineTests(unittest.TestCase):
         records = load_ftc_affiliate_records(ROOT_DIR / "docs" / "ftc_affiliates.jsonl")
         match_result = match_ftc_affiliates_to_listed_companies(records)
 
-        self.assertEqual(len(records), 221)
-        self.assertEqual(len(match_result.matched), 221)
+        self.assertEqual(len(records), 310)
+        self.assertEqual(len(match_result.matched), 310)
         self.assertEqual(match_result.unmatched, [])
         self.assertEqual(normalize_ftc_company_name("삼성전자(주)"), normalize_ftc_company_name("삼성전자"))
+        self.assertEqual(normalize_ftc_company_name("현대자동차(주)"), normalize_ftc_company_name("현대차"))
 
     def test_ftc_affiliates_graph_builds_group_memberships(self):
         graph = build_ftc_affiliates_graph(ROOT_DIR / "docs" / "ftc_affiliates.jsonl")
@@ -594,9 +656,9 @@ class ModuleBPipelineTests(unittest.TestCase):
         member_relations = [relation for relation in graph["relations"] if relation["type"] == "MEMBER_OF"]
 
         self.assertEqual(graph["source_id"], "ftc_affiliates_202505")
-        self.assertEqual(len(affiliate_groups), 64)
-        self.assertEqual(len(company_entities), 221)
-        self.assertEqual(len(member_relations), 221)
+        self.assertEqual(len(affiliate_groups), 74)
+        self.assertEqual(len(company_entities), 310)
+        self.assertEqual(len(member_relations), 310)
         self.assertIn(
             {"id": "affiliate_group_삼성", "type": "AffiliateGroup", "name": "삼성", "presentn_year": "202505", "source": "ftc_affiliates"},
             affiliate_groups,
@@ -613,6 +675,22 @@ class ModuleBPipelineTests(unittest.TestCase):
                 "representative_name": "전영현",
                 "founded_on": "1969-01-13",
                 "joined_on": "1969-01-13",
+                "source": "ftc_affiliates",
+            },
+            member_relations,
+        )
+        self.assertIn(
+            {
+                "type": "MEMBER_OF",
+                "from": "company_005380",
+                "to": "affiliate_group_현대자동차",
+                "evidence": "FTC 202505: 현대차 is listed as a member of 현대자동차.",
+                "presentn_year": "202505",
+                "jurirno": "1101110085450",
+                "bizrno": "1018109147",
+                "representative_name": "무뇨스바르셀로호세안토니오 외 2명",
+                "founded_on": "1967-12-29",
+                "joined_on": "2001-04-02",
                 "source": "ftc_affiliates",
             },
             member_relations,

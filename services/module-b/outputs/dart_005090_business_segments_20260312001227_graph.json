@@ -1,0 +1,551 @@
+{
+  "source_id": "dart_005090_business_segments_20260312001227",
+  "entities": [
+    {
+      "id": "company_005090",
+      "type": "Company",
+      "name": "SGC에너지",
+      "stock_code": "005090",
+      "description": "증기와 전기 생산 중심으로 재생에너지, CCU 등 친환경 발전사업을 영위"
+    },
+    {
+      "id": "company_099220",
+      "type": "Company",
+      "name": "SDN",
+      "stock_code": "099220"
+    },
+    {
+      "id": "company_016250",
+      "type": "Company",
+      "name": "SGC E&C",
+      "stock_code": "016250",
+      "description": "플랜트 EPC, 건설사업, 토목 및 부동산개발과 물류센터 임대업 수행"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_255220",
+      "type": "Company",
+      "name": "SG",
+      "stock_code": "255220"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_renewable_energy",
+      "type": "Industry",
+      "name": "재생에너지"
+    },
+    {
+      "id": "industry_carbon_capture",
+      "type": "Industry",
+      "name": "탄소포집"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_plant_construction",
+      "type": "Industry",
+      "name": "플랜트건설"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_glass",
+      "type": "Industry",
+      "name": "유리"
+    },
+    {
+      "id": "product_service_electricity",
+      "type": "ProductService",
+      "name": "전기"
+    },
+    {
+      "id": "product_service_steam",
+      "type": "ProductService",
+      "name": "증기"
+    },
+    {
+      "id": "product_service_rec",
+      "type": "ProductService",
+      "name": "재생에너지공급인증서"
+    },
+    {
+      "id": "product_service_wood_pellet",
+      "type": "ProductService",
+      "name": "목재펠릿"
+    },
+    {
+      "id": "product_service_glassware",
+      "type": "ProductService",
+      "name": "가정용 유리제품"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_environment",
+      "type": "Industry",
+      "name": "환경"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005090",
+      "to": "industry_energy_utility",
+      "evidence": "발전/에너지 SGC에너지(주)... 증기, 전기 생산",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005090",
+      "to": "industry_renewable_energy",
+      "evidence": "지난 2016년 10월부터 250MW 용량의 열병합발전소는 신재생연료인 목재펠릿(바이오매스)을 혼소 운영하고 있으며, 2025년까지 100% 바이오매스 발전소로 전환을 계획하고 추진하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005090",
+      "to": "industry_carbon_capture",
+      "evidence": "2023년 12월부터 국내 민간발전소 최초로 CCU(Carbon Capture & Utilization) 시설을 가동중이며, 연간 약 10만톤의 탄소포집이 가능한 용량입니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005090",
+      "to": "product_service_electricity",
+      "evidence": "전기는 자체 사용 후 모두 전력거래소에 역송하여 계통한계가격(SMP)으로 판매하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005090",
+      "to": "product_service_steam",
+      "evidence": "열병합발전을 통해 증기와 전기를 동시에 생산하며 증기는 현재 20개의 증기 수요처에 공정용 증기를 공급하고 있으며",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005090",
+      "to": "product_service_rec",
+      "evidence": "재생에너지공급인증서(REC: Renewable Energy Certificates) 판매와 확보한 온실가스배출권 거래를 통해 수익성 개선되는 모습을 보이고 있으며",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005090",
+      "to": "product_service_wood_pellet",
+      "evidence": "지난 2016년 10월부터 250MW 용량의 열병합발전소는 신재생연료인 목재펠릿(바이오매스)을 혼소 운영하고 있으며",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_016250",
+      "to": "industry_construction_infrastructure",
+      "evidence": "건설 및 부동산 SGC이앤씨(주)... 플랜트, 건설 및 임대업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_016250",
+      "to": "industry_plant_construction",
+      "evidence": "플랜트사업 관련 EPC (Engineering Procurement Construction)",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_016250",
+      "to": "industry_real_estate",
+      "evidence": "건설사업 SGC이앤씨(주) 토목, 건축 및 부동산개발",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_016250",
+      "to": "industry_logistics",
+      "evidence": "물류 및 기타 SGC이앤씨(주)웨스트사이드로지스틱스(주) 물류센터 및 보세창고업",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_005090",
+      "to": "industry_glass",
+      "evidence": "유리 SGC솔루션(주)... 제병제품, 가정용 유리제품 제조 판매",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_005090",
+      "to": "product_service_glassware",
+      "evidence": "\"글라스락\" 을 중심으로 테이블 웨어 등 다양한 생활용품 구성",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_plant_construction",
+      "to": "industry_construction_infrastructure",
+      "evidence": "플랜트, 건설사업을 영위하고 있습니다. 석유화학, 정밀화학, 무기화학, 발전, 바이오/제약, 반도체&LCD 등 다양한 산업분야의 플랜트 EPC(Engineering, Procurement, Construction)와 토목 및 건축공사, 주택사업 등을 영위하고 있습니다.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_carbon_capture",
+      "to": "industry_environment",
+      "evidence": "Industry taxonomy: 탄소포집 is part of 환경.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_renewable_energy",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 재생에너지 is part of 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 환경 is related to 화학소재.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_environment",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 환경 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-12",
+      "evidence_source_id": "dart_005090_business_segments_20260312001227",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001227",
+      "evidence_published_at": "2026-03-12"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+// node: company_000270
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_000270", "type": "Company", "name": "기아", "stock_code": "000270"}
+
+// node: company_005380
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005380", "type": "Company", "name": "현대차", "stock_code": "005380"}
+
+// relation: INVESTS_IN
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:INVESTS_IN]->(target)
+SET r += $properties
+
+:params {"from_id": "company_005380", "to_id": "company_000270", "properties": {"evidence": "현대자동차 is listed as a major shareholder of 기아, relation=최대주주, shares_held=137,318,251, ownership_ratio=35.17%.", "major_shareholder_relation": "최대주주", "shares_held": "137,318,251", "ownership_ratio": "35.17", "settlement_date": "2025-12-31", "date": "2026-03-12", "evidence_source_id": "dart_000270_major_shareholder_status_2025_11011", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001224", "evidence_published_at": "2026-03-12"}}

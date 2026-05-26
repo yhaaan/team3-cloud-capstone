@@ -1,0 +1,334 @@
+// node: company_078150
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078150", "type": "Company", "name": "HB테크놀러지", "stock_code": "078150", "description": "OLED 검사장비, 2차전지 검사장비 등 장비사업과 도광판, 확산판 부품소재사업을 영위"}
+
+// node: industry_display
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_display", "type": "Industry", "name": "디스플레이"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: product_service_display_inspection_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_display_inspection_equipment", "type": "ProductService", "name": "디스플레이 검사장비"}
+
+// node: product_service_repair_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_repair_equipment", "type": "ProductService", "name": "리페어 장비"}
+
+// node: product_service_battery_inspection_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_battery_inspection_equipment", "type": "ProductService", "name": "2차전지 외관검사장비"}
+
+// node: product_service_backlight_unit_components
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_backlight_unit_components", "type": "ProductService", "name": "도광판 및 확산판"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "industry_display", "properties": {"evidence": "회사는 OLED 전공정 AOI(Automatic Optical Inspection, 자동광학 측정검사) 검사 장비, 리페어 장비, 2차전지 외관검사장비 등의 제품을 생산ㆍ판매하는 장비사업과 Display 백라이트유닛인 도광판, 확산판 제조 및 도광판 Pattern을 가공ㆍ판매하는 부품소재사업을 영위하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "회사 는 OLED 전공정 AOI(Automatic Optical Inspection, 자동광학 측정검사) 검사 장비, 리페어 장비, 2차전지 외관검사장비 등의 제품을 생산ㆍ판매하는 장비사업과 Display 백라이트유닛인 도광판, 확산판 제조 및 도광판 Pattern을 가공ㆍ판매하는 부품소재사업을 영위하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "industry_semiconductor", "properties": {"evidence": "회사 는 1997년 설립 이후 반도체 Test Handler를 시작으로 LCD 및 AMOLED 검사장비 개발에 성공하여 국내외 시장에서 외산 장비를 대체하였습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "product_service_display_inspection_equipment", "properties": {"evidence": "회사 는 OLED 전공정 AOI(Automatic Optical Inspection, 자동광학 측정검사) 검사 장비, 리페어 장비, 2차전지 외관검사장비 등의 제품을 생산ㆍ판매하는 장비사업과 Display 백라이트유닛인 도광판, 확산판 제조 및 도광판 Pattern을 가공ㆍ판매하는 부품소재사업을 영위하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "product_service_repair_equipment", "properties": {"evidence": "회사 는 OLED 전공정 AOI(Automatic Optical Inspection, 자동광학 측정검사) 검사 장비, 리페어 장비, 2차전지 외관검사장비 등의 제품을 생산ㆍ판매하는 장비사업과 Display 백라이트유닛인 도광판, 확산판 제조 및 도광판 Pattern을 가공ㆍ판매하는 부품소재사업을 영위하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "product_service_battery_inspection_equipment", "properties": {"evidence": "회사 는 OLED 전공정 AOI(Automatic Optical Inspection, 자동광학 측정검사) 검사 장비, 리페어 장비, 2차전지 외관검사장비 등의 제품을 생산ㆍ판매하는 장비사업과 Display 백라이트유닛인 도광판, 확산판 제조 및 도광판 Pattern을 가공ㆍ판매하는 부품소재사업을 영위하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078150", "to_id": "product_service_backlight_unit_components", "properties": {"evidence": "부품소재사업부 도광판, 확산판", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_backlight_unit_components", "to_id": "industry_display", "properties": {"evidence": "도광판과 확산판은 LED TV의 핵심 부품으로, LCD 패널에 균일한 광원을 제공하는 역할을 합니다.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 반도체.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_electronics", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 전자.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 전자 is related to 반도체.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_display", "properties": {"evidence": "Industry taxonomy: 전자 is related to 디스플레이.", "date": "2026-03-16", "evidence_source_id": "dart_078150_business_segments_20260316001660", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001660", "evidence_published_at": "2026-03-16"}}

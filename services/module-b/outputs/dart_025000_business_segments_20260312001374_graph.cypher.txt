@@ -1,0 +1,343 @@
+// node: company_025000
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_025000", "type": "Company", "name": "KPX케미칼", "stock_code": "025000", "description": "폴리프로필렌글리콜 등 유기화학 및 화공약품 제조, 합성 및 판매, 자동차 시트·가구·단열재 등 원료 제공"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_basic_chemical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_basic_chemical", "type": "Industry", "name": "기초화학"}
+
+// node: product_service_polypropylene_glycol
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_polypropylene_glycol", "type": "ProductService", "name": "폴리프로필렌글리콜"}
+
+// node: product_service_polyurethane
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_polyurethane", "type": "ProductService", "name": "폴리우레탄"}
+
+// node: industry_automobile_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_automobile_manufacturing", "type": "Industry", "name": "자동차제조"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "기계/장비"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_025000", "to_id": "industry_chemical_materials", "properties": {"evidence": "당사는 폴리프로필렌글리콜(POLYPROPYLENE GLYCOL, 이하 \"PPG\")과 같은 유기화학 및 화공약품의 제조, 합성 및 판매업 등을 목적사업으로 하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_025000", "to_id": "industry_basic_chemical", "properties": {"evidence": "기초화합물제조 제품 PPGPU RESINCHEMICAL등 727,246 89.97", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_025000", "to_id": "product_service_polypropylene_glycol", "properties": {"evidence": "당사는 폴리프로필렌글리콜(POLYPROPYLENE GLYCOL, 이하 \"PPG\")과 같은 유기화학 및 화공약품의 제조, 합성 및 판매업 등을 목적사업으로 하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_025000", "to_id": "product_service_polyurethane", "properties": {"evidence": "당사가 영위하는 PPG 등 POLYOL과MDI, TDI 등 이소시아네이트(ISOCYANATE)를 혼합하면 폴리우레탄 제품을 만들 수 있으며, 주로 자동차 시트, 가구, 침대, 전자, 의류, 단열재 등의 생활용품 및 산업용품의 중간소재로 사용됩니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_025000", "to_id": "industry_automobile_manufacturing", "properties": {"evidence": "PPG는 자동차용 시트, 가구, 가전제품용 단열재, LNG선 보냉재, 건축용 자재 등 다양한 산업의 원료에 사용되고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_basic_chemical", "to_id": "industry_chemical_materials", "properties": {"evidence": "기초화합물제조 제품 PPGPU RESINCHEMICAL등 727,246 89.97", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_polypropylene_glycol", "to_id": "industry_chemical_materials", "properties": {"evidence": "당사는 폴리프로필렌글리콜(POLYPROPYLENE GLYCOL, 이하 \"PPG\")과 같은 유기화학 및 화공약품의 제조, 합성 및 판매업 등을 목적사업으로 하고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_automobile_manufacturing", "properties": {"evidence": "PPG는 자동차용 시트, 가구, 가전제품용 단열재, LNG선 보냉재, 건축용 자재 등 다양한 산업의 원료에 사용되고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_automobile_manufacturing", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 자동차제조 is part of 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_machinery", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.", "date": "2026-03-12", "evidence_source_id": "dart_025000_business_segments_20260312001374", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001374", "evidence_published_at": "2026-03-12"}}

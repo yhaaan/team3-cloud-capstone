@@ -1,0 +1,238 @@
+// node: company_229640
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_229640", "type": "Company", "name": "LS에코에너지", "stock_code": "229640", "description": "외국기업 사업 지배 지주회사로 자회사 배당금과 용역 수익을 주요 사업으로 함"}
+
+// node: company_006260
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_006260", "type": "Company", "name": "LS", "stock_code": "006260"}
+
+// node: company_007980
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_007980", "type": "Company", "name": "TP", "stock_code": "007980"}
+
+// node: industry_electric_power_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_power_cable", "type": "Industry", "name": "전력케이블"}
+
+// node: industry_copper
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_copper", "type": "Industry", "name": "구리/동"}
+
+// node: industry_aluminum
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_aluminum", "type": "Industry", "name": "알루미늄"}
+
+// node: industry_communication_cable
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_communication_cable", "type": "Industry", "name": "통신케이블"}
+
+// node: product_service_busduct
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_busduct", "type": "ProductService", "name": "버스덕트"}
+
+// node: industry_nonferrous_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_nonferrous_metal", "type": "Industry", "name": "비철금속"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "industry_electric_power_cable", "properties": {"evidence": "LS에코에너지는 자회사인 LS-VINA Cable & System Joint Stock Co.가 전력케이블(HV, MV, LV) 소재(Cu-Rod, Al-Rod 등)을 생산", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "industry_communication_cable", "properties": {"evidence": "LS에코에너지는 자회사인 LS Cable & System Vietnam Co., Ltd가 통신케이블(UTP, 광케이블)을 생산", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "industry_copper", "properties": {"evidence": "LS에코에너지는 자회사 LS-VINA Cable & System Joint Stock Co.가 구리(Cu-Rod) 소재를 생산", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "industry_aluminum", "properties": {"evidence": "LS에코에너지는 자회사 LS-VINA Cable & System Joint Stock Co.가 알루미늄(Al-Rod) 소재를 생산", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_229640", "to_id": "product_service_busduct", "properties": {"evidence": "LS Cable & System Vietnam Co., Ltd는 버스덕트(Busduct) 생산 등의 사업을 영위", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_busduct", "to_id": "industry_electric_power_cable", "properties": {"evidence": "버스덕트는 전력케이블 사업과 함께 LS Cable & System Vietnam Co., Ltd의 주요 사업임", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_copper", "to_id": "industry_nonferrous_metal", "properties": {"evidence": "Industry taxonomy: 구리/동 is part of 비철금속.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_nonferrous_metal", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 비철금속 is part of 철강금속.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_aluminum", "to_id": "industry_nonferrous_metal", "properties": {"evidence": "Industry taxonomy: 알루미늄 is part of 비철금속.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_steel_metal", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_steel_metal", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_229640_business_segments_20260316001365", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365", "evidence_published_at": "2026-03-16"}}

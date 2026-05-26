@@ -1,0 +1,403 @@
+{
+  "source_id": "dart_035760_business_segments_20260318001469",
+  "entities": [
+    {
+      "id": "company_035760",
+      "type": "Company",
+      "name": "CJ ENM",
+      "stock_code": "035760",
+      "description": "방송채널, OTT, 콘텐츠 제작 및 유통, 영화, 음악, 커머스 사업을 영위하는 종합 미디어콘텐츠 기업"
+    },
+    {
+      "id": "company_253450",
+      "type": "Company",
+      "name": "스튜디오드래곤",
+      "stock_code": "253450"
+    },
+    {
+      "id": "company_001040",
+      "type": "Company",
+      "name": "CJ",
+      "stock_code": "001040"
+    },
+    {
+      "id": "company_039840",
+      "type": "Company",
+      "name": "디오",
+      "stock_code": "039840"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_streaming_service",
+      "type": "Industry",
+      "name": "스트리밍서비스"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_music_entertainment",
+      "type": "Industry",
+      "name": "음악엔터테인먼트"
+    },
+    {
+      "id": "industry_ecommerce",
+      "type": "Industry",
+      "name": "전자상거래"
+    },
+    {
+      "id": "product_service_tv_channel",
+      "type": "ProductService",
+      "name": "TV채널"
+    },
+    {
+      "id": "product_service_ott_platform",
+      "type": "ProductService",
+      "name": "OTT 플랫폼"
+    },
+    {
+      "id": "product_service_advertising",
+      "type": "ProductService",
+      "name": "광고"
+    },
+    {
+      "id": "product_service_content_production",
+      "type": "ProductService",
+      "name": "콘텐츠 제작"
+    },
+    {
+      "id": "product_service_film_distribution",
+      "type": "ProductService",
+      "name": "영화 제작 및 배급"
+    },
+    {
+      "id": "product_service_music_album",
+      "type": "ProductService",
+      "name": "음반ㆍ음원"
+    },
+    {
+      "id": "product_service_concert",
+      "type": "ProductService",
+      "name": "콘서트"
+    },
+    {
+      "id": "product_service_tv_commerce",
+      "type": "ProductService",
+      "name": "TV 커머스"
+    },
+    {
+      "id": "product_service_ecommerce",
+      "type": "ProductService",
+      "name": "e커머스"
+    },
+    {
+      "id": "product_service_product_planning_distribution",
+      "type": "ProductService",
+      "name": "상품 기획 및 유통"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035760",
+      "to": "industry_telecom_media",
+      "evidence": "미디어플랫폼사업은 TV채널, OTT 플랫폼, 콘텐츠 유통, 광고 사업으로 구성되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035760",
+      "to": "industry_content_game",
+      "evidence": "영화드라마사업은 콘텐츠 제작ㆍ판매 및 영화 제작ㆍ배급 사업으로 구성되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035760",
+      "to": "industry_music_entertainment",
+      "evidence": "음악사업에는 음반ㆍ음원 제작 및 콘서트, 엠넷 채널 관련 사업이 포함되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_035760",
+      "to": "industry_ecommerce",
+      "evidence": "커머스사업은 TV커머스, e커머스, 상품 기획 및 유통으로 구분되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_tv_channel",
+      "evidence": "미디어플랫폼사업은 TV채널 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_ott_platform",
+      "evidence": "미디어플랫폼사업은 OTT 플랫폼 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_advertising",
+      "evidence": "미디어플랫폼사업은 광고 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_content_production",
+      "evidence": "영화드라마사업은 콘텐츠 제작 및 판매 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_film_distribution",
+      "evidence": "영화드라마사업에는 영화 제작 및 배급 사업이 포함됩니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_music_album",
+      "evidence": "음악사업에는 음반ㆍ음원 제작 사업이 포함됩니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_concert",
+      "evidence": "음악사업에는 콘서트 사업이 포함됩니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_tv_commerce",
+      "evidence": "커머스사업은 TV커머스 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_ecommerce",
+      "evidence": "커머스사업은 e커머스 사업을 포함합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_035760",
+      "to": "product_service_product_planning_distribution",
+      "evidence": "커머스사업에는 상품 기획 및 유통이 포함됩니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_253450",
+      "to": "industry_content_game",
+      "evidence": "영화드라마사업 매출에는 스튜디오드래곤이 포함되어 있습니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001040",
+      "to": "industry_telecom_media",
+      "evidence": "언급된 기업 중 CJ는 통신/미디어 산업에 속한 기업입니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_039840",
+      "to": "industry_telecom_media",
+      "evidence": "디오도 언급되었으며 통신/미디어 관련 기업으로 추정됩니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_streaming_service",
+      "to": "industry_telecom_media",
+      "evidence": "OTT 플랫폼은 스트리밍서비스 산업에 포함되며, 이는 통신/미디어 산업에 속합니다.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_ecommerce",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 전자상거래 is part of 정보기술/소프트웨어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_music_entertainment",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 음악엔터테인먼트 is part of 게임/콘텐츠.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-18",
+      "evidence_source_id": "dart_035760_business_segments_20260318001469",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001469",
+      "evidence_published_at": "2026-03-18"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+// node: company_195940
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_195940", "type": "Company", "name": "HK이노엔", "stock_code": "195940", "description": "전문의약품과 H&B 제품을 제조·유통하며 신약과 건강기능식품 등 사업을 영위하는 제약회사입니다."}
+
+// node: company_001680
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001680", "type": "Company", "name": "대상", "stock_code": "001680"}
+
+// node: company_161890
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_161890", "type": "Company", "name": "한국콜마", "stock_code": "161890"}
+
+// node: industry_bio_healthcare
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio_healthcare", "type": "Industry", "name": "바이오/헬스케어"}
+
+// node: industry_beverage_liquor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_beverage_liquor", "type": "Industry", "name": "음료주류"}
+
+// node: industry_beauty_cosmetics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_beauty_cosmetics", "type": "Industry", "name": "뷰티/화장품"}
+
+// node: product_service_케이캡
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_케이캡", "type": "ProductService", "name": "케이캡"}
+
+// node: product_service_수액
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_수액", "type": "ProductService", "name": "수액"}
+
+// node: product_service_에포카인
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_에포카인", "type": "ProductService", "name": "에포카인"}
+
+// node: product_service_로바젯
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_로바젯", "type": "ProductService", "name": "로바젯"}
+
+// node: product_service_컨디션
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_컨디션", "type": "ProductService", "name": "컨디션"}
+
+// node: product_service_헛개수
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_헛개수", "type": "ProductService", "name": "헛개수"}
+
+// node: industry_retail_consumer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_retail_consumer", "type": "Industry", "name": "유통/소비재"}
+
+// node: industry_food_beverage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_food_beverage", "type": "Industry", "name": "식품/음료"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "industry_bio_healthcare", "properties": {"evidence": "당사는 1984년 제약 사업을 시작하였으며, 2014년 4월 ... 전문의약품(ETC)과 원료의약품(API) 분야에서 국내 대표 제약사로 확고히 입지를 굳혀왔습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "industry_beverage_liquor", "properties": {"evidence": "H&B 사업부는 1988년 홍삼원 판매로 음료 사업을 시작하여 당사 대표 품목인 컨디션, 헛개수, 티로그 등을 출시하면서 성장을 지속하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "industry_beauty_cosmetics", "properties": {"evidence": "2020년 상반기부터 H&B 사업 영역을 확대하기 위해 코스메틱 시장과 탈모·두피케어 시장에도 진출했습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_케이캡", "properties": {"evidence": "전문의약품 부문의 주요 제품은 국내 30호 신약 케이캡을 필두로 로바젯, 아킨지오 등이 있으며", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_수액", "properties": {"evidence": "전문의약품 사업부는 ... 수액 ... 다양한 의약품을 제조 및 유통하고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_에포카인", "properties": {"evidence": "전문의약품 부문의 주요 제품은 ... 에포카인 등이 있으며", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_로바젯", "properties": {"evidence": "전문의약품 부문의 주요 제품은 ... 로바젯, 아킨지오 등이 있으며", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_컨디션", "properties": {"evidence": "H&B 부문의 주요 제품은 컨디션, 헛개수, 비원츠 등이 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_195940", "to_id": "product_service_헛개수", "properties": {"evidence": "H&B 부문의 주요 제품은 컨디션, 헛개수, 비원츠 등이 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_beverage_liquor", "to_id": "industry_beauty_cosmetics", "properties": {"evidence": "H&B 사업 영역을 확대하기 위해 코스메틱 시장과 탈모·두피케어 시장에도 진출했습니다.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_beauty_cosmetics", "to_id": "industry_retail_consumer", "properties": {"evidence": "Industry taxonomy: 뷰티/화장품 is part of 유통/소비재.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_beverage_liquor", "to_id": "industry_food_beverage", "properties": {"evidence": "Industry taxonomy: 음료주류 is part of 식품/음료.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_food_beverage", "to_id": "industry_retail_consumer", "properties": {"evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.", "date": "2026-03-18", "evidence_source_id": "dart_195940_business_segments_20260318000705", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318000705", "evidence_published_at": "2026-03-18"}}

@@ -1,0 +1,670 @@
+// node: company_332570
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_332570", "type": "Company", "name": "PS일렉트로닉스", "stock_code": "332570", "description": "이동통신용 전력증폭기 모듈과 RF FEM 개발 및 제조, 자동화 장비 및 MEMS, 에너지 관리 시스템 사업 영위"}
+
+// node: company_015760
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_015760", "type": "Company", "name": "한국전력", "stock_code": "015760"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_display
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_display", "type": "Industry", "name": "디스플레이"}
+
+// node: industry_telecom_media
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom_media", "type": "Industry", "name": "통신/미디어"}
+
+// node: industry_system_integration
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_system_integration", "type": "Industry", "name": "시스템통합"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "기계/장비"}
+
+// node: industry_iot
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_iot", "type": "Industry", "name": "사물인터넷"}
+
+// node: product_service_power_amplifier_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_power_amplifier_module", "type": "ProductService", "name": "전력증폭기 모듈"}
+
+// node: product_service_rf_fem
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_rf_fem", "type": "ProductService", "name": "RF 프론트엔드 모듈"}
+
+// node: product_service_switch
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_switch", "type": "ProductService", "name": "스위치"}
+
+// node: product_service_filter
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_filter", "type": "ProductService", "name": "필터"}
+
+// node: product_service_automation_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_automation_equipment", "type": "ProductService", "name": "자동화 설비"}
+
+// node: product_service_vcm
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_vcm", "type": "ProductService", "name": "VCM"}
+
+// node: product_service_vibration_motor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_vibration_motor", "type": "ProductService", "name": "진동모터"}
+
+// node: product_service_mems
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mems", "type": "ProductService", "name": "MEMS"}
+
+// node: product_service_ecm_microphone
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ecm_microphone", "type": "ProductService", "name": "ECM 마이크로폰"}
+
+// node: product_service_energy_management_system
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_energy_management_system", "type": "ProductService", "name": "에너지 관리 시스템"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_content_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_content_game", "type": "Industry", "name": "게임/콘텐츠"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_semiconductor_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor_equipment", "type": "Industry", "name": "반도체장비"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_electronics", "properties": {"evidence": "당사는 이동통신용 단말기에 탑재되는 전력증폭기 모듈(Power Amplifier Module, 약칭 PAM) 개발, 제조 및 판매를 주사업으로 성장해온 무선통신 부품 전문 기업입니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_semiconductor", "properties": {"evidence": "해당 사업부문은 구미국가산업단지를 기반으로 2005년부터 자동화 장비 및 소프트웨어, VCM(Voice Coil Motor), 진동모터 등을 생산해온 기술 중심 제조사로, 반도체, 휴대폰, 네트워크, 카메라 모듈 등 다양한 산업 분야에 자동화 솔루션을 제공해왔습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_display", "properties": {"evidence": "해당 사업부문은... 디스플레이 카메라 모듈 등 다양한 산업군을 대상으로 맞춤형 공정 자동화 설비, 검사장비, 모듈 조립기 등을 설계 및 제작하여 판매하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_telecom_media", "properties": {"evidence": "당사는 이동통신용 단말기에 탑재되는 전력증폭기 모듈(PAM) 개발, 제조 및 판매를 주사업으로 성장해온 무선통신 부품 전문 기업입니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_system_integration", "properties": {"evidence": "맞춤형 공정 자동화 설비, 검사장비, 모듈 조립기 등을 설계 및 제작하여 판매하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_energy_utility", "properties": {"evidence": "연결종속회사의 한국전력공사 K-DCU사업... PLC 통신 기술을 활용한 지능형 에너지 관리 시스템 개발에 중점을 두고 있으며", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_machinery", "properties": {"evidence": "공장 자동화 설비 및 진동모터 제조 분야에서 오랜 업력을 보유한 강소기업을 인수합병하여 사업 영역을 확장하였습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "industry_iot", "properties": {"evidence": "모바일용 제품으로는 RFFE, MEMS MIC, 센서등의 제품을 포함하며 주로 스마트폰과 IoT 어플리케이션으로 사용됩니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_power_amplifier_module", "properties": {"evidence": "당사는 이동통신용 단말기에 탑재되는 전력증폭기 모듈(Power Amplifier Module, 약칭 PAM) 개발, 제조 및 판매 사업을 영위하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_rf_fem", "properties": {"evidence": "RF 프론트엔드 모듈(RF FEM) 송신단의 주요 부품인 전력증폭기(PAM)와 스위치(Switch), 필터(Filter)의 개발 및 제조, 판매 사업을 영위하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_switch", "properties": {"evidence": "전력증폭기(PAM)와 스위치(Switch), 필터(Filter)의 개발 및 제조, 판매 사업을 영위하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_filter", "properties": {"evidence": "전력증폭기(PAM)와 스위치(Switch), 필터(Filter)의 개발 및 제조, 판매 사업을 영위하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_automation_equipment", "properties": {"evidence": "공장 자동화 설비 및 진동모터 제조 분야에서 오랜 업력을 보유한 강소기업을 인수합병하여 사업 영역을 확장하였습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_vcm", "properties": {"evidence": "스마트폰 및 카메라 모듈 공정에서 필요한 VCM(Voice Coil Motor) 및 자동조립 검사장비 분야에서도 높은 기술경쟁력을 보유하고 있습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_vibration_motor", "properties": {"evidence": "공장 자동화 설비 및 진동모터 제조 분야에서 오랜 업력을 보유한 강소기업을 인수합병하여 사업 영역을 확장하였습니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_mems", "properties": {"evidence": "MEMS사업은... 초미세 기계 구조와 전자회로를 하나의 칩 위에 집적하는 기술분야로, 정밀성과 소형화가 요구되는 다양한 산업에 활용됩니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_ecm_microphone", "properties": {"evidence": "ECM(Electro Condenser Microphone)사업은 음성신호를 전기신호로 변화하는 소형 마이크로폰을 개발, 제조하는 분야로 스마트 디바이스 및 음향기기 등에 주로 적용됩니다.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_332570", "to_id": "product_service_energy_management_system", "properties": {"evidence": "K-DCU 분야의 경우 PLC 통신 기술을 활용한 지능형 에너지 관리 시스템 개발에 중점을 두고 있으며", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_015760", "to_id": "industry_energy_utility", "properties": {"evidence": "연결종속회사의 한국전력공사 K-DCU사업...", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_content_game", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 전자 is related to 반도체.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_display", "properties": {"evidence": "Industry taxonomy: 전자 is related to 디스플레이.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_machinery", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_machinery", "to_id": "industry_semiconductor_equipment", "properties": {"evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 반도체.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_electronics", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 전자.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_iot", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 사물인터넷 is part of 정보기술/소프트웨어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_system_integration", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 시스템통합 is part of 정보기술/소프트웨어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_semiconductor_equipment", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 반도체장비 is part of 반도체.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_machinery", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.", "date": "2026-04-10", "evidence_source_id": "dart_332570_business_segments_20260410002604", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410002604", "evidence_published_at": "2026-04-10"}}

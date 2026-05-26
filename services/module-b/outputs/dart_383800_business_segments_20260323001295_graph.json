@@ -1,0 +1,541 @@
+{
+  "source_id": "dart_383800_business_segments_20260323001295",
+  "entities": [
+    {
+      "id": "company_383800",
+      "type": "Company",
+      "name": "LX홀딩스",
+      "stock_code": "383800",
+      "description": "자회사 배당수익, 상표권 사용수익 및 기타수익으로 구성된 지주회사"
+    },
+    {
+      "id": "company_108320",
+      "type": "Company",
+      "name": "LX세미콘",
+      "stock_code": "108320"
+    },
+    {
+      "id": "company_001120",
+      "type": "Company",
+      "name": "LX인터내셔널",
+      "stock_code": "001120",
+      "description": "광물 자원, Trading/신성장, 물류 사업을 영위하는 종합 무역회사"
+    },
+    {
+      "id": "company_108670",
+      "type": "Company",
+      "name": "LX하우시스",
+      "stock_code": "108670"
+    },
+    {
+      "id": "company_001680",
+      "type": "Company",
+      "name": "대상",
+      "stock_code": "001680"
+    },
+    {
+      "id": "company_003160",
+      "type": "Company",
+      "name": "디아이",
+      "stock_code": "003160"
+    },
+    {
+      "id": "company_007980",
+      "type": "Company",
+      "name": "TP",
+      "stock_code": "007980"
+    },
+    {
+      "id": "company_004090",
+      "type": "Company",
+      "name": "한국석유",
+      "stock_code": "004090"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_system_semiconductor",
+      "type": "Industry",
+      "name": "시스템반도체"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_trading",
+      "type": "Industry",
+      "name": "Trading"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_resource",
+      "type": "Industry",
+      "name": "자원"
+    },
+    {
+      "id": "industry_management_consulting",
+      "type": "Industry",
+      "name": "경영컨설팅"
+    },
+    {
+      "id": "productservice_dividend_income",
+      "type": "ProductService",
+      "name": "배당금수익"
+    },
+    {
+      "id": "productservice_trademark_income",
+      "type": "ProductService",
+      "name": "상표권수익"
+    },
+    {
+      "id": "productservice_management_consulting_service",
+      "type": "ProductService",
+      "name": "경영컨설팅 서비스"
+    },
+    {
+      "id": "productservice_venture_investment",
+      "type": "ProductService",
+      "name": "벤처투자 서비스"
+    },
+    {
+      "id": "productservice_ic_design_manufacturing",
+      "type": "ProductService",
+      "name": "시스템 반도체 IC 설계 및 제조"
+    },
+    {
+      "id": "productservice_basic_chemical_manufacturing",
+      "type": "ProductService",
+      "name": "기초유기화합물 제조"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_383800",
+      "to": "industry_holding_company",
+      "evidence": "당사는 '독점규제 및 공정거래에 관한 법률'상 지주회사로서",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001120",
+      "to": "industry_trading",
+      "evidence": "LX인터내셔널 회사의 사업은 크게 자원(광물 자원, 팜 등), Trading/신성장(자원, 소재, IT부품 Trading 및 신규 성장/투자 사업 등), 물류(포워딩 및 CL 사업)로 이루어져 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001120",
+      "to": "industry_resource",
+      "evidence": "LX인터내셔널 회사의 사업은 크게 자원(광물 자원, 팜 등), Trading/신성장(자원, 소재, IT부품 Trading 및 신규 성장/투자 사업 등), 물류(포워딩 및 CL 사업)로 이루어져 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001120",
+      "to": "industry_logistics",
+      "evidence": "LX인터내셔널 회사의 사업은 크게 자원(광물 자원, 팜 등), Trading/신성장(자원, 소재, IT부품 Trading 및 신규 성장/투자 사업 등), 물류(포워딩 및 CL 사업)로 이루어져 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_108320",
+      "to": "industry_system_semiconductor",
+      "evidence": "시스템 반도체 IC 설계 및 제조업(LX세미콘)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_108320",
+      "to": "industry_semiconductor",
+      "evidence": "시스템 반도체 IC 설계 및 제조업(LX세미콘)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_383800",
+      "to": "industry_finance",
+      "evidence": "당사의 영업수익(별도 재무제표 기준)은 자회사로부터의 배당수익, 상표권 사용수익 및 기타수익으로 구성되어 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_383800",
+      "to": "productservice_dividend_income",
+      "evidence": "영업수익 항목별 비중은 배당금수익 69.7%",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_383800",
+      "to": "productservice_trademark_income",
+      "evidence": "영업수익 항목별 비중은 상표권 사용수익 29.7%",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_108670",
+      "to": "industry_chemical_materials",
+      "evidence": "LX하우시스 사업보고서 내 소재 및 화학 관련 내용",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003160",
+      "to": "industry_chemical_materials",
+      "evidence": "재화학소재/기초유기화합물 제조업(연관 언급)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_007980",
+      "to": "industry_chemical_materials",
+      "evidence": "사업 내 소재, 화학 관련 키워드 탐지",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_004090",
+      "to": "industry_energy_utility",
+      "evidence": "'한국석유' 석유정보 공급 언급",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_383800",
+      "to": "productservice_management_consulting_service",
+      "evidence": "연결대상 종속회사가 영위하는 사업은 경영컨설팅업 및 기타 금융투자업입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_383800",
+      "to": "productservice_venture_investment",
+      "evidence": "(주)LX벤처스 펀드 관리보수 등",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_108320",
+      "to": "productservice_ic_design_manufacturing",
+      "evidence": "시스템 반도체 IC 설계 및 제조업(LX세미콘)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_383800",
+      "to": "productservice_basic_chemical_manufacturing",
+      "evidence": "기타 기초유기화합물 제조업(LX엠엠에이)이 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_system_semiconductor",
+      "to": "industry_semiconductor",
+      "evidence": "시스템 반도체 IC 설계 및 제조업(LX세미콘)",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_383800_business_segments_20260323001295",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323001295",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

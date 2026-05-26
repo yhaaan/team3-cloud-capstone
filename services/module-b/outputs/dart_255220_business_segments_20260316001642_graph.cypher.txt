@@ -1,0 +1,319 @@
+// node: company_255220
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_255220", "type": "Company", "name": "SG", "stock_code": "255220", "description": "아스콘 제조 및 판매, 부동산 개발, 환경관련 플랜트설비 및 포장공사 등 건설 사업을 영위"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_plant_construction
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_plant_construction", "type": "Industry", "name": "플랜트건설"}
+
+// node: product_service_ascon
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ascon", "type": "ProductService", "name": "아스콘"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_255220", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "건설 부문 ... 포장공사", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_255220", "to_id": "industry_chemical_materials", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 화학이다.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_255220", "to_id": "industry_energy_utility", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 에너지", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_255220", "to_id": "industry_plant_construction", "properties": {"evidence": "최근 아스콘 산업은 환경문제가 지속적으로 대두되어 ... 환경설비(System Integration:SI)를 설치하였다.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_255220", "to_id": "product_service_ascon", "properties": {"evidence": "2. 주요 제품 및 서비스 ... 제품 아스콘 일반아스콘, 개질아스콘 ...", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ascon", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "아스콘(ASCON)이란 아스팔트 콘크리트로, 도로포장이나 주차장 등에 주로 사용", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_plant_construction", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 플랜트건설 is part of 건설인프라.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_steel_metal", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_steel_metal", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 로보틱스.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-16", "evidence_source_id": "dart_255220_business_segments_20260316001642", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001642", "evidence_published_at": "2026-03-16"}}

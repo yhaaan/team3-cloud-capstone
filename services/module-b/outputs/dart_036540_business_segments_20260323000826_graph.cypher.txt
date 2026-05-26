@@ -1,0 +1,110 @@
+// node: company_036540
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_036540", "type": "Company", "name": "SFA반도체", "stock_code": "036540", "description": "반도체 조립 및 TEST제품 후공정 주력, 첨단 반도체 패키징 솔루션 공급"}
+
+// node: company_005930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_005930", "type": "Company", "name": "삼성전자", "stock_code": "005930"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_memory_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_memory_semiconductor", "type": "Industry", "name": "메모리반도체"}
+
+// node: product_service_module
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_module", "type": "ProductService", "name": "Module"}
+
+// node: industry_system_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_system_semiconductor", "type": "Industry", "name": "시스템반도체"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_036540", "to_id": "industry_semiconductor", "properties": {"evidence": "당사의 사업분야는 반도체 산업의 후공정 분야인 반도체 조립 및 TEST제품을 주력으로 생산하고 있으며", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_036540", "to_id": "industry_memory_semiconductor", "properties": {"evidence": "주요 제품 및 서비스 가. 주요 제품 등의 현황 ... 품목 구체적 용도 주요상표 등 매출액 비율(%) ... 반도체 제조 제품 메모리 컴퓨터관련 주변장치 및 저장장치 삼성전자(주) 외 298,306 81.2%", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_036540", "to_id": "industry_system_semiconductor", "properties": {"evidence": "주요 제품 및 서비스 가. 주요 제품 등의 현황 ... 비메모리 산업용, PC, VIDEO, AUDIO, 전력용 등 삼성전자(주) 외 66,621 18.1%", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_036540", "to_id": "product_service_module", "properties": {"evidence": "상품 기타 Module 등 삼성전자(주) 외 1,539 0.4%", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_memory_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체 제조 제품 메모리 컴퓨터관련 주변장치 및 저장장치", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_system_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "비메모리 산업용, PC, VIDEO, AUDIO, 전력용 등", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_module", "to_id": "industry_semiconductor", "properties": {"evidence": "상품 기타 Module 등", "date": "2026-03-23", "evidence_source_id": "dart_036540_business_segments_20260323000826", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000826", "evidence_published_at": "2026-03-23"}}

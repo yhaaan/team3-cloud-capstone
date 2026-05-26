@@ -43,6 +43,31 @@ class FtcAffiliateMatchResult:
 
 COMPANY_LEGAL_SUFFIX_PATTERN = re.compile(r"\(주\)|㈜|주식회사|\s+")
 ID_TOKEN_PATTERN = re.compile(r"[^0-9A-Za-z가-힣]+")
+KOREANIZED_ABBREVIATION_ALIASES = {
+    "비지에프": "BGF",
+    "디비": "DB",
+    "디엘": "DL",
+    "에이치디": "HD",
+    "에이치엘": "HL",
+    "케이지": "KG",
+    "엔에이치": "NH",
+    "씨제이": "CJ",
+    "에스케이": "SK",
+    "에이치엠엠": "HMM",
+    "엘에스": "LS",
+    "엘엑스": "LX",
+    "엘지": "LG",
+    "지에스": "GS",
+    "케이씨씨": "KCC",
+    "케이티": "KT",
+    "에이치에스": "HS",
+}
+FTC_COMPANY_NAME_ALIASES = {
+    "롯데칠성음료": "롯데칠성",
+    "KT스카이라이프": "스카이라이프",
+    "KT아이에스": "KTis",
+    "현대해상화재보험": "현대해상",
+}
 
 
 def load_ftc_affiliate_records(file_path: Path = DEFAULT_FTC_AFFILIATES_PATH) -> list[FtcAffiliateRecord]:
@@ -166,7 +191,25 @@ def build_ftc_affiliates_graph(
 
 def normalize_ftc_company_name(value: str | None) -> str:
     cleaned = COMPANY_LEGAL_SUFFIX_PATTERN.sub("", str(value or ""))
+    cleaned = apply_company_name_aliases(cleaned)
     return normalize_company_name(cleaned)
+
+
+def apply_company_name_aliases(value: str) -> str:
+    cleaned = value
+    for koreanized, abbreviation in KOREANIZED_ABBREVIATION_ALIASES.items():
+        cleaned = cleaned.replace(koreanized, abbreviation)
+
+    if cleaned.startswith("현대자동차"):
+        cleaned = "현대차" + cleaned.removeprefix("현대자동차")
+    if cleaned == "한국항공우주산업":
+        cleaned = "한국항공우주"
+    cleaned = FTC_COMPANY_NAME_ALIASES.get(cleaned, cleaned)
+    if cleaned.endswith("해상보험"):
+        cleaned = cleaned.removesuffix("해상보험")
+    elif cleaned.endswith("생명보험") or cleaned.endswith("손해보험") or cleaned.endswith("화재보험"):
+        cleaned = cleaned.removesuffix("보험")
+    return cleaned
 
 
 def build_affiliate_group_id(group_name: str) -> str:

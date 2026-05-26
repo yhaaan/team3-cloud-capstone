@@ -1,0 +1,253 @@
+{
+  "source_id": "dart_001940_business_segments_20260319001343",
+  "entities": [
+    {
+      "id": "company_001940",
+      "type": "Company",
+      "name": "KISCO홀딩스",
+      "stock_code": "001940",
+      "description": "종속기업 주식 보유 통한 지배 및 배당금, 경영관리용역 수익 중심의 지주회사"
+    },
+    {
+      "id": "company_104700",
+      "type": "Company",
+      "name": "한국철강",
+      "stock_code": "104700",
+      "description": "건설업용 철근 생산 및 판매, 철근 제조업 중심 사업"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "product_service_rebar",
+      "type": "ProductService",
+      "name": "철근"
+    },
+    {
+      "id": "product_service_billet",
+      "type": "ProductService",
+      "name": "BILLET"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_001940",
+      "to": "industry_holding_company",
+      "evidence": "KISCO홀딩스는 지주회사로서 대부분의 매출은 자회사에 대한 지배관계에서 발생하는 배당금 및 경영관리용역 등의 수익으로 이루어져 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_104700",
+      "to": "industry_steel_metal",
+      "evidence": "한국철강(주)는 건설업에 사용되는 철근을 생산, 판매하고 있으며 철근 제조업을 중심으로 작성되었습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_104700",
+      "to": "industry_construction_infrastructure",
+      "evidence": "한국철강(주)는 건설업에 사용되는 철근을 생산, 판매하고 있으며 각 제품별 매출액 및 총 매출액에서 차지하는 비율은 다음과 같습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_104700",
+      "to": "product_service_rebar",
+      "evidence": "[한국철강(주)] (1) 회사는 건설업에 사용되는 철근을 생산, 판매하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_104700",
+      "to": "product_service_billet",
+      "evidence": "[환영철강공업(주)] 회사는 제강공장에서 생산한 BILLET을 압연공정으로 가열한 후 생산한 철근을 판매하고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_rebar",
+      "to": "industry_steel_metal",
+      "evidence": "철근은 건설업에 사용되는 철강제품으로 철강금속 산업에 속합니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_billet",
+      "to": "industry_steel_metal",
+      "evidence": "BILLET은 철근, 봉강, 형강 등 철강 제품 생산을 위한 반제품으로 철강금속 산업에 속합니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 지주회사 is related to 금융.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_001940_business_segments_20260319001343",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319001343",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}

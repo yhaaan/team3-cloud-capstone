@@ -1,0 +1,708 @@
+{
+  "source_id": "dart_000480_business_segments_20260319000043",
+  "entities": [
+    {
+      "id": "company_000480",
+      "type": "Company",
+      "name": "CR홀딩스",
+      "stock_code": "000480",
+      "description": "내화물 제조업, 기계부품 제조업, 골프장업, 부동산업 등 다양한 사업을 영위하는 지주회사입니다."
+    },
+    {
+      "id": "company_000270",
+      "type": "Company",
+      "name": "기아",
+      "stock_code": "000270"
+    },
+    {
+      "id": "company_034730",
+      "type": "Company",
+      "name": "SK",
+      "stock_code": "034730"
+    },
+    {
+      "id": "company_003550",
+      "type": "Company",
+      "name": "LG",
+      "stock_code": "003550"
+    },
+    {
+      "id": "company_066570",
+      "type": "Company",
+      "name": "LG전자",
+      "stock_code": "066570"
+    },
+    {
+      "id": "company_000490",
+      "type": "Company",
+      "name": "대동",
+      "stock_code": "000490"
+    },
+    {
+      "id": "company_462520",
+      "type": "Company",
+      "name": "조선내화",
+      "stock_code": "462520"
+    },
+    {
+      "id": "industry_industrial_robot",
+      "type": "Industry",
+      "name": "산업용로봇"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_home_appliance",
+      "type": "Industry",
+      "name": "가정가전"
+    },
+    {
+      "id": "industry_retail_consumer",
+      "type": "Industry",
+      "name": "유통/소비재"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_real_estate",
+      "type": "Industry",
+      "name": "부동산/리츠"
+    },
+    {
+      "id": "industry_machine_tool",
+      "type": "Industry",
+      "name": "기계공작기계"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_auto_parts",
+      "type": "Industry",
+      "name": "자동차부품"
+    },
+    {
+      "id": "product_service_refridgerator_compressor_parts",
+      "type": "ProductService",
+      "name": "냉장고용 Compressor 부품"
+    },
+    {
+      "id": "product_service_automotive_engine_transmission_abs_parts",
+      "type": "ProductService",
+      "name": "자동차용 엔진·트랜스미션·ABS 부품"
+    },
+    {
+      "id": "product_service_sintering_parts",
+      "type": "ProductService",
+      "name": "소결부품"
+    },
+    {
+      "id": "product_service_golf_course_membership",
+      "type": "ProductService",
+      "name": "회원제 골프장"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_electronics",
+      "type": "Industry",
+      "name": "전자"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_display",
+      "type": "Industry",
+      "name": "디스플레이"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_machinery",
+      "evidence": "연결회사의 핵심 사업부문은 내화물 제조업, 기계부품 제조업, 골프장업, 부동산업 등으로 구분합니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_chemical_materials",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 공급, 공급망, 부품, 생산, 서비스, 소재, 엔진, 자동차, 장비, 제조, 제품, 조선, 판매, 화학이다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 조선 ...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_auto_parts",
+      "evidence": "기계부품 제조업 주요 생산품목은 자동차용 엔진·트랜스미션·ABS 부품, 냉장고용 Compressor 부품, 산업기계용 소결부품 등이며...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_home_appliance",
+      "evidence": "기계부품 제조업 주요 생산품목은 ... 냉장고용 Compressor 부품 ...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000480",
+      "to": "industry_real_estate",
+      "evidence": "[부동산업] (주)시알아이는 CR타워를 통한 임대수익 창출 등 부동산 임대업을 영위하고 있으며...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000480",
+      "to": "product_service_automotive_engine_transmission_abs_parts",
+      "evidence": "기계부품 제조업 주요 생산품목은 자동차용 엔진·트랜스미션·ABS 부품 ...이며, ... 현대자동차·기아자동차·LG전자 등에 안정적으로 공급하며 우수한 기술력을 인정받고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000480",
+      "to": "product_service_refridgerator_compressor_parts",
+      "evidence": "기계부품 제조업 주요 생산품목은 ... 냉장고용 Compressor 부품.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000480",
+      "to": "product_service_sintering_parts",
+      "evidence": "주요 생산품목은 ... 산업기계용 소결부품 등이며...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_000480",
+      "to": "product_service_golf_course_membership",
+      "evidence": "[골프장업] ㈜화순컨트리클럽은 회원제 골프장으로, 3개 코스(Spring, Summer, Autumn) 27홀(싱글그린)로 구성되어...",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_000270",
+      "to": "industry_mobility",
+      "evidence": "기계부품 제조업 주요 생산품목은 ... 현대자동차·기아자동차·LG전자 등에 안정적으로 공급하며 우수한 기술력을 인정받고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_003550",
+      "to": "industry_chemical_materials",
+      "evidence": "기계부품 제조업 주요 생산품목은 ... 현대자동차·기아자동차·LG전자 등에 안정적으로 공급하며 우수한 기술력을 인정받고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_066570",
+      "to": "industry_home_appliance",
+      "evidence": "기계부품 제조업 주요 생산품목은 ... 현대자동차·기아자동차·LG전자 등에 안정적으로 공급하며 우수한 기술력을 인정받고 있습니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034730",
+      "to": "industry_chemical_materials",
+      "evidence": "탐지된 사업/제품/밸류체인 키워드는 ... 화학이다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_462520",
+      "to": "industry_chemical_materials",
+      "evidence": "[내화물 제조업] 조선내화㈜는 1947년 설립 이래 내화물 생산 및 기술 개발에 매진하여 국내 선도적인 종합내화물 제조업체입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_462520",
+      "to": "industry_steel_metal",
+      "evidence": "내화물은 고온 열처리를 필요로 하는 산업, 특히 제철·제강 등 중화학공업과 불가분의 관계에 있는 핵심 기간소재입니다.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_auto_parts",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 자동차부품 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_machine_tool",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 기계공작기계 is part of 기계/장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_home_appliance",
+      "to": "industry_electronics",
+      "evidence": "Industry taxonomy: 가정가전 is part of 전자.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_chemical_materials",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 화학소재 is related to 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_real_estate",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 부동산/리츠 is related to 금융.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_shipbuilding_marine",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_industrial_robot",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 산업용로봇 is part of 로보틱스.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 전자 is related to 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_electronics",
+      "to": "industry_display",
+      "evidence": "Industry taxonomy: 전자 is related to 디스플레이.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_construction_infrastructure",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_semiconductor_equipment",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 반도체장비 is part of 반도체.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_energy_utility",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.",
+      "date": "2026-03-19",
+      "evidence_source_id": "dart_000480_business_segments_20260319000043",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000043",
+      "evidence_published_at": "2026-03-19"
+    }
+  ]
+}
