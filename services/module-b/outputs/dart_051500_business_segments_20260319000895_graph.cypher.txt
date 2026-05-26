@@ -1,0 +1,222 @@
+// node: company_051500
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_051500", "type": "Company", "name": "CJ프레시웨이", "stock_code": "051500", "description": "대한민국 대표 식자재유통 및 푸드서비스 전문 기업으로 식자재유통, 단체급식, 식자재 제조 및 농산물 가공을 주요 사업으로 함"}
+
+// node: industry_food_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_food_service", "type": "Industry", "name": "외식/급식"}
+
+// node: industry_food_beverage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_food_beverage", "type": "Industry", "name": "식품/음료"}
+
+// node: industry_retail_consumer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_retail_consumer", "type": "Industry", "name": "유통/소비재"}
+
+// node: product_service_food_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_food_distribution", "type": "ProductService", "name": "식자재유통"}
+
+// node: product_service_food_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_food_service", "type": "ProductService", "name": "푸드서비스"}
+
+// node: product_service_food_manufacturing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_food_manufacturing", "type": "ProductService", "name": "식자재 제조"}
+
+// node: industry_agriculture_food_resources
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_agriculture_food_resources", "type": "Industry", "name": "농업/식량자원"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "industry_food_service", "properties": {"evidence": "CJ프레시웨이의 사업영역은 크게 식자재유통사업 및 푸드서비스사업, 제조/서비스업으로 구성", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "industry_food_beverage", "properties": {"evidence": "CJ프레시웨이는 농, 수, 축,가공식품부터 주방소모품 등 식당사업에 필요한 모든 식자재를 공급하고 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "industry_retail_consumer", "properties": {"evidence": "CJ프레시웨이는 대한민국을 대표하는 식자재유통 및 푸드서비스(단체급식) 기업입니다.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "product_service_food_distribution", "properties": {"evidence": "CJ프레시웨이는 체계적인 유통시스템을 바탕으로 식품대리점, 급식업체, 체인레스토랑, 일반식당, 호텔 등에 농, 수, 축,가공식품부터 주방소모품 등 식당사업에 필요한 모든 식자재를 공급", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "product_service_food_service", "properties": {"evidence": "단체급식업계 최초로 ISO22000 인증 및 병원 HACCP인증을 획득하고 QSC에 대한 철저한 관리를 실시함으로써 안전하고 믿을 수 있는 급식 서비스를 제공", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_051500", "to_id": "product_service_food_manufacturing", "properties": {"evidence": "식품, 식품첨가물, 조미식품, 드레싱 등의 개발, 제조, 판매를 목적으로 한 제조업 등 기타 서비스업을 운영하고 있습니다.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_food_distribution", "to_id": "industry_retail_consumer", "properties": {"evidence": "식자재유통사업은 도매상, 대리점, 소매상에 식자재공급", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_food_service", "to_id": "industry_food_service", "properties": {"evidence": "푸드서비스 사업은 단체급식, 골프장급식사업 등 포함", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_food_manufacturing", "to_id": "industry_food_beverage", "properties": {"evidence": "식자재 제조 및 농산물 가공 등 기타 사업", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_food_service", "to_id": "industry_food_beverage", "properties": {"evidence": "푸드서비스는 식품가공과 외식산업 관련", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_agriculture_food_resources", "to_id": "industry_food_beverage", "properties": {"evidence": "식자재유통 사업에서 농산물, 수산물, 축산물 등 공급", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_food_beverage", "to_id": "industry_retail_consumer", "properties": {"evidence": "Industry taxonomy: 식품/음료 is part of 유통/소비재.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_agriculture_food_resources", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 농업/식량자원 is related to 화학소재.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-19", "evidence_source_id": "dart_051500_business_segments_20260319000895", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000895", "evidence_published_at": "2026-03-19"}}

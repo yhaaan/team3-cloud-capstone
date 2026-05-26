@@ -1,0 +1,705 @@
+{
+  "source_id": "dart_034310_business_segments_20260323000907",
+  "entities": [
+    {
+      "id": "company_034310",
+      "type": "Company",
+      "name": "NICE",
+      "stock_code": "034310",
+      "description": "자회사 지배 경영지도하며 신용정보, 신용카드거래승인, 무인화운영, 신용평가, 자산관리, 제조업 등 영위"
+    },
+    {
+      "id": "company_063570",
+      "type": "Company",
+      "name": "NICE인프라",
+      "stock_code": "063570",
+      "description": "ATM 관리, 무인주차, 일괄관리사업, 전기차 충전사업 등 무인화운영 서비스 제공"
+    },
+    {
+      "id": "company_036800",
+      "type": "Company",
+      "name": "나이스정보통신",
+      "stock_code": "036800",
+      "description": "카드거래 승인대행 및 지급결제 관련 단말기 제공"
+    },
+    {
+      "id": "company_084850",
+      "type": "Company",
+      "name": "아이티엠반도체",
+      "stock_code": "084850",
+      "description": "전자부품 제조 및 비철금속 압연, 압출, 연신제품 생산"
+    },
+    {
+      "id": "company_073110",
+      "type": "Company",
+      "name": "엘엠에스",
+      "stock_code": "073110",
+      "description": "전자부품 제조 및 비철금속 압연, 압출, 연신제품 생산"
+    },
+    {
+      "id": "industry_it_software",
+      "type": "Industry",
+      "name": "정보기술/소프트웨어"
+    },
+    {
+      "id": "industry_finance",
+      "type": "Industry",
+      "name": "금융"
+    },
+    {
+      "id": "industry_payment_service",
+      "type": "Industry",
+      "name": "결제서비스"
+    },
+    {
+      "id": "industry_telecom_media",
+      "type": "Industry",
+      "name": "통신/미디어"
+    },
+    {
+      "id": "industry_mobility",
+      "type": "Industry",
+      "name": "자동차/모빌리티"
+    },
+    {
+      "id": "industry_robotics",
+      "type": "Industry",
+      "name": "로보틱스"
+    },
+    {
+      "id": "industry_semiconductor",
+      "type": "Industry",
+      "name": "반도체"
+    },
+    {
+      "id": "product_service_credit_information",
+      "type": "ProductService",
+      "name": "신용정보"
+    },
+    {
+      "id": "product_service_credit_rating",
+      "type": "ProductService",
+      "name": "신용평가"
+    },
+    {
+      "id": "product_service_payment_processing",
+      "type": "ProductService",
+      "name": "카드거래 승인대행"
+    },
+    {
+      "id": "product_service_atm_management",
+      "type": "ProductService",
+      "name": "ATM 관리 서비스"
+    },
+    {
+      "id": "product_service_parking_service",
+      "type": "ProductService",
+      "name": "주차장 운영 서비스"
+    },
+    {
+      "id": "product_service_ev_charging",
+      "type": "ProductService",
+      "name": "전기차 충전 서비스"
+    },
+    {
+      "id": "product_service_electronic_components",
+      "type": "ProductService",
+      "name": "전자부품"
+    },
+    {
+      "id": "industry_nonferrous_metal",
+      "type": "Industry",
+      "name": "비철금속"
+    },
+    {
+      "id": "industry_holding_company",
+      "type": "Industry",
+      "name": "지주회사"
+    },
+    {
+      "id": "industry_content_game",
+      "type": "Industry",
+      "name": "게임/콘텐츠"
+    },
+    {
+      "id": "industry_ai",
+      "type": "Industry",
+      "name": "인공지능"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_battery_energy_storage",
+      "type": "Industry",
+      "name": "배터리/에너지저장"
+    },
+    {
+      "id": "industry_logistics",
+      "type": "Industry",
+      "name": "항공/물류"
+    },
+    {
+      "id": "industry_machinery",
+      "type": "Industry",
+      "name": "기계/장비"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    },
+    {
+      "id": "industry_semiconductor_equipment",
+      "type": "Industry",
+      "name": "반도체장비"
+    },
+    {
+      "id": "industry_chemical_materials",
+      "type": "Industry",
+      "name": "화학소재"
+    },
+    {
+      "id": "industry_energy_utility",
+      "type": "Industry",
+      "name": "에너지/유틸리티"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_034310",
+      "to": "industry_holding_company",
+      "evidence": "당사는 자회사의 주식 또는 지분을 취득, 소유함으로써 자회사의 제반 사업내용을 지배, 경영지도, 정리, 육성하는 지주사업을 주된 사업으로 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_063570",
+      "to": "industry_it_software",
+      "evidence": "NICE인프라(주)는 ATM 관리, 무인화운영 사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_063570",
+      "to": "industry_mobility",
+      "evidence": "NICE인프라(주)는 주차장 운영 서비스 및 전기차 충전사업을 포함한 모빌리티사업부문을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_036800",
+      "to": "industry_payment_service",
+      "evidence": "나이스정보통신(주)는 카드거래 승인대행 외 지급결제 사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_036800",
+      "to": "industry_telecom_media",
+      "evidence": "나이스정보통신(주)는 카드조회단말기 등의 통신기기를 제공하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_084850",
+      "to": "industry_semiconductor",
+      "evidence": "(주)아이티엠반도체는 전자부품 제조를 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_073110",
+      "to": "industry_semiconductor",
+      "evidence": "(주)나이스엘엠에스는 전자부품 제조 및 비철금속 제품을 생산하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_073110",
+      "to": "industry_nonferrous_metal",
+      "evidence": "(주)나이스엘엠에스는 비철금속 압연, 압출 및 연신제품을 제조하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_034310",
+      "to": "product_service_credit_information",
+      "evidence": "종속회사를 통한 개인신용정보사업(CB사업)과 기업정보사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_034310",
+      "to": "product_service_credit_rating",
+      "evidence": "신용평가사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_036800",
+      "to": "product_service_payment_processing",
+      "evidence": "카드거래 승인대행을 비롯한 지급결제 사업을 수행합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_063570",
+      "to": "product_service_atm_management",
+      "evidence": "NICE인프라(주)는 CD VAN, ATM 관리, 무인주차, KIOSK 등 무인화운영 사업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_063570",
+      "to": "product_service_parking_service",
+      "evidence": "주차장을 매입하거나 운영대행하는 주차장 운영 서비스를 제공합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_063570",
+      "to": "product_service_ev_charging",
+      "evidence": "아파트, 오피스빌딩, 공공기관 등에 전기차 충전기를 설치/운영하며 충전서비스를 제공하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_084850",
+      "to": "product_service_electronic_components",
+      "evidence": "(주)아이티엠반도체는 전자부품 제조업을 영위하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_073110",
+      "to": "product_service_electronic_components",
+      "evidence": "(주)나이스엘엠에스는 알루미늄 압연, 압출 및 연신제품 제조업을 수행하고 있습니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_credit_information",
+      "to": "industry_finance",
+      "evidence": "신용정보사업은 금융인프라의 한 부분입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_credit_rating",
+      "to": "industry_finance",
+      "evidence": "신용평가사업은 금융산업의 영역에 속합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_payment_processing",
+      "to": "industry_finance",
+      "evidence": "지급결제, 카드거래 승인대행은 금융서비스 분야입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_atm_management",
+      "to": "industry_finance",
+      "evidence": "ATM 관리 서비스는 금융 관련 무인화 운영 사업입니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_ev_charging",
+      "to": "industry_mobility",
+      "evidence": "전기차 충전 서비스는 자동차/모빌리티 산업에 속합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_electronic_components",
+      "to": "industry_semiconductor",
+      "evidence": "전자부품 제조는 반도체 산업 영역에 포함됩니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_holding_company",
+      "to": "industry_finance",
+      "evidence": "지주회사는 금융업과 관련된 경영지도, 자산관리를 수행합니다.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_telecom_media",
+      "to": "industry_content_game",
+      "evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_it_software",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_nonferrous_metal",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 비철금속 is part of 철강금속.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_payment_service",
+      "to": "industry_finance",
+      "evidence": "Industry taxonomy: 결제서비스 is part of 금융.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_battery_energy_storage",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_mobility",
+      "to": "industry_logistics",
+      "evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_robotics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_ai",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_robotics",
+      "to": "industry_machinery",
+      "evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_logistics",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_machinery",
+      "to": "industry_semiconductor_equipment",
+      "evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_mobility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_chemical_materials",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_battery_energy_storage",
+      "to": "industry_energy_utility",
+      "evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_telecom_media",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_content_game",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_it_software",
+      "evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_robotics",
+      "evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_ai",
+      "to": "industry_semiconductor",
+      "evidence": "Industry taxonomy: 인공지능 is related to 반도체.",
+      "date": "2026-03-23",
+      "evidence_source_id": "dart_034310_business_segments_20260323000907",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000907",
+      "evidence_published_at": "2026-03-23"
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+// node: company_061970
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_061970", "type": "Company", "name": "LB세미콘", "stock_code": "061970", "description": "반도체 후공정(OSAT)과 2차전지 재생 원재료 재활용을 주요 사업으로 함"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_system_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_system_semiconductor", "type": "Industry", "name": "시스템반도체"}
+
+// node: industry_memory_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_memory_semiconductor", "type": "Industry", "name": "메모리반도체"}
+
+// node: industry_display
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_display", "type": "Industry", "name": "디스플레이"}
+
+// node: industry_battery_recycling
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_recycling", "type": "Industry", "name": "배터리재활용"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_anode_material
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_anode_material", "type": "Industry", "name": "음극소재"}
+
+// node: product_service_ddi
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ddi", "type": "ProductService", "name": "디스플레이 구동칩"}
+
+// node: product_service_ap
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ap", "type": "ProductService", "name": "중앙처리장치"}
+
+// node: product_service_pmic
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_pmic", "type": "ProductService", "name": "전력관리반도체"}
+
+// node: product_service_cis
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cis", "type": "ProductService", "name": "이미지센서"}
+
+// node: product_service_black_powder
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_black_powder", "type": "ProductService", "name": "Black Powder"}
+
+// node: industry_electric_vehicle
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electric_vehicle", "type": "Industry", "name": "전기차량"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_electronics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_electronics", "type": "Industry", "name": "전자"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "기계/장비"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "industry_semiconductor", "properties": {"evidence": "그중 당사는 반도체 후공정(OSAT, Outsourced Semiconductor Assembly and Test) 산업을 영위하고 있으며", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "industry_system_semiconductor", "properties": {"evidence": "당사는 디스플레이 구동칩(DDI), 스마트폰용 중앙처리장치(AP), 전력관리반도체(PMIC), 이미지센서(CIS) 등 비메모리 반도체의 후공정(OSAT) 사업을 영위하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "industry_battery_recycling", "properties": {"evidence": "당사는 전기차 배터리 및 에너지저장장치(ESS) 등에서 사용되는 필수 원재료인 코발트(Co), 니켈(Ni), 망간(Mn), 리튬(Li), 구리(Cu), 알루미늄(Al) 등을 추출하여 재활용(Recycle), 재생산(Reproduce), 재사용(Reuse)할 수 있도록 연구개발 및 생산 활동을 진행하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "당사는 전기차 배터리 및 에너지저장장치(ESS) 등에서 사용되는 필수 원재료인 코발트(Co), 니켈(Ni), 망간(Mn), 리튬(Li), 구리(Cu), 알루미늄(Al) 등을 추출하여 재활용(Recycle), 재생산(Reproduce), 재사용(Reuse)할 수 있도록 연구개발 및 생산 활동을 진행하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "product_service_ddi", "properties": {"evidence": "당사는 디스플레이 구동칩(DDI)... 등 비메모리 반도체의 후공정(OSAT) 사업을 영위하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "product_service_ap", "properties": {"evidence": "당사는 ... 스마트폰용 중앙처리장치(AP)... 등 비메모리 반도체의 후공정(OSAT) 사업을 영위하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "product_service_pmic", "properties": {"evidence": "당사는 ... 전력관리반도체(PMIC)... 등 비메모리 반도체의 후공정(OSAT) 사업을 영위하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "product_service_cis", "properties": {"evidence": "당사는 ... 이미지센서(CIS) 등 비메모리 반도체의 후공정(OSAT) 사업을 영위하고 있습니다", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_061970", "to_id": "product_service_black_powder", "properties": {"evidence": "2차전지 재생 제품 등 Black Powder 양극재 원료 5,572 (1.16%)", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_system_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체는 용도에 따라... 연산, 제어, 논리 작업 등 정보 처리를 수행하는 시스템 반도체로 구분", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_memory_semiconductor", "to_id": "industry_semiconductor", "properties": {"evidence": "반도체는 용도에 따라 데이터를 저장하는 메모리 반도체로 구분", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ddi", "to_id": "industry_system_semiconductor", "properties": {"evidence": "디스플레이 구동칩(DDI)... 등 비메모리 반도체의 후공정(OSAT) 사업", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ap", "to_id": "industry_system_semiconductor", "properties": {"evidence": "스마트폰용 중앙처리장치(AP)... 등 비메모리 반도체의 후공정(OSAT) 사업", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_pmic", "to_id": "industry_system_semiconductor", "properties": {"evidence": "전력관리반도체(PMIC)... 등 비메모리 반도체의 후공정(OSAT) 사업", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cis", "to_id": "industry_system_semiconductor", "properties": {"evidence": "이미지센서(CIS)... 등 비메모리 반도체의 후공정(OSAT) 사업", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_black_powder", "to_id": "industry_anode_material", "properties": {"evidence": "Black Powder 양극재 원료", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_electric_vehicle", "properties": {"evidence": "당사는 전기차 배터리 원재료 재활용 사업도 영위", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_recycling", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 배터리재활용 is part of 배터리/에너지저장.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electric_vehicle", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 전기차량 is part of 자동차/모빌리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_anode_material", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 음극소재 is part of 배터리/에너지저장.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 반도체.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_display", "to_id": "industry_electronics", "properties": {"evidence": "Industry taxonomy: 디스플레이 is related to 전자.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 전자 is related to 반도체.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_electronics", "to_id": "industry_display", "properties": {"evidence": "Industry taxonomy: 전자 is related to 디스플레이.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 철강금속.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_construction_infrastructure", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 건설인프라 is related to 에너지/유틸리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_machinery", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.", "date": "2026-03-20", "evidence_source_id": "dart_061970_business_segments_20260320000806", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260320000806", "evidence_published_at": "2026-03-20"}}

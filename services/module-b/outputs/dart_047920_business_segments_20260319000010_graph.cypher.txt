@@ -1,0 +1,239 @@
+// node: company_047920
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_047920", "type": "Company", "name": "HLB제약", "stock_code": "047920", "description": "HLB제약은 전문의약품 제조·판매와 위수탁(CMO), 건강기능식품 판매 및 장기지속형 주사제 신약 연구개발을 주력으로 함"}
+
+// node: company_001360
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_001360", "type": "Company", "name": "삼성제약", "stock_code": "001360"}
+
+// node: company_028300
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_028300", "type": "Company", "name": "HLB", "stock_code": "028300"}
+
+// node: industry_bio_healthcare
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_bio_healthcare", "type": "Industry", "name": "바이오/헬스케어"}
+
+// node: industry_biopharmaceutical
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_biopharmaceutical", "type": "Industry", "name": "바이오의약품"}
+
+// node: industry_health_functional_food
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_health_functional_food", "type": "Industry", "name": "건강기능성식품"}
+
+// node: product_service_DDS
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_DDS", "type": "ProductService", "name": "장기지속형 주사제"}
+
+// node: product_service_CMO
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_CMO", "type": "ProductService", "name": "위수탁사업"}
+
+// node: industry_pharmaceutical_distribution
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_pharmaceutical_distribution", "type": "Industry", "name": "의약품 유통"}
+
+// node: product_service_ODM
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_ODM", "type": "ProductService", "name": "ODM"}
+
+// node: product_service_drug_products
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_drug_products", "type": "ProductService", "name": "전문의약품"}
+
+// node: product_service_health_functional_food
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_health_functional_food", "type": "ProductService", "name": "건강기능식품"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "industry_bio_healthcare", "properties": {"evidence": "당사는 전문의약품의 제조·판매, 위수탁(CMO) 사업, 건강기능식품 판매를 주력으로 영위하고 있으며", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "industry_health_functional_food", "properties": {"evidence": "당사는 전문의약품의 제조·판매, 위수탁(CMO) 사업, 건강기능식품 판매를 주력으로 영위하고 있으며", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "product_service_DDS", "properties": {"evidence": "동탄 연구소를 중심으로 장기지속형 주사제형(DDS, Drug Delivery System) 기반의 신약·개량신약 연구개발을 수행하고 있습니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "product_service_CMO", "properties": {"evidence": "위수탁(CMO) 사업은 과거 일반의약품 중심에서 생물학적 동등성시험에 대한 적극적인 투자를 기반으로 전문의약품 중심의 고부가가치 포트폴리오로 전환 중입니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "industry_pharmaceutical_distribution", "properties": {"evidence": "2025년 5월에는 신규 사업 부문 투자 일환으로 ㈜신화어드밴스 지분 100%를 취득하여 자회사로 편입함으로써 의약품 유통 부문을 추가로 영위하고 있습니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "product_service_ODM", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 ODM, 생산, 서비스, 셀, 수소, 시스템, 위탁, 유통, 제약, 제조, 제품, 판매, 플랫폼이다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "product_service_drug_products", "properties": {"evidence": "현재 로수듀오, 씨트클러, 씨트렐린 등 160종 이상의 전문의약품을 위탁영업(판매위탁) 방식으로 판매하고 있으며", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_047920", "to_id": "product_service_health_functional_food", "properties": {"evidence": "2023년 당사는 '콴첼'이라는 관절 전문 건강기능식품 브랜드의 대규모 런칭 캠페인을 진행하였습니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_DDS", "to_id": "industry_bio_healthcare", "properties": {"evidence": "장기지속형 주사제형(DDS, Drug Delivery System) 기반의 신약·개량신약 연구개발", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_CMO", "to_id": "industry_bio_healthcare", "properties": {"evidence": "위수탁(CMO) 사업은 과거 일반의약품 중심에서 전문의약품 중심의 고부가가치 포트폴리오로 전환 중입니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_pharmaceutical_distribution", "to_id": "industry_bio_healthcare", "properties": {"evidence": "의약품 유통 부문을 추가로 영위하고 있습니다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_ODM", "to_id": "industry_bio_healthcare", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 ODM, 생산, 서비스, 셀, 수소, 시스템, 위탁, 유통, 제약, 제조, 제품, 판매, 플랫폼이다", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_drug_products", "to_id": "industry_bio_healthcare", "properties": {"evidence": "전문의약품을 위탁영업(판매위탁) 방식으로 판매하고 있으며", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_health_functional_food", "to_id": "industry_health_functional_food", "properties": {"evidence": "'콴첼'이라는 관절 전문 건강기능식품 브랜드", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_biopharmaceutical", "to_id": "industry_bio_healthcare", "properties": {"evidence": "Industry taxonomy: 바이오의약품 is part of 바이오/헬스케어.", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_health_functional_food", "to_id": "industry_bio_healthcare", "properties": {"evidence": "Industry taxonomy: 건강기능성식품 is part of 바이오/헬스케어.", "date": "2026-03-19", "evidence_source_id": "dart_047920_business_segments_20260319000010", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319000010", "evidence_published_at": "2026-03-19"}}

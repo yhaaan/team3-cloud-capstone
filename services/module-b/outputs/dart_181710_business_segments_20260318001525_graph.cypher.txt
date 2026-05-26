@@ -1,0 +1,341 @@
+// node: company_181710
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_181710", "type": "Company", "name": "NHN", "stock_code": "181710", "description": "온라인/모바일 게임, PG 및 VAN 결제, PAYCO 간편결제, 클라우드 CSP/MSP 기술사업 영위"}
+
+// node: industry_content_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_content_game", "type": "Industry", "name": "게임/콘텐츠"}
+
+// node: industry_payment_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_payment_service", "type": "Industry", "name": "결제서비스"}
+
+// node: industry_cloud_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_cloud_service", "type": "Industry", "name": "클라우드서비스"}
+
+// node: product_service_online_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_online_game", "type": "ProductService", "name": "온라인게임"}
+
+// node: product_service_mobile_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_mobile_game", "type": "ProductService", "name": "모바일게임"}
+
+// node: product_service_payco
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_payco", "type": "ProductService", "name": "PAYCO 간편결제"}
+
+// node: product_service_pg_van_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_pg_van_service", "type": "ProductService", "name": "PG 및 VAN 서비스"}
+
+// node: product_service_cloud_csp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cloud_csp", "type": "ProductService", "name": "클라우드 CSP"}
+
+// node: product_service_cloud_msp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cloud_msp", "type": "ProductService", "name": "클라우드 MSP"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform_business", "type": "Industry", "name": "플랫폼사업"}
+
+// node: industry_ecommerce
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ecommerce", "type": "Industry", "name": "전자상거래"}
+
+// node: industry_telecom_media
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom_media", "type": "Industry", "name": "통신/미디어"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "industry_content_game", "properties": {"evidence": "엔에이치엔㈜을 포함한 연결실체의 주요 사업으로는 온라인/모바일 게임 사업, PG 및 VAN 서비스와 PAYCO 간편결제사업, CSP/MSP 등의 클라우드 기술사업이 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "industry_payment_service", "properties": {"evidence": "엔에이치엔㈜을 포함한 연결실체의 주요 사업으로는 온라인/모바일 게임 사업, PG 및 VAN 서비스와 PAYCO 간편결제사업, CSP/MSP 등의 클라우드 기술사업이 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "industry_cloud_service", "properties": {"evidence": "엔에이치엔㈜을 포함한 연결실체의 주요 사업으로는 온라인/모바일 게임 사업, PG 및 VAN 서비스와 PAYCO 간편결제사업, CSP/MSP 등의 클라우드 기술사업이 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_online_game", "properties": {"evidence": "영업부문 주요 서비스 2025년제13기 연결... 게 임 | 온라인게임,모바일게임", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_mobile_game", "properties": {"evidence": "영업부문 주요 서비스 2025년제13기 연결... 게 임 | 온라인게임,모바일게임", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_payco", "properties": {"evidence": "결제및광고 페이코사업,PG 및 VAN 서비스 등", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_pg_van_service", "properties": {"evidence": "결제및광고 페이코사업,PG 및 VAN 서비스 등", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_cloud_csp", "properties": {"evidence": "기 타 클라우드,커머스, 티켓판매 등", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_181710", "to_id": "product_service_cloud_msp", "properties": {"evidence": "일본 NHN Techorus Corp.의 클라우드 MSP 사업 등이 해외 실적으로 잡히고 있습니다.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_it_software", "properties": {"evidence": "게임/콘텐츠는 정보기술/소프트웨어 산업 영역에 포함", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_payment_service", "to_id": "industry_finance", "properties": {"evidence": "결제서비스는 금융 산업의 한 영역임", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_cloud_service", "to_id": "industry_it_software", "properties": {"evidence": "클라우드 서비스는 정보기술/소프트웨어 산업에 속함", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_it_software", "properties": {"evidence": "통신 및 미디어 관련 사업 키워드 포함", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_content_game", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_platform_business", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ecommerce", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 전자상거래 is part of 정보기술/소프트웨어.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 반도체.", "date": "2026-03-18", "evidence_source_id": "dart_181710_business_segments_20260318001525", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260318001525", "evidence_published_at": "2026-03-18"}}

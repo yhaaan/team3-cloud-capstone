@@ -1,0 +1,249 @@
+// node: company_078020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078020", "type": "Company", "name": "LS증권", "stock_code": "078020", "description": "국내 최초 온라인 증권사로 온라인 브로커리지, 리테일, 홀세일, IB, 트레이딩 등 종합증권 서비스를 제공"}
+
+// node: industry_securities
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_securities", "type": "Industry", "name": "증권"}
+
+// node: product_service_brokerage_service
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_brokerage_service", "type": "ProductService", "name": "위탁매매 업무"}
+
+// node: product_service_investment_banking
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_investment_banking", "type": "ProductService", "name": "인수/주선업무"}
+
+// node: product_service_trading
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_trading", "type": "ProductService", "name": "자기매매 업무"}
+
+// node: product_service_investment_trust
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_investment_trust", "type": "ProductService", "name": "수익증권"}
+
+// node: product_service_cma
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cma", "type": "ProductService", "name": "CMA"}
+
+// node: product_service_rp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_rp", "type": "ProductService", "name": "환매조건부채권"}
+
+// node: product_service_cd
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cd", "type": "ProductService", "name": "양도성 예금증서"}
+
+// node: product_service_cp
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_cp", "type": "ProductService", "name": "기업어음"}
+
+// node: industry_finance
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_finance", "type": "Industry", "name": "금융"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "industry_securities", "properties": {"evidence": "당사 LS증권은 1999년에 국내 최초의 온라인 증권사로 출범하였으며, 현재는 온라인을 근간으로 하는 종합증권사로서 기존 온라인 브로커리지를 포함하는 리테일 부문과 홀세일, IB, Trading 부문이 시너지를 창출하며 그 규모를 확대해 나가고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_brokerage_service", "properties": {"evidence": "위탁매매 업무금융투자회사가 증권의 매매 중개 또는 대리등을 목적으로 행하는 영업활동으로서, 당사는 기존의 온라인영업 일변도에서 탈피하여 영업부, 테헤란금융센터를 오픈하는등 리테일 위탁매매 조직을 확대 개편하였습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_investment_banking", "properties": {"evidence": "인수/주선업무는 유가증권 발행시장에서 기업의 직접자금 조달을 원활히 수행할 수 있는 업무입니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_trading", "properties": {"evidence": "자기매매 업무금융투자회사가 매매차익을 목적으로 유가증권등을 보유하거나 매매하는 영업활동으로서, 트레이딩 사업부문은 2008년 9월 신설되었습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_investment_trust", "properties": {"evidence": "현재 당사는 수익증권을 판매하고 있으며, 수익증권의 종류에는 주식형 수익증권, 채권형 수익증권이 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_cma", "properties": {"evidence": "CMA은행의 보통예금처럼 수시입출금이 가능하며 자동이체출금, 적립식 펀드 자동투자, 은행정기이체 등 다양한 부가서비스를 제공하면서 높은 수익률을 약정수익률로 제공하는 서비스입니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_rp", "properties": {"evidence": "환매조건부 채권(RP)채권을 일정기간이 경과한 후에 일정한 가격으로 동일 채권을 다시 매수 또는 매도한다는 조건으로 채권을 매매하는 거래를 말하며, 약정형 RP상품과 수시형 RP상품상품이 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_cd", "properties": {"evidence": "양도성 예금증서(CD)기관투자가나 기업의 단기투자 금융상품으로서 인기가 많은 양도성 예금증서를 판매하고 있는 바, 개인을 대상으로 판매하고 있지는 않으며 기관투자가나 일반기업을 대상으로 판매하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_078020", "to_id": "product_service_cp", "properties": {"evidence": "기업어음(CP)기관투자가나 기업의 단기투자 금융상품으로서 인기가 많은 기업어음을 판매하고 있는 바, 개인을 대상으로 판매하고 있지는 않으며 기관투자가나 일반기업을 대상으로 판매하고 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_brokerage_service", "to_id": "industry_securities", "properties": {"evidence": "위탁매매 업무금융투자회사가 증권의 매매 중개 또는 대리등을 목적으로 행하는 영업활동으로서 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_investment_banking", "to_id": "industry_securities", "properties": {"evidence": "인수/주선업무는 유가증권 발행시장에서 기업의 직접자금 조달을 원활히 수행할 수 있는 업무입니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_trading", "to_id": "industry_securities", "properties": {"evidence": "자기매매 업무금융투자회사가 매매차익을 목적으로 유가증권등을 보유하거나 매매하는 영업활동으로서 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_investment_trust", "to_id": "industry_securities", "properties": {"evidence": "현재 당사는 수익증권을 판매하고 있으며, 수익증권의 종류에는 주식형 수익증권, 채권형 수익증권이 있습니다.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cma", "to_id": "industry_securities", "properties": {"evidence": "CMA은행의 보통예금처럼 수시입출금이 가능하며 자동이체출금, 적립식 펀드 자동투자, 은행정기이체 등 다양한 부가서비스를 제공하면서 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_rp", "to_id": "industry_securities", "properties": {"evidence": "환매조건부 채권(RP)채권을 일정기간이 경과한 후에 일정한 가격으로 동일 채권을 다시 매수 또는 매도한다는 조건으로 채권을 매매하는 거래를 말하며 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cd", "to_id": "industry_securities", "properties": {"evidence": "양도성 예금증서(CD)기관투자가나 기업의 단기투자 금융상품으로서 인기가 많은 양도성 예금증서를 판매하고 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_cp", "to_id": "industry_securities", "properties": {"evidence": "기업어음(CP)기관투자가나 기업의 단기투자 금융상품으로서 인기가 많은 기업어음을 판매하고 ...", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_securities", "to_id": "industry_finance", "properties": {"evidence": "Industry taxonomy: 증권 is part of 금융.", "date": "2026-03-16", "evidence_source_id": "dart_078020_business_segments_20260316000923", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316000923", "evidence_published_at": "2026-03-16"}}

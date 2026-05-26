@@ -1,0 +1,644 @@
+// node: company_298050
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298050", "type": "Company", "name": "HS효성첨단소재", "stock_code": "298050", "description": "산업자재, 섬유, 기타 부문에서 타이어보강재, 산업용 원사, 카페트, 아라미드, 탄소섬유, 스판덱스, 폴리에스터, 나일론필름 등 생산"}
+
+// node: company_078930
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_078930", "type": "Company", "name": "GS", "stock_code": "078930"}
+
+// node: company_083450
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_083450", "type": "Company", "name": "GST", "stock_code": "083450"}
+
+// node: company_004800
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_004800", "type": "Company", "name": "효성", "stock_code": "004800"}
+
+// node: company_298020
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_298020", "type": "Company", "name": "효성티앤씨", "stock_code": "298020"}
+
+// node: industry_chemical_materials
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_chemical_materials", "type": "Industry", "name": "화학소재"}
+
+// node: industry_mobility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_mobility", "type": "Industry", "name": "자동차/모빌리티"}
+
+// node: industry_textile_fashion
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_textile_fashion", "type": "Industry", "name": "섬유/패션"}
+
+// node: product_service_tire_cord
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_tire_cord", "type": "ProductService", "name": "타이어코드"}
+
+// node: product_service_steel_cord
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_steel_cord", "type": "ProductService", "name": "스틸코드"}
+
+// node: product_service_industrial_yarn
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_industrial_yarn", "type": "ProductService", "name": "산업용 원사"}
+
+// node: product_service_carpet
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_carpet", "type": "ProductService", "name": "카페트"}
+
+// node: product_service_aramiid
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_aramiid", "type": "ProductService", "name": "아라미드"}
+
+// node: product_service_carbon_fiber
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_carbon_fiber", "type": "ProductService", "name": "탄소섬유"}
+
+// node: product_service_spandex_yarn
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_spandex_yarn", "type": "ProductService", "name": "스판덱스 원사"}
+
+// node: product_service_polyester_yarn
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_polyester_yarn", "type": "ProductService", "name": "폴리에스터 원사"}
+
+// node: product_service_nylon_film
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_nylon_film", "type": "ProductService", "name": "나일론필름"}
+
+// node: industry_retail_consumer
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_retail_consumer", "type": "Industry", "name": "유통/소비재"}
+
+// node: industry_battery_energy_storage
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_battery_energy_storage", "type": "Industry", "name": "배터리/에너지저장"}
+
+// node: industry_robotics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_robotics", "type": "Industry", "name": "로보틱스"}
+
+// node: industry_logistics
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_logistics", "type": "Industry", "name": "항공/물류"}
+
+// node: industry_semiconductor
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor", "type": "Industry", "name": "반도체"}
+
+// node: industry_shipbuilding_marine
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_shipbuilding_marine", "type": "Industry", "name": "조선/해양"}
+
+// node: industry_energy_utility
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_energy_utility", "type": "Industry", "name": "에너지/유틸리티"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// node: industry_machinery
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_machinery", "type": "Industry", "name": "기계/장비"}
+
+// node: industry_semiconductor_equipment
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_semiconductor_equipment", "type": "Industry", "name": "반도체장비"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_construction_infrastructure
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_construction_infrastructure", "type": "Industry", "name": "건설인프라"}
+
+// node: industry_steel_metal
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_steel_metal", "type": "Industry", "name": "철강금속"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "industry_chemical_materials", "properties": {"evidence": "탐지된 사업/제품/밸류체인 키워드는 공급, 매입, 생산, 서비스, 소재, 원재료, 자동차, 제조, 제품, 판매, 협력, 화학이다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "industry_mobility", "properties": {"evidence": "산업용 원사는 자동차용 Seat belt, 에어백,건축, 토목 및 일반 산업현장 등에서 광범위하게 사용되고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "industry_textile_fashion", "properties": {"evidence": "섬유부문 매출액은 341,123백만원이며, 고부가가치, 고기능성 섬유소재로써 주로 의류용으로 사용되는 스판덱스, 폴리에스터 원사가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_tire_cord", "properties": {"evidence": "산업자재 부문에는 타이어보강재... 대표제품으로 타이어코드와 스틸코드가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_steel_cord", "properties": {"evidence": "산업자재 부문에는 타이어보강재... 대표제품으로 타이어코드와 스틸코드가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_industrial_yarn", "properties": {"evidence": "산업용 원사는 자동차용 Seat belt, 에어백,건축, 토목 및 일반 산업현장 등에서 광범위하게 사용되고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_carpet", "properties": {"evidence": "카페트는 자동차 차체 바닥에 장착되는 제품으로 내구성이 우수하고 흡음성과 차음성이 뛰어나 주행 시 소음 개선효과가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_aramiid", "properties": {"evidence": "아라미드는 방탄소재, 자동차 고무 보강용, 산업용 등에 사용되며", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_carbon_fiber", "properties": {"evidence": "탄소섬유는 고압용기, 전선심재, 건축보강 용도로 사용되는 고부가가치 신소재 제품입니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_spandex_yarn", "properties": {"evidence": "섬유부문 매출액은 341,123백만원이며, 고부가가치, 고기능성 섬유소재로써 주로 의류용으로 사용되는 스판덱스, 폴리에스터 원사가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_polyester_yarn", "properties": {"evidence": "섬유부문 매출액은 341,123백만원이며, 고부가가치, 고기능성 섬유소재로써 주로 의류용으로 사용되는 스판덱스, 폴리에스터 원사가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_298050", "to_id": "product_service_nylon_film", "properties": {"evidence": "기타부문 매출액은 84,296백만원이며, 나일론필름 및 임대부문 등이 있습니다. 나일론필름은 산소투과도가 낮고 우수한 내열성, 내한성, 내핀홀성의 특징을 지니고 있어 식품 및 의약품을 장기 보관하기에 적합합니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_tire_cord", "to_id": "industry_chemical_materials", "properties": {"evidence": "산업자재 부문에는 타이어보강재... 대표제품으로 타이어코드와 스틸코드가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_steel_cord", "to_id": "industry_chemical_materials", "properties": {"evidence": "산업자재 부문에는 타이어보강재... 대표제품으로 타이어코드와 스틸코드가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_industrial_yarn", "to_id": "industry_chemical_materials", "properties": {"evidence": "산업용 원사는 자동차용 Seat belt, 에어백,건축, 토목 및 일반 산업현장 등에서 광범위하게 사용되고 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_carpet", "to_id": "industry_chemical_materials", "properties": {"evidence": "카페트는 자동차 차체 바닥에 장착되는 제품으로 내구성이 우수하고 흡음성과 차음성이 뛰어나 주행 시 소음 개선효과가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_aramiid", "to_id": "industry_chemical_materials", "properties": {"evidence": "아라미드는 방탄소재, 자동차 고무 보강용, 산업용 등에 사용되며", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_carbon_fiber", "to_id": "industry_chemical_materials", "properties": {"evidence": "탄소섬유는 고압용기, 전선심재, 건축보강 용도로 사용되는 고부가가치 신소재 제품입니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_spandex_yarn", "to_id": "industry_textile_fashion", "properties": {"evidence": "섬유부문 매출액은 341,123백만원이며, 고부가가치, 고기능성 섬유소재로써 주로 의류용으로 사용되는 스판덱스, 폴리에스터 원사가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_polyester_yarn", "to_id": "industry_textile_fashion", "properties": {"evidence": "섬유부문 매출액은 341,123백만원이며, 고부가가치, 고기능성 섬유소재로써 주로 의류용으로 사용되는 스판덱스, 폴리에스터 원사가 있습니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "product_service_nylon_film", "to_id": "industry_chemical_materials", "properties": {"evidence": "나일론필름은 산소투과도가 낮고 우수한 내열성, 내한성, 내핀홀성의 특징을 지니고 있어 식품 및 의약품을 장기 보관하기에 적합합니다.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_textile_fashion", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 섬유/패션 is related to 화학소재.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_textile_fashion", "to_id": "industry_retail_consumer", "properties": {"evidence": "Industry taxonomy: 섬유/패션 is related to 유통/소비재.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_mobility", "to_id": "industry_logistics", "properties": {"evidence": "Industry taxonomy: 자동차/모빌리티 is related to 항공/물류.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_chemical_materials", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 화학소재 is related to 반도체.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_logistics", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 항공/물류 is related to 조선/해양.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_chemical_materials", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 화학소재.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_battery_energy_storage", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 배터리/에너지저장 is related to 에너지/유틸리티.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_mobility", "properties": {"evidence": "Industry taxonomy: 로보틱스 is part of 자동차/모빌리티.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 인공지능.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_robotics", "to_id": "industry_machinery", "properties": {"evidence": "Industry taxonomy: 로보틱스 is related to 기계/장비.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_machinery", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 기계/장비 is related to 로보틱스.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_machinery", "to_id": "industry_semiconductor_equipment", "properties": {"evidence": "Industry taxonomy: 기계/장비 is related to 반도체장비.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 정보기술/소프트웨어.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_robotics", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 로보틱스.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_ai", "to_id": "industry_semiconductor", "properties": {"evidence": "Industry taxonomy: 인공지능 is related to 반도체.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_battery_energy_storage", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 배터리/에너지저장.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_shipbuilding_marine", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 조선/해양.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_energy_utility", "to_id": "industry_construction_infrastructure", "properties": {"evidence": "Industry taxonomy: 에너지/유틸리티 is related to 건설인프라.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_energy_utility", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 에너지/유틸리티.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_shipbuilding_marine", "to_id": "industry_steel_metal", "properties": {"evidence": "Industry taxonomy: 조선/해양 is related to 철강금속.", "date": "2026-03-12", "evidence_source_id": "dart_298050_business_segments_20260312001146", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260312001146", "evidence_published_at": "2026-03-12"}}

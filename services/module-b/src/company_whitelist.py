@@ -13,6 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent
 ROOT_DIR = BASE_DIR.parent.parent.parent
 DEFAULT_LISTED_COMPANIES_PATH = ROOT_DIR / "services" / "module-a" / "listed_companies.xlsx"
 XLSX_NS = {"a": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
+COMPANY_NAME_ALIASES = {
+    "현대자동차": "현대차",
+}
 
 
 @dataclass(frozen=True)
@@ -172,4 +175,5 @@ def normalize_corp_code(value: str) -> str:
 
 def normalize_company_name(value: str | None) -> str:
     normalized = str(value or "").casefold()
-    return re.sub(r"[\s()\[\]{}.,·ㆍ・&\-_/]+", "", normalized)
+    normalized = re.sub(r"[\s()\[\]{}.,·ㆍ・&\-_/]+", "", normalized)
+    return COMPANY_NAME_ALIASES.get(normalized, normalized)

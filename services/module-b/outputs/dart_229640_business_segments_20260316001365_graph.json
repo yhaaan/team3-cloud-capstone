@@ -1,0 +1,192 @@
+{
+  "source_id": "dart_229640_business_segments_20260316001365",
+  "entities": [
+    {
+      "id": "company_229640",
+      "type": "Company",
+      "name": "LS에코에너지",
+      "stock_code": "229640",
+      "description": "외국기업 사업 지배 지주회사로 자회사 배당금과 용역 수익을 주요 사업으로 함"
+    },
+    {
+      "id": "company_006260",
+      "type": "Company",
+      "name": "LS",
+      "stock_code": "006260"
+    },
+    {
+      "id": "company_007980",
+      "type": "Company",
+      "name": "TP",
+      "stock_code": "007980"
+    },
+    {
+      "id": "industry_electric_power_cable",
+      "type": "Industry",
+      "name": "전력케이블"
+    },
+    {
+      "id": "industry_copper",
+      "type": "Industry",
+      "name": "구리/동"
+    },
+    {
+      "id": "industry_aluminum",
+      "type": "Industry",
+      "name": "알루미늄"
+    },
+    {
+      "id": "industry_communication_cable",
+      "type": "Industry",
+      "name": "통신케이블"
+    },
+    {
+      "id": "product_service_busduct",
+      "type": "ProductService",
+      "name": "버스덕트"
+    },
+    {
+      "id": "industry_nonferrous_metal",
+      "type": "Industry",
+      "name": "비철금속"
+    },
+    {
+      "id": "industry_steel_metal",
+      "type": "Industry",
+      "name": "철강금속"
+    },
+    {
+      "id": "industry_construction_infrastructure",
+      "type": "Industry",
+      "name": "건설인프라"
+    },
+    {
+      "id": "industry_shipbuilding_marine",
+      "type": "Industry",
+      "name": "조선/해양"
+    }
+  ],
+  "relations": [
+    {
+      "type": "BELONGS_TO",
+      "from": "company_229640",
+      "to": "industry_electric_power_cable",
+      "evidence": "LS에코에너지는 자회사인 LS-VINA Cable & System Joint Stock Co.가 전력케이블(HV, MV, LV) 소재(Cu-Rod, Al-Rod 등)을 생산",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_229640",
+      "to": "industry_communication_cable",
+      "evidence": "LS에코에너지는 자회사인 LS Cable & System Vietnam Co., Ltd가 통신케이블(UTP, 광케이블)을 생산",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_229640",
+      "to": "industry_copper",
+      "evidence": "LS에코에너지는 자회사 LS-VINA Cable & System Joint Stock Co.가 구리(Cu-Rod) 소재를 생산",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "BELONGS_TO",
+      "from": "company_229640",
+      "to": "industry_aluminum",
+      "evidence": "LS에코에너지는 자회사 LS-VINA Cable & System Joint Stock Co.가 알루미늄(Al-Rod) 소재를 생산",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PRODUCES",
+      "from": "company_229640",
+      "to": "product_service_busduct",
+      "evidence": "LS Cable & System Vietnam Co., Ltd는 버스덕트(Busduct) 생산 등의 사업을 영위",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "product_service_busduct",
+      "to": "industry_electric_power_cable",
+      "evidence": "버스덕트는 전력케이블 사업과 함께 LS Cable & System Vietnam Co., Ltd의 주요 사업임",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_copper",
+      "to": "industry_nonferrous_metal",
+      "evidence": "Industry taxonomy: 구리/동 is part of 비철금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_nonferrous_metal",
+      "to": "industry_steel_metal",
+      "evidence": "Industry taxonomy: 비철금속 is part of 철강금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "PART_OF",
+      "from": "industry_aluminum",
+      "to": "industry_nonferrous_metal",
+      "evidence": "Industry taxonomy: 알루미늄 is part of 비철금속.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_construction_infrastructure",
+      "evidence": "Industry taxonomy: 철강금속 is related to 건설인프라.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    },
+    {
+      "type": "RELATED_TO",
+      "from": "industry_steel_metal",
+      "to": "industry_shipbuilding_marine",
+      "evidence": "Industry taxonomy: 철강금속 is related to 조선/해양.",
+      "date": "2026-03-16",
+      "evidence_source_id": "dart_229640_business_segments_20260316001365",
+      "evidence_source_type": "dart",
+      "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260316001365",
+      "evidence_published_at": "2026-03-16"
+    }
+  ]
+}

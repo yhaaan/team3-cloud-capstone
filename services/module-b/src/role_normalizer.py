@@ -66,6 +66,7 @@ def normalize_graph_roles(
     if company_whitelist is not None:
         canonicalize_company_entities(graph_data, company_whitelist)
         add_dart_executive_entities(graph_data, company_whitelist, source_doc)
+        add_dart_major_shareholder_relations(graph_data, company_whitelist, source_doc)
 
     graph_data["entities"] = deduplicate_entities_by_id(graph_data.get("entities", []))
     if company_whitelist is not None:
@@ -400,6 +401,107 @@ def add_dart_executive_entities(
             graph_data,
             relation,
         )
+
+
+def add_dart_major_shareholder_relations(
+    graph_data: dict[str, Any],
+    company_whitelist: CompanyWhitelist,
+    source_doc: dict[str, Any] | None = None,
+) -> None:
+    if not source_doc or get_source_dataset(source_doc) != "major_shareholder_status":
+        return
+
+    records = source_doc.get("normalized_records")
+    if records is None and isinstance(source_doc.get("metadata"), dict):
+        records = source_doc["metadata"].get("normalized_records")
+    if not isinstance(records, list):
+        return
+
+    target_company = company_whitelist.find(
+        name=str(source_doc.get("company_name") or ""),
+        stock_code=str(source_doc.get("stock_code") or ""),
+    )
+    if target_company is None:
+        return
+
+    target_company_id = build_company_id(target_company.stock_code)
+    ensure_entity(
+        graph_data,
+        {
+            "id": target_company_id,
+            "type": "Company",
+            "name": target_company.company_name,
+            "stock_code": normalize_stock_code(target_company.stock_code),
+        },
+    )
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+
+        shareholder_name = string_value(record.get("nm")).strip()
+        if not shareholder_name or is_total_shareholder_record(shareholder_name):
+            continue
+
+        shareholder_company = company_whitelist.find(name=shareholder_name)
+        if shareholder_company is None:
+            continue
+
+        shareholder_company_id = build_company_id(shareholder_company.stock_code)
+        if shareholder_company_id == target_company_id:
+            continue
+
+        ensure_entity(
+            graph_data,
+            {
+                "id": shareholder_company_id,
+                "type": "Company",
+                "name": shareholder_company.company_name,
+                "stock_code": normalize_stock_code(shareholder_company.stock_code),
+            },
+        )
+
+        relation = {
+            "type": "INVESTS_IN",
+            "from": shareholder_company_id,
+            "to": target_company_id,
+            "evidence": build_major_shareholder_evidence(record, target_company.company_name),
+        }
+        add_if_present(relation, "major_shareholder_relation", record.get("relate"))
+        add_if_present(relation, "shares_held", record.get("trmend_posesn_stock_co"))
+        add_if_present(relation, "ownership_ratio", record.get("trmend_posesn_stock_qota_rt"))
+        add_if_present(relation, "settlement_date", normalize_korean_date(record.get("stlm_dt")))
+        ensure_relation(graph_data, relation)
+
+
+def get_source_dataset(source_doc: dict[str, Any]) -> str:
+    dataset = str(source_doc.get("dataset") or "")
+    if not dataset and isinstance(source_doc.get("metadata"), dict):
+        dataset = str(source_doc["metadata"].get("dataset") or "")
+    return dataset
+
+
+def is_total_shareholder_record(name: str) -> bool:
+    normalized = re.sub(r"\s+", "", name).strip()
+    return normalized in {"\uacc4", "\ud569\uacc4", "total", "sum"}
+
+
+def build_major_shareholder_evidence(record: dict[str, Any], target_company_name: str) -> str:
+    shareholder_name = string_value(record.get("nm")).strip()
+    relation = string_value(record.get("relate")).strip()
+    shares = string_value(record.get("trmend_posesn_stock_co")).strip()
+    ratio = string_value(record.get("trmend_posesn_stock_qota_rt")).strip()
+
+    parts = [
+        f"{shareholder_name} is listed as a major shareholder of {target_company_name}",
+    ]
+    if relation and relation != "-":
+        parts.append(f"relation={relation}")
+    if shares and shares != "-":
+        parts.append(f"shares_held={shares}")
+    if ratio and ratio != "-":
+        parts.append(f"ownership_ratio={ratio}%")
+    return ", ".join(parts) + "."
 
 
 def add_person_company_relation_fields(

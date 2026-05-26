@@ -1,0 +1,265 @@
+// node: company_419530
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Company`
+
+:params {"id": "company_419530", "type": "Company", "name": "SAMG엔터", "stock_code": "419530", "description": "3D 애니메이션 제작 및 캐릭터 라이선싱, 글로벌 배급, 완구·F&B 등 머천다이징, OTT, IPTV 플랫폼 운영"}
+
+// node: industry_content_game
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_content_game", "type": "Industry", "name": "게임/콘텐츠"}
+
+// node: industry_media_content
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_media_content", "type": "Industry", "name": "미디어콘텐츠"}
+
+// node: industry_platform_business
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_platform_business", "type": "Industry", "name": "플랫폼사업"}
+
+// node: product_service_character_toys
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_character_toys", "type": "ProductService", "name": "캐릭터 완구"}
+
+// node: product_service_merchandising
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_merchandising", "type": "ProductService", "name": "머천다이징"}
+
+// node: product_service_licensing
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_licensing", "type": "ProductService", "name": "라이선싱"}
+
+// node: product_service_animation_content
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_animation_content", "type": "ProductService", "name": "애니메이션 콘텐츠"}
+
+// node: product_service_offline_theme_park
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_offline_theme_park", "type": "ProductService", "name": "오프라인 테마공간"}
+
+// node: product_service_online_platform
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`ProductService`
+
+:params {"id": "product_service_online_platform", "type": "ProductService", "name": "온라인 플랫폼"}
+
+// node: industry_telecom_media
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_telecom_media", "type": "Industry", "name": "통신/미디어"}
+
+// node: industry_it_software
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_it_software", "type": "Industry", "name": "정보기술/소프트웨어"}
+
+// node: industry_ai
+
+MERGE (n:Entity {id: $id})
+SET n += $properties
+SET n:`Industry`
+
+:params {"id": "industry_ai", "type": "Industry", "name": "인공지능"}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "industry_content_game", "properties": {"evidence": "당사는 2000년에 설립된 1세대 애니메이션 기업으로 콘텐츠 기획 및 제작, 캐릭터 라이선싱 및 머천다이징(MD), 글로벌 배급, 오프라인 상설 매장 및 테마공간 사업 등을 영위", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "industry_media_content", "properties": {"evidence": "자체 캐릭터와 애니메이션 콘텐츠를 기획 및 제작하여 인터넷 동영상 서비스(YouTube, iQiyi, YOUKU, Tencent 등), OTT, IPTV 등 다양한 플랫폼에서 자체 채널을 운영", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: BELONGS_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:BELONGS_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "industry_platform_business", "properties": {"evidence": "인터넷 동영상 서비스(YouTube, iQiyi, YOUKU, Tencent 등), OTT, IPTV 등 다양한 플랫폼에서 자체 채널을 운영하며", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_character_toys", "properties": {"evidence": "애니메이션에 직접 노출되는 캐릭터, 로봇, 레인저 등 당사가 직접 설계, 개발한 캐릭터 완구 등플라스틱 변신로봇, 레인저 가면세트, 피규어, 플레이세트, 역할놀이, 봉제인형, 패션돌 완구 등", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_merchandising", "properties": {"evidence": "해당 캐릭터와 브랜드를 활용한 완구, F&B, 굿즈 등 머천다이징(MD), 라이선싱", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_licensing", "properties": {"evidence": "영상판매 매출 및 캐릭터를 활용한 패션, 완구, 출판, 문구팬시, 의약외품 등 다양한 상품의 로열티 매출", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_animation_content", "properties": {"evidence": "콘텐츠 기획 및 제작, 캐릭터 라이선싱 및 머천다이징(MD), 글로벌 배급, 오프라인 상설 매장 및 테마공간 사업 등을 영위", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_offline_theme_park", "properties": {"evidence": "2023년부터 보유 IP를 기반으로 한 오프라인 테마공간 사업을 추진하여 '티니핑랜드 구미', '티니핑월드 in 판교'를 오픈", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PRODUCES
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PRODUCES]->(target)
+SET r += $properties
+
+:params {"from_id": "company_419530", "to_id": "product_service_online_platform", "properties": {"evidence": "2025년 12월, IP 브랜드화 전략의 일환으로 신규 브랜드 '더티니핑(THE TEENIEPING)'을 런칭하며 온라인 플랫폼 개편과 오프라인 상설 매장 '더티니핑 성수'를 오픈", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_media_content", "to_id": "industry_content_game", "properties": {"evidence": "콘텐츠 기획 및 제작, 캐릭터 라이선싱 및 머천다이징(MD), 글로벌 배급, 오프라인 상설 매장 및 테마공간 사업 등을 영위하며 미디어콘텐츠와 게임/콘텐츠 산업은 모두 콘텐츠 중심임", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_media_content", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 미디어콘텐츠 is part of 통신/미디어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: PART_OF
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:PART_OF]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_platform_business", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 플랫폼사업 is part of 정보기술/소프트웨어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 통신/미디어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_content_game", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 게임/콘텐츠 is related to 정보기술/소프트웨어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_it_software", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 정보기술/소프트웨어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_telecom_media", "to_id": "industry_content_game", "properties": {"evidence": "Industry taxonomy: 통신/미디어 is related to 게임/콘텐츠.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_ai", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 인공지능.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
+
+// relation: RELATED_TO
+
+MATCH (source:Entity {id: $from_id})
+MATCH (target:Entity {id: $to_id})
+MERGE (source)-[r:RELATED_TO]->(target)
+SET r += $properties
+
+:params {"from_id": "industry_it_software", "to_id": "industry_telecom_media", "properties": {"evidence": "Industry taxonomy: 정보기술/소프트웨어 is related to 통신/미디어.", "date": "2026-03-23", "evidence_source_id": "dart_419530_business_segments_20260323000799", "evidence_source_type": "dart", "evidence_source_url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260323000799", "evidence_published_at": "2026-03-23"}}
