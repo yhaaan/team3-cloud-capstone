@@ -34,8 +34,9 @@ class LLMManager:
         # )
 
         # 질문 재구성용 llm 체인 정의
+        self.query_rewrite_llm = self.gpt4omini.with_structured_output(QueryRewriteResponse) # 응답 형태 지정
         self.query_rewrite_prompt = ChatPromptTemplate.from_template(QUERY_REWRITE_PROMPT)
-        self.query_rewrite_chain = self.query_rewrite_prompt | self.gpt4omini
+        self.query_rewrite_chain = self.query_rewrite_prompt | self.query_rewrite_llm
 
         # 엔티티 추출용 llm 체인 정의
         self.entity_extraction_llm = self.gpt4omini.with_structured_output(EnitityExtractionResponse) # 응답 형태 지정
@@ -63,12 +64,11 @@ class LLMManager:
 
 
     # 질문 재구성 함수
-    def rewrite_query(self, query: str, history_context: str = "") -> str:
-        response = self.query_rewrite_chain.invoke({
+    def rewrite_query(self, query: str, history_context: str = "") -> QueryRewriteResponse:
+        return self.query_rewrite_chain.invoke({
             "user_query": query,
             "history_context": history_context
         })
-        return response.content
 
 
     # 엔티티 추출 함수
@@ -97,11 +97,12 @@ class LLMManager:
     
 
     # 최종 답변 생성 함수
-    def generate_final_response(self, query: str, vector_context: str, graph_context: str, history_context: str = "") -> str:
+    def generate_final_response(self, query: str, vector_context: str, graph_context: str, cypher_query_purposes = "", history_context: str = "") -> str:
         response = self.final_response_genration_chain.invoke({
             "user_query": query,
             "vector_context": vector_context,
             "graph_context": graph_context,
+            "cypher_query_purposes": cypher_query_purposes,
             "history_context": history_context
         })
         return response.content

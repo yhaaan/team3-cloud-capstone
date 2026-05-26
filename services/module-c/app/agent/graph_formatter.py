@@ -13,8 +13,6 @@ class GraphFormatter:
         # 1. 노드 정보 수집
         for path_data in graph_structured_data:
             nodes_to_process = []
-            if 'n' in path_data and path_data['n']: nodes_to_process.append(path_data['n'])
-            if 'm' in path_data and path_data['m']: nodes_to_process.append(path_data['m'])
             if 'path' in path_data and isinstance(path_data['path'], list):
                 nodes_to_process.extend(path_data['path'])
 

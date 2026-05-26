@@ -36,6 +36,8 @@ class GraphState(TypedDict):
     how: str                            # 그래프 종류
     center_id: str                    # 구조화 데이터 중앙 노드 이름
     sub_queries: List[SubQuery]              # Query Planner가 이번 루프에 뽑아낸 하위 질문 리스트
+    cypher_query_purposes: str          # 사이퍼 쿼리 목적들 텍스트
+    need_history_to_answer: bool        # 현재 질문에 답변하기 위해 이전 기록 맥락이 필요한지 여부
 
 
 class GraphAgent:
@@ -44,7 +46,6 @@ class GraphAgent:
         self.retriever = KnowledgeRetriever()
         self.formatter = GraphFormatter()
         self.app = self._build_graph()
-
         self.global_alias_map: Dict[str, Any] = {}
     
 
@@ -137,10 +138,12 @@ class GraphAgent:
         result = self.llm.rewrite_query(user_query, recent_history_str)
 
         print("[질문 재구성 완료]")
-        print(f"재구성된 질문: {result}\n")
+        print(f"재구성된 질문: {result.rewirtten_query}")
+        print(f"need_history_to_answer: {result.need_history_to_answer}\n")
         
         return {
-            "query": result
+            "query": result.rewirtten_query,
+            "need_history_to_answer": result.need_history_to_answer
         }
     
 
@@ -168,7 +171,8 @@ class GraphAgent:
             "error_msg": None
         }
     
-
+    
+    # 엔티티 정규화
     def normalize_entities(self, state: GraphState):
         entities = state.get("entities")
         normalized_companies = set()
@@ -276,6 +280,7 @@ class GraphAgent:
         all_graph_structured_data = []
         graph_context_pieces = []
         final_center_id = ""
+        formatted_purposes_str = ""
 
         if cypher_queries:
             # 깔끔하게 쪼개진 그래프 전용 메서드 호출 (가짜 query 문장 필요 없음!)
@@ -291,17 +296,21 @@ class GraphAgent:
                     final_center_id = g_result.center_id
                 if g_result.graph_context:
                     graph_context_pieces.append(g_result.graph_context)
+                if g_result.cypher_query_purposes:
+                    formatted_purposes_str = "\n".join([f"* {p}" for p in g_result.cypher_query_purposes])
 
         graph_context = "\n\n=========================================\n\n".join(graph_context_pieces) if graph_context_pieces else "조회된 그래프 데이터 없음"
         
         print('[그래프 DB 탐색 결과]')
         print(graph_context)
         print('\n')
+        
 
         return {
             "graph_context": graph_context,
             "graph_structured_data": all_graph_structured_data,
-            "center_id": final_center_id
+            "center_id": final_center_id,
+            "cypher_query_purposes": formatted_purposes_str
         }
 
 
@@ -338,15 +347,27 @@ class GraphAgent:
         user_query = state.get("query")
         vector_context = state.get("vector_context")
         graph_context = state.get("graph_context")
-        recent_history_str = state.get("recent_history_str")
+        cypher_query_purposes = state.get("cypher_query_purposes", "")
+
+        need_history_to_answer = state.get("need_history_to_answer")
+        if need_history_to_answer:
+            recent_history_str = state.get("recent_history_str")
+        else:
+            recent_history_str = ""
 
         # 에러가 없으면 정상적으로 LLM 호출
         final_response = self.llm.generate_final_response(
             query=user_query,
             vector_context=vector_context,
             graph_context=graph_context,
+            cypher_query_purposes=cypher_query_purposes,
             history_context=recent_history_str
         )
+
+        # 🌟 [핵심 수정] cypher_query_purposes를 문자열로 포맷팅하여 final_response 뒤에 붙이기
+        if cypher_query_purposes:
+            # 기존 답변 맨 아래에 구분선과 함께 추가
+            final_response += f"\n\n---\n📊 **연관 그래프 탐색 목적**\n{cypher_query_purposes}"
         
         return {"final_response": final_response}
     
