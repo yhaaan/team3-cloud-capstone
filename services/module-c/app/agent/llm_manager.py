@@ -23,15 +23,9 @@ class LLMManager:
             model="gpt-4o-mini",
             api_key=Config.OPENAI_API_KEY,
             temperature=0,
+            top_p=0.01,
             seed=42 # 똑같은 질문에 대해 똑같은 답변을 내기 위해 고정
         )
-
-        # # 추론 특화, 내부 추론(CoT) 과정을 거친 후 답변, 추론 시간에 따라 약간의 지연 발생 가능 -> 질문 재구성, 엔티티 추출, 사이퍼 쿼리 생성에 사용(틀리면 안되는 논리적인 작업)
-        # self.gpto4mini = ChatOpenAI(
-        #     model="o4-mini",
-        #     api_key=Config.OPENAI_API_KEY,
-        #     seed=42 # 똑같은 질문에 대해 똑같은 답변을 내기 위해 고정
-        # )
 
         # 질문 재구성용 llm 체인 정의
         self.query_rewrite_llm = self.gpt4omini.with_structured_output(QueryRewriteResponse) # 응답 형태 지정
@@ -42,11 +36,6 @@ class LLMManager:
         self.entity_extraction_llm = self.gpt4omini.with_structured_output(EnitityExtractionResponse) # 응답 형태 지정
         self.entity_extraction_prompt = ChatPromptTemplate.from_template(ENTITY_EXTRACTION_PROMPT)
         self.entity_extraction_chain = self.entity_extraction_prompt | self.entity_extraction_llm
-
-        # # 엔티티 정규화용 llm 체인 정의
-        # self.entity_normalization_llm = self.gpt4omini.with_structured_output(EnitityNormalizationResponse) # 응답 형태 지정
-        # self.entity_normalization_prompt = ChatPromptTemplate.from_template(ENTITY_NORMALIZATION_PROMPT)
-        # self.entity_normalization_chain = self.entity_normalization_prompt | self.entity_normalization_llm
 
         # 하위 쿼리 생성용 llm 체인 정의
         self.query_planner_llm = self.gpt4omini.with_structured_output(QueryPlanResponse) # 응답 형태 지정
