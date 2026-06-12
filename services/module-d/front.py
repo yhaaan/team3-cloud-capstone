@@ -4,6 +4,8 @@ import streamlit as st
 import requests
 import pandas as pd
 import plotly.express as px
+import uuid
+import copy
 
 st.set_page_config(
     page_title="클라우드",
@@ -12,11 +14,8 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Backend =================
 BACKEND_URL = "http://127.0.0.1:8000/chat"
-# Backend =================
 
-# Session State ===========
 if "history" not in st.session_state:
     st.session_state.history = []
 
@@ -25,9 +24,14 @@ if "messages" not in st.session_state:
 
 if "rag_on" not in st.session_state:
     st.session_state.rag_on = False
-# Session State ===========
 
-# Graph Colors ============
+if "scroll_to_top" not in st.session_state:
+    st.session_state.scroll_to_top = False
+
+if "scroll_target_id" not in st.session_state:
+    st.session_state.scroll_target_id = None
+
+
 PASTEL_COLORS = [
     {"background": "#e8f0ff", "border": "#7aa7ff"},
     {"background": "#e8fff1", "border": "#67d391"},
@@ -39,10 +43,8 @@ PASTEL_COLORS = [
 
 PLOTLY_COLORS = [color["background"] for color in PASTEL_COLORS]
 PLOTLY_LINE_COLORS = [color["border"] for color in PASTEL_COLORS]
-# Graph Colors ============
 
 
-# PyVis Graph Function ====
 def create_network_graph(graph_data, how):
     is_center_graph = how == "netcenter"
 
@@ -102,12 +104,8 @@ def create_network_graph(graph_data, how):
                 "bold": True
             },
             borderWidth=border_width,
-            widthConstraint={
-                "minimum": min_width
-            },
-            heightConstraint={
-                "minimum": min_height
-            },
+            widthConstraint={"minimum": min_width},
+            heightConstraint={"minimum": min_height},
             title=title
         )
 
@@ -210,10 +208,8 @@ def create_network_graph(graph_data, how):
 
     html = html.replace("</body>", search_script + "</body>")
     return html
-# PyVis Graph Function ====
 
 
-# Plotly Graph Function ===
 def create_plotly_graph(graph_data, how):
     title = graph_data.get("title", "")
 
@@ -324,12 +320,7 @@ def create_plotly_graph(graph_data, how):
 
     fig.update_layout(
         height=520,
-        margin=dict(
-            l=30,
-            r=30,
-            t=60,
-            b=30
-        ),
+        margin=dict(l=30, r=30, t=60, b=30),
         paper_bgcolor="white",
         plot_bgcolor="white",
         font=dict(
@@ -357,23 +348,21 @@ def create_plotly_graph(graph_data, how):
         )
 
     return fig
-# Plotly Graph Function ===
 
-# CSS 제거 ================
+
 st.markdown("""
 <style>
     #MainMenu {
         visibility: hidden;
     }
+
     .stAppDeployButton {
         visibility: hidden;
     }
 </style>
 """, unsafe_allow_html=True)
-# CSS 제거 ================
 
 
-# RAG Toggle ==============
 st.markdown('<div class="rag-btn">', unsafe_allow_html=True)
 clicked = st.button("", key="rag_toggle_btn")
 st.markdown('</div>', unsafe_allow_html=True)
@@ -383,6 +372,7 @@ if clicked:
     st.rerun()
 
 state_class = "on" if st.session_state.rag_on else "off"
+
 
 st.markdown(f"""
 <style>
@@ -469,10 +459,8 @@ st.markdown(f"""
     }}
 </style>
 """, unsafe_allow_html=True)
-# RAG Toggle ==============
 
 
-# CSS =====================
 st.markdown(f"""
 <style>
 .stApp {{
@@ -539,6 +527,7 @@ st.markdown(f"""
     margin-top: 24px;
     font-size: 16px;
     color: #323232;
+    scroll-margin-top: 120px;
 }}
 
 .answer-box {{
@@ -752,16 +741,16 @@ body:has(.question-box) [data-testid="stChatInput"] {{
     <div class="rag-text">RAG</div>
 </div>
 """, unsafe_allow_html=True)
-# CSS =====================
 
 
-# Sidebar =================
 with st.sidebar:
     st.markdown("## 클라우드")
     st.markdown("---")
 
     if st.button("새 질문"):
         st.session_state.messages = []
+        st.session_state.scroll_to_top = True
+        st.session_state.scroll_target_id = None
         st.rerun()
 
     st.markdown("### 이전 검색 기록")
@@ -769,18 +758,63 @@ with st.sidebar:
     if len(st.session_state.history) == 0:
         st.caption("아직 질문 기록이 없습니다.")
     else:
-        for idx, item in enumerate(st.session_state.history):
+        for item in st.session_state.history:
             q = item["question"]
             short_q = q if len(q) <= 24 else q[:24] + "..."
 
-            if st.button(short_q, key=f"history_{idx}"):
-                st.session_state.messages = item["messages"]
-                st.session_state.rag_on = item.get("rag_on", st.session_state.rag_on)
-                st.rerun()
-# Sidebar =================
+            history_id = item.get("id")
 
-# Main UI =================
+            if history_id is None:
+                history_id = str(uuid.uuid4())
+                item["id"] = history_id
+
+            if st.button(
+                short_q,
+                key=f"history_{history_id}"
+            ):
+                st.session_state.messages = copy.deepcopy(
+                    item["messages"]
+                )
+
+                st.session_state.rag_on = item.get(
+                    "rag_on",
+                    st.session_state.rag_on
+                )
+
+                st.session_state.scroll_target_id = item.get("target_id")
+                st.session_state.scroll_to_top = False
+
+                st.rerun()
+
+
 is_chat_started = len(st.session_state.messages) > 0
+
+if st.session_state.scroll_to_top:
+    components.html(
+        """
+        <script>
+        const scrollTop = () => {
+            window.parent.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+
+            window.parent.document.documentElement.scrollTop = 0;
+            window.parent.document.body.scrollTop = 0;
+        };
+
+        scrollTop();
+
+        setTimeout(scrollTop, 50);
+        setTimeout(scrollTop, 150);
+        setTimeout(scrollTop, 300);
+        </script>
+        """,
+        height=0
+    )
+
+    st.session_state.scroll_to_top = False
+
 
 if not is_chat_started:
     st.markdown(
@@ -810,26 +844,20 @@ for msg in st.session_state.messages:
 
     if msg_type == "text":
         if msg["role"] == "user":
-            # 문자열 포맷팅 안에서 HTML 태그와 마kp다운 컨텐츠를 결합합니다.
+            msg_id = msg.get("msg_id", "")
+
             st.markdown(
-                f'<div class="question-box">{msg["content"]}</div>',
+                f'<div id="msg-{msg_id}" class="question-box">{msg["content"]}</div>',
                 unsafe_allow_html=True
             )
         else:
-            # [핵심] replace(chr(10), "<br>")를 절대 쓰지 마세요!
-            # HTML 가두리 안에서도 마크다운이 터지도록 줄바꿈(\n) 문자열 그대로 박스 안에 주입합니다.
             st.markdown(
                 f'<div class="answer-box">\n\n{msg["content"]}\n\n</div>',
                 unsafe_allow_html=True
             )
-            
 
     elif msg_type == "network":
         components.html(msg["content"], height=680)
-        st.markdown(
-            '</div>',
-            unsafe_allow_html=True
-        )
 
     elif msg_type == "plotly":
         st.plotly_chart(
@@ -838,14 +866,49 @@ for msg in st.session_state.messages:
         )
 
 
-# Chat Input ==============
+if st.session_state.scroll_target_id:
+    target_id = st.session_state.scroll_target_id
+
+    components.html(
+        f"""
+        <script>
+        const scrollToTarget = () => {{
+            const el = window.parent.document.getElementById("msg-{target_id}");
+
+            if (el) {{
+                el.scrollIntoView({{
+                    behavior: "instant",
+                    block: "start"
+                }});
+
+                window.parent.scrollBy(0, -100);
+            }}
+        }};
+
+        scrollToTarget();
+
+        setTimeout(scrollToTarget, 50);
+        setTimeout(scrollToTarget, 150);
+        setTimeout(scrollToTarget, 300);
+        setTimeout(scrollToTarget, 500);
+        </script>
+        """,
+        height=0
+    )
+
+    st.session_state.scroll_target_id = None
+
+
 question = st.chat_input("질문을 입력하세요")
 
 if question:
+    user_msg_id = str(uuid.uuid4())
+
     st.session_state.messages.append({
         "role": "user",
         "type": "text",
-        "content": question
+        "content": question,
+        "msg_id": user_msg_id
     })
 
     with st.spinner("답변을 생성하는 중입니다..."):
@@ -932,17 +995,23 @@ if question:
     st.session_state.messages = st.session_state.messages[-20:]
 
     st.session_state.history.insert(0, {
+        "id": str(uuid.uuid4()),
         "question": question,
-        "messages": st.session_state.messages.copy(),
-        "rag_on": st.session_state.rag_on
+        "messages": copy.deepcopy(
+            st.session_state.messages
+        ),
+        "rag_on": st.session_state.rag_on,
+        "target_id": user_msg_id
     })
 
     st.session_state.history = st.session_state.history[:10]
 
+    st.session_state.scroll_target_id = user_msg_id
+    st.session_state.scroll_to_top = False
+
     st.rerun()
 
 
-# Footer ==================
 st.markdown(
     '<div class="fixed-footer">기업 관계 분석 전문 서비스입니다. 관련 질문을 입력해 주세요.</div>',
     unsafe_allow_html=True
