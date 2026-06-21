@@ -79,7 +79,7 @@ async def chat(request: ChatRequest):
         ]
 
         # 최종 답변 생성
-        response = gpt4o.invoke(messages)
+        response = await gpt4o.ainvoke(messages)
 
         return ChatResponse(
             answer=response.content,

@@ -8,7 +8,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from app.agent.db_handler import VectorHandler, Neo4jHandler 
 from app.schemas import *
 from app.config import Config
-from app.utils import get_embeddings
 
 
 class DBSearchResponse(BaseModel):
@@ -51,22 +50,22 @@ class KnowledgeRetriever:
             return False
 
 
-    # 🟢 1. 순수 벡터 DB 탐색 메서드
-    def get_vector_context(self, query: str, search_filter: Optional[SearchFilter] = None) -> str:
+    # 순수 벡터 DB 탐색 메서드
+    async def get_vector_context(self, query: str, search_filter: Optional[SearchFilter] = None) -> str:
         """오직 Chroma DB에서 텍스트 청크만 검색하여 컨텍스트 문자열 반환"""
         try:
-            vector_search_result = self.chroma.search_vector_db(query, search_filter=search_filter)
+            vector_search_result = await self.chroma.search_vector_db(query, search_filter=search_filter)
             return vector_search_result if vector_search_result else "조회된 벡터 데이터 없음"
         except Exception as e:
             # 개별 에러 로깅 처리
             print(f"[Vector DB Error] {e}")
             return f"벡터 DB 조회 중 에러 발생: {str(e)}"
 
-    # 🔵 2. 순수 그래프 DB 탐색 메서드
-    def get_graph_context(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
+    # 순수 그래프 DB 탐색 메서드
+    async def get_graph_context(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
         """오직 Neo4j에서 Cypher 쿼리를 실행하여 구조화 데이터 및 텍스트 반환"""
         try:
-            graph_search_result = self.neo4j.search_graph_db(cypher_queries, center_entity_name)
+            graph_search_result = await self.neo4j.search_graph_db(cypher_queries, center_entity_name)
             return graph_search_result
         except Exception as e:
             print(f"[Graph DB Error] {e}")
