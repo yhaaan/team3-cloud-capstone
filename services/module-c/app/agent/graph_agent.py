@@ -122,7 +122,7 @@ class GraphAgent:
             "recent_history_str": recent_history_str
         }
         self.global_alias_map = global_alias_map
-        result = self.app.invoke(inputs)
+        result = await self.app.ainvoke(inputs)
         return ChatResponse(
             answer=result.get("final_response"),
             how=result.get("how"),
@@ -131,11 +131,11 @@ class GraphAgent:
     
 
     # 질문 재구성
-    def rewrite_query(self, state: GraphState):
+    async def rewrite_query(self, state: GraphState):
         user_query = state.get("query")
         recent_history_str = state.get("recent_history_str")
         
-        result = self.llm.rewrite_query(user_query, recent_history_str)
+        result = await self.llm.rewrite_query(user_query, recent_history_str)
 
         print("[질문 재구성 완료]")
         print(f"재구성된 질문: {result.rewirtten_query}")
@@ -148,11 +148,20 @@ class GraphAgent:
     
 
     # 엔티티 추출
-    def extract_entity(self, state: GraphState):
+    async def extract_entity(self, state: GraphState):
         user_query = state.get("query")
         
         # LLM으로부터 EntityExtractionResponse 객체 수신
-        result = self.llm.extract_entities(user_query)
+        result = await self.llm.extract_entities(user_query)
+
+        entities = result.named_entities
+        # 4개 리스트가 모조리 비어있는지 체크
+        is_all_empty = not any([entities.companies, entities.industries, entities.affiliate_groups, entities.people])
+
+        # LLM이 1순위, 2순위 에러를 안 뱉었는데 결과물까지 싹 비어있다면 코드에서 에러 메시지 채우기
+        if is_all_empty and result.error_msg is None:
+            result.error_msg = "분석 대상(기업, 인물, 산업 등)을 포함하여 다시 질문해 주세요."
+            print("추출된 엔티티 X\n")
 
         print("[엔티티 추출 완료]")
         print(f"추출된 엔티티: {result}\n")
@@ -173,7 +182,7 @@ class GraphAgent:
     
     
     # 엔티티 정규화
-    def normalize_entities(self, state: GraphState):
+    async def normalize_entities(self, state: GraphState):
         entities = state.get("entities")
         normalized_companies = set()
         normalized_groups = set()
@@ -200,24 +209,24 @@ class GraphAgent:
         return {"entities": entities}
     
 
-    def _load_compact_json(self, file_name: str) -> str:
-        file_path = f"{self.base_path}/{file_name}"
-        if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            return json.dumps(data, ensure_ascii=False)
-        return "[]"
+    # def _load_compact_json(self, file_name: str) -> str:
+    #     file_path = f"{self.base_path}/{file_name}"
+    #     if os.path.exists(file_path):
+    #         with open(file_path, 'r', encoding='utf-8') as f:
+    #             data = json.load(f)
+    #         return json.dumps(data, ensure_ascii=False)
+    #     return "[]"
     
 
     # 하위 질문 생성(플랜)
-    def plan_queries(self, state: GraphState):
+    async def plan_queries(self, state: GraphState):
         """
         맥락 복원 및 단문 분해를 수행하는 통합 플래너 노드
         """
         user_query = state.get("query")
         extracted_company_names = state.get("entities").companies
         
-        result = self.llm.generate_sub_queries(user_query, extracted_company_names)
+        result = await self.llm.generate_sub_queries(user_query, extracted_company_names)
         sub_queries = result.sub_queries
         # 필터링 조건을 제외하고 오직 '순수 하위 질문 문자열'만 리스트로 추출
         pure_sub_queries: List[str] = [plan.query for plan in sub_queries]
@@ -230,11 +239,11 @@ class GraphAgent:
 
 
     # 사이퍼 쿼리 생성
-    def generate_cypher(self, state: GraphState):
+    async def generate_cypher(self, state: GraphState):
         user_query = state.get("query")
         entities = state.get("entities")
 
-        result = self.llm.generate_cypher(user_query, entities)
+        result = await self.llm.generate_cypher(user_query, entities)
 
         print("[사이퍼 쿼리 생성 완료]")
         print(f"사이퍼 쿼리 생성 결과: {result}\n")
@@ -244,7 +253,7 @@ class GraphAgent:
         }
 
 
-    def search_vector_db(self, state: GraphState):
+    async def search_vector_db(self, state: GraphState):
         sub_queries: List[SubQuery] = state.get("sub_queries", []) or []
         print(f"\n🔎 [벡터 트랙] 총 {len(sub_queries)}개 하위 쿼리 탐색 시작")
 
@@ -252,7 +261,7 @@ class GraphAgent:
 
         for idx, plan in enumerate(sub_queries):
             # 깔끔하게 쪼개진 벡터 전용 메서드 호출
-            vector_res_text = self.retriever.get_vector_context(
+            vector_res_text = await self.retriever.get_vector_context(
                 query=plan.query,
                 search_filter=plan.filter
             )
@@ -270,7 +279,7 @@ class GraphAgent:
         return {"vector_context": vector_context}
     
 
-    def search_graph_db(self, state: GraphState):
+    async def search_graph_db(self, state: GraphState):
         cypher_res: CypherGenerationResponse = state.get("cypher_generation_result")
         cypher_queries = cypher_res.cypher_queries if cypher_res else []
         center_entity_name = cypher_res.center_entity_name if cypher_res else ""
@@ -284,7 +293,7 @@ class GraphAgent:
 
         if cypher_queries:
             # 깔끔하게 쪼개진 그래프 전용 메서드 호출 (가짜 query 문장 필요 없음!)
-            g_result = self.retriever.get_graph_context(
+            g_result = await self.retriever.get_graph_context(
                 cypher_queries=cypher_queries,
                 center_entity_name=center_entity_name
             )
@@ -315,7 +324,7 @@ class GraphAgent:
 
 
     # 그래프 DB 탐색 결과 구조화
-    def format_graph(self, state: GraphState):
+    async def format_graph(self, state: GraphState):
         graph_structured_data = state.get("graph_structured_data")
         center_id = state.get("center_id")
         result = self.formatter.format_for_visualization(graph_structured_data, center_id)
@@ -336,7 +345,7 @@ class GraphAgent:
     
 
     # 최종 답변 생성
-    def generate_answer(self, state: GraphState):
+    async def generate_answer(self, state: GraphState):
         # 이전 단계(추출, 쿼리 실행 등)에서 에러가 있었는지 확인
         error_msg = state.get("error_msg")
         
@@ -356,7 +365,7 @@ class GraphAgent:
             recent_history_str = ""
 
         # 에러가 없으면 정상적으로 LLM 호출
-        final_response = self.llm.generate_final_response(
+        final_response = await self.llm.generate_final_response(
             query=user_query,
             vector_context=vector_context,
             graph_context=graph_context,

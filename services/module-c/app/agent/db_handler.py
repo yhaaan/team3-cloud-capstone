@@ -1,3 +1,4 @@
+import asyncio
 import re
 from typing import List, Optional, Union
 from neo4j import Record
@@ -38,61 +39,71 @@ class Neo4jHandler():
 
 
     # 그래프 DB 탐색 함수
-    def search_graph_db(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
+    async def search_graph_db(self, cypher_queries: List[CypherQuery], center_entity_name: str) -> GraphDBSearchResponse:
         try:
             # 1. 단일 문자열 쿼리가 들어온 경우 리스트로 변환하여 처리 로직 통일
             if isinstance(cypher_queries, str):
                 cypher_queries = [cypher_queries]
 
-            all_records = []
-            success_count = 0
-            # 쿼리별 목적 리스트를 담아둘 리스트
-            cypher_query_purposes = []
+            # db 관련 동기 로직 모은 함수
+            def _sync_db_call():
+                all_records = []
+                success_count = 0
+                # 쿼리별 목적 리스트를 담아둘 리스트
+                cypher_query_purposes = []
 
-            with self.graph_db._driver.session() as session:
-                # 2. 리스트에 담긴 쿼리를 하나씩 순회하며 실행
-                for idx, q_obj in enumerate(cypher_queries):
-                    # [수정] 쿼리 객체에서 데이터 추출
-                    query = q_obj.cypher_query
-                    cypher_query_purposes.append(q_obj.purpose)
+                with self.graph_db._driver.session() as session:
+                    # 2. 리스트에 담긴 쿼리를 하나씩 순회하며 실행
+                    for idx, q_obj in enumerate(cypher_queries):
+                        # [수정] 쿼리 객체에서 데이터 추출
+                        query = q_obj.cypher_query
+                        cypher_query_purposes.append(q_obj.purpose)
 
-                    # 빈 문자열 등 유효하지 않은 쿼리는 스킵
-                    if not query or not query.strip():
-                        continue
-                    
-                    # 🌟 [핵심 수정] 개별 쿼리 실행을 try-except로 감싸서 독립성 보장
-                    try:
-                        result = session.run(query)
-                        records = list(result)
+                        # 빈 문자열 등 유효하지 않은 쿼리는 스킵
+                        if not query or not query.strip():
+                            continue
                         
-                        # 레코드에 해당 쿼리의 '경력 포함 여부'를 속성으로 박아둠
-                        for record in records:
-                            record._is_main_career_needed = q_obj.need_main_career
+                        # 🌟 [핵심 수정] 개별 쿼리 실행을 try-except로 감싸서 독립성 보장
+                        try:
+                            result = session.run(query)
+                            records = list(result)
+                            
+                            # 레코드에 해당 쿼리의 '경력 포함 여부'를 속성으로 박아둠
+                            for record in records:
+                                record._is_main_career_needed = q_obj.need_main_career
 
-                        all_records.extend(records)
-                        success_count += 1
-                    except Exception as q_err:
-                        # 특정 쿼리가 실패하더라도 로그만 남기고 다음 쿼리로 진행
-                        print(f"⚠️ [Cypher 쿼리 {idx+1}번 실행 실패]: {q_err}")
-                        print(f"   ↳ 실패한 쿼리 본문: {query}")
-                        continue
+                            all_records.extend(records)
+                            success_count += 1
+                        except Exception as q_err:
+                            # 특정 쿼리가 실패하더라도 로그만 남기고 다음 쿼리로 진행
+                            print(f"⚠️ [Cypher 쿼리 {idx+1}번 실행 실패]: {q_err}")
+                            print(f"   ↳ 실패한 쿼리 본문: {query}")
+                            continue
                 
-                # 모든 쿼리가 실패했거나 조회 데이터가 아예 없는 경우 방어 코드
-                if not all_records:
-                    print("⚠️ 모든 Cypher 쿼리에서 조회된 그래프 레코드가 없습니다.")
-                    return GraphDBSearchResponse(
-                        center_id="",
-                        graph_context="조회된 그래프 데이터 없음",
-                        graph_structured_data=[],
-                        cypher_query_purposes=[]
-                    )
+                    # 모든 쿼리가 실패했거나 조회 데이터가 아예 없는 경우 방어 코드
+                    if not all_records:
+                        print("⚠️ 모든 Cypher 쿼리에서 조회된 그래프 레코드가 없습니다.")
+                        return None, 0, []
+                    
+                    # 3. 누적된 모든 Record 객체들을 한 번에 처리
+                    graph_data = self.process_data_for_all(all_records, cypher_query_purposes, center_entity_name)
+                    return graph_data, success_count, all_records
+            
+            # 🚀 위에서 정의한 동기 묶음 함수를 asyncio.to_thread로 감싸서 비동기 실행!
+            db_result = await asyncio.to_thread(_sync_db_call)
 
-                # 3. 누적된 모든 Record 객체들을 한 번에 처리
-                graph_data = self.process_data_for_all(all_records, cypher_query_purposes, center_entity_name)
-                
-                self.graph_db_error = None
-                print(f"✔️ 총 {len(cypher_queries)}개 중 {success_count}개의 사이퍼 쿼리 탐색 성공 (레코드 {len(all_records)}개 누적).\n")
-                return graph_data
+            if db_result[0] is None:
+                return GraphDBSearchResponse(
+                    center_id="", 
+                    graph_context="조회된 그래프 데이터 없음",
+                    graph_structured_data=[], 
+                    cypher_query_purposes=[]
+                )
+            
+            graph_data, success_count, all_records = db_result
+            self.graph_db_error = None
+            print(f"✔️ 총 {len(cypher_queries)}개 중 {success_count}개의 사이퍼 쿼리 탐색 성공 (레코드 {len(all_records)}개 누적).\n")
+            return graph_data
                 
         except Exception as e:
             # 드라이버 세션 생성 자체가 실패하거나 process_data_for_all에서 터진 경우 대응
@@ -354,7 +365,7 @@ class VectorHandler():
             return None
     
 
-    def search_vector_db(self, query: str, search_filter: Optional[SearchFilter] = None, window_size: int = 2):
+    async def search_vector_db(self, query: str, search_filter: Optional[SearchFilter] = None, window_size: int = 2):
         try:
             # 1. ChromaDB용 dynamic where 조건절 조립 (포맷은 기존 그대로 유지)
             chroma_where = {}
@@ -377,9 +388,9 @@ class VectorHandler():
             if chroma_where:
                 print(f"   🎯 [Chroma Filter 적용]: {chroma_where}")
                 # LangChain 래퍼 함수 규격에 맞게 filter= 로 매핑
-                initial_docs = self.vector_db.similarity_search(query, k=3, filter=chroma_where)
+                initial_docs = await self.vector_db.asimilarity_search(query, k=3, filter=chroma_where)
             else:
-                initial_docs = self.vector_db.similarity_search(query, k=3)
+                initial_docs = await self.vector_db.asimilarity_search(query, k=3)
                 
             formatted_contexts = []
             
@@ -394,14 +405,14 @@ class VectorHandler():
                     context_indices = list(range(start_idx, end_idx + 1))
                     
                     # window 범위 긁어올 때도 동일 문서 내부에서만 보장
-                    related_chunks = self.vector_db.get(
-                        where={
+                    related_chunks = await asyncio.to_thread(self.vector_db.get,
+                    where={
                             "$and": [
                                 {"doc_id": {"$eq": doc_id}},
                                 {"chunk_index": {"$in": context_indices}}
                             ]
                         }
-                    )
+                    ) 
                     
                     combined_docs = sorted(
                         zip(related_chunks['metadatas'], related_chunks['documents']),

@@ -53,41 +53,41 @@ class LLMManager:
 
 
     # 질문 재구성 함수
-    def rewrite_query(self, query: str, history_context: str = "") -> QueryRewriteResponse:
-        return self.query_rewrite_chain.invoke({
+    async def rewrite_query(self, query: str, history_context: str = "") -> QueryRewriteResponse:
+        return await self.query_rewrite_chain.ainvoke({
             "user_query": query,
             "history_context": history_context
         })
 
 
     # 엔티티 추출 함수
-    def extract_entities(self, query: str) -> EnitityExtractionResponse:
-        return self.entity_extraction_chain.invoke({
+    async def extract_entities(self, query: str) -> EnitityExtractionResponse:
+        return await self.entity_extraction_chain.ainvoke({
             "user_query": query
         })
     
 
     # 하위 쿼리 생성 함수
-    def generate_sub_queries(self, query: str, extracted_company_names: List[str]) -> QueryPlanResponse:
-        return self.query_planner_chain.invoke({
+    async def generate_sub_queries(self, query: str, extracted_company_names: List[str]) -> QueryPlanResponse:
+        return await self.query_planner_chain.ainvoke({
             "user_query": query,
             "extracted_company_names": extracted_company_names
         })
     
 
     # 사이퍼 쿼리 생성 함수
-    def generate_cypher(self, query: str, entity_extraction_data: EntityExtractionData) -> CypherGenerationResponse:
+    async def generate_cypher(self, query: str, entity_extraction_data: EntityExtractionData) -> CypherGenerationResponse:
         # 추출된 엔티티는 json으로 변환하여 프롬포트에 주입
         entity_extraction_json = entity_extraction_data.model_dump_json(indent=2) 
-        return self.cypher_generation_chain.invoke({
+        return await self.cypher_generation_chain.ainvoke({
             "user_query": query,
             "entity_extraction_data": entity_extraction_json
         })
     
 
     # 최종 답변 생성 함수
-    def generate_final_response(self, query: str, vector_context: str, graph_context: str, cypher_query_purposes = "", history_context: str = "") -> str:
-        response = self.final_response_genration_chain.invoke({
+    async def generate_final_response(self, query: str, vector_context: str, graph_context: str, cypher_query_purposes = "", history_context: str = "") -> str:
+        response = await self.final_response_genration_chain.ainvoke({
             "user_query": query,
             "vector_context": vector_context,
             "graph_context": graph_context,

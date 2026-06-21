@@ -63,7 +63,7 @@ class EntityExtractionData(BaseModel):
 # 엔티티 추출 LLM 응답 형태
 class EnitityExtractionResponse(BaseModel):
     named_entities: Optional[EntityExtractionData] = Field(None, description="라벨별로 정확히 분류된 고유명사 객체")
-    error_msg: Optional[str] = Field(default=None, description="예외 처리 우선순위에 따른 에러 메시지")
+    error_msg: Optional[str] = Field(default=None, description="예외 처리 우선순위에 따른 에러 메시지(반드시 named_entities 채우기를 다 하고 최종적으로 판단해서 적을 것)")
 
 
 # # 엔티티 정규화 LLM 응답 형태
