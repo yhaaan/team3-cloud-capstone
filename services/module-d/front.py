@@ -1,3 +1,5 @@
+import json
+
 import streamlit.components.v1 as components
 from pyvis.network import Network
 import streamlit as st
@@ -911,10 +913,14 @@ if question:
         "msg_id": user_msg_id
     })
 
-    with st.spinner("답변을 생성하는 중입니다..."):
+    # 🚀 기존 st.spinner 대신 실시간 상태 갱신을 위해 st.status를 사용합니다.
+    with st.status("시장 공시 및 다차원 기업 정보 분석 엔진 가동 중...", expanded=True) as status:
+        status_text = st.empty()  # 텍스트가 바뀔 공간 확보
+        
         try:
             recent_history = st.session_state.messages[:-1][-8:]
 
+            # 🚀 stream=True 옵션을 반드시 주어 스트리밍 요청으로 받아야 합니다.
             response = requests.post(
                 BACKEND_URL,
                 json={
@@ -922,15 +928,42 @@ if question:
                     "rag_on": st.session_state.rag_on,
                     "recent_history": recent_history
                 },
+                stream=True,  # 🌟 핵심 수정
                 timeout=150
             )
 
             response.raise_for_status()
-            data = response.json()
+            
+            # 초기화용 변수들
+            answer = ""
+            how = None
+            graph_data = None
 
-            answer = data.get("answer", "답변을 받지 못했습니다.")
-            how = data.get("how")
-            graph_data = data.get("graph")
+            # 🚀 백엔드가 한 줄씩 던지는 JSON 청크를 실시간으로 파싱합니다.
+            for line in response.iter_lines():
+                if line:
+                    data = json.loads(line.decode('utf-8'))
+                    
+                    # 1️⃣ 백엔드가 보낸 노드별 상태 메시지면 로딩 바 텍스트 변경
+                    if data.get("type") == "status":
+                        status_text.write(data.get("content"))
+                    
+                    # 2️⃣ 백엔드가 보낸 최종 답변 및 시각화 데이터 세트인 경우
+                    elif data.get("type") == "answer":
+                        # 만약 백엔드에서 통째로 보낸 형식이면 내부 content에서 꺼냄
+                        if isinstance(data.get("content"), dict):
+                            # 🚀 'content' 대신 'answer'로 키값을 수정합니다!
+                            answer = data["content"].get("answer", "답변을 받지 못했습니다.")
+                            how = data["content"].get("how")
+                            graph_data = data["content"].get("graph")
+                        else:
+                            # 딕셔너리가 아닌 일반 문자열(RAG OFF 모드 등) 대응
+                            answer = data.get("content", "답변을 받지 못했습니다.")
+                            how = data.get("how")
+                            graph_data = data.get("graph")
+            
+            # 성공적으로 종료되면 로딩바를 완료 상태로 닫아버립니다.
+            status.update(label="✔️ 분석 및 답변 생성 완료!", state="complete", expanded=False)
 
             answer += f"""\n\n현재 RAG 상태: {"ON" if st.session_state.rag_on else "OFF"}"""
 

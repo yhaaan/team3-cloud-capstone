@@ -1,5 +1,7 @@
 # main.py
+import asyncio
 import json
+from fastapi.responses import StreamingResponse
 from langchain_openai import ChatOpenAI
 from app.agent.graph_agent import GraphAgent
 from fastapi import FastAPI
@@ -65,37 +67,107 @@ gpt4o = ChatOpenAI(
 )
 
 
-@app.post("/chat", response_model=ChatResponse)
+@app.post("/chat")
 async def chat(request: ChatRequest):
     print(f"RAG 사용 여부: {request.rag_on}\n")
-    if not request.rag_on:
-        # 순수 LLM 모드: 외부 지식 차단
-        # DB 조회를 생략하고 빈 컨텍스트를 주거나, 아예 일반 답변 프롬프트를 사용합니다.
-        system_prompt = "당신은 기업 분석 전문가입니다. 당신이 기존에 학습한 지식으로만 답변하세요."
 
-        messages = [
-            SystemMessage(content=system_prompt),
-            HumanMessage(content=request.question)
-        ]
+    async def event_generator():
+        if not request.rag_on:
+            # 순수 LLM 모드: 외부 지식 차단
+            # DB 조회를 생략하고 빈 컨텍스트를 주거나, 아예 일반 답변 프롬프트를 사용합니다.
+            system_prompt = "당신은 기업 분석 전문가입니다. 당신이 기존에 학습한 지식으로만 답변하세요."
 
-        # 최종 답변 생성
-        response = await gpt4o.ainvoke(messages)
+            messages = [
+                SystemMessage(content=system_prompt),
+                HumanMessage(content=request.question)
+            ]
 
-        return ChatResponse(
-            answer=response.content,
-            how="",
-            graph=None
-        )
+            # 🚀 Streamlit의 로딩바 문구 유지를 위해 '상태 정보' 하나를 던져줍니다.
+            yield json.dumps({"type": "status", "content": "🤖 순수 LLM 지식으로 답변을 작성하고 있습니다..."}) + "\n"
 
-    recent_history_str = get_recent_history_context_str(request.recent_history)
-    # 비동기로 변경되었으므로 await 필수
-    result = await agent.run_agent(request.question, recent_history_str, GLOBAL_ALIAS_MAP)
-    
-    return ChatResponse(
-        answer=result.answer,
-        how=result.how,
-        graph=result.graph
-    )
+            # 최종 답변 생성
+            response = await gpt4o.ainvoke(messages)
+
+            # 프론트엔드가 파싱하기 쉽게 형식을 통일하여 던집니다.
+            yield json.dumps({"type": "answer", "content": response.content}) + "\n"
+            return
+        
+        # --- [경우 2] GraphRAG 모드 (RAG ON) ---
+        recent_history_str = get_recent_history_context_str(request.recent_history)
+        
+        # LangGraph 인풋 구조
+        inputs = {
+            "query": request.question,
+            "recent_history_str": recent_history_str
+        }
+
+        # 🚀 기존 방식처럼 클래스 내부 변수에 직접 사전을 심어줍니다.
+        agent.global_alias_map = GLOBAL_ALIAS_MAP
+
+        # 🚀 최종 상태 값을 담아둘 그릇을 미리 준비합니다.
+        last_state_values = {}
+
+        # 🚀 LangGraph의 실시간 노드 업데이트 이벤트를 스트리밍합니다.
+        async for update_chunk in agent.app.astream(inputs, stream_mode="updates"):
+            if not update_chunk:
+                continue
+            
+            node_name = list(update_chunk.keys())[0]
+            
+            # 🚀 핵심 수정: 이전 노드가 만들어둔 값을 유지하면서 새 노드의 값을 누적(merge)합니다.
+            # 이래야 이전 노드가 만든 relation_graph와 마지막 노드가 만든 final_response가 공존합니다.
+            if isinstance(update_chunk[node_name], dict):
+                last_state_values.update(update_chunk[node_name])
+            
+            # 현재 통과 중인 노드별로 상태 메시지를 매칭합니다.
+            if node_name == "rewrite_query":
+                status_message = "🔍 유저 질문의 의도를 분석하고 재구성하는 중..."
+            elif node_name == "extract_entity":
+                status_message = "🏷️ 질문에서 주요 기업 및 핵심 분석 키워드를 추출 중..."
+            elif node_name == "normalize_entities":
+                status_message = "⚙️ 추출한 엔티티 정규화 중..."
+            elif node_name == "plan_queries" or node_name == "generate_cypher":
+                status_message = "🗺️ 질문 맥락 기반의 다각도 기업 정보 추적 경로 구성 중..."
+            elif node_name == "search_vector_db" or node_name == "search_graph_db":
+                status_message = "⚡ 기업 공시 및 복합 관계망 데이터 동시 분석 중..."
+            elif node_name == "format_graph":
+                status_message = "📊 탐색된 지식 그래프를 시각화 형태로 가공하는 중..."
+            elif node_name == "generate_answer":
+                status_message = "✍️ 수집된 모든 맥락을 종합하여 분석 리포트 작성 중..."
+            
+            if status_message:
+                yield json.dumps({"type": "status", "content": status_message}) + "\n"
+                await asyncio.sleep(0.01) # 이벤트를 스무스하게 밀어주기 위한 미세 딜레이
+
+        # # 모든 노드 처리가 끝나면 최신 메모리(State)에서 결과물을 컴파일하여 최종 반환
+        # final_state = await agent.app.aget_state(inputs)
+        # state_values = final_state.values if final_state else {}
+
+        # 🚀 대신 루프에서 끝까지 갱신된 last_state_values를 바로 사용합니다.
+        try:
+            validated_response = ChatResponse(
+                answer=last_state_values.get("final_response", "답변 생성에 실패했습니다."),
+                how=last_state_values.get("how", ""),
+                graph=last_state_values.get("relation_graph", None)
+            )
+        except Exception as e:
+            print(f"[🚨 SPEC ERROR] ChatResponse 규격 검증 실패: {e}")
+            validated_response = ChatResponse(
+                answer="시스템 내부 데이터 규격 오류가 발생했습니다.",
+                how="",
+                graph=None
+            )
+
+        # 기존 ChatResponse 스펙 규격에 맞춰 딕셔너리로 전송
+        final_data = {
+            "type": "answer",
+            "content": validated_response.model_dump()
+        }
+
+        yield json.dumps(final_data) + "\n"
+
+    # StreamingResponse로 랩핑하여 한 줄씩 실시간 전달
+    return StreamingResponse(event_generator(), media_type="application/json")
 
 
 def get_recent_history_context_str(messages, limit=4):
